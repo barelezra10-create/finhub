@@ -288,6 +288,10 @@ Sources: marcus.com (4hr ago), ally.com (2hr)   <- transparency moat
 
 ---
 
+## Cross-property overlap
+
+Fintiex's credit card vertical (~150 pages) overlaps with **The Credit Card Pick** (thecreditcardpick.com), and personal loans (~150 pages) overlaps with **PennyLime**. Decision: Fintiex owns those verticals fully. CCPick and PennyLime are treated as separate brands targeting different keyword sets and audiences. No cross-linking required at launch; revisit if cannibalization shows in GSC data.
+
 ## Open questions / deferred decisions
 
 - **Monetization specifics** — deferred per Bar's call. Revisit when programmatic pages start indexing and we see what converts.
