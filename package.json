@@ -1,0 +1,24 @@
+{
+  "name": "fintiex",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel --stream dev",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "db:generate": "pnpm --filter @fintiex/db prisma:generate",
+    "db:migrate": "pnpm --filter @fintiex/db prisma:migrate",
+    "db:studio": "pnpm --filter @fintiex/db prisma:studio"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "@types/node": "20.16.0"
+  }
+}
