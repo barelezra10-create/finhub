@@ -27,26 +27,16 @@ describe("currentRatesFor", () => {
 
     await prisma.rate.createMany({
       data: [
-        {
-          lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA,
-          apyApr: "4.50", sourceUrl: source.url, scrapedAt: new Date(),
-          confidence: Confidence.HIGH, isCurrent: true,
-        },
-        {
-          lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA,
-          apyApr: "4.30", sourceUrl: source.url, scrapedAt: new Date(),
-          confidence: Confidence.HIGH, isCurrent: false,
-        },
-        {
-          lenderId: lender.id, sourceId: source.id, productType: ProductType.CD_12M,
-          apyApr: "5.00", sourceUrl: source.url, scrapedAt: new Date(),
-          confidence: Confidence.HIGH, isCurrent: true,
-        },
+        { lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA, apyApr: "4.50", sourceUrl: source.url, scrapedAt: new Date(), confidence: Confidence.HIGH, isCurrent: true },
+        { lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA, apyApr: "4.75", sourceUrl: source.url, scrapedAt: new Date(), confidence: Confidence.HIGH, isCurrent: true, productSubtype: "no-fee" },
+        { lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA, apyApr: "4.30", sourceUrl: source.url, scrapedAt: new Date(), confidence: Confidence.HIGH, isCurrent: true, productSubtype: "promo" },
+        { lenderId: lender.id, sourceId: source.id, productType: ProductType.HYSA, apyApr: "4.10", sourceUrl: source.url, scrapedAt: new Date(), confidence: Confidence.HIGH, isCurrent: false },
+        { lenderId: lender.id, sourceId: source.id, productType: ProductType.CD_12M, apyApr: "5.00", sourceUrl: source.url, scrapedAt: new Date(), confidence: Confidence.HIGH, isCurrent: true },
       ],
     });
 
     const result = await currentRatesFor(ProductType.HYSA);
-    expect(result).toHaveLength(1);
-    expect(Number(result[0]!.apyApr)).toBeCloseTo(4.5, 5);
+    expect(result).toHaveLength(3);
+    expect(result.map(r => Number(r.apyApr))).toEqual([4.75, 4.5, 4.3]);
   });
 });
