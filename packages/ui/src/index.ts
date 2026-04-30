@@ -1,3 +1,3 @@
-export { tokens } from "./tokens.js";
-export type { Tokens } from "./tokens.js";
-export { Logo } from "./components/logo.js";
+export { tokens } from "./tokens";
+export type { Tokens } from "./tokens";
+export { Logo } from "./components/logo";

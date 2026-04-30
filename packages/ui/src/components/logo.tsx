@@ -1,4 +1,4 @@
-import { tokens } from "../tokens.js";
+import { tokens } from "../tokens";
 
 export function Logo({ height = 28 }: { height?: number }) {
   return (
