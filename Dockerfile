@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1.7
 
-FROM node:20-alpine AS base
-RUN apk add --no-cache openssl libc6-compat
+FROM node:20-bookworm-slim AS base
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openssl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
 RUN corepack enable && corepack prepare pnpm@9.12.0 --activate
 WORKDIR /app
 
