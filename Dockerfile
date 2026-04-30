@@ -20,7 +20,6 @@ FROM deps AS build
 COPY tsconfig.base.json ./
 COPY packages ./packages
 COPY apps/web ./apps/web
-RUN pnpm --filter @fintiex/db prisma:generate
 RUN pnpm --filter @fintiex/web build
 
 FROM base AS runner

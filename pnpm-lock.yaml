@@ -20,9 +20,6 @@ importers:
       '@fintiex/calculators':
         specifier: workspace:*
         version: link:../../packages/calculators
-      '@fintiex/db':
-        specifier: workspace:*
-        version: link:../../packages/db
       '@fintiex/ui':
         specifier: workspace:*
         version: link:../../packages/ui

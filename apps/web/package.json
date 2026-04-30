@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@fintiex/calculators": "workspace:*",
-    "@fintiex/db": "workspace:*",
     "@fintiex/ui": "workspace:*",
     "next": "16.2.4",
     "react": "^19.0.0",
