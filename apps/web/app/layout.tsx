@@ -1,28 +1,43 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Serif } from "next/font/google";
+import { Playfair_Display, Newsreader, JetBrains_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
+import { RateTicker } from "@/components/rate-ticker";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const plex = IBM_Plex_Serif({
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+});
+
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-plex",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: { default: "Fintiex", template: "%s — Fintiex" },
+  title: { default: "Fintiex — America's Rate Authority", template: "%s — Fintiex" },
   description:
-    "Personal finance hub: rates, tools, and guides for mortgages, savings, loans, and credit cards.",
+    "Daily rates, tools, and plain-English guides for mortgages, savings, credit cards, and loans. Updated continuously, sources cited.",
   metadataBase: new URL("https://fintiex.com"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plex.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${newsreader.variable} ${mono.variable}`}>
       <body>
+        <RateTicker />
         <SiteHeader />
-        <main className="max-w-page mx-auto px-5 py-10">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
