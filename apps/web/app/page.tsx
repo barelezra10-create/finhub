@@ -1,328 +1,387 @@
 import Link from "next/link";
 
-type Direction = "up" | "down" | "flat";
-
 interface RateRow {
   lender: string;
   apr: number;
+  tag?: string;
   detail: string;
-  cta: string;
+  href: string;
+  trend?: "up" | "down" | "flat";
 }
 
-interface MarketRow {
+interface MarketTile {
   label: string;
   value: string;
   delta: number;
+  caption: string;
 }
 
+const featuredMarkets: MarketTile[] = [
+  { label: "30Y Fixed Mortgage", value: "6.85%", delta: 0.02, caption: "Avg of 14 lenders" },
+  { label: "Top HYSA", value: "4.85%", delta: -0.05, caption: "Bask Bank · FDIC" },
+  { label: "12-Month CD", value: "5.10%", delta: 0.0, caption: "LendingClub · $2.5K min" },
+  { label: "Personal Loan · Excellent", value: "8.20%", delta: 0.0, caption: "SoFi · 3-7yr" },
+];
+
 const mortgageRates: RateRow[] = [
-  { lender: "Marcus by Goldman Sachs", apr: 6.79, detail: "30y · 5% down · 760+ FICO", cta: "/mortgages/marcus" },
-  { lender: "Better.com", apr: 6.85, detail: "30y · 3% down · no origination", cta: "/mortgages/better" },
-  { lender: "Rocket Mortgage", apr: 6.89, detail: "30y · 5% down · jumbo eligible", cta: "/mortgages/rocket" },
-  { lender: "loanDepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", cta: "/mortgages/loandepot" },
-  { lender: "Chase Home Lending", apr: 6.95, detail: "30y · 10% down · DreaMaker", cta: "/mortgages/chase" },
-  { lender: "PNC Bank", apr: 6.99, detail: "30y · 3% down · LMI program", cta: "/mortgages/pnc" },
+  { lender: "Marcus by Goldman Sachs", apr: 6.79, tag: "Lowest", detail: "30y · 5% down · 760+ FICO", href: "/mortgages/marcus", trend: "down" },
+  { lender: "Better.com", apr: 6.85, detail: "30y · 3% down · no origination", href: "/mortgages/better", trend: "flat" },
+  { lender: "Rocket Mortgage", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/mortgages/rocket", trend: "up" },
+  { lender: "loanDepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/mortgages/loandepot", trend: "up" },
+  { lender: "Chase Home Lending", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/mortgages/chase", trend: "flat" },
 ];
 
 const hysaRates: RateRow[] = [
-  { lender: "Bask Bank", apr: 4.85, detail: "No min · No fees · FDIC", cta: "/savings/bask" },
-  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees · FDIC", cta: "/savings/bread" },
-  { lender: "Marcus", apr: 4.50, detail: "No min · No fees · FDIC", cta: "/savings/marcus" },
-  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees · FDIC", cta: "/savings/ally" },
-  { lender: "SoFi Checking & Savings", apr: 4.40, detail: "Direct deposit req · FDIC", cta: "/savings/sofi" },
-  { lender: "Discover Online Savings", apr: 4.30, detail: "No min · No fees · FDIC", cta: "/savings/discover" },
+  { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/savings/bask" },
+  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees", href: "/savings/bread" },
+  { lender: "Marcus", apr: 4.50, detail: "No min · No fees", href: "/savings/marcus" },
+  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees", href: "/savings/ally" },
+  { lender: "SoFi", apr: 4.40, detail: "Direct deposit req", href: "/savings/sofi" },
 ];
 
-const cdRates: RateRow[] = [
-  { lender: "LendingClub · 12mo", apr: 5.10, detail: "$2,500 min · No-penalty", cta: "/savings/cds/lendingclub-12m" },
-  { lender: "Bread · 12mo", apr: 5.05, detail: "$1,500 min", cta: "/savings/cds/bread-12m" },
-  { lender: "Marcus · 12mo", apr: 4.95, detail: "$500 min", cta: "/savings/cds/marcus-12m" },
-  { lender: "Ally · 24mo", apr: 4.85, detail: "No min · 60d penalty", cta: "/savings/cds/ally-24m" },
-  { lender: "Synchrony · 36mo", apr: 4.55, detail: "No min · 180d penalty", cta: "/savings/cds/synchrony-36m" },
-  { lender: "CIT · 60mo", apr: 4.40, detail: "$1,000 min", cta: "/savings/cds/cit-60m" },
+const cardCategories: Array<{
+  category: string;
+  topPick: string;
+  perk: string;
+  href: string;
+  accent: "lime" | "violet" | "coral" | "mint";
+}> = [
+  { category: "Cash Back", topPick: "Wells Fargo Active Cash", perk: "2% on everything", href: "/credit-cards/cash-back", accent: "lime" },
+  { category: "Travel", topPick: "Chase Sapphire Preferred", perk: "60K bonus · 5x travel", href: "/credit-cards/travel", accent: "violet" },
+  { category: "0% APR", topPick: "Wells Fargo Reflect", perk: "21mo 0% intro APR", href: "/credit-cards/zero-apr", accent: "mint" },
+  { category: "Balance Transfer", topPick: "Citi Diamond Preferred", perk: "21mo BT · 0%", href: "/credit-cards/balance-transfer", accent: "coral" },
+  { category: "No Annual Fee", topPick: "Citi Double Cash", perk: "2% · no fee", href: "/credit-cards/no-fee", accent: "lime" },
+  { category: "Business", topPick: "Ink Business Preferred", perk: "100K bonus · 3x cats", href: "/credit-cards/business", accent: "violet" },
 ];
 
-const cardCategories: Array<{ category: string; topPick: string; perk: string; href: string }> = [
-  { category: "Cash Back", topPick: "Wells Fargo Active Cash", perk: "2% on everything", href: "/credit-cards/cash-back" },
-  { category: "Travel", topPick: "Chase Sapphire Preferred", perk: "60K bonus · 5x travel", href: "/credit-cards/travel" },
-  { category: "0% APR", topPick: "Wells Fargo Reflect", perk: "21mo 0% intro APR", href: "/credit-cards/zero-apr" },
-  { category: "Balance Transfer", topPick: "Citi Diamond Preferred", perk: "21mo BT · 0%", href: "/credit-cards/balance-transfer" },
-  { category: "No Annual Fee", topPick: "Citi Double Cash", perk: "2% · no fee", href: "/credit-cards/no-fee" },
-  { category: "Business", topPick: "Ink Business Preferred", perk: "100K bonus · 3x cats", href: "/credit-cards/business" },
-];
-
-const markets: MarketRow[] = [
-  { label: "30Y Fixed", value: "6.85%", delta: 0.02 },
-  { label: "15Y Fixed", value: "6.12%", delta: -0.01 },
-  { label: "Refi 30Y", value: "6.78%", delta: 0.01 },
-  { label: "HELOC", value: "9.20%", delta: 0.0 },
-  { label: "Jumbo 30Y", value: "7.05%", delta: 0.03 },
-  { label: "HYSA · top", value: "4.85%", delta: -0.05 },
-  { label: "12mo CD", value: "5.10%", delta: 0.0 },
-  { label: "24mo CD", value: "4.85%", delta: -0.02 },
-  { label: "5yr CD", value: "4.40%", delta: 0.01 },
-  { label: "Money Market", value: "4.65%", delta: 0.0 },
-  { label: "Auto · 60mo new", value: "7.10%", delta: -0.02 },
-  { label: "Personal · exc.", value: "8.20%", delta: 0.0 },
-];
-
-const calculators: Array<{ title: string; sub: string; href: string }> = [
-  { title: "Mortgage Payment", sub: "Payment by rate, term, and down", href: "/calculators/mortgage-payment" },
-  { title: "Refinance Break-Even", sub: "When does the refi pay back?", href: "/calculators/refinance-break-even" },
-  { title: "HELOC Payment", sub: "Draw + repay simulator", href: "/calculators/heloc" },
-  { title: "Debt Avalanche", sub: "Card payoff visualizer", href: "/calculators/debt-payoff" },
-  { title: "CD Ladder", sub: "Build a 5-rung ladder", href: "/calculators/cd-ladder" },
-  { title: "HYSA Goal", sub: "Months to a savings target", href: "/calculators/savings-goal" },
-  { title: "Compound Growth", sub: "Long-horizon visualizer", href: "/calculators/compound-interest" },
-  { title: "Net Worth", sub: "Track assets & liabilities", href: "/calculators/net-worth" },
+const calculators: Array<{ title: string; sub: string; href: string; icon: string }> = [
+  { title: "Mortgage Payment", sub: "By rate, term, and down", href: "/calculators/mortgage-payment", icon: "🏠" },
+  { title: "Refi Break-Even", sub: "When does refi pay back?", href: "/calculators/refinance-break-even", icon: "🔁" },
+  { title: "Debt Avalanche", sub: "Card payoff visualizer", href: "/calculators/debt-payoff", icon: "💳" },
+  { title: "CD Ladder", sub: "Build a 5-rung ladder", href: "/calculators/cd-ladder", icon: "🪜" },
+  { title: "Savings Goal", sub: "Months to your target", href: "/calculators/savings-goal", icon: "🎯" },
+  { title: "Compound Growth", sub: "Long-horizon visualizer", href: "/calculators/compound-interest", icon: "📈" },
+  { title: "HELOC Payment", sub: "Draw + repay sim", href: "/calculators/heloc", icon: "🔓" },
+  { title: "Net Worth", sub: "Track assets & liabs", href: "/calculators/net-worth", icon: "📊" },
 ];
 
 function fmtPct(n: number) {
   return n.toFixed(2) + "%";
 }
-function direction(delta: number): Direction {
-  if (delta > 0) return "up";
-  if (delta < 0) return "down";
-  return "flat";
-}
-function deltaSpan(delta: number) {
-  const dir = direction(delta);
-  if (dir === "flat") return <span className="text-ink-muted tabular">—</span>;
-  const arrow = dir === "up" ? "▲" : "▼";
-  const cls = dir === "up" ? "text-oxblood" : "text-forest";
+function deltaPill(d: number) {
+  if (d === 0)
+    return <span className="chip chip-mute tabular">unchanged</span>;
+  if (d > 0)
+    return (
+      <span className="chip" style={{ background: "rgba(255, 86, 128, 0.12)", color: "#D9325E" }}>
+        ↑ {Math.abs(d).toFixed(2)} pts
+      </span>
+    );
   return (
-    <span className={`tabular ${cls}`}>
-      {arrow} {Math.abs(delta).toFixed(2)}
+    <span className="chip" style={{ background: "rgba(45, 212, 164, 0.16)", color: "#0E7A5C" }}>
+      ↓ {Math.abs(d).toFixed(2)} pts
     </span>
   );
+}
+function trendArrow(t?: "up" | "down" | "flat") {
+  if (!t || t === "flat") return <span className="text-mute">—</span>;
+  if (t === "up") return <span className="text-rose">↑</span>;
+  return <span className="text-mint">↓</span>;
 }
 
 export default function Home() {
   return (
     <>
-      {/* ABOVE-THE-FOLD: lead story + market snapshot */}
-      <section className="border-b border-rule bg-paper">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-10 grid grid-cols-12 gap-8">
-          {/* Lead column */}
-          <article className="col-span-12 lg:col-span-8 lg:border-r lg:border-rule lg:pr-8">
-            <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-3">
-              Lead · Mortgages
-            </div>
-            <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.05] tracking-tight mb-5">
-              Thirty-year fixed nudges higher as Treasuries reset.
-            </h2>
-            <div className="text-[12px] font-mono uppercase tracking-[0.16em] text-ink-muted mb-6 flex items-center gap-3">
-              <span>By the Fintiex Rate Desk</span>
-              <span className="opacity-40">·</span>
-              <span>Updated 4 min ago</span>
-              <span className="opacity-40">·</span>
-              <span>14 sources</span>
-            </div>
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-bg">
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
 
-            <div className="grid grid-cols-12 gap-6">
-              <div className="col-span-12 sm:col-span-5">
-                <div className="border-y-2 border-rule py-4">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-ink-muted mb-2">
-                    30-Year Fixed
-                  </div>
-                  <div className="font-display font-black text-[5.5rem] leading-none tracking-tighter tabular">
-                    6.85<span className="text-[3rem] align-top">%</span>
-                  </div>
-                  <div className="mt-3 flex items-baseline justify-between text-[12px] font-mono">
-                    <span className="text-oxblood font-semibold">▲ 0.02 vs Wed</span>
-                    <span className="text-ink-muted">avg of 14 lenders</span>
-                  </div>
-                </div>
-                <div className="mt-4 text-[11px] font-mono uppercase tracking-[0.16em] text-ink-muted">
-                  Sources: Marcus (4m), Better (3m), Rocket (6m), Chase (9m), and 10 more
-                </div>
+        <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 lg:col-span-7">
+              <span className="chip chip-violet mb-6">
+                <span className="pulse-dot" /> Updated 4 minutes ago
+              </span>
+              <h1 className="font-display font-extrabold text-[clamp(2.75rem,6.5vw,5.5rem)] leading-[1.02] tracking-[-0.03em] mb-6">
+                Personal finance,<br />
+                <span className="relative inline-block">
+                  <span className="relative z-10">leveled up.</span>
+                  <span
+                    aria-hidden
+                    className="absolute left-0 right-0 bottom-1 h-3 md:h-4 bg-lime z-0"
+                  />
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-mute leading-relaxed max-w-xl mb-8">
+                Live rates, sharp tools, plain-English guides. The whole money map in one place — built for the way you actually live.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/calculators" className="pill pill-ink">
+                  Run the numbers
+                  <span aria-hidden>→</span>
+                </Link>
+                <Link href="/savings" className="pill pill-ghost">
+                  See today&rsquo;s rates
+                </Link>
               </div>
 
-              <div className="col-span-12 sm:col-span-7 dropcap font-body text-[1.0625rem] leading-[1.6] text-ink">
-                Mortgage rates ticked higher this morning after the 10-year Treasury yield climbed three basis points overnight on stronger-than-expected jobs data. The benchmark thirty-year fixed average among the fourteen national lenders we track now sits at 6.85 percent, up two basis points from Wednesday and the highest weekly close since early March. Refinance demand remains anemic; the MBA index fell again last week, and our own form-fill data shows a 9 percent week-over-week decline in refi inquiries on rates above 6.5 percent. We continue to recommend rate-locking on conforming purchase loans and watching ten-year Treasury action as the lead indicator for the back half of the week.
+              <div className="mt-10 flex items-center gap-6 text-sm text-mute">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono tabular text-ink font-semibold">14</span> live sources
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono tabular text-ink font-semibold">8</span> calculators
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono tabular text-ink font-semibold">0</span> sponsored picks
+                </div>
               </div>
             </div>
 
-            <div className="mt-8 grid grid-cols-3 gap-4 text-[11px] font-mono uppercase tracking-[0.18em] text-ink-muted">
-              <Link href="/mortgages/by-state" className="rule-top pt-3 hover:text-oxblood">
-                <div className="text-ink font-semibold">Mortgage rates by state →</div>
-                <div className="mt-1 normal-case tracking-normal font-body">All 50 states · 200+ pages</div>
-              </Link>
-              <Link href="/mortgages/refinance" className="rule-top pt-3 hover:text-oxblood">
-                <div className="text-ink font-semibold">Should you refinance? →</div>
-                <div className="mt-1 normal-case tracking-normal font-body">Break-even calculator inside</div>
-              </Link>
-              <Link href="/mortgages/heloc" className="rule-top pt-3 hover:text-oxblood">
-                <div className="text-ink font-semibold">HELOC vs. cash-out →</div>
-                <div className="mt-1 normal-case tracking-normal font-body">Side-by-side comparison</div>
-              </Link>
+            {/* Featured rate card */}
+            <div className="col-span-12 lg:col-span-5">
+              <div className="card-flush p-7 relative overflow-hidden" style={{ boxShadow: "var(--shadow-pop)" }}>
+                <div
+                  aria-hidden
+                  className="absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-30"
+                  style={{ background: "radial-gradient(circle, var(--color-lime) 0%, transparent 70%)" }}
+                />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="chip chip-ink">Mortgages</span>
+                    <span className="text-xs font-mono text-mute">4m ago</span>
+                  </div>
+                  <div className="text-sm text-mute mb-1">Average 30-year fixed today</div>
+                  <div className="font-display font-extrabold text-[5.5rem] leading-none tracking-tighter tabular text-ink">
+                    6.85<span className="text-[2.5rem] align-top text-mute">%</span>
+                  </div>
+                  <div className="mt-4 flex items-center gap-3">
+                    {deltaPill(0.02)}
+                    <span className="text-sm text-mute">vs. yesterday</span>
+                  </div>
+
+                  <div className="mt-6 pt-5 border-t border-line">
+                    <div className="text-xs font-mono uppercase tracking-wider text-mute mb-3">
+                      Lowest among 14 lenders
+                    </div>
+                    <div className="space-y-2.5">
+                      {mortgageRates.slice(0, 3).map((r) => (
+                        <div key={r.lender} className="flex items-center justify-between text-sm">
+                          <span className="font-medium">{r.lender}</span>
+                          <span className="font-mono tabular font-semibold">{fmtPct(r.apr)}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link
+                      href="/mortgages"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold u-link"
+                    >
+                      See all mortgage rates
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </article>
-
-          {/* Markets sidebar */}
-          <aside className="col-span-12 lg:col-span-4">
-            <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-3">
-              Today&rsquo;s Markets
-            </div>
-            <h3 className="font-display font-bold text-2xl leading-tight mb-5">
-              All rates, all verticals.
-            </h3>
-            <table className="w-full border-collapse">
-              <tbody>
-                {markets.map((m, i) => (
-                  <tr
-                    key={m.label}
-                    className={i === markets.length - 1 ? "" : "border-b border-rule-soft"}
-                  >
-                    <td className="py-2 pr-2 font-body text-[14px] text-ink">{m.label}</td>
-                    <td className="py-2 pr-2 text-right font-mono font-semibold tabular text-[14px] text-ink">
-                      {m.value}
-                    </td>
-                    <td className="py-2 text-right text-[12px]">{deltaSpan(m.delta)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div className="mt-4 text-[10px] font-mono uppercase tracking-[0.18em] text-ink-muted">
-              Snapshot · {new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZoneName: "short" })}
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      {/* MORTGAGES SECTION */}
-      <RateSection
-        eyebrow="Mortgages"
-        kicker="The lowest 30-year fixed rates we tracked this morning"
-        rates={mortgageRates}
-        valueLabel="APR"
-        seeAllHref="/mortgages"
-        seeAllLabel="See all 50 lenders →"
-      />
-
-      {/* SAVINGS SECTION (HYSA + CD side by side) */}
-      <section className="border-b border-rule">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-10">
-          <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-2">
-            Savings
-          </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight mb-6 max-w-3xl">
-            Where to park cash this week, and why.
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <RateBlock
-              title="High-Yield Savings"
-              note="No-fee, FDIC-insured · ranked by APY"
-              rates={hysaRates}
-            />
-            <RateBlock
-              title="Best CDs"
-              note="By term · ranked by APY"
-              rates={cdRates}
-            />
           </div>
         </div>
       </section>
 
-      {/* CARDS GRID */}
-      <section className="border-b border-rule bg-paper-deep/40">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-10">
-          <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-2">
-            Credit Cards
+      {/* MARKETS STRIP */}
+      <section className="border-y border-line bg-bg-soft/60">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="font-display font-bold text-2xl tracking-tight">Today at a glance</h2>
+            <Link href="/markets" className="text-sm text-mute hover:text-ink u-link">
+              All markets →
+            </Link>
           </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight mb-8 max-w-3xl">
-            One card per category. Our editor&rsquo;s pick, with the trade-off baked in.
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-            {cardCategories.map((c) => (
-              <Link
-                key={c.category}
-                href={c.href}
-                className="block border-t border-rule pt-4 hover:bg-paper-deep transition-colors duration-150"
-              >
-                <div className="text-[10px] font-mono uppercase tracking-[0.22em] text-ink-muted mb-1">
-                  {c.category}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {featuredMarkets.map((m) => (
+              <div key={m.label} className="card p-5">
+                <div className="text-xs text-mute mb-2">{m.label}</div>
+                <div className="font-display font-extrabold text-3xl md:text-4xl tabular tracking-tight mb-2">
+                  {m.value}
                 </div>
-                <div className="font-display font-bold text-xl leading-snug text-ink mb-1">
-                  {c.topPick}
+                <div className="flex items-center justify-between gap-2">
+                  {deltaPill(m.delta)}
                 </div>
-                <div className="font-body text-sm text-ink-muted">{c.perk}</div>
-              </Link>
+                <div className="text-xs text-mute mt-3">{m.caption}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PULL QUOTE */}
-      <section className="border-b border-rule">
-        <div className="max-w-3xl mx-auto px-6 py-14">
-          <div className="pullquote text-center">
-            &ldquo;Every rate timestamped, every source cited, every calculator first-principles. Bankrate from a different decade.&rdquo;
+      {/* THREE COLUMN SECTION HUBS */}
+      <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
+        <div className="text-center mb-14">
+          <span className="chip chip-mute mb-4">The basics</span>
+          <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight max-w-2xl mx-auto leading-[1.05]">
+            Money is a stack of decisions.<br />We&rsquo;ve made each one easier.
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <HubCard
+            tone="lime"
+            label="Borrow"
+            title="Mortgages, HELOCs, personal & auto loans."
+            kpi="6.85%"
+            kpiCaption="30Y fixed avg"
+            href="/mortgages"
+          />
+          <HubCard
+            tone="violet"
+            label="Save"
+            title="HYSA, CDs, money market, checking."
+            kpi="4.85%"
+            kpiCaption="Top HYSA APY"
+            href="/savings"
+          />
+          <HubCard
+            tone="ink"
+            label="Spend"
+            title="Cards built for cash back, travel, and 0% APR."
+            kpi="60K"
+            kpiCaption="Top travel bonus"
+            href="/credit-cards"
+          />
+        </div>
+      </section>
+
+      {/* MORTGAGES TABLE */}
+      <RatesPanel
+        eyebrow="Mortgages · Live"
+        title="Lowest 30-year fixed rates this morning"
+        subtitle="Pulled directly from each lender. No partner placements."
+        rates={mortgageRates}
+        seeAll={{ label: "All 50 mortgage lenders", href: "/mortgages" }}
+      />
+
+      {/* SAVINGS TABLE */}
+      <RatesPanel
+        eyebrow="Savings · Live"
+        title="Highest-yielding savings accounts"
+        subtitle="FDIC-insured, no fees, no nonsense."
+        rates={hysaRates}
+        seeAll={{ label: "All HYSA + CDs", href: "/savings" }}
+      />
+
+      {/* CARDS GRID */}
+      <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
+          <div>
+            <span className="chip chip-mute mb-4">Credit cards</span>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight max-w-xl leading-tight">
+              One card per category. The trade-off baked in.
+            </h2>
           </div>
-          <div className="mt-3 text-center text-[11px] font-mono uppercase tracking-[0.22em] text-ink-muted">
-            — The Fintiex Editorial Standard
-          </div>
+          <Link href="/credit-cards" className="text-sm font-semibold u-link self-start md:self-auto">
+            Browse all categories →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {cardCategories.map((c) => (
+            <Link key={c.category} href={c.href} className="card p-6 block group">
+              <div className="flex items-center justify-between mb-5">
+                <span className={`chip chip-${c.accent === "violet" ? "violet" : "lime"}`}>
+                  {c.category}
+                </span>
+                <span className="text-mute text-lg group-hover:text-ink group-hover:translate-x-1 transition-all">→</span>
+              </div>
+              <div className="font-display font-bold text-xl tracking-tight mb-1.5 leading-snug">
+                {c.topPick}
+              </div>
+              <div className="text-mute text-sm">{c.perk}</div>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* CALCULATORS */}
-      <section className="border-b border-rule">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-10">
-          <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-2">
-            The Tools
+      <section className="bg-ink text-bg">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-20">
+          <div className="grid grid-cols-12 gap-8 mb-12">
+            <div className="col-span-12 lg:col-span-6">
+              <span className="chip chip-lime mb-4">Tools</span>
+              <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.05]">
+                Calculators that show their work.
+              </h2>
+            </div>
+            <div className="col-span-12 lg:col-span-6 flex items-end">
+              <p className="text-mute text-lg leading-relaxed">
+                Every formula visible. Every assumption editable. No popups, no email walls. Built for back-of-the-envelope first, deep-dive second.
+              </p>
+            </div>
           </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight mb-8 max-w-3xl">
-            Calculators built first-principles. No black boxes.
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
-            {calculators.map((c, i) => (
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {calculators.map((c) => (
               <Link
                 key={c.title}
                 href={c.href}
-                className="block border-t border-rule pt-3 hover:text-oxblood transition-colors duration-150"
+                className="block bg-ink-soft border border-white/10 hover:border-lime hover:bg-white/5 transition-colors duration-200 rounded-2xl p-5"
               >
-                <div className="text-[10px] font-mono tabular text-ink-muted mb-1">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="font-display font-bold text-lg leading-tight text-ink">
+                <div className="text-2xl mb-3">{c.icon}</div>
+                <div className="font-display font-bold text-base mb-1 leading-snug">
                   {c.title}
                 </div>
-                <div className="font-body text-[13px] text-ink-muted mt-1">{c.sub}</div>
+                <div className="text-sm text-white/55">{c.sub}</div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA STRIP */}
+      <section className="bg-lime border-y border-ink">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight max-w-2xl leading-tight">
+            One newsletter. Real rate moves. Once a week, never sponsored.
+          </h2>
+          <form className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              className="bg-bg border border-ink/30 rounded-full px-5 h-12 text-base focus:outline-none focus:border-ink min-w-0 sm:w-72"
+            />
+            <button type="button" className="pill pill-ink h-12 justify-center">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+
       {/* FOOTER */}
-      <footer className="bg-navy-deep text-paper">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
+      <footer className="bg-ink text-bg/70">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-5 gap-10">
           <div className="col-span-2">
-            <div className="font-display font-black text-4xl tracking-tight">Fintiex</div>
-            <div className="mt-2 text-[11px] font-mono uppercase tracking-[0.22em] opacity-60">
-              America&rsquo;s Rate Authority
+            <div className="flex items-center gap-2 mb-4">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-lime text-ink font-mono font-bold text-sm tracking-tighter">
+                Fx
+              </span>
+              <span className="font-display font-bold text-xl text-bg tracking-tight">Fintiex</span>
             </div>
-            <p className="mt-4 font-body text-[14px] leading-relaxed opacity-80 max-w-sm">
-              Rates updated continuously from primary lender sources. Every figure on this page is timestamped and traceable. Not a paid placement in sight.
+            <p className="text-sm leading-relaxed max-w-sm">
+              Live rates, sharp tools, plain-English guides. The whole money map in one place. Sources cited, timestamps visible, no paid placements.
             </p>
           </div>
           <FooterCol
-            title="Mortgages"
+            title="Borrow"
             links={[
-              { label: "30-year fixed", href: "/mortgages/30y-fixed" },
-              { label: "15-year fixed", href: "/mortgages/15y-fixed" },
+              { label: "Mortgages", href: "/mortgages" },
               { label: "Refinance", href: "/mortgages/refinance" },
               { label: "HELOC", href: "/mortgages/heloc" },
-              { label: "Jumbo", href: "/mortgages/jumbo" },
+              { label: "Personal loans", href: "/loans/personal" },
+              { label: "Auto loans", href: "/loans/auto" },
             ]}
           />
           <FooterCol
-            title="Savings"
+            title="Save"
             links={[
-              { label: "Best HYSA", href: "/savings/hysa" },
-              { label: "Best CDs", href: "/savings/cds" },
+              { label: "HYSA", href: "/savings/hysa" },
+              { label: "CDs", href: "/savings/cds" },
               { label: "Money market", href: "/savings/money-market" },
               { label: "Checking", href: "/banking/checking" },
             ]}
@@ -331,17 +390,20 @@ export default function Home() {
             title="More"
             links={[
               { label: "Credit cards", href: "/credit-cards" },
-              { label: "Personal loans", href: "/loans/personal" },
-              { label: "Auto loans", href: "/loans/auto" },
-              { label: "Brokers", href: "/investing/brokers" },
               { label: "Calculators", href: "/calculators" },
+              { label: "Guides", href: "/learn" },
+              { label: "About", href: "/about" },
             ]}
           />
         </div>
-        <div className="border-t border-paper/15">
-          <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] font-mono uppercase tracking-[0.18em] opacity-60">
+        <div className="border-t border-white/10">
+          <div className="max-w-(--max-w-page) mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs">
             <div>© {new Date().getFullYear()} Fintiex · All rights reserved</div>
-            <div>Editorial standards · Privacy · Terms</div>
+            <div className="flex gap-5">
+              <Link href="/about" className="hover:text-bg">Editorial standards</Link>
+              <Link href="/privacy" className="hover:text-bg">Privacy</Link>
+              <Link href="/terms" className="hover:text-bg">Terms</Link>
+            </div>
           </div>
         </div>
       </footer>
@@ -349,102 +411,120 @@ export default function Home() {
   );
 }
 
-function RateSection({
-  eyebrow,
-  kicker,
-  rates,
-  valueLabel,
-  seeAllHref,
-  seeAllLabel,
+function HubCard({
+  tone,
+  label,
+  title,
+  kpi,
+  kpiCaption,
+  href,
 }: {
-  eyebrow: string;
-  kicker: string;
-  rates: RateRow[];
-  valueLabel: string;
-  seeAllHref: string;
-  seeAllLabel: string;
+  tone: "lime" | "violet" | "ink";
+  label: string;
+  title: string;
+  kpi: string;
+  kpiCaption: string;
+  href: string;
 }) {
+  const styles =
+    tone === "lime"
+      ? { bg: "bg-lime", text: "text-ink", chipCls: "chip chip-ink" }
+      : tone === "violet"
+      ? { bg: "bg-[#6E5CFF]", text: "text-bg", chipCls: "chip chip-ink" }
+      : { bg: "bg-ink", text: "text-bg", chipCls: "chip chip-lime" };
+
   return (
-    <section className="border-b border-rule">
-      <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-10">
-        <div className="text-[11px] font-mono uppercase tracking-[0.22em] text-oxblood mb-2">
-          {eyebrow}
-        </div>
-        <h2 className="font-display font-bold text-3xl md:text-4xl leading-tight mb-6 max-w-3xl">
-          {kicker}
-        </h2>
-        <table className="broadsheet-table">
-          <thead>
-            <tr>
-              <th className="w-[50%]">Lender</th>
-              <th className="w-[15%] text-right">{valueLabel}</th>
-              <th className="hidden md:table-cell w-[25%]">Detail</th>
-              <th className="w-[10%] text-right"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {rates.map((r) => (
-              <tr key={r.lender}>
-                <td>
-                  <div className="font-display font-semibold text-base text-ink">{r.lender}</div>
-                  <div className="md:hidden text-sm text-ink-muted">{r.detail}</div>
-                </td>
-                <td className="text-right font-mono font-semibold tabular text-ink text-base">
-                  {fmtPct(r.apr)}
-                </td>
-                <td className="hidden md:table-cell text-ink-muted text-sm">{r.detail}</td>
-                <td className="text-right">
-                  <Link
-                    href={r.cta}
-                    className="font-mono uppercase tracking-[0.16em] text-[11px] text-oxblood hover:text-ink"
-                  >
-                    View →
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="mt-5">
-          <Link
-            href={seeAllHref}
-            className="inline-block font-mono uppercase tracking-[0.18em] text-[12px] text-ink hover:text-oxblood border-b border-rule pb-1"
-          >
-            {seeAllLabel}
-          </Link>
-        </div>
+    <Link
+      href={href}
+      className={`block ${styles.bg} ${styles.text} rounded-3xl p-7 hover:-translate-y-1 transition-transform duration-200`}
+    >
+      <span className={styles.chipCls}>{label}</span>
+      <div className="font-display font-extrabold text-2xl md:text-[1.75rem] tracking-tight mt-5 leading-snug">
+        {title}
       </div>
-    </section>
+      <div className="mt-10 pt-5 border-t border-current/15 flex items-end justify-between">
+        <div>
+          <div className="font-display font-extrabold text-4xl md:text-5xl tabular tracking-tighter leading-none">
+            {kpi}
+          </div>
+          <div className="text-xs opacity-70 mt-2 uppercase tracking-wider font-mono">
+            {kpiCaption}
+          </div>
+        </div>
+        <span className="text-2xl">→</span>
+      </div>
+    </Link>
   );
 }
 
-function RateBlock({ title, note, rates }: { title: string; note: string; rates: RateRow[] }) {
+function RatesPanel({
+  eyebrow,
+  title,
+  subtitle,
+  rates,
+  seeAll,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  rates: RateRow[];
+  seeAll: { label: string; href: string };
+}) {
   return (
-    <div>
-      <div className="rule-top pt-4 mb-4">
-        <h3 className="font-display font-bold text-2xl leading-tight">{title}</h3>
-        <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted mt-1">
-          {note}
+    <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
+      <div className="grid grid-cols-12 gap-8 mb-8">
+        <div className="col-span-12 md:col-span-7">
+          <span className="chip chip-mute mb-4">
+            <span className="pulse-dot" /> {eyebrow}
+          </span>
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
+            {title}
+          </h2>
+        </div>
+        <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
+          <p className="text-mute leading-relaxed md:text-right md:max-w-sm">{subtitle}</p>
         </div>
       </div>
-      <table className="broadsheet-table">
-        <tbody>
-          {rates.map((r) => (
-            <tr key={r.lender}>
-              <td>
-                <Link href={r.cta} className="font-display font-semibold text-ink hover:text-oxblood">
-                  {r.lender}
-                </Link>
-                <div className="text-ink-muted text-[13px]">{r.detail}</div>
-              </td>
-              <td className="text-right font-mono font-semibold tabular text-ink whitespace-nowrap">
-                {fmtPct(r.apr)}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+
+      <div className="card-flush overflow-hidden">
+        <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
+          <div className="col-span-6 md:col-span-5">Lender</div>
+          <div className="hidden md:block md:col-span-4">Detail</div>
+          <div className="col-span-3 md:col-span-2 text-right">APR</div>
+          <div className="col-span-3 md:col-span-1 text-right">Trend</div>
+          <div className="hidden md:block md:col-span-0"></div>
+        </div>
+        {rates.map((r, i) => (
+          <Link
+            key={r.lender}
+            href={r.href}
+            className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
+              i === rates.length - 1 ? "" : "border-b border-line-soft"
+            }`}
+          >
+            <div className="col-span-6 md:col-span-5">
+              <div className="flex items-center gap-2">
+                <div className="font-display font-semibold text-base">{r.lender}</div>
+                {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+              </div>
+              <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
+            </div>
+            <div className="hidden md:block md:col-span-4 text-mute text-sm">{r.detail}</div>
+            <div className="col-span-3 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
+              {fmtPct(r.apr)}
+            </div>
+            <div className="col-span-3 md:col-span-1 text-right text-lg">{trendArrow(r.trend)}</div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="mt-6 flex justify-center">
+        <Link href={seeAll.href} className="pill pill-ghost">
+          {seeAll.label}
+          <span aria-hidden>→</span>
+        </Link>
+      </div>
+    </section>
   );
 }
 
@@ -457,13 +537,11 @@ function FooterCol({
 }) {
   return (
     <div>
-      <div className="font-mono text-[11px] uppercase tracking-[0.22em] opacity-60 mb-3">
-        {title}
-      </div>
-      <ul className="space-y-2 font-body text-[14px]">
+      <div className="font-mono uppercase tracking-wider text-xs text-bg/50 mb-4">{title}</div>
+      <ul className="space-y-2.5 text-sm">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="hover:text-ochre transition-colors duration-150">
+            <Link href={l.href} className="hover:text-bg transition-colors">
               {l.label}
             </Link>
           </li>

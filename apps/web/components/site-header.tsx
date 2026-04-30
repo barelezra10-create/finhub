@@ -1,69 +1,54 @@
 import Link from "next/link";
 
-const today = new Date();
-const dateStr = today.toLocaleDateString("en-US", {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-
-const issueNumber =
-  Math.floor((today.getTime() - new Date("2026-04-29").getTime()) / 86400000) + 1;
-
 export function SiteHeader() {
   return (
-    <header className="border-b border-rule bg-paper">
-      <div className="border-b border-rule-soft">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-2 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-ink-muted">
-          <div>{dateStr}</div>
-          <div className="hidden md:block">
-            Edition No. {issueNumber.toString().padStart(3, "0")} · Vol. I
-          </div>
-          <div>Rates updated continuously</div>
-        </div>
-      </div>
+    <header className="sticky top-0 z-30 backdrop-blur-md bg-bg/85 border-b border-line">
+      <div className="max-w-(--max-w-page) mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 group">
+          <Logomark />
+          <span className="font-display font-bold text-xl tracking-tight">Fintiex</span>
+        </Link>
 
-      <div className="max-w-(--max-w-broadsheet) mx-auto px-6 pt-8 pb-4">
-        <div className="flex items-baseline justify-between gap-6">
-          <div className="hidden md:block flex-1 text-[11px] font-mono uppercase tracking-[0.18em] text-ink-muted leading-relaxed">
-            <div>Established</div>
-            <div>MMXXVI</div>
-          </div>
-          <Link href="/" className="block text-center">
-            <h1 className="font-display font-black text-[clamp(3rem,9vw,7rem)] leading-none tracking-tight">
-              Fintiex
-            </h1>
-          </Link>
-          <div className="hidden md:block flex-1 text-right text-[11px] font-mono uppercase tracking-[0.18em] text-ink-muted leading-relaxed">
-            <div>America&rsquo;s</div>
-            <div>Rate Authority</div>
-          </div>
-        </div>
-        <div className="mt-3 text-center text-[11px] font-mono uppercase tracking-[0.32em] text-ink-muted">
-          Mortgages · Savings · Credit Cards · Loans · Investing
-        </div>
-      </div>
-
-      <nav className="border-y border-rule">
-        <div className="max-w-(--max-w-broadsheet) mx-auto px-6 py-3 flex items-center justify-center gap-x-8 gap-y-2 flex-wrap text-[12px] font-display font-medium tracking-[0.16em] uppercase">
+        <nav className="hidden md:flex items-center gap-1 text-[14px] font-medium">
           <NavItem href="/mortgages" label="Mortgages" />
-          <NavItem href="/savings" label="Savings & CDs" />
+          <NavItem href="/savings" label="Savings" />
           <NavItem href="/loans" label="Loans" />
-          <NavItem href="/credit-cards" label="Credit Cards" />
-          <NavItem href="/investing" label="Investing" />
-          <NavItem href="/calculators" label="Calculators" />
+          <NavItem href="/credit-cards" label="Cards" />
+          <NavItem href="/calculators" label="Tools" />
           <NavItem href="/learn" label="Guides" />
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <Link href="/learn" className="hidden sm:inline-flex pill pill-ghost">
+            Sign in
+          </Link>
+          <Link href="/calculators" className="pill pill-ink">
+            Get started
+          </Link>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
 
 function NavItem({ href, label }: { href: string; label: string }) {
   return (
-    <Link href={href} className="hover:text-oxblood transition-colors duration-150">
+    <Link
+      href={href}
+      className="px-3 py-2 rounded-full text-ink-soft hover:bg-bg-soft hover:text-ink transition-colors duration-150"
+    >
       {label}
     </Link>
+  );
+}
+
+function Logomark() {
+  return (
+    <span
+      aria-hidden
+      className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-ink text-lime font-mono font-bold text-sm tracking-tighter"
+    >
+      Fx
+    </span>
   );
 }
