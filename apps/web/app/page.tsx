@@ -250,6 +250,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BLOCK A: RATE FORECAST */}
+      <section className="border-t border-line">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-20">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 lg:col-span-5">
+              <span className="chip chip-violet mb-4">Rate Forecast</span>
+              <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.05] mb-4">
+                Where mortgage rates go from here.
+              </h2>
+              <div className="text-sm text-mute font-mono uppercase tracking-wider">
+                By the Fintiex Rate Desk · April 30, 2026
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
+              <p>
+                The 30-year fixed rate sits at <span className="font-mono tabular font-semibold">6.85%</span> today, up from <span className="font-mono tabular font-semibold">6.10%</span> a year ago. The Federal Reserve has signaled no rate cuts before September at the earliest, and the Fed funds rate doesn&rsquo;t directly set mortgage rates anyway. The benchmark that matters is the 10-year Treasury yield, which will determine where the back half of 2026 lands for buyers and refinancers alike.
+              </p>
+              <p>
+                Here is the mechanics layer: mortgage rates track the 10-year Treasury plus the mortgage-backed securities (MBS) spread, which sits around <span className="font-mono tabular font-semibold">170 basis points</span> right now. That spread has compressed from its 2024 peak but remains meaningfully elevated compared to the 2010s norm of roughly <span className="font-mono tabular font-semibold">120 bps</span>. When lender risk appetite improves and MBS demand picks up, that spread narrows. Every 10 bps of compression translates directly to a lower quoted rate.
+              </p>
+              <p>
+                The base case forecast: if the 10-year Treasury holds in the <span className="font-mono tabular font-semibold">4.30&ndash;4.50%</span> range and the MBS spread stays near current levels, expect the 30-year fixed to trade in a <span className="font-mono tabular font-semibold">6.7&ndash;7.0%</span> band through Q3 2026. A meaningful refi wave requires a sustained drop of 50 basis points or more from today&rsquo;s rate. That scenario is possible in Q4 if the Fed cuts twice and Treasuries rally, but it is not the consensus view.
+              </p>
+              <p>
+                For buyers: trying to time the rate bottom is a losing game. You will miss the window while inventory shifts and sellers adjust prices. Instead, negotiate hard on discount points. At 6.85%, paying 1 point (1% of the loan) typically buys down the rate by 0.25 percentage points. On a $400K loan that is $4,000 upfront to save about $60/month. Break-even is under six years. Lock the moment you have a ratified contract.
+              </p>
+              <p>
+                For refinancers: pull the break-even before dismissing it. If you closed in 2023 or 2024 at a rate of <span className="font-mono tabular font-semibold">7.5%</span> or above, the refi math may already pencil out. Closing costs on a no-cash-out refi typically run <span className="font-mono tabular font-semibold">$3,000&ndash;$6,000</span>. At a 75 bps savings on a $350K balance, you recover costs in roughly 40 to 80 months depending on your state and lender. Run the actual numbers before assuming rates need to fall further.
+              </p>
+              <div>
+                <Link href="/learn/refinance-break-even" className="pill pill-ghost">
+                  Run the refi break-even math <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MORTGAGES TABLE */}
       <RatesPanel
         eyebrow="Mortgages · Live"
@@ -267,6 +306,45 @@ export default function Home() {
         rates={hysaRates}
         seeAll={{ label: "All HYSA + CDs", href: "/savings" }}
       />
+
+      {/* BLOCK B: SAVINGS PLAYBOOK */}
+      <section className="border-t border-line">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-20">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 lg:col-span-5">
+              <span className="chip chip-violet mb-4">Savings Playbook</span>
+              <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.05] mb-4">
+                Where to actually park your cash this year.
+              </h2>
+              <div className="text-sm text-mute font-mono uppercase tracking-wider">
+                By the Fintiex Rate Desk · April 30, 2026
+              </div>
+            </div>
+            <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
+              <p>
+                With the top high-yield savings account at <span className="font-mono tabular font-semibold">4.85%</span>, money market accounts at <span className="font-mono tabular font-semibold">4.65%</span>, and 12-month CDs at <span className="font-mono tabular font-semibold">5.10%</span>, where you keep your cash matters more than at any point since 2007. The default checking account at <span className="font-mono tabular font-semibold">0.01%</span> is not a safe harbor. It is a slow leak. On a $20,000 balance you are leaving roughly $960 per year on the table compared to the top HYSA.
+              </p>
+              <p>
+                The cleanest framework is three tiers. Tier 1 is your next three months of bills: keep this in checking, fully liquid, no rate chasing needed. Tier 2 is your three-to-six month emergency fund: this belongs in a high-yield savings account, earning a real rate while staying accessible within one to two business days. Tier 3 is cash you know you will not need for 12 months or more: this is the right home for a CD ladder, where you can capture the best available rates without sacrificing future flexibility.
+              </p>
+              <p>
+                On the HYSA side, three no-fee accounts lead the field right now. Bask Bank at <span className="font-mono tabular font-semibold">4.85%</span>, Bread Savings at <span className="font-mono tabular font-semibold">4.75%</span>, and Marcus by Goldman Sachs at <span className="font-mono tabular font-semibold">4.50%</span>. All three are FDIC-insured, carry no monthly fees, and have no minimum balance requirements. The 35 basis point gap between the top and the bottom of that no-fee list equals $35 per year per $10,000 sitting in the account. It takes about five minutes to open the better one. Worth it.
+              </p>
+              <p>
+                A CD ladder on Tier 3 cash works like this: split $10,000 across five rungs at 3, 6, 12, 24, and 60 months. Blended average yield lands around <span className="font-mono tabular font-semibold">4.65%</span>. One rung matures every three months, giving you periodic access to the principal. Each time a rung matures you reinvest at the long end of the ladder, keeping the cycle going and capturing whatever rates are available at that point. Liquidity stays intact; you are never fully locked up.
+              </p>
+              <p>
+                Three places to avoid parking Tier 2 or Tier 3 cash. First: brokerage sweep accounts, which often yield less than 1% while holding uninvested cash. Second: 401(k) money market options, which carry expense ratios that erode the nominal yield. Third: traditional big-bank savings accounts, which average just <span className="font-mono tabular font-semibold">0.05%</span> nationally. The rate environment has made the gap between these defaults and the best available accounts larger than it has been in over a decade. The cost of inertia is measurable.
+              </p>
+              <div>
+                <Link href="/calculators/cd-ladder" className="pill pill-ghost">
+                  Build your CD ladder <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CARDS GRID */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
