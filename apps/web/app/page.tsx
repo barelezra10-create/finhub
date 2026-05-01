@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 
 interface RateRow {
   lender: string;
+  brandSlug: string;
   apr: number;
   tag?: string;
   detail: string;
@@ -24,19 +26,19 @@ const featuredMarkets: MarketTile[] = [
 ];
 
 const mortgageRates: RateRow[] = [
-  { lender: "Marcus by Goldman Sachs", apr: 6.79, tag: "Lowest", detail: "30y · 5% down · 760+ FICO", href: "/mortgages/marcus", trend: "down" },
-  { lender: "Better.com", apr: 6.85, detail: "30y · 3% down · no origination", href: "/mortgages/better", trend: "flat" },
-  { lender: "Rocket Mortgage", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/mortgages/rocket", trend: "up" },
-  { lender: "loanDepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/mortgages/loandepot", trend: "up" },
-  { lender: "Chase Home Lending", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/mortgages/chase", trend: "flat" },
+  { lender: "Marcus by Goldman Sachs", brandSlug: "marcus-mortgage", apr: 6.79, tag: "Lowest", detail: "30y · 5% down · 760+ FICO", href: "/reviews/marcus-mortgage", trend: "down" },
+  { lender: "Better.com", brandSlug: "better", apr: 6.85, detail: "30y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
+  { lender: "Rocket Mortgage", brandSlug: "rocket", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/reviews/rocket", trend: "up" },
+  { lender: "loanDepot", brandSlug: "loandepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/reviews/loandepot", trend: "up" },
+  { lender: "Chase Home Lending", brandSlug: "chase-mortgage", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/reviews/chase-mortgage", trend: "flat" },
 ];
 
 const hysaRates: RateRow[] = [
-  { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/savings/bask" },
-  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees", href: "/savings/bread" },
-  { lender: "Marcus", apr: 4.50, detail: "No min · No fees", href: "/savings/marcus" },
-  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees", href: "/savings/ally" },
-  { lender: "SoFi", apr: 4.40, detail: "Direct deposit req", href: "/savings/sofi" },
+  { lender: "Bask Bank", brandSlug: "bask", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/reviews/bask" },
+  { lender: "Bread Savings", brandSlug: "bread", apr: 4.75, detail: "$100 min · No fees", href: "/reviews/bread" },
+  { lender: "Marcus", brandSlug: "marcus", apr: 4.50, detail: "No min · No fees", href: "/reviews/marcus" },
+  { lender: "Ally Bank", brandSlug: "ally", apr: 4.45, detail: "No min · No fees", href: "/reviews/ally" },
+  { lender: "SoFi", brandSlug: "sofi", apr: 4.40, detail: "Direct deposit req", href: "/reviews/sofi" },
 ];
 
 const cardCategories: Array<{
@@ -167,10 +169,17 @@ export default function Home() {
                     </div>
                     <div className="space-y-2.5">
                       {mortgageRates.slice(0, 3).map((r) => (
-                        <div key={r.lender} className="flex items-center justify-between text-sm">
-                          <span className="font-medium">{r.lender}</span>
+                        <Link
+                          key={r.lender}
+                          href={r.href}
+                          className="flex items-center justify-between text-sm py-1 -mx-1 px-1 rounded-lg hover:bg-bg-soft transition-colors"
+                        >
+                          <span className="flex items-center gap-2.5 font-medium truncate">
+                            <BrandLogo brand={r.brandSlug} size={24} rounded="md" />
+                            <span className="truncate">{r.lender}</span>
+                          </span>
                           <span className="font-mono tabular font-semibold">{fmtPct(r.apr)}</span>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                     <Link
@@ -581,11 +590,16 @@ function RatesPanel({
             }`}
           >
             <div className="col-span-6 md:col-span-5">
-              <div className="flex items-center gap-2">
-                <div className="font-display font-semibold text-base">{r.lender}</div>
-                {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+              <div className="flex items-center gap-3">
+                <BrandLogo brand={r.brandSlug} size={36} rounded="lg" />
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="font-display font-semibold text-base truncate">{r.lender}</div>
+                    {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+                  </div>
+                  <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
+                </div>
               </div>
-              <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
             </div>
             <div className="hidden md:block md:col-span-4 text-mute text-sm">{r.detail}</div>
             <div className="col-span-3 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
