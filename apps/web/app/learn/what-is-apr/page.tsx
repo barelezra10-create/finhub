@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "APR vs Interest Rate: Why the Difference Matters | Fintiex Guides",
   description:
     "APR includes fees the interest rate ignores. Here is exactly what goes into APR, when the two numbers diverge sharply, and how to use APR to compare loans fairly.",
+  alternates: { canonical: "/learn/what-is-apr" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="APR vs interest rate (and why the difference matters)"
+        description="APR includes fees the interest rate ignores. Here is exactly what goes into APR, when the two numbers diverge sharply, and how to use APR to compare loans fairly."
+        slug="/learn/what-is-apr"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "What Is APR", href: "/learn/what-is-apr" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-violet mb-4">Credit</span>

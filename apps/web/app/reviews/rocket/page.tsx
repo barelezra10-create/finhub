@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Rocket Mortgage Review (2026)",
   description:
     "Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong mobile app, and best-in-class support for complex loan situations.",
+  alternates: { canonical: "/reviews/rocket" },
 };
 
 const brand = getBrand("rocket")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "What is the minimum credit score for Rocket Mortgage?",
+    answer:
+      "The minimum is 580 for FHA loans and 620 for conventional loans. VA and USDA loans may have slightly different thresholds depending on the specific program and your financial profile.",
+  },
+  {
+    question: "Does Rocket Mortgage charge an origination fee?",
+    answer:
+      "Yes. Rocket charges an origination fee that typically ranges from 0.5% to 1% of the loan amount. This is a key cost difference vs. zero-fee lenders like Marcus and Better. Ask your loan advisor about lender credits at a higher rate vs. paying the fee upfront.",
+  },
+  {
+    question: "What is the Verified Approval program?",
+    answer:
+      "Rocket's Verified Approval is a pre-approval backed by verified income, employment, and assets. It carries more weight with sellers than a standard pre-qualification because underwriting has already reviewed your documents. It is a useful tool in competitive markets.",
+  },
+  {
+    question: "How long does it take to close with Rocket Mortgage?",
+    answer:
+      "Average close time is 28 to 40 days for purchase loans. Refinances typically run 30 to 45 days. Rocket's size and staff depth mean they generally close on schedule even during high-volume periods.",
+  },
+  {
+    question: "Can I get a jumbo loan through Rocket Mortgage?",
+    answer:
+      "Yes. Rocket offers jumbo loans above the conforming limit of $766,550 in most counties. Rates are competitive and the same advisor model applies. Minimum credit score for jumbo is typically 700, and you will need 10 to 20% down depending on the loan amount.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Rocket Mortgage Review"
+        description="Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong mobile app, and best-in-class support for complex loan situations."
+        slug="/reviews/rocket"
+        brandName="Rocket Mortgage"
+        category="Mortgage"
+        apr="6.89"
+        ratingValue={8.3}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Rocket Mortgage", href: "/reviews/rocket" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

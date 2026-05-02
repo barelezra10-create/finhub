@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Debt Avalanche vs Snowball: A Math-First Answer | Fintiex Guides",
   description:
     "The avalanche method saves the most money. The snowball builds the most momentum. A worked example with four real cards shows exactly how much each approach costs.",
+  alternates: { canonical: "/learn/debt-avalanche-vs-snowball" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="Debt avalanche vs snowball: a math-first answer"
+        description="The avalanche method saves the most money. The snowball builds the most momentum. A worked example with four real cards shows exactly how much each approach costs."
+        slug="/learn/debt-avalanche-vs-snowball"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "Debt Avalanche vs Snowball", href: "/learn/debt-avalanche-vs-snowball" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-violet mb-4">Credit</span>

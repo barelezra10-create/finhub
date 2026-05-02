@@ -1,5 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
+import { FAQPageSchema, type FAQItem } from "@/components/schemas";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const homepageFaqs: FAQItem[] = [
+  {
+    question: "How does Fintiex make money?",
+    answer: "Fintiex does not accept paid placements or affiliate fees for rate table rankings. The site is ad-supported. Lender order in every table reflects current APR or APY only, not any commercial relationship.",
+  },
+  {
+    question: "How often are rates updated?",
+    answer: "Rate tables are refreshed daily. The timestamp shown next to each table reflects the last pull from lender rate sheets or APIs. Mortgage rates can move intraday; we update at least once every 24 hours.",
+  },
+  {
+    question: "Is the data sourced directly from lenders?",
+    answer: "Yes. Rates are pulled from each lender's publicly published rate sheets or direct API feeds. We do not use aggregator data that may be delayed or normalized in ways that obscure real offers.",
+  },
+  {
+    question: "Do you accept paid placements?",
+    answer: "No. Fintiex does not accept payment to move any lender, card, or account higher in a table. The lender at the top of the table is the one with the best rate that day, full stop.",
+  },
+  {
+    question: "Is signup required to use the calculators?",
+    answer: "No account, no email address, and no signup of any kind is required. Every calculator on Fintiex is free and fully accessible. We will never put a calculator behind a registration wall.",
+  },
+];
 
 interface RateRow {
   lender: string;
@@ -94,6 +123,7 @@ function trendArrow(t?: "up" | "down" | "flat") {
 export default function Home() {
   return (
     <>
+      <FAQPageSchema items={homepageFaqs} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

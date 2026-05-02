@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("citi-diamond-preferred")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Citi Diamond Preferred Review: 21-Month 0% Balance Transfer (2026)",
   description:
     "Citi Diamond Preferred offers 21 months of 0% APR on balance transfers and 12 months on purchases, with no annual fee. Full 2026 review: fees, math, and verdict.",
+  alternates: { canonical: "/reviews/citi-diamond-preferred" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is the 5% balance transfer fee worth it?",
+    answer:
+      "On large balances accruing high APRs, almost certainly. On a $5,000 balance at 25% APR, you save roughly $1,700 in interest over 21 months. The $250 transfer fee leaves you with net savings of $1,450. The fee is only a dealbreaker on very small balances or very low existing APRs.",
+  },
+  {
+    question: "Does the Diamond Preferred offer a sign-up bonus?",
+    answer:
+      "No. There is no cash or points bonus for new cardholders. The interest savings from the 0% intro APR is the only new-account value on offer.",
+  },
+  {
+    question: "Can I product-change to the Citi Double Cash after the intro period?",
+    answer:
+      "Yes. Citi allows product changes between consumer cards within the same family after 12 months of account ownership. Calling Citi customer service to request a change to the Double Cash is a reasonable strategy once your balance is paid off.",
+  },
+  {
+    question: "What credit score do I need?",
+    answer:
+      "Citi typically approves Diamond Preferred applicants with good to excellent credit, generally 690 FICO or above. Applicants with recent derogatory marks or high utilization may need to address those before applying.",
+  },
+  {
+    question: "What happens if I miss a payment during the intro APR period?",
+    answer:
+      "Missing a minimum payment can result in Citi applying the standard purchase APR to your balance and revoking the 0% promotional rate. Late fees also apply. Set up autopay for at least the minimum payment to protect the promotional rate.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Citi Diamond Preferred Review (2026)"
+        description="Citi Diamond Preferred offers 21 months of 0% APR on balance transfers and 12 months on purchases, with no annual fee. Full 2026 review: fees, math, and verdict."
+        slug="/reviews/citi-diamond-preferred"
+        brandName="Citi Diamond Preferred"
+        category="Credit Card"
+        ratingValue={7.9}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Citi Diamond Preferred", href: "/reviews/citi-diamond-preferred" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

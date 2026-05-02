@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "HYSA vs CD: Which Is Right for You? | Fintiex Guides",
   description:
     "Both high-yield savings accounts and CDs beat traditional savings. The difference is liquidity vs yield. Here is how to pick, including the CD ladder hybrid strategy.",
+  alternates: { canonical: "/learn/hysa-vs-cd" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="HYSA vs CD: which one is right for you?"
+        description="Both high-yield savings accounts and CDs beat traditional savings. The difference is liquidity vs yield. Here is how to pick, including the CD ladder hybrid strategy."
+        slug="/learn/hysa-vs-cd"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "HYSA vs CD", href: "/learn/hysa-vs-cd" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-mute mb-4">Savings</span>

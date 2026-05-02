@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "How Mortgages Work in 2026 | Fintiex Guides",
   description:
     "A full plain-English breakdown of how mortgages are priced and structured: 10-year Treasuries, loan types, FICO impact, rate locks, and closing costs explained.",
+  alternates: { canonical: "/learn/how-mortgages-work" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="How mortgages work in 2026"
+        description="A full plain-English breakdown of how mortgages are priced and structured: 10-year Treasuries, loan types, FICO impact, rate locks, and closing costs explained."
+        slug="/learn/how-mortgages-work"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "How Mortgages Work", href: "/learn/how-mortgages-work" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-lime mb-4">Mortgages</span>

@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Better.com Mortgage Review (2026)",
   description:
     "Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review covering rates, fees, and who it suits.",
+  alternates: { canonical: "/reviews/better" },
 };
 
 const brand = getBrand("better")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "Is Better.com still a reliable lender after the 2022 to 2024 layoffs?",
+    answer:
+      "Better has stabilized since the restructuring period. By 2025 the company resumed growth and improved customer satisfaction scores. That said, it is worth reading recent reviews and asking your loan coordinator about current processing times before locking.",
+  },
+  {
+    question: "How does the One Day Mortgage work?",
+    answer:
+      "Better's One Day Mortgage uses automated underwriting to verify income, employment, and assets in real time. If everything verifies cleanly, you receive a commitment letter within 24 hours. This works best for W-2 employees with consistent income and standard bank accounts.",
+  },
+  {
+    question: "Does Better charge a rate lock fee?",
+    answer:
+      "Better does not charge for a standard 30-day rate lock. Extended locks beyond 30 days may involve a fee depending on the rate environment at the time of locking.",
+  },
+  {
+    question: "Can I get a VA loan through Better.com?",
+    answer:
+      "Better offers VA loans in some states but availability is limited compared to VA-specialist lenders like U.S. Bank or Navy Federal. If VA financing is your primary need, a VA-specialist lender will typically offer better pricing and service.",
+  },
+  {
+    question: "What is the Better Cash Offer program?",
+    answer:
+      "Better's Cash Offer program allows qualified buyers to make all-cash offers on homes. Better purchases the home on your behalf, then sells it back to you once your mortgage is finalized. It gives you a competitive edge in bidding situations. Fees apply, so compare total costs before using it.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Better.com Mortgage Review"
+        description="Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review covering rates, fees, and who it suits."
+        slug="/reviews/better"
+        brandName="Better.com"
+        category="Mortgage"
+        apr="6.85"
+        ratingValue={8.1}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Better.com", href: "/reviews/better" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

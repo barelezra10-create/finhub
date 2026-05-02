@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Free Financial Calculators — Mortgage, Savings, Loan, Credit Card Payoff | Fintiex",
   description:
     "Free financial calculators: mortgage payment, refi break-even, CD ladder, debt avalanche, savings goal, compound interest, HELOC, and net worth. No email walls, no popups.",
+  alternates: { canonical: "/calculators" },
 };
 
 const allCalculators = [
@@ -82,6 +84,33 @@ const allCalculators = [
 
 const popularCalcs = allCalculators.filter((c) => c.tag === "Popular");
 
+const faqItems: FAQItem[] = [
+  {
+    question: "Are my calculator inputs saved anywhere?",
+    answer: "No. Fintiex calculators are entirely client-side. Nothing you enter is sent to a server or stored in a database. If you close the tab, your inputs are gone. We are exploring optional local-storage persistence for future versions.",
+  },
+  {
+    question: "Do I need an account to use the calculators?",
+    answer: "No account, no email address, no signup. Every calculator on this page is free and fully accessible. We will never put a calculator behind a registration wall.",
+  },
+  {
+    question: "Can I export or share my results?",
+    answer: "Not yet. Export to PDF and shareable URLs are on the Phase 2 roadmap. For now, you can screenshot the results panel or copy the key numbers from the output section.",
+  },
+  {
+    question: "How accurate are the estimates?",
+    answer: "Estimates are mathematically correct given the inputs. The mortgage payment calculator uses standard amortization formulas. The compound interest tool uses the standard formula. The results are as accurate as your inputs: actual lender offers may differ based on credit score, fees, and terms not captured here.",
+  },
+  {
+    question: "Why is there no APY-to-monthly-rate toggle?",
+    answer: "Showing monthly rates introduces a decimal place that obscures the comparison. We use APY or APR consistently throughout the site because those are the numbers on your actual offer letters. The goal is to match what you see in the real world, not add conversion steps.",
+  },
+  {
+    question: "Are the calculators mobile-friendly?",
+    answer: "Yes. Every calculator is designed to work on phones and tablets. The input layout stacks vertically on small screens. Touch targets meet accessibility minimums. If you find a calculator that breaks on your device, email us at feedback@fintiex.com.",
+  },
+];
+
 const faqs = [
   {
     q: "Are my calculator inputs saved anywhere?",
@@ -112,6 +141,8 @@ const faqs = [
 export default function Page() {
   return (
     <>
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Calculators", href: "/calculators" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

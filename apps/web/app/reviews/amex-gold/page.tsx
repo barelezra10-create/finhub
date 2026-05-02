@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("amex-gold")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "American Express Gold Card Review: 4x Dining and Groceries (2026)",
   description:
     "The Amex Gold earns 4x on dining worldwide and 4x on U.S. supermarkets up to $25K per year. Up to $240 in annual credits offset the $325 fee. Full 2026 review with pros, cons, and FAQ.",
+  alternates: { canonical: "/reviews/amex-gold" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Does Costco count as a supermarket for the 4x Amex Gold bonus?",
+    answer:
+      "No. Amex classifies supermarkets based on merchant category codes. Warehouse clubs like Costco, Sam's Club, and BJ's Wholesale do not qualify for the 4x supermarket rate and earn only 1x. Traditional grocery chains, most natural food stores, and many specialty food shops do qualify.",
+  },
+  {
+    question: "How do I use the $120 dining credit?",
+    answer:
+      "The dining credit is split as $10 per calendar month. It applies automatically when you pay with your Amex Gold at participating locations, including Grubhub and select other brands. Unused monthly credits expire at the end of each calendar month and do not carry forward.",
+  },
+  {
+    question: "Can I upgrade from the Amex Gold to the Platinum?",
+    answer:
+      "Yes. American Express allows product changes between cards in the same family. Upgrading to the Platinum (currently $695) gives you airport lounge access, Global Entry credit, and enhanced travel protections, while retaining your existing Membership Rewards balance.",
+  },
+  {
+    question: "Is the Amex Gold charge card or credit card?",
+    answer:
+      "The Gold is a pay-over-time card. It has no preset spending limit, and many charges must be paid in full each statement period (charge card behavior), but Amex's Pay Over Time feature allows you to carry a balance on eligible purchases at the standard variable APR. Not all charges qualify for Pay Over Time.",
+  },
+  {
+    question: "What is the best use of 60K Membership Rewards points?",
+    answer:
+      "Transferring to an airline partner typically yields the highest value. Air Canada Aeroplan at 1:1 lets you book Star Alliance flights with reasonable availability and no fuel surcharges. British Airways Avios are valuable for short-haul American Airlines flights (e.g., 7,500 Avios for flights under 1,151 miles). At 1.5 to 2 cents per point via partners, 60K points can be worth $900 to $1,200 toward travel.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="American Express Gold Card Review (2026)"
+        description="The Amex Gold earns 4x on dining worldwide and 4x on U.S. supermarkets up to $25K per year. Up to $240 in annual credits offset the $325 fee. Full 2026 review with pros, cons, and FAQ."
+        slug="/reviews/amex-gold"
+        brandName="American Express Gold"
+        category="Credit Card"
+        ratingValue={8.7}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "American Express Gold", href: "/reviews/amex-gold" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

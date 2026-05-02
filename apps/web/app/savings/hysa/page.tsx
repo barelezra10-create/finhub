@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { states } from "@/lib/states";
+import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Best High-Yield Savings Accounts (HYSA) of 2026",
   description:
     "Compare the top HYSA rates from national online banks. All accounts are FDIC-insured up to $250K per depositor. Updated April 2026.",
+  alternates: { canonical: "/savings/hysa" },
 };
 
 interface HysaOption {
@@ -34,6 +36,7 @@ function fmtPct(n: number) {
 export default function HysaPage() {
   return (
     <>
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Savings", href: "/savings" }, { name: "High-Yield Savings", href: "/savings/hysa" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Plain-English Money Guides | Fintiex Learn",
   description:
     "Practical guides to mortgages, savings accounts, credit cards, and personal finance strategy. Written for real people, not finance majors.",
+  alternates: { canonical: "/learn" },
 };
 
 interface Guide {
@@ -115,6 +117,7 @@ export default function LearnPage() {
 
   return (
     <>
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Learn", href: "/learn" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">

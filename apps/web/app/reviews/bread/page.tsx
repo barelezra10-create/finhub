@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("bread")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "Bread Savings Review: 4.75% APY, $100 Min, CDs Too (2026)",
   description:
     "Bread Savings pays 4.75% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one.",
+  alternates: { canonical: "/reviews/bread" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is Bread Savings safe?",
+    answer:
+      "Yes. Deposits are FDIC-insured through Comenity Capital Bank, a regulated industrial bank. Coverage is up to $250,000 per depositor, per ownership category.",
+  },
+  {
+    question: "What is the difference between Bread Savings and Bread Financial?",
+    answer:
+      "Bread Financial Holdings is the publicly traded parent company. Bread Savings is the consumer deposit product. Bread Financial also operates a credit card business under the Comenity brand.",
+  },
+  {
+    question: "Can I open a CD at Bread Savings?",
+    answer:
+      "Yes. Bread offers CDs across multiple terms from 3 months to 60 months. Rates are generally competitive and can be managed from the same login as your savings account.",
+  },
+  {
+    question: "How long does it take to transfer money out?",
+    answer:
+      "ACH transfers to a linked external bank typically settle in 1 to 3 business days. There is no instant transfer option.",
+  },
+  {
+    question: "What happens if I fall below the $100 minimum?",
+    answer:
+      "Bread Savings does not charge a fee if your balance dips below $100. However, the account terms specify $100 as the minimum deposit to open. Interest continues to accrue on any balance above $0.01.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Bread Savings Review (2026)"
+        description="Bread Savings pays 4.75% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one."
+        slug="/reviews/bread"
+        brandName="Bread Savings"
+        category="Savings Account"
+        apr="4.75"
+        ratingValue={8.7}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Bread Savings", href: "/reviews/bread" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

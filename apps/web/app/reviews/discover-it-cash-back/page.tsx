@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("discover-it-cash-back")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Discover it Cash Back Review: 5% Rotating Categories + Cashback Match (2026)",
   description:
     "The Discover it Cash Back earns 5% on rotating quarterly categories and doubles all first-year cash back automatically. No annual fee. Full 2026 review with pros, cons, and FAQ.",
+  alternates: { canonical: "/reviews/discover-it-cash-back" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Do I have to activate the 5% categories every quarter?",
+    answer:
+      "Yes. Activation is required each quarter by the deadline (typically the 14th of the first month of the quarter). You can activate via the Discover app, online account, or by calling customer service. Forgetting to activate means you earn only 1% during that quarter.",
+  },
+  {
+    question: "Is the Cashback Match a sign-up bonus?",
+    answer:
+      "Discover positions it as an automatic first-year benefit rather than a traditional bonus. It requires no minimum spend threshold and applies to all cash back earned in months 1 through 12. The match is paid in one lump sum at the end of that period.",
+  },
+  {
+    question: "What categories are included in the 5% rotation for 2026?",
+    answer:
+      "Discover announces categories each year and they can vary. Historically the Q1 category has been grocery stores and fitness clubs, Q2 has been gas stations and home improvement, Q3 has been restaurants and PayPal, and Q4 has been Amazon and online shopping. Check Discover's site each quarter for the confirmed current category.",
+  },
+  {
+    question: "Can I use the Discover it internationally?",
+    answer:
+      "You can use it wherever Discover or Diners Club is accepted. The card has no foreign transaction fee, which is unusually good for a no-fee card. However, Discover acceptance abroad is lower than Visa or Mastercard, so carrying a backup Visa is advisable for international travel.",
+  },
+  {
+    question: "Is the Discover it a good card for building credit?",
+    answer:
+      "Yes. Discover is known for approving applicants with shorter or thinner credit histories compared to major bank issuers. The card reports to all three major bureaus, comes with free monthly FICO Score access, and allows a credit limit increase request after 7 months of on-time payments.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Discover it Cash Back Review (2026)"
+        description="The Discover it Cash Back earns 5% on rotating quarterly categories and doubles all first-year cash back automatically. No annual fee. Full 2026 review with pros, cons, and FAQ."
+        slug="/reviews/discover-it-cash-back"
+        brandName="Discover it Cash Back"
+        category="Credit Card"
+        ratingValue={7.8}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Discover it Cash Back", href: "/reviews/discover-it-cash-back" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

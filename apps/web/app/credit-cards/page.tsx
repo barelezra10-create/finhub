@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Best Credit Cards 2026 — Cash Back, Travel, 0% APR, Balance Transfer | Fintiex",
   description:
     "Compare the best credit cards for cash back, travel rewards, 0% intro APR, and balance transfers. One top pick per category. No sponsored rankings. Updated daily.",
+  alternates: { canonical: "/credit-cards" },
 };
 
 interface CardRow {
@@ -94,6 +96,33 @@ const subPages = [
   { label: "Secured Cards", href: "/credit-cards/secured", detail: "Rebuild credit with a refundable security deposit." },
 ];
 
+const faqItems: FAQItem[] = [
+  {
+    question: "How is credit card APR calculated on a monthly bill?",
+    answer: "Your daily periodic rate is your APR divided by 365. The issuer multiplies that rate by your average daily balance for the billing period to get your interest charge. If you pay your full statement balance by the due date each month, you pay zero interest regardless of your APR.",
+  },
+  {
+    question: "Will applying for a new card hurt my credit score?",
+    answer: "A new card application triggers a hard inquiry, typically dropping your score 2 to 5 points for a few months. The card also lowers your average account age, which is another scoring factor. That said, a new card increases your total available credit, which improves your utilization ratio. The net effect is usually neutral or slightly positive within 6 to 12 months.",
+  },
+  {
+    question: "How many credit cards is too many?",
+    answer: "There is no universal limit. What matters is your ability to manage payments and keep utilization low across all cards. Most credit-savvy consumers hold 3 to 5 cards covering different categories: one flat-rate, one travel or dining, one 0% APR option. Adding more cards is fine as long as you do not carry balances.",
+  },
+  {
+    question: "Is an annual fee ever worth paying?",
+    answer: "Yes, if the rewards and credits exceed the fee. The Chase Sapphire Preferred costs $95 but generates far more in travel value if you use the dining and travel multipliers. The Amex Gold costs $250 but offers $240 in statement credits, making the effective fee $10 if you use them. Model your actual spending before deciding.",
+  },
+  {
+    question: "Statement balance vs minimum vs full balance: what should I pay?",
+    answer: "Pay the full statement balance every month to avoid interest. The minimum payment keeps you in good standing but accrues interest on the remainder at your full APR. Never pay less than the minimum or you risk late fees and a credit score penalty. The statement balance (not the current balance) is the number to pay to avoid interest.",
+  },
+  {
+    question: "Does adding someone as an authorized user help their credit?",
+    answer: "Yes, if the primary account holder has a long, clean history on that card. The account typically appears on the authorized user's credit report, boosting their average account age and available credit. The primary holder remains fully responsible for all charges. This is a common strategy for parents helping young adults build credit.",
+  },
+];
+
 const faqs = [
   {
     q: "How is credit card APR calculated on a monthly bill?",
@@ -124,6 +153,8 @@ const faqs = [
 export default function Page() {
   return (
     <>
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Credit Cards", href: "/credit-cards" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

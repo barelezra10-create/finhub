@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Wells Fargo Home Lending Mortgage Review (2026)",
   description:
     "Wells Fargo Home Lending offers a 7.02% 30-year APR with a massive branch network, a Yourfirstmortgage 3% down program, and strong jumbo loan options. Full 2026 review.",
+  alternates: { canonical: "/reviews/wellsfargo-mortgage" },
 };
 
 const brand = getBrand("wellsfargo-mortgage")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "What is the Wells Fargo Yourfirstmortgage program?",
+    answer:
+      "Yourfirstmortgage is Wells Fargo's 3% down conventional loan for first-time buyers (anyone who has not owned a home in the past 3 years). Unlike Chase's DreaMaker, there is no income limit. Buyers must complete a homeownership education course to qualify.",
+  },
+  {
+    question: "What is the Dream. Plan. Home. grant?",
+    answer:
+      "Dream. Plan. Home. is a closing cost assistance grant of up to $5,000 for eligible borrowers with income at or below 120% of the area median income. It is available in certain markets and does not need to be repaid. Check eligibility by zip code on the Wells Fargo website.",
+  },
+  {
+    question: "Is Wells Fargo still a trustworthy lender after past scandals?",
+    answer:
+      "Wells Fargo has paid billions in regulatory settlements and made management changes following the 2016 fake-accounts scandal and subsequent issues. The mortgage division was not the center of those scandals. As a mortgage lender, Wells Fargo remains a regulated institution subject to CFPB oversight, and its loan terms and servicing are governed by standard consumer protection rules.",
+  },
+  {
+    question: "Does Wells Fargo offer good jumbo mortgage rates?",
+    answer:
+      "Yes. Wells Fargo's jumbo program is competitive, particularly for borrowers with strong credit and high asset balances who bank at Wells Fargo. Premier and Private Banking customers often receive better jumbo pricing than the advertised rate. Minimum credit score for jumbo is typically 720.",
+  },
+  {
+    question: "How do I qualify for the Wells Fargo Premier rate discount?",
+    answer:
+      "Wells Fargo Premier requires a minimum of $250,000 in qualifying Wells Fargo deposit and investment accounts. Premier customers receive a 0.125 to 0.25 percentage point rate discount on mortgage products. This can bring the effective rate closer to digital-only competitors for qualifying customers.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Wells Fargo Home Lending Review"
+        description="Wells Fargo Home Lending offers a 7.02% 30-year APR with a massive branch network, a Yourfirstmortgage 3% down program, and strong jumbo loan options. Full 2026 review."
+        slug="/reviews/wellsfargo-mortgage"
+        brandName="Wells Fargo Home Lending"
+        category="Mortgage"
+        apr="7.02"
+        ratingValue={7.4}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Wells Fargo Home Lending", href: "/reviews/wellsfargo-mortgage" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

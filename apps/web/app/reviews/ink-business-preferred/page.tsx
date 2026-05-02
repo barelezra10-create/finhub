@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("ink-business-preferred")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Chase Ink Business Preferred Review: 100K Bonus + 3x on Travel (2026)",
   description:
     "The Chase Ink Business Preferred earns 3x on travel, shipping, internet, phone, and online ads up to $150K combined. 100K UR bonus after $8K spend. Full 2026 review.",
+  alternates: { canonical: "/reviews/ink-business-preferred" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Does the Ink Business Preferred count as a personal or business card?",
+    answer:
+      "It is a business card issued by Chase, but it reports to your personal credit for approval purposes. The account itself does not appear on your personal credit report unless you default. You need a business entity or sole proprietorship income to apply.",
+  },
+  {
+    question: "Can I combine Ink Business Preferred points with my personal Chase Sapphire Reserve?",
+    answer:
+      "Yes. Ultimate Rewards points transfer freely between Chase accounts held by the same person. Points earned on the Ink can be moved to a Sapphire Reserve, where they redeem at 1.5 cents per point through the Chase Travel portal.",
+  },
+  {
+    question: "Does online advertising on Facebook and Google count for the 3x bonus?",
+    answer:
+      "Yes. Social media advertising and search engine advertising are explicitly included in the online advertising category and earn 3x, subject to the $150,000 annual combined cap across all 3x categories.",
+  },
+  {
+    question: "Is the cell phone insurance worth it?",
+    answer:
+      "For most businesses it is. Coverage of up to $1,000 per claim with a $100 deductible, and up to 3 claims per 12 months, provides meaningful protection. Simply paying your wireless bill with the card activates the benefit with no additional enrollment.",
+  },
+  {
+    question: "What happens to my 3x earning after the $150K cap?",
+    answer:
+      "All purchases above the $150,000 combined 3x category threshold in a cardmember year drop to 1x Ultimate Rewards. Chase resets the cap on each account anniversary date, not January 1.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Chase Ink Business Preferred Review (2026)"
+        description="The Chase Ink Business Preferred earns 3x on travel, shipping, internet, phone, and online ads up to $150K combined. 100K UR bonus after $8K spend. Full 2026 review."
+        slug="/reviews/ink-business-preferred"
+        brandName="Chase Ink Business Preferred"
+        category="Credit Card"
+        ratingValue={9.0}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Chase Ink Business Preferred", href: "/reviews/ink-business-preferred" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

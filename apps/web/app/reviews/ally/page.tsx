@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("ally")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "Ally Bank HYSA Review: 4.45% APY, Buckets, No Fees (2026)",
   description:
     "Ally Bank pays 4.45% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for.",
+  alternates: { canonical: "/reviews/ally" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "What are Ally Savings Buckets?",
+    answer:
+      "Buckets let you subdivide a single savings account into up to ten named categories, such as Emergency Fund, Vacation, or New Car. Each bucket tracks its own balance, but all funds earn the same 4.45% APY and share one account number. This eliminates the need to open multiple savings accounts to organize your goals.",
+  },
+  {
+    question: "What are Round-Ups?",
+    answer:
+      "Round-Ups automatically round up Ally debit card transactions to the nearest dollar and transfer the difference to your savings account. For example, a $4.60 coffee becomes $4.60 spent plus $0.40 saved. Over a month of normal spending, Round-Ups can add $15 to $40 in micro-deposits to your savings with no manual effort.",
+  },
+  {
+    question: "Does Ally have physical branches?",
+    answer:
+      "No. Ally is an online-only bank. There are no branch locations. You manage everything via the app or website. For cash deposits, Ally accepts deposits via mailed checks or linked external accounts only.",
+  },
+  {
+    question: "Can I earn interest on an Ally checking account?",
+    answer:
+      "Yes. Ally's Interest Checking account earns 0.10% APY on balances under $15,000 and 0.25% APY on balances $15,000 and above, as of April 2026. These rates are competitive with traditional bank checking accounts but well below HYSA levels.",
+  },
+  {
+    question: "Is Ally a good bank for everyday banking plus saving?",
+    answer:
+      "Yes. For the all-in-one online banking use case, Ally is one of the best options available. The combination of competitive savings rates, a strong checking account, 24/7 customer service, and product breadth (CDs, investing, auto loans) makes it a rare full-service substitute for a traditional bank.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Ally Bank Review (2026)"
+        description="Ally Bank pays 4.45% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for."
+        slug="/reviews/ally"
+        brandName="Ally Bank"
+        category="Savings Account"
+        apr="4.45"
+        ratingValue={8.8}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Ally Bank", href: "/reviews/ally" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Choosing Your First Credit Card | Fintiex Guides",
   description:
     "Your first credit card builds your credit history from scratch. Here is what type to get, what fees to avoid, and the habits that protect your score long-term.",
+  alternates: { canonical: "/learn/choosing-first-credit-card" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="Choosing your first credit card"
+        description="Your first credit card builds your credit history from scratch. Here is what type to get, what fees to avoid, and the habits that protect your score long-term."
+        slug="/learn/choosing-first-credit-card"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "Choosing Your First Credit Card", href: "/learn/choosing-first-credit-card" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-violet mb-4">Credit</span>

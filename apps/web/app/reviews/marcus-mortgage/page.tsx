@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Marcus by Goldman Sachs Mortgage Review (2026)",
   description:
     "Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review covering rates, fees, and who should apply.",
+  alternates: { canonical: "/reviews/marcus-mortgage" },
 };
 
 const brand = getBrand("marcus-mortgage")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "Does Marcus charge a loan origination fee?",
+    answer:
+      "No. Marcus does not charge an origination fee, which is one of the primary reasons its total closing cost is below the industry average. You still pay third-party costs like appraisal and title insurance.",
+  },
+  {
+    question: "Can I use Marcus for an FHA loan?",
+    answer:
+      "Marcus focuses on conventional conforming and jumbo loans. FHA and VA products are not available through Marcus as of April 2026. If you need FHA financing, Rocket Mortgage is a stronger option.",
+  },
+  {
+    question: "How long does the Marcus mortgage process take?",
+    answer:
+      "From full application to close, expect 28 to 42 days. The biggest variable is appraisal scheduling. In markets with limited appraisers, the process can extend to 45 to 50 days.",
+  },
+  {
+    question: "What credit score do I need for the best Marcus rate?",
+    answer:
+      "The minimum is 620, but borrowers with scores above 740 will receive the most competitive pricing tiers. The 6.79% headline rate assumes a strong credit profile, 5% or more down, and a standard conforming loan amount.",
+  },
+  {
+    question: "Is Marcus backed by FDIC?",
+    answer:
+      "Marcus by Goldman Sachs Bank LLC is FDIC-insured. Your deposit accounts are protected, but mortgages are loans, not deposit products, so FDIC coverage does not apply to the mortgage itself.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Marcus by Goldman Sachs Mortgage Review"
+        description="Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review covering rates, fees, and who should apply."
+        slug="/reviews/marcus-mortgage"
+        brandName="Marcus by Goldman Sachs"
+        category="Mortgage"
+        apr="6.79"
+        ratingValue={8.6}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Marcus by Goldman Sachs", href: "/reviews/marcus-mortgage" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

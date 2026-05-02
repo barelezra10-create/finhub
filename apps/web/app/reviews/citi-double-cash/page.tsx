@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("citi-double-cash")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Citi Double Cash Review: 2% Cash Back, No Annual Fee (2026)",
   description:
     "Citi Double Cash earns 2% cash back (1% when you buy, 1% when you pay) with no annual fee and ThankYou Points conversion. Full 2026 review: rewards, fees, and verdict.",
+  alternates: { canonical: "/reviews/citi-double-cash" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Do I earn cash back if I only pay the minimum?",
+    answer:
+      "Yes, but only partially. You earn 1% when you make purchases and a second 1% as you pay off the balance. If you revolve a balance and only pay the minimum, you will eventually earn the second 1% but interest charges will far outweigh the rewards. Pay in full each month to capture the full 2% effectively.",
+  },
+  {
+    question: "How do I convert cash back to ThankYou points?",
+    answer:
+      "Your Double Cash rewards accumulate as ThankYou points in your account (2 points per $1 in purchases). Redemption as cash back converts at 1 cent per point. To use them for airline transfers, you need to link the Double Cash to a premium Citi ThankYou card like the Strata Premier and then transfer through the ThankYou portal.",
+  },
+  {
+    question: "Is the Double Cash the same as the Active Cash?",
+    answer:
+      "Both earn 2% with no annual fee, but the structure differs. The Active Cash earns a flat 2% on every purchase. The Double Cash earns 1% on purchase and 1% on payment. The Active Cash also has a $200 sign-up bonus and cell phone protection. The Double Cash has ThankYou points flexibility and an 18-month 0% BT offer.",
+  },
+  {
+    question: "Does the Double Cash have a minimum redemption?",
+    answer:
+      "Yes. Cash back can be redeemed as a statement credit or check starting at $25. ThankYou points have a 500-point minimum for most redemptions.",
+  },
+  {
+    question: "Can I use the Double Cash abroad?",
+    answer:
+      "Technically yes, but the 3% foreign transaction fee makes it expensive. Plan to use a no-foreign-fee card like the Chase Sapphire Preferred for international travel.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Citi Double Cash Review (2026)"
+        description="Citi Double Cash earns 2% cash back (1% when you buy, 1% when you pay) with no annual fee and ThankYou Points conversion. Full 2026 review: rewards, fees, and verdict."
+        slug="/reviews/citi-double-cash"
+        brandName="Citi Double Cash"
+        category="Credit Card"
+        ratingValue={8.5}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Citi Double Cash", href: "/reviews/citi-double-cash" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

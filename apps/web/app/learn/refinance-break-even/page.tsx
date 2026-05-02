@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "When Does Refinancing Actually Pay Off? | Fintiex Guides",
   description:
     "Refinancing lowers your rate but costs money upfront. The break-even calculation tells you exactly how long until the savings outweigh the closing costs.",
+  alternates: { canonical: "/learn/refinance-break-even" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="When does refinancing actually pay off?"
+        description="Refinancing lowers your rate but costs money upfront. The break-even calculation tells you exactly how long until the savings outweigh the closing costs."
+        slug="/learn/refinance-break-even"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "Refinance Break-Even", href: "/learn/refinance-break-even" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-lime mb-4">Mortgages</span>

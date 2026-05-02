@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("wells-reflect")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Wells Fargo Reflect Review: 21-Month 0% APR, No Annual Fee (2026)",
   description:
     "Wells Fargo Reflect offers 21 months of 0% intro APR on purchases and balance transfers with no annual fee. Full 2026 review: APR terms, fees, and who it's for.",
+  alternates: { canonical: "/reviews/wells-reflect" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Does the Reflect have a sign-up bonus?",
+    answer:
+      "No. The Wells Fargo Reflect does not offer a traditional cash bonus or points bonus. The value proposition is entirely in the interest savings from the 21-month 0% APR.",
+  },
+  {
+    question: "What happens to my balance after 21 months?",
+    answer:
+      "Any remaining balance converts to the ongoing variable APR of 17.49% to 29.24%. Plan to pay the balance in full before the intro period ends to avoid interest charges. Set a calendar reminder at month 18 to assess your payoff position.",
+  },
+  {
+    question: "Can I earn rewards on purchases while paying off a balance transfer?",
+    answer:
+      "The Reflect has no rewards program. Any purchase earns nothing. If rewards matter, use a separate rewards card for new purchases and use the Reflect solely for the balance transfer.",
+  },
+  {
+    question: "How quickly must I initiate a balance transfer?",
+    answer:
+      "Balance transfers must be requested within 120 days of account opening to qualify for the 0% intro rate. Transfers initiated after that window are subject to the ongoing purchase APR plus the balance transfer fee.",
+  },
+  {
+    question: "Is the Reflect better than the Citi Diamond Preferred?",
+    answer:
+      "For the purchase APR window, yes: Reflect gives 21 months on purchases versus 12 months for the Diamond Preferred. For pure balance transfers, they are equivalent at 21 months. If your goal is financing a new purchase, the Reflect wins. If your goal is exclusively balance transfers, either card works and you should compare current offers at the time of application.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Wells Fargo Reflect Review (2026)"
+        description="Wells Fargo Reflect offers 21 months of 0% intro APR on purchases and balance transfers with no annual fee. Full 2026 review: APR terms, fees, and who it's for."
+        slug="/reviews/wells-reflect"
+        brandName="Wells Fargo Reflect"
+        category="Credit Card"
+        ratingValue={8.2}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Wells Fargo Reflect", href: "/reviews/wells-reflect" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

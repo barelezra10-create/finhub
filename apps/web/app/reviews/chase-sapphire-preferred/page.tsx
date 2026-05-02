@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("chase-sapphire-preferred")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Chase Sapphire Preferred Review: 60K Bonus, 5x Travel Points (2026)",
   description:
     "Chase Sapphire Preferred earns 5x on travel via Chase and 3x on dining for $95/year. Full 2026 review: rewards, transfer partners, sign-up bonus, and verdict.",
+  alternates: { canonical: "/reviews/chase-sapphire-preferred" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "What is the Chase 5/24 rule and does it affect this card?",
+    answer:
+      "Chase generally declines applications from people who have opened 5 or more credit cards (from any issuer) in the past 24 months. The Sapphire Preferred is subject to this rule. Check your application timing carefully before applying.",
+  },
+  {
+    question: "Are Ultimate Rewards points worth more than 1 cent each?",
+    answer:
+      "Yes. Through Chase Travel, they are worth 1.25 cents each. When transferred to Hyatt for premium redemptions, experienced travelers report values of 1.5 to 2.5 cents per point or higher. Cash back redemption gives only 1 cent per point.",
+  },
+  {
+    question: "Can I product-change from Sapphire Preferred to Sapphire Reserve?",
+    answer:
+      "Yes. Chase allows product changes between Sapphire cards. You can call the number on the back of your card to request the upgrade. You may receive a new bonus offer but cannot receive a Sapphire sign-up bonus if you have already received one in the past 48 months.",
+  },
+  {
+    question: "Does the Sapphire Preferred charge foreign transaction fees?",
+    answer:
+      "No. There are no foreign transaction fees, making it a solid card for international travel. The lack of lounge access is the main gap at this price point for frequent international travelers.",
+  },
+  {
+    question: "How long does it take for the sign-up bonus to post?",
+    answer:
+      "The 60,000-point bonus typically posts within 6 to 8 weeks of meeting the spending requirement. Once posted, points can be immediately transferred to airline and hotel partners or redeemed through Chase Travel.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Chase Sapphire Preferred Review (2026)"
+        description="Chase Sapphire Preferred earns 5x on travel via Chase and 3x on dining for $95/year. Full 2026 review: rewards, transfer partners, sign-up bonus, and verdict."
+        slug="/reviews/chase-sapphire-preferred"
+        brandName="Chase Sapphire Preferred"
+        category="Credit Card"
+        ratingValue={9.1}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Chase Sapphire Preferred", href: "/reviews/chase-sapphire-preferred" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

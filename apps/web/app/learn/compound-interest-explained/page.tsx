@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Compound Interest Explained: The Only Math That Actually Matters | Fintiex",
   description:
     "Compound interest grows wealth exponentially over time. Here is exactly how the formula works, why time beats contribution size, and how compounding works against you with debt.",
+  alternates: { canonical: "/learn/compound-interest-explained" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="Compound interest, the only math that actually matters"
+        description="Compound interest grows wealth exponentially over time. Here is exactly how the formula works, why time beats contribution size, and how compounding works against you with debt."
+        slug="/learn/compound-interest-explained"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "Compound Interest Explained", href: "/learn/compound-interest-explained" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-ink mb-4">Strategy</span>

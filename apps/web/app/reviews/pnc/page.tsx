@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "PNC Bank Mortgage Review (2026)",
   description:
     "PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, eligibility, and who it suits best.",
+  alternates: { canonical: "/reviews/pnc" },
 };
 
 const brand = getBrand("pnc")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "What is the PNC Home Insight program?",
+    answer:
+      "Home Insight is PNC's 3% down conventional mortgage program that waives private mortgage insurance for eligible buyers. This is significant because standard PMI on a 3% down purchase typically adds $100 to $250 per month to your payment. Eligibility is based on income, property location, and loan amount.",
+  },
+  {
+    question: "How large is the PNC LMI grant?",
+    answer:
+      "PNC offers grants of up to $5,000 for qualified low-to-moderate income borrowers purchasing in eligible census tracts. The exact amount depends on the program tier and property location. Grants do not need to be repaid unless the property is sold within a certain timeframe.",
+  },
+  {
+    question: "Is PNC available in my state?",
+    answer:
+      "PNC has physical branches in the Mid-Atlantic, Southeast, Midwest, and parts of the South and West. Mortgage lending is available in all 50 states through digital channels, but in-person branch service is concentrated in PNC's footprint states: Pennsylvania, Ohio, North Carolina, Maryland, Virginia, and others.",
+  },
+  {
+    question: "What is the Home Insight Tracker?",
+    answer:
+      "The Home Insight Tracker is PNC's online pre-application tool that shows real personalized rate estimates based on your credit profile, income, and purchase parameters. It is more accurate than generic rate tables because it uses your actual data, not just advertised starting rates.",
+  },
+  {
+    question: "Can PNC compete with digital lenders on rate?",
+    answer:
+      "On the headline 30Y APR alone, PNC's 6.99% is above Marcus (6.79%) and Better (6.85%). However, for qualifying borrowers, the PMI waiver and LMI grant reduce the effective monthly cost significantly. Always compare total monthly payment including PMI, not just the interest rate.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="PNC Bank Mortgage Review"
+        description="PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, eligibility, and who it suits best."
+        slug="/reviews/pnc"
+        brandName="PNC Bank"
+        category="Mortgage"
+        apr="6.99"
+        ratingValue={7.6}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "PNC Bank", href: "/reviews/pnc" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

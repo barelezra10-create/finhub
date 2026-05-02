@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArticleSchema,
+  BreadcrumbListSchema,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "The Emergency Fund Playbook | Fintiex Guides",
   description:
     "Three to six months of expenses in cash, earning interest. Here is exactly how to build an emergency fund from zero, where to keep it, and when to use it.",
+  alternates: { canonical: "/learn/emergency-fund-playbook" },
 };
 
 export default function Page() {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
+      <ArticleSchema
+        headline="The emergency fund playbook"
+        description="Three to six months of expenses in cash, earning interest. Here is exactly how to build an emergency fund from zero, where to keep it, and when to use it."
+        slug="/learn/emergency-fund-playbook"
+      />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Guides", href: "/learn" },
+          { name: "Emergency Fund Playbook", href: "/learn/emergency-fund-playbook" },
+        ]}
+      />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-ink mb-4">Strategy</span>

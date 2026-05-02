@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("discover-savings")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "Discover Online Savings Review: 4.30% APY, No Fees (2026)",
   description:
     "Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and who it is best for.",
+  alternates: { canonical: "/reviews/discover-savings" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is Discover Online Savings FDIC insured?",
+    answer:
+      "Yes. Discover Bank is a federally chartered bank, Member FDIC, with deposit coverage up to $250,000 per depositor per ownership category.",
+  },
+  {
+    question: "Do I need a Discover credit card to open a Discover savings account?",
+    answer:
+      "No. The savings account is a standalone product open to any eligible U.S. resident. However, existing Discover cardholders can add the savings account within their existing login, which is significantly faster.",
+  },
+  {
+    question: "How does Discover's customer service compare to other HYSAs?",
+    answer:
+      "Discover consistently earns J.D. Power top scores in direct banking customer satisfaction. The company has a published policy of no automated phone trees for customer service calls, meaning you reach a human faster than at most competing institutions.",
+  },
+  {
+    question: "Does Discover offer a checking account?",
+    answer:
+      "Yes. Discover offers a Cashback Debit checking account with 1% cash back on up to $3,000 in monthly debit card purchases and no fees, which pairs well with the savings account.",
+  },
+  {
+    question: "Why is Discover's rate lower than Bask or Bread?",
+    answer:
+      "Discover invests heavily in customer service infrastructure, brand recognition, and a broader product suite. The 55 basis point gap between Discover and Bask costs about $55 per year on a $10,000 balance. For customers already in the Discover ecosystem, the convenience and service quality may outweigh that difference.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Discover Online Savings Review (2026)"
+        description="Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and who it is best for."
+        slug="/reviews/discover-savings"
+        brandName="Discover"
+        category="Savings Account"
+        apr="4.30"
+        ratingValue={8.0}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Discover", href: "/reviews/discover-savings" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

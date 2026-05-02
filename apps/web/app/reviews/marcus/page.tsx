@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("marcus")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "Marcus by Goldman Sachs Review: 4.50% APY HYSA (2026)",
   description:
     "Marcus by Goldman Sachs pays 4.50% APY with no minimum and no fees. Best HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ.",
+  alternates: { canonical: "/reviews/marcus" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is Marcus by Goldman Sachs FDIC insured?",
+    answer:
+      "Yes. Marcus deposits are held by Goldman Sachs Bank USA, Member FDIC, with coverage up to $250,000 per depositor per ownership category.",
+  },
+  {
+    question: "Does Marcus require a minimum deposit?",
+    answer:
+      "No. You can open a Marcus savings account with any amount, including $0. Interest starts accruing the moment you fund your account.",
+  },
+  {
+    question: "Can I get a personal loan from Marcus?",
+    answer:
+      "Yes. Goldman Sachs Bank USA offers personal loans through the same Marcus.com platform, allowing you to manage savings and a loan from one login.",
+  },
+  {
+    question: "How long do ACH transfers take?",
+    answer:
+      "Incoming ACH transfers from a linked external account typically take 1 to 3 business days. Marcus also supports wire transfers for faster movement of large balances.",
+  },
+  {
+    question: "Why is Marcus's rate lower than Bask or Bread?",
+    answer:
+      "Marcus commands a slight brand premium and invests more in customer service and product polish. The 35 to 75 basis point gap versus top-rate accounts is the implicit cost of that experience. On a $10,000 balance the annual difference versus Bask is about $35.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Marcus by Goldman Sachs Review (2026)"
+        description="Marcus by Goldman Sachs pays 4.50% APY with no minimum and no fees. Best HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ."
+        slug="/reviews/marcus"
+        brandName="Marcus"
+        category="Savings Account"
+        apr="4.50"
+        ratingValue={8.4}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Marcus", href: "/reviews/marcus" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Mortgage Rates Today — Compare 30Y Fixed, 15Y Fixed, Refi, HELOC | Fintiex",
   description:
     "Compare live mortgage rates from 8+ lenders. 30Y fixed, 15Y fixed, refinance, HELOC, and jumbo. No paid placements, updated daily. Find the lowest APR for your situation.",
+  alternates: { canonical: "/mortgages" },
 };
 
 interface RateRow {
@@ -36,6 +38,33 @@ const subPages = [
   { label: "Rates by State", href: "/mortgages/by-state", detail: "State-level averages and lender availability." },
   { label: "First-Time Buyer", href: "/mortgages/first-time-buyer", detail: "FHA, DreaMaker, down payment assistance, and more." },
   { label: "Cash-Out Refi", href: "/mortgages/cash-out", detail: "Access your equity without a HELOC." },
+];
+
+const faqItems: FAQItem[] = [
+  {
+    question: "What is the difference between APR and interest rate?",
+    answer: "The interest rate is the cost to borrow the principal. APR (Annual Percentage Rate) includes the interest rate plus lender fees, points, and mortgage insurance spread over the loan term. APR is the better apples-to-apples comparison when shopping lenders.",
+  },
+  {
+    question: "How much down payment do I need?",
+    answer: "Conventional loans accept as little as 3% down, though you will pay PMI until you reach 20% equity. FHA loans require 3.5% with a 580+ FICO. VA and USDA loans offer 0% down for qualified borrowers. A larger down payment usually earns a lower rate.",
+  },
+  {
+    question: "Should I lock my rate?",
+    answer: "If you are within 30-60 days of closing and the rate meets your budget, locking is usually the right call. Floating makes sense only if you expect rates to drop meaningfully and you can absorb a potential rise. Most lenders offer 30- to 90-day locks.",
+  },
+  {
+    question: "What credit score do I need?",
+    answer: "Conventional loans typically require a 620 minimum. For the best rates, 740 or above is the target. FHA loans accept 580 with 3.5% down or even 500 with 10% down. VA loans have no published minimum but lenders usually want 620.",
+  },
+  {
+    question: "What is a points buydown?",
+    answer: "Paying points (each point equals 1% of the loan amount) up front permanently lowers your rate. One point typically drops the rate by 0.25%. Use our Refi Break-Even calculator to see how long it takes for the savings to cover the upfront cost.",
+  },
+  {
+    question: "Conventional vs FHA: which is better?",
+    answer: "Conventional is usually better if your credit is 740+ and you can put 10% or more down. FHA is more accessible at lower credit scores and smaller down payments, but you pay a mortgage insurance premium for the life of the loan unless you refinance. Run the numbers for your situation.",
+  },
 ];
 
 const faqs = [
@@ -78,6 +107,8 @@ function trendArrow(t?: "up" | "down" | "flat") {
 export default function Page() {
   return (
     <>
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Mortgages", href: "/mortgages" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

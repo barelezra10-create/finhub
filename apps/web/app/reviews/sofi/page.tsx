@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("sofi")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "SoFi HYSA Review: 4.40% APY With Direct Deposit (2026)",
   description:
     "SoFi pays 4.40% APY on savings with direct deposit, or 1.20% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and who should open one.",
+  alternates: { canonical: "/reviews/sofi" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "What counts as a qualifying direct deposit for the 4.40% APY?",
+    answer:
+      "SoFi accepts employer payroll, government benefit payments (Social Security, disability), freelance income via ACH, and select gig platform payouts. A personal transfer from another bank account does not qualify. Check SoFi's current terms for the full list.",
+  },
+  {
+    question: "What are SoFi Vaults?",
+    answer:
+      "Vaults are goal-based savings buckets within your SoFi savings account, similar to Ally's Buckets feature. You can create multiple Vaults with names and targets (such as Emergency Fund at $10,000) and track progress without opening separate accounts.",
+  },
+  {
+    question: "Can I use ATMs with SoFi?",
+    answer:
+      "Yes. SoFi provides access to 55,000 fee-free Allpoint ATMs nationwide when you have a SoFi debit card. Out-of-network ATM fees may apply, but SoFi offers limited rebates for members with qualifying direct deposits.",
+  },
+  {
+    question: "Is SoFi Bank FDIC insured?",
+    answer:
+      "Yes. SoFi Bank, N.A. is a nationally chartered bank, Member FDIC, insuring deposits up to $250,000 per depositor per ownership category.",
+  },
+  {
+    question: "What happens to my APY if I stop my direct deposit?",
+    answer:
+      "If your direct deposit stops (for example, you change jobs and do not redirect payroll), SoFi will move your savings rate from 4.40% to 1.20%. The drop takes effect in the next monthly statement cycle after SoFi detects the absence of a qualifying deposit.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="SoFi Bank Review (2026)"
+        description="SoFi pays 4.40% APY on savings with direct deposit, or 1.20% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and who should open one."
+        slug="/reviews/sofi"
+        brandName="SoFi"
+        category="Savings Account"
+        apr="4.40"
+        ratingValue={7.9}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "SoFi", href: "/reviews/sofi" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Best Personal & Auto Loan Rates Today — Compare by Credit Tier | Fintiex",
   description:
     "Compare personal and auto loan rates from 8+ lenders by credit score and purpose. Prequalify without a hard pull. Honest APRs, no affiliate ranking. Updated daily.",
+  alternates: { canonical: "/loans" },
 };
 
 interface RateRow {
@@ -36,6 +38,33 @@ const subPages = [
   { label: "Wedding Loans", href: "/loans/wedding", detail: "Cover wedding costs with a fixed monthly payment." },
   { label: "By Credit Tier", href: "/loans/by-credit-tier", detail: "Excellent, good, fair, poor. Realistic rates for each." },
   { label: "Auto Refinance", href: "/loans/auto/refinance", detail: "Lower your existing auto rate without changing the car." },
+];
+
+const faqItems: FAQItem[] = [
+  {
+    question: "Personal loan vs credit card: which is better for large expenses?",
+    answer: "A personal loan is usually better for expenses over $5,000 that you need more than 12 months to repay. You get a fixed rate, a fixed term, and a single monthly payment. A 0% APR credit card wins for expenses you can pay off within the promotional window, which is typically 12 to 21 months.",
+  },
+  {
+    question: "Will applying for a personal loan hurt my credit score?",
+    answer: "Prequalification uses a soft pull, which has no effect on your score. A formal application triggers a hard inquiry, which typically drops your score 2 to 5 points temporarily. Multiple hard pulls within a 14- to 45-day window are usually counted as a single inquiry by scoring models.",
+  },
+  {
+    question: "What APR can I realistically qualify for?",
+    answer: "Excellent credit (720+) typically qualifies for rates in the 8 to 12% range from prime lenders. Good credit (680 to 719) usually lands 12 to 18%. Fair credit (620 to 679) often sees 18 to 28%. Anything below 620 may require a secured loan or a cosigner to access reasonable rates.",
+  },
+  {
+    question: "Hard pull vs soft pull: what is the difference?",
+    answer: "A soft pull is a background credit check that does not affect your score. Lenders use it for prequalification and rate estimates. A hard pull is a formal credit inquiry that goes on your credit report and lowers your score slightly. Always use soft-pull prequalification first to shop rates without risk.",
+  },
+  {
+    question: "Can I prepay a personal loan without a penalty?",
+    answer: "Most of the lenders in our table (LightStream, SoFi, Marcus, Discover) have no prepayment penalties. Always confirm before signing. Lenders that charge a prepayment fee typically structure it as a percentage of the remaining balance or a fixed number of months of interest.",
+  },
+  {
+    question: "What is an origination fee and how does it affect my rate?",
+    answer: "An origination fee is a one-time charge deducted from your loan proceeds before you receive the money. It typically ranges from 1% to 8% of the loan amount. A loan with a 9% rate and a 5% origination fee can cost more than one with an 11% rate and no fee. Always compare APR, which factors in origination fees.",
+  },
 ];
 
 const faqs = [
@@ -78,6 +107,8 @@ function trendArrow(t?: "up" | "down" | "flat") {
 export default function Page() {
   return (
     <>
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Loans", href: "/loans" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

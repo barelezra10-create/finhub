@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    PERSONAL LOAN REVIEW PAGES
@@ -939,7 +945,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const r = reviews[slug];
   if (!r) return { title: "Review not found" };
-  return { title: r.metaTitle, description: r.metaDesc };
+  return {
+    title: r.metaTitle,
+    description: r.metaDesc,
+    alternates: { canonical: `/reviews/${slug}` },
+  };
 }
 
 // ─── Page component ───────────────────────────────────────────────────────────
@@ -955,8 +965,37 @@ export default async function Page({
 
   const brand = getBrand(slug);
 
+  const faqItems: FAQItem[] = r.faq.map((item) => ({
+    question: item.q,
+    answer: item.a,
+  }));
+
+  const brandName = getBrand(slug)?.name ?? r.h1;
+
+  // Extract starting APR string from the first credit tier
+  const aprStr = r.creditTiers[0]?.aprRange.split("-")[0] ?? undefined;
+
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name={r.h1}
+        description={r.metaDesc}
+        slug={`/reviews/${slug}`}
+        brandName={brandName}
+        category="Personal Loan"
+        apr={aprStr}
+        ratingValue={parseFloat((r.stats.find((s) => s.label === "Fintiex Score")?.value ?? "8.4").replace("/10", ""))}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Loans", href: "/loans" },
+          { name: "Reviews", href: "/reviews" },
+          { name: brandName, href: `/reviews/${slug}` },
+        ]}
+      />
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

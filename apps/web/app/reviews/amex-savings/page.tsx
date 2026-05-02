@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("amex-savings")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "American Express High Yield Savings Review: 4.15% APY (2026)",
   description:
     "American Express HYSA pays 4.15% APY with no minimum and no fees. Ideal for existing Amex cardholders. Full 2026 review: pros, cons, slow ACH, app limitations, and verdict.",
+  alternates: { canonical: "/reviews/amex-savings" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is the American Express HYSA managed in the same app as my Amex credit card?",
+    answer:
+      "No. The savings account uses a separate application and login from the main American Express credit card app. You will need to download the Amex Savings app or use americanexpress.com/savings to manage your deposit account.",
+  },
+  {
+    question: "Why are ACH transfers so slow at American Express?",
+    answer:
+      "American Express National Bank uses standard ACH rails without same-day or expedited transfer options. Most transfers take 3 to 5 business days. This is a known limitation and has been reported consistently by users since the savings account launched. If fast access to funds is important, Ally or Marcus are better choices.",
+  },
+  {
+    question: "Is the American Express HYSA FDIC insured?",
+    answer:
+      "Yes. American Express National Bank is a federally chartered bank, Member FDIC, with standard deposit insurance up to $250,000 per depositor per ownership category.",
+  },
+  {
+    question: "Does American Express offer checking accounts?",
+    answer:
+      "American Express offers a Rewards Checking account with 1.00% APY and debit card access, which can be paired with the savings account. The combined product still lacks the breadth of Ally's full-service banking platform but provides more daily usability than the savings account alone.",
+  },
+  {
+    question: "Is the APY rate guaranteed?",
+    answer:
+      "No HYSA rate is permanently guaranteed. The 4.15% APY is the current variable rate and will adjust as the Federal Reserve changes the federal funds rate and as competitive dynamics shift. American Express typically provides advance notice of rate changes through account communication.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="American Express High Yield Savings Review (2026)"
+        description="American Express HYSA pays 4.15% APY with no minimum and no fees. Ideal for existing Amex cardholders. Full 2026 review: pros, cons, slow ACH, app limitations, and verdict."
+        slug="/reviews/amex-savings"
+        brandName="American Express"
+        category="Savings Account"
+        apr="4.15"
+        ratingValue={7.2}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "American Express", href: "/reviews/amex-savings" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

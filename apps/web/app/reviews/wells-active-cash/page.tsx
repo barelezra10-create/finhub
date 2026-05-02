@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("wells-active-cash")!;
 
@@ -9,11 +15,58 @@ export const metadata: Metadata = {
   title: "Wells Fargo Active Cash Review: 2% Cash Back, No Annual Fee (2026)",
   description:
     "The Wells Fargo Active Cash earns unlimited 2% cash back on every purchase with no annual fee. Full 2026 review: rewards, fees, APR, sign-up bonus, and verdict.",
+  alternates: { canonical: "/reviews/wells-active-cash" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is the 2% cash back on the Active Cash truly unlimited?",
+    answer:
+      "Yes. There is no quarterly cap, no annual spending limit, and no category restriction. Every net purchase earns 2% cash rewards regardless of merchant type or purchase size.",
+  },
+  {
+    question: "What counts toward the $500 sign-up bonus spend requirement?",
+    answer:
+      "Net purchases including everyday spending count. Balance transfers, cash advances, and Wells Fargo-specific fees do not count toward the $500 threshold.",
+  },
+  {
+    question: "How does the cell phone protection work?",
+    answer:
+      "Pay your monthly phone bill with the Active Cash. If your phone is damaged or stolen, file a claim for reimbursement up to $600 per occurrence with a $25 deductible. Coverage applies to phones on your plan. Up to 2 claims allowed per 12 months.",
+  },
+  {
+    question: "Can I redeem cash rewards to a non-Wells Fargo account?",
+    answer:
+      "Standard redemptions go to Wells Fargo accounts or as a statement credit. You can also redeem at a Wells Fargo ATM in $20 increments using the card and your PIN.",
+  },
+  {
+    question: "How does the Active Cash compare to the Citi Double Cash?",
+    answer:
+      "Both earn 2% with no annual fee. The Active Cash wins on the upfront bonus ($200 after $500 spend) and the cell phone protection. The Double Cash allows ThankYou Points conversion and has a slightly longer balance transfer 0% period of 18 months versus 12. For pure cash back with a bonus, Active Cash wins. For balance transfers, Double Cash is marginally better.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Wells Fargo Active Cash Review (2026)"
+        description="The Wells Fargo Active Cash earns unlimited 2% cash back on every purchase with no annual fee. Full 2026 review: rewards, fees, APR, sign-up bonus, and verdict."
+        slug="/reviews/wells-active-cash"
+        brandName="Wells Fargo Active Cash"
+        category="Credit Card"
+        ratingValue={8.6}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Credit Cards", href: "/credit-cards" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Wells Fargo Active Cash", href: "/reviews/wells-active-cash" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "loanDepot Mortgage Review (2026)",
   description:
     "loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, eligibility, and who should apply.",
+  alternates: { canonical: "/reviews/loandepot" },
 };
 
 const brand = getBrand("loandepot")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "What is the loanDepot Lifetime Guarantee?",
+    answer:
+      "The Lifetime Guarantee is loanDepot's commitment to waive lender origination fees and lender fees on future refinances through loanDepot. It applies once you close your first loanDepot mortgage. The waiver covers lender fees, not third-party costs like appraisals or title insurance.",
+  },
+  {
+    question: "How good is loanDepot for cash-out refinancing?",
+    answer:
+      "loanDepot is one of the stronger non-bank lenders for cash-out refis. They allow cash-out up to 80% LTV on primary residences, offer competitive rates for that product, and have underwriting experience with the more complex equity calculations that cash-out refis require.",
+  },
+  {
+    question: "Does loanDepot have physical branches?",
+    answer:
+      "Yes. loanDepot operates more than 200 retail branches across the US, primarily in high-population states. This is a meaningful differentiator vs. digital-only lenders if you prefer working with a loan officer in person.",
+  },
+  {
+    question: "What happened with loanDepot's data breach in 2024?",
+    answer:
+      "In January 2024, loanDepot disclosed a cyberattack that affected its IT systems and resulted in some customer data being accessed. The company notified affected customers and restored operations. If data security is a primary concern, it is worth reviewing loanDepot's published response and remediation steps before applying.",
+  },
+  {
+    question: "Can self-employed borrowers get a loanDepot mortgage?",
+    answer:
+      "Yes. loanDepot accepts self-employed borrowers who can document two years of business income via tax returns. Some bank statement loan programs are also available for borrowers who prefer not to use tax returns as the primary income documentation.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="loanDepot Mortgage Review"
+        description="loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, eligibility, and who should apply."
+        slug="/reviews/loandepot"
+        brandName="loanDepot"
+        category="Mortgage"
+        apr="6.92"
+        ratingValue={7.7}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "loanDepot", href: "/reviews/loandepot" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

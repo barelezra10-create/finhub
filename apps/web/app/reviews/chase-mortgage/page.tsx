@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Chase Home Lending Mortgage Review (2026)",
   description:
     "Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates, fees, and eligibility.",
+  alternates: { canonical: "/reviews/chase-mortgage" },
 };
 
 const brand = getBrand("chase-mortgage")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "What is the Chase DreaMaker program?",
+    answer:
+      "DreaMaker is Chase's affordable homeownership program for buyers with income at or below 80% of the area median income. It requires just 3% down, offers reduced mortgage insurance premiums, and includes a $2,500 homebuyer grant for eligible properties in qualifying census tracts.",
+  },
+  {
+    question: "How do Chase Private Client rate discounts work?",
+    answer:
+      "Chase Private Client customers with $150,000 or more in qualifying Chase deposit and investment accounts receive a mortgage rate discount of 0.125 percentage points. Customers with $500,000 or more receive a 0.25 percentage point discount. These are applied at the time of rate lock.",
+  },
+  {
+    question: "How long does it take to close a mortgage at Chase?",
+    answer:
+      "Average closing time is 35 to 50 days from full application to close. This is longer than most digital lenders, which typically target 28 to 40 days. Chase's branch-based process adds scheduling steps that extend the timeline.",
+  },
+  {
+    question: "Does Chase service its own mortgages after closing?",
+    answer:
+      "Chase is one of the largest mortgage servicers in the US and retains servicing on a significant share of the loans it originates. This means your payment, escrow, and customer service experience post-close is handled in-house rather than transferred to a third-party servicer.",
+  },
+  {
+    question: "Can I apply for a Chase mortgage if I do not bank at Chase?",
+    answer:
+      "Yes. Chase accepts mortgage applications from non-customers. You will not receive the Private Client rate discount, but all standard products including DreaMaker, FHA, VA, and conventional loans are available without a prior banking relationship.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Chase Home Lending Review"
+        description="Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates, fees, and eligibility."
+        slug="/reviews/chase-mortgage"
+        brandName="Chase Home Lending"
+        category="Mortgage"
+        apr="6.95"
+        ratingValue={7.9}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Chase Home Lending", href: "/reviews/chase-mortgage" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

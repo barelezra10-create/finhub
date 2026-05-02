@@ -2,18 +2,72 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "U.S. Bank Mortgage Review (2026)",
   description:
     "U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast presence. Full 2026 mortgage review.",
+  alternates: { canonical: "/reviews/usbank" },
 };
 
 const brand = getBrand("usbank")!;
 
+const faqs: FAQItem[] = [
+  {
+    question: "Is U.S. Bank good for VA loans?",
+    answer:
+      "Yes. U.S. Bank is one of the largest VA loan originators in the country and has dedicated VA lending specialists. This expertise matters: VA loans have unique appraisal requirements, funding fee rules, and eligibility verification steps that general-purpose lenders sometimes handle poorly. The VA APR at U.S. Bank is competitive at 6.55%.",
+  },
+  {
+    question: "What is the U.S. Bank American Dream program?",
+    answer:
+      "American Dream is U.S. Bank's affordable homeownership program that offers 3% down with down payment assistance of up to $15,000 in eligible markets. Income limits apply (typically 80% of area median income), and first-time buyer requirements vary by state. Completion of a homebuyer education course is required.",
+  },
+  {
+    question: "Does U.S. Bank offer USDA loans?",
+    answer:
+      "Yes. U.S. Bank offers USDA guaranteed loans for eligible rural and suburban properties. USDA loans require 0% down and have below-market rates for qualifying borrowers in eligible census areas. Income limits and property location requirements apply; the USDA eligibility map at usda.gov is the starting point.",
+  },
+  {
+    question: "How does U.S. Bank rate vs. other large banks for conventional loans?",
+    answer:
+      "For conventional loans without VA or DPA eligibility, U.S. Bank's 7.05% APR is the highest on our table. Digital lenders like Marcus (6.79%) and Better (6.85%) are significantly lower. U.S. Bank is not the right choice for a standard conventional purchase if you are purely optimizing for rate.",
+  },
+  {
+    question: "What states does U.S. Bank serve for mortgages?",
+    answer:
+      "U.S. Bank offers mortgage lending in all 50 states and Washington DC, but its physical branch presence is concentrated in Minnesota, Wisconsin, Illinois, Colorado, Oregon, California, and other Midwest and West Coast states. Digital applications are available nationwide regardless of branch availability.",
+  },
+];
+
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="U.S. Bank Mortgage Review"
+        description="U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast presence. Full 2026 mortgage review."
+        slug="/reviews/usbank"
+        brandName="U.S. Bank"
+        category="Mortgage"
+        apr="7.05"
+        ratingValue={7.5}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Mortgages", href: "/mortgages" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "U.S. Bank", href: "/reviews/usbank" },
+        ]}
+      />
       {/* HERO */}
       <section className="border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-16">

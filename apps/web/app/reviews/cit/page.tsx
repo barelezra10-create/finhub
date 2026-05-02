@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("cit")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "CIT Bank Platinum Savings Review: 4.25% APY ($5K Min) (2026)",
   description:
     "CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for and who should look elsewhere.",
+  alternates: { canonical: "/reviews/cit" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "What APY do I earn if my CIT Platinum Savings balance drops below $5,000?",
+    answer:
+      "If your balance falls below $5,000 for any reason, the rate on your entire balance drops to 0.25% APY for the time it is below the threshold. This is a significant difference from accounts like Bask or Marcus, which pay their full rate on any balance.",
+  },
+  {
+    question: "Is CIT Bank the same as Citibank?",
+    answer:
+      "No. CIT Bank is a division of First Citizens BancShares, which acquired CIT Group in 2022. Citibank is a wholly separate institution and a subsidiary of Citigroup, Inc. The similar names have caused confusion for years, but they share no corporate relationship.",
+  },
+  {
+    question: "Does CIT offer CDs?",
+    answer:
+      "Yes. CIT Bank offers a range of CD products with competitive rates and terms from 6 months to 5 years. Term CDs and No-Penalty CDs are available, and they can be managed from the same account login as the Platinum Savings account.",
+  },
+  {
+    question: "Is CIT Bank FDIC insured?",
+    answer:
+      "Yes. CIT Bank is a division of First Citizens BancShares, Member FDIC. Standard deposit insurance coverage of up to $250,000 per depositor per ownership category applies.",
+  },
+  {
+    question: "Who acquired CIT Bank?",
+    answer:
+      "First Citizens BancShares completed its acquisition of CIT Group in January 2022. The same institution also acquired much of Silicon Valley Bank's assets in March 2023 in an FDIC-assisted transaction, significantly expanding its balance sheet.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="CIT Bank Platinum Savings Review (2026)"
+        description="CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for and who should look elsewhere."
+        slug="/reviews/cit"
+        brandName="CIT Bank"
+        category="Savings Account"
+        apr="4.25"
+        ratingValue={6.8}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "CIT Bank", href: "/reviews/cit" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">

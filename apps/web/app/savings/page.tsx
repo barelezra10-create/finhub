@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
   title: "Best High-Yield Savings Accounts, CDs & Money Market Rates Today | Fintiex",
   description:
     "Compare the best HYSA, CD, and money market rates from FDIC-insured banks. No fees, no minimums. Updated daily. Find the highest APY for your cash right now.",
+  alternates: { canonical: "/savings" },
 };
 
 interface RateRow {
@@ -35,6 +37,33 @@ const subPages = [
   { label: "Texas HYSA", href: "/savings/hysa/texas", detail: "Best HYSA rates for Texas residents." },
   { label: "Florida HYSA", href: "/savings/hysa/florida", detail: "Best HYSA rates for Florida residents." },
   { label: "New York HYSA", href: "/savings/hysa/new-york", detail: "Best HYSA rates for New York residents." },
+];
+
+const faqItems: FAQItem[] = [
+  {
+    question: "Are HYSA accounts safe?",
+    answer: "Yes. All accounts in our HYSA table are FDIC-insured (or NCUA-insured for credit unions), which means your deposits are protected up to $250,000 per depositor, per institution. The insurance is backed by the US government.",
+  },
+  {
+    question: "How is savings interest taxed?",
+    answer: "Interest earned in a HYSA or CD is treated as ordinary income and reported on a 1099-INT form each year. It is taxed at your marginal income tax rate, not the lower capital gains rate. Interest in a Roth IRA HYSA or CD grows tax-free.",
+  },
+  {
+    question: "Can I lose money in a HYSA?",
+    answer: "No, as long as your balance stays within FDIC limits. Your principal is guaranteed. The rate itself can change at any time since most HYSAs are variable, but you will never lose the dollars you deposited.",
+  },
+  {
+    question: "Why do CDs sometimes pay more than HYSAs?",
+    answer: "CDs require you to commit your money for a fixed term. In exchange, the bank offers a guaranteed rate for that period. HYSAs are flexible and variable, so banks price them lower. When the yield curve is inverted, short-term CDs can temporarily yield more than long-term ones.",
+  },
+  {
+    question: "What is a no-penalty CD?",
+    answer: "A no-penalty CD lets you withdraw your full balance before the term ends without forfeiting earned interest. Rates are usually slightly lower than standard CDs, but they combine the rate certainty of a CD with the flexibility of a HYSA.",
+  },
+  {
+    question: "Is an online bank safer than a brick-and-mortar bank?",
+    answer: "Safety comes from FDIC insurance, not branch locations. Online banks and brick-and-mortar banks carry the same $250,000 guarantee. Online banks often pay higher rates because their overhead is lower. Check that FDIC membership is current at fdic.gov before opening any account.",
+  },
 ];
 
 const faqs = [
@@ -71,6 +100,8 @@ function fmtPct(n: number) {
 export default function Page() {
   return (
     <>
+      <FAQPageSchema items={faqItems} />
+      <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Savings", href: "/savings" }]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

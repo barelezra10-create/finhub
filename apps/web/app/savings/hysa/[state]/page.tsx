@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { states, getStateBySlug } from "@/lib/states";
+import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export function generateStaticParams() {
   return states.map((s) => ({ state: s.slug }));
@@ -16,6 +17,7 @@ export async function generateMetadata(
   return {
     title: `Best High-Yield Savings Accounts in ${state.name} (2026)`,
     description: `Compare the highest-APY HYSA accounts available to ${state.name} residents. ${state.taxNote}.`,
+    alternates: { canonical: `/savings/hysa/${slug}` },
   };
 }
 
@@ -56,8 +58,38 @@ export default async function StateHysaPage(
   const topBank = state.topBanks[0];
   const hasNoStateTax = state.taxNote.toLowerCase().includes("no state income tax") || state.taxNote.toLowerCase().includes("no general income tax");
 
+  const faqs: FAQItem[] = [
+    {
+      question: `Can I open an HYSA from another state if I live in ${state.name}?`,
+      answer: `Yes. Every account on this list is open to ${state.name} residents. Online banks are federally chartered or state-chartered institutions that operate nationwide. There is no requirement to use a bank headquartered in ${state.name}. You just need a U.S. address, a Social Security number, and a linked bank account to fund the deposit. The entire process takes about ten minutes online.`,
+    },
+    {
+      question: `How is HYSA interest taxed in ${state.name}?`,
+      answer: `Interest income from a high-yield savings account is taxable at the federal level as ordinary income, the same as wages. At the state level: ${state.taxNote}. Your bank will send you a 1099-INT form each January covering any interest earned in the prior year. If you earned more than $10 in interest, you are required to report it on your federal return.`,
+    },
+    {
+      question: `Are local ${state.name} banks better than online HYSAs?`,
+      answer: `It depends on what you value. Local ${state.name} banks like ${topBank} offer in-person service, local lending relationships, and community ties that online banks cannot replicate. For everyday savings, however, national online HYSAs almost always offer significantly higher APYs. Many ${state.name} residents keep their primary checking at a local bank and move excess savings to an online HYSA to earn more without giving up their local banking relationship.`,
+    },
+    {
+      question: "Are online HYSAs FDIC-insured the same way as local banks?",
+      answer: `Yes. Every account listed on this page is insured by the Federal Deposit Insurance Corporation (FDIC) up to $250,000 per depositor, per institution, per ownership category. This is exactly the same coverage you get at any brick-and-mortar bank in ${state.name}. FDIC insurance has covered depositors in every bank failure since 1933. The physical location of the bank does not affect your coverage.`,
+    },
+    {
+      question: `Is ${topBank} competitive with online HYSA rates?`,
+      answer: `${topBank} is one of the more established financial institutions serving ${state.name}, but like most traditional banks, its savings rates typically lag behind online-only competitors by two to four percentage points. The overhead of maintaining physical branches, staff, and ATM networks limits how much traditional banks can pay on deposits. Online banks pass those savings directly to depositors in the form of higher APYs. If you already bank with ${topBank}, you can still open an online HYSA as a secondary account and transfer savings there to earn more.`,
+    },
+  ];
+
   return (
     <>
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Savings", href: "/savings" },
+        { name: "High-Yield Savings", href: "/savings/hysa" },
+        { name: state.name, href: `/savings/hysa/${slug}` },
+      ]} />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />

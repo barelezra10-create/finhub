@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { getBrand } from "@/lib/brands";
+import {
+  FinancialProductSchema,
+  FAQPageSchema,
+  BreadcrumbListSchema,
+  type FAQItem,
+} from "@/components/schemas";
 
 const brand = getBrand("bask")!;
 
@@ -9,11 +15,59 @@ export const metadata: Metadata = {
   title: "Bask Bank Review: 4.85% APY, No Fees, No Minimum (2026)",
   description:
     "Bask Bank pays 4.85% APY with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one.",
+  alternates: { canonical: "/reviews/bask" },
 };
+
+const faqs: FAQItem[] = [
+  {
+    question: "Is Bask Bank legitimate?",
+    answer:
+      "Yes. Bask Bank is a division of Texas Capital Bank, N.A., a federally chartered bank regulated by the Office of the Comptroller of the Currency (OCC) and the Federal Reserve. Deposits are FDIC-insured up to $250,000.",
+  },
+  {
+    question: "Why is Bask Bank's rate so high?",
+    answer:
+      "Online-only banks have lower overhead than brick-and-mortar institutions and pass those savings to depositors in the form of higher rates. Bask also benefits from its parent Texas Capital Bank's focus on commercial banking, leaving the retail deposit side hungry to attract consumer balances.",
+  },
+  {
+    question: "How quickly can I access my money?",
+    answer:
+      "ACH transfers to a linked external account typically take 1 to 3 business days. There is no same-day or instant transfer option. Plan accordingly for emergency fund access.",
+  },
+  {
+    question: "Can I have both the cash savings and miles savings accounts?",
+    answer:
+      "Yes. Bask allows you to open both account types simultaneously, so you can split your savings between cash interest and AAdvantage miles accumulation.",
+  },
+  {
+    question: "Does Bask offer CDs or checking accounts?",
+    answer:
+      "No. Bask offers only the two savings account types. For CDs, consider Bread Savings, which offers a competitive CD lineup alongside its HYSA. For checking, Ally or SoFi are the best-integrated options.",
+  },
+];
 
 export default function Page() {
   return (
     <article className="bg-bg">
+      <FinancialProductSchema
+        name="Bask Bank Review (2026)"
+        description="Bask Bank pays 4.85% APY with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one."
+        slug="/reviews/bask"
+        brandName="Bask Bank"
+        category="Savings Account"
+        apr="4.85"
+        ratingValue={9.1}
+        reviewCount={1}
+      />
+      <FAQPageSchema items={faqs} />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Savings", href: "/savings" },
+          { name: "Reviews", href: "/reviews" },
+          { name: "Bask Bank", href: "/reviews/bask" },
+        ]}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-14 pb-12">
