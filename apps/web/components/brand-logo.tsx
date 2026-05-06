@@ -8,6 +8,29 @@ interface BrandLogoProps {
   className?: string;
 }
 
+const domainToLogo: Record<string, string> = {
+  "marcus.com": "marcus.svg",
+  "better.com": "better.png",
+  "rocketmortgage.com": "rocket.png",
+  "loandepot.com": "loandepot.png",
+  "chase.com": "chase.svg",
+  "pnc.com": "pnc.png",
+  "wellsfargo.com": "wellsfargo.svg",
+  "usbank.com": "usbank.png",
+  "baskbank.com": "bask.png",
+  "ally.com": "ally.png",
+  "sofi.com": "sofi.png",
+  "discover.com": "discover.svg",
+  "cit.com": "cit.png",
+  "americanexpress.com": "americanexpress.svg",
+  "synchronybank.com": "synchrony.png",
+  "lightstream.com": "lightstream.png",
+  "upstart.com": "upstart.png",
+  "bestegg.com": "bestegg.png",
+  "prosper.com": "prosper.svg",
+  "citi.com": "citi.png",
+};
+
 function initials(name: string): string {
   const cleaned = name
     .replace(/\b(by|the|of|a|an)\b/gi, "")
@@ -38,31 +61,38 @@ export function BrandLogo({ brand, size = 40, rounded = "lg", className = "" }: 
     );
   }
 
-  // Clearbit Logo API: free, no key, returns 128x128 PNG. Falls back via onError → initials badge.
+  const logoFile = domainToLogo[resolved.domain];
+  const initialsBadge = (
+    <span
+      aria-hidden
+      className={`inline-flex items-center justify-center font-mono font-semibold uppercase tracking-tight text-white ${radius} ${className}`}
+      style={{
+        width: size,
+        height: size,
+        backgroundColor: resolved.color,
+        fontSize: Math.max(10, Math.round(size * 0.32)),
+        letterSpacing: "-0.02em",
+      }}
+    >
+      {initials(resolved.name)}
+    </span>
+  );
+
+  if (!logoFile) return initialsBadge;
+
   return (
     <div
       className={`relative inline-flex items-center justify-center bg-white border border-line overflow-hidden ${radius} ${className}`}
       style={{ width: size, height: size }}
     >
-      <span
-        aria-hidden
-        className="absolute inset-0 flex items-center justify-center font-mono font-semibold uppercase tracking-tight text-white"
-        style={{
-          backgroundColor: resolved.color,
-          fontSize: Math.max(10, Math.round(size * 0.32)),
-          letterSpacing: "-0.02em",
-        }}
-      >
-        {initials(resolved.name)}
-      </span>
       <Image
-        src={`https://logo.clearbit.com/${resolved.domain}?size=128`}
+        src={`/brands/${logoFile}`}
         alt={`${resolved.name} logo`}
         width={size}
         height={size}
-        unoptimized
-        className="relative object-contain bg-white"
-        style={{ width: size, height: size }}
+        unoptimized={logoFile.endsWith(".svg")}
+        className="object-contain"
+        style={{ width: size * 0.78, height: size * 0.78 }}
       />
     </div>
   );
