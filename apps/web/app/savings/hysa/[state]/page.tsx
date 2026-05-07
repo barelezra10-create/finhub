@@ -30,7 +30,7 @@ interface HysaOption {
 }
 
 const hysaOptions: HysaOption[] = [
-  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/savings/bask" },
+  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/reviews/bask" },
   { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/savings/bread" },
   { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/savings/marcus" },
   { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/savings/ally" },
@@ -106,7 +106,7 @@ export default async function StateHysaPage(
             {state.name} residents have access to the same top-rated national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, earning 4.85% APY on idle cash adds up fast. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/savings/bask" className="pill pill-ink">
+            <Link href="/reviews/bask" className="pill pill-ink">
               Open Bask Bank
               <span aria-hidden>→</span>
             </Link>
@@ -153,7 +153,7 @@ export default async function StateHysaPage(
                   4.85<span className="text-[2.5rem] align-top text-mute">%</span>
                 </div>
               </div>
-              <Link href="/savings/bask" className="pill pill-ink">
+              <Link href="/reviews/bask" className="pill pill-ink">
                 View offer
                 <span aria-hidden>→</span>
               </Link>

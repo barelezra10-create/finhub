@@ -19,7 +19,7 @@ interface HysaOption {
 }
 
 const hysaOptions: HysaOption[] = [
-  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/savings/bask" },
+  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/reviews/bask" },
   { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/savings/bread" },
   { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/savings/marcus" },
   { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/savings/ally" },
@@ -53,7 +53,7 @@ export default function HysaPage() {
             A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay 4.15% to 4.85% APY. That is eight to ten times more than the national average savings rate of around 0.46%. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/savings/bask" className="pill pill-ink">
+            <Link href="/reviews/bask" className="pill pill-ink">
               See top rate
               <span aria-hidden>→</span>
             </Link>

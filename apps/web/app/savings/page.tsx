@@ -18,7 +18,7 @@ interface RateRow {
 }
 
 const hysaRates: RateRow[] = [
-  { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/savings/bask" },
+  { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/reviews/bask" },
   { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees · FDIC", href: "/savings/bread" },
   { lender: "Marcus by Goldman Sachs", apr: 4.50, detail: "No min · No fees · FDIC", href: "/savings/marcus" },
   { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees · FDIC", href: "/savings/ally" },
