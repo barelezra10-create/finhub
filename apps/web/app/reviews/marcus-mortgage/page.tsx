@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Marcus by Goldman Sachs Mortgage Review (2026)",
   description:
-    "Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review covering rates, fees, and who should apply.",
+    "Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/marcus-mortgage" },
 };
 

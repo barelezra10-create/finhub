@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Rocket Mortgage Review (2026)",
   description:
-    "Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong mobile app, and best-in-class support for complex loan situations.",
+    "Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong app, and great support for complex loans.",
   alternates: { canonical: "/reviews/rocket" },
 };
 

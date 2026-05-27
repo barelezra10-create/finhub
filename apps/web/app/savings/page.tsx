@@ -19,20 +19,20 @@ interface RateRow {
 
 const hysaRates: RateRow[] = [
   { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/reviews/bask" },
-  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees · FDIC", href: "/savings/bread" },
-  { lender: "Marcus by Goldman Sachs", apr: 4.50, detail: "No min · No fees · FDIC", href: "/savings/marcus" },
-  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees · FDIC", href: "/savings/ally" },
-  { lender: "SoFi", apr: 4.40, detail: "Direct deposit required · FDIC", href: "/savings/sofi" },
-  { lender: "Discover Bank", apr: 4.30, detail: "No min · No fees · FDIC", href: "/savings/discover" },
-  { lender: "CIT Bank", apr: 4.25, detail: "$100 min · Platinum tier · FDIC", href: "/savings/cit" },
-  { lender: "American Express HYSA", apr: 4.15, detail: "No min · No transfer limit · FDIC", href: "/savings/amex" },
+  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees · FDIC", href: "/reviews/bread" },
+  { lender: "Marcus by Goldman Sachs", apr: 4.50, detail: "No min · No fees · FDIC", href: "/reviews/marcus" },
+  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees · FDIC", href: "/reviews/ally" },
+  { lender: "SoFi", apr: 4.40, detail: "Direct deposit required · FDIC", href: "/reviews/sofi" },
+  { lender: "Discover Bank", apr: 4.30, detail: "No min · No fees · FDIC", href: "/reviews/discover-savings" },
+  { lender: "CIT Bank", apr: 4.25, detail: "$100 min · Platinum tier · FDIC", href: "/reviews/cit" },
+  { lender: "American Express HYSA", apr: 4.15, detail: "No min · No transfer limit · FDIC", href: "/reviews/amex-savings" },
 ];
 
 const subPages = [
   { label: "HYSA", href: "/savings/hysa", detail: "High-yield savings accounts, ranked by APY." },
   { label: "CDs", href: "/savings/cds", detail: "Certificates of deposit from 3 months to 5 years." },
-  { label: "Money Market", href: "/savings/money-market", detail: "Check-writing access plus competitive yields." },
-  { label: "Checking", href: "/savings/checking", detail: "Checking accounts that pay interest." },
+  { label: "Money Market", href: "/savings/hysa", detail: "Check-writing access plus competitive yields." },
+  { label: "Checking", href: "/savings", detail: "Checking accounts that pay interest." },
   { label: "California HYSA", href: "/savings/hysa/california", detail: "Best HYSA rates for California residents." },
   { label: "Texas HYSA", href: "/savings/hysa/texas", detail: "Best HYSA rates for Texas residents." },
   { label: "Florida HYSA", href: "/savings/hysa/florida", detail: "Best HYSA rates for Florida residents." },

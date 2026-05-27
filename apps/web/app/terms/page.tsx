@@ -5,7 +5,7 @@ import { BreadcrumbListSchema } from "@/components/schemas";
 export const metadata: Metadata = {
   title: "Terms of Service | Fintiex",
   description:
-    "The rules for using Fintiex: educational content only, not financial advice, rates change, verify with the lender, and the standard intellectual property and liability terms.",
+    "The rules for using Fintiex: educational content only, not financial advice, rates change, verify with the lender, plus standard IP and liability terms.",
   alternates: { canonical: "/terms" },
 };
 

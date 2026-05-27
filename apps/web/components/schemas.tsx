@@ -160,6 +160,16 @@ export function FinancialProductSchema({
         url: SITE_URL,
       },
       reviewBody: description,
+      ...(ratingValue
+        ? {
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue,
+              bestRating: 10,
+              worstRating: 1,
+            },
+          }
+        : {}),
     },
   };
   if (apr) {
@@ -170,7 +180,7 @@ export function FinancialProductSchema({
     };
   }
   if (feesUrl) data["feesAndCommissionsSpecification"] = feesUrl;
-  if (ratingValue && reviewCount) {
+  if (ratingValue && reviewCount && reviewCount >= 5) {
     data["aggregateRating"] = {
       "@type": "AggregateRating",
       ratingValue,

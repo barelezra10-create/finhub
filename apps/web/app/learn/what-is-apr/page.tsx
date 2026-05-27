@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "APR vs Interest Rate: Why the Difference Matters | Fintiex Guides",
   description:
-    "APR includes fees the interest rate ignores. Here is exactly what goes into APR, when the two numbers diverge sharply, and how to use APR to compare loans fairly.",
+    "APR includes fees the interest rate ignores. Here is what goes into APR, when the two numbers diverge sharply, and how to use APR to compare loans fairly.",
   alternates: { canonical: "/learn/what-is-apr" },
 };
 

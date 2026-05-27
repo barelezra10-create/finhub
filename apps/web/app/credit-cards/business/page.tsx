@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best Business Credit Cards 2026: Big Bonuses, Real Tools | Fintiex",
   description:
-    "The business credit cards that pay off for owners and operators. Big signup bonuses, expense tools, and category multipliers ranked by net first-year value. No fluff.",
+    "The business credit cards that pay off for owners and operators. Big signup bonuses, expense tools, and category multipliers ranked by first-year value.",
   alternates: { canonical: "/credit-cards/business" },
 };
 
@@ -35,7 +35,7 @@ const picks: CardPick[] = [
     bestFor: "Owners who run digital ads, ship product, or travel for client work and want premium point value.",
     annualFee: "$95",
     signupBonus: "100,000 points (worth roughly $1,250 toward travel through Chase)",
-    href: "/credit-cards/ink-business-preferred",
+    href: "/reviews/ink-business-preferred",
   },
   {
     rank: 2,

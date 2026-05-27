@@ -59,6 +59,7 @@ export const states: StateInfo[] = [
   { slug: "west-virginia", name: "West Virginia", abbr: "WV", population: 1770000, medianIncome: 55217, topBanks: ["United Bank", "WesBanco", "City National Bank"], taxNote: "Interest taxed up to 5.12% state rate" },
   { slug: "wisconsin", name: "Wisconsin", abbr: "WI", population: 5910000, medianIncome: 72458, topBanks: ["Associated Bank", "Old National Bank", "U.S. Bank", "Johnson Financial"], taxNote: "Interest taxed up to 7.65% state rate" },
   { slug: "wyoming", name: "Wyoming", abbr: "WY", population: 584000, medianIncome: 72495, topBanks: ["First Interstate Bank", "Hilltop National Bank", "Jonah Bank"], taxNote: "No state income tax — interest is federally taxed only" },
+  { slug: "district-of-columbia", name: "District of Columbia", abbr: "DC", population: 671000, medianIncome: 101027, topBanks: ["Industrial Bank", "Capital One", "PNC Bank", "Bank of America"], taxNote: "Interest taxed up to 10.75% local rate" },
 ];
 
 export function getStateBySlug(slug: string): StateInfo | undefined {

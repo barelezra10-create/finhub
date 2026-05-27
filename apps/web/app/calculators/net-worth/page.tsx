@@ -6,7 +6,7 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Net Worth Calculator | Fintiex",
   description:
-    "Free net worth calculator. List your assets and liabilities in six categories each. See total assets, total liabilities, and your net worth (assets minus debts).",
+    "Free net worth calculator. List your assets and liabilities in six categories each. See total assets, total liabilities, and your net worth (assets minus debt).",
   alternates: { canonical: "/calculators/net-worth" },
 };
 

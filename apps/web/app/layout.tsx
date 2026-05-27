@@ -27,8 +27,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Personal finance, leveled up`,
-    template: `%s — ${SITE_NAME}`,
+    default: `${SITE_NAME}: Personal finance, leveled up`,
+    template: `%s`,
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Personal finance, leveled up`,
+    title: `${SITE_NAME}: Personal finance, leveled up`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     locale: "en_US",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Personal finance, leveled up.`,
+        alt: `${SITE_NAME}: Personal finance, leveled up.`,
       },
     ],
   },
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: SITE_HANDLE,
     creator: SITE_HANDLE,
-    title: `${SITE_NAME} — Personal finance, leveled up`,
+    title: `${SITE_NAME}: Personal finance, leveled up`,
     description: SITE_DESCRIPTION,
     images: ["/opengraph-image"],
   },

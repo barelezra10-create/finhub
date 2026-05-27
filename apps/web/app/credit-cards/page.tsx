@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Best Credit Cards 2026 — Cash Back, Travel, 0% APR, Balance Transfer | Fintiex",
+  title: "Best Credit Cards 2026: Cash Back, Travel, 0% APR, Balance Transfer | Fintiex",
   description:
-    "Compare the best credit cards for cash back, travel rewards, 0% intro APR, and balance transfers. One top pick per category. No sponsored rankings. Updated daily.",
+    "Compare the best credit cards for cash back, travel rewards, 0% intro APR, and balance transfers. One top pick per category. No sponsored rankings.",
   alternates: { canonical: "/credit-cards" },
 };
 
@@ -24,7 +24,7 @@ const cardRows: CardRow[] = [
     tag: "Best Cash Back",
     perk: "2% cash back on everything",
     detail: "0% intro APR 12mo · No annual fee · $200 bonus after $500 spend",
-    href: "/credit-cards/wells-fargo-active-cash",
+    href: "/reviews/wells-active-cash",
     category: "Cash Back",
   },
   {
@@ -32,7 +32,7 @@ const cardRows: CardRow[] = [
     tag: "Best Travel",
     perk: "60,000-point signup bonus",
     detail: "5x travel · 3x dining · $95 annual fee · Point transfer to airlines",
-    href: "/credit-cards/chase-sapphire-preferred",
+    href: "/reviews/chase-sapphire-preferred",
     category: "Travel",
   },
   {
@@ -40,7 +40,7 @@ const cardRows: CardRow[] = [
     tag: "Best 0% APR",
     perk: "21 months 0% intro APR",
     detail: "No annual fee · 0% on purchases and balance transfers · Then variable",
-    href: "/credit-cards/wells-fargo-reflect",
+    href: "/reviews/wells-reflect",
     category: "0% APR",
   },
   {
@@ -48,7 +48,7 @@ const cardRows: CardRow[] = [
     tag: "Best Balance Transfer",
     perk: "21 months 0% on balance transfers",
     detail: "No annual fee · 5% BT fee · 3% foreign transaction",
-    href: "/credit-cards/citi-diamond-preferred",
+    href: "/reviews/citi-diamond-preferred",
     category: "Balance Transfer",
   },
   {
@@ -56,7 +56,7 @@ const cardRows: CardRow[] = [
     tag: "Best No-Fee",
     perk: "2% back: 1% when you buy, 1% when you pay",
     detail: "No annual fee · No rotating categories · Simple flat rate",
-    href: "/credit-cards/citi-double-cash",
+    href: "/reviews/citi-double-cash",
     category: "No Annual Fee",
   },
   {
@@ -64,7 +64,7 @@ const cardRows: CardRow[] = [
     tag: "Best Business",
     perk: "100,000-point signup bonus",
     detail: "3x on travel, shipping, ads · $95 annual fee · Chase Ultimate Rewards",
-    href: "/credit-cards/ink-business-preferred",
+    href: "/reviews/ink-business-preferred",
     category: "Business",
   },
   {
@@ -72,7 +72,7 @@ const cardRows: CardRow[] = [
     tag: "Best Rotating",
     perk: "5% cash back in rotating categories",
     detail: "No annual fee · First-year cashback match · 1% on everything else",
-    href: "/credit-cards/discover-it",
+    href: "/reviews/discover-it-cash-back",
     category: "Cash Back",
   },
   {
@@ -80,7 +80,7 @@ const cardRows: CardRow[] = [
     tag: "Best Dining",
     perk: "4x on restaurants and U.S. supermarkets",
     detail: "$250 annual fee · $120 dining credit · $120 Uber Cash credit",
-    href: "/credit-cards/amex-gold",
+    href: "/reviews/amex-gold",
     category: "Travel",
   },
 ];

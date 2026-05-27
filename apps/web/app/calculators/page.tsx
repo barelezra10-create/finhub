@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Free Financial Calculators — Mortgage, Savings, Loan, Credit Card Payoff | Fintiex",
+  title: "Free Financial Calculators: Mortgage, Savings, Loan, Credit Card Payoff | Fintiex",
   description:
-    "Free financial calculators: mortgage payment, refi break-even, CD ladder, debt avalanche, savings goal, compound interest, HELOC, and net worth. No email walls, no popups.",
+    "Free financial calculators: mortgage payment, refi break-even, CD ladder, debt avalanche, savings goal, compound interest, HELOC, and net worth. No popups.",
   alternates: { canonical: "/calculators" },
 };
 

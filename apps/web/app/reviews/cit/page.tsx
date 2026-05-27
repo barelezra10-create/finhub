@@ -14,7 +14,7 @@ const brand = getBrand("cit")!;
 export const metadata: Metadata = {
   title: "CIT Bank Platinum Savings Review: 4.25% APY ($5K Min) (2026)",
   description:
-    "CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for and who should look elsewhere.",
+    "CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for, who to skip.",
   alternates: { canonical: "/reviews/cit" },
 };
 

@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://fintiex.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://www.fintiex.com";
 
 export const SITE_NAME = "Fintiex";
 export const SITE_TAGLINE = "Personal finance, leveled up.";

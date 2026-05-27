@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "Debt Avalanche vs Snowball: A Math-First Answer | Fintiex Guides",
   description:
-    "The avalanche method saves the most money. The snowball builds the most momentum. A worked example with four real cards shows exactly how much each approach costs.",
+    "The avalanche saves the most money. The snowball builds the most momentum. A worked example with four real cards shows exactly how much each approach costs.",
   alternates: { canonical: "/learn/debt-avalanche-vs-snowball" },
 };
 

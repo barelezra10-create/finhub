@@ -6,7 +6,7 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Refinance Break-Even Calculator | Fintiex",
   description:
-    "Free refinance break-even calculator. Enter your balance, current rate, new rate, and closing costs. See exactly how many months until your refi pays for itself.",
+    "Free refinance break-even calculator. Enter your balance, current rate, new rate, and closing costs. See how many months until your refi pays for itself.",
   alternates: { canonical: "/calculators/refinance-break-even" },
 };
 

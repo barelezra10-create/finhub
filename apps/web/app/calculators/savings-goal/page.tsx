@@ -6,7 +6,7 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Savings Goal Calculator | Fintiex",
   description:
-    "Free savings goal calculator. Enter your target, current balance, monthly contribution, and APY. See exactly how many months until you hit the goal. No email required.",
+    "Free savings goal calculator. Enter your target, current balance, monthly contribution, and APY. See exactly how many months until you hit the goal.",
   alternates: { canonical: "/calculators/savings-goal" },
 };
 

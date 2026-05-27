@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best 0% Balance Transfer Credit Cards 2026: Up to 21 Months | Fintiex",
   description:
-    "Move high-rate card debt to 0% for up to 21 months. We compare transfer fees, intro lengths, and post-promo APRs across the five strongest balance transfer cards.",
+    "Move high-rate card debt to 0% for up to 21 months. We compare transfer fees, intro lengths, and post-promo APRs across the five top balance transfer cards.",
   alternates: { canonical: "/credit-cards/balance-transfer" },
 };
 
@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who need the maximum runway to pay off a large transferred balance.",
     introPeriod: "21 months on transfers",
     transferFee: "5% of the amount transferred ($5 minimum)",
-    href: "/credit-cards/citi-diamond-preferred",
+    href: "/reviews/citi-diamond-preferred",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "People who want the long intro window to apply equally to new spending and transferred debt.",
     introPeriod: "21 months on both",
     transferFee: "5% of the amount transferred ($5 minimum)",
-    href: "/credit-cards/wells-fargo-reflect",
+    href: "/reviews/wells-reflect",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Borrowers who want a card that earns rewards on new spending once the transfer is paid off.",
     introPeriod: "18 months on transfers",
     transferFee: "3% for the first 4 months ($5 minimum), 5% after",
-    href: "/credit-cards/citi-double-cash",
+    href: "/reviews/citi-double-cash",
   },
   {
     rank: 4,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who want to earn meaningful cash back while paying down transferred debt.",
     introPeriod: "18 months on transfers",
     transferFee: "3% intro on transfers in the first 4 months ($5 minimum), 5% after",
-    href: "/credit-cards/discover-it-balance-transfer",
+    href: "/reviews/discover-it-cash-back",
   },
   {
     rank: 5,
@@ -82,7 +82,7 @@ const picks: CardPick[] = [
     bestFor: "Existing Bank of America customers and anyone prioritizing a low transfer fee.",
     introPeriod: "18 months on both",
     transferFee: "3% of the amount transferred ($10 minimum)",
-    href: "/credit-cards/bankamericard",
+    href: "/credit-cards/balance-transfer",
   },
 ];
 

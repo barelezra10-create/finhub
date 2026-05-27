@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "loanDepot Mortgage Review (2026)",
   description:
-    "loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, eligibility, and who should apply.",
+    "loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/loandepot" },
 };
 

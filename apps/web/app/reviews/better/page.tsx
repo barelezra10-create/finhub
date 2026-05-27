@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Better.com Mortgage Review (2026)",
   description:
-    "Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review covering rates, fees, and who it suits.",
+    "Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review of rates and fit.",
   alternates: { canonical: "/reviews/better" },
 };
 

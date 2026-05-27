@@ -33,7 +33,7 @@ const picks: LenderPick[] = [
     bestFor: "Borrowers with strong credit who want a fast online close.",
     detail:
       "Better's flat-fee model removes most lender origination charges. The platform handles W-2 borrowers especially well. Closing in 21 days is realistic.",
-    href: "/mortgages/better",
+    href: "/reviews/better",
   },
   {
     rank: 2,
@@ -45,7 +45,7 @@ const picks: LenderPick[] = [
     bestFor: "Self-employed borrowers who need bank statement underwriting.",
     detail:
       "Rocket's underwriters handle non-W-2 income better than most. Higher origination cost than Better, but the approval rate on complex files is meaningfully better.",
-    href: "/mortgages/rocket",
+    href: "/reviews/rocket",
   },
   {
     rank: 3,
@@ -57,7 +57,7 @@ const picks: LenderPick[] = [
     bestFor: "Owners refinancing to pull equity for renovation or debt payoff.",
     detail:
       "loanDepot allows up to 80% LTV on cash-out refinances and offers 30Y, 20Y, 15Y, and 10Y terms. Strong on jumbo refinances above the conforming limit too.",
-    href: "/mortgages/loandepot",
+    href: "/reviews/loandepot",
   },
   {
     rank: 4,
@@ -69,7 +69,7 @@ const picks: LenderPick[] = [
     bestFor: "Chase Private Client and Premier customers who get rate discounts.",
     detail:
       "Chase offers up to 0.50 percentage points off the rate for clients with $250K+ in deposits or investments. The discount alone often beats Better's flat fee for high-balance customers.",
-    href: "/mortgages/chase",
+    href: "/reviews/chase-mortgage",
   },
   {
     rank: 5,
@@ -81,7 +81,7 @@ const picks: LenderPick[] = [
     bestFor: "Borrowers who want a refinance and a HELOC underwritten together.",
     detail:
       "PNC's CHELOC product lets you fix portions of your variable HELOC rate. Refinancing your first lien with PNC streamlines the second-lien approval.",
-    href: "/mortgages/pnc",
+    href: "/reviews/pnc",
   },
 ];
 

@@ -31,13 +31,13 @@ interface HysaOption {
 
 const hysaOptions: HysaOption[] = [
   { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/reviews/bask" },
-  { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/savings/bread" },
-  { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/savings/marcus" },
-  { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/savings/ally" },
-  { lender: "SoFi", apy: 4.40, detail: "Direct deposit required for top rate. No minimum balance.", href: "/savings/sofi" },
-  { lender: "Discover Bank", apy: 4.30, detail: "No minimum balance. No fees. Same-day transfers available.", href: "/savings/discover" },
-  { lender: "CIT Bank", apy: 4.25, detail: "$100 minimum. No monthly service charge. FDIC-insured.", href: "/savings/cit" },
-  { lender: "American Express", apy: 4.15, detail: "No minimum balance. No fees. Easy online access.", href: "/savings/amex" },
+  { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
+  { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
+  { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
+  { lender: "SoFi", apy: 4.40, detail: "Direct deposit required for top rate. No minimum balance.", href: "/reviews/sofi" },
+  { lender: "Discover Bank", apy: 4.30, detail: "No minimum balance. No fees. Same-day transfers available.", href: "/reviews/discover-savings" },
+  { lender: "CIT Bank", apy: 4.25, detail: "$100 minimum. No monthly service charge. FDIC-insured.", href: "/reviews/cit" },
+  { lender: "American Express", apy: 4.15, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
 ];
 
 function fmtPct(n: number) {

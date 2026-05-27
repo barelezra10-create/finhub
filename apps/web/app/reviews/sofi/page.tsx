@@ -14,7 +14,7 @@ const brand = getBrand("sofi")!;
 export const metadata: Metadata = {
   title: "SoFi HYSA Review: 4.40% APY With Direct Deposit (2026)",
   description:
-    "SoFi pays 4.40% APY on savings with direct deposit, or 1.20% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and who should open one.",
+    "SoFi pays 4.40% APY on savings with direct deposit, or 1.20% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and best fit.",
   alternates: { canonical: "/reviews/sofi" },
 };
 

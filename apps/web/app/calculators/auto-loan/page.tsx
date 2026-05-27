@@ -6,7 +6,7 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Auto Loan Calculator | Fintiex",
   description:
-    "Free auto loan calculator. Enter price, down payment, trade-in, sales tax, term, and APR. See the monthly payment, total interest paid, and full out-the-door cost.",
+    "Free auto loan calculator. Enter price, down payment, trade-in, sales tax, term, and APR. See monthly payment, total interest, and full out-the-door cost.",
   alternates: { canonical: "/calculators/auto-loan" },
 };
 

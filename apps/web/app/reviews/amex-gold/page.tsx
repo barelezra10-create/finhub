@@ -14,7 +14,7 @@ const brand = getBrand("amex-gold")!;
 export const metadata: Metadata = {
   title: "American Express Gold Card Review: 4x Dining and Groceries (2026)",
   description:
-    "The Amex Gold earns 4x on dining worldwide and 4x on U.S. supermarkets up to $25K per year. Up to $240 in annual credits offset the $325 fee. Full 2026 review with pros, cons, and FAQ.",
+    "The Amex Gold earns 4x on dining worldwide and 4x on U.S. supermarkets up to $25K a year. Up to $240 in annual credits offset the $325 fee. Full 2026 review.",
   alternates: { canonical: "/reviews/amex-gold" },
 };
 

@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Wells Fargo Home Lending Mortgage Review (2026)",
   description:
-    "Wells Fargo Home Lending offers a 7.02% 30-year APR with a massive branch network, a Yourfirstmortgage 3% down program, and strong jumbo loan options. Full 2026 review.",
+    "Wells Fargo Home Lending offers a 7.02% 30-year APR with a huge branch network, a Yourfirstmortgage 3% down program, and strong jumbo options. 2026 review.",
   alternates: { canonical: "/reviews/wellsfargo-mortgage" },
 };
 

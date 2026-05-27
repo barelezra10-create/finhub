@@ -14,7 +14,7 @@ const brand = getBrand("discover-it-cash-back")!;
 export const metadata: Metadata = {
   title: "Discover it Cash Back Review: 5% Rotating Categories + Cashback Match (2026)",
   description:
-    "The Discover it Cash Back earns 5% on rotating quarterly categories and doubles all first-year cash back automatically. No annual fee. Full 2026 review with pros, cons, and FAQ.",
+    "The Discover it Cash Back earns 5% on rotating quarterly categories and doubles all first-year cash back. No annual fee. Full 2026 review with pros and cons.",
   alternates: { canonical: "/reviews/discover-it-cash-back" },
 };
 

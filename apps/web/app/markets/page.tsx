@@ -5,7 +5,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 export const metadata: Metadata = {
   title: "Markets at a Glance | Live Mortgage, Savings, Loan, and Card Rates | Fintiex",
   description:
-    "Live snapshot of US consumer rates: 30Y mortgage, 15Y mortgage, top HYSA, top 1-year CD, personal loan average, and credit card APR. Sourced from Freddie Mac, FDIC, and the Federal Reserve.",
+    "Live snapshot of US consumer rates: 30Y and 15Y mortgage, top HYSA, top 1-year CD, personal loan average, and credit card APR. Freddie Mac, FDIC, Fed.",
   alternates: { canonical: "/markets" },
 };
 

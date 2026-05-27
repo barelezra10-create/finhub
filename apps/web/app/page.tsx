@@ -499,8 +499,8 @@ export default function Home() {
             links={[
               { label: "HYSA", href: "/savings/hysa" },
               { label: "CDs", href: "/savings/cds" },
-              { label: "Money market", href: "/savings/money-market" },
-              { label: "Checking", href: "/banking/checking" },
+              { label: "Money market", href: "/savings/hysa" },
+              { label: "Checking", href: "/savings" },
             ]}
           />
           <FooterCol

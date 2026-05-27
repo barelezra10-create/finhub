@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Mortgage Rates Today — Compare 30Y Fixed, 15Y Fixed, Refi, HELOC | Fintiex",
+  title: "Mortgage Rates Today: Compare 30Y Fixed, 15Y Fixed, Refi, HELOC | Fintiex",
   description:
-    "Compare live mortgage rates from 8+ lenders. 30Y fixed, 15Y fixed, refinance, HELOC, and jumbo. No paid placements, updated daily. Find the lowest APR for your situation.",
+    "Compare live mortgage rates from 8+ lenders. 30Y fixed, 15Y fixed, refinance, HELOC, and jumbo. No paid placements, updated daily. Find the lowest APR.",
   alternates: { canonical: "/mortgages" },
 };
 
@@ -19,14 +19,14 @@ interface RateRow {
 }
 
 const mortgageRates: RateRow[] = [
-  { lender: "Marcus by Goldman Sachs", apr: 6.79, tag: "Lowest", detail: "30Y · 5% down · 760+ FICO", href: "/mortgages/marcus", trend: "down" },
-  { lender: "Better.com", apr: 6.85, detail: "30Y · 3% down · no origination", href: "/mortgages/better", trend: "flat" },
-  { lender: "Rocket Mortgage", apr: 6.89, detail: "30Y · 5% down · jumbo eligible", href: "/mortgages/rocket", trend: "up" },
-  { lender: "loanDepot", apr: 6.92, detail: "30Y · 5% down · cash-out OK", href: "/mortgages/loandepot", trend: "up" },
-  { lender: "Chase Home Lending", apr: 6.95, detail: "30Y · 10% down · DreaMaker", href: "/mortgages/chase", trend: "flat" },
-  { lender: "PNC Bank", apr: 6.99, detail: "30Y · 5% down · HELOC combo", href: "/mortgages/pnc", trend: "flat" },
-  { lender: "Wells Fargo", apr: 7.02, detail: "30Y · 10% down · existing clients", href: "/mortgages/wells-fargo", trend: "up" },
-  { lender: "US Bank", apr: 7.05, detail: "30Y · 5% down · smart refinance", href: "/mortgages/us-bank", trend: "up" },
+  { lender: "Marcus by Goldman Sachs", apr: 6.79, tag: "Lowest", detail: "30Y · 5% down · 760+ FICO", href: "/reviews/marcus-mortgage", trend: "down" },
+  { lender: "Better.com", apr: 6.85, detail: "30Y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
+  { lender: "Rocket Mortgage", apr: 6.89, detail: "30Y · 5% down · jumbo eligible", href: "/reviews/rocket", trend: "up" },
+  { lender: "loanDepot", apr: 6.92, detail: "30Y · 5% down · cash-out OK", href: "/reviews/loandepot", trend: "up" },
+  { lender: "Chase Home Lending", apr: 6.95, detail: "30Y · 10% down · DreaMaker", href: "/reviews/chase-mortgage", trend: "flat" },
+  { lender: "PNC Bank", apr: 6.99, detail: "30Y · 5% down · HELOC combo", href: "/reviews/pnc", trend: "flat" },
+  { lender: "Wells Fargo", apr: 7.02, detail: "30Y · 10% down · existing clients", href: "/reviews/wellsfargo-mortgage", trend: "up" },
+  { lender: "US Bank", apr: 7.05, detail: "30Y · 5% down · smart refinance", href: "/reviews/usbank", trend: "up" },
 ];
 
 const subPages = [

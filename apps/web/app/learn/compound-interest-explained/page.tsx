@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "Compound Interest Explained: The Only Math That Actually Matters | Fintiex",
   description:
-    "Compound interest grows wealth exponentially over time. Here is exactly how the formula works, why time beats contribution size, and how compounding works against you with debt.",
+    "Compound interest grows wealth fast over time. Here is how the formula works, why time beats contribution size, and how compounding hurts you with debt.",
   alternates: { canonical: "/learn/compound-interest-explained" },
 };
 

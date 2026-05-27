@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best Travel Credit Cards 2026: Points, Miles & Transfer Partners | Fintiex",
   description:
-    "The travel cards that pay back more than they cost. Compare Sapphire Preferred, Amex Gold, Venture, Citi Premier, and Bilt. Real point values, real fees, no fluff.",
+    "The travel cards that pay back more than they cost. Compare Sapphire Preferred, Amex Gold, Venture, Citi Premier, and Bilt. Real point values, real fees.",
   alternates: { canonical: "/credit-cards/travel" },
 };
 
@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "Travelers who want flexible points worth 1.25 to 2 cents each via transfer partners.",
     annualFee: "$95",
     signupBonus: "60,000 points after $4,000 in purchases in the first 3 months (worth $750+ on travel)",
-    href: "/credit-cards/chase-sapphire-preferred",
+    href: "/reviews/chase-sapphire-preferred",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Households that spend heavily on groceries and dining and will use the $240 in annual credits.",
     annualFee: "$325",
     signupBonus: "60,000 Membership Rewards after $6,000 in purchases in the first 6 months",
-    href: "/credit-cards/amex-gold",
+    href: "/reviews/amex-gold",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Travelers who want simple flat-rate earning without category tracking.",
     annualFee: "$95",
     signupBonus: "75,000 miles after $4,000 in purchases in the first 3 months",
-    href: "/credit-cards/capital-one-venture",
+    href: "/credit-cards/travel",
   },
   {
     rank: 4,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "Drivers and home cooks who still travel a few times a year.",
     annualFee: "$95",
     signupBonus: "75,000 ThankYou points after $4,000 in purchases in the first 3 months",
-    href: "/credit-cards/citi-premier",
+    href: "/credit-cards/travel",
   },
   {
     rank: 5,
@@ -82,7 +82,7 @@ const picks: CardPick[] = [
     bestFor: "Renters who want to earn travel points on their largest monthly expense.",
     annualFee: "$0",
     signupBonus: "No traditional bonus, but Rent Day promotions double points 1x per month",
-    href: "/credit-cards/bilt",
+    href: "/credit-cards/travel",
   },
 ];
 

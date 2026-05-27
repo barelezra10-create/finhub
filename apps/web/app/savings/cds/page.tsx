@@ -5,7 +5,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 export const metadata: Metadata = {
   title: "Best CD Rates Today | 6mo, 1Y, 2Y, 5Y Top Picks | Fintiex",
   description:
-    "Compare today's best CD rates from Marcus, Synchrony, Ally, Discover, CIT, Bask, and more. APYs across 6-month, 1-year, 2-year, and 5-year terms. Updated weekly.",
+    "Compare today's best CD rates from Marcus, Synchrony, Ally, Discover, CIT, Bask, and more. APYs across 6-month, 1-year, 2-year, and 5-year terms.",
   alternates: { canonical: "/savings/cds" },
 };
 

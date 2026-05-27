@@ -33,7 +33,7 @@ const picks: LenderPick[] = [
     bestFor: "First-time buyers who want a clean app, transparent pricing, and a fast close.",
     detail:
       "Rocket walks first-time buyers through every step in-app, explains every fee, and closes in 21 to 28 days for clean files. The ONE+ program offers 1% down for income-qualified buyers, with Rocket covering the other 2%.",
-    href: "/mortgages/rocket",
+    href: "/reviews/rocket",
   },
   {
     rank: 2,
@@ -45,7 +45,7 @@ const picks: LenderPick[] = [
     bestFor: "W-2 buyers who want a flat $1,995 lender fee and an online process.",
     detail:
       "Better's flat-fee model removes percentage-based origination charges, which matters most on smaller loans where 1% origination is real money. The online flow is friendly to first-timers.",
-    href: "/mortgages/better",
+    href: "/reviews/better",
   },
   {
     rank: 3,
@@ -57,7 +57,7 @@ const picks: LenderPick[] = [
     bestFor: "Income-eligible buyers who can stack Chase's $5,500 grant with state DPA.",
     detail:
       "Chase's DreaMaker program targets buyers under 80% area median income with 3% down and reduced PMI. The $5,500 Homebuyer Grant covers closing costs in eligible neighborhoods.",
-    href: "/mortgages/chase",
+    href: "/reviews/chase-mortgage",
   },
   {
     rank: 4,
@@ -69,7 +69,7 @@ const picks: LenderPick[] = [
     bestFor: "Buyers with credit scores in the 580 to 660 range who need FHA underwriting.",
     detail:
       "loanDepot's FHA program approves down to 580 FICO and accepts gift funds for the full down payment. Approval rate on lower-credit files is meaningfully better than online competitors.",
-    href: "/mortgages/loandepot",
+    href: "/reviews/loandepot",
   },
   {
     rank: 5,
@@ -81,7 +81,7 @@ const picks: LenderPick[] = [
     bestFor: "Buyers in PNC's footprint who qualify for the bank's Community Loan or grant programs.",
     detail:
       "PNC's Community Loan offers up to 3% down with no PMI for income-qualified buyers in eligible markets. The bank also offers up to $5,000 in closing cost grants in select tracts.",
-    href: "/mortgages/pnc",
+    href: "/reviews/pnc",
   },
 ];
 

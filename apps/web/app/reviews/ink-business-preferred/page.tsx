@@ -14,7 +14,7 @@ const brand = getBrand("ink-business-preferred")!;
 export const metadata: Metadata = {
   title: "Chase Ink Business Preferred Review: 100K Bonus + 3x on Travel (2026)",
   description:
-    "The Chase Ink Business Preferred earns 3x on travel, shipping, internet, phone, and online ads up to $150K combined. 100K UR bonus after $8K spend. Full 2026 review.",
+    "The Chase Ink Business Preferred earns 3x on travel, shipping, internet, phone, and online ads up to $150K combined. 100K UR bonus after $8K spend.",
   alternates: { canonical: "/reviews/ink-business-preferred" },
 };
 

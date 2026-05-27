@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Chase Home Lending Mortgage Review (2026)",
   description:
-    "Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates, fees, and eligibility.",
+    "Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates and fees.",
   alternates: { canonical: "/reviews/chase-mortgage" },
 };
 

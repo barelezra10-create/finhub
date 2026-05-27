@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Best Personal & Auto Loan Rates Today — Compare by Credit Tier | Fintiex",
+  title: "Best Personal & Auto Loan Rates Today: Compare by Credit Tier | Fintiex",
   description:
-    "Compare personal and auto loan rates from 8+ lenders by credit score and purpose. Prequalify without a hard pull. Honest APRs, no affiliate ranking. Updated daily.",
+    "Compare personal and auto loan rates from 8+ lenders by credit score and purpose. Prequalify without a hard pull. Honest APRs, no affiliate ranking.",
   alternates: { canonical: "/loans" },
 };
 
@@ -19,14 +19,14 @@ interface RateRow {
 }
 
 const loanRates: RateRow[] = [
-  { lender: "LightStream", apr: 7.99, tag: "Lowest", detail: "Excellent credit · No fees · Auto-pay discount", href: "/loans/lightstream", trend: "down" },
-  { lender: "SoFi", apr: 8.20, detail: "Excellent credit · No origination · unemployment protection", href: "/loans/sofi", trend: "flat" },
-  { lender: "Marcus by Goldman Sachs", apr: 8.50, detail: "Good credit · No fees · fixed rate", href: "/loans/marcus", trend: "flat" },
-  { lender: "Discover Personal", apr: 8.99, detail: "Good credit · No origination · 36-84 months", href: "/loans/discover", trend: "up" },
-  { lender: "Upstart", apr: 9.50, detail: "Fair credit · Soft pull pre-qualify · income-based", href: "/loans/upstart", trend: "up" },
-  { lender: "LendingClub", apr: 10.20, detail: "Fair credit · Debt consolidation focus · fast funding", href: "/loans/lendingclub", trend: "flat" },
-  { lender: "Best Egg", apr: 10.99, detail: "Fair credit · Secured option available · 36-60 months", href: "/loans/best-egg", trend: "up" },
-  { lender: "Prosper", apr: 11.50, detail: "Fair credit · P2P model · 3-5 year terms", href: "/loans/prosper", trend: "up" },
+  { lender: "LightStream", apr: 7.99, tag: "Lowest", detail: "Excellent credit · No fees · Auto-pay discount", href: "/reviews/lightstream", trend: "down" },
+  { lender: "SoFi", apr: 8.20, detail: "Excellent credit · No origination · unemployment protection", href: "/reviews/sofi-loan", trend: "flat" },
+  { lender: "Marcus by Goldman Sachs", apr: 8.50, detail: "Good credit · No fees · fixed rate", href: "/reviews/marcus-loan", trend: "flat" },
+  { lender: "Discover Personal", apr: 8.99, detail: "Good credit · No origination · 36-84 months", href: "/reviews/discover-loan", trend: "up" },
+  { lender: "Upstart", apr: 9.50, detail: "Fair credit · Soft pull pre-qualify · income-based", href: "/reviews/upstart", trend: "up" },
+  { lender: "LendingClub", apr: 10.20, detail: "Fair credit · Debt consolidation focus · fast funding", href: "/reviews/lendingclub", trend: "flat" },
+  { lender: "Best Egg", apr: 10.99, detail: "Fair credit · Secured option available · 36-60 months", href: "/reviews/bestegg", trend: "up" },
+  { lender: "Prosper", apr: 11.50, detail: "Fair credit · P2P model · 3-5 year terms", href: "/reviews/prosper", trend: "up" },
 ];
 
 const subPages = [

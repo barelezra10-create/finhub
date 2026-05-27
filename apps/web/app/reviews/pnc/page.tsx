@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "PNC Bank Mortgage Review (2026)",
   description:
-    "PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, eligibility, and who it suits best.",
+    "PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/pnc" },
 };
 

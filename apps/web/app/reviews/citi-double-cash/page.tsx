@@ -14,7 +14,7 @@ const brand = getBrand("citi-double-cash")!;
 export const metadata: Metadata = {
   title: "Citi Double Cash Review: 2% Cash Back, No Annual Fee (2026)",
   description:
-    "Citi Double Cash earns 2% cash back (1% when you buy, 1% when you pay) with no annual fee and ThankYou Points conversion. Full 2026 review: rewards, fees, and verdict.",
+    "Citi Double Cash earns 2% cash back (1% when you buy, 1% when you pay) with no annual fee and ThankYou Points conversion. Full 2026 review and verdict.",
   alternates: { canonical: "/reviews/citi-double-cash" },
 };
 

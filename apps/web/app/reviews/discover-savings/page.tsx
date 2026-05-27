@@ -14,7 +14,7 @@ const brand = getBrand("discover-savings")!;
 export const metadata: Metadata = {
   title: "Discover Online Savings Review: 4.30% APY, No Fees (2026)",
   description:
-    "Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and who it is best for.",
+    "Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and fit.",
   alternates: { canonical: "/reviews/discover-savings" },
 };
 

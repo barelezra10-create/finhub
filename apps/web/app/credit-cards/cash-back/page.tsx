@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best Cash-Back Credit Cards 2026: Flat 2% to 5% Rotating | Fintiex",
   description:
-    "The cash-back cards that actually pay the most. Flat-rate, tiered, and rotating-category picks ranked by real-world spending. No annual fees on most. Updated weekly.",
+    "The cash-back cards that actually pay the most. Flat-rate, tiered, and rotating-category picks ranked by real-world spending. No annual fees on most.",
   alternates: { canonical: "/credit-cards/cash-back" },
 };
 
@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "People who want one card to cover all spending without tracking categories.",
     annualFee: "$0",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/credit-cards/wells-fargo-active-cash",
+    href: "/reviews/wells-active-cash",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who pay the statement balance every month and want flat-rate simplicity.",
     annualFee: "$0",
     signupBonus: "$200 after $1,500 in purchases in the first 6 months",
-    href: "/credit-cards/citi-double-cash",
+    href: "/reviews/citi-double-cash",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Spenders who can shift purchases to match the calendar and activate categories on time.",
     annualFee: "$0",
     signupBonus: "Cashback Match: Discover doubles all cash back earned in your first year",
-    href: "/credit-cards/discover-it",
+    href: "/reviews/discover-it-cash-back",
   },
   {
     rank: 4,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "Households who eat out often and want flexibility to upgrade rewards later.",
     annualFee: "$0",
     signupBonus: "$200 after $500 in purchases in the first 3 months, plus 5% on grocery up to $12K in year one",
-    href: "/credit-cards/chase-freedom-unlimited",
+    href: "/credit-cards/cash-back",
   },
   {
     rank: 5,
@@ -82,7 +82,7 @@ const picks: CardPick[] = [
     bestFor: "Travelers who want a no-fuss flat-rate card that works overseas.",
     annualFee: "$0",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/credit-cards/capital-one-quicksilver",
+    href: "/credit-cards/cash-back",
   },
 ];
 

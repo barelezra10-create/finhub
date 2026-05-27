@@ -14,7 +14,7 @@ const brand = getBrand("citi-diamond-preferred")!;
 export const metadata: Metadata = {
   title: "Citi Diamond Preferred Review: 21-Month 0% Balance Transfer (2026)",
   description:
-    "Citi Diamond Preferred offers 21 months of 0% APR on balance transfers and 12 months on purchases, with no annual fee. Full 2026 review: fees, math, and verdict.",
+    "Citi Diamond Preferred offers 21 months of 0% APR on balance transfers and 12 months on purchases, with no annual fee. Full 2026 review with the math.",
   alternates: { canonical: "/reviews/citi-diamond-preferred" },
 };
 

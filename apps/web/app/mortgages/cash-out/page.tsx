@@ -33,7 +33,7 @@ const picks: LenderPick[] = [
     bestFor: "Owners pulling maximum equity for a down payment on a second property.",
     detail:
       "loanDepot is among the few lenders pushing to 85% LTV on cash-out refinances for strong borrowers. The rate premium at 80%+ runs about 0.25 points above conforming.",
-    href: "/mortgages/loandepot",
+    href: "/reviews/loandepot",
   },
   {
     rank: 2,
@@ -45,7 +45,7 @@ const picks: LenderPick[] = [
     bestFor: "W-2 borrowers who want a fast online cash-out close at a flat fee.",
     detail:
       "Better's flat $1,995 lender fee strips out origination charges. On a $300,000 cash-out the savings versus a 1% origination is $1,000+. Limited to 80% LTV.",
-    href: "/mortgages/better",
+    href: "/reviews/better",
   },
   {
     rank: 3,
@@ -57,7 +57,7 @@ const picks: LenderPick[] = [
     bestFor: "Self-employed borrowers who need bank statement programs.",
     detail:
       "Rocket underwrites bank statement income on cash-out refinances, which most online lenders refuse. Useful for owners with strong cash flow but light tax-return income.",
-    href: "/mortgages/rocket",
+    href: "/reviews/rocket",
   },
   {
     rank: 4,
@@ -69,7 +69,7 @@ const picks: LenderPick[] = [
     bestFor: "Chase Private Client and Premier customers who get rate discounts.",
     detail:
       "Chase clients with $250K+ in deposits or investments earn up to 0.50 points off the cash-out rate, often the lowest effective APR for high-balance customers.",
-    href: "/mortgages/chase",
+    href: "/reviews/chase-mortgage",
   },
   {
     rank: 5,
@@ -81,7 +81,7 @@ const picks: LenderPick[] = [
     bestFor: "Borrowers comparing cash-out against a fixed-rate HELOC stack.",
     detail:
       "PNC's CHELOC product can convert HELOC balances to fixed segments, which provides a hybrid alternative to a full cash-out refinance. Useful when the first-lien rate is below 5%.",
-    href: "/mortgages/pnc",
+    href: "/reviews/pnc",
   },
 ];
 

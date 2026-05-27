@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "HYSA vs CD: Which Is Right for You? | Fintiex Guides",
   description:
-    "Both high-yield savings accounts and CDs beat traditional savings. The difference is liquidity vs yield. Here is how to pick, including the CD ladder hybrid strategy.",
+    "Both high-yield savings and CDs beat traditional savings. The difference is liquidity vs yield. Here is how to pick, plus the CD ladder hybrid strategy.",
   alternates: { canonical: "/learn/hysa-vs-cd" },
 };
 

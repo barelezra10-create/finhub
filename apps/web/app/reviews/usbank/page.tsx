@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "U.S. Bank Mortgage Review (2026)",
   description:
-    "U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast presence. Full 2026 mortgage review.",
+    "U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast branches. 2026 review.",
   alternates: { canonical: "/reviews/usbank" },
 };
 

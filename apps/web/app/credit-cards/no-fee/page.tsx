@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "People who want one no-fee card to handle all their spending without category tracking.",
     rewardsRate: "2% on everything",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/credit-cards/wells-fargo-active-cash",
+    href: "/reviews/wells-active-cash",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who pay the statement balance every month and want a simple flat-rate card.",
     rewardsRate: "2% on everything (1% + 1%)",
     signupBonus: "$200 after $1,500 in purchases in the first 6 months",
-    href: "/credit-cards/citi-double-cash",
+    href: "/reviews/citi-double-cash",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Spenders willing to track quarterly categories for outsized first-year rewards.",
     rewardsRate: "5% rotating, 1% other",
     signupBonus: "Cashback Match: doubles all cash back earned in your first year",
-    href: "/credit-cards/discover-it",
+    href: "/reviews/discover-it-cash-back",
   },
   {
     rank: 4,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "Households who eat out often and want flexibility to upgrade rewards later.",
     rewardsRate: "1.5% to 5% (tiered)",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/credit-cards/chase-freedom-unlimited",
+    href: "/credit-cards/cash-back",
   },
   {
     rank: 5,
@@ -82,7 +82,7 @@ const picks: CardPick[] = [
     bestFor: "International travelers and people building credit who want a no-fee everyday card.",
     rewardsRate: "1.5% on everything",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/credit-cards/capital-one-quicksilver",
+    href: "/credit-cards/cash-back",
   },
 ];
 

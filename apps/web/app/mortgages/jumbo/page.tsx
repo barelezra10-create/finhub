@@ -33,7 +33,7 @@ const picks: LenderPick[] = [
     bestFor: "Chase Private Client members with $250K+ in deposits or investments.",
     detail:
       "Chase offers up to 0.50 points off the rate for Private Client and Premier customers. Jumbo limits run to $30M for trophy properties. Strong on portfolio underwriting.",
-    href: "/mortgages/chase",
+    href: "/reviews/chase-mortgage",
   },
   {
     rank: 2,
@@ -45,7 +45,7 @@ const picks: LenderPick[] = [
     bestFor: "Borrowers with significant non-W-2 income or asset depletion qualification.",
     detail:
       "Wells Fargo's Portfolio jumbo line uses asset depletion calculations to qualify borrowers without traditional income. The bank holds these loans on balance sheet rather than selling.",
-    href: "/mortgages/wells-fargo",
+    href: "/reviews/wellsfargo-mortgage",
   },
   {
     rank: 3,
@@ -57,7 +57,7 @@ const picks: LenderPick[] = [
     bestFor: "W-2 borrowers who want a fully online jumbo close.",
     detail:
       "Rocket's jumbo product caps at $3M but offers transparent pricing and 21-day closes. The 760+ FICO requirement is firm. Strong choice for first-time jumbo borrowers.",
-    href: "/mortgages/rocket",
+    href: "/reviews/rocket",
   },
   {
     rank: 4,
@@ -69,7 +69,7 @@ const picks: LenderPick[] = [
     bestFor: "Existing U.S. Bank customers with linked deposit accounts.",
     detail:
       "U.S. Bank discounts the jumbo rate by 0.25 to 0.375 points for customers with $50K+ in linked deposits. Common in the Midwest and Mountain West.",
-    href: "/mortgages/us-bank",
+    href: "/reviews/usbank",
   },
   {
     rank: 5,
@@ -81,7 +81,7 @@ const picks: LenderPick[] = [
     bestFor: "Owners with significant equity who need to cash out above conforming limits.",
     detail:
       "loanDepot allows up to 80% LTV on cash-out jumbo refinances, which is higher than most competitors. Useful for owners pulling equity for investment property purchases.",
-    href: "/mortgages/loandepot",
+    href: "/reviews/loandepot",
   },
 ];
 
