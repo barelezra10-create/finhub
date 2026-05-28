@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
+import { VisitBrandCta } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -337,9 +338,12 @@ export default function Page() {
             <h2 className="font-display font-extrabold text-3xl tracking-tight mb-2">Ready to compare all mortgage rates?</h2>
             <p className="text-mute">See our full lender table, updated daily, with no paid placements.</p>
           </div>
-          <Link href="/mortgages" className="pill pill-ink shrink-0">
-            Compare all lenders <span aria-hidden>→</span>
-          </Link>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <VisitBrandCta brand={brand} variant="ink" />
+            <Link href="/mortgages" className="pill pill-ghost">
+              Compare all lenders <span aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
       </section>
     </article>

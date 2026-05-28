@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
+import { VisitBrandCta } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -359,9 +360,7 @@ export default function Page() {
       {/* CTA */}
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-20">
         <div className="flex items-center gap-4">
-          <Link href="/credit-cards" className="pill pill-ink">
-            Compare all credit cards <span aria-hidden>→</span>
-          </Link>
+          <VisitBrandCta brand={brand} variant="ink" />
           <Link href="/credit-cards/travel" className="pill pill-ghost">
             Best travel cards
           </Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
+import { VisitBrandCta } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -1236,9 +1237,18 @@ export default async function Page({
               See our full lender table, updated daily, with no paid placements.
             </p>
           </div>
-          <Link href={r.ctaHref} className="pill pill-ink shrink-0">
-            {r.ctaLinkLabel} <span aria-hidden>→</span>
-          </Link>
+          {brand ? (
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <VisitBrandCta brand={brand} variant="ink" />
+              <Link href={r.ctaHref} className="pill pill-ghost">
+                {r.ctaLinkLabel} <span aria-hidden>→</span>
+              </Link>
+            </div>
+          ) : (
+            <Link href={r.ctaHref} className="pill pill-ink shrink-0">
+              {r.ctaLinkLabel} <span aria-hidden>→</span>
+            </Link>
+          )}
         </div>
       </section>
     </article>
