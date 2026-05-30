@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
-import { VisitBrandCta } from "@/components/visit-brand-cta";
+import { VisitBrandCta, VisitBrandCard } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -91,6 +91,9 @@ export default function Page() {
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="7.4/10" />
           </div>
+          <div className="mt-6">
+            <VisitBrandCta brand={brand} variant="lime" />
+          </div>
         </div>
       </section>
 
@@ -118,6 +121,10 @@ export default function Page() {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
+        <VisitBrandCard brand={brand} tagline="Branch and online service · Refi specialists" />
       </section>
 
       {/* OVERVIEW */}
@@ -332,18 +339,17 @@ export default function Page() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-line">
-        <div className="max-w-(--max-w-page) mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h2 className="font-display font-extrabold text-3xl tracking-tight mb-2">Ready to compare all mortgage rates?</h2>
-            <p className="text-mute">See our full lender table, updated daily, with no paid placements.</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <VisitBrandCta brand={brand} variant="ink" />
-            <Link href="/mortgages" className="pill pill-ghost">
-              Compare all lenders <span aria-hidden>→</span>
-            </Link>
-          </div>
+      <section className="max-w-(--max-w-page) mx-auto px-6 pb-20">
+        <VisitBrandCard
+          brand={brand}
+          headline={`Ready to open ${brand.name}?`}
+          tagline="Branch and online service · Refi specialists"
+          ctaLabel="Open account"
+        />
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/mortgages" className="pill pill-ghost">
+            Compare all lenders <span aria-hidden>→</span>
+          </Link>
         </div>
       </section>
     </article>

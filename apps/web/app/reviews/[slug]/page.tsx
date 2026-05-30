@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
-import { VisitBrandCta } from "@/components/visit-brand-cta";
+import { VisitBrandCta, VisitBrandCard } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -976,6 +976,13 @@ export default async function Page({
   // Extract starting APR string from the first credit tier
   const aprStr = r.creditTiers[0]?.aprRange.split("-")[0] ?? undefined;
 
+  // Build a sales tagline from the stats data for the big card CTA
+  const aprStat = r.stats.find((s) => s.label === "APR Range")?.value;
+  const amountStat = r.stats.find((s) => s.label === "Loan Amount")?.value;
+  const cardTagline = aprStat
+    ? `${aprStat} APR${amountStat ? ` · ${amountStat}` : ""} · See full review`
+    : "See our full review";
+
   return (
     <article className="bg-bg">
       <FinancialProductSchema
@@ -1048,6 +1055,13 @@ export default async function Page({
           </div>
         </div>
       </section>
+
+      {/* ── MID-PAGE BRAND CTA ───────────────────────────────────────────── */}
+      {brand && (
+        <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
+          <VisitBrandCard brand={brand} tagline={cardTagline} />
+        </section>
+      )}
 
       {/* ── OVERVIEW ──────────────────────────────────────────────────────── */}
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-14">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
-import { VisitBrandCta } from "@/components/visit-brand-cta";
+import { VisitBrandCta, VisitBrandCard } from "@/components/visit-brand-cta";
 import { getBrand } from "@/lib/brands";
 import {
   FinancialProductSchema,
@@ -88,6 +88,9 @@ export default function Page() {
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
             By the Fintiex Rate Desk · Updated April 28, 2026
           </div>
+          <div className="mt-6">
+            <VisitBrandCta brand={brand} variant="lime" />
+          </div>
         </div>
       </section>
 
@@ -126,6 +129,10 @@ export default function Page() {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
+        <VisitBrandCard brand={brand} tagline="Up to 4.85% APY · Buckets and savings goals built in" />
       </section>
 
       {/* Overview */}
@@ -294,10 +301,15 @@ export default function Page() {
 
       {/* CTA */}
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-20">
-        <div className="flex items-center gap-4">
-          <VisitBrandCta brand={brand} variant="ink" />
+        <VisitBrandCard
+          brand={brand}
+          headline={`Ready to open ${brand.name}?`}
+          tagline="Up to 4.85% APY · Buckets and savings goals built in"
+          ctaLabel="Open account"
+        />
+        <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/savings" className="pill pill-ghost">
-            See the full savings table
+            See the full savings table <span aria-hidden>→</span>
           </Link>
         </div>
       </section>
