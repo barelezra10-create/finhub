@@ -2,18 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 import {
-  cardCategories,
   fullCardName,
   formatAnnualFee,
   topRewardRate,
-  cardHref,
-  CATEGORY_LABEL,
-  CATEGORY_LISTICLE,
   SYNTHETIC_CATEGORIES,
   type CardData,
   type SyntheticCategory,
 } from "@/lib/cards";
 import { loadCards, cardsByCategory } from "@/lib/cards-server";
+import { CardsExplorer } from "./cards-explorer";
 
 export const metadata: Metadata = {
   title: "Best Credit Cards 2026: Cash Back, Travel, 0% APR, Balance Transfer | Fintiex",
@@ -66,25 +63,8 @@ const faqItems: FAQItem[] = [
   },
 ];
 
-interface CategoryTile {
-  category: SyntheticCategory;
-  label: string;
-  count: number;
-  topCard: CardData | undefined;
-}
-
 export default function Page() {
   const allCards = loadCards();
-
-  const categoryTiles: CategoryTile[] = SYNTHETIC_CATEGORIES.map((c) => {
-    const list = cardsByCategory(c);
-    return {
-      category: c,
-      label: CATEGORY_LABEL[c],
-      count: list.length,
-      topCard: list[0],
-    };
-  });
 
   const topByCat: Record<SyntheticCategory, CardData | undefined> = Object.fromEntries(
     SYNTHETIC_CATEGORIES.map((c) => [c, cardsByCategory(c)[0]]),
@@ -173,62 +153,17 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CATEGORY CHIPS NAVIGATION */}
-      <section className="max-w-(--max-w-page) mx-auto px-6 pt-16 pb-4">
-        <div className="grid grid-cols-12 gap-8 mb-6">
-          <div className="col-span-12 md:col-span-7">
-            <span className="chip chip-mute mb-4">
-              <span className="pulse-dot" /> All cards
-            </span>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-              Every card we cover, sorted by category.
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
-            <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              {allCards.length} cards across {SYNTHETIC_CATEGORIES.length} categories. Click any card to see the full review.
-            </p>
-          </div>
+      {/* INTERACTIVE EXPLORER */}
+      <section className="pt-12 pb-4">
+        <div className="max-w-(--max-w-page) mx-auto px-6 mb-2">
+          <span className="chip chip-mute mb-4">
+            <span className="pulse-dot" /> Browse all cards
+          </span>
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
+            Filter {allCards.length} cards by what you actually care about.
+          </h2>
         </div>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {categoryTiles.map((t) => (
-            <a key={t.category} href={`#cat-${t.category}`} className="chip chip-mute hover:bg-ink hover:text-bg transition-colors">
-              {t.label} ({t.count})
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* CARDS BY CATEGORY */}
-      <section className="max-w-(--max-w-page) mx-auto px-6 pb-20">
-        <div className="space-y-16">
-          {SYNTHETIC_CATEGORIES.map((cat) => {
-            const list = cardsByCategory(cat);
-            if (list.length === 0) return null;
-            return (
-              <div key={cat} id={`cat-${cat}`} className="scroll-mt-24">
-                <div className="flex items-end justify-between mb-6 gap-4 flex-wrap">
-                  <div>
-                    <span className="chip chip-lime mb-3">{CATEGORY_LABEL[cat]}</span>
-                    <h3 className="font-display font-extrabold text-2xl md:text-3xl tracking-tight">
-                      {CATEGORY_LABEL[cat]} cards
-                    </h3>
-                    <p className="text-mute text-sm mt-2">{list.length} cards in this category</p>
-                  </div>
-                  <Link href={CATEGORY_LISTICLE[cat]} className="pill pill-ghost">
-                    Best {CATEGORY_LABEL[cat].toLowerCase()} roundup
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {list.map((card) => (
-                    <CardTile key={card.slug} card={card} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <CardsExplorer cards={allCards} />
       </section>
 
       {/* EXPLAINER */}
@@ -371,38 +306,3 @@ function SnapshotTile({
   );
 }
 
-function CardTile({ card }: { card: CardData }) {
-  const cats = cardCategories(card);
-  return (
-    <Link href={cardHref(card.slug)} className="card p-6 block group flex flex-col h-full">
-      <div className="flex items-start justify-between mb-3 gap-3">
-        <div className="min-w-0">
-          <div className="text-xs font-mono uppercase tracking-wider text-mute mb-1">
-            {card.issuer} &middot; {card.network}
-          </div>
-          <div className="font-display font-bold text-base tracking-tight truncate">
-            {card.name}
-          </div>
-        </div>
-        <span className="font-mono tabular text-xs text-ink font-semibold shrink-0">
-          {card.rating.toFixed(1)}
-        </span>
-      </div>
-      <div className="text-sm text-ink-soft mb-3 leading-snug min-h-[2.5em]">
-        {topRewardRate(card)}
-      </div>
-      <div className="mt-auto pt-3 border-t border-line-soft flex items-center justify-between">
-        <div className="flex flex-wrap gap-1.5">
-          {cats.slice(0, 2).map((c) => (
-            <span key={c} className="chip chip-mute text-[10px]">
-              {CATEGORY_LABEL[c]}
-            </span>
-          ))}
-        </div>
-        <span className="text-xs font-mono tabular text-ink font-semibold">
-          {formatAnnualFee(card.annual_fee)}
-        </span>
-      </div>
-    </Link>
-  );
-}

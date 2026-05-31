@@ -23,6 +23,7 @@ import {
   type CardData,
 } from "@/lib/cards";
 import { loadCards, loadCard, relatedCards } from "@/lib/cards-server";
+import { CardArt } from "@/components/card-art";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -212,30 +213,40 @@ export default async function Page({ params }: PageProps) {
               </>
             ) : null}
           </div>
-          <span className="chip chip-lime mb-5">
-            <span className="pulse-dot" /> Credit card review
-          </span>
-          <h1 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-5 max-w-3xl">
-            {fullName} Review
-          </h1>
-          <div className="flex flex-wrap items-center gap-2 mb-5">
-            <span className="chip chip-mute">{card.issuer}</span>
-            <span className="chip chip-mute">{card.network}</span>
-            {cats.map((c) => (
-              <span key={c} className="chip chip-violet">
-                {CATEGORY_LABEL[c]}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-start">
+            <div className="min-w-0">
+              <span className="chip chip-lime mb-5">
+                <span className="pulse-dot" /> Credit card review
               </span>
-            ))}
+              <h1 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-tight mb-5">
+                {fullName} Review
+              </h1>
+              <div className="flex flex-wrap items-center gap-2 mb-5">
+                <span className="chip chip-mute">{card.issuer}</span>
+                <span className="chip chip-mute">{card.network}</span>
+                {cats.map((c) => (
+                  <span key={c} className="chip chip-violet">
+                    {CATEGORY_LABEL[c]}
+                  </span>
+                ))}
+              </div>
+              <p className="text-lg text-mute max-w-2xl leading-relaxed mb-6">
+                {fullName} earned{" "}
+                <span className="font-mono tabular font-semibold text-ink">
+                  {card.rating.toFixed(1)} / 5
+                </span>{" "}
+                in our 2026 review. {lede}
+              </p>
+              <div className="text-xs font-mono text-mute uppercase tracking-wider mb-6">
+                By the Fintiex Card Desk &middot; Updated {card.last_updated}
+              </div>
+            </div>
+            <div className="hidden lg:block shrink-0">
+              <CardArt card={card} width={360} />
+            </div>
           </div>
-          <p className="text-lg text-mute max-w-2xl leading-relaxed mb-6">
-            {fullName} earned{" "}
-            <span className="font-mono tabular font-semibold text-ink">
-              {card.rating.toFixed(1)} / 5
-            </span>{" "}
-            in our 2026 review. {lede}
-          </p>
-          <div className="text-xs font-mono text-mute uppercase tracking-wider mb-6">
-            By the Fintiex Card Desk &middot; Updated {card.last_updated}
+          <div className="lg:hidden mb-6 -mt-2 flex justify-center">
+            <CardArt card={card} width={320} />
           </div>
           <div className="flex flex-wrap gap-3">
             <a
