@@ -1,0 +1,31 @@
+{
+  "slug": "usaa-home",
+  "carrier": "USAA",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1200, "max": 1600 },
+  "bundling_discount_pct": 10,
+  "am_best_rating": "A++",
+  "jd_power_satisfaction": 884,
+  "digital_experience": "excellent",
+  "claims_process": "all",
+  "best_for": "Military families, top-rated coverage and service",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments", "Military uniform coverage"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Highest JD Power customer satisfaction score in the industry",
+    "Military uniform covered at no extra cost during deployment",
+    "Identity theft protection included at no charge",
+    "Replacement cost coverage for personal property standard",
+    "No deductible for military equipment losses in combat zones",
+    "Extremely competitive premiums for eligible members"
+  ],
+  "drawbacks": [
+    "Eligibility limited to military members, veterans, and their families",
+    "No local agent network for in-person service",
+    "Flood coverage requires separate NFIP or private policy"
+  ],
+  "quote_url": "https://www.usaa.com/inet/wc/insurance-home",
+  "rating": 4.7,
+  "last_updated": "2026-05-02"
+}

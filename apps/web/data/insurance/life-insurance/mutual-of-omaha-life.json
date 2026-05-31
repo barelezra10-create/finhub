@@ -1,0 +1,35 @@
+{
+  "slug": "mutual-of-omaha-life",
+  "carrier": "Mutual of Omaha",
+  "policy_types": ["term", "whole", "final-expense"],
+  "term_lengths_years": [10, 15, 20, 30],
+  "coverage_amount_min": 2000,
+  "coverage_amount_max": 1000000,
+  "age_range": { "min": 18, "max": 85 },
+  "no_medical_exam_available": true,
+  "am_best_rating": "A+",
+  "best_for": "Final expense coverage, seniors, simplified underwriting",
+  "underwriting_speed": "Same day (simplified issue) to 2 weeks",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Child rider",
+    "Accidental death benefit",
+    "Waiver of premium"
+  ],
+  "perks": [
+    "Leading provider of final expense (burial) insurance",
+    "Simplified issue term available with no medical exam",
+    "Coverage available up to age 85",
+    "Competitive rates for senior applicants",
+    "Guaranteed issue whole life available for ages 45-85",
+    "Long history of paying claims, founded in 1909"
+  ],
+  "drawbacks": [
+    "Lower coverage maximum than larger carriers",
+    "Not ideal for young applicants needing high face amounts",
+    "Some products not available in all states"
+  ],
+  "quote_url": "https://www.mutualofomaha.com/life-insurance",
+  "rating": 4.2,
+  "last_updated": "2026-05-02"
+}

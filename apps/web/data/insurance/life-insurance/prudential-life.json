@@ -1,0 +1,36 @@
+{
+  "slug": "prudential-life",
+  "carrier": "Prudential",
+  "policy_types": ["term", "whole", "universal", "variable"],
+  "term_lengths_years": [10, 15, 20, 30],
+  "coverage_amount_min": 100000,
+  "coverage_amount_max": 65000000,
+  "age_range": { "min": 18, "max": 80 },
+  "no_medical_exam_available": true,
+  "am_best_rating": "A+",
+  "best_for": "Broad coverage options, no-exam for impaired risks",
+  "underwriting_speed": "Same day to 4 weeks (FlexTerm no-exam available)",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Waiver of premium",
+    "Child term rider",
+    "Living needs benefit",
+    "Enhanced disability benefit"
+  ],
+  "perks": [
+    "FlexTerm policy available with no medical exam for qualifying applicants",
+    "Very high coverage amounts available for businesses and high-net-worth",
+    "Broad policy options from term to variable universal life",
+    "Strong financial strength with A+ AM Best",
+    "Accelerated death benefit included at no additional cost",
+    "Competitive pricing for term life for most age groups"
+  ],
+  "drawbacks": [
+    "No-exam option limited to specific health profiles and amounts",
+    "Variable life products carry investment risk",
+    "Application process can be slower for complex policies"
+  ],
+  "quote_url": "https://www.prudential.com/personal/life-insurance",
+  "rating": 4.3,
+  "last_updated": "2026-05-02"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "nationwide-home",
+  "carrier": "Nationwide",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1400, "max": 1900 },
+  "bundling_discount_pct": 20,
+  "am_best_rating": "A+",
+  "jd_power_satisfaction": 812,
+  "digital_experience": "good",
+  "claims_process": "all",
+  "best_for": "Brand New Belongings replacement cost coverage",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Brand New Belongings pays to replace items at today's prices, not depreciated value",
+    "Better Roof Replacement upgrades your roof materials when you file a claim",
+    "Vanishing deductible rewards claims-free years",
+    "Home renovation credit for upgrading plumbing, electrical, or HVAC",
+    "Multi-policy discount for bundling with auto",
+    "Identity theft protection available as add-on"
+  ],
+  "drawbacks": [
+    "Not available in Alaska, Hawaii, Louisiana, or some coastal areas",
+    "Some specialized coverage only available through agents",
+    "Premiums above average for high-value homes"
+  ],
+  "quote_url": "https://www.nationwide.com/homeowners-insurance.jsp",
+  "rating": 4.2,
+  "last_updated": "2026-05-02"
+}

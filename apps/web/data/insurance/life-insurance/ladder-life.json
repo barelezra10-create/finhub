@@ -1,0 +1,33 @@
+{
+  "slug": "ladder-life",
+  "carrier": "Ladder Life",
+  "policy_types": ["term"],
+  "term_lengths_years": [10, 15, 20, 25, 30],
+  "coverage_amount_min": 100000,
+  "coverage_amount_max": 8000000,
+  "age_range": { "min": 20, "max": 60 },
+  "no_medical_exam_available": true,
+  "am_best_rating": "A",
+  "best_for": "Flexible adjustable coverage, digital-first term",
+  "underwriting_speed": "Instant to same day",
+  "riders_available": [
+    "Accelerated death benefit"
+  ],
+  "perks": [
+    "Unique laddering feature lets you reduce coverage as needs change without penalty",
+    "Instant decision for most applicants, no exam up to $3M",
+    "Fully online process from application to policy delivery",
+    "Competitive term rates for healthy applicants under 50",
+    "No hidden fees or surrender charges for reducing coverage",
+    "Easy to apply in under 15 minutes"
+  ],
+  "drawbacks": [
+    "Term only, no permanent life insurance options",
+    "Max issue age of 60 excludes older applicants",
+    "Limited rider options compared to traditional carriers",
+    "Cannot increase coverage after approval, only decrease"
+  ],
+  "quote_url": "https://www.ladderlife.com",
+  "rating": 4.3,
+  "last_updated": "2026-05-02"
+}

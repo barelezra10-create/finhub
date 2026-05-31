@@ -1,0 +1,31 @@
+{
+  "slug": "farmers-home",
+  "carrier": "Farmers Insurance",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1550, "max": 2100 },
+  "bundling_discount_pct": 20,
+  "am_best_rating": "A",
+  "jd_power_satisfaction": 801,
+  "digital_experience": "good",
+  "claims_process": "all",
+  "best_for": "Comprehensive coverage tiers, agent-based guidance",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Three coverage tiers (Standard, Enhanced, Premier) for flexible protection",
+    "Claim-free discount for no claims in past three years",
+    "Declining deductible reduces your deductible $50 each claim-free year",
+    "Home systems protection covers mechanical breakdowns",
+    "Claim forgiveness available after three years with Farmers",
+    "Wide agent network for personalized coverage advice"
+  ],
+  "drawbacks": [
+    "Premiums among the highest of major carriers",
+    "Not available in all zip codes within certain states",
+    "Some coverage options require going through an agent, not self-service online"
+  ],
+  "quote_url": "https://www.farmers.com/home/homeowners-insurance/",
+  "rating": 4.0,
+  "last_updated": "2026-05-02"
+}

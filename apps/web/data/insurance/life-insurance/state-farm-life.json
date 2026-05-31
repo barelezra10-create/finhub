@@ -1,0 +1,35 @@
+{
+  "slug": "state-farm-life",
+  "carrier": "State Farm",
+  "policy_types": ["term", "whole", "universal"],
+  "term_lengths_years": [10, 20, 30],
+  "coverage_amount_min": 100000,
+  "coverage_amount_max": 10000000,
+  "age_range": { "min": 18, "max": 80 },
+  "no_medical_exam_available": false,
+  "am_best_rating": "A++",
+  "best_for": "Agent-guided coverage, bundling with home and auto",
+  "underwriting_speed": "1 to 4 weeks",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Child term rider",
+    "Disability waiver of premium",
+    "Accidental death benefit"
+  ],
+  "perks": [
+    "Extensive local agent network for personalized guidance",
+    "Strong financial strength with A++ AM Best rating",
+    "Bundle discount when combined with State Farm auto or home",
+    "Whole life builds guaranteed cash value",
+    "Return of premium term option available",
+    "Consistent top JD Power customer satisfaction scores"
+  ],
+  "drawbacks": [
+    "No online-only quotes for all policy types; agent involvement often required",
+    "No no-medical-exam underwriting option",
+    "Premiums slightly above average for some age groups"
+  ],
+  "quote_url": "https://www.statefarm.com/insurance/life",
+  "rating": 4.4,
+  "last_updated": "2026-05-02"
+}

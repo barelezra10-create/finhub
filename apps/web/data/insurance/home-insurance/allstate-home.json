@@ -1,0 +1,31 @@
+{
+  "slug": "allstate-home",
+  "carrier": "Allstate",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1500, "max": 2000 },
+  "bundling_discount_pct": 25,
+  "am_best_rating": "A+",
+  "jd_power_satisfaction": 819,
+  "digital_experience": "excellent",
+  "claims_process": "all",
+  "best_for": "Digital experience, strong bundling discounts",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Claim RateGuard prevents rate increase after first claim",
+    "Digital Locker app to catalogue home inventory",
+    "Green improvement reimbursement for eco-friendly repairs",
+    "Strong multi-policy discount up to 25%",
+    "Excellent online quote and policy management tools",
+    "Welcome and loyalty discount for new customers"
+  ],
+  "drawbacks": [
+    "Premiums can be higher than competitors in some regions",
+    "Customer satisfaction scores below USAA and State Farm",
+    "Some coverage options cost extra that competitors include standard"
+  ],
+  "quote_url": "https://www.allstate.com/homeowners-insurance",
+  "rating": 4.3,
+  "last_updated": "2026-05-02"
+}

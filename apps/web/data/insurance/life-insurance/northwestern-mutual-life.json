@@ -1,0 +1,37 @@
+{
+  "slug": "northwestern-mutual-life",
+  "carrier": "Northwestern Mutual",
+  "policy_types": ["term", "whole", "universal", "variable"],
+  "term_lengths_years": [10, 20],
+  "coverage_amount_min": 50000,
+  "coverage_amount_max": 20000000,
+  "age_range": { "min": 18, "max": 80 },
+  "no_medical_exam_available": false,
+  "am_best_rating": "A++",
+  "best_for": "Whole life, high-net-worth coverage, financial planning",
+  "underwriting_speed": "2 to 6 weeks",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Disability waiver of premium",
+    "Guaranteed purchase option",
+    "Long-term care rider",
+    "Accidental death benefit"
+  ],
+  "perks": [
+    "Highest financial strength ratings across all major agencies",
+    "Whole life dividends paid since 1872 without interruption",
+    "Permanent life builds significant cash value over time",
+    "Integrated financial planning approach through advisors",
+    "Very high coverage amounts available for high-net-worth clients",
+    "Flexible rider options for comprehensive protection"
+  ],
+  "drawbacks": [
+    "Requires working through a financial advisor, no online-only option",
+    "Whole and universal life premiums significantly higher than term",
+    "No no-medical-exam option; full underwriting required",
+    "Process can be slow compared to digital-first carriers"
+  ],
+  "quote_url": "https://www.northwesternmutual.com/life-insurance/",
+  "rating": 4.5,
+  "last_updated": "2026-05-02"
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "liberty-mutual-home",
+  "carrier": "Liberty Mutual",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1300, "max": 1700 },
+  "bundling_discount_pct": 20,
+  "am_best_rating": "A",
+  "jd_power_satisfaction": 797,
+  "digital_experience": "good",
+  "claims_process": "all",
+  "best_for": "Discount stacking, inflation protection",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Inflation protection automatically adjusts dwelling coverage",
+    "Numerous discounts including claims-free, new home, and paperless",
+    "Blanket jewelry and valuables coverage option",
+    "Home protector plus endorsement for extended reconstruction costs",
+    "Strong online quotes available in minutes",
+    "New home discount for homes less than 10 years old"
+  ],
+  "drawbacks": [
+    "JD Power customer satisfaction below industry average",
+    "Some policy exclusions reported as broader than competitors",
+    "Premium increases at renewal can be significant in high-risk states"
+  ],
+  "quote_url": "https://www.libertymutual.com/homeowners-insurance",
+  "rating": 4.1,
+  "last_updated": "2026-05-02"
+}

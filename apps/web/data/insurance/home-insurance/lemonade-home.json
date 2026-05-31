@@ -1,0 +1,33 @@
+{
+  "slug": "lemonade-home",
+  "carrier": "Lemonade",
+  "states_available": ["AL", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI"],
+  "avg_annual_premium": { "min": 750, "max": 1200 },
+  "bundling_discount_pct": null,
+  "am_best_rating": "A",
+  "jd_power_satisfaction": null,
+  "digital_experience": "excellent",
+  "claims_process": "app",
+  "best_for": "Digital-first renters and first-time homeowners",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "AI-powered claims: most claims paid in minutes via the app",
+    "Giveback program donates unused premiums to a charity you choose",
+    "Lowest average premiums among major carriers",
+    "Easy online policy management with no agent required",
+    "Transparent flat fee model reduces conflicts of interest",
+    "Quick quote available in under 2 minutes online"
+  ],
+  "drawbacks": [
+    "Not available in all states",
+    "Limited coverage options compared to traditional carriers",
+    "No local agent for in-person support",
+    "Not ideal for complex high-value homes or specialty coverage needs",
+    "No JD Power rating yet due to size"
+  ],
+  "quote_url": "https://www.lemonade.com/homeowners",
+  "rating": 4.0,
+  "last_updated": "2026-05-02"
+}

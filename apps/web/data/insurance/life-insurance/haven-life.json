@@ -1,0 +1,35 @@
+{
+  "slug": "haven-life",
+  "carrier": "Haven Life",
+  "policy_types": ["term"],
+  "term_lengths_years": [10, 15, 20, 25, 30],
+  "coverage_amount_min": 100000,
+  "coverage_amount_max": 3000000,
+  "age_range": { "min": 18, "max": 64 },
+  "no_medical_exam_available": true,
+  "am_best_rating": "A++",
+  "best_for": "Affordable term life, instant decision online",
+  "underwriting_speed": "Instant to same day (no exam up to $1M)",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Haven Life Plus (member perks)",
+    "Waiver of premium"
+  ],
+  "perks": [
+    "Fully digital application with instant decision for many applicants",
+    "Backed by MassMutual with A++ AM Best financial strength",
+    "No-exam coverage available up to $3M for qualifying applicants",
+    "Competitive rates among the lowest for healthy applicants",
+    "Free membership perks via Haven Life Plus (online will, fitness app)",
+    "Coverage starts same day as application for qualifying applicants"
+  ],
+  "drawbacks": [
+    "Term life only, no whole or universal life options",
+    "Max issue age of 64 limits older applicants",
+    "No physical agent support, fully online process",
+    "Some applicants will require full medical exam"
+  ],
+  "quote_url": "https://havenlife.com",
+  "rating": 4.7,
+  "last_updated": "2026-05-02"
+}

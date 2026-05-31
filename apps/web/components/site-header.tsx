@@ -9,11 +9,13 @@ export function SiteHeader() {
           <span className="font-display font-bold text-xl tracking-tight">Fintiex</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1 text-[14px] font-medium">
+        <nav className="hidden lg:flex items-center gap-0.5 text-[14px] font-medium">
           <NavItem href="/mortgages" label="Mortgages" />
           <NavItem href="/savings" label="Savings" />
           <NavItem href="/loans" label="Loans" />
           <NavItem href="/credit-cards" label="Cards" />
+          <NavItem href="/insurance" label="Insurance" />
+          <NavItem href="/investing" label="Investing" />
           <NavItem href="/calculators" label="Tools" />
           <NavItem href="/learn" label="Guides" />
         </nav>

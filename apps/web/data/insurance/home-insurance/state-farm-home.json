@@ -1,0 +1,31 @@
+{
+  "slug": "state-farm-home",
+  "carrier": "State Farm",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1300, "max": 1800 },
+  "bundling_discount_pct": 17,
+  "am_best_rating": "A++",
+  "jd_power_satisfaction": 829,
+  "digital_experience": "good",
+  "claims_process": "all",
+  "best_for": "Agent-based service, top JD Power scores",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Largest homeowners insurer in the US with agents in nearly every zip code",
+    "Consistently top-ranked JD Power customer satisfaction",
+    "Extended replacement cost endorsement available",
+    "Discount for impact-resistant roofing materials",
+    "Bundling with auto typically saves 12-17%",
+    "24/7 claims reporting via app, phone, or agent"
+  ],
+  "drawbacks": [
+    "Premiums tend to be above the national average",
+    "Not the cheapest option for high-risk areas",
+    "Limited digital-first self-service compared to newer carriers"
+  ],
+  "quote_url": "https://www.statefarm.com/insurance/home-and-property",
+  "rating": 4.7,
+  "last_updated": "2026-05-02"
+}

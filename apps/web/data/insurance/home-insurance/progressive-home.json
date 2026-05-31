@@ -1,0 +1,31 @@
+{
+  "slug": "progressive-home",
+  "carrier": "Progressive",
+  "states_available": "all",
+  "avg_annual_premium": { "min": 1250, "max": 1650 },
+  "bundling_discount_pct": 7,
+  "am_best_rating": "A+",
+  "jd_power_satisfaction": 801,
+  "digital_experience": "excellent",
+  "claims_process": "all",
+  "best_for": "Auto and home bundling, competitive online quotes",
+  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
+  "flood_coverage_separate": true,
+  "earthquake_coverage_separate": true,
+  "perks": [
+    "Seamless auto and home bundling through one policy dashboard",
+    "Name Your Price tool shows coverage options within your budget",
+    "Strong digital experience with instant online quotes",
+    "HomeQuote Explorer allows comparison of multiple home insurers",
+    "Discount for buying your policy at least three days before it starts",
+    "New home discount for recently built properties"
+  ],
+  "drawbacks": [
+    "Progressive brokers many home policies through third-party insurers",
+    "Bundling discount lower than some competitors",
+    "Coverage may be underwritten by a partner insurer, not Progressive directly"
+  ],
+  "quote_url": "https://www.progressive.com/homeowners/",
+  "rating": 4.1,
+  "last_updated": "2026-05-02"
+}

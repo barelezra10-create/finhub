@@ -1,0 +1,37 @@
+{
+  "slug": "policygenius",
+  "carrier": "Policygenius",
+  "policy_types": ["term", "whole", "universal", "variable", "final-expense"],
+  "term_lengths_years": [10, 15, 20, 25, 30],
+  "coverage_amount_min": 25000,
+  "coverage_amount_max": 10000000,
+  "age_range": { "min": 18, "max": 85 },
+  "no_medical_exam_available": true,
+  "am_best_rating": "A",
+  "best_for": "Comparing multiple carriers in one place",
+  "underwriting_speed": "Same day to 2 weeks (varies by carrier)",
+  "riders_available": [
+    "Accelerated death benefit",
+    "Child rider",
+    "Disability waiver of premium",
+    "Return of premium",
+    "Long-term care rider"
+  ],
+  "perks": [
+    "Marketplace compares quotes from dozens of top carriers simultaneously",
+    "Licensed agents available to guide you through the application",
+    "All policy types available through one platform",
+    "No-exam options from multiple carriers",
+    "Free to use, no upfront cost to compare",
+    "Strong editorial resources and life insurance education"
+  ],
+  "drawbacks": [
+    "Acts as a broker, not a direct insurer",
+    "Final terms and underwriting are set by the underlying carrier",
+    "Some carriers on the platform have narrower no-exam eligibility",
+    "Online quotes are estimates; actual rates determined by underwriting"
+  ],
+  "quote_url": "https://www.policygenius.com/life-insurance/",
+  "rating": 4.5,
+  "last_updated": "2026-05-02"
+}
