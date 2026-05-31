@@ -1,9 +1,63 @@
 import type { CardData } from "@/lib/cards";
 
-const ISSUER_COLOR: Record<string, [string, string]> = {
+// slug → filename in /public/images/cards/. Real card art scraped from
+// issuer press kits. Missing slugs fall through to the SVG fallback below.
+const CARD_IMAGES: Record<string, string> = {
+  "alaska-airlines-visa": "alaska-airlines-visa.jpg",
+  "amex-business-gold": "amex-business-gold.png",
+  "amex-gold": "amex-gold.png",
+  "amex-platinum": "amex-platinum.png",
+  "apple-card": "apple-card.png",
+  "bank-of-america-business-advantage-cash": "bank-of-america-business-advantage-cash.jpg",
+  "bank-of-america-customized-cash": "bank-of-america-customized-cash.png",
+  "bank-of-america-travel-rewards-student": "bank-of-america-travel-rewards-student.jpg",
+  "bilt-mastercard": "bilt-mastercard.png",
+  "brex-card": "brex-card.jpg",
+  "capital-one-platinum-secured": "capital-one-platinum-secured.png",
+  "capital-one-quicksilver": "capital-one-quicksilver.png",
+  "capital-one-quicksilver-student": "capital-one-quicksilver-student.png",
+  "capital-one-spark-cash-business": "capital-one-spark-cash-business.png",
+  "capital-one-venture": "capital-one-venture.png",
+  "capital-one-venture-x": "capital-one-venture-x.jpg",
+  "chase-freedom-flex": "chase-freedom-flex.png",
+  "chase-freedom-unlimited": "chase-freedom-unlimited.png",
+  "chase-ink-business-cash": "chase-ink-business-cash.png",
+  "chase-ink-business-preferred": "chase-ink-business-preferred.png",
+  "chase-sapphire-preferred": "chase-sapphire-preferred.png",
+  "chase-sapphire-reserve": "chase-sapphire-reserve.png",
+  "chime-credit-builder": "chime-credit-builder.jpg",
+  "choice-privileges-mastercard": "choice-privileges-mastercard.jpg",
+  "citi-double-cash": "citi-double-cash.webp",
+  "costco-anywhere-visa": "costco-anywhere-visa.jpg",
+  "delta-gold-amex": "delta-gold-amex.png",
+  "discover-it-cashback": "discover-it-cashback.webp",
+  "discover-it-secured": "discover-it-secured.png",
+  "discover-it-student-cash": "discover-it-student-cash.png",
+  "discover-it-student-chrome": "discover-it-student-chrome.png",
+  "first-progress-platinum-prestige": "first-progress-platinum-prestige.jpg",
+  "frontier-mastercard": "frontier-mastercard.png",
+  "hawaiian-airlines-world-elite": "hawaiian-airlines-world-elite.jpg",
+  "hilton-honors-amex": "hilton-honors-amex.png",
+  "ihg-one-rewards-premier": "ihg-one-rewards-premier.png",
+  "jetblue-plus": "jetblue-plus.jpg",
+  "marriott-bonvoy-boundless": "marriott-bonvoy-boundless.png",
+  "opensky-secured": "opensky-secured.jpg",
+  "petal-1": "petal-1.png",
+  "petal-2": "petal-2.svg",
+  "self-visa-credit-card": "self-visa-credit-card.svg",
+  "southwest-rapid-rewards-priority": "southwest-rapid-rewards-priority.png",
+  "united-explorer": "united-explorer.png",
+  "us-bank-altitude-reserve": "us-bank-altitude-reserve.jpg",
+  "us-bank-cash-plus": "us-bank-cash-plus.png",
+  "wells-fargo-active-cash": "wells-fargo-active-cash.webp",
+  "wells-fargo-active-cash-student": "wells-fargo-active-cash-student.jpg",
+  "world-of-hyatt": "world-of-hyatt.png",
+  "wyndham-rewards-earner-business": "wyndham-rewards-earner-business.jpg",
+};
+
+const ISSUER_GRADIENT: Record<string, [string, string]> = {
   "Chase": ["#0F4B91", "#0A2F5C"],
   "American Express": ["#0F6BB3", "#0A4A7E"],
-  "Amex": ["#0F6BB3", "#0A4A7E"],
   "Citi": ["#003B70", "#001E3B"],
   "Capital One": ["#0E1A2B", "#000000"],
   "Wells Fargo": ["#A02020", "#5C0F0F"],
@@ -19,21 +73,7 @@ const ISSUER_COLOR: Record<string, [string, string]> = {
   "Capital Bank": ["#0A3D72", "#051F3A"],
   "Synovus Bank": ["#13355B", "#081F38"],
 };
-
 const DEFAULT_GRADIENT: [string, string] = ["#1F1F1F", "#000000"];
-
-function issuerGradient(issuer: string): [string, string] {
-  return ISSUER_COLOR[issuer] ?? DEFAULT_GRADIENT;
-}
-
-function networkMark(network: string): string {
-  const n = network.toLowerCase();
-  if (n.includes("visa")) return "VISA";
-  if (n.includes("master")) return "Mastercard";
-  if (n.includes("amex") || n.includes("american")) return "AMEX";
-  if (n.includes("discover")) return "DISCOVER";
-  return network.toUpperCase();
-}
 
 interface CardArtProps {
   card: CardData;
@@ -42,116 +82,77 @@ interface CardArtProps {
 }
 
 /**
- * Stylized SVG credit card mockup. Renders a card-shaped rectangle with the
- * issuer's brand-color gradient, a chip detail, the issuer name, card name,
- * and network mark. Not a real card photo — avoids issuer image-licensing.
+ * Real card art if we have it (50 SKUs in public/images/cards/), else a
+ * styled gradient fallback with the issuer name and card name.
  */
 export function CardArt({ card, width = 280, className = "" }: CardArtProps) {
   const height = Math.round(width * 0.63);
-  const [c1, c2] = issuerGradient(card.issuer);
-  const gradId = `cardgrad-${card.slug}`;
-  const network = networkMark(card.network);
+  const file = CARD_IMAGES[card.slug];
 
-  // Padding scales with width so 280px and 480px both look right
-  const pad = Math.round(width * 0.06);
-  const chipW = Math.round(width * 0.1);
-  const chipH = Math.round(chipW * 0.74);
-  const issuerFs = Math.max(9, Math.round(width * 0.04));
-  const nameFs = Math.max(12, Math.round(width * 0.058));
-  const netFs = Math.max(8, Math.round(width * 0.038));
-
-  return (
-    <svg
-      viewBox={`0 0 ${width} ${height}`}
-      width={width}
-      height={height}
-      role="img"
-      aria-label={`${card.issuer} ${card.name} card art`}
-      className={className}
-    >
-      <defs>
-        <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={c1} />
-          <stop offset="100%" stopColor={c2} />
-        </linearGradient>
-        <radialGradient id={`${gradId}-glow`} cx="80%" cy="0%" r="80%">
-          <stop offset="0%" stopColor="rgba(255,255,255,0.18)" />
-          <stop offset="60%" stopColor="rgba(255,255,255,0)" />
-        </radialGradient>
-        <linearGradient id={`${gradId}-chip`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F5D77A" />
-          <stop offset="100%" stopColor="#B98E2F" />
-        </linearGradient>
-      </defs>
-
-      <rect x="0" y="0" width={width} height={height} rx="14" fill={`url(#${gradId})`} />
-      <rect x="0" y="0" width={width} height={height} rx="14" fill={`url(#${gradId}-glow)`} />
-
-      {/* Soft horizontal sheen line */}
-      <rect
-        x="0"
-        y={Math.round(height * 0.55)}
-        width={width}
-        height="1"
-        fill="rgba(255,255,255,0.08)"
-      />
-
-      {/* Chip */}
-      <rect
-        x={pad}
-        y={Math.round(height * 0.36)}
-        width={chipW}
-        height={chipH}
-        rx="3"
-        fill={`url(#${gradId}-chip)`}
-        stroke="rgba(0,0,0,0.15)"
-        strokeWidth="0.5"
-      />
-
-      {/* Issuer (top-left) */}
-      <text
-        x={pad}
-        y={pad + issuerFs}
-        fill="rgba(255,255,255,0.92)"
-        fontSize={issuerFs}
-        fontFamily="ui-monospace, SFMono-Regular, monospace"
-        fontWeight="600"
-        letterSpacing="0.08em"
+  if (file) {
+    return (
+      <div
+        className={`relative overflow-hidden rounded-2xl shadow-lg ${className}`}
+        style={{ width, aspectRatio: "1.586 / 1" }}
       >
-        {card.issuer.toUpperCase()}
-      </text>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/images/cards/${file}`}
+          alt={`${card.issuer} ${card.name} credit card`}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
 
-      {/* Network mark (top-right) */}
-      <text
-        x={width - pad}
-        y={pad + netFs}
-        fill="rgba(255,255,255,0.85)"
-        fontSize={netFs}
-        fontFamily="ui-monospace, SFMono-Regular, monospace"
-        fontWeight="700"
-        letterSpacing="0.1em"
-        textAnchor="end"
-      >
-        {network}
-      </text>
-
-      {/* Card name (bottom-left) */}
-      <text
-        x={pad}
-        y={height - pad}
-        fill="#FFFFFF"
-        fontSize={nameFs}
-        fontFamily="ui-sans-serif, system-ui, sans-serif"
-        fontWeight="700"
-        letterSpacing="-0.01em"
-      >
-        {truncate(card.name, Math.max(18, Math.round(width / 14)))}
-      </text>
-    </svg>
-  );
+  return <CardFallback card={card} width={width} height={height} className={className} />;
 }
 
-function truncate(s: string, max: number): string {
-  if (s.length <= max) return s;
-  return s.slice(0, max - 1).trimEnd() + "…";
+function CardFallback({
+  card,
+  width,
+  height,
+  className,
+}: {
+  card: CardData;
+  width: number;
+  height: number;
+  className: string;
+}) {
+  const [c1, c2] = ISSUER_GRADIENT[card.issuer] ?? DEFAULT_GRADIENT;
+  const pad = Math.round(width * 0.06);
+  const issuerFs = Math.max(9, Math.round(width * 0.04));
+  const nameFs = Math.max(12, Math.round(width * 0.058));
+  return (
+    <div
+      className={`relative overflow-hidden rounded-2xl shadow-lg ${className}`}
+      style={{
+        width,
+        height,
+        background: `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`,
+      }}
+      aria-label={`${card.issuer} ${card.name} card`}
+    >
+      <div
+        className="font-mono font-semibold uppercase tracking-widest text-white/90"
+        style={{ position: "absolute", top: pad, left: pad, fontSize: issuerFs }}
+      >
+        {card.issuer}
+      </div>
+      <div
+        className="font-display font-bold text-white"
+        style={{
+          position: "absolute",
+          bottom: pad,
+          left: pad,
+          right: pad,
+          fontSize: nameFs,
+          lineHeight: 1.15,
+        }}
+      >
+        {card.name}
+      </div>
+    </div>
+  );
 }
