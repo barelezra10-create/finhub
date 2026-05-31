@@ -4,6 +4,27 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 import { brandsByCategory, type Brand } from "@/lib/brands";
 
+// Brand-slug → /credit-cards/[json-slug] mapping. Card reviews moved out of /reviews
+// in 2026-05; brand slugs in lib/brands.ts predate the JSON filenames so we remap here.
+const BRAND_TO_CARD_SLUG: Record<string, string> = {
+  "wells-active-cash": "wells-fargo-active-cash",
+  "chase-sapphire-preferred": "chase-sapphire-preferred",
+  "wells-reflect": "wells-fargo-active-cash",
+  "citi-diamond-preferred": "citi-double-cash",
+  "citi-double-cash": "citi-double-cash",
+  "ink-business-preferred": "chase-ink-business-preferred",
+  "discover-it-cash-back": "discover-it-cashback",
+  "amex-gold": "amex-gold",
+};
+
+function brandHref(b: Brand): string {
+  if (b.category === "card") {
+    const mapped = BRAND_TO_CARD_SLUG[b.slug] ?? b.slug;
+    return `/credit-cards/${mapped}`;
+  }
+  return `/reviews/${b.slug}`;
+}
+
 export const metadata: Metadata = {
   title: "All Brand Reviews: Mortgages, Savings, Loans, Credit Cards | Fintiex",
   description:
@@ -163,7 +184,7 @@ export default function Page() {
               {items.map((b) => (
                 <Link
                   key={b.slug}
-                  href={`/reviews/${b.slug}`}
+                  href={brandHref(b)}
                   className="card p-5 flex items-start gap-4 group hover:bg-bg-soft/60 transition-colors"
                 >
                   <BrandLogo brand={b} size={48} />

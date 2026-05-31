@@ -101,6 +101,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
+  const cardRoutes = listJsonSlugs("data/cards").map((slug) => ({
+    url: `/credit-cards/${slug}`,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
   const glossaryRoutes = listMdxSlugs("content/glossary").map((slug) => ({
     url: `/glossary/${slug}`,
     priority: 0.5,
@@ -123,6 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...homeInsuranceRoutes,
     ...lifeInsuranceRoutes,
     ...brokerageRoutes,
+    ...cardRoutes,
     ...glossaryRoutes,
     ...bestRoutes,
   ].map((entry) => ({

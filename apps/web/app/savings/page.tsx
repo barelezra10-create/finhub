@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
+import { loadSavingsAccounts, formatApy } from "@/lib/savings-accounts";
 
 export const metadata: Metadata = {
   title: "Best High-Yield Savings Accounts, CDs & Money Market Rates Today | Fintiex",
@@ -29,6 +30,7 @@ const hysaRates: RateRow[] = [
 ];
 
 const subPages = [
+  { label: "Savings Accounts", href: "/savings/accounts", detail: "8 FDIC-insured online savings accounts, by APY." },
   { label: "HYSA", href: "/savings/hysa", detail: "High-yield savings accounts, ranked by APY." },
   { label: "CDs", href: "/savings/cds", detail: "Certificates of deposit from 3 months to 5 years." },
   { label: "Money Market", href: "/savings/hysa", detail: "Check-writing access plus competitive yields." },
@@ -98,6 +100,7 @@ function fmtPct(n: number) {
 }
 
 export default function Page() {
+  const topAccounts = loadSavingsAccounts().slice(0, 5);
   return (
     <>
       <FAQPageSchema items={faqItems} />
@@ -236,6 +239,45 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* TOP SAVINGS ACCOUNTS */}
+      <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
+        <div className="grid grid-cols-12 gap-8 mb-8">
+          <div className="col-span-12 md:col-span-7">
+            <span className="chip chip-lime mb-4">
+              <span className="pulse-dot" /> Top 5 by APY
+            </span>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
+              Top savings accounts right now.
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
+            <Link href="/savings/accounts" className="pill pill-ghost">
+              See all 8 savings accounts
+              <span aria-hidden>{"->"}</span>
+            </Link>
+          </div>
+        </div>
+        <div className="card-flush overflow-hidden">
+          {topAccounts.map((a, i) => (
+            <Link
+              key={a.slug}
+              href={`/savings/accounts/${a.slug}`}
+              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
+                i === topAccounts.length - 1 ? "" : "border-b border-line-soft"
+              }`}
+            >
+              <div className="col-span-7 md:col-span-7">
+                <div className="font-display font-semibold text-base">{a.bank}</div>
+                <div className="text-xs text-mute mt-1">{a.product_name}</div>
+              </div>
+              <div className="col-span-5 md:col-span-5 text-right font-mono font-semibold tabular text-lg">
+                {formatApy(a.apy)} APY
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -35,7 +35,7 @@ const picks: CardPick[] = [
     bestFor: "Owners who run digital ads, ship product, or travel for client work and want premium point value.",
     annualFee: "$95",
     signupBonus: "100,000 points (worth roughly $1,250 toward travel through Chase)",
-    href: "/reviews/ink-business-preferred",
+    href: "/credit-cards/chase-ink-business-preferred",
   },
   {
     rank: 2,

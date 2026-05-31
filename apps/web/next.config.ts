@@ -1,33 +1,48 @@
 import type { NextConfig } from "next";
 
 const reviewRedirects = [
-  // /credit-cards/{slug} → /reviews/{slug}
-  ["/credit-cards/amex-gold", "/reviews/amex-gold"],
-  ["/credit-cards/chase-sapphire-preferred", "/reviews/chase-sapphire-preferred"],
-  ["/credit-cards/citi-diamond-preferred", "/reviews/citi-diamond-preferred"],
-  ["/credit-cards/citi-double-cash", "/reviews/citi-double-cash"],
-  ["/credit-cards/ink-business-preferred", "/reviews/ink-business-preferred"],
-  ["/credit-cards/wells-fargo-active-cash", "/reviews/wells-active-cash"],
-  ["/credit-cards/wells-fargo-reflect", "/reviews/wells-reflect"],
-  ["/credit-cards/discover-it", "/reviews/discover-it-cash-back"],
-  ["/credit-cards/discover-it-balance-transfer", "/reviews/discover-it-cash-back"],
-  // Cards without reviews → fall to category listings
-  ["/credit-cards/capital-one-quicksilver", "/credit-cards/cash-back"],
-  ["/credit-cards/capital-one-venture", "/credit-cards/travel"],
-  ["/credit-cards/chase-freedom-unlimited", "/credit-cards/cash-back"],
+  // /reviews/{old} → /credit-cards/{new} (canonical dynamic card reviews live under /credit-cards)
+  ["/reviews/amex-gold", "/credit-cards/amex-gold"],
+  ["/reviews/chase-sapphire-preferred", "/credit-cards/chase-sapphire-preferred"],
+  ["/reviews/citi-double-cash", "/credit-cards/citi-double-cash"],
+  ["/reviews/discover-it-cash-back", "/credit-cards/discover-it-cashback"],
+  ["/reviews/ink-business-preferred", "/credit-cards/chase-ink-business-preferred"],
+  ["/reviews/wells-active-cash", "/credit-cards/wells-fargo-active-cash"],
+  ["/reviews/wells-reflect", "/credit-cards/wells-fargo-active-cash"],
+  ["/reviews/citi-diamond-preferred", "/credit-cards/citi-double-cash"],
+  // Legacy /credit-cards/{slug} aliases that do not match a JSON file → nearest live review or category
+  ["/credit-cards/wells-active-cash", "/credit-cards/wells-fargo-active-cash"],
+  ["/credit-cards/wells-fargo-reflect", "/credit-cards/wells-fargo-active-cash"],
+  ["/credit-cards/wells-reflect", "/credit-cards/wells-fargo-active-cash"],
+  ["/credit-cards/ink-business-preferred", "/credit-cards/chase-ink-business-preferred"],
+  ["/credit-cards/citi-diamond-preferred", "/credit-cards/citi-double-cash"],
+  ["/credit-cards/discover-it", "/credit-cards/discover-it-cashback"],
+  ["/credit-cards/discover-it-cash-back", "/credit-cards/discover-it-cashback"],
+  ["/credit-cards/discover-it-balance-transfer", "/credit-cards/discover-it-cashback"],
+  // Cards without a JSON file → fall to category listings
   ["/credit-cards/citi-premier", "/credit-cards/travel"],
-  ["/credit-cards/bilt", "/credit-cards/travel"],
+  ["/credit-cards/bilt", "/credit-cards/bilt-mastercard"],
   ["/credit-cards/bankamericard", "/credit-cards/balance-transfer"],
 
-  // /loans/{lender} → /reviews/{slug}
-  ["/loans/best-egg", "/reviews/bestegg"],
-  ["/loans/discover", "/reviews/discover-loan"],
-  ["/loans/lendingclub", "/reviews/lendingclub"],
-  ["/loans/lightstream", "/reviews/lightstream"],
-  ["/loans/marcus", "/reviews/marcus-loan"],
-  ["/loans/prosper", "/reviews/prosper"],
-  ["/loans/sofi", "/reviews/sofi-loan"],
-  ["/loans/upstart", "/reviews/upstart"],
+  // /loans/{lender} → /loans/personal/{slug} (new canonical, 2026-05)
+  ["/loans/best-egg", "/loans/personal/best-egg-personal-loan"],
+  ["/loans/discover", "/loans/personal/discover-personal-loan"],
+  ["/loans/lendingclub", "/loans/personal/lendingclub-personal-loan"],
+  ["/loans/lightstream", "/loans/personal/lightstream-personal-loan"],
+  ["/loans/marcus", "/loans/personal/marcus-personal-loan"],
+  ["/loans/prosper", "/loans/personal/prosper-personal-loan"],
+  ["/loans/sofi", "/loans/personal/sofi-personal-loan"],
+  ["/loans/upstart", "/loans/personal/upstart-personal-loan"],
+
+  // /reviews/{loan-slug} → /loans/personal/{slug} (8 personal-loan reviews relocated 2026-05)
+  ["/reviews/sofi-loan", "/loans/personal/sofi-personal-loan"],
+  ["/reviews/lightstream", "/loans/personal/lightstream-personal-loan"],
+  ["/reviews/marcus-loan", "/loans/personal/marcus-personal-loan"],
+  ["/reviews/discover-loan", "/loans/personal/discover-personal-loan"],
+  ["/reviews/upstart", "/loans/personal/upstart-personal-loan"],
+  ["/reviews/lendingclub", "/loans/personal/lendingclub-personal-loan"],
+  ["/reviews/bestegg", "/loans/personal/best-egg-personal-loan"],
+  ["/reviews/prosper", "/loans/personal/prosper-personal-loan"],
 
   // /mortgages/{lender} → /reviews/{slug}
   ["/mortgages/better", "/reviews/better"],

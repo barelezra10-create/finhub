@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "Travelers who want flexible points worth 1.25 to 2 cents each via transfer partners.",
     annualFee: "$95",
     signupBonus: "60,000 points after $4,000 in purchases in the first 3 months (worth $750+ on travel)",
-    href: "/reviews/chase-sapphire-preferred",
+    href: "/credit-cards/chase-sapphire-preferred",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Households that spend heavily on groceries and dining and will use the $240 in annual credits.",
     annualFee: "$325",
     signupBonus: "60,000 Membership Rewards after $6,000 in purchases in the first 6 months",
-    href: "/reviews/amex-gold",
+    href: "/credit-cards/amex-gold",
   },
   {
     rank: 3,

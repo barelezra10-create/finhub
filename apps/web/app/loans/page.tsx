@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
+import { loadPersonalLoans, formatAprRange, formatCurrency } from "@/lib/loans";
 
 export const metadata: Metadata = {
   title: "Best Personal & Auto Loan Rates Today: Compare by Credit Tier | Fintiex",
@@ -19,25 +20,25 @@ interface RateRow {
 }
 
 const loanRates: RateRow[] = [
-  { lender: "LightStream", apr: 7.99, tag: "Lowest", detail: "Excellent credit · No fees · Auto-pay discount", href: "/reviews/lightstream", trend: "down" },
-  { lender: "SoFi", apr: 8.20, detail: "Excellent credit · No origination · unemployment protection", href: "/reviews/sofi-loan", trend: "flat" },
-  { lender: "Marcus by Goldman Sachs", apr: 8.50, detail: "Good credit · No fees · fixed rate", href: "/reviews/marcus-loan", trend: "flat" },
-  { lender: "Discover Personal", apr: 8.99, detail: "Good credit · No origination · 36-84 months", href: "/reviews/discover-loan", trend: "up" },
-  { lender: "Upstart", apr: 9.50, detail: "Fair credit · Soft pull pre-qualify · income-based", href: "/reviews/upstart", trend: "up" },
-  { lender: "LendingClub", apr: 10.20, detail: "Fair credit · Debt consolidation focus · fast funding", href: "/reviews/lendingclub", trend: "flat" },
-  { lender: "Best Egg", apr: 10.99, detail: "Fair credit · Secured option available · 36-60 months", href: "/reviews/bestegg", trend: "up" },
-  { lender: "Prosper", apr: 11.50, detail: "Fair credit · P2P model · 3-5 year terms", href: "/reviews/prosper", trend: "up" },
+  { lender: "LightStream", apr: 7.99, tag: "Lowest", detail: "Excellent credit · No fees · Auto-pay discount", href: "/loans/personal/lightstream-personal-loan", trend: "down" },
+  { lender: "SoFi", apr: 8.20, detail: "Excellent credit · No origination · unemployment protection", href: "/loans/personal/sofi-personal-loan", trend: "flat" },
+  { lender: "Marcus by Goldman Sachs", apr: 8.50, detail: "Good credit · No fees · fixed rate", href: "/loans/personal/marcus-personal-loan", trend: "flat" },
+  { lender: "Discover Personal", apr: 8.99, detail: "Good credit · No origination · 36-84 months", href: "/loans/personal/discover-personal-loan", trend: "up" },
+  { lender: "Upstart", apr: 9.50, detail: "Fair credit · Soft pull pre-qualify · income-based", href: "/loans/personal/upstart-personal-loan", trend: "up" },
+  { lender: "LendingClub", apr: 10.20, detail: "Fair credit · Debt consolidation focus · fast funding", href: "/loans/personal/lendingclub-personal-loan", trend: "flat" },
+  { lender: "Best Egg", apr: 10.99, detail: "Fair credit · Secured option available · 36-60 months", href: "/loans/personal/best-egg-personal-loan", trend: "up" },
+  { lender: "Prosper", apr: 11.50, detail: "Fair credit · P2P model · 3-5 year terms", href: "/loans/personal/prosper-personal-loan", trend: "up" },
 ];
 
 const subPages = [
   { label: "Personal Loans", href: "/loans/personal", detail: "Unsecured loans for any purpose. Compare by credit tier." },
+  { label: "Student Loans", href: "/loans/student", detail: "Private and refinance options. Federal aid first." },
   { label: "Auto Loans", href: "/loans/auto", detail: "New and used auto financing. Compare by term and credit." },
   { label: "Debt Consolidation", href: "/loans/debt-consolidation", detail: "Roll high-rate cards into one lower payment." },
   { label: "Home Improvement", href: "/loans/home-improvement", detail: "Fund a renovation without touching your mortgage." },
   { label: "Medical Loans", href: "/loans/medical", detail: "Finance medical bills at a predictable rate." },
   { label: "Wedding Loans", href: "/loans/wedding", detail: "Cover wedding costs with a fixed monthly payment." },
   { label: "By Credit Tier", href: "/loans/by-credit-tier", detail: "Excellent, good, fair, poor. Realistic rates for each." },
-  { label: "Auto Refinance", href: "/loans/auto/refinance", detail: "Lower your existing auto rate without changing the car." },
 ];
 
 const faqItems: FAQItem[] = [
@@ -105,6 +106,7 @@ function trendArrow(t?: "up" | "down" | "flat") {
 }
 
 export default function Page() {
+  const topPersonal = loadPersonalLoans().slice(0, 5);
   return (
     <>
       <FAQPageSchema items={faqItems} />
@@ -222,6 +224,45 @@ export default function Page() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* TOP PERSONAL-LOAN LENDERS */}
+      <section className="bg-bg-soft/60 border-y border-line">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-16">
+          <div className="grid grid-cols-12 gap-8 mb-8">
+            <div className="col-span-12 md:col-span-7">
+              <span className="chip chip-violet mb-4">
+                <span className="pulse-dot" /> Top picks · From our review data
+              </span>
+              <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
+                Top personal-loan lenders by rating
+              </h2>
+            </div>
+            <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
+              <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
+                Sorted by our 2026 review score. Click any lender for the full APR, fee, and verdict breakdown.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {topPersonal.map((l, i) => (
+              <Link
+                key={l.slug}
+                href={`/loans/personal/${l.slug}`}
+                className="card p-5 block group"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-mono text-xs text-mute">#{i + 1}</span>
+                  <span className="font-mono tabular text-sm font-semibold">{l.rating.toFixed(1)}</span>
+                </div>
+                <h3 className="font-display font-bold text-lg mb-2 tracking-tight">{l.lender}</h3>
+                <div className="text-xs text-mute mb-2 leading-relaxed">{l.best_for}</div>
+                <div className="font-mono tabular text-sm font-semibold">{formatAprRange(l.apr_range)}</div>
+                <div className="text-xs text-mute mt-1">{formatCurrency(l.loan_amount_min)} to {formatCurrency(l.loan_amount_max)}</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

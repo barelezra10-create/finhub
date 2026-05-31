@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbListSchema } from "@/components/schemas";
+import { PILLAR_META, PILLAR_SLUGS, loadPillarArticles } from "@/lib/pillars";
+
+const PILLAR_CHIPS: Record<string, "lime" | "violet" | "mute" | "ink"> = {
+  "credit-card-basics": "lime",
+  "choosing-a-card": "violet",
+  "maximizing-rewards": "ink",
+  "building-credit": "lime",
+  "business-credit": "violet",
+};
 
 export const metadata: Metadata = {
   title: "Plain-English Money Guides | Fintiex Learn",
@@ -114,6 +123,9 @@ const categories: Array<{ label: string; slugs: string[] }> = [
 
 export default function LearnPage() {
   const guidesBySlug = Object.fromEntries(guides.map((g) => [g.slug, g]));
+  const pillarCounts = Object.fromEntries(
+    PILLAR_SLUGS.map((p) => [p, loadPillarArticles(p).length]),
+  );
 
   return (
     <>
@@ -133,8 +145,73 @@ export default function LearnPage() {
         </div>
       </section>
 
+      {/* LEARN BY TOPIC: PILLARS */}
+      <section className="bg-bg-soft/60 border-b border-line">
+        <div className="max-w-(--max-w-page) mx-auto px-6 py-16">
+          <div className="flex items-end justify-between gap-6 mb-10">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-wider text-mute mb-3">
+                Learn by topic
+              </div>
+              <h2 className="font-display font-extrabold text-2xl md:text-3xl tracking-tight">
+                Pillars
+              </h2>
+            </div>
+            <span className="font-mono text-xs uppercase tracking-wider text-mute tabular">
+              {PILLAR_SLUGS.length} pillars
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PILLAR_SLUGS.map((p) => {
+              const meta = PILLAR_META[p];
+              if (!meta) return null;
+              const chip = PILLAR_CHIPS[p] ?? "violet";
+              const count = pillarCounts[p] ?? 0;
+              return (
+                <Link
+                  key={p}
+                  href={`/learn/${p}`}
+                  className="card p-6 block group flex flex-col"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`chip chip-${chip}`}>Pillar</span>
+                    <span className="font-mono text-xs text-mute tabular">
+                      {count} articles
+                    </span>
+                  </div>
+                  <h3 className="font-display font-bold text-lg leading-snug tracking-tight mb-3">
+                    {meta.title}
+                  </h3>
+                  <p className="text-mute text-sm leading-relaxed flex-1">
+                    {meta.description}
+                  </p>
+                  <div className="mt-5 flex items-center justify-end">
+                    <span className="text-mute text-lg group-hover:text-ink group-hover:translate-x-1 transition-all">
+                      &rarr;
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* GUIDE CARD GRID */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-16">
+        <div className="flex items-end justify-between gap-6 mb-10">
+          <div>
+            <div className="font-mono text-xs uppercase tracking-wider text-mute mb-3">
+              Standalone guides
+            </div>
+            <h2 className="font-display font-extrabold text-2xl md:text-3xl tracking-tight">
+              All guides
+            </h2>
+          </div>
+          <span className="font-mono text-xs uppercase tracking-wider text-mute tabular">
+            {guides.length} guides
+          </span>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {guides.map((guide) => (
             <Link

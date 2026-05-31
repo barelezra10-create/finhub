@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "People who want one card to cover all spending without tracking categories.",
     annualFee: "$0",
     signupBonus: "$200 after $500 in purchases in the first 3 months",
-    href: "/reviews/wells-active-cash",
+    href: "/credit-cards/wells-fargo-active-cash",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who pay the statement balance every month and want flat-rate simplicity.",
     annualFee: "$0",
     signupBonus: "$200 after $1,500 in purchases in the first 6 months",
-    href: "/reviews/citi-double-cash",
+    href: "/credit-cards/citi-double-cash",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Spenders who can shift purchases to match the calendar and activate categories on time.",
     annualFee: "$0",
     signupBonus: "Cashback Match: Discover doubles all cash back earned in your first year",
-    href: "/reviews/discover-it-cash-back",
+    href: "/credit-cards/discover-it-cashback",
   },
   {
     rank: 4,

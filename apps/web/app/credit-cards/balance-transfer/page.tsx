@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who need the maximum runway to pay off a large transferred balance.",
     introPeriod: "21 months on transfers",
     transferFee: "5% of the amount transferred ($5 minimum)",
-    href: "/reviews/citi-diamond-preferred",
+    href: "/credit-cards/citi-double-cash",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "People who want the long intro window to apply equally to new spending and transferred debt.",
     introPeriod: "21 months on both",
     transferFee: "5% of the amount transferred ($5 minimum)",
-    href: "/reviews/wells-reflect",
+    href: "/credit-cards/wells-fargo-active-cash",
   },
   {
     rank: 3,
@@ -58,7 +58,7 @@ const picks: CardPick[] = [
     bestFor: "Borrowers who want a card that earns rewards on new spending once the transfer is paid off.",
     introPeriod: "18 months on transfers",
     transferFee: "3% for the first 4 months ($5 minimum), 5% after",
-    href: "/reviews/citi-double-cash",
+    href: "/credit-cards/citi-double-cash",
   },
   {
     rank: 4,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who want to earn meaningful cash back while paying down transferred debt.",
     introPeriod: "18 months on transfers",
     transferFee: "3% intro on transfers in the first 4 months ($5 minimum), 5% after",
-    href: "/reviews/discover-it-cash-back",
+    href: "/credit-cards/discover-it-cashback",
   },
   {
     rank: 5,

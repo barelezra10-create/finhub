@@ -34,7 +34,7 @@ const picks: CardPick[] = [
     bestFor: "Anyone planning a large purchase they need 18+ months to pay off without interest.",
     introPeriod: "21 months",
     postIntroAPR: "17.24% to 28.99% variable",
-    href: "/reviews/wells-reflect",
+    href: "/credit-cards/wells-fargo-active-cash",
   },
   {
     rank: 2,
@@ -46,7 +46,7 @@ const picks: CardPick[] = [
     bestFor: "Cardholders who want a 12-month interest-free runway and a strong rewards card afterwards.",
     introPeriod: "12 months",
     postIntroAPR: "20.24% to 29.99% variable",
-    href: "/reviews/wells-active-cash",
+    href: "/credit-cards/wells-fargo-active-cash",
   },
   {
     rank: 3,
@@ -70,7 +70,7 @@ const picks: CardPick[] = [
     bestFor: "First-year cardholders willing to track quarterly categories for outsized rewards.",
     introPeriod: "15 months",
     postIntroAPR: "18.24% to 27.24% variable",
-    href: "/reviews/discover-it-cash-back",
+    href: "/credit-cards/discover-it-cashback",
   },
   {
     rank: 5,
@@ -82,7 +82,7 @@ const picks: CardPick[] = [
     bestFor: "Borrowers who need both a long transfer window and a year of interest-free new purchases.",
     introPeriod: "12 months on purchases",
     postIntroAPR: "18.24% to 28.99% variable",
-    href: "/reviews/citi-diamond-preferred",
+    href: "/credit-cards/citi-double-cash",
   },
 ];
 

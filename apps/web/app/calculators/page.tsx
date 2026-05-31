@@ -80,6 +80,41 @@ const allCalculators = [
     icon: "📊",
     tag: null,
   },
+  {
+    title: "Which Card Quiz",
+    sub: "3 questions, your top 3 cards",
+    href: "/calculators/which-card",
+    icon: "❓",
+    tag: "Popular",
+  },
+  {
+    title: "Rewards Optimizer",
+    sub: "Rank 50 cards by annual rewards",
+    href: "/calculators/rewards-optimizer",
+    icon: "💎",
+    tag: null,
+  },
+  {
+    title: "Balance Transfer",
+    sub: "0% intro APR savings, side by side",
+    href: "/calculators/balance-transfer",
+    icon: "🔁",
+    tag: null,
+  },
+  {
+    title: "APR Calculator",
+    sub: "Daily, monthly, APY conversion",
+    href: "/calculators/apr",
+    icon: "📉",
+    tag: null,
+  },
+  {
+    title: "Student Loan Payoff",
+    sub: "Grace, deferment, capitalization",
+    href: "/calculators/student-loan-payoff",
+    icon: "🎓",
+    tag: null,
+  },
 ];
 
 const popularCalcs = allCalculators.filter((c) => c.tag === "Popular");
@@ -149,13 +184,13 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-lime mb-6">
-            <span className="pulse-dot" /> 10 free calculators
+            <span className="pulse-dot" /> 15 free calculators
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             Calculators that show their work.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            Every formula visible. Every assumption editable. No popups, no email walls, no upsells. Ten tools covering mortgages, savings, loans, credit cards, and net worth. Built for back-of-the-envelope first, deep-dive second.
+            Every formula visible. Every assumption editable. No popups, no email walls, no upsells. Fifteen tools covering mortgages, savings, loans, credit cards, and net worth. Built for back-of-the-envelope first, deep-dive second.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/calculators/mortgage-payment" className="pill pill-ink">
@@ -169,7 +204,7 @@ export default function Page() {
 
           <div className="mt-10 flex items-center gap-6 text-sm text-mute">
             <div className="flex items-center gap-2">
-              <span className="font-mono tabular text-ink font-semibold">10</span> calculators
+              <span className="font-mono tabular text-ink font-semibold">15</span> calculators
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono tabular text-ink font-semibold">0</span> email walls

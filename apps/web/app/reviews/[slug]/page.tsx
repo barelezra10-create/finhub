@@ -934,8 +934,23 @@ const reviews: Record<string, LenderReview> = {
 
 // ─── Static params + metadata ─────────────────────────────────────────────────
 
+// Personal loan slugs moved to /loans/personal/[slug] (2026-05). Exclude here
+// to avoid duplicate routes; next.config.ts handles 301 redirects.
+const MOVED_LOAN_SLUGS = new Set([
+  "sofi-loan",
+  "lightstream",
+  "marcus-loan",
+  "discover-loan",
+  "upstart",
+  "lendingclub",
+  "bestegg",
+  "prosper",
+]);
+
 export async function generateStaticParams() {
-  return Object.keys(reviews).map((slug) => ({ slug }));
+  return Object.keys(reviews)
+    .filter((slug) => !MOVED_LOAN_SLUGS.has(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
