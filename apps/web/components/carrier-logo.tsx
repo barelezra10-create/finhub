@@ -19,7 +19,23 @@ const CARRIER_IMAGE: Record<string, string> = {
   "Ladder Life": "ladder-life.png",
   "Mutual of Omaha": "mutual-of-omaha.png",
   "Policygenius": "policygenius.png",
+  "Allstate": "allstate.png",
+  "Liberty Mutual": "liberty-mutual.png",
+  "Northwestern Mutual": "northwestern-mutual.png",
+  "Prudential": "prudential.png",
+  "Haven Life": "haven-life.png",
 };
+
+// Wordmark logos that are much wider than tall need a wider effective area
+// inside the square badge to stay readable. Without this they shrink to
+// unreadable thumbnails.
+const WORDMARK_CARRIERS = new Set([
+  "Allstate",
+  "Liberty Mutual",
+  "Northwestern Mutual",
+  "Prudential",
+  "Haven Life",
+]);
 
 const CARRIER_COLOR: Record<string, string> = {
   // Auto
@@ -69,10 +85,11 @@ export function CarrierLogo({ carrier, size = 72, className = "" }: CarrierLogoP
   const file = CARRIER_IMAGE[carrier];
 
   if (file) {
+    const isWordmark = WORDMARK_CARRIERS.has(carrier);
     return (
       <span
         className={`inline-flex items-center justify-center rounded-xl bg-white border border-line overflow-hidden ${className}`}
-        style={{ width: size, height: size }}
+        style={{ width: size, height: size, padding: isWordmark ? size * 0.08 : size * 0.11 }}
         aria-label={`${carrier} logo`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -80,7 +97,7 @@ export function CarrierLogo({ carrier, size = 72, className = "" }: CarrierLogoP
           src={`/insurance/${file}`}
           alt={`${carrier} logo`}
           className="object-contain"
-          style={{ width: size * 0.78, height: size * 0.78 }}
+          style={{ maxWidth: "100%", maxHeight: "100%" }}
           loading="lazy"
         />
       </span>
