@@ -1,7 +1,25 @@
 /**
  * Stylized badge for insurance carriers and other entities not in lib/brands.ts.
- * Renders the carrier's initials over a brand-color background.
+ * Uses a real logo image from /public/insurance/ when one is mapped here, else
+ * falls back to the initials badge keyed by brand color.
  */
+
+// Carrier name → filename in /public/insurance/. Add an entry when committing
+// a new high-quality logo file. Carriers not listed here render via the
+// colored-initials fallback (kept consistent with brand-logo.tsx).
+const CARRIER_IMAGE: Record<string, string> = {
+  "GEICO": "geico.png",
+  "Progressive": "progressive.png",
+  "State Farm": "state-farm.png",
+  "USAA": "usaa.png",
+  "Nationwide": "nationwide.png",
+  "The General": "the-general.png",
+  "Farmers": "farmers.png",
+  "Lemonade": "lemonade.png",
+  "Ladder Life": "ladder-life.png",
+  "Mutual of Omaha": "mutual-of-omaha.png",
+  "Policygenius": "policygenius.png",
+};
 
 const CARRIER_COLOR: Record<string, string> = {
   // Auto
@@ -25,8 +43,6 @@ const CARRIER_COLOR: Record<string, string> = {
   "Policygenius": "#6E5CFF",
 };
 
-// Carriers whose primary color is light enough that ink (dark) text reads
-// better than white text.
 const LIGHT_CARRIERS = new Set(["Liberty Mutual", "The General"]);
 
 function initials(name: string): string {
@@ -50,6 +66,27 @@ interface CarrierLogoProps {
 }
 
 export function CarrierLogo({ carrier, size = 72, className = "" }: CarrierLogoProps) {
+  const file = CARRIER_IMAGE[carrier];
+
+  if (file) {
+    return (
+      <span
+        className={`inline-flex items-center justify-center rounded-xl bg-white border border-line overflow-hidden ${className}`}
+        style={{ width: size, height: size }}
+        aria-label={`${carrier} logo`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/insurance/${file}`}
+          alt={`${carrier} logo`}
+          className="object-contain"
+          style={{ width: size * 0.78, height: size * 0.78 }}
+          loading="lazy"
+        />
+      </span>
+    );
+  }
+
   const bg = CARRIER_COLOR[carrier] ?? "#1F1F1F";
   const textColor = LIGHT_CARRIERS.has(carrier) ? "#0A0A0A" : "#FFFFFF";
   return (
