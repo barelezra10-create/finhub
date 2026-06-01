@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 import { loadSavingsAccounts, formatApy } from "@/lib/savings-accounts";
+import { BrandLogo } from "@/components/brand-logo";
+import { getBrand, type Brand } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "Best High-Yield Savings Accounts, CDs & Money Market Rates Today | Fintiex",
@@ -10,23 +12,173 @@ export const metadata: Metadata = {
   alternates: { canonical: "/savings" },
 };
 
-interface RateRow {
-  lender: string;
-  apr: number;
+interface SavingsLender {
+  brandSlug: string;
+  product: string;
+  apy: number;
   tag?: string;
-  detail: string;
-  href: string;
+  tagline: string;
+  minOpen: string;
+  monthlyFee: string;
+  founded: number;
+  bestFor: string;
+  perks: string[];
 }
 
-const hysaRates: RateRow[] = [
-  { lender: "Bask Bank", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/reviews/bask" },
-  { lender: "Bread Savings", apr: 4.75, detail: "$100 min · No fees · FDIC", href: "/reviews/bread" },
-  { lender: "Marcus by Goldman Sachs", apr: 4.50, detail: "No min · No fees · FDIC", href: "/reviews/marcus" },
-  { lender: "Ally Bank", apr: 4.45, detail: "No min · No fees · FDIC", href: "/reviews/ally" },
-  { lender: "SoFi", apr: 4.40, detail: "Direct deposit required · FDIC", href: "/reviews/sofi" },
-  { lender: "Discover Bank", apr: 4.30, detail: "No min · No fees · FDIC", href: "/reviews/discover-savings" },
-  { lender: "CIT Bank", apr: 4.25, detail: "$100 min · Platinum tier · FDIC", href: "/reviews/cit" },
-  { lender: "American Express HYSA", apr: 4.15, detail: "No min · No transfer limit · FDIC", href: "/reviews/amex-savings" },
+const savingsLenders: SavingsLender[] = [
+  {
+    brandSlug: "bask",
+    product: "Interest Savings",
+    apy: 4.85,
+    tag: "Top APY",
+    tagline: "Texas-based online bank with one of the highest APYs and no fees of any kind.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2020,
+    bestFor: "Top yield with zero strings attached",
+    perks: [
+      "No minimum balance and no monthly fees",
+      "Sister brand of Texas Capital Bank, FDIC-insured",
+      "Optional American Airlines miles savings account",
+    ],
+  },
+  {
+    brandSlug: "bread",
+    product: "High-Yield Savings",
+    apy: 4.65,
+    tag: "Runner-up",
+    tagline: "Online savings arm of Bread Financial. Consistently near the top of the APY rankings.",
+    minOpen: "$100",
+    monthlyFee: "$0",
+    founded: 2020,
+    bestFor: "Stable rate without rate-chasing",
+    perks: [
+      "Long history of holding rates near the market top",
+      "No monthly fees and unlimited external transfers",
+      "FDIC-insured through Bread Savings Bank",
+    ],
+  },
+  {
+    brandSlug: "synchrony",
+    product: "High Yield Savings",
+    apy: 4.55,
+    tagline: "Long-running online savings brand with consistently top-quartile APYs and strong CD ladders.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2003,
+    bestFor: "Pairing a HYSA with a CD ladder under one login",
+    perks: [
+      "No minimums and no monthly fees",
+      "Top-tier CD ladder for the cash you can lock up",
+      "Free ATM card with $5 monthly ATM fee rebate",
+    ],
+  },
+  {
+    brandSlug: "marcus",
+    product: "Online Savings",
+    apy: 4.50,
+    tagline: "Goldman Sachs Bank USA's online savings. No fees, no minimums, and the cleanest mobile app in the category.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2016,
+    bestFor: "Premium brand without paying a premium",
+    perks: [
+      "Backed by Goldman Sachs Bank USA",
+      "No fees, no minimums, no gimmicks",
+      "Same-day transfers to linked external accounts",
+    ],
+  },
+  {
+    brandSlug: "ally",
+    product: "Online Savings",
+    apy: 4.45,
+    tagline: "Online-only bank loved for clean apps, no monthly fees, and category-leading customer service.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2009,
+    bestFor: "Full-service banking under one roof",
+    perks: [
+      "Savings Buckets to organize money into goals",
+      "Interest-bearing checking, no monthly fees",
+      "24/7 phone, chat, and email support",
+    ],
+  },
+  {
+    brandSlug: "sofi",
+    product: "Checking + Savings",
+    apy: 4.40,
+    tag: "Bonus APY",
+    tagline: "App-first bank with bonus APY when you direct deposit, plus checking and investing in one stack.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2011,
+    bestFor: "All-in-one banking + investing in one app",
+    perks: [
+      "Up to 4.60% APY with direct deposit setup",
+      "Joint accounts, vaults, and early paycheck",
+      "Free use of 55,000+ ATMs nationwide",
+    ],
+  },
+  {
+    brandSlug: "discover-savings",
+    product: "Online Savings",
+    apy: 4.30,
+    tagline: "FDIC-insured online savings with no fees and 24/7 U.S.-based phone support.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 1985,
+    bestFor: "U.S.-based service with no fees",
+    perks: [
+      "U.S.-based customer service, 24/7",
+      "No fees and no minimum balance",
+      "Pairs cleanly with Discover cash-back card",
+    ],
+  },
+  {
+    brandSlug: "cit",
+    product: "Savings Connect",
+    apy: 4.25,
+    tagline: "Consumer-direct savings with tiered APYs and one of the strongest no-penalty CD options on the market.",
+    minOpen: "$100",
+    monthlyFee: "$0",
+    founded: 2009,
+    bestFor: "Tiered APY savers and CD shoppers",
+    perks: [
+      "Top-tier no-penalty CD complementing the HYSA",
+      "Multiple savings buckets in the app",
+      "FDIC-insured through CIT Bank",
+    ],
+  },
+  {
+    brandSlug: "amex-savings",
+    product: "Personal Savings",
+    apy: 4.15,
+    tagline: "Personal savings from American Express. No fees, no minimums, FDIC-insured.",
+    minOpen: "$0",
+    monthlyFee: "$0",
+    founded: 2008,
+    bestFor: "Existing Amex cardholders consolidating",
+    perks: [
+      "Backed by the Amex brand and U.S. customer service",
+      "Pair with any Amex card for one-app management",
+      "FDIC-insured through American Express National Bank",
+    ],
+  },
+  {
+    brandSlug: "lendingclub-savings",
+    product: "LevelUp Savings",
+    apy: 4.10,
+    tagline: "High-yield savings paired with a checking account that earns interest and refunds ATM fees.",
+    minOpen: "$100",
+    monthlyFee: "$0",
+    founded: 2007,
+    bestFor: "Combining HYSA with rebated-fee checking",
+    perks: [
+      "LevelUp checking refunds all ATM fees",
+      "$100 monthly deposit unlocks bonus APY tier",
+      "FDIC-insured through LendingClub Bank",
+    ],
+  },
 ];
 
 const subPages = [
@@ -95,6 +247,95 @@ const faqs = [
   },
 ];
 
+function SavingsBox({ lender, brand }: { lender: SavingsLender; brand: Brand }) {
+  const reviewHref = `/reviews/${brand.slug}`;
+  const externalHref = `https://www.${brand.domain}`;
+  return (
+    <div className="card-flush p-6 md:p-8 group hover:border-ink transition-colors duration-200">
+      <div className="grid grid-cols-1 md:grid-cols-[88px_1fr_auto] gap-6 md:gap-8 items-start">
+        {/* Logo */}
+        <div className="shrink-0">
+          <BrandLogo brand={brand} size={88} rounded="lg" />
+        </div>
+
+        {/* Body */}
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight">
+              {brand.name}
+            </h3>
+            <span className="text-xs font-mono uppercase tracking-wider text-mute">
+              {lender.product}
+            </span>
+            {lender.tag && <span className="chip chip-lime">{lender.tag}</span>}
+          </div>
+          <p className="text-mute leading-relaxed mb-4 max-w-2xl">{lender.tagline}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
+            <Spec label="Min to open" value={lender.minOpen} />
+            <Spec label="Monthly fee" value={lender.monthlyFee} />
+            <Spec label="Founded" value={String(lender.founded)} />
+            <Spec label="FDIC" value="Insured" />
+          </div>
+
+          <div className="text-xs font-mono uppercase tracking-wider text-mute mb-2">
+            Best for
+          </div>
+          <div className="text-sm text-ink-soft mb-4 max-w-2xl">{lender.bestFor}</div>
+
+          <ul className="space-y-1.5 text-[0.9375rem] text-ink-soft max-w-2xl">
+            {lender.perks.map((p) => (
+              <li key={p} className="flex gap-2">
+                <span className="text-mint font-bold shrink-0">+</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* APY + CTAs */}
+        <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
+          <div>
+            <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
+              APY
+            </div>
+            <div className="font-display font-extrabold text-4xl md:text-5xl tabular leading-none text-ink">
+              {fmtPct(lender.apy)}
+            </div>
+            <div className="text-xs text-mute mt-1">FDIC-insured</div>
+          </div>
+          <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
+            <a
+              href={externalHref}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="pill pill-ink"
+            >
+              Open at {brand.name.split(" ")[0]} <span aria-hidden>↗</span>
+            </a>
+            <Link href={reviewHref} className="pill pill-ghost">
+              Read review
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Spec({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-0.5">
+        {label}
+      </div>
+      <div className="font-display font-semibold text-sm tabular leading-tight">
+        {value}
+      </div>
+    </div>
+  );
+}
+
 function fmtPct(n: number) {
   return n.toFixed(2) + "%";
 }
@@ -157,7 +398,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* MAIN RATE TABLE */}
+      {/* LENDER LINEUP — STACKED BOXES */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
         <div className="grid grid-cols-12 gap-8 mb-8">
           <div className="col-span-12 md:col-span-7">
@@ -175,33 +416,12 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-6 md:col-span-5">Bank</div>
-            <div className="hidden md:block md:col-span-4">Detail</div>
-            <div className="col-span-6 md:col-span-3 text-right">APY</div>
-          </div>
-          {hysaRates.map((r, i) => (
-            <Link
-              key={r.lender}
-              href={r.href}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === hysaRates.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-6 md:col-span-5">
-                <div className="flex items-center gap-2">
-                  <div className="font-display font-semibold text-base">{r.lender}</div>
-                  {r.tag && <span className="chip chip-lime">{r.tag}</span>}
-                </div>
-                <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
-              </div>
-              <div className="hidden md:block md:col-span-4 text-mute text-sm">{r.detail}</div>
-              <div className="col-span-6 md:col-span-3 text-right font-mono font-semibold tabular text-lg">
-                {fmtPct(r.apr)}
-              </div>
-            </Link>
-          ))}
+        <div className="space-y-5">
+          {savingsLenders.map((lender) => {
+            const brand = getBrand(lender.brandSlug);
+            if (!brand) return null;
+            return <SavingsBox key={lender.brandSlug} lender={lender} brand={brand} />;
+          })}
         </div>
       </section>
 
