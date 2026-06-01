@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
+import { BrandLogo } from "@/components/brand-logo";
+import { getBrand, type Brand } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "Mortgage Rates Today: Compare 30Y Fixed, 15Y Fixed, Refi, HELOC | Fintiex",
@@ -9,24 +11,142 @@ export const metadata: Metadata = {
   alternates: { canonical: "/mortgages" },
 };
 
-interface RateRow {
-  lender: string;
+interface MortgageLender {
+  brandSlug: string;
   apr: number;
   tag?: string;
-  detail: string;
-  href: string;
-  trend?: "up" | "down" | "flat";
+  tagline: string;
+  minFico: number;
+  minDown: string;
+  founded: number;
+  loanTypes: string;
+  perks: string[];
+  trend: "up" | "down" | "flat";
 }
 
-const mortgageRates: RateRow[] = [
-  { lender: "Marcus by Goldman Sachs", apr: 6.79, tag: "Lowest", detail: "30Y · 5% down · 760+ FICO", href: "/reviews/marcus-mortgage", trend: "down" },
-  { lender: "Better.com", apr: 6.85, detail: "30Y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
-  { lender: "Rocket Mortgage", apr: 6.89, detail: "30Y · 5% down · jumbo eligible", href: "/reviews/rocket", trend: "up" },
-  { lender: "loanDepot", apr: 6.92, detail: "30Y · 5% down · cash-out OK", href: "/reviews/loandepot", trend: "up" },
-  { lender: "Chase Home Lending", apr: 6.95, detail: "30Y · 10% down · DreaMaker", href: "/reviews/chase-mortgage", trend: "flat" },
-  { lender: "PNC Bank", apr: 6.99, detail: "30Y · 5% down · HELOC combo", href: "/reviews/pnc", trend: "flat" },
-  { lender: "Wells Fargo", apr: 7.02, detail: "30Y · 10% down · existing clients", href: "/reviews/wellsfargo-mortgage", trend: "up" },
-  { lender: "US Bank", apr: 7.05, detail: "30Y · 5% down · smart refinance", href: "/reviews/usbank", trend: "up" },
+const mortgageLenders: MortgageLender[] = [
+  {
+    brandSlug: "marcus-mortgage",
+    apr: 6.79,
+    tag: "Lowest rate",
+    tagline: "Goldman Sachs Bank USA's home lending arm. Low rates for prime borrowers.",
+    minFico: 740,
+    minDown: "5%",
+    founded: 2016,
+    loanTypes: "Conforming, jumbo",
+    perks: [
+      "No application or origination fees",
+      "Same-day pre-approval for prime borrowers",
+      "Backed by Goldman Sachs Bank USA",
+    ],
+    trend: "down",
+  },
+  {
+    brandSlug: "better",
+    apr: 6.85,
+    tag: "No origination",
+    tagline: "100% online mortgage with no commissions, no application fees, and rate-lock in minutes.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 2016,
+    loanTypes: "Conforming, FHA, VA, jumbo",
+    perks: [
+      "No commissions and no origination fees",
+      "Pre-approval in 3 minutes online",
+      "Rate-match guarantee plus $100 credit",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "rocket",
+    apr: 6.89,
+    tagline: "Largest U.S. retail mortgage lender. Strong tech, 24/7 phone support, and broad product menu.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 1985,
+    loanTypes: "Conforming, FHA, VA, USDA, jumbo, HELOC",
+    perks: [
+      "Largest U.S. retail lender with full product menu",
+      "95% online application process",
+      "24/7 customer support",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "loandepot",
+    apr: 6.92,
+    tagline: "Top-5 nonbank lender. Hybrid online + in-branch with strong cash-out and refinance pricing.",
+    minFico: 620,
+    minDown: "5%",
+    founded: 2010,
+    loanTypes: "Conforming, FHA, VA, jumbo, cash-out refi",
+    perks: [
+      "Lifetime guarantee on future refinances",
+      "Hybrid digital + 200+ branches",
+      "Specializes in cash-out and refinance",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "chase-mortgage",
+    apr: 6.95,
+    tagline: "Nationwide bank with DreaMaker low down-payment program and relationship discounts.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 1799,
+    loanTypes: "Conforming, FHA, VA, jumbo, DreaMaker",
+    perks: [
+      "DreaMaker loan: 3% down with reduced PMI",
+      "Up to $500 rate discount for Premier Plus clients",
+      "Branch network in 48 states",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "pnc",
+    apr: 6.99,
+    tagline: "Regional bank with strong grant programs and HELOC combo loans in 28 states.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 1845,
+    loanTypes: "Conforming, FHA, VA, jumbo, HELOC, physician",
+    perks: [
+      "Closing-cost grant up to $5,000 in select markets",
+      "Strong physician and professional programs",
+      "HELOC combo loans available",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "wellsfargo-mortgage",
+    apr: 7.02,
+    tagline: "Big-four bank with the largest correspondent network and a sizable jumbo book.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 1852,
+    loanTypes: "Conforming, FHA, VA, jumbo, refinance specialists",
+    perks: [
+      "Existing-customer rate discounts",
+      "Refinance specialists in every region",
+      "Branch network in 36 states",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "usbank",
+    apr: 7.05,
+    tagline: "Top-five bank with strong portfolio jumbo pricing in the western United States.",
+    minFico: 620,
+    minDown: "3%",
+    founded: 1863,
+    loanTypes: "Conforming, FHA, VA, jumbo, Smart Refi",
+    perks: [
+      "Smart Refinance with no closing costs",
+      "Portfolio jumbo loans up to $5M",
+      "Branches in 26 states",
+    ],
+    trend: "up",
+  },
 ];
 
 const subPages = [
@@ -98,10 +218,93 @@ function fmtPct(n: number) {
   return n.toFixed(2) + "%";
 }
 
-function trendArrow(t?: "up" | "down" | "flat") {
-  if (!t || t === "flat") return <span className="text-mute">flat</span>;
-  if (t === "up") return <span className="text-rose">up</span>;
-  return <span className="text-mint">down</span>;
+function trendLabel(t: "up" | "down" | "flat"): { text: string; cls: string } {
+  if (t === "up") return { text: "↑ Up vs last week", cls: "text-rose" };
+  if (t === "down") return { text: "↓ Down vs last week", cls: "text-mint" };
+  return { text: "→ Flat vs last week", cls: "text-mute" };
+}
+
+function LenderBox({ lender, brand }: { lender: MortgageLender; brand: Brand }) {
+  const reviewHref = `/reviews/${brand.slug}`;
+  const externalHref = `https://www.${brand.domain}`;
+  const trend = trendLabel(lender.trend);
+  return (
+    <div className="card-flush p-6 md:p-8 group hover:border-ink transition-colors duration-200">
+      <div className="grid grid-cols-1 md:grid-cols-[88px_1fr_auto] gap-6 md:gap-8 items-start">
+        {/* Logo */}
+        <div className="shrink-0">
+          <BrandLogo brand={brand} size={88} rounded="lg" />
+        </div>
+
+        {/* Body */}
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight">
+              {brand.name}
+            </h3>
+            {lender.tag && <span className="chip chip-lime">{lender.tag}</span>}
+            <span className={`text-xs font-mono ${trend.cls}`}>{trend.text}</span>
+          </div>
+          <p className="text-mute leading-relaxed mb-4 max-w-2xl">{lender.tagline}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
+            <Spec label="Min FICO" value={String(lender.minFico)} />
+            <Spec label="Min down" value={lender.minDown} />
+            <Spec label="Founded" value={String(lender.founded)} />
+            <Spec label="Loan types" value={lender.loanTypes} />
+          </div>
+
+          <ul className="space-y-1.5 text-[0.9375rem] text-ink-soft max-w-2xl">
+            {lender.perks.map((p) => (
+              <li key={p} className="flex gap-2">
+                <span className="text-mint font-bold shrink-0">+</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Rate + CTAs */}
+        <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
+          <div>
+            <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
+              30Y APR
+            </div>
+            <div className="font-display font-extrabold text-4xl md:text-5xl tabular leading-none">
+              {fmtPct(lender.apr)}
+            </div>
+            <div className="text-xs text-mute mt-1">20% down, 760+ FICO</div>
+          </div>
+          <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
+            <a
+              href={externalHref}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="pill pill-ink"
+            >
+              Visit {brand.name.split(" ")[0]} <span aria-hidden>↗</span>
+            </a>
+            <Link href={reviewHref} className="pill pill-ghost">
+              Read review
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Spec({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-0.5">
+        {label}
+      </div>
+      <div className="font-display font-semibold text-sm tabular leading-tight">
+        {value}
+      </div>
+    </div>
+  );
 }
 
 export default function Page() {
@@ -162,7 +365,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* MAIN RATE TABLE */}
+      {/* LENDER LINEUP — STACKED BOXES */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
         <div className="grid grid-cols-12 gap-8 mb-8">
           <div className="col-span-12 md:col-span-7">
@@ -180,37 +383,12 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-6 md:col-span-5">Lender</div>
-            <div className="hidden md:block md:col-span-4">Detail</div>
-            <div className="col-span-3 md:col-span-2 text-right">APR</div>
-            <div className="col-span-3 md:col-span-1 text-right">Trend</div>
-          </div>
-          {mortgageRates.map((r, i) => (
-            <Link
-              key={r.lender}
-              href={r.href}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === mortgageRates.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-6 md:col-span-5">
-                <div className="flex items-center gap-2">
-                  <div className="font-display font-semibold text-base">{r.lender}</div>
-                  {r.tag && <span className="chip chip-lime">{r.tag}</span>}
-                </div>
-                <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
-              </div>
-              <div className="hidden md:block md:col-span-4 text-mute text-sm">{r.detail}</div>
-              <div className="col-span-3 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
-                {fmtPct(r.apr)}
-              </div>
-              <div className="col-span-3 md:col-span-1 text-right text-sm font-mono">
-                {trendArrow(r.trend)}
-              </div>
-            </Link>
-          ))}
+        <div className="space-y-5">
+          {mortgageLenders.map((lender) => {
+            const brand = getBrand(lender.brandSlug);
+            if (!brand) return null;
+            return <LenderBox key={lender.brandSlug} lender={lender} brand={brand} />;
+          })}
         </div>
       </section>
 
