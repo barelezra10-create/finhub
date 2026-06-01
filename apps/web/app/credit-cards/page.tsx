@@ -92,12 +92,15 @@ export default function Page() {
             We model real spending patterns against published rewards rates and annual fees. The winner is the card that puts the most money back in your pocket, not the one with the largest advertising budget.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/credit-cards/cash-back" className="pill pill-ink">
-              Best cash back cards
+            <Link href="/credit-cards/compare" className="pill pill-ink">
+              Compare cards side by side
               <span aria-hidden>→</span>
             </Link>
+            <Link href="/credit-cards/cash-back" className="pill pill-ghost">
+              Best cash back
+            </Link>
             <Link href="/credit-cards/travel" className="pill pill-ghost">
-              Best travel cards
+              Best travel
             </Link>
           </div>
         </div>
