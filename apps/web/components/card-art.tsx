@@ -6,11 +6,9 @@ const CARD_IMAGES: Record<string, string> = {
   "amex-business-gold": "amex-business-gold.png",
   "amex-gold": "amex-gold.png",
   "amex-platinum": "amex-platinum.png",
-  "apple-card": "apple-card.png",
   "bank-of-america-business-advantage-cash": "bank-of-america-business-advantage-cash.jpg",
   "bank-of-america-customized-cash": "bank-of-america-customized-cash.png",
   "bank-of-america-travel-rewards-student": "bank-of-america-travel-rewards-student.jpg",
-  "bilt-mastercard": "bilt-mastercard.png",
   "brex-card": "brex-card.jpg",
   "capital-one-platinum-secured": "capital-one-platinum-secured.png",
   "capital-one-quicksilver": "capital-one-quicksilver.png",
@@ -78,6 +76,8 @@ const SLUG_GRADIENT: Record<string, [string, string]> = {
   "hawaiian-airlines-world-elite": ["#5A1A6F", "#2C0F4A"],
   "wyndham-rewards-earner-business": ["#1F2B66", "#0F1640"],
   "discover-it-student-cash": ["#FF8C42", "#C04A0F"],
+  "apple-card": ["#E5E5EA", "#A6A6AB"],
+  "bilt-mastercard": ["#1A1A1A", "#000000"],
 };
 
 const DEFAULT_GRADIENT: [string, string] = ["#1F1F1F", "#000000"];
