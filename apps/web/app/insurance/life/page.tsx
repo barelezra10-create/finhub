@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 import { loadCarriers, formatCurrency } from "@/lib/insurance";
+import { CarrierBox } from "@/components/carrier-box";
 
 export const metadata: Metadata = {
   title: "Best Life Insurance Companies of 2026: 7 Top Providers Ranked | Fintiex",
@@ -101,39 +102,41 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-5 md:col-span-4">Provider</div>
-            <div className="hidden md:block md:col-span-4">Best for</div>
-            <div className="hidden md:block md:col-span-2 text-right">Max coverage</div>
-            <div className="col-span-7 md:col-span-2 text-right">Rating</div>
-          </div>
+        <div className="space-y-5">
           {carriers.map((c, i) => (
-            <Link
+            <CarrierBox
               key={c.slug}
-              href={`/insurance/life/${c.slug}`}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === carriers.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-5 md:col-span-4">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-display font-semibold text-base">{c.carrier}</div>
-                  {i === 0 && <span className="chip chip-lime">Top pick</span>}
-                </div>
-                <div className="text-xs text-mute mt-1 md:hidden">{c.best_for}</div>
-                <div className="text-xs text-mute mt-1 font-mono tabular md:hidden">
-                  Up to {c.coverage_amount_max ? formatCurrency(c.coverage_amount_max) : "Varies"}
-                </div>
-              </div>
-              <div className="hidden md:block md:col-span-4 text-mute text-sm">{c.best_for}</div>
-              <div className="hidden md:block md:col-span-2 text-right text-sm font-mono tabular">
-                {c.coverage_amount_max ? formatCurrency(c.coverage_amount_max) : "Varies"}
-              </div>
-              <div className="col-span-7 md:col-span-2 text-right font-mono font-semibold tabular text-base">
-                {c.rating.toFixed(1)} / 5
-              </div>
-            </Link>
+              carrier={c.carrier}
+              productLabel="Life Insurance"
+              tag={i === 0 ? "Top pick" : undefined}
+              tagline={c.best_for}
+              specs={[
+                {
+                  label: "Coverage",
+                  value:
+                    c.coverage_amount_min && c.coverage_amount_max
+                      ? `${formatCurrency(c.coverage_amount_min)} to ${formatCurrency(c.coverage_amount_max)}`
+                      : "Varies",
+                },
+                { label: "AM Best", value: c.am_best_rating ?? "N/R" },
+                {
+                  label: "Ages",
+                  value: c.age_range ? `${c.age_range.min} to ${c.age_range.max}` : "Varies",
+                },
+                {
+                  label: "Underwriting",
+                  value: c.underwriting_speed
+                    ? c.underwriting_speed.split(" ").slice(0, 4).join(" ")
+                    : "Standard",
+                },
+              ]}
+              bestFor={c.best_for}
+              perks={c.perks.slice(0, 3)}
+              rating={c.rating}
+              reviewHref={`/insurance/life/${c.slug}`}
+              externalHref={c.quote_url}
+              externalLabel={`Get a quote at ${c.carrier.split(" ")[0]}`}
+            />
           ))}
         </div>
       </section>

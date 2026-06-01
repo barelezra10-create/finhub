@@ -43,7 +43,17 @@ const faqItems: FAQItem[] = [
   },
 ];
 
-const verticals = [
+type Accent = "lime" | "violet" | "coral";
+
+const verticals: {
+  href: string;
+  chip: string;
+  title: string;
+  detail: string;
+  stats: string[];
+  accent: Accent;
+  icon: "auto" | "home" | "life";
+}[] = [
   {
     href: "/insurance/auto",
     chip: "Auto",
@@ -51,7 +61,8 @@ const verticals = [
     detail:
       "Compare GEICO, Progressive, State Farm, USAA, and 4 more for cheapest premiums, best coverage, and top customer service.",
     stats: ["8 carriers", "From $1,000/yr", "Updated 2026"],
-    accent: "lime" as const,
+    accent: "lime",
+    icon: "auto",
   },
   {
     href: "/insurance/home",
@@ -60,7 +71,8 @@ const verticals = [
     detail:
       "8 home carriers ranked by premium, AM Best, and JD Power. Includes traditional (State Farm, Allstate) and digital-first (Lemonade).",
     stats: ["8 carriers", "From $750/yr", "Updated 2026"],
-    accent: "violet" as const,
+    accent: "violet",
+    icon: "home",
   },
   {
     href: "/insurance/life",
@@ -69,9 +81,48 @@ const verticals = [
     detail:
       "Term, whole, and no-exam life from 7 top providers. From digital-first (Haven, Ladder) to traditional (Northwestern Mutual, Prudential).",
     stats: ["7 providers", "Term + whole", "Updated 2026"],
-    accent: "lime" as const,
+    accent: "coral",
+    icon: "life",
   },
 ];
+
+function VerticalIcon({ kind }: { kind: "auto" | "home" | "life" }) {
+  const common = {
+    width: 64,
+    height: 64,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.5,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  if (kind === "auto") {
+    return (
+      <svg {...common} aria-hidden>
+        <path d="M3 14h18M5 14V9.5L7 5h10l2 4.5V14M5 14v3M19 14v3M7.5 11.5h9" />
+        <circle cx="7" cy="17" r="1.5" />
+        <circle cx="17" cy="17" r="1.5" />
+      </svg>
+    );
+  }
+  if (kind === "home") {
+    return (
+      <svg {...common} aria-hidden>
+        <path d="M3 11l9-7 9 7" />
+        <path d="M5 10v9h14v-9" />
+        <path d="M10 19v-6h4v6" />
+      </svg>
+    );
+  }
+  // life
+  return (
+    <svg {...common} aria-hidden>
+      <path d="M20.84 5.61a5.5 5.5 0 0 0-7.78 0L12 6.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 22.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+      <path d="M3 12h4.5l1.5-3 3 6 1.5-3H21" />
+    </svg>
+  );
+}
 
 export default function Page() {
   const auto = loadCarriers("auto");
@@ -134,23 +185,40 @@ export default function Page() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {verticals.map((v) => (
-            <Link key={v.href} href={v.href} className="card p-7 block group">
-              <div className="flex items-center justify-between mb-5">
-                <span className={v.accent === "lime" ? "chip chip-lime" : "chip chip-violet"}>{v.chip}</span>
-                <span className="text-mute text-xl group-hover:text-ink group-hover:translate-x-1 transition-all">→</span>
-              </div>
-              <h3 className="font-display font-extrabold text-2xl mb-3 tracking-tight">{v.title}</h3>
-              <p className="text-mute text-sm leading-relaxed mb-6">{v.detail}</p>
-              <div className="flex flex-wrap gap-2 pt-5 border-t border-line">
-                {v.stats.map((s) => (
-                  <span key={s} className="text-xs font-mono text-mute">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
+          {verticals.map((v) => {
+            const accentChip =
+              v.accent === "lime"
+                ? "chip chip-lime"
+                : v.accent === "violet"
+                ? "chip chip-violet"
+                : "chip chip-mute";
+            const iconColor =
+              v.accent === "lime"
+                ? "text-ink"
+                : v.accent === "violet"
+                ? "text-violet"
+                : "text-coral";
+            return (
+              <Link key={v.href} href={v.href} className="card p-7 block group">
+                <div className="flex items-start justify-between mb-5">
+                  <div className={`${iconColor}`}>
+                    <VerticalIcon kind={v.icon} />
+                  </div>
+                  <span className="text-mute text-xl group-hover:text-ink group-hover:translate-x-1 transition-all">→</span>
+                </div>
+                <span className={`${accentChip} mb-3 inline-block`}>{v.chip}</span>
+                <h3 className="font-display font-extrabold text-2xl mb-3 tracking-tight">{v.title}</h3>
+                <p className="text-mute text-sm leading-relaxed mb-6">{v.detail}</p>
+                <div className="flex flex-wrap gap-2 pt-5 border-t border-line">
+                  {v.stats.map((s) => (
+                    <span key={s} className="text-xs font-mono text-mute">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

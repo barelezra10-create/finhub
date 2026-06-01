@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
-import { loadCarriers, formatCurrency } from "@/lib/insurance";
+import { loadCarriers, formatPremiumRange } from "@/lib/insurance";
+import { CarrierBox } from "@/components/carrier-box";
 
 export const metadata: Metadata = {
   title: "Best Home Insurance Companies of 2026: 8 Top Carriers Ranked | Fintiex",
@@ -101,45 +102,29 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-5 md:col-span-4">Carrier</div>
-            <div className="hidden md:block md:col-span-4">Annual premium range</div>
-            <div className="hidden md:block md:col-span-2 text-right">AM Best</div>
-            <div className="col-span-7 md:col-span-2 text-right">Rating</div>
-          </div>
+        <div className="space-y-5">
           {carriers.map((c, i) => (
-            <Link
+            <CarrierBox
               key={c.slug}
-              href={`/insurance/home/${c.slug}`}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === carriers.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-5 md:col-span-4">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-display font-semibold text-base">{c.carrier}</div>
-                  {i === 0 && <span className="chip chip-lime">Top pick</span>}
-                </div>
-                <div className="text-xs text-mute mt-1">{c.best_for}</div>
-                <div className="md:hidden text-xs text-mute mt-1 font-mono tabular">
-                  {c.avg_annual_premium
-                    ? `${formatCurrency(c.avg_annual_premium.min)} to ${formatCurrency(c.avg_annual_premium.max)}`
-                    : "Varies"}
-                </div>
-              </div>
-              <div className="hidden md:block md:col-span-4 text-mute text-sm font-mono tabular">
-                {c.avg_annual_premium
-                  ? `${formatCurrency(c.avg_annual_premium.min)} to ${formatCurrency(c.avg_annual_premium.max)}`
-                  : "Varies"}
-              </div>
-              <div className="hidden md:block md:col-span-2 text-right text-sm font-mono tabular">
-                {c.am_best_rating ?? "N/R"}
-              </div>
-              <div className="col-span-7 md:col-span-2 text-right font-mono font-semibold tabular text-base">
-                {c.rating.toFixed(1)} / 5
-              </div>
-            </Link>
+              carrier={c.carrier}
+              productLabel="Home Insurance"
+              tag={i === 0 ? "Top pick" : undefined}
+              tagline={c.best_for}
+              specs={[
+                { label: "Annual premium", value: formatPremiumRange(c.avg_annual_premium) },
+                { label: "AM Best", value: c.am_best_rating ?? "N/R" },
+                { label: "JD Power", value: c.jd_power_satisfaction ? String(c.jd_power_satisfaction) : "N/R" },
+                {
+                  label: "Bundling save",
+                  value: c.bundling_discount_pct != null ? `${c.bundling_discount_pct}%` : "N/A",
+                },
+              ]}
+              bestFor={c.best_for}
+              perks={c.perks.slice(0, 3)}
+              rating={c.rating}
+              reviewHref={`/insurance/home/${c.slug}`}
+              externalHref={c.quote_url}
+            />
           ))}
         </div>
       </section>
