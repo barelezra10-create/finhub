@@ -3,7 +3,6 @@ import type { CardData } from "@/lib/cards";
 // slug → filename in /public/images/cards/. Real card art scraped from
 // issuer press kits. Missing slugs fall through to the SVG fallback below.
 const CARD_IMAGES: Record<string, string> = {
-  "alaska-airlines-visa": "alaska-airlines-visa.jpg",
   "amex-business-gold": "amex-business-gold.png",
   "amex-gold": "amex-gold.png",
   "amex-platinum": "amex-platinum.png",
@@ -32,11 +31,9 @@ const CARD_IMAGES: Record<string, string> = {
   "delta-gold-amex": "delta-gold-amex.png",
   "discover-it-cashback": "discover-it-cashback.webp",
   "discover-it-secured": "discover-it-secured.png",
-  "discover-it-student-cash": "discover-it-student-cash.png",
   "discover-it-student-chrome": "discover-it-student-chrome.png",
   "first-progress-platinum-prestige": "first-progress-platinum-prestige.jpg",
   "frontier-mastercard": "frontier-mastercard.png",
-  "hawaiian-airlines-world-elite": "hawaiian-airlines-world-elite.jpg",
   "hilton-honors-amex": "hilton-honors-amex.png",
   "ihg-one-rewards-premier": "ihg-one-rewards-premier.png",
   "jetblue-plus": "jetblue-plus.jpg",
@@ -52,7 +49,6 @@ const CARD_IMAGES: Record<string, string> = {
   "wells-fargo-active-cash": "wells-fargo-active-cash.webp",
   "wells-fargo-active-cash-student": "wells-fargo-active-cash-student.jpg",
   "world-of-hyatt": "world-of-hyatt.png",
-  "wyndham-rewards-earner-business": "wyndham-rewards-earner-business.jpg",
 };
 
 const ISSUER_GRADIENT: Record<string, [string, string]> = {
@@ -73,6 +69,17 @@ const ISSUER_GRADIENT: Record<string, [string, string]> = {
   "Capital Bank": ["#0A3D72", "#051F3A"],
   "Synovus Bank": ["#13355B", "#081F38"],
 };
+
+// Per-slug gradient overrides for cards we explicitly want to differentiate
+// from their issuer-default (e.g., multiple Barclays cards). Used by the
+// styled fallback when no real card image exists.
+const SLUG_GRADIENT: Record<string, [string, string]> = {
+  "alaska-airlines-visa": ["#0F2A47", "#01426A"],
+  "hawaiian-airlines-world-elite": ["#5A1A6F", "#2C0F4A"],
+  "wyndham-rewards-earner-business": ["#1F2B66", "#0F1640"],
+  "discover-it-student-cash": ["#FF8C42", "#C04A0F"],
+};
+
 const DEFAULT_GRADIENT: [string, string] = ["#1F1F1F", "#000000"];
 
 interface CardArtProps {
@@ -120,7 +127,8 @@ function CardFallback({
   height: number;
   className: string;
 }) {
-  const [c1, c2] = ISSUER_GRADIENT[card.issuer] ?? DEFAULT_GRADIENT;
+  const [c1, c2] =
+    SLUG_GRADIENT[card.slug] ?? ISSUER_GRADIENT[card.issuer] ?? DEFAULT_GRADIENT;
   const pad = Math.round(width * 0.06);
   const issuerFs = Math.max(9, Math.round(width * 0.04));
   const nameFs = Math.max(12, Math.round(width * 0.058));
