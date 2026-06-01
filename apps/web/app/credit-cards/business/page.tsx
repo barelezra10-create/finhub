@@ -1,7 +1,13 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
-import { BrandLogo } from "@/components/brand-logo";
+import { CardArt } from "@/components/card-art";
+import { cardsByCategory } from "@/lib/cards-server";
+import {
+  formatAnnualFee,
+  topRewardRate,
+  type CardData,
+} from "@/lib/cards";
 
 export const metadata: Metadata = {
   title: "Best Business Credit Cards 2026: Big Bonuses, Real Tools | Fintiex",
@@ -124,7 +130,111 @@ const faqItems: FAQItem[] = [
   },
 ];
 
+function BusinessCardRow({ card, rank }: { card: CardData; rank: number }) {
+  // Optional editor tag pulled from the picks array above, matched by slug.
+  const editorPick = picks.find((p) => p.brand === card.slug);
+  const tag = editorPick?.tag;
+  return (
+    <div className="card-flush p-6 md:p-8 group hover:border-ink transition-colors duration-200">
+      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr_auto] gap-6 md:gap-8 items-start">
+        {/* Card art */}
+        <div className="shrink-0 flex justify-center md:justify-start">
+          <CardArt card={card} width={280} />
+        </div>
+
+        {/* Body */}
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="font-mono text-xs text-mute">#{rank}</span>
+            <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight">
+              {card.name}
+            </h3>
+            {tag && <span className="chip chip-lime">{tag}</span>}
+          </div>
+          <div className="text-xs font-mono uppercase tracking-wider text-mute mb-3">
+            {card.issuer} · {card.network}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
+            <Spec label="Annual fee" value={formatAnnualFee(card.annual_fee ?? 0)} />
+            <Spec label="Top reward" value={topRewardRate(card)} />
+            <Spec
+              label="Signup bonus"
+              value={
+                card.signup_bonus_value_usd != null
+                  ? `$${card.signup_bonus_value_usd.toLocaleString()}`
+                  : card.signup_bonus ?? "None"
+              }
+            />
+            <Spec
+              label="Min credit"
+              value={card.credit_score_required?.min ? String(card.credit_score_required.min) : "Varies"}
+            />
+          </div>
+
+          {card.signup_bonus && (
+            <p className="text-sm text-ink-soft mb-3 max-w-2xl">
+              <span className="font-semibold text-ink">Bonus: </span>
+              {card.signup_bonus}
+              {card.signup_bonus_spend ? ` after $${card.signup_bonus_spend.toLocaleString()} in spend` : ""}
+            </p>
+          )}
+
+          <ul className="space-y-1.5 text-[0.9375rem] text-ink-soft max-w-2xl">
+            {card.perks.slice(0, 3).map((p) => (
+              <li key={p} className="flex gap-2">
+                <span className="text-mint font-bold shrink-0">+</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Rating + CTAs */}
+        <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
+          <div>
+            <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
+              Fintiex score
+            </div>
+            <div className="font-display font-extrabold text-4xl md:text-5xl tabular leading-none text-ink">
+              {card.rating.toFixed(1)}
+            </div>
+            <div className="text-xs text-mute mt-1">out of 5</div>
+          </div>
+          <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
+            <a
+              href={card.application_url}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="pill pill-ink"
+            >
+              Apply at {card.issuer.split(" ")[0]} <span aria-hidden>↗</span>
+            </a>
+            <Link href={`/credit-cards/${card.slug}`} className="pill pill-ghost">
+              Read review
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Spec({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-0.5">
+        {label}
+      </div>
+      <div className="font-display font-semibold text-sm tabular leading-tight">
+        {value}
+      </div>
+    </div>
+  );
+}
+
 export default function Page() {
+  const businessCards = cardsByCategory("business");
   return (
     <>
       <FAQPageSchema items={faqItems} />
@@ -196,7 +306,7 @@ export default function Page() {
               <span className="pulse-dot" /> Top picks · No sponsored placements
             </span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-              Five business cards we recommend right now
+              The business cards we recommend right now
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
@@ -206,42 +316,9 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="space-y-4">
-          {picks.map((p) => (
-            <div key={p.name} className="card p-6 md:p-7">
-              <div className="grid grid-cols-12 gap-6 items-start">
-                <div className="col-span-12 md:col-span-1 flex items-center gap-3">
-                  <BrandLogo brand={p.brand} size={48} />
-                  <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
-                </div>
-                <div className="col-span-12 md:col-span-7">
-                  <div className="flex items-center gap-2 flex-wrap mb-2">
-                    <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
-                    <h3 className="font-display font-bold text-xl tracking-tight">{p.name}</h3>
-                    <span className="chip chip-lime">{p.tag}</span>
-                  </div>
-                  <p className="text-mute leading-relaxed mb-3">{p.detail}</p>
-                  <p className="text-sm text-ink/80 leading-relaxed">
-                    <span className="font-semibold">Best for: </span>
-                    {p.bestFor}
-                  </p>
-                </div>
-                <div className="col-span-12 md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-3 text-sm">
-                  <div>
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Top perk</div>
-                    <div className="font-semibold">{p.perk}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Annual fee</div>
-                    <div className="font-mono tabular">{p.annualFee}</div>
-                  </div>
-                  <div className="col-span-2 md:col-span-1">
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Signup bonus</div>
-                    <div className="text-mute text-sm">{p.signupBonus}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="space-y-5">
+          {businessCards.map((card, i) => (
+            <BusinessCardRow key={card.slug} card={card} rank={i + 1} />
           ))}
         </div>
       </section>
