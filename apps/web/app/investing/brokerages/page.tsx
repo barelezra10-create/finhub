@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 import { loadBrokerages, formatAccountType, formatAssetClass } from "@/lib/investing";
+import { CarrierBox } from "@/components/carrier-box";
+import { BrokerLogo } from "@/components/broker-logo";
 
 export const metadata: Metadata = {
   title: "Best Online Brokerages 2026: Top 7 Compared | Fintiex",
@@ -111,47 +113,28 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-12 md:col-span-4">Broker</div>
-            <div className="hidden md:block md:col-span-2 text-right">Stocks</div>
-            <div className="hidden md:block md:col-span-2 text-right">Options</div>
-            <div className="hidden md:block md:col-span-2 text-right">Min</div>
-            <div className="hidden md:block md:col-span-2 text-right">App</div>
-          </div>
+        <div className="space-y-5">
           {brokers.map((b, i) => (
-            <Link
+            <CarrierBox
               key={b.slug}
-              href={`/investing/brokerages/${b.slug}`}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === brokers.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-12 md:col-span-4">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-display font-semibold text-base">{b.broker}</div>
-                  <span className="chip chip-mute">{b.rating.toFixed(1)}</span>
-                </div>
-                <div className="text-xs text-mute mt-1">{b.best_for}</div>
-                <div className="md:hidden mt-2 flex gap-4 text-xs font-mono tabular text-mute">
-                  <span>Stocks {fmtMoney(b.commission_stocks)}</span>
-                  <span>Opt {fmtOpt(b.commission_options_per_contract)}</span>
-                  <span>App {b.mobile_app_rating.toFixed(1)}</span>
-                </div>
-              </div>
-              <div className="hidden md:block md:col-span-2 text-right font-mono tabular text-sm">
-                {fmtMoney(b.commission_stocks)}
-              </div>
-              <div className="hidden md:block md:col-span-2 text-right font-mono tabular text-sm">
-                {fmtOpt(b.commission_options_per_contract)}
-              </div>
-              <div className="hidden md:block md:col-span-2 text-right font-mono tabular text-sm">
-                {fmtMoney(b.account_minimum)}
-              </div>
-              <div className="hidden md:block md:col-span-2 text-right font-mono tabular text-sm">
-                {b.mobile_app_rating.toFixed(1)} / 5
-              </div>
-            </Link>
+              carrier={b.broker}
+              productLabel="Online Broker"
+              tag={i === 0 ? "Top pick" : undefined}
+              tagline={b.best_for}
+              specs={[
+                { label: "Stock trade", value: fmtMoney(b.commission_stocks) },
+                { label: "Options", value: fmtOpt(b.commission_options_per_contract) },
+                { label: "Account min", value: fmtMoney(b.account_minimum) },
+                { label: "Mobile app", value: `${b.mobile_app_rating.toFixed(1)} / 5` },
+              ]}
+              bestFor={b.best_for}
+              perks={b.perks.slice(0, 3)}
+              rating={b.rating}
+              reviewHref={`/investing/brokerages/${b.slug}`}
+              externalHref={b.application_url}
+              externalLabel={`Open at ${b.broker.split(" ")[0]}`}
+              logo={<BrokerLogo broker={b.broker} size={88} />}
+            />
           ))}
         </div>
       </section>

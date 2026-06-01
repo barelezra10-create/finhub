@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { CarrierLogo } from "@/components/carrier-logo";
 
 interface CarrierBoxProps {
@@ -14,6 +15,7 @@ interface CarrierBoxProps {
   reviewHref: string;
   externalHref: string;
   externalLabel?: string;
+  logo?: ReactNode;
 }
 
 export function CarrierBox({
@@ -29,6 +31,7 @@ export function CarrierBox({
   reviewHref,
   externalHref,
   externalLabel,
+  logo,
 }: CarrierBoxProps) {
   const visitLabel = externalLabel ?? `Get a quote at ${carrier.split(" ")[0]}`;
   return (
@@ -36,7 +39,7 @@ export function CarrierBox({
       <div className="grid grid-cols-1 md:grid-cols-[88px_1fr_auto] gap-6 md:gap-8 items-start">
         {/* Logo */}
         <div className="shrink-0">
-          <CarrierLogo carrier={carrier} size={88} />
+          {logo ?? <CarrierLogo carrier={carrier} size={88} />}
         </div>
 
         {/* Body */}
