@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
-import { loadPersonalLoans, formatAprRange, formatCurrency } from "@/lib/loans";
+import { BrandLogo } from "@/components/brand-logo";
+import { getBrand, type Brand } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "Best Personal & Auto Loan Rates Today: Compare by Credit Tier | Fintiex",
@@ -10,24 +11,160 @@ export const metadata: Metadata = {
   alternates: { canonical: "/loans" },
 };
 
-interface RateRow {
-  lender: string;
-  apr: number;
+interface LoanLender {
+  brandSlug: string;
+  loanSlug: string;
+  startingApr: number;
   tag?: string;
-  detail: string;
-  href: string;
-  trend?: "up" | "down" | "flat";
+  tagline: string;
+  creditTier: string;
+  loanRange: string;
+  termMonths: string;
+  fundingTime: string;
+  bestFor: string;
+  perks: string[];
+  trend: "up" | "down" | "flat";
 }
 
-const loanRates: RateRow[] = [
-  { lender: "LightStream", apr: 7.99, tag: "Lowest", detail: "Excellent credit · No fees · Auto-pay discount", href: "/loans/personal/lightstream-personal-loan", trend: "down" },
-  { lender: "SoFi", apr: 8.20, detail: "Excellent credit · No origination · unemployment protection", href: "/loans/personal/sofi-personal-loan", trend: "flat" },
-  { lender: "Marcus by Goldman Sachs", apr: 8.50, detail: "Good credit · No fees · fixed rate", href: "/loans/personal/marcus-personal-loan", trend: "flat" },
-  { lender: "Discover Personal", apr: 8.99, detail: "Good credit · No origination · 36-84 months", href: "/loans/personal/discover-personal-loan", trend: "up" },
-  { lender: "Upstart", apr: 9.50, detail: "Fair credit · Soft pull pre-qualify · income-based", href: "/loans/personal/upstart-personal-loan", trend: "up" },
-  { lender: "LendingClub", apr: 10.20, detail: "Fair credit · Debt consolidation focus · fast funding", href: "/loans/personal/lendingclub-personal-loan", trend: "flat" },
-  { lender: "Best Egg", apr: 10.99, detail: "Fair credit · Secured option available · 36-60 months", href: "/loans/personal/best-egg-personal-loan", trend: "up" },
-  { lender: "Prosper", apr: 11.50, detail: "Fair credit · P2P model · 3-5 year terms", href: "/loans/personal/prosper-personal-loan", trend: "up" },
+const loanLenders: LoanLender[] = [
+  {
+    brandSlug: "lightstream",
+    loanSlug: "lightstream-personal-loan",
+    startingApr: 7.99,
+    tag: "Lowest APR",
+    tagline: "Truist-owned online lender with a rate-beat guarantee and the lowest APRs in the prime-credit tier.",
+    creditTier: "Excellent",
+    loanRange: "$5K to $100K",
+    termMonths: "24 to 144",
+    fundingTime: "Same-day possible",
+    bestFor: "Prime borrowers who want the lowest rate available",
+    perks: [
+      "No origination, late, or prepayment fees",
+      "Auto-pay discount of 0.5%",
+      "Rate-beat guarantee against any competitor",
+    ],
+    trend: "down",
+  },
+  {
+    brandSlug: "sofi-loan",
+    loanSlug: "sofi-personal-loan",
+    startingApr: 8.20,
+    tagline: "Strong rates for prime borrowers with no origination fee and unemployment protection if you lose your job.",
+    creditTier: "Excellent",
+    loanRange: "$5K to $100K",
+    termMonths: "24 to 84",
+    fundingTime: "Same-day to 2 days",
+    bestFor: "Members who want fee-free borrowing plus job-loss protection",
+    perks: [
+      "No origination, prepayment, or late fees",
+      "Unemployment protection pauses payments if you lose your job",
+      "Free financial planning and career coaching",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "marcus-loan",
+    loanSlug: "marcus-personal-loan",
+    startingApr: 8.50,
+    tagline: "Goldman Sachs personal loans. Fixed rates, no fees, and the freedom to skip a payment after 12 on-time months.",
+    creditTier: "Good to Excellent",
+    loanRange: "$3.5K to $40K",
+    termMonths: "36 to 72",
+    fundingTime: "1 to 4 business days",
+    bestFor: "Goldman-backed simplicity, no fees, no gimmicks",
+    perks: [
+      "No fees of any kind, ever",
+      "On-time payment reward: defer one payment after 12 months",
+      "Fixed rate that never changes",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "discover-loan",
+    loanSlug: "discover-personal-loan",
+    startingApr: 8.99,
+    tagline: "Personal loans up to $40K with no origination fees and 24/7 U.S.-based phone support.",
+    creditTier: "Good",
+    loanRange: "$2.5K to $40K",
+    termMonths: "36 to 84",
+    fundingTime: "Next business day",
+    bestFor: "Returning Discover customers who value U.S. support",
+    perks: [
+      "No origination, late, or prepayment fees",
+      "30-day return policy if you change your mind",
+      "24/7 U.S.-based customer service",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "upstart",
+    loanSlug: "upstart-personal-loan",
+    startingApr: 9.50,
+    tag: "Approval friendly",
+    tagline: "AI-powered underwriting that approves applicants traditional lenders decline. Watch the origination fee.",
+    creditTier: "Fair to Good",
+    loanRange: "$1K to $50K",
+    termMonths: "36 to 60",
+    fundingTime: "Next business day",
+    bestFor: "Thin credit files and gig-economy income",
+    perks: [
+      "Income and education factored alongside credit score",
+      "Soft-pull pre-qualification in minutes",
+      "Funded in 1 business day for approved loans",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "lendingclub",
+    loanSlug: "lendingclub-personal-loan",
+    startingApr: 10.20,
+    tagline: "Marketplace personal loans with fast funding. Strong fit for debt consolidation with a direct-pay option.",
+    creditTier: "Fair to Good",
+    loanRange: "$1K to $40K",
+    termMonths: "24 to 60",
+    fundingTime: "2 to 4 business days",
+    bestFor: "Consolidating credit card debt with direct-pay",
+    perks: [
+      "Direct-pay option sends loan funds to your card issuers",
+      "Joint application reduces rate for households",
+      "Origination fee varies by credit profile",
+    ],
+    trend: "flat",
+  },
+  {
+    brandSlug: "bestegg",
+    loanSlug: "best-egg-personal-loan",
+    startingApr: 10.99,
+    tagline: "Fast online personal loans with above-average approval odds for fair-credit borrowers. Secured option available.",
+    creditTier: "Fair to Good",
+    loanRange: "$2K to $50K",
+    termMonths: "36 to 60",
+    fundingTime: "1 to 3 business days",
+    bestFor: "Fair-credit borrowers willing to pledge a vehicle or fixtures",
+    perks: [
+      "Secured option (against vehicle or fixtures) drops the rate",
+      "Soft-pull pre-qualification with no credit hit",
+      "Origination fee 0.99% to 8.99% of loan",
+    ],
+    trend: "up",
+  },
+  {
+    brandSlug: "prosper",
+    loanSlug: "prosper-personal-loan",
+    startingApr: 11.50,
+    tagline: "One of the original peer-to-peer lenders, now offering personal loans with transparent fee disclosures.",
+    creditTier: "Fair to Good",
+    loanRange: "$2K to $50K",
+    termMonths: "24 to 60",
+    fundingTime: "1 to 3 business days",
+    bestFor: "Borrowers who like the P2P model and clear fee breakdowns",
+    perks: [
+      "Joint applications accepted for better rates",
+      "Transparent origination fee, no hidden charges",
+      "Over $25 billion funded since 2005",
+    ],
+    trend: "up",
+  },
 ];
 
 const subPages = [
@@ -99,14 +236,104 @@ function fmtPct(n: number) {
   return n.toFixed(2) + "%";
 }
 
-function trendArrow(t?: "up" | "down" | "flat") {
-  if (!t || t === "flat") return <span className="text-mute">flat</span>;
-  if (t === "up") return <span className="text-rose">up</span>;
-  return <span className="text-mint">down</span>;
+function trendLabel(t: "up" | "down" | "flat"): { text: string; cls: string } {
+  if (t === "up") return { text: "↑ Up vs last week", cls: "text-rose" };
+  if (t === "down") return { text: "↓ Down vs last week", cls: "text-mint" };
+  return { text: "→ Flat vs last week", cls: "text-mute" };
+}
+
+function LoanBox({ lender, brand }: { lender: LoanLender; brand: Brand }) {
+  const reviewHref = `/loans/personal/${lender.loanSlug}`;
+  const externalHref = `https://www.${brand.domain}`;
+  const trend = trendLabel(lender.trend);
+  return (
+    <div className="card-flush p-6 md:p-8 group hover:border-ink transition-colors duration-200">
+      <div className="grid grid-cols-1 md:grid-cols-[88px_1fr_auto] gap-6 md:gap-8 items-start">
+        {/* Logo */}
+        <div className="shrink-0">
+          <BrandLogo brand={brand} size={88} rounded="lg" />
+        </div>
+
+        {/* Body */}
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <h3 className="font-display font-bold text-xl md:text-2xl tracking-tight">
+              {brand.name}
+            </h3>
+            <span className="text-xs font-mono uppercase tracking-wider text-mute">
+              Personal Loan
+            </span>
+            {lender.tag && <span className="chip chip-lime">{lender.tag}</span>}
+            <span className={`text-xs font-mono ${trend.cls}`}>{trend.text}</span>
+          </div>
+          <p className="text-mute leading-relaxed mb-4 max-w-2xl">{lender.tagline}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
+            <Spec label="Credit tier" value={lender.creditTier} />
+            <Spec label="Loan range" value={lender.loanRange} />
+            <Spec label="Term (months)" value={lender.termMonths} />
+            <Spec label="Funding" value={lender.fundingTime} />
+          </div>
+
+          <div className="text-xs font-mono uppercase tracking-wider text-mute mb-2">
+            Best for
+          </div>
+          <div className="text-sm text-ink-soft mb-4 max-w-2xl">{lender.bestFor}</div>
+
+          <ul className="space-y-1.5 text-[0.9375rem] text-ink-soft max-w-2xl">
+            {lender.perks.map((p) => (
+              <li key={p} className="flex gap-2">
+                <span className="text-mint font-bold shrink-0">+</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* APR + CTAs */}
+        <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
+          <div>
+            <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
+              Starting APR
+            </div>
+            <div className="font-display font-extrabold text-4xl md:text-5xl tabular leading-none text-ink">
+              {fmtPct(lender.startingApr)}
+            </div>
+            <div className="text-xs text-mute mt-1">For excellent credit</div>
+          </div>
+          <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
+            <a
+              href={externalHref}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="pill pill-ink"
+            >
+              Pre-qualify at {brand.name.split(" ")[0]} <span aria-hidden>↗</span>
+            </a>
+            <Link href={reviewHref} className="pill pill-ghost">
+              Read review
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Spec({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-0.5">
+        {label}
+      </div>
+      <div className="font-display font-semibold text-sm tabular leading-tight">
+        {value}
+      </div>
+    </div>
+  );
 }
 
 export default function Page() {
-  const topPersonal = loadPersonalLoans().slice(0, 5);
   return (
     <>
       <FAQPageSchema items={faqItems} />
@@ -193,76 +420,12 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="card-flush overflow-hidden">
-          <div className="grid grid-cols-12 px-6 py-3 text-xs font-mono uppercase tracking-wider text-mute border-b border-line bg-bg-soft/50">
-            <div className="col-span-6 md:col-span-5">Lender</div>
-            <div className="hidden md:block md:col-span-4">Detail</div>
-            <div className="col-span-3 md:col-span-2 text-right">APR</div>
-            <div className="col-span-3 md:col-span-1 text-right">Trend</div>
-          </div>
-          {loanRates.map((r, i) => (
-            <Link
-              key={r.lender}
-              href={r.href}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === loanRates.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-6 md:col-span-5">
-                <div className="flex items-center gap-2">
-                  <div className="font-display font-semibold text-base">{r.lender}</div>
-                  {r.tag && <span className="chip chip-lime">{r.tag}</span>}
-                </div>
-                <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
-              </div>
-              <div className="hidden md:block md:col-span-4 text-mute text-sm">{r.detail}</div>
-              <div className="col-span-3 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
-                {fmtPct(r.apr)}
-              </div>
-              <div className="col-span-3 md:col-span-1 text-right text-sm font-mono">
-                {trendArrow(r.trend)}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* TOP PERSONAL-LOAN LENDERS */}
-      <section className="bg-bg-soft/60 border-y border-line">
-        <div className="max-w-(--max-w-page) mx-auto px-6 py-16">
-          <div className="grid grid-cols-12 gap-8 mb-8">
-            <div className="col-span-12 md:col-span-7">
-              <span className="chip chip-violet mb-4">
-                <span className="pulse-dot" /> Top picks · From our review data
-              </span>
-              <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-                Top personal-loan lenders by rating
-              </h2>
-            </div>
-            <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
-              <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-                Sorted by our 2026 review score. Click any lender for the full APR, fee, and verdict breakdown.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {topPersonal.map((l, i) => (
-              <Link
-                key={l.slug}
-                href={`/loans/personal/${l.slug}`}
-                className="card p-5 block group"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-xs text-mute">#{i + 1}</span>
-                  <span className="font-mono tabular text-sm font-semibold">{l.rating.toFixed(1)}</span>
-                </div>
-                <h3 className="font-display font-bold text-lg mb-2 tracking-tight">{l.lender}</h3>
-                <div className="text-xs text-mute mb-2 leading-relaxed">{l.best_for}</div>
-                <div className="font-mono tabular text-sm font-semibold">{formatAprRange(l.apr_range)}</div>
-                <div className="text-xs text-mute mt-1">{formatCurrency(l.loan_amount_min)} to {formatCurrency(l.loan_amount_max)}</div>
-              </Link>
-            ))}
-          </div>
+        <div className="space-y-5">
+          {loanLenders.map((lender) => {
+            const brand = getBrand(lender.brandSlug);
+            if (!brand) return null;
+            return <LoanBox key={lender.brandSlug} lender={lender} brand={brand} />;
+          })}
         </div>
       </section>
 
