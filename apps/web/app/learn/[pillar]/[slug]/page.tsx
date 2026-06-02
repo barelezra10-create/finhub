@@ -9,6 +9,7 @@ import {
   HowToSchema,
 } from "@/components/schemas";
 import { fintiexMdxComponents } from "@/components/mdx-components";
+import { ArticleHero } from "@/components/article-hero";
 import {
   PILLAR_META,
   loadAllPillarArticles,
@@ -147,32 +148,15 @@ export default async function PillarArticlePage({
         </nav>
 
         {/* HERO */}
-        <header className="mb-10">
-          <span className={`chip chip-${chip} mb-4`}>{meta.title}</span>
-          <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.03em] mt-4 mb-5">
-            {article.title}
-          </h1>
-          {article.description ? (
-            <p className="text-lg leading-relaxed text-mute max-w-2xl mb-6">
-              {article.description}
-            </p>
-          ) : null}
-          <div className="flex items-center gap-3 flex-wrap text-sm text-mute">
-            <span>By {author}</span>
-            {updated ? (
-              <>
-                <span aria-hidden="true">&middot;</span>
-                <span>Updated {updated}</span>
-              </>
-            ) : null}
-            {article.readTime ? (
-              <>
-                <span aria-hidden="true">&middot;</span>
-                <span className="chip chip-mute">{article.readTime} min read</span>
-              </>
-            ) : null}
-          </div>
-        </header>
+        <ArticleHero
+          pillar={pillar}
+          pillarLabel={meta.title}
+          title={article.title}
+          description={article.description}
+          author={author}
+          updated={updated}
+          readTime={article.readTime}
+        />
 
         {/* BODY */}
         <div className="text-[1.0625rem] leading-relaxed text-ink-soft">
