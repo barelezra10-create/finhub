@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
-import { BrandLogo } from "@/components/brand-logo";
+import { cardsByCategory } from "@/lib/cards-server";
+import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
   title: "Best Student Credit Cards 2026: Build Credit, Earn Rewards | Fintiex",
@@ -124,7 +125,10 @@ const faqItems: FAQItem[] = [
   },
 ];
 
+const tagBySlug = Object.fromEntries(picks.map((p) => [p.brand, p.tag] as const));
+
 export default function Page() {
+  const cards = cardsByCategory("student");
   return (
     <>
       <FAQPageSchema items={faqItems} />
@@ -206,42 +210,14 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="space-y-4">
-          {picks.map((p) => (
-            <div key={p.name} className="card p-6 md:p-7">
-              <div className="grid grid-cols-12 gap-6 items-start">
-                <div className="col-span-12 md:col-span-1 flex items-center gap-3">
-                  <BrandLogo brand={p.brand} size={48} />
-                  <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
-                </div>
-                <div className="col-span-12 md:col-span-7">
-                  <div className="flex items-center gap-2 flex-wrap mb-2">
-                    <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
-                    <h3 className="font-display font-bold text-xl tracking-tight">{p.name}</h3>
-                    <span className="chip chip-lime">{p.tag}</span>
-                  </div>
-                  <p className="text-mute leading-relaxed mb-3">{p.detail}</p>
-                  <p className="text-sm text-ink/80 leading-relaxed">
-                    <span className="font-semibold">Best for: </span>
-                    {p.bestFor}
-                  </p>
-                </div>
-                <div className="col-span-12 md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-3 text-sm">
-                  <div>
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Top perk</div>
-                    <div className="font-semibold">{p.perk}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Annual fee</div>
-                    <div className="font-mono tabular">{p.annualFee}</div>
-                  </div>
-                  <div className="col-span-2 md:col-span-1">
-                    <div className="text-xs font-mono text-mute uppercase tracking-wider mb-1">Signup bonus</div>
-                    <div className="text-mute text-sm">{p.signupBonus}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="space-y-5">
+          {cards.map((c, i) => (
+            <CardPickRow
+              key={c.slug}
+              card={c}
+              rank={i + 1}
+              tag={tagBySlug[c.slug]}
+            />
           ))}
         </div>
       </section>
