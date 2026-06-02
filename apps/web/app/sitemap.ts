@@ -4,6 +4,7 @@ import path from "path";
 import { SITE_URL } from "@/lib/site";
 import { states } from "@/lib/states";
 import { allReviewSlugs, guideSlugs } from "@/lib/review-slugs";
+import { loadAllPillarArticles, PILLAR_SLUGS, PILLAR_META } from "@/lib/pillars";
 
 function listJsonSlugs(dir: string): string[] {
   const abs = path.join(process.cwd(), dir);
@@ -119,6 +120,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
+  // Pillar hub pages
+  const pillarHubRoutes = PILLAR_SLUGS.filter((p) => PILLAR_META[p]).map((slug) => ({
+    url: `/learn/${slug}`,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
+  // Pillar articles (how-to guides + cornerstones)
+  const pillarArticleRoutes = loadAllPillarArticles().map((a) => ({
+    url: `/learn/${a.pillar}/${a.slug}`,
+    priority: 0.65,
+    changeFrequency: "monthly" as const,
+  }));
+
   return [
     ...staticRoutes,
     ...guideRoutes,
@@ -132,6 +147,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cardRoutes,
     ...glossaryRoutes,
     ...bestRoutes,
+    ...pillarHubRoutes,
+    ...pillarArticleRoutes,
   ].map((entry) => ({
     url: `${SITE_URL}${entry.url}`,
     lastModified: now,

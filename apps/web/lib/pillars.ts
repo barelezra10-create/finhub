@@ -4,6 +4,18 @@ import matter from "gray-matter";
 
 const ROOT = path.join(process.cwd(), "content/learn");
 
+export interface HowToFrontmatter {
+  name: string;
+  description: string;
+  totalTimeIso?: string;
+  steps: Array<{ name: string; text: string; url?: string }>;
+}
+
+export interface FaqFrontmatter {
+  question: string;
+  answer: string;
+}
+
 export interface PillarArticle {
   pillar: string;
   slug: string;
@@ -14,6 +26,8 @@ export interface PillarArticle {
   publishedAt?: string;
   updatedAt?: string;
   body: string;
+  howto?: HowToFrontmatter;
+  faq?: FaqFrontmatter[];
 }
 
 export const PILLAR_META: Record<
@@ -44,6 +58,31 @@ export const PILLAR_META: Record<
     title: "Business Credit",
     description:
       "Separate business finances, deduct rewards, and scale credit lines.",
+  },
+  mortgages: {
+    title: "Mortgages",
+    description:
+      "Step-by-step guides to pre-approval, refinance, PMI, and getting the lowest rate.",
+  },
+  savings: {
+    title: "Savings",
+    description:
+      "How to actually save money: HYSAs, CD ladders, emergency funds, and goal-based plans.",
+  },
+  loans: {
+    title: "Loans",
+    description:
+      "Personal, student, and auto loans. How to qualify, compare, and pay them down faster.",
+  },
+  insurance: {
+    title: "Insurance",
+    description:
+      "Auto, home, and life coverage explained without the jargon. How much you need and how to pay less.",
+  },
+  investing: {
+    title: "Investing",
+    description:
+      "Open the right account, pick the right funds, and build a portfolio that runs without you.",
   },
 };
 
@@ -76,6 +115,8 @@ export function loadPillarArticles(pillar: string): PillarArticle[] {
         publishedAt: data.publishedAt ? String(data.publishedAt) : undefined,
         updatedAt: data.updatedAt ? String(data.updatedAt) : undefined,
         body: content,
+        howto: data.howto as HowToFrontmatter | undefined,
+        faq: Array.isArray(data.faq) ? (data.faq as FaqFrontmatter[]) : undefined,
       };
     });
 }

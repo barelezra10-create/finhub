@@ -5,6 +5,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import {
   ArticleSchema,
   BreadcrumbListSchema,
+  FAQPageSchema,
+  HowToSchema,
 } from "@/components/schemas";
 import { fintiexMdxComponents } from "@/components/mdx-components";
 import {
@@ -27,6 +29,11 @@ const CHIP_VARIANTS: Record<string, "lime" | "violet" | "mute" | "ink"> = {
   "maximizing-rewards": "ink",
   "building-credit": "lime",
   "business-credit": "violet",
+  mortgages: "violet",
+  savings: "lime",
+  loans: "ink",
+  insurance: "violet",
+  investing: "lime",
 };
 
 function truncate(text: string, max = 158) {
@@ -104,6 +111,22 @@ export default async function PillarArticlePage({
           { name: article.title, href: `/learn/${pillar}/${slug}` },
         ]}
       />
+      {article.faq && article.faq.length > 0 && (
+        <FAQPageSchema
+          items={article.faq.map((f) => ({
+            question: f.question,
+            answer: f.answer,
+          }))}
+        />
+      )}
+      {article.howto && article.howto.steps.length > 0 && (
+        <HowToSchema
+          name={article.howto.name}
+          description={article.howto.description}
+          totalTimeIso={article.howto.totalTimeIso}
+          steps={article.howto.steps}
+        />
+      )}
 
       <article className="max-w-3xl mx-auto px-6 pt-12 pb-16">
         {/* BREADCRUMB */}

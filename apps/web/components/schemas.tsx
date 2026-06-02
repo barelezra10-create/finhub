@@ -213,3 +213,40 @@ export function BreadcrumbListSchema({ items }: { items: BreadcrumbItem[] }) {
     />
   );
 }
+
+export interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+}
+
+export function HowToSchema({
+  name,
+  description,
+  totalTimeIso,
+  steps,
+}: {
+  name: string;
+  description: string;
+  totalTimeIso?: string;
+  steps: HowToStep[];
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name,
+        description,
+        ...(totalTimeIso ? { totalTime: totalTimeIso } : {}),
+        step: steps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.name,
+          text: s.text,
+          ...(s.url ? { url: absUrl(s.url) } : {}),
+        })),
+      }}
+    />
+  );
+}
