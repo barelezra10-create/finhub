@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { loadSavingsAccounts, formatApy, formatMoney } from "@/lib/savings-accounts";
 
 export const metadata: Metadata = {
-  title: "Best Savings Accounts of 2026: APY, Fees, FDIC | Fintiex",
+  title: "Best Savings Accounts of 2026: APY, Fees, FDIC",
   description:
     "Compare the 8 best online savings accounts from FDIC-insured banks. Sort by APY, monthly fee, minimum deposit, and mobile app rating. No paid placements.",
   alternates: { canonical: "/savings/accounts" },

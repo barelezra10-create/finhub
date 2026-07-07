@@ -27,13 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const entry = loadGlossaryEntry(slug);
-  if (!entry) return { title: "Term not found | Fintiex" };
+  if (!entry) return { title: "Term not found" };
   const desc = truncate(
     entry.description ??
       `Plain-English definition of ${entry.title} from the Fintiex finance glossary.`,
   );
   return {
-    title: `${entry.title}: Definition | Fintiex Glossary`,
+    title: `${entry.title}: Definition`,
     description: desc,
     alternates: { canonical: `/glossary/${slug}` },
   };

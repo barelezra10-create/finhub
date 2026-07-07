@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Balance Transfer Calculator: See Real Savings | Fintiex",
+  title: "Balance Transfer Calculator: See Real Savings",
   description:
     "Free balance transfer calculator. Enter your current balance, APR, intro APR, intro period, transfer fee, and monthly payment. See exactly how much you save versus staying.",
   alternates: { canonical: "/calculators/balance-transfer" },

@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best Student Credit Cards 2026: Build Credit, Earn Rewards | Fintiex",
+  title: "Best Student Credit Cards 2026: Build Credit, Earn Rewards",
   description:
     "Student credit cards that build real credit history and pay rewards while you study. No annual fees, forgiving approval, and a clear path to graduating up.",
   alternates: { canonical: "/credit-cards/student" },

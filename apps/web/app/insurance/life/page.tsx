@@ -5,7 +5,7 @@ import { loadCarriers, formatCurrency } from "@/lib/insurance";
 import { CarrierBox } from "@/components/carrier-box";
 
 export const metadata: Metadata = {
-  title: "Best Life Insurance Companies of 2026: 7 Top Providers Ranked | Fintiex",
+  title: "Best Life Insurance Companies of 2026: 7 Top Providers Ranked",
   description:
     "Compare the 7 best life insurance providers of 2026. Term, whole, and no-exam policies from Haven, Ladder, Northwestern Mutual, Prudential, and more.",
   alternates: { canonical: "/insurance/life" },

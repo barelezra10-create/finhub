@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "The Emergency Fund Playbook | Fintiex Guides",
+  title: "The Emergency Fund Playbook",
   description:
     "Three to six months of expenses in cash, earning interest. Here is exactly how to build an emergency fund from zero, where to keep it, and when to use it.",
   alternates: { canonical: "/learn/emergency-fund-playbook" },
@@ -34,7 +34,7 @@ export default function Page() {
           The emergency fund playbook
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>
@@ -137,8 +137,8 @@ export default function Page() {
           resolution to that tension is a high-yield savings account at an online bank.
         </p>
         <p className="text-mute leading-relaxed mb-4">
-          As of April 2026, the top HYSAs are paying 4.85% APY with no minimum balance and no fees.
-          On $10,500, that is $509 in annual interest. Traditional savings accounts at large banks
+          As of July 2026, the top HYSAs are paying around 4.10 to 4.50% APY with no minimum
+          balance and no fees. On $10,500 at 4.30%, that is about $451 in annual interest. Traditional savings accounts at large banks
           pay 0.01 to 0.06%. That same $10,500 earns $1.05 to $6.30 per year. The difference is
           meaningful: the HYSA approach turns your emergency fund into an asset that partially keeps
           pace with inflation rather than slowly losing purchasing power.

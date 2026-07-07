@@ -12,7 +12,7 @@ const PILLAR_CHIPS: Record<string, "lime" | "violet" | "mute" | "ink"> = {
 };
 
 export const metadata: Metadata = {
-  title: "Plain-English Money Guides | Fintiex Learn",
+  title: "Plain-English Money Guides",
   description:
     "Practical guides to mortgages, savings accounts, credit cards, and personal finance strategy. Written for real people, not finance majors.",
   alternates: { canonical: "/learn" },

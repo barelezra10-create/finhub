@@ -5,7 +5,7 @@ import { BrandLogo } from "@/components/brand-logo";
 import { getBrand, type Brand } from "@/lib/brands";
 
 export const metadata: Metadata = {
-  title: "Best Personal & Auto Loan Rates Today: Compare by Credit Tier | Fintiex",
+  title: "Best Personal & Auto Loan Rates Today: Compare by Credit Tier",
   description:
     "Compare personal and auto loan rates from 8+ lenders by credit score and purpose. Prequalify without a hard pull. Honest APRs, no affiliate ranking.",
   alternates: { canonical: "/loans" },
@@ -344,7 +344,7 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Loan rates updated today
+            <span className="pulse-dot" /> Loan rates
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             Personal and auto loans, compared honestly.
@@ -381,7 +381,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">Rate snapshot by tier</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[

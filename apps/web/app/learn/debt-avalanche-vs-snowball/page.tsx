@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Debt Avalanche vs Snowball: A Math-First Answer | Fintiex Guides",
+  title: "Debt Avalanche vs Snowball: A Math-First Answer",
   description:
     "The avalanche saves the most money. The snowball builds the most momentum. A worked example with four real cards shows exactly how much each approach costs.",
   alternates: { canonical: "/learn/debt-avalanche-vs-snowball" },
@@ -34,7 +34,7 @@ export default function Page() {
           Debt avalanche vs snowball: a math-first answer
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>

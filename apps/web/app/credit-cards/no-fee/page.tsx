@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best No Annual Fee Credit Cards 2026: Strong Rewards, $0 Yearly Cost | Fintiex",
+  title: "Best No Annual Fee Credit Cards 2026: Strong Rewards, $0 Yearly Cost",
   description:
     "The five strongest no-annual-fee credit cards: 2% flat cash back, rotating 5% bonuses, and 0% intro APR options. All $0 to keep, year after year.",
   alternates: { canonical: "/credit-cards/no-fee" },

@@ -26,7 +26,7 @@ function brandHref(b: Brand): string {
 }
 
 export const metadata: Metadata = {
-  title: "All Brand Reviews: Mortgages, Savings, Loans, Credit Cards | Fintiex",
+  title: "All Brand Reviews: Mortgages, Savings, Loans, Credit Cards",
   description:
     "Independent reviews of every major mortgage lender, high-yield savings bank, personal loan provider, and credit card we cover. No sponsored rankings. Updated weekly.",
   alternates: { canonical: "/reviews" },

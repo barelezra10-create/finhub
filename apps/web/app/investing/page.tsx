@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { loadBrokerages } from "@/lib/investing";
 
 export const metadata: Metadata = {
-  title: "Investing: Brokers, Account Types & How to Start | Fintiex",
+  title: "Investing: Brokers, Account Types & How to Start",
   description:
     "Compare top online brokerages, learn how investing accounts work, and find the best fit for your goals. Plain English investing guides from Fintiex.",
   alternates: { canonical: "/investing" },
@@ -88,7 +88,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">Top picks this month</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {topThree.map((b) => (

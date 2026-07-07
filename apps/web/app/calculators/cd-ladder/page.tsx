@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "CD Ladder Calculator | Fintiex",
+  title: "CD Ladder Calculator",
   description:
     "Free CD ladder builder. Distribute your cash across 3 to 5 rungs with realistic 2026 FDIC rates. See per-rung principal, APY, and total maturity value.",
   alternates: { canonical: "/calculators/cd-ladder" },

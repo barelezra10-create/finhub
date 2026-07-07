@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Mortgage Payment Calculator | Fintiex",
+  title: "Mortgage Payment Calculator",
   description:
     "Free mortgage payment calculator. Enter price, down payment, rate, and term. See monthly principal and interest, total interest paid, and full lifetime cost.",
   alternates: { canonical: "/calculators/mortgage-payment" },

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Mortgage Rates by State | Compare 30Y Fixed Rates in All 50 States | Fintiex",
+  title: "Mortgage Rates by State | Compare 30Y Fixed Rates in All 50 States",
   description:
     "Compare current 30-year fixed mortgage rates in all 50 US states. State-by-state averages, lender availability, and how local laws affect your closing costs.",
   alternates: { canonical: "/mortgages/by-state" },

@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { loadCarriers } from "@/lib/insurance";
 
 export const metadata: Metadata = {
-  title: "Best Auto, Home & Life Insurance Carriers Compared (2026) | Fintiex",
+  title: "Best Auto, Home & Life Insurance Carriers Compared (2026)",
   description:
     "Compare top auto, home, and life insurance carriers in one place. Real premium ranges, AM Best ratings, JD Power scores, and editor takes. Updated for 2026.",
   alternates: { canonical: "/insurance" },

@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "APR Calculator: Daily, Monthly, APY Conversion | Fintiex",
+  title: "APR Calculator: Daily, Monthly, APY Conversion",
   description:
     "Free APR calculator. Enter a balance and APR, see the daily, monthly, and effective annual (APY) interest cost. APR-to-APY conversion done right. No popups.",
   alternates: { canonical: "/calculators/apr" },

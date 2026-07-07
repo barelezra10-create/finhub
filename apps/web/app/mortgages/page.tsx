@@ -5,7 +5,7 @@ import { BrandLogo } from "@/components/brand-logo";
 import { getBrand, type Brand } from "@/lib/brands";
 
 export const metadata: Metadata = {
-  title: "Mortgage Rates Today: Compare 30Y Fixed, 15Y Fixed, Refi, HELOC | Fintiex",
+  title: "Mortgage Rates Today: Compare 30Y Fixed, 15Y Fixed, Refi, HELOC",
   description:
     "Compare live mortgage rates from 8+ lenders. 30Y fixed, 15Y fixed, refinance, HELOC, and jumbo. No paid placements, updated daily. Find the lowest APR.",
   alternates: { canonical: "/mortgages" },
@@ -318,7 +318,7 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Mortgage rates updated today
+            <span className="pulse-dot" /> Mortgage rates
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             Mortgages without the runaround.
@@ -343,7 +343,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">Rate snapshot</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             {[
@@ -365,7 +365,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* LENDER LINEUP — STACKED BOXES */}
+      {/* LENDER LINEUP - STACKED BOXES */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
         <div className="grid grid-cols-12 gap-8 mb-8">
           <div className="col-span-12 md:col-span-7">

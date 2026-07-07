@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Markets at a Glance | Live Mortgage, Savings, Loan, and Card Rates | Fintiex",
+  title: "Markets at a Glance | Live Mortgage, Savings, Loan, and Card Rates",
   description:
     "Live snapshot of US consumer rates: 30Y and 15Y mortgage, top HYSA, top 1-year CD, personal loan average, and credit card APR. Freddie Mac, FDIC, Fed.",
   alternates: { canonical: "/markets" },

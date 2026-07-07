@@ -4,7 +4,7 @@ import { BreadcrumbListSchema, FAQPageSchema } from "@/components/schemas";
 import { loadGlossary } from "@/lib/glossary";
 
 export const metadata: Metadata = {
-  title: "Finance Glossary: 30 Money Terms Explained | Fintiex",
+  title: "Finance Glossary: 30 Money Terms Explained",
   description:
     "Plain-English definitions for 30 personal finance terms, from APR and APY to FICO scores and grace periods. A-Z index with worked examples and cross-links.",
   alternates: { canonical: "/glossary" },

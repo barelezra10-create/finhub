@@ -6,7 +6,7 @@ import { BreadcrumbListSchema } from "@/components/schemas";
 export const metadata: Metadata = {
   title: "Best High-Yield Savings Accounts (HYSA) of 2026",
   description:
-    "Compare the top HYSA rates from national online banks. All accounts are FDIC-insured up to $250K per depositor. Updated April 2026.",
+    "Compare the top HYSA rates from national online banks. All accounts are FDIC-insured up to $250K per depositor.",
   alternates: { canonical: "/savings/hysa" },
 };
 
@@ -44,13 +44,13 @@ export default function HysaPage() {
 
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Updated 4 minutes ago
+            <span className="pulse-dot" /> FDIC-insured savings
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.04] tracking-[-0.03em] mb-6 max-w-3xl">
             Best High-Yield Savings Accounts of 2026
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay 4.15% to 4.85% APY. That is eight to ten times more than the national average savings rate of around 0.46%. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
+            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay around 4.10 to 4.50% APY. That is roughly ten times more than the national average savings rate of around 0.38%. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/reviews/bask" className="pill pill-ink">
@@ -82,10 +82,10 @@ export default function HysaPage() {
           <div className="space-y-5">
             <h2 className="font-display font-bold text-2xl text-ink tracking-tight">How to pick the right HYSA in 2026</h2>
             <p>
-              Start with the APY. The difference between 4.15% and 4.85% on a $25,000 balance is about $175 per year in additional interest. Over several years, that compounds into a meaningful amount. The best rate is not always at the most recognizable brand name.
+              Start with the APY. The difference between 4.10% and 4.50% on a $25,000 balance is about $100 per year in additional interest. Over several years, that compounds into a meaningful amount. The best rate is not always at the most recognizable brand name.
             </p>
             <p>
-              Next, look at minimums and fees. A 4.85% account with no minimum is almost always better than a 5.00% account requiring $10,000 to open. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
+              Next, look at minimums and fees. A 4.50% account with no minimum is almost always better than a 4.75% account requiring $10,000 to open. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
             </p>
             <p>
               Transfer speed matters too. Most online HYSAs settle ACH transfers in one to two business days. Some offer same-day or next-day transfers. If you plan to use the account as a liquid emergency fund, check the transfer timeline before committing.
@@ -102,10 +102,10 @@ export default function HysaPage() {
         <div className="grid grid-cols-12 gap-8 mb-8">
           <div className="col-span-12 md:col-span-7">
             <span className="chip chip-mute mb-4">
-              <span className="pulse-dot" /> Rates · Live
+              <span className="pulse-dot" /> Rates
             </span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-              Top HYSA rates, April 2026
+              Top HYSA rates
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">

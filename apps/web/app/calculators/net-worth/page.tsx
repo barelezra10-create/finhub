@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Net Worth Calculator | Fintiex",
+  title: "Net Worth Calculator",
   description:
     "Free net worth calculator. List your assets and liabilities in six categories each. See total assets, total liabilities, and your net worth (assets minus debt).",
   alternates: { canonical: "/calculators/net-worth" },

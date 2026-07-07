@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best Business Credit Cards 2026: Big Bonuses, Real Tools | Fintiex",
+  title: "Best Business Credit Cards 2026: Big Bonuses, Real Tools",
   description:
     "The business credit cards that pay off for owners and operators. Big signup bonuses, expense tools, and category multipliers ranked by first-year value.",
   alternates: { canonical: "/credit-cards/business" },

@@ -115,7 +115,7 @@ function deltaPill(d: number) {
   );
 }
 function trendArrow(t?: "up" | "down" | "flat") {
-  if (!t || t === "flat") return <span className="text-mute">—</span>;
+  if (!t || t === "flat") return <span className="text-mute">·</span>;
   if (t === "up") return <span className="text-rose">↑</span>;
   return <span className="text-mint">↓</span>;
 }
@@ -133,7 +133,7 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-7">
               <span className="chip chip-violet mb-6">
-                <span className="pulse-dot" /> Updated 4 minutes ago
+                <span className="pulse-dot" /> Rates, tools, and plain-English guides
               </span>
               <h1 className="font-display font-extrabold text-[clamp(2.75rem,6.5vw,5.5rem)] leading-[1.02] tracking-[-0.03em] mb-6">
                 Personal finance,<br />
@@ -146,7 +146,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-mute leading-relaxed max-w-xl mb-8">
-                Live rates, sharp tools, plain-English guides. The whole money map in one place — built for the way you actually live.
+                Live rates, sharp tools, plain-English guides. The whole money map in one place, built for the way you actually live.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/calculators" className="pill pill-ink">

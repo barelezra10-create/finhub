@@ -43,12 +43,12 @@ function truncate(str: string, max = 160): string {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const card = loadCard(slug);
-  if (!card) return { title: "Card Review | Fintiex" };
+  if (!card) return { title: "Card Review" };
   const fullName = fullCardName(card);
-  const title = `${fullName} Review | Fintiex`;
+  const title = `${fullName} Review`;
   const lede = buildLede(card);
   return {
-    title: title.length > 60 ? `${card.name} Review | Fintiex` : title,
+    title: title.length > 60 ? `${card.name} Review` : title,
     description: truncate(lede, 160),
     alternates: { canonical: `/credit-cards/${card.slug}` },
   };

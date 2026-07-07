@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Refinance Break-Even Calculator | Fintiex",
+  title: "Refinance Break-Even Calculator",
   description:
     "Free refinance break-even calculator. Enter your balance, current rate, new rate, and closing costs. See how many months until your refi pays for itself.",
   alternates: { canonical: "/calculators/refinance-break-even" },

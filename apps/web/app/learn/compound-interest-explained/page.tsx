@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Compound Interest Explained: The Only Math That Actually Matters | Fintiex",
+  title: "Compound Interest Explained: The Only Math That Actually Matters",
   description:
     "Compound interest grows wealth fast over time. Here is how the formula works, why time beats contribution size, and how compounding hurts you with debt.",
   alternates: { canonical: "/learn/compound-interest-explained" },
@@ -34,7 +34,7 @@ export default function Page() {
           Compound interest, the only math that actually matters
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>

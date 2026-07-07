@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Student Loan Payoff Calculator: Grace, Deferment, APR | Fintiex",
+  title: "Student Loan Payoff Calculator: Grace, Deferment, APR",
   description:
     "Free student loan payoff calculator. Enter loan amount, rate, term, grace, deferment, and capitalization. See your monthly payment, total interest, and full payoff cost.",
   alternates: { canonical: "/calculators/student-loan-payoff" },

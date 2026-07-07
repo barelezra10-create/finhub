@@ -6,7 +6,7 @@ import { CarrierBox } from "@/components/carrier-box";
 import { BrokerLogo } from "@/components/broker-logo";
 
 export const metadata: Metadata = {
-  title: "Best Online Brokerages 2026: Top 7 Compared | Fintiex",
+  title: "Best Online Brokerages 2026: Top 7 Compared",
   description:
     "Compare commissions, account minimums, mobile apps, and asset coverage for the top 7 US online brokers. Fidelity, Schwab, Vanguard, Robinhood, and more.",
   alternates: { canonical: "/investing/brokerages" },

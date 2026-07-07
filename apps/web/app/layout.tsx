@@ -47,14 +47,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Fintiex Editorial", url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: `${SITE_NAME}: Personal finance, leveled up`,
-    description: SITE_DESCRIPTION,
     url: SITE_URL,
     locale: "en_US",
     images: [
@@ -70,8 +65,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: SITE_HANDLE,
     creator: SITE_HANDLE,
-    title: `${SITE_NAME}: Personal finance, leveled up`,
-    description: SITE_DESCRIPTION,
     images: ["/opengraph-image"],
   },
   robots: {

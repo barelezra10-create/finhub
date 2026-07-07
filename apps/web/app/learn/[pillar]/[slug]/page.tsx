@@ -62,7 +62,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { pillar, slug } = await params;
   const article = loadPillarArticle(pillar, slug);
-  if (!article) return { title: "Article not found | Fintiex" };
+  if (!article) return { title: "Article not found" };
   const meta = PILLAR_META[pillar];
   const pillarTitle = meta?.title ?? pillar;
   const desc = truncate(
@@ -70,7 +70,7 @@ export async function generateMetadata({
       `${article.title} from the Fintiex ${pillarTitle} pillar.`,
   );
   return {
-    title: `${article.title} | Fintiex`,
+    title: `${article.title}`,
     description: desc,
     alternates: { canonical: `/learn/${pillar}/${slug}` },
   };

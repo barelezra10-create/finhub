@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "APR vs Interest Rate: Why the Difference Matters | Fintiex Guides",
+  title: "APR vs Interest Rate: Why the Difference Matters",
   description:
     "APR includes fees the interest rate ignores. Here is what goes into APR, when the two numbers diverge sharply, and how to use APR to compare loans fairly.",
   alternates: { canonical: "/learn/what-is-apr" },
@@ -34,7 +34,7 @@ export default function Page() {
           APR vs interest rate (and why the difference matters)
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>

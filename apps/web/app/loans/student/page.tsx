@@ -13,7 +13,7 @@ import {
 } from "@/lib/loans";
 
 export const metadata: Metadata = {
-  title: "Best Student Loans 2026: Private & Refinance Rates | Fintiex",
+  title: "Best Student Loans 2026: Private & Refinance Rates",
   description:
     "Compare 10 student loan lenders: private loans for undergrads and refinance for grads. Real APRs, cosigner rules, and federal vs private trade-offs.",
   alternates: { canonical: "/loans/student" },

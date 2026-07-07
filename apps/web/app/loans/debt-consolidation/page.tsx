@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Best Debt Consolidation Loans 2026: Roll Cards Into One Payment | Fintiex",
+  title: "Best Debt Consolidation Loans 2026: Roll Cards Into One Payment",
   description:
     "Use a personal loan to consolidate credit card debt at a lower APR. Real math: $15K at 24% vs 11%. Top picks: SoFi, LightStream, Marcus, Best Egg, Discover.",
   alternates: { canonical: "/loans/debt-consolidation" },

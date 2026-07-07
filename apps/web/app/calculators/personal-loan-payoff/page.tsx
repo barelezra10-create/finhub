@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Personal Loan Calculator | Fintiex",
+  title: "Personal Loan Calculator",
   description:
     "Free personal loan amortization calculator. Enter loan amount, rate, and term in months. See your fixed monthly payment, total interest, and payoff cost.",
   alternates: { canonical: "/calculators/personal-loan-payoff" },

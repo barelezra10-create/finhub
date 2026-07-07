@@ -28,8 +28,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const loan = loadPersonalLoan(slug);
-  if (!loan) return { title: "Personal Loan Review | Fintiex" };
-  const title = `${loan.lender} Personal Loan Review | Fintiex`;
+  if (!loan) return { title: "Personal Loan Review" };
+  const title = `${loan.lender} Personal Loan Review`;
   const desc = `${loan.lender} personal loans: ${formatAprRange(loan.apr_range)} APR, ${formatCurrency(loan.loan_amount_min)} to ${formatCurrency(loan.loan_amount_max)}. Best for ${loan.best_for.toLowerCase()}.`;
   return {
     title: title.length > 60 ? title.slice(0, 57) + "..." : title,

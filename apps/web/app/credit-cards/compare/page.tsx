@@ -6,7 +6,7 @@ import { loadCards } from "@/lib/cards-server";
 import { CompareClient } from "./compare-client";
 
 export const metadata: Metadata = {
-  title: "Compare Credit Cards Side by Side | Fintiex",
+  title: "Compare Credit Cards Side by Side",
   description:
     "Stack 2 or 3 credit cards next to each other. We highlight the best annual fee, signup bonus, APR, and rewards rate in every row so the winner is obvious.",
   alternates: { canonical: "/credit-cards/compare" },

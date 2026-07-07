@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Fintiex",
+  title: "Privacy Policy",
   description:
     "How Fintiex handles your data. We do not collect emails in calculators, we do not sell personal data, and we keep our analytics footprint deliberately small.",
   alternates: { canonical: "/privacy" },

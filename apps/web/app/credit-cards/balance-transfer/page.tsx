@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best 0% Balance Transfer Credit Cards 2026: Up to 21 Months | Fintiex",
+  title: "Best 0% Balance Transfer Credit Cards 2026: Up to 21 Months",
   description:
     "Move high-rate card debt to 0% for up to 21 months. We compare transfer fees, intro lengths, and post-promo APRs across the five top balance transfer cards.",
   alternates: { canonical: "/credit-cards/balance-transfer" },

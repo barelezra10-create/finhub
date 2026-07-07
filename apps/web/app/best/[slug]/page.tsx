@@ -29,12 +29,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const l = loadListicle(slug);
-  if (!l) return { title: "List not found | Fintiex" };
+  if (!l) return { title: "List not found" };
   const desc = truncate(
     l.description ?? `${l.title} from the Fintiex editorial team.`,
   );
   return {
-    title: `${l.title} | Fintiex`,
+    title: `${l.title}`,
     description: desc,
     alternates: { canonical: `/best/${slug}` },
   };

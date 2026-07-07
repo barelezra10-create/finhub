@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Auto Loan Calculator | Fintiex",
+  title: "Auto Loan Calculator",
   description:
     "Free auto loan calculator. Enter price, down payment, trade-in, sales tax, term, and APR. See monthly payment, total interest, and full out-the-door cost.",
   alternates: { canonical: "/calculators/auto-loan" },

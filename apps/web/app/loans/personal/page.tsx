@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Best Personal Loans 2026: General-Purpose APRs by Credit Tier | Fintiex",
+  title: "Best Personal Loans 2026: General-Purpose APRs by Credit Tier",
   description:
     "Compare personal loans from SoFi, LightStream, Marcus, Discover, Upstart, and more. Real APR ranges by credit tier, no fees, soft-pull prequalify first.",
   alternates: { canonical: "/loans/personal" },

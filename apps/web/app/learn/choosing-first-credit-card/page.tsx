@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Choosing Your First Credit Card | Fintiex Guides",
+  title: "Choosing Your First Credit Card",
   description:
     "Your first credit card builds your credit history from scratch. Here is what type to get, what fees to avoid, and the habits that protect your score long-term.",
   alternates: { canonical: "/learn/choosing-first-credit-card" },
@@ -34,7 +34,7 @@ export default function Page() {
           Choosing your first credit card
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>

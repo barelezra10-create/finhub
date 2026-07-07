@@ -5,7 +5,7 @@ import { loadCards } from "@/lib/cards-server";
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Which Credit Card Should I Get? | Free Quiz | Fintiex",
+  title: "Which Credit Card Should I Get? | Free Quiz",
   description:
     "Answer three questions and get your top three credit card picks from a 50-card dataset. Free, no email, no signup. Filtered by goal, credit score, and annual fee preference.",
   alternates: { canonical: "/calculators/which-card" },

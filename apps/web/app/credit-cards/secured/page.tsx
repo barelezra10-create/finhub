@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best Secured Credit Cards 2026: Build Credit Fast, Get Refunded | Fintiex",
+  title: "Best Secured Credit Cards 2026: Build Credit Fast, Get Refunded",
   description:
     "The secured credit cards that actually help you graduate to unsecured. Refundable deposits, real rewards, and clear paths to a 700+ score. No setup fees.",
   alternates: { canonical: "/credit-cards/secured" },

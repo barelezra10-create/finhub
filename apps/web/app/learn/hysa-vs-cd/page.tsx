@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "HYSA vs CD: Which Is Right for You? | Fintiex Guides",
+  title: "HYSA vs CD: Which Is Right for You?",
   description:
     "Both high-yield savings and CDs beat traditional savings. The difference is liquidity vs yield. Here is how to pick, plus the CD ladder hybrid strategy.",
   alternates: { canonical: "/learn/hysa-vs-cd" },
@@ -34,7 +34,7 @@ export default function Page() {
           HYSA vs CD: which one is right for you?
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">8 min read</span>
         </div>
       </div>
@@ -114,7 +114,7 @@ export default function Page() {
         <p className="text-mute leading-relaxed">
           HYSA rates are variable. Banks set them based on the federal funds rate and competitive
           pressure. When the Fed raises rates, HYSA yields typically rise within weeks. When the Fed
-          cuts, yields fall. The top HYSAs as of April 2026 are paying 4.85% APY, but that rate
+          cuts, yields fall. The top HYSAs as of July 2026 are paying around 4.10 to 4.50% APY, but that rate
           could change tomorrow. If you need to count on a specific yield for a defined period, a CD
           is the better tool.
         </p>
@@ -133,10 +133,10 @@ export default function Page() {
         </p>
         <p className="text-mute leading-relaxed mb-4">
           CDs are also FDIC-insured up to $250,000 per depositor per institution. Like HYSAs, they
-          are offered at banks and credit unions. The top 12-month CDs as of April 2026 are paying
-          5.10% APY (LendingClub, $2,500 minimum). A 5-year CD might offer 4.40%, which is lower
-          than the 12-month because the yield curve is currently inverted: short-term rates are
-          higher than long-term rates.
+          are offered at banks and credit unions. The top 12-month CDs as of July 2026 are paying
+          around 4.10% APY at online banks like Bask Bank and Live Oak Bank. Longer terms often pay
+          a similar or slightly lower rate, so compare the full term sheet before locking your money
+          up for years.
         </p>
         <h3 className="font-display font-bold text-lg tracking-tight mt-6 mb-3">
           Early withdrawal penalties

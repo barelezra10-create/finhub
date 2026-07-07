@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Cash-Out Refinance Rates and Math 2026 | Fintiex",
+  title: "Cash-Out Refinance Rates and Math 2026",
   description:
     "Cash-out refinance rates today, when it makes sense vs HELOC, real examples, and our top 5 cash-out lenders. No paid placements. Updated daily.",
   alternates: { canonical: "/mortgages/cash-out" },
@@ -136,7 +136,7 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Cash-out rates updated today
+            <span className="pulse-dot" /> Cash-out rates
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             Cash-out refinance: pull equity, but only if the math wins.
@@ -161,7 +161,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">Cash-out snapshot</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[

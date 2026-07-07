@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Auto Loan Rates 2026: New, Used, Dealer vs Bank Compared | Fintiex",
+  title: "Auto Loan Rates 2026: New, Used, Dealer vs Bank Compared",
   description:
     "Current auto loan rates by credit tier, new vs used, dealer vs bank vs credit union. Get preapproved before shopping. Soft-pull prequalify with no credit hit.",
   alternates: { canonical: "/loans/auto" },

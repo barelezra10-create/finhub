@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Home Improvement Loans 2026: Personal Loan vs HELOC vs Cash-Out | Fintiex",
+  title: "Home Improvement Loans 2026: Personal Loan vs HELOC vs Cash-Out",
   description:
     "Compare home improvement financing: personal loan, HELOC, cash-out refi, or 0% APR card. Top picks: SoFi, LightStream, Marcus. Pick the right tool fast.",
   alternates: { canonical: "/loans/home-improvement" },

@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Wedding Loans 2026: Honest Guide to Financing a Wedding | Fintiex",
+  title: "Wedding Loans 2026: Honest Guide to Financing a Wedding",
   description:
     "Wedding loan options compared honestly. Picks: SoFi, LightStream, Upstart. We do not recommend debt for a wedding. Here is the math if you decide to anyway.",
   alternates: { canonical: "/loans/wedding" },

@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Credit Card Payoff Calculator | Fintiex",
+  title: "Credit Card Payoff Calculator",
   description:
     "Free credit card debt payoff calculator. Plug in balance, APR, and monthly payment. See total months, total interest paid, and the cost of carrying the balance.",
   alternates: { canonical: "/calculators/debt-payoff" },

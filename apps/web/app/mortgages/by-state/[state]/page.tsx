@@ -16,7 +16,7 @@ export async function generateMetadata(
   const state = getStateBySlug(slug);
   if (!state) return { title: "State not found" };
   return {
-    title: `${state.name} Mortgage Rates 2026 | Fintiex`,
+    title: `${state.name} Mortgage Rates 2026`,
     description: `Current 30Y, 15Y, FHA, and jumbo mortgage rates in ${state.name}. Top lenders, closing cost rules, and first-time buyer programs for ${state.name} residents.`,
     alternates: { canonical: `/mortgages/by-state/${slug}` },
   };

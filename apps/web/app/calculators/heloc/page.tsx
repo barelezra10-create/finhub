@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "HELOC Payment Calculator | Fintiex",
+  title: "HELOC Payment Calculator",
   description:
     "Free HELOC payment calculator. Simulate the intro period, draw-period interest-only payments, end-of-draw balance, and the fully amortizing repayment phase.",
   alternates: { canonical: "/calculators/heloc" },

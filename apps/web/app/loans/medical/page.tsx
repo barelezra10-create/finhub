@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Medical Loans 2026: Negotiate the Bill First, Borrow Second | Fintiex",
+  title: "Medical Loans 2026: Negotiate the Bill First, Borrow Second",
   description:
     "Medical loan options, in-house provider financing alternatives, and CFPB negotiation guidance. Top picks: Upstart, Best Egg, Prosper. Negotiate the bill first.",
   alternates: { canonical: "/loans/medical" },

@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best Travel Credit Cards 2026: Points, Miles & Transfer Partners | Fintiex",
+  title: "Best Travel Credit Cards 2026: Points, Miles & Transfer Partners",
   description:
     "The travel cards that pay back more than they cost. Compare Sapphire Preferred, Amex Gold, Venture, Citi Premier, and Bilt. Real point values, real fees.",
   alternates: { canonical: "/credit-cards/travel" },

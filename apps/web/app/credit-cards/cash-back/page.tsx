@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best Cash-Back Credit Cards 2026: Flat 2% to 5% Rotating | Fintiex",
+  title: "Best Cash-Back Credit Cards 2026: Flat 2% to 5% Rotating",
   description:
     "The cash-back cards that actually pay the most. Flat-rate, tiered, and rotating-category picks ranked by real-world spending. No annual fees on most.",
   alternates: { canonical: "/credit-cards/cash-back" },

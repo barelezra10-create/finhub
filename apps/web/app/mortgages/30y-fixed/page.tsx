@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "30-Year Fixed Mortgage Rates 2026 | Fintiex",
+  title: "30-Year Fixed Mortgage Rates 2026",
   description:
     "30-year fixed mortgage rates today, average APR 6.85%. Pros, cons, and who it suits. Real numbers, plain English, no paid placements. Updated daily by Fintiex.",
   alternates: { canonical: "/mortgages/30y-fixed" },
@@ -60,7 +60,7 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> 30Y fixed updated today
+            <span className="pulse-dot" /> 30Y fixed rates
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             The 30-year fixed: predictable, popular, sometimes pricey.
@@ -85,7 +85,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">30-year snapshot</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[

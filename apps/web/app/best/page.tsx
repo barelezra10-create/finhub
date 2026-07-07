@@ -4,7 +4,7 @@ import { BreadcrumbListSchema, FAQPageSchema } from "@/components/schemas";
 import { loadListicles } from "@/lib/listicles";
 
 export const metadata: Metadata = {
-  title: "Best Credit Cards in 2026: 15 Category Winners | Fintiex",
+  title: "Best Credit Cards in 2026: 15 Category Winners",
   description:
     "Fintiex picks for the best credit cards in 2026 across cashback, travel, balance transfer, student, secured, and 12 other categories. Honest ranking, no affiliate bias.",
   alternates: { canonical: "/best" },

@@ -13,7 +13,7 @@ import { loadCards, cardsByCategory } from "@/lib/cards-server";
 import { CardsExplorer } from "./cards-explorer";
 
 export const metadata: Metadata = {
-  title: "Best Credit Cards 2026: Cash Back, Travel, 0% APR, Balance Transfer | Fintiex",
+  title: "Best Credit Cards 2026: Cash Back, Travel, 0% APR, Balance Transfer",
   description:
     "Compare 50 credit cards across cash back, travel, 0% APR, balance transfer, business, student, and secured. Independent rankings updated weekly.",
   alternates: { canonical: "/credit-cards" },

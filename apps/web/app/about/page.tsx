@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "About Fintiex | Fintiex",
+  title: "About Fintiex",
   description:
     "Fintiex is a personal finance hub built like Bankrate without the email walls, popups, or pay-to-play rankings. Here is who we are and how we make money.",
   alternates: { canonical: "/about" },

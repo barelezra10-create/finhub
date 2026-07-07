@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Compound Interest Calculator | Fintiex",
+  title: "Compound Interest Calculator",
   description:
     "Free compound interest calculator with monthly contributions. See your balance grow year by year. Adjust starting amount, monthly add, APY, and time horizon.",
   alternates: { canonical: "/calculators/compound-interest" },

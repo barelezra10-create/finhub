@@ -97,13 +97,13 @@ export default async function StateHysaPage(
 
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Updated 4 minutes ago
+            High-Yield Savings · {state.name}
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.04] tracking-[-0.03em] mb-6">
             Best HYSA in {state.name}
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            {state.name} residents have access to the same top-rated national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, earning 4.85% APY on idle cash adds up fast. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
+            {state.name} residents have access to the same top-rated national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, earning {hysaOptions[0]!.apy.toFixed(2)}% APY on idle cash adds up fast. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/reviews/bask" className="pill pill-ink">
@@ -150,7 +150,7 @@ export default async function StateHysaPage(
               <div>
                 <div className="text-sm text-mute mb-1 md:text-right">Current APY</div>
                 <div className="font-display font-extrabold text-[5rem] leading-none tracking-tighter tabular text-ink">
-                  4.85<span className="text-[2.5rem] align-top text-mute">%</span>
+                  {hysaOptions[0]!.apy.toFixed(2)}<span className="text-[2.5rem] align-top text-mute">%</span>
                 </div>
               </div>
               <Link href="/reviews/bask" className="pill pill-ink">
@@ -167,7 +167,7 @@ export default async function StateHysaPage(
         <div className="grid grid-cols-12 gap-8 mb-8">
           <div className="col-span-12 md:col-span-7">
             <span className="chip chip-mute mb-4">
-              <span className="pulse-dot" /> Savings Rates · Live
+              <span className="pulse-dot" /> Savings Rates
             </span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
               Top HYSA rates for {state.name} residents in 2026

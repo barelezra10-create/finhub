@@ -25,8 +25,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const a = loadSavingsAccount(slug);
-  if (!a) return { title: "Savings Account Review | Fintiex" };
-  const title = `${a.product_name} Review: ${formatApy(a.apy)} APY (2026) | Fintiex`;
+  if (!a) return { title: "Savings Account Review" };
+  const title = `${a.product_name} Review: ${formatApy(a.apy)} APY (2026)`;
   const description = `${a.product_name} from ${a.bank} pays ${formatApy(a.apy)} APY with $${a.monthly_fee} monthly fee. ${a.best_for}. Full 2026 review with pros, cons, and how to open.`;
   return {
     title,

@@ -28,8 +28,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const loan = loadStudentLoan(slug);
-  if (!loan) return { title: "Student Loan Review | Fintiex" };
-  const title = `${loan.lender} Student Loan Review | Fintiex`;
+  if (!loan) return { title: "Student Loan Review" };
+  const title = `${loan.lender} Student Loan Review`;
   const desc = `${loan.lender} ${loan.product_name}: ${formatAprRange(loan.apr_range)} APR on ${formatTermYears(loan.repayment_terms_years)} terms. Cosigner, fees, and verdict.`;
   return {
     title: title.length > 60 ? title.slice(0, 57) + "..." : title,

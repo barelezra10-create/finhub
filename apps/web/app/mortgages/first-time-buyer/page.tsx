@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "First-Time Home Buyer Programs and Down Payment Help 2026 | Fintiex",
+  title: "First-Time Home Buyer Programs and Down Payment Help 2026",
   description:
     "FHA, VA, USDA, and conventional 3% down options. State down payment assistance programs. The 5 best lenders for first-time buyers. Updated for 2026.",
   alternates: { canonical: "/mortgages/first-time-buyer" },
@@ -161,7 +161,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">First-time buyer snapshot</h2>
-            <span className="text-xs font-mono text-mute">Updated today</span>
+            <span className="text-xs font-mono text-mute">Representative rates</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[

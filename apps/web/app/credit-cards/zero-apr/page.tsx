@@ -5,7 +5,7 @@ import { cardsByCategory } from "@/lib/cards-server";
 import { CardPickRow } from "@/components/card-pick-row";
 
 export const metadata: Metadata = {
-  title: "Best 0% Intro APR Credit Cards 2026: Up to 21 Months Interest-Free | Fintiex",
+  title: "Best 0% Intro APR Credit Cards 2026: Up to 21 Months Interest-Free",
   description:
     "Float a major purchase interest-free for up to 21 months. We compare the strongest 0% APR cards on intro length, post-promo APR, and ongoing rewards.",
   alternates: { canonical: "/credit-cards/zero-apr" },

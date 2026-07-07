@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "When Does Refinancing Actually Pay Off? | Fintiex Guides",
+  title: "When Does Refinancing Actually Pay Off?",
   description:
     "Refinancing lowers your rate but costs money upfront. The break-even calculation tells you exactly how long until the savings outweigh the closing costs.",
   alternates: { canonical: "/learn/refinance-break-even" },
@@ -34,7 +34,7 @@ export default function Page() {
           When does refinancing actually pay off?
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">8 min read</span>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { loadCards } from "@/lib/cards-server";
 import { Calculator } from "./calculator";
 
 export const metadata: Metadata = {
-  title: "Credit Card Rewards Optimizer | Free Tool | Fintiex",
+  title: "Credit Card Rewards Optimizer | Free Tool",
   description:
     "Enter monthly spend on groceries, dining, travel, gas, and other. We rank every card in our 50-card dataset by annual rewards value. See which card pays you the most.",
   alternates: { canonical: "/calculators/rewards-optimizer" },

@@ -5,7 +5,7 @@ import { loadCarriers, formatPremiumRange } from "@/lib/insurance";
 import { CarrierBox } from "@/components/carrier-box";
 
 export const metadata: Metadata = {
-  title: "Best Auto Insurance Companies of 2026: 8 Top Carriers Ranked | Fintiex",
+  title: "Best Auto Insurance Companies of 2026: 8 Top Carriers Ranked",
   description:
     "Compare the 8 best auto insurance carriers of 2026. GEICO, Progressive, State Farm, USAA, and more. Real premium ranges, AM Best ratings, JD Power scores.",
   alternates: { canonical: "/insurance/auto" },

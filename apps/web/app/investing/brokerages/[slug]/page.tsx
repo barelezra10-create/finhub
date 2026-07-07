@@ -25,8 +25,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params;
   const b = loadBrokerage(slug);
-  if (!b) return { title: "Broker not found | Fintiex" };
-  const title = `${b.broker} Review 2026: Fees, Pros, Cons | Fintiex`;
+  if (!b) return { title: "Broker not found" };
+  const title = `${b.broker} Review 2026: Fees, Pros, Cons`;
   const description = `${b.broker} review for 2026. ${b.best_for}. ${b.commission_stocks === 0 ? "$0 stock trades" : "$" + b.commission_stocks + " stocks"}, ${b.account_minimum === 0 ? "no minimum" : "$" + b.account_minimum + " min"}.`;
   return {
     title,

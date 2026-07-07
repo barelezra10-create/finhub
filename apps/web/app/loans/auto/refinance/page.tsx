@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Auto Refinance 2026: Lower Your Car Loan Rate | Fintiex",
+  title: "Auto Refinance 2026: Lower Your Car Loan Rate",
   description:
     "Auto refinance math, top lenders (LightStream, Capital One, RateGenius), and when refinancing actually saves money. Soft-pull prequalify before applying.",
   alternates: { canonical: "/loans/auto/refinance" },

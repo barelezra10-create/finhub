@@ -4,7 +4,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 import { BrandLogo } from "@/components/brand-logo";
 
 export const metadata: Metadata = {
-  title: "Personal Loans by Credit Score 2026: Rates by FICO Tier | Fintiex",
+  title: "Personal Loans by Credit Score 2026: Rates by FICO Tier",
   description:
     "Realistic personal loan rates and lenders for every FICO band: excellent (740+), good (670-739), fair (580-669), and poor (below 580). Soft-pull prequalify.",
   alternates: { canonical: "/loans/by-credit-tier" },

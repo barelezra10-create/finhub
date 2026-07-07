@@ -24,10 +24,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const carrier = loadCarrier("home", slug);
-  if (!carrier) return { title: "Home Insurance Review | Fintiex" };
+  if (!carrier) return { title: "Home Insurance Review" };
   const desc = `${carrier.carrier} home insurance review for 2026. Premium range, AM Best rating, JD Power score, pros and cons. ${carrier.best_for}.`;
   return {
-    title: `${carrier.carrier} Home Insurance Review (2026) | Fintiex`,
+    title: `${carrier.carrier} Home Insurance Review (2026)`,
     description: desc.length > 160 ? desc.slice(0, 157) + "..." : desc,
     alternates: { canonical: `/insurance/home/${carrier.slug}` },
   };

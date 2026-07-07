@@ -5,7 +5,7 @@ import { loadCarriers, formatPremiumRange } from "@/lib/insurance";
 import { CarrierBox } from "@/components/carrier-box";
 
 export const metadata: Metadata = {
-  title: "Best Home Insurance Companies of 2026: 8 Top Carriers Ranked | Fintiex",
+  title: "Best Home Insurance Companies of 2026: 8 Top Carriers Ranked",
   description:
     "Compare the 8 best home insurance carriers of 2026. State Farm, Allstate, USAA, Lemonade, and more. Real premium ranges, AM Best ratings, and JD Power scores.",
   alternates: { canonical: "/insurance/home" },

@@ -73,13 +73,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { pillar } = await params;
   const meta = PILLAR_META[pillar];
-  if (!meta) return { title: "Topic not found | Fintiex" };
+  if (!meta) return { title: "Topic not found" };
   const desc =
     meta.description.length > 158
       ? meta.description.slice(0, 158) + "."
       : meta.description;
   return {
-    title: `${meta.title} | Fintiex Learn`,
+    title: `${meta.title}`,
     description: desc,
     alternates: { canonical: `/learn/${pillar}` },
   };

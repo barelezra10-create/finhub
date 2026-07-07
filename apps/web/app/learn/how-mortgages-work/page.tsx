@@ -6,7 +6,7 @@ import {
 } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "How Mortgages Work in 2026 | Fintiex Guides",
+  title: "How Mortgages Work in 2026",
   description:
     "A full plain-English breakdown of how mortgages are priced and structured: 10-year Treasuries, loan types, FICO impact, rate locks, and closing costs explained.",
   alternates: { canonical: "/learn/how-mortgages-work" },
@@ -34,7 +34,7 @@ export default function Page() {
           How mortgages work in 2026
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated April 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
           <span className="chip chip-mute">9 min read</span>
         </div>
       </div>
@@ -145,10 +145,10 @@ export default function Page() {
         <p className="text-mute leading-relaxed mb-4">
           The 30-year fixed mortgage rate tracks the 10-year US Treasury yield. Investors who buy
           mortgages are comparing them to the risk-free return of Treasuries. If the 10-year Treasury
-          yields 4.30%, mortgage rates typically sit 2.40 to 3.00 percentage points higher, which
-          would put the average 30-year rate near 6.70 to 7.30%. That gap above the Treasury is
-          called the spread, and it varies based on market conditions. As of April 2026, Freddie
-          Mac&rsquo;s Primary Mortgage Market Survey puts the average 30-year fixed at 6.85%.
+          yields 4.30%, mortgage rates typically sit 2.00 to 3.00 percentage points higher, which
+          would put the average 30-year rate near 6.30 to 7.30%. That gap above the Treasury is
+          called the spread, and it varies based on market conditions. As of July 2026, Freddie
+          Mac&rsquo;s Primary Mortgage Market Survey puts the average 30-year fixed at 6.43%.
         </p>
         <h3 className="font-display font-bold text-lg tracking-tight mt-6 mb-3">
           Mortgage-backed securities and the secondary market
@@ -253,10 +253,10 @@ export default function Page() {
           Loan term
         </h3>
         <p className="text-mute leading-relaxed mb-4">
-          A 15-year fixed mortgage carries a lower rate than a 30-year fixed. As of April 2026,
-          Freddie Mac shows 15-year rates averaging about 6.05%, versus 6.85% for 30 years. The
+          A 15-year fixed mortgage carries a lower rate than a 30-year fixed. As of July 2026,
+          Freddie Mac shows 15-year rates averaging about 5.79%, versus 6.43% for 30 years. The
           monthly payment is higher on the 15-year, but total interest paid is dramatically less.
-          On a $400,000 loan, the 15-year saves roughly $190,000 in interest over the life of the
+          On a $400,000 loan, the 15-year saves roughly $300,000 in interest over the life of the
           loan compared to the 30-year.
         </p>
         <h3 className="font-display font-bold text-lg tracking-tight mt-6 mb-3">

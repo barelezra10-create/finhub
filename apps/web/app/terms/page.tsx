@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Fintiex",
+  title: "Terms of Service",
   description:
     "The rules for using Fintiex: educational content only, not financial advice, rates change, verify with the lender, plus standard IP and liability terms.",
   alternates: { canonical: "/terms" },
