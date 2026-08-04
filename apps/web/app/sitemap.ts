@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/site";
 import { states } from "@/lib/states";
 import { allReviewSlugs, guideSlugs } from "@/lib/review-slugs";
 import { loadAllPillarArticles, PILLAR_SLUGS, PILLAR_META } from "@/lib/pillars";
+import { cdBankSlugs } from "@/lib/cd-banks";
 
 function listJsonSlugs(dir: string): string[] {
   const abs = path.join(process.cwd(), dir);
@@ -34,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/savings", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/savings/hysa", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/savings/cds", priority: 0.85, changeFrequency: "weekly" as const },
+    { url: "/savings/hysa/bank-of-america", priority: 0.75, changeFrequency: "weekly" as const },
     { url: "/loans", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/loans/by-credit-tier", priority: 0.85, changeFrequency: "weekly" as const },
     { url: "/credit-cards", priority: 0.9, changeFrequency: "daily" as const },
@@ -134,9 +136,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
+  const cdBankRoutes = cdBankSlugs.map((slug) => ({
+    url: `/savings/cds/${slug}`,
+    priority: 0.75,
+    changeFrequency: "weekly" as const,
+  }));
+
   return [
     ...staticRoutes,
     ...guideRoutes,
+    ...cdBankRoutes,
     ...stateRoutes,
     ...mortgageStateRoutes,
     ...reviewRoutes,

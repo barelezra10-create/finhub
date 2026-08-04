@@ -13,9 +13,9 @@ import {
 const brand = getBrand("amex-savings")!;
 
 export const metadata: Metadata = {
-  title: "American Express High Yield Savings Review: 4.15% APY (2026)",
+  title: "American Express High Yield Savings Account: Rate and Review (2026)",
   description:
-    "American Express HYSA pays 4.15% APY with no minimum and no fees. Best for existing Amex cardholders. Full 2026 review: pros, cons, slow ACH, and verdict.",
+    "What the American Express High Yield Savings Account pays now, how it compares to top HYSAs, and who it fits. No minimum, no fees. Full 2026 review and verdict.",
   alternates: { canonical: "/reviews/amex-savings" },
 };
 

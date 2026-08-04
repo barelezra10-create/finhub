@@ -302,6 +302,32 @@ export default function Page() {
             Discover review
           </Link>
         </div>
+
+        <div className="mt-10">
+          <h3 className="font-display font-bold text-lg tracking-tight mb-4">
+            CD rates by bank
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/savings/cds/fidelity" className="pill pill-ghost text-xs">
+              Fidelity CD rates
+            </Link>
+            <Link href="/savings/cds/schwab" className="pill pill-ghost text-xs">
+              Schwab CD rates
+            </Link>
+            <Link href="/savings/cds/synchrony" className="pill pill-ghost text-xs">
+              Synchrony CD rates
+            </Link>
+            <Link href="/savings/cds/edward-jones" className="pill pill-ghost text-xs">
+              Edward Jones CD rates
+            </Link>
+            <Link href="/savings/cds/usaa" className="pill pill-ghost text-xs">
+              USAA CD rates
+            </Link>
+            <Link href="/savings/cds/truist" className="pill pill-ghost text-xs">
+              Truist CD rates
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* EXPLAINER */}
