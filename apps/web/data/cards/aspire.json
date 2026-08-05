@@ -1,0 +1,58 @@
+{
+  "slug": "aspire",
+  "issuer": "Aspire",
+  "name": "Aspire Cash Back Rewards Card",
+  "network": "Mastercard",
+  "category": [
+    "rebuilding",
+    "cashback"
+  ],
+  "apr_purchase": {
+    "min": 29.99,
+    "max": 36
+  },
+  "apr_intro": null,
+  "apr_intro_months": 0,
+  "apr_balance_transfer": {
+    "min": 29.99,
+    "max": 36
+  },
+  "apr_cash_advance": 36,
+  "annual_fee": 175,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {
+    "gas": 3,
+    "groceries": 3,
+    "utilities": 3,
+    "other": 1
+  },
+  "rewards_type": "cashback",
+  "points_value_cents": null,
+  "credit_score_required": {
+    "min": 300,
+    "recommended": 550
+  },
+  "perks": [
+    "3% cash back on gas, groceries, and utility payments, 1% on everything else, unusual for a subprime card",
+    "Unsecured, so no security deposit required",
+    "Prequalification with a soft pull that does not hurt your score",
+    "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)",
+    "Credit limits up to $1,000 for the strongest approved profiles"
+  ],
+  "drawbacks": [
+    "Annual fee is $85 to $175 the first year, then $49 plus a $5 to $15 monthly maintenance fee starting in year two (up to about $229 per year), as of mid-2026; exact fees vary by offer",
+    "Fee math: a $175 first-year fee on a $350 starting limit consumes 50% of your available credit on day one",
+    "The cash back cannot outrun the fees: you would need over $5,800 a year in 3% category spending just to cover a $175 fee, unrealistic on a limit this small",
+    "Purchase APR of 29.99% to 36% makes carrying any balance very expensive",
+    "Issued by The Bank of Missouri and serviced by Atlanticus, a fee-heavy subprime program with frequent servicing complaints",
+    "A Discover it Secured earns 2% at gas stations and restaurants with a $0 annual fee and a refundable $200 deposit; it beats Aspire on both cost and rewards for anyone who can fund the deposit",
+    "Verdict: the cash back is a distraction, not a reason to apply; only consider Aspire if you cannot fund any deposit, were declined for Mission Lane, and you land one of the lower-fee offers"
+  ],
+  "application_url": "https://www.aspirecreditcard.com/",
+  "last_updated": "2026-08-04",
+  "rating": 2.0
+}

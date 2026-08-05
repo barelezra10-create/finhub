@@ -1,0 +1,54 @@
+{
+  "slug": "destiny",
+  "issuer": "Destiny",
+  "name": "Destiny Mastercard",
+  "network": "Mastercard",
+  "category": [
+    "rebuilding"
+  ],
+  "apr_purchase": {
+    "min": 35.9,
+    "max": 35.9
+  },
+  "apr_intro": null,
+  "apr_intro_months": 0,
+  "apr_balance_transfer": {
+    "min": 35.9,
+    "max": 35.9
+  },
+  "apr_cash_advance": 35.9,
+  "annual_fee": 175,
+  "foreign_tx_fee": 0.01,
+  "balance_transfer_fee": 0,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {
+    "other": 0
+  },
+  "rewards_type": "none",
+  "points_value_cents": null,
+  "credit_score_required": {
+    "min": 300,
+    "recommended": 550
+  },
+  "perks": [
+    "Unsecured card with no security deposit required",
+    "$700 credit limit on the current standard offer, higher than many subprime cards",
+    "Prequalification uses a soft pull that does not affect your score",
+    "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)",
+    "Considers applicants with past bankruptcy"
+  ],
+  "drawbacks": [
+    "Annual fee is $175 the first year, then $49 plus $12.50 per month (about $199 per year) after that, as of mid-2026; terms vary by offer",
+    "Fee math: the $175 first-year fee eats 25% of a $700 limit the day the card opens, and the ongoing fees keep charging you roughly $199 a year for the privilege of a $700 line",
+    "35.9% purchase APR, among the highest of any mainstream card",
+    "No rewards, no cash back, and no reliable path to credit limit increases or an upgrade",
+    "Issued by First Electronic Bank and serviced by Concora Credit, the same servicer behind the Indigo card, with a similar complaint record on fees and servicing",
+    "Over three years you would pay roughly $573 in fees; a Discover it Secured or Capital One Platinum Secured costs $0 in fees over the same period and gives your deposit back",
+    "Verdict: not recommended; nearly anyone approved for Destiny can either fund a small secured deposit or get approved for Mission Lane, and both are cheaper ways to rebuild"
+  ],
+  "application_url": "https://www.destinycard.com/",
+  "last_updated": "2026-08-04",
+  "rating": 1.5
+}

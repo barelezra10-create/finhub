@@ -14,6 +14,14 @@ export const reviewSlugs = {
     "pnc",
     "wellsfargo-mortgage",
     "usbank",
+    "valon",
+    "guild-mortgage",
+    "carrington",
+    "midland-mortgage",
+    "roundpoint",
+    "21st-mortgage",
+    "crosscountry",
+    "movement",
   ],
   savings: [
     "bask",
@@ -49,4 +57,7 @@ export const guideSlugs = [
   "compound-interest-explained",
   "emergency-fund-playbook",
   "debt-avalanche-vs-snowball",
+  "50-year-mortgage",
+  "family-opportunity-mortgage",
+  "what-is-this-charge-on-my-credit-card",
 ] as const;

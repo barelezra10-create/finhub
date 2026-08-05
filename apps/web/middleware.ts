@@ -81,9 +81,19 @@ function translatePath(pathname: string): string {
 
 export function middleware(request: NextRequest) {
   const host = (request.headers.get("host") ?? "").toLowerCase();
+  const { pathname, search } = request.nextUrl;
+
+  // Bare apex -> www with the full path preserved. Without this, deep links
+  // like fintiex.com/savings/hysa/nevada 404 instead of redirecting (only the
+  // root was covered upstream), which GSC reports as Not found.
+  if (host === "fintiex.com") {
+    return NextResponse.redirect(new URL(pathname + search, TARGET_ORIGIN), {
+      status: 301,
+    });
+  }
+
   if (!CCP_HOSTS.has(host)) return NextResponse.next();
 
-  const { pathname, search } = request.nextUrl;
   const destination = translatePath(pathname) + search;
 
   return NextResponse.redirect(new URL(destination, TARGET_ORIGIN), {

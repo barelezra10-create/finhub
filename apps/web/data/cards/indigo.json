@@ -1,0 +1,55 @@
+{
+  "slug": "indigo",
+  "issuer": "Indigo",
+  "name": "Indigo Mastercard",
+  "network": "Mastercard",
+  "category": [
+    "rebuilding"
+  ],
+  "apr_purchase": {
+    "min": 24.9,
+    "max": 35.9
+  },
+  "apr_intro": null,
+  "apr_intro_months": 0,
+  "apr_balance_transfer": {
+    "min": 24.9,
+    "max": 35.9
+  },
+  "apr_cash_advance": 35.9,
+  "annual_fee": 175,
+  "foreign_tx_fee": 0.01,
+  "balance_transfer_fee": 0,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {
+    "other": 0
+  },
+  "rewards_type": "none",
+  "points_value_cents": null,
+  "credit_score_required": {
+    "min": 300,
+    "recommended": 550
+  },
+  "perks": [
+    "Unsecured card, so no security deposit is required",
+    "Prequalification uses a soft pull that does not hurt your credit score",
+    "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)",
+    "Accepts applicants with prior bankruptcy or deep subprime scores",
+    "Standard Mastercard acceptance and $0 fraud liability"
+  ],
+  "drawbacks": [
+    "Annual fee runs up to $175 the first year, then $49 plus $12.50 per month (about $199 per year) on the highest-fee offer, as of mid-2026; exact terms vary by offer and applicant",
+    "The fee math is brutal: a $175 first-year fee on a $300 limit consumes 58% of your available credit before you buy anything",
+    "Credit limits are typically $300 to $700, and Indigo rarely grants increases",
+    "Purchase APR is roughly 24.9% to 35.9% depending on the offer you receive",
+    "No rewards, no cash back, no upgrade path to a better card",
+    "Issued by Celtic Bank and serviced by Concora Credit, which draws heavy complaint volume over fees and customer service",
+    "A no-fee secured card like the Discover it Secured or Capital One Platinum Secured builds credit for $0 a year and refunds your deposit; if you can save even $49 to $200 for a deposit, the secured route is almost always better",
+    "Verdict: skip it unless you have zero money for a deposit and were declined by Mission Lane; if you do take it, pay in full monthly and treat it as a 12-month stepping stone"
+  ],
+  "application_url": "https://www.indigocard.com/",
+  "last_updated": "2026-08-04",
+  "rating": 1.5
+}
