@@ -38,6 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/savings/hysa/bank-of-america", priority: 0.75, changeFrequency: "weekly" as const },
     { url: "/loans", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/loans/by-credit-tier", priority: 0.85, changeFrequency: "weekly" as const },
+    { url: "/loans/personal", priority: 0.85, changeFrequency: "weekly" as const },
+    { url: "/loans/debt-consolidation", priority: 0.8, changeFrequency: "weekly" as const },
+    { url: "/loans/home-improvement", priority: 0.8, changeFrequency: "weekly" as const },
+    { url: "/loans/auto", priority: 0.8, changeFrequency: "weekly" as const },
+    { url: "/loans/auto/refinance", priority: 0.75, changeFrequency: "weekly" as const },
+    { url: "/loans/student", priority: 0.8, changeFrequency: "weekly" as const },
+    { url: "/loans/medical", priority: 0.75, changeFrequency: "weekly" as const },
+    { url: "/loans/wedding", priority: 0.75, changeFrequency: "weekly" as const },
     { url: "/credit-cards", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/insurance", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/insurance/auto", priority: 0.85, changeFrequency: "weekly" as const },
@@ -142,10 +150,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
+  const personalLoanRoutes = listJsonSlugs("data/loans/personal-loans").map((slug) => ({
+    url: `/loans/personal/${slug}`,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
+  const studentLoanRoutes = listJsonSlugs("data/loans/student-loans").map((slug) => ({
+    url: `/loans/student/${slug}`,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
   return [
     ...staticRoutes,
     ...guideRoutes,
     ...cdBankRoutes,
+    ...personalLoanRoutes,
+    ...studentLoanRoutes,
     ...stateRoutes,
     ...mortgageStateRoutes,
     ...reviewRoutes,

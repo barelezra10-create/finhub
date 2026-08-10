@@ -37,8 +37,16 @@ export const reviewSlugs = {
   // The 8 slugs below are now 301-redirected via next.config.ts.
   card: [] as string[],
   // Personal loan reviews moved to /loans/personal/[slug] (2026-05).
-  // The 8 slugs below are now 301-redirected via next.config.ts.
-  loan: [] as string[],
+  // Small-dollar lender and loan-app reviews (2026-08) live here.
+  loan: [
+    "bear-loan",
+    "panda-loan",
+    "sunshine-loans",
+    "cherry",
+    "elastic",
+    "dollar-loan-center",
+    "super-cash-advance",
+  ] as string[],
 } as const;
 
 export const allReviewSlugs: string[] = [
@@ -60,4 +68,10 @@ export const guideSlugs = [
   "50-year-mortgage",
   "family-opportunity-mortgage",
   "what-is-this-charge-on-my-credit-card",
+  "401k-loan",
+  "home-equity-loan-vs-heloc",
+  "is-debt-consolidation-a-good-idea",
+  "emergency-loans-bad-credit",
+  "how-to-apply-for-a-personal-loan",
+  "lease-buyout-loan",
 ] as const;

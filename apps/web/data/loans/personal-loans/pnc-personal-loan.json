@@ -1,0 +1,33 @@
+{
+  "slug": "pnc-personal-loan",
+  "lender": "PNC Bank",
+  "product_name": "PNC Personal Loan",
+  "apr_range": { "min": 6.99, "max": 26.94 },
+  "loan_amount_min": 1000,
+  "loan_amount_max": 35000,
+  "repayment_terms_months": [6, 12, 24, 36, 48, 60],
+  "origination_fee": { "min": 0, "max": 0 },
+  "prepayment_penalty": false,
+  "late_fee": "Varies by state",
+  "funding_speed": "Typically 1 to 5 business days; existing customers can be faster",
+  "credit_score_required": { "min": 660, "recommended": 700 },
+  "best_for": "Existing PNC customers, good credit, no-fee bank loan",
+  "perks": [
+    "No origination fee and no application fee; the APR is the whole cost",
+    "APR starting near 6.99% as of mid-2026 is competitive with the best online lenders for strong credit",
+    "0.25 percentage point rate discount for autopay from a PNC checking account",
+    "Loan amounts start at $1,000, lower than many banks, with terms from 6 to 60 months",
+    "No prepayment penalty",
+    "Branch support available if you prefer handling a loan in person"
+  ],
+  "drawbacks": [
+    "Only available in roughly half the states (about 26 plus DC as of mid-2026), with extra restrictions in a few others; check availability by ZIP before applying",
+    "PNC does not publish a minimum credit score, but pricing clearly targets good-to-excellent credit; fair-credit applicants will likely be declined or priced high",
+    "Rates vary by ZIP code, which makes prequalification results less predictable than online lenders",
+    "$35,000 maximum is below the $50,000 to $100,000 ceilings at SoFi or LightStream",
+    "Funding is slower than the same-day online lenders"
+  ],
+  "application_url": "https://www.pnc.com/en/personal-banking/borrowing/personal-loans.html",
+  "rating": 4.0,
+  "last_updated": "2026-08-10"
+}

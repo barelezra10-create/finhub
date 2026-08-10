@@ -1,0 +1,33 @@
+{
+  "slug": "oportun-personal-loan",
+  "lender": "Oportun",
+  "product_name": "Oportun Personal Loan",
+  "apr_range": { "min": 19.9, "max": 36.0 },
+  "loan_amount_min": 300,
+  "loan_amount_max": 10000,
+  "repayment_terms_months": [12, 24, 36, 48],
+  "origination_fee": { "min": 3.0, "max": 10.0 },
+  "prepayment_penalty": false,
+  "late_fee": "Varies by state, typically $15 or less",
+  "funding_speed": "Often same day to 1 business day after approval",
+  "credit_score_required": { "min": 0, "recommended": 580 },
+  "best_for": "No credit history, small-dollar loans, building credit",
+  "perks": [
+    "No minimum credit score: Oportun approves applicants with thin or no credit history using income and cash flow data instead",
+    "Small loan amounts from $300, useful when you need far less than the $1,000 to $5,000 minimums at mainstream lenders",
+    "Reports payments to credit bureaus, so on-time payments build a credit file",
+    "No prepayment penalty; paying off early cuts the total interest substantially",
+    "Fixed payments on a fixed schedule, unlike payday or tribal lenders this replaces",
+    "APR is capped at 36%, the widely cited ceiling for affordable small-dollar credit"
+  ],
+  "drawbacks": [
+    "APR range of roughly 19.9 to 36% as of mid-2026 is expensive compared with prime lenders; borrowers with good credit will beat it almost anywhere else",
+    "Origination fee of about 3 to 10% comes out of the loan proceeds, so a $1,000 loan may fund closer to $900",
+    "Maximum loan of $10,000 is low for debt consolidation",
+    "Not available in every state, and terms differ meaningfully by state",
+    "The 36% top rate on a 48-month term makes long terms costly; keep the term as short as the payment allows"
+  ],
+  "application_url": "https://oportun.com",
+  "rating": 3.9,
+  "last_updated": "2026-08-10"
+}
