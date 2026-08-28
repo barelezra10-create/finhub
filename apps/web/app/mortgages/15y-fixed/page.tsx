@@ -5,7 +5,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 export const metadata: Metadata = {
   title: "15-Year Fixed Mortgage Rates 2026",
   description:
-    "15-year fixed mortgage rates today, average APR 6.10%. Payoff math, monthly payment trade-offs, and who should pick a 15Y over a 30Y. Updated daily.",
+    "15-year fixed mortgage rates today, average 5.96%. Payoff math, monthly payment trade-offs, and who should pick a 15Y over a 30Y. Updated daily.",
   alternates: { canonical: "/mortgages/15y-fixed" },
 };
 
@@ -13,12 +13,12 @@ const faqItems: FAQItem[] = [
   {
     question: "How much lower is a 15-year rate than a 30-year?",
     answer:
-      "Historically the 15-year fixed runs 0.50 to 0.85 percentage points below the 30-year. Freddie Mac PMMS shows the spread averaging about 0.75 points in 2026. The shorter term is less risky for lenders, so they pass on a lower rate to borrowers who can handle the higher monthly payment.",
+      "Historically the 15-year fixed runs 0.50 to 0.85 percentage points below the 30-year. Freddie Mac PMMS shows the spread at about 0.7 points as of August 2026 (6.67% for 30Y vs 5.96% for 15Y). The shorter term is less risky for lenders, so they pass on a lower rate to borrowers who can handle the higher monthly payment.",
   },
   {
     question: "How much interest do you save on a 15-year?",
     answer:
-      "On a $400,000 loan at 6.10% APR, total interest paid across 180 months is about $211,000. The same loan at 6.85% over 30 years pays about $544,000 in interest. The 15-year saves roughly $333,000 in lifetime interest if you keep the loan to maturity.",
+      "On a $400,000 loan at 5.96%, total interest paid across 180 months is about $206,000. The same loan at 6.67% over 30 years pays about $526,000 in interest. The 15-year saves roughly $320,000 in lifetime interest if you keep the loan to maturity.",
   },
   {
     question: "Can you switch from a 30-year to a 15-year later?",
@@ -66,7 +66,7 @@ export default function Page() {
             The 15-year fixed: lower rate, faster payoff, higher payment.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            The 15-year fixed mortgage cuts roughly 0.75 percentage points off the 30-year rate and saves hundreds of thousands in lifetime interest. The catch is the monthly payment, which lands about 30% higher. Run the numbers before you commit. We will help.
+            The 15-year fixed mortgage cuts roughly 0.7 percentage points off the 30-year rate and saves hundreds of thousands in lifetime interest. The catch is the monthly payment, which lands about 30% higher. Run the numbers before you commit. We will help.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/calculators/mortgage-payment" className="pill pill-ink">
@@ -89,8 +89,8 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "15Y Fixed avg APR", value: "6.10%", caption: "Avg of 14 lenders" },
-              { label: "30Y vs 15Y spread", value: "0.75pt", caption: "Freddie Mac PMMS" },
+              { label: "15Y Fixed avg rate", value: "5.96%", caption: "Freddie Mac PMMS, Aug 2026" },
+              { label: "30Y vs 15Y spread", value: "0.71pt", caption: "Freddie Mac PMMS" },
               { label: "Lifetime interest cut", value: "~61%", caption: "$400K example" },
               { label: "Monthly payment hit", value: "+30%", caption: "Vs 30Y at same loan size" },
             ].map((tile) => (
@@ -104,7 +104,7 @@ export default function Page() {
             ))}
           </div>
           <p className="text-xs text-mute mt-6 leading-relaxed">
-            Source: Freddie Mac PMMS and Fintiex daily lender pulls. APR assumes 20% down on a single-family primary residence with a 760+ FICO.
+            Rates as of August 2026. Representative estimates based on the current Freddie Mac PMMS average; actual quotes vary by borrower. Assumes 20% down on a single-family primary residence with a 760+ FICO.
           </p>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function Page() {
               The payoff math, side by side.
             </h2>
             <p className="text-mute leading-relaxed">
-              A $400,000 loan compared at the May 2026 averages. The 15-year saves real money. The question is whether the higher payment fits your budget without crowding out other goals.
+              A $400,000 loan compared at the August 2026 averages. The 15-year saves real money. The question is whether the higher payment fits your budget without crowding out other goals.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-8 space-y-4">
@@ -129,33 +129,33 @@ export default function Page() {
                   <div className="font-display font-bold tabular">$400,000</div>
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-mute mb-1">30Y at 6.85%</div>
-                  <div className="font-display font-bold tabular">$2,624 / mo</div>
-                  <div className="text-xs text-mute mt-1">$544K total interest</div>
+                  <div className="text-xs font-mono uppercase tracking-wider text-mute mb-1">30Y at 6.67%</div>
+                  <div className="font-display font-bold tabular">$2,573 / mo</div>
+                  <div className="text-xs text-mute mt-1">$526K total interest</div>
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-mute mb-1">15Y at 6.10%</div>
-                  <div className="font-display font-bold tabular">$3,402 / mo</div>
-                  <div className="text-xs text-mute mt-1">$211K total interest</div>
+                  <div className="text-xs font-mono uppercase tracking-wider text-mute mb-1">15Y at 5.96%</div>
+                  <div className="font-display font-bold tabular">$3,367 / mo</div>
+                  <div className="text-xs text-mute mt-1">$206K total interest</div>
                 </div>
               </div>
             </div>
             <div className="card p-6">
-              <h3 className="font-display font-bold text-lg mb-2 tracking-tight">$778 more per month, $333,000 less in interest</h3>
+              <h3 className="font-display font-bold text-lg mb-2 tracking-tight">$794 more per month, roughly $320,000 less in interest</h3>
               <p className="text-sm text-mute leading-relaxed">
-                Over the first 15 years on the 30-year, you would have paid about $472,000 total. By the end of year 15 on the 15-year, you would be debt-free, having paid about $611,000. The 15-year costs about $139,000 more in nominal cash over those 15 years, but you own the house outright and skip the next 15 years of payments. After year 30, the 15-year saves about $333,000 in interest, even before reinvesting freed-up payments.
+                Over the first 15 years on the 30-year, you would have paid about $463,000 total. By the end of year 15 on the 15-year, you would be debt-free, having paid about $606,000. The 15-year costs about $143,000 more in nominal cash over those 15 years, but you own the house outright and skip the next 15 years of payments. After year 30, the 15-year saves roughly $320,000 in interest, even before reinvesting freed-up payments.
               </p>
             </div>
             <div className="card p-6">
               <h3 className="font-display font-bold text-lg mb-2 tracking-tight">The reinvestment scenario</h3>
               <p className="text-sm text-mute leading-relaxed">
-                If you take the 30-year and invest the $778 monthly difference at a 7% real return, after 15 years that account holds about $245,000. After 30 years it grows to about $957,000 because compounding accelerates. The 15-year wins on guaranteed interest savings. The 30-year plus disciplined investing can win on total wealth, but only if you actually invest the difference. Most households do not.
+                If you take the 30-year and invest the $794 monthly difference at a 7% real return, after 15 years that account holds about $252,000. After 30 years it grows to about $969,000 because compounding accelerates. The 15-year wins on guaranteed interest savings. The 30-year plus disciplined investing can win on total wealth, but only if you actually invest the difference. Most households do not.
               </p>
             </div>
             <div className="card p-6">
               <h3 className="font-display font-bold text-lg mb-2 tracking-tight">Equity build is dramatic</h3>
               <p className="text-sm text-mute leading-relaxed">
-                On the 15-year, about 47% of the first payment goes to principal. On the 30-year, only 18% does. After five years, the 15-year borrower has paid down about $103,000 of principal versus $36,000 on the 30-year, even ignoring home appreciation. That equity is real net worth you can tap with a HELOC or pull on sale.
+                On the 15-year, about 41% of the first payment goes to principal. On the 30-year, only about 14% does. After five years, the 15-year borrower has paid down about $96,000 of principal versus $25,000 on the 30-year, even ignoring home appreciation. That equity is real net worth you can tap with a HELOC or pull on sale.
               </p>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function Page() {
               The 15-year is contractual. You commit to the higher payment for the entire term. If income drops, you cannot ask the lender to revert to a 30-year schedule without a refinance, and refinancing in a high-rate environment is expensive.
             </p>
             <p>
-              The flexible alternative is a 30-year that you pay like a 15-year. Add the $778 monthly difference as extra principal and you finish in roughly 16 years instead of 30. You give up a fraction of the rate advantage but gain the option to drop back to the original payment if income tightens. Many financial planners recommend this hybrid for households without true cash flow certainty.
+              The flexible alternative is a 30-year that you pay like a 15-year. Add the $794 monthly difference as extra principal and you finish in roughly 16 years instead of 30. You give up a fraction of the rate advantage but gain the option to drop back to the original payment if income tightens. Many financial planners recommend this hybrid for households without true cash flow certainty.
             </p>
             <p>
               The CFPB notes that prepayment penalties are uncommon on owner-occupied residential mortgages originated after 2014. Confirm your lender disclosure before relying on this strategy.

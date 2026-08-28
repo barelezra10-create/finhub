@@ -19,7 +19,7 @@ const faqs: FAQItem[] = [
   {
     question: "What rate should I plug in?",
     answer:
-      "Use the current Freddie Mac Primary Mortgage Market Survey rate as a baseline. As of early 2026 the 30-year fixed averages around 6.85% nationally. Your actual quote depends on credit score, down payment, loan size, and property type. Borrowers with a 760+ FICO and 20% down typically beat the average by 10 to 25 basis points.",
+      "Use the current Freddie Mac Primary Mortgage Market Survey rate as a baseline. As of August 2026 the 30-year fixed averages around 6.67% nationally. Your actual quote depends on credit score, down payment, loan size, and property type. Borrowers with a 760+ FICO and 20% down typically beat the average by 10 to 25 basis points.",
   },
   {
     question: "Should I pick 15 or 30 years?",
@@ -101,7 +101,7 @@ export default function Page() {
                 <code>M = P * [r(1+r)^n] / [(1+r)^n - 1]</code>
               </pre>
               <p>
-                Where M is the monthly payment, P is the loan principal (price minus down payment), r is the monthly interest rate (annual rate divided by 12), and n is the total number of payments (years times 12). On a $320,000 loan at 6.85% for 30 years, that math returns roughly $2,098 per month.
+                Where M is the monthly payment, P is the loan principal (price minus down payment), r is the monthly interest rate (annual rate divided by 12), and n is the total number of payments (years times 12). On a $320,000 loan at 6.67% for 30 years, that math returns roughly $2,060 per month.
               </p>
               <p>
                 The first month, the bulk of that payment is interest. Around year 18 of a 30-year loan, the principal portion finally exceeds the interest portion. That crossover is why making extra principal payments early in the loan saves so much money: every extra dollar of principal in year one removes 30 years of compounded interest from the total tab.

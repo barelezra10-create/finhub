@@ -27,7 +27,7 @@ interface MortgageLender {
 const mortgageLenders: MortgageLender[] = [
   {
     brandSlug: "marcus-mortgage",
-    apr: 6.79,
+    apr: 6.55,
     tag: "Lowest rate",
     tagline: "Goldman Sachs Bank USA's home lending arm. Low rates for prime borrowers.",
     minFico: 740,
@@ -43,7 +43,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "better",
-    apr: 6.85,
+    apr: 6.61,
     tag: "No origination",
     tagline: "100% online mortgage with no commissions, no application fees, and rate-lock in minutes.",
     minFico: 620,
@@ -59,7 +59,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "rocket",
-    apr: 6.89,
+    apr: 6.66,
     tagline: "Largest U.S. retail mortgage lender. Strong tech, 24/7 phone support, and broad product menu.",
     minFico: 620,
     minDown: "3%",
@@ -74,7 +74,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "loandepot",
-    apr: 6.92,
+    apr: 6.7,
     tagline: "Top-5 nonbank lender. Hybrid online + in-branch with strong cash-out and refinance pricing.",
     minFico: 620,
     minDown: "5%",
@@ -89,7 +89,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "chase-mortgage",
-    apr: 6.95,
+    apr: 6.74,
     tagline: "Nationwide bank with DreaMaker low down-payment program and relationship discounts.",
     minFico: 620,
     minDown: "3%",
@@ -104,7 +104,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "pnc",
-    apr: 6.99,
+    apr: 6.79,
     tagline: "Regional bank with strong grant programs and HELOC combo loans in 28 states.",
     minFico: 620,
     minDown: "3%",
@@ -119,7 +119,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "wellsfargo-mortgage",
-    apr: 7.02,
+    apr: 6.85,
     tagline: "Big-four bank with the largest correspondent network and a sizable jumbo book.",
     minFico: 620,
     minDown: "3%",
@@ -134,7 +134,7 @@ const mortgageLenders: MortgageLender[] = [
   },
   {
     brandSlug: "usbank",
-    apr: 7.05,
+    apr: 6.9,
     tagline: "Top-five bank with strong portfolio jumbo pricing in the western United States.",
     minFico: 620,
     minDown: "3%",
@@ -347,11 +347,11 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { label: "30Y Fixed avg", value: "6.85%", caption: "Avg of 14 lenders" },
-              { label: "15Y Fixed avg", value: "6.24%", caption: "Avg of 14 lenders" },
-              { label: "Refi 30Y", value: "6.93%", caption: "Rate includes closing costs" },
-              { label: "HELOC (var)", value: "8.45%", caption: "Prime + margin, FICO 740" },
-              { label: "Jumbo 30Y", value: "7.18%", caption: "Loan above $766K conforming" },
+              { label: "30Y Fixed avg", value: "6.67%", caption: "Freddie Mac PMMS, Aug 2026" },
+              { label: "15Y Fixed avg", value: "5.96%", caption: "Freddie Mac PMMS, Aug 2026" },
+              { label: "Refi 30Y", value: "6.82%", caption: "Rate includes closing costs" },
+              { label: "HELOC (var)", value: "7.30%", caption: "National average, FICO 740" },
+              { label: "Jumbo 30Y", value: "6.88%", caption: "Loan above conforming limit" },
             ].map((tile) => (
               <div key={tile.label} className="card p-5">
                 <div className="text-xs text-mute mb-2">{tile.label}</div>
@@ -378,7 +378,7 @@ export default function Page() {
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
             <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              Pulled directly from each lender. No partner placements. Rates assume 20% down and 760+ FICO unless noted.
+              Representative estimates based on the current Freddie Mac PMMS average (6.67% as of August 2026), not live lender quotes. Actual quotes vary by borrower. No partner placements. Rates assume 20% down and 760+ FICO unless noted.
             </p>
           </div>
         </div>
@@ -425,9 +425,9 @@ export default function Page() {
                 </p>
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Recent trends (Q1 2026)</h3>
+                <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Recent trends (August 2026)</h3>
                 <p className="text-mute">
-                  After peaking above 8% in late 2023, the 30-year fixed rate pulled back through 2024 as inflation cooled. Heading into 2026, rates are settling in the 6.75 to 7.00 range as the Fed has paused its hiking cycle. The Mortgage Bankers Association forecasts a gradual drift toward 6.5% by late 2026 if inflation continues easing, though global uncertainty keeps the outlook fluid.
+                  After peaking above 8% in late 2023, the 30-year fixed rate pulled back through 2024 as inflation cooled. Through 2026 rates have eased into the mid-6s, with the Freddie Mac average at 6.67% as of August 2026. Forecasters see a gradual drift toward 6.5% by late 2026 if inflation continues easing, though global uncertainty keeps the outlook fluid.
                 </p>
               </div>
               <div>

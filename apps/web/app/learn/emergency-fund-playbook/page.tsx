@@ -34,7 +34,7 @@ export default function Page() {
           The emergency fund playbook
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated August 2026</span>
           <span className="chip chip-mute">7 min read</span>
         </div>
       </div>
@@ -137,8 +137,8 @@ export default function Page() {
           resolution to that tension is a high-yield savings account at an online bank.
         </p>
         <p className="text-mute leading-relaxed mb-4">
-          As of July 2026, the top HYSAs are paying around 4.10 to 4.50% APY with no minimum
-          balance and no fees. On $10,500 at 4.30%, that is about $451 in annual interest. Traditional savings accounts at large banks
+          As of August 2026, the top HYSAs are paying around 3.75 to 4.20% APY with no minimum
+          balance and no fees. On $10,500 at 3.95%, that is about $415 in annual interest. Traditional savings accounts at large banks
           pay 0.01 to 0.06%. That same $10,500 earns $1.05 to $6.30 per year. The difference is
           meaningful: the HYSA approach turns your emergency fund into an asset that partially keeps
           pace with inflation rather than slowly losing purchasing power.
@@ -314,7 +314,7 @@ export default function Page() {
         <ul className="space-y-3">
           {[
             "Target 3 to 6 months of essential expenses. Self-employed, single-income, or high-fixed-cost households should lean toward 6 months or more.",
-            "Keep the fund in a high-yield savings account. At 4.85% APY, $10,500 earns $509 per year while remaining fully liquid.",
+            "Keep the fund in a high-yield savings account. At about 3.95% APY, $10,500 earns roughly $415 per year while remaining fully liquid.",
             "Start with a $1,000 starter cushion before any other goal, then build to one month of expenses as the next milestone.",
             "Emergency means unexpected, urgent, and necessary. Not a vacation, not an investment, not supplemental spending money.",
             "Replenish immediately after any use. Treat refill as a top financial priority until the balance is restored.",

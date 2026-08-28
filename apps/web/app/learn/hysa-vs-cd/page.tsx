@@ -34,7 +34,7 @@ export default function Page() {
           HYSA vs CD: which one is right for you?
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated August 2026</span>
           <span className="chip chip-mute">8 min read</span>
         </div>
       </div>
@@ -82,8 +82,8 @@ export default function Page() {
       <p className="text-lg leading-relaxed text-mute mb-12">
         A traditional savings account at a big bank earns roughly 0.06% APY. The national average
         as tracked by the FDIC is not much better. Meanwhile, the top high-yield savings accounts
-        are paying 4.85% APY and the best 12-month CDs are at 5.10% APY. That gap is real, and it
-        compounds. On $10,000 parked for one year, the difference between 0.06% and 4.85% is $479
+        are paying about 3.95% APY and the best 12-month CDs are near 4.20% APY. That gap is real, and it
+        compounds. On $10,000 parked for one year, the difference between 0.06% and 3.95% is $389
         in interest you either earn or leave on the table. This guide breaks down both products,
         explains the liquidity trade-off that makes one better than the other in specific situations,
         and shows you how to combine them into a CD ladder that captures yield while preserving
@@ -114,7 +114,7 @@ export default function Page() {
         <p className="text-mute leading-relaxed">
           HYSA rates are variable. Banks set them based on the federal funds rate and competitive
           pressure. When the Fed raises rates, HYSA yields typically rise within weeks. When the Fed
-          cuts, yields fall. The top HYSAs as of July 2026 are paying around 4.10 to 4.50% APY, but that rate
+          cuts, yields fall. The top HYSAs as of August 2026 are paying around 3.75 to 4.20% APY, but that rate
           could change tomorrow. If you need to count on a specific yield for a defined period, a CD
           is the better tool.
         </p>
@@ -133,7 +133,7 @@ export default function Page() {
         </p>
         <p className="text-mute leading-relaxed mb-4">
           CDs are also FDIC-insured up to $250,000 per depositor per institution. Like HYSAs, they
-          are offered at banks and credit unions. The top 12-month CDs as of July 2026 are paying
+          are offered at banks and credit unions. The top 12-month CDs as of August 2026 are paying
           around 4.10% APY at online banks like Bask Bank and Live Oak Bank. Longer terms often pay
           a similar or slightly lower rate, so compare the full term sheet before locking your money
           up for years.
@@ -144,7 +144,7 @@ export default function Page() {
         <p className="text-mute leading-relaxed">
           If you need your money before the CD matures, you pay an early withdrawal penalty.
           Penalties vary by institution but commonly run 60 to 180 days of interest for shorter
-          terms and up to one year of interest for 5-year CDs. On $10,000 at 5.10% with a
+          terms and up to one year of interest for 5-year CDs. On $10,000 at 4.20% with a
           180-day penalty, withdrawing early after 3 months would cost you approximately $255 in
           penalty, erasing your earned interest and then some. Early withdrawal penalties make CDs
           genuinely illiquid in practice, even though your principal is technically accessible.
@@ -159,8 +159,8 @@ export default function Page() {
         <p className="text-mute leading-relaxed mb-4">
           In most rate environments, CDs pay more than HYSAs for the same term because you are
           accepting a constraint: you cannot access the money without a penalty. The bank rewards
-          that certainty with a higher rate. Currently, 12-month CDs (5.10%) lead the top HYSA
-          (4.85%) by 0.25 percentage points. That spread is the price of liquidity: 0.25% per year.
+          that certainty with a higher rate. Currently, 12-month CDs (about 4.20%) lead the top HYSA
+          (about 3.95%) by roughly 0.25 percentage points. That spread is the price of liquidity: 0.25% per year.
         </p>
         <p className="text-mute leading-relaxed mb-4">
           On $10,000, that spread is $25 per year in favor of the CD. Not enormous. But if you have
@@ -190,7 +190,7 @@ export default function Page() {
           {[
             {
               title: "Rates are likely to fall.",
-              body: "If the Federal Reserve is in a rate-cutting cycle, HYSA yields will follow the Fed down within weeks. A CD locks in today's higher rate for the full term. Someone who opened a 12-month CD at 5.10% in April 2026 keeps that yield even if the Fed cuts twice before maturity.",
+              body: "If the Federal Reserve is in a rate-cutting cycle, HYSA yields will follow the Fed down within weeks. A CD locks in today's higher rate for the full term. Someone who opened a 12-month CD at 4.20% in August 2026 keeps that yield even if the Fed cuts twice before maturity.",
             },
             {
               title: "You have a defined spending goal.",
@@ -266,7 +266,7 @@ export default function Page() {
             <div className="text-right">Matures</div>
           </div>
           {[
-            { term: "3-month CD", amount: "$2,000", matures: "July 2026" },
+            { term: "3-month CD", amount: "$2,000", matures: "November 2026" },
             { term: "6-month CD", amount: "$2,000", matures: "October 2026" },
             { term: "9-month CD", amount: "$2,000", matures: "January 2027" },
             { term: "12-month CD", amount: "$2,000", matures: "April 2027" },
@@ -303,12 +303,12 @@ export default function Page() {
         </div>
         <ul className="space-y-3">
           {[
-            "On $10,000, the difference between a 0.06% traditional savings account and a 4.85% HYSA is $479 in annual interest.",
+            "On $10,000, the difference between a 0.06% traditional savings account and a 3.95% HYSA is $389 in annual interest.",
             "CDs lock in a rate for the term. In a falling-rate environment, that is a significant advantage over a variable HYSA.",
             "Early withdrawal penalties on CDs are real. Assume you cannot access the money until maturity.",
             "Your emergency fund belongs in a HYSA, not a CD. Accessibility is non-negotiable for emergency reserves.",
             "A CD ladder staggers maturity dates so you have regular access to portions of your savings without losing all the yield advantage.",
-            "Top HYSA: 4.85% APY (Bask Bank, no minimum). Top 12-month CD: 5.10% APY (LendingClub, $2,500 minimum). Both FDIC-insured.",
+            "Top HYSA: about 3.95% APY (Bread Savings, $100 minimum). Top 12-month CD: about 4.20% APY at online banks. Both FDIC-insured.",
           ].map((point, i) => (
             <li key={i} className="flex gap-3 text-sm leading-relaxed">
               <span className="chip chip-mute mt-0.5 flex-shrink-0">{i + 1}</span>

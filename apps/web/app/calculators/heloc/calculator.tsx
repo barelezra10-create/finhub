@@ -20,7 +20,7 @@ export function Calculator() {
   const [currentDraw, setCurrentDraw] = useState(30000);
   const [introApr, setIntroApr] = useState(0);
   const [introMonths, setIntroMonths] = useState(12);
-  const [variableApr, setVariableApr] = useState(9.5);
+  const [variableApr, setVariableApr] = useState(7.3);
   const [drawYears, setDrawYears] = useState(10);
   const [repayYears, setRepayYears] = useState(20);
   const [interestOnlyDraw, setInterestOnlyDraw] = useState(true);

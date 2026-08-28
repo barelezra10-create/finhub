@@ -13,9 +13,9 @@ import {
 const brand = getBrand("ally")!;
 
 export const metadata: Metadata = {
-  title: "Ally Bank HYSA Review: 4.45% APY, Buckets, No Fees (2026)",
+  title: "Ally Bank HYSA Review: 3.00% APY, Buckets, No Fees (2026)",
   description:
-    "Ally Bank pays 4.45% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for.",
+    "Ally Bank pays 3.00% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for.",
   alternates: { canonical: "/reviews/ally" },
 };
 
@@ -23,7 +23,7 @@ const faqs: FAQItem[] = [
   {
     question: "What are Ally Savings Buckets?",
     answer:
-      "Buckets let you subdivide a single savings account into up to ten named categories, such as Emergency Fund, Vacation, or New Car. Each bucket tracks its own balance, but all funds earn the same 4.45% APY and share one account number. This eliminates the need to open multiple savings accounts to organize your goals.",
+      "Buckets let you subdivide a single savings account into up to ten named categories, such as Emergency Fund, Vacation, or New Car. Each bucket tracks its own balance, but all funds earn the same 3.00% APY and share one account number. This eliminates the need to open multiple savings accounts to organize your goals.",
   },
   {
     question: "What are Round-Ups?",
@@ -38,7 +38,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can I earn interest on an Ally checking account?",
     answer:
-      "Yes. Ally's Interest Checking account earns 0.10% APY on balances under $15,000 and 0.25% APY on balances $15,000 and above, as of April 2026. These rates are competitive with traditional bank checking accounts but well below HYSA levels.",
+      "Yes. Ally's Interest Checking account earns 0.10% APY on balances under $15,000 and 0.25% APY on balances $15,000 and above, as of August 2026. These rates are competitive with traditional bank checking accounts but well below HYSA levels.",
   },
   {
     question: "Is Ally a good bank for everyday banking plus saving?",
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Ally Bank Review (2026)"
-        description="Ally Bank pays 4.45% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for."
+        description="Ally Bank pays 3.00% APY with no minimum, no fees, savings Buckets, and top-rated customer service. Full 2026 review: pros, cons, UX, and who it is best for."
         slug="/reviews/ally"
         brandName="Ally Bank"
         category="Savings Account"
-        apr="4.45"
+        apr="3.00"
         ratingValue={8.8}
         reviewCount={1}
       />
@@ -83,7 +83,7 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             Ally Bank combines{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.45% APY</span> with a fully featured online banking experience, savings Buckets, Round-Ups, and some of the best-rated customer service in the industry. Here is our full 2026 review.
+            <span className="font-mono tabular font-semibold text-ink">3.00% APY</span> with a fully featured online banking experience, savings Buckets, Round-Ups, and some of the best-rated customer service in the industry. Here is our full 2026 review.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
             By the Fintiex Rate Desk · Updated April 28, 2026
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.45%" />
+            <Stat label="APY" value="3.00%" />
             <Stat label="Min Deposit" value="$0" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="8.8 / 10" />
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.45% APY with no minimum or monthly fee</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 3.00% APY with no minimum or monthly fee</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Savings Buckets let you organize funds into named goals within one account</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Round-Ups automatically transfers spare change from checking to savings</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Full-service online bank: checking, savings, CDs, investing, auto loans</li>
@@ -133,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.45% APY savings · Free checking · No fees" />
+        <VisitBrandCard brand={brand} tagline="3.00% APY savings · Free checking · No fees" />
       </section>
 
       {/* Overview */}
@@ -144,7 +144,7 @@ export default function Page() {
             Ally Bank is one of the most established online-only banks in the United States, having operated as GMAC Bank before rebranding in 2009. Headquartered in Sandy, Utah, Ally Financial is publicly traded on the New York Stock Exchange under the ticker ALLY and had total assets of roughly $192 billion as of Q4 2025. It is regulated as a state-chartered bank by the Federal Reserve and the Utah Department of Financial Institutions, with full FDIC insurance on all deposit products.
           </p>
           <p>
-            The savings account pays 4.45% APY with no minimum deposit and no monthly fee. What sets Ally apart from pure rate-play banks is its Buckets feature: within a single savings account, you can create up to ten named buckets (Emergency Fund, Vacation, Down Payment, and so on) and allocate funds accordingly. This eliminates the need to open multiple savings accounts just to keep money mentally separated. The Round-Ups feature rounds up debit card purchases from a linked Ally checking account to the nearest dollar and transfers the difference to savings, creating an automatic micro-savings habit.
+            The savings account pays 3.00% APY with no minimum deposit and no monthly fee. What sets Ally apart from pure rate-play banks is its Buckets feature: within a single savings account, you can create up to ten named buckets (Emergency Fund, Vacation, Down Payment, and so on) and allocate funds accordingly. This eliminates the need to open multiple savings accounts just to keep money mentally separated. The Round-Ups feature rounds up debit card purchases from a linked Ally checking account to the nearest dollar and transfers the difference to savings, creating an automatic micro-savings habit.
           </p>
           <p>
             Ally is also a genuine full-service online bank. Beyond savings, it offers interest-bearing checking accounts, CDs (including No-Penalty CDs), money market accounts, mortgage lending, auto financing, and an investment platform. If you want a single online institution for the majority of your financial life, Ally is the most complete option in the HYSA category.
@@ -261,8 +261,8 @@ export default function Page() {
             <div className="col-span-1 text-right">Full Banking</div>
           </div>
           {[
-            { name: "Marcus", apy: "4.50%", min: "$0", full: "No" },
-            { name: "Ally Bank", apy: "4.45%", min: "$0", full: "Yes", highlight: true },
+            { name: "Marcus", apy: "3.40%", min: "$0", full: "No" },
+            { name: "Ally Bank", apy: "3.00%", min: "$0", full: "Yes", highlight: true },
             { name: "SoFi", apy: "4.40%*", min: "$0", full: "Yes" },
           ].map((row) => (
             <div
@@ -284,7 +284,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-8">Frequently Asked Questions</h2>
         <div className="space-y-6 max-w-3xl">
           <Faq q="What are Ally Savings Buckets?">
-            Buckets let you subdivide a single savings account into up to ten named categories, such as Emergency Fund, Vacation, or New Car. Each bucket tracks its own balance, but all funds earn the same 4.45% APY and share one account number. This eliminates the need to open multiple savings accounts to organize your goals.
+            Buckets let you subdivide a single savings account into up to ten named categories, such as Emergency Fund, Vacation, or New Car. Each bucket tracks its own balance, but all funds earn the same 3.00% APY and share one account number. This eliminates the need to open multiple savings accounts to organize your goals.
           </Faq>
           <Faq q="What are Round-Ups?">
             Round-Ups automatically round up Ally debit card transactions to the nearest dollar and transfer the difference to your savings account. For example, a $4.60 coffee becomes $4.60 spent plus $0.40 saved. Over a month of normal spending, Round-Ups can add $15 to $40 in micro-deposits to your savings with no manual effort.
@@ -293,7 +293,7 @@ export default function Page() {
             No. Ally is an online-only bank. There are no branch locations. You manage everything via the app or website. For cash deposits, Ally accepts deposits via mailed checks or linked external accounts only.
           </Faq>
           <Faq q="Can I earn interest on an Ally checking account?">
-            Yes. Ally's Interest Checking account earns 0.10% APY on balances under $15,000 and 0.25% APY on balances $15,000 and above, as of April 2026. These rates are competitive with traditional bank checking accounts but well below HYSA levels.
+            Yes. Ally's Interest Checking account earns 0.10% APY on balances under $15,000 and 0.25% APY on balances $15,000 and above, as of August 2026. These rates are competitive with traditional bank checking accounts but well below HYSA levels.
           </Faq>
           <Faq q="Is Ally a good bank for everyday banking plus saving?">
             Yes. For the all-in-one online banking use case, Ally is one of the best options available. The combination of competitive savings rates, a strong checking account, 24/7 customer service, and product breadth (CDs, investing, auto loans) makes it a rare full-service substitute for a traditional bank.
@@ -306,7 +306,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.45% APY savings · Free checking · No fees"
+          tagline="3.00% APY savings · Free checking · No fees"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

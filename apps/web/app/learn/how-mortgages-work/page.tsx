@@ -34,7 +34,7 @@ export default function Page() {
           How mortgages work in 2026
         </h1>
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-mute text-sm">Fintiex Editorial · Updated July 2026</span>
+          <span className="text-mute text-sm">Fintiex Editorial · Updated August 2026</span>
           <span className="chip chip-mute">9 min read</span>
         </div>
       </div>
@@ -113,10 +113,10 @@ export default function Page() {
           A concrete example
         </h3>
         <p className="text-mute leading-relaxed mb-4">
-          On a $400,000 mortgage at 6.85% over 30 years, your monthly payment is $2,623. In month
-          one, $2,283 goes to interest and only $340 goes to principal. By month 360, the split has
+          On a $400,000 mortgage at 6.67% over 30 years, your monthly payment is $2,573. In month
+          one, $2,223 goes to interest and only $350 goes to principal. By month 360, the split has
           reversed: nearly the entire payment retires principal. Over the full life of the loan, you
-          pay $544,491 in interest alone, which means you pay for the house twice over. That is not
+          pay roughly $526,000 in interest alone, which means you pay for the house twice over. That is not
           a scam; it is the price of spreading $400,000 across 360 months. But it is a number worth
           confronting before you sign.
         </p>
@@ -147,8 +147,8 @@ export default function Page() {
           mortgages are comparing them to the risk-free return of Treasuries. If the 10-year Treasury
           yields 4.30%, mortgage rates typically sit 2.00 to 3.00 percentage points higher, which
           would put the average 30-year rate near 6.30 to 7.30%. That gap above the Treasury is
-          called the spread, and it varies based on market conditions. As of July 2026, Freddie
-          Mac&rsquo;s Primary Mortgage Market Survey puts the average 30-year fixed at 6.43%.
+          called the spread, and it varies based on market conditions. As of August 2026, Freddie
+          Mac&rsquo;s Primary Mortgage Market Survey puts the average 30-year fixed at 6.67%.
         </p>
         <h3 className="font-display font-bold text-lg tracking-tight mt-6 mb-3">
           Mortgage-backed securities and the secondary market
@@ -253,10 +253,10 @@ export default function Page() {
           Loan term
         </h3>
         <p className="text-mute leading-relaxed mb-4">
-          A 15-year fixed mortgage carries a lower rate than a 30-year fixed. As of July 2026,
-          Freddie Mac shows 15-year rates averaging about 5.79%, versus 6.43% for 30 years. The
+          A 15-year fixed mortgage carries a lower rate than a 30-year fixed. As of August 2026,
+          Freddie Mac shows 15-year rates averaging about 5.96%, versus 6.67% for 30 years. The
           monthly payment is higher on the 15-year, but total interest paid is dramatically less.
-          On a $400,000 loan, the 15-year saves roughly $300,000 in interest over the life of the
+          On a $400,000 loan, the 15-year saves roughly $320,000 in interest over the life of the
           loan compared to the 30-year.
         </p>
         <h3 className="font-display font-bold text-lg tracking-tight mt-6 mb-3">
@@ -386,7 +386,7 @@ export default function Page() {
         <ul className="space-y-3">
           {[
             "Your rate is set by the 10-year Treasury yield plus a spread driven by MBS market conditions, not directly by the Fed.",
-            "On a $400,000 loan at 6.85%, you will pay roughly $544,000 in interest over 30 years. Amortization front-loads interest.",
+            "On a $400,000 loan at 6.67%, you will pay roughly $526,000 in interest over 30 years. Amortization front-loads interest.",
             "FICO score is the biggest pricing lever you control. A 760 versus 680 can save $125 per month on a $400K loan.",
             "FHA loans lower the entry bar but add permanent mortgage insurance unless you put 10% down. VA loans are the best deal for eligible veterans.",
             "Rate locks protect against rising rates during processing. Float-down provisions protect against falling rates. Get both terms in writing.",

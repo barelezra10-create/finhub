@@ -26,18 +26,18 @@ interface HysaOption {
   apy: number;
   tag?: string;
   detail: string;
-  href: string;
+  href?: string;
 }
 
 const hysaOptions: HysaOption[] = [
-  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/reviews/bask" },
-  { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
-  { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
-  { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
-  { lender: "SoFi", apy: 4.40, detail: "Direct deposit required for top rate. No minimum balance.", href: "/reviews/sofi" },
-  { lender: "Discover Bank", apy: 4.30, detail: "No minimum balance. No fees. Same-day transfers available.", href: "/reviews/discover-savings" },
-  { lender: "CIT Bank", apy: 4.25, detail: "$100 minimum. No monthly service charge. FDIC-insured.", href: "/reviews/cit" },
-  { lender: "American Express", apy: 4.15, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
+  { lender: "Bread Savings", apy: 3.95, tag: "Top APY", detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
+  { lender: "Bask Bank", apy: 3.75, detail: "3.75% base APY, up to 4.10% with limited-time boosts. No minimum balance. No monthly fees.", href: "/reviews/bask" },
+  { lender: "CIT Bank", apy: 3.75, detail: "Platinum Savings pays this rate on $5,000+. Balances under $5,000 earn 0.25%.", href: "/reviews/cit" },
+  { lender: "Marcus by Goldman Sachs", apy: 3.40, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
+  { lender: "Synchrony Bank", apy: 3.30, detail: "No minimum balance. No monthly fees. ATM card with monthly fee rebates." },
+  { lender: "SoFi", apy: 3.10, detail: "Direct deposit required. New-member promo can boost the rate to 3.80% for six months.", href: "/reviews/sofi" },
+  { lender: "Ally Bank", apy: 3.00, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
+  { lender: "American Express", apy: 3.00, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
 ];
 
 function fmtPct(n: number) {
@@ -106,8 +106,8 @@ export default async function StateHysaPage(
             {state.name} residents have access to the same top-rated national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, earning {hysaOptions[0]!.apy.toFixed(2)}% APY on idle cash adds up fast. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/reviews/bask" className="pill pill-ink">
-              Open Bask Bank
+            <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
+              Open {hysaOptions[0]!.lender}
               <span aria-hidden>→</span>
             </Link>
             <Link href="/calculators/savings-goal" className="pill pill-ghost">
@@ -134,8 +134,8 @@ export default async function StateHysaPage(
                 <span className="chip chip-lime">Top Rated</span>
                 <span className="text-xs font-mono text-mute">Available in {state.name}</span>
               </div>
-              <div className="font-display font-bold text-2xl mb-1">Bask Bank High-Yield Savings</div>
-              <div className="text-mute mb-4">No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor. Open online in minutes from anywhere in {state.name}.</div>
+              <div className="font-display font-bold text-2xl mb-1">{hysaOptions[0]!.lender} High-Yield Savings</div>
+              <div className="text-mute mb-4">{hysaOptions[0]!.detail} Open online in minutes from anywhere in {state.name}.</div>
               <div className="flex flex-wrap gap-3 text-sm text-mute">
                 <span>No minimum deposit</span>
                 <span>·</span>
@@ -153,7 +153,7 @@ export default async function StateHysaPage(
                   {hysaOptions[0]!.apy.toFixed(2)}<span className="text-[2.5rem] align-top text-mute">%</span>
                 </div>
               </div>
-              <Link href="/reviews/bask" className="pill pill-ink">
+              <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
                 View offer
                 <span aria-hidden>→</span>
               </Link>
@@ -186,31 +186,39 @@ export default async function StateHysaPage(
             <div className="hidden md:block md:col-span-5">Details</div>
             <div className="col-span-4 md:col-span-2 text-right">APY</div>
           </div>
-          {hysaOptions.map((r, i) => (
-            <Link
-              key={r.lender}
-              href={r.href}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === hysaOptions.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-8 md:col-span-5">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-display font-semibold text-base">{r.lender}</div>
-                  {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+          {hysaOptions.map((r, i) => {
+            const cls = `grid grid-cols-12 px-6 py-4 items-center ${
+              r.href ? "hover:bg-bg-soft/70 transition-colors" : ""
+            } ${i === hysaOptions.length - 1 ? "" : "border-b border-line-soft"}`;
+            const inner = (
+              <>
+                <div className="col-span-8 md:col-span-5">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="font-display font-semibold text-base">{r.lender}</div>
+                    {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+                  </div>
+                  <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
                 </div>
-                <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
+                <div className="hidden md:block md:col-span-5 text-mute text-sm">{r.detail}</div>
+                <div className="col-span-4 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
+                  {fmtPct(r.apy)}
+                </div>
+              </>
+            );
+            return r.href ? (
+              <Link key={r.lender} href={r.href} className={cls}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={r.lender} className={cls}>
+                {inner}
               </div>
-              <div className="hidden md:block md:col-span-5 text-mute text-sm">{r.detail}</div>
-              <div className="col-span-4 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
-                {fmtPct(r.apy)}
-              </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Rates as of April 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
+          Rates as of August 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
         </p>
       </section>
 
@@ -225,7 +233,7 @@ export default async function StateHysaPage(
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-mute leading-relaxed">
             <div className="space-y-5">
               <p>
-                {state.name}&apos;s median household income sits at {fmtIncome(state.medianIncome)}. At that income level, keeping even three months of expenses in a traditional savings account earning 0.5% instead of a top-tier HYSA at 4.85% can cost hundreds of dollars per year in foregone interest. The math is straightforward: a $20,000 emergency fund at 4.85% APY earns roughly $970 per year. The same balance at a typical brick-and-mortar rate earns about $100.
+                {state.name}&apos;s median household income sits at {fmtIncome(state.medianIncome)}. At that income level, keeping even three months of expenses in a traditional savings account earning 0.5% instead of a top-tier HYSA near 3.95% can cost hundreds of dollars per year in foregone interest. The math is straightforward: a $20,000 emergency fund at 3.95% APY earns roughly $790 per year. The same balance at a typical brick-and-mortar rate earns about $100.
               </p>
               <p>
                 {state.name} has a number of well-regarded local financial institutions, including {state.topBanks.join(", ")}. These banks serve {state.name} communities well for everyday banking, mortgages, and local business relationships. However, their savings rates rarely match what national online banks offer. {topBank}, for instance, is one of the more recognized names in {state.name} banking, but its savings APY typically runs well below the 4%+ range offered by online-only competitors.
@@ -233,7 +241,7 @@ export default async function StateHysaPage(
             </div>
             <div className="space-y-5">
               <p>
-                On the tax side: {state.taxNote}. This applies to interest earned on any savings account, including HYSA accounts held at out-of-state online banks. The good news is that even after accounting for {hasNoStateTax ? "federal" : "federal and state"} taxes, the net yield from a 4.85% HYSA almost always beats what local {state.name} banks offer before taxes. You keep more money either way.
+                On the tax side: {state.taxNote}. This applies to interest earned on any savings account, including HYSA accounts held at out-of-state online banks. The good news is that even after accounting for {hasNoStateTax ? "federal" : "federal and state"} taxes, the net yield from a top HYSA almost always beats what local {state.name} banks offer before taxes. You keep more money either way.
               </p>
               <p>
                 Online banks are available to all {state.name} residents regardless of which corner of the state you live in. You open the account online, link your existing {state.name} checking account, and transfers typically settle in one to two business days. There are no physical branch requirements and no state-specific restrictions that would prevent a {state.name} resident from opening any of the accounts listed on this page.
@@ -280,7 +288,7 @@ export default async function StateHysaPage(
           <div>
             <span className="chip chip-ink mb-4">Tool</span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight max-w-xl leading-tight">
-              See exactly how much more you earn at 4.85% vs your current rate.
+              See exactly how much more you earn at a top HYSA rate vs your current rate.
             </h2>
           </div>
           <Link href="/calculators/savings-goal" className="pill pill-ink shrink-0">

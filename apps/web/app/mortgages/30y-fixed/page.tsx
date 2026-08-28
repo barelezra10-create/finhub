@@ -5,7 +5,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 export const metadata: Metadata = {
   title: "30-Year Fixed Mortgage Rates 2026",
   description:
-    "30-year fixed mortgage rates today, average APR 6.85%. Pros, cons, and who it suits. Real numbers, plain English, no paid placements. Updated daily by Fintiex.",
+    "30-year fixed mortgage rates today, average 6.67%. Pros, cons, and who it suits. Real numbers, plain English, no paid placements. Updated daily by Fintiex.",
   alternates: { canonical: "/mortgages/30y-fixed" },
 };
 
@@ -18,7 +18,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How much more interest do you pay on a 30-year vs a 15-year?",
     answer:
-      "On a $400,000 loan at the May 2026 averages (6.85% for 30Y, 6.10% for 15Y), the 30-year totals roughly $544,000 in interest over the life of the loan. The 15-year totals about $211,000. The 30-year costs roughly $333,000 more in interest, but the monthly payment is about $785 lower.",
+      "On a $400,000 loan at the August 2026 averages (6.67% for 30Y, 5.96% for 15Y), the 30-year totals roughly $526,000 in interest over the life of the loan. The 15-year totals about $206,000. The 30-year costs roughly $320,000 more in interest, but the monthly payment is about $794 lower.",
   },
   {
     question: "Can you pay off a 30-year early?",
@@ -89,8 +89,8 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "30Y Fixed avg APR", value: "6.85%", caption: "Avg of 14 lenders" },
-              { label: "30Y Fixed avg rate", value: "6.71%", caption: "Excludes lender fees" },
+              { label: "30Y Fixed avg APR", value: "6.80%", caption: "Representative, incl. typical fees" },
+              { label: "30Y Fixed avg rate", value: "6.67%", caption: "Freddie Mac PMMS, Aug 2026" },
               { label: "Avg points paid", value: "0.6", caption: "Freddie Mac PMMS" },
               { label: "Loan-to-value", value: "80%", caption: "Quoted scenario" },
             ].map((tile) => (
@@ -104,7 +104,7 @@ export default function Page() {
             ))}
           </div>
           <p className="text-xs text-mute mt-6 leading-relaxed">
-            Source: Freddie Mac Primary Mortgage Market Survey (PMMS) and Fintiex daily lender pulls. APR assumes 20% down on a single-family primary residence with a 760+ FICO. Your quote will vary.
+            Rates as of August 2026. Representative estimates based on the current Freddie Mac Primary Mortgage Market Survey (PMMS) average. APR assumes 20% down on a single-family primary residence with a 760+ FICO. Actual quotes vary by borrower.
           </p>
         </div>
       </section>
@@ -123,9 +123,9 @@ export default function Page() {
           </div>
           <div className="col-span-12 lg:col-span-8 space-y-8 text-base leading-relaxed">
             <div>
-              <h3 className="font-display font-bold text-xl mb-2 tracking-tight">A $400,000 example, 6.85% APR</h3>
+              <h3 className="font-display font-bold text-xl mb-2 tracking-tight">A $400,000 example, 6.67% rate</h3>
               <p className="text-mute">
-                Principal and interest run about $2,624 per month. Add property tax (roughly $400) and homeowners insurance (roughly $130) and the total housing payment is about $3,154. Over 360 payments you pay about $544,000 in interest. The lender keeps more than the price of the home in interest charges if you never refinance and never prepay.
+                Principal and interest run about $2,573 per month. Add property tax (roughly $400) and homeowners insurance (roughly $130) and the total housing payment is about $3,103. Over 360 payments you pay about $526,000 in interest. The lender keeps more than the price of the home in interest charges if you never refinance and never prepay.
               </p>
             </div>
             <div>
@@ -143,7 +143,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">The flexibility argument</h3>
               <p className="text-mute">
-                The 30-year does not stop you from paying it off in 20 years. Adding $300 per month in principal payments on the example above shaves seven years and roughly $108,000 in interest off the loan. The 30-year gives you the option to pay extra in good months without the locked-in obligation of a higher 15-year payment.
+                The 30-year does not stop you from paying it off in 20 years. Adding $300 per month in principal payments on the example above shaves about seven and a half years and roughly $155,000 in interest off the loan. The 30-year gives you the option to pay extra in good months without the locked-in obligation of a higher 15-year payment.
               </p>
             </div>
           </div>

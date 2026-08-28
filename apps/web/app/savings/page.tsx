@@ -29,9 +29,8 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "bask",
     product: "Interest Savings",
-    apy: 4.85,
-    tag: "Top APY",
-    tagline: "Texas-based online bank with one of the highest APYs and no fees of any kind.",
+    apy: 3.75,
+    tagline: "Texas-based online bank. 3.75% base APY, up to 4.10% with limited-time boosts, and no fees of any kind.",
     minOpen: "$0",
     monthlyFee: "$0",
     founded: 2020,
@@ -45,8 +44,8 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "bread",
     product: "High-Yield Savings",
-    apy: 4.65,
-    tag: "Runner-up",
+    apy: 3.95,
+    tag: "Top APY",
     tagline: "Online savings arm of Bread Financial. Consistently near the top of the APY rankings.",
     minOpen: "$100",
     monthlyFee: "$0",
@@ -61,7 +60,7 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "synchrony",
     product: "High Yield Savings",
-    apy: 4.55,
+    apy: 3.30,
     tagline: "Long-running online savings brand with consistently top-quartile APYs and strong CD ladders.",
     minOpen: "$0",
     monthlyFee: "$0",
@@ -76,7 +75,7 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "marcus",
     product: "Online Savings",
-    apy: 4.50,
+    apy: 3.40,
     tagline: "Goldman Sachs Bank USA's online savings. No fees, no minimums, and the cleanest mobile app in the category.",
     minOpen: "$0",
     monthlyFee: "$0",
@@ -91,7 +90,7 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "ally",
     product: "Online Savings",
-    apy: 4.45,
+    apy: 3.00,
     tagline: "Online-only bank loved for clean apps, no monthly fees, and category-leading customer service.",
     minOpen: "$0",
     monthlyFee: "$0",
@@ -106,7 +105,7 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "sofi",
     product: "Checking + Savings",
-    apy: 4.40,
+    apy: 3.10,
     tag: "Bonus APY",
     tagline: "App-first bank with bonus APY when you direct deposit, plus checking and investing in one stack.",
     minOpen: "$0",
@@ -122,22 +121,23 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "discover-savings",
     product: "Online Savings",
-    apy: 4.30,
-    tagline: "FDIC-insured online savings with no fees and 24/7 U.S.-based phone support.",
+    apy: 3.00,
+    tag: "Closed to new customers",
+    tagline: "Discover is now part of Capital One and no longer accepts new savings applicants. New customers are routed to Capital One 360 Performance Savings.",
     minOpen: "$0",
     monthlyFee: "$0",
     founded: 1985,
-    bestFor: "U.S.-based service with no fees",
+    bestFor: "Existing Discover account holders",
     perks: [
-      "U.S.-based customer service, 24/7",
+      "Existing accounts are migrating to Capital One 360",
       "No fees and no minimum balance",
-      "Pairs cleanly with Discover cash-back card",
+      "New applicants should compare the top open accounts above",
     ],
   },
   {
     brandSlug: "cit",
     product: "Savings Connect",
-    apy: 4.25,
+    apy: 3.75,
     tagline: "Consumer-direct savings with tiered APYs and one of the strongest no-penalty CD options on the market.",
     minOpen: "$100",
     monthlyFee: "$0",
@@ -152,7 +152,7 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "amex-savings",
     product: "Personal Savings",
-    apy: 4.15,
+    apy: 3.00,
     tagline: "Personal savings from American Express. No fees, no minimums, FDIC-insured.",
     minOpen: "$0",
     monthlyFee: "$0",
@@ -167,15 +167,15 @@ const savingsLenders: SavingsLender[] = [
   {
     brandSlug: "lendingclub-savings",
     product: "LevelUp Savings",
-    apy: 4.10,
-    tagline: "High-yield savings paired with a checking account that earns interest and refunds ATM fees.",
+    apy: 4.00,
+    tagline: "LevelUp pays 4.00% APY with a $250 monthly deposit, or 3.00% without. Paired with fee-refunding checking.",
     minOpen: "$100",
     monthlyFee: "$0",
     founded: 2007,
-    bestFor: "Combining HYSA with rebated-fee checking",
+    bestFor: "Savers who deposit at least $250 a month",
     perks: [
       "LevelUp checking refunds all ATM fees",
-      "$100 monthly deposit unlocks bonus APY tier",
+      "$250 monthly deposit unlocks the 4.00% LevelUp rate",
       "FDIC-insured through LendingClub Bank",
     ],
   },
@@ -381,10 +381,10 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "Top HYSA", value: "4.85%", caption: "Bask Bank · No min · FDIC" },
-              { label: "12-Month CD", value: "5.10%", caption: "LendingClub · $2.5K min" },
-              { label: "24-Month CD", value: "4.80%", caption: "Bread Savings · $1.5K min" },
-              { label: "Money Market", value: "4.60%", caption: "Sallie Mae · $0 min" },
+              { label: "Top HYSA", value: "3.95%", caption: "Bread Savings · $100 min · FDIC" },
+              { label: "12-Month CD", value: "4.10%", caption: "Top online banks · FDIC" },
+              { label: "24-Month CD", value: "4.00%", caption: "Top online banks · FDIC" },
+              { label: "Money Market", value: "3.85%", caption: "Top online banks · $0 min" },
             ].map((tile) => (
               <div key={tile.label} className="card p-5">
                 <div className="text-xs text-mute mb-2">{tile.label}</div>

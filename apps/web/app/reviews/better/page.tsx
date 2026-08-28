@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Better.com Mortgage Review (2026)",
   description:
-    "Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review of rates and fit.",
+    "Better.com offers no-commission, no-origination-fee mortgages with a 6.67% 30-year APR and pre-approval in minutes. Full 2026 review of rates and fit.",
   alternates: { canonical: "/reviews/better" },
 };
 
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Better.com Mortgage Review"
-        description="Better.com offers no-commission, no-origination-fee mortgages with a 6.85% 30-year APR and pre-approval in minutes. Full 2026 review covering rates, fees, and who it suits."
+        description="Better.com offers no-commission, no-origination-fee mortgages with a 6.67% 30-year APR and pre-approval in minutes. Full 2026 review covering rates, fees, and who it suits."
         slug="/reviews/better"
         brandName="Better.com"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 Better.com Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.85%" />
+            <Stat label="30Y APR" value="6.67%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="8.1/10" />
@@ -107,7 +107,7 @@ export default function Page() {
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Pre-approval in as little as 3 minutes online, no hard credit pull initially</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Fully digital, 24/7 process with real-time status tracking</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>One Day Mortgage program: full underwriting approval within 24 hours in qualifying cases</li>
-              <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Competitive rate at 6.85%, tied with the market average but with lower fees</li>
+              <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Competitive rate at 6.67%, tied with the market average but with lower fees</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Cash offer program (Better Cash Offer) for buyers competing in tight markets</li>
             </ul>
           </div>
@@ -141,7 +141,7 @@ export default function Page() {
             The 2022 to 2024 period was turbulent. The company shed a significant portion of its workforce in a series of high-profile layoffs that drew public criticism. Customer service quality dropped sharply during that period, and it left a lasting mark on the company&rsquo;s reputation. By 2025 and into 2026, Better has stabilized its operations and improved review scores, but the memory of those years makes due diligence worthwhile before choosing them for a large transaction.
           </p>
           <p>
-            The core product, however, is sound. The 6.85% 30-year APR reflects the market average while the fee structure keeps total closing costs below what traditional lenders charge. The One Day Mortgage program, for borrowers with straightforward financials, is genuinely impressive: you can receive a commitment letter within 24 hours of completing the full application. That kind of speed matters in competitive purchase markets.
+            The core product, however, is sound. The 6.67% 30-year APR reflects the market average while the fee structure keeps total closing costs below what traditional lenders charge. The One Day Mortgage program, for borrowers with straightforward financials, is genuinely impressive: you can receive a commitment letter within 24 hours of completing the full application. That kind of speed matters in competitive purchase markets.
           </p>
         </div>
       </section>
@@ -159,11 +159,11 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.85%", note: "No origination fee" },
-            { product: "15-Year Fixed", apr: "6.28%", note: "Best for fast payoff" },
-            { product: "7/1 ARM", apr: "6.51%", note: "Adjusts after 7 years" },
-            { product: "FHA 30Y Fixed", apr: "6.60%", note: "3.5% min down" },
-            { product: "Jumbo 30Y Fixed", apr: "6.97%", note: "Above conforming limits" },
+            { product: "30-Year Fixed", apr: "6.67%", note: "No origination fee" },
+            { product: "15-Year Fixed", apr: "6.10%", note: "Best for fast payoff" },
+            { product: "7/1 ARM", apr: "6.33%", note: "Adjusts after 7 years" },
+            { product: "FHA 30Y Fixed", apr: "6.42%", note: "3.5% min down" },
+            { product: "Jumbo 30Y Fixed", apr: "6.61%", note: "Above conforming limits" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -172,7 +172,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Rate depends on credit profile, LTV, and property type.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Rate depends on credit profile, LTV, and property type.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">Rocket</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.85%", b: "6.79%", c: "6.89%" },
+            { feature: "30Y APR", a: "6.67%", b: "6.61%", c: "6.71%" },
             { feature: "Origination fee", a: "$0", b: "$0", c: "Varies" },
             { feature: "Min FICO", a: "620", b: "620", c: "580 (FHA)" },
             { feature: "Pre-approval speed", a: "3 min", b: "10 min", c: "8 min" },

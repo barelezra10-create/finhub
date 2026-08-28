@@ -13,9 +13,9 @@ import {
 const brand = getBrand("marcus")!;
 
 export const metadata: Metadata = {
-  title: "Marcus by Goldman Sachs Review: 4.50% APY HYSA (2026)",
+  title: "Marcus by Goldman Sachs Review: 3.40% APY HYSA (2026)",
   description:
-    "Marcus by Goldman Sachs pays 4.50% APY with no minimum and no fees. Best HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ.",
+    "Marcus by Goldman Sachs pays 3.40% APY with no minimum and no fees. A solid HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ.",
   alternates: { canonical: "/reviews/marcus" },
 };
 
@@ -41,9 +41,9 @@ const faqs: FAQItem[] = [
       "Incoming ACH transfers from a linked external account typically take 1 to 3 business days. Marcus also supports wire transfers for faster movement of large balances.",
   },
   {
-    question: "Why is Marcus's rate lower than Bask or Bread?",
+    question: "Why is Marcus's rate lower than the top HYSAs?",
     answer:
-      "Marcus commands a slight brand premium and invests more in customer service and product polish. The 35 to 75 basis point gap versus top-rate accounts is the implicit cost of that experience. On a $10,000 balance the annual difference versus Bask is about $35.",
+      "Marcus commands a slight brand premium and invests more in customer service and product polish. The 55 to 80 basis point gap versus top-rate accounts is the implicit cost of that experience. On a $10,000 balance the annual difference versus Bread Savings at 3.95% is about $55, and versus the market's top rates near 4.20% it is about $80.",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Marcus by Goldman Sachs Review (2026)"
-        description="Marcus by Goldman Sachs pays 4.50% APY with no minimum and no fees. Best HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ."
+        description="Marcus by Goldman Sachs pays 3.40% APY with no minimum and no fees. A solid HYSA for Goldman-backed safety and clean UX. Full 2026 review with pros, cons, and FAQ."
         slug="/reviews/marcus"
         brandName="Marcus"
         category="Savings Account"
-        apr="4.50"
+        apr="3.40"
         ratingValue={8.4}
         reviewCount={1}
       />
@@ -83,7 +83,7 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             Marcus offers{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.50% APY</span> with no minimum deposit, no fees, and the institutional credibility of Goldman Sachs Bank USA. Here is our full 2026 review.
+            <span className="font-mono tabular font-semibold text-ink">3.40% APY</span> with no minimum deposit, no fees, and the institutional credibility of Goldman Sachs Bank USA. Here is our full 2026 review.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
             By the Fintiex Rate Desk · Updated April 28, 2026
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.50%" />
+            <Stat label="APY" value="3.40%" />
             <Stat label="Min Deposit" value="$0" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="8.4 / 10" />
@@ -124,7 +124,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-5">Cons</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-rose font-bold">-</span> 4.50% APY is 35 basis points below Bask's top rate</li>
+              <li className="flex gap-3"><span className="text-rose font-bold">-</span> 3.40% APY is 35 basis points below Bask's top rate</li>
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> No checking account or debit card</li>
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> No ATM network access</li>
             </ul>
@@ -133,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.50% APY · No minimum · Goldman Sachs Bank USA" />
+        <VisitBrandCard brand={brand} tagline="3.40% APY · No minimum · Goldman Sachs Bank USA" />
       </section>
 
       {/* Overview */}
@@ -144,7 +144,7 @@ export default function Page() {
             Marcus by Goldman Sachs launched in 2016 as Goldman's first consumer-facing banking product after 147 years as an institutional and investment bank. The move was significant: Goldman Sachs Bank USA brought its balance sheet and regulatory standing to retail deposits, giving consumers FDIC insurance backed by one of the most scrutinized financial institutions in the world. That brand weight translates directly into consumer trust that smaller online banks have to earn over years.
           </p>
           <p>
-            The savings account itself is a clean execution of the HYSA concept. You deposit money, earn 4.50% APY compounded daily and posted monthly, and pay nothing in fees. There is no minimum deposit to open and no minimum balance to maintain the rate. The web and mobile interfaces are consistently praised for clarity: no confusing promotions, no upsell traps, no hidden menus. What you see is what you get.
+            The savings account itself is a clean execution of the HYSA concept. You deposit money, earn 3.40% APY compounded daily and posted monthly, and pay nothing in fees. There is no minimum deposit to open and no minimum balance to maintain the rate. The web and mobile interfaces are consistently praised for clarity: no confusing promotions, no upsell traps, no hidden menus. What you see is what you get.
           </p>
           <p>
             One differentiator worth noting is Marcus.com's integration with Goldman's personal loan product. If you want to park savings and potentially take a personal loan for a large purchase or debt consolidation, Marcus lets you do both from the same account dashboard. That integration is not unique in fintech broadly, but it is rare among HYSA providers of Marcus's caliber.
@@ -157,7 +157,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            Marcus has tracked the Federal Reserve rate cycle reliably since 2022. The account started 2022 near 0.50% APY, rose in lockstep with Fed hikes through 2023, and peaked above 5.00% APY in late 2023. Rates have settled near 4.50% following Fed cuts in late 2024. Marcus has occasionally trailed the very top of the HYSA market by 25 to 50 basis points, consistent with the premium it commands for brand recognition and service quality. Savers who prioritize the absolute top rate will look elsewhere; those who value a Goldman name on the account will consider the spread reasonable.
+            Marcus has tracked the Federal Reserve rate cycle reliably since 2022. The account started 2022 near 0.50% APY, rose in lockstep with Fed hikes through 2023, and peaked above 5.00% APY in late 2023. Rates have settled near 3.40% following Fed cuts through 2026. Marcus has occasionally trailed the very top of the HYSA market by 25 to 50 basis points, consistent with the premium it commands for brand recognition and service quality. Savers who prioritize the absolute top rate will look elsewhere; those who value a Goldman name on the account will consider the spread reasonable.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">App and Online Banking Experience</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            The Marcus app consistently earns high marks, with App Store ratings around 4.6 out of 5 and Google Play ratings near 4.4. The interface is minimal and purposeful: balance display, transfer initiation, account settings, and rate information are all accessible within two taps. Goldman has invested meaningfully in the product, and it shows. Customer service by phone is staffed with knowledgeable U.S.-based agents who can handle complex transfer questions. For savers who want a polished digital experience alongside a strong rate, Marcus is the clearest choice in the 4.50% APY tier.
+            The Marcus app consistently earns high marks, with App Store ratings around 4.6 out of 5 and Google Play ratings near 4.4. The interface is minimal and purposeful: balance display, transfer initiation, account settings, and rate information are all accessible within two taps. Goldman has invested meaningfully in the product, and it shows. Customer service by phone is staffed with knowledgeable U.S.-based agents who can handle complex transfer questions. For savers who want a polished digital experience alongside a strong rate, Marcus is the clearest choice in the 3.40% APY tier.
           </p>
         </div>
       </section>
@@ -242,7 +242,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-4">Look elsewhere if</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li>You want the absolute highest APY (Bask at 4.85% or Bread at 4.75%)</li>
+              <li>You want the absolute highest APY (Bread near 3.95% leads the no-strings accounts)</li>
               <li>You need a full-service bank with checking and ATM access</li>
               <li>You are looking for goal-based savings buckets (Ally is better for this)</li>
             </ul>
@@ -261,9 +261,9 @@ export default function Page() {
             <div className="col-span-1 text-right">App</div>
           </div>
           {[
-            { name: "Bask Bank", apy: "4.85%", min: "$0", app: "No" },
-            { name: "Bread Savings", apy: "4.75%", min: "$100", app: "Yes" },
-            { name: "Marcus", apy: "4.50%", min: "$0", app: "Yes", highlight: true },
+            { name: "Bask Bank", apy: "3.75%", min: "$0", app: "No" },
+            { name: "Bread Savings", apy: "3.95%", min: "$100", app: "Yes" },
+            { name: "Marcus", apy: "3.40%", min: "$0", app: "Yes", highlight: true },
           ].map((row) => (
             <div
               key={row.name}
@@ -305,7 +305,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.50% APY · No minimum · Goldman Sachs Bank USA"
+          tagline="3.40% APY · No minimum · Goldman Sachs Bank USA"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

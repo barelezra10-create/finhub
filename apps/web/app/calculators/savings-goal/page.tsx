@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   {
     question: "What savings rate should I plug in?",
     answer:
-      "Use the APY of the actual account where you keep the money. As of early 2026 the top no-fee high-yield savings accounts pay 4.50% to 4.85% APY. If your money sits in a default checking account at 0.01%, plug that in. The compounding effect is small over short horizons but real over multi-year goals.",
+      "Use the APY of the actual account where you keep the money. As of August 2026 the top no-fee high-yield savings accounts pay about 3.40% to 3.95% APY. If your money sits in a default checking account at 0.01%, plug that in. The compounding effect is small over short horizons but real over multi-year goals.",
   },
   {
     question: "What is the difference between APY and APR for savings?",
@@ -126,7 +126,7 @@ while balance < goal:
               Move the money the day it lands. Set the automatic transfer to fire on payday, not on the 15th of the month. By payday + 2 you will have already moved the savings out before discretionary spending pulls from the same checking account. The Federal Reserve&rsquo;s SCF data shows automatic savers reach goals far more reliably than manual ones.
             </p>
             <p>
-              Pick the right account for the timeline. For a 6-month emergency fund, a no-fee high-yield savings account at 4.50% to 4.85% is the right home. For a 24 to 60 month goal, a CD ladder locks in current rates. For a 7+ year goal, an index fund in a tax-advantaged account historically returns more, with volatility as the trade-off.
+              Pick the right account for the timeline. For a 6-month emergency fund, a no-fee high-yield savings account at about 3.40% to 3.95% is the right home. For a 24 to 60 month goal, a CD ladder locks in current rates. For a 7+ year goal, an index fund in a tax-advantaged account historically returns more, with volatility as the trade-off.
             </p>
             <p>
               Bump the goal target with inflation if the timeline is more than 3 years out. A $30K target today is closer to $34K in real-purchasing-power terms 5 years from now. The calculator works in nominal dollars; mentally adjust the goal upward for long timelines so you actually preserve buying power.

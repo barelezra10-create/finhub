@@ -25,11 +25,11 @@ interface RateTile {
 const rates: RateTile[] = [
   {
     label: "30-Year Fixed Mortgage",
-    value: "6.85%",
+    value: "6.67%",
     caption: "National average APR for a 30-year conforming loan.",
     source: "Freddie Mac PMMS",
     updated: "Today",
-    sparkline: [7.05, 7.00, 6.94, 6.92, 6.90, 6.88, 6.85],
+    sparkline: [6.90, 6.84, 6.80, 6.76, 6.72, 6.69, 6.67],
     trendLabel: "down",
     trendDelta: "-20 bps WoW",
     href: "/mortgages",
@@ -53,7 +53,7 @@ const rates: RateTile[] = [
     caption: "Best in market across major FDIC-insured online banks.",
     source: "FDIC + bank rate sheets",
     updated: "This week",
-    sparkline: [4.85, 4.90, 4.95, 5.00, 5.05, 5.05, 5.05],
+    sparkline: [4.30, 4.20, 4.10, 4.05, 4.00, 3.98, 3.95],
     trendLabel: "up",
     trendDelta: "+5 bps WoW",
     href: "/savings/hysa",
@@ -112,7 +112,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Are the savings yields really competing with mortgage rates?",
-    answer: "Yes, that is the unusual feature of this rate cycle. The Fed kept short-term rates high to fight inflation, which pushed 1-year CDs above 5%. Long-term mortgage rates are anchored to the 10-year Treasury, which sits below the federal funds rate (an inverted yield curve). The result: you can earn 5% in a CD while paying 6.85% on a new mortgage, a spread of less than 200 basis points.",
+    answer: "Yes, that is the unusual feature of this rate cycle. The Fed kept short-term rates high to fight inflation, which kept 1-year CDs near the top of the market. Long-term mortgage rates are anchored to the 10-year Treasury. The result as of August 2026: you can earn about 4.3% in a top 1-year CD while paying about 6.67% on a new mortgage.",
   },
   {
     question: "Can I rely on these numbers for a real lender quote?",

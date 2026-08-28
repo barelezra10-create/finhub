@@ -2,15 +2,31 @@
   "slug": "sofi-personal-loan",
   "lender": "SoFi",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 8.99, "max": 23.43 },
+  "apr_range": {
+    "min": 6.99,
+    "max": 35.49
+  },
   "loan_amount_min": 5000,
   "loan_amount_max": 100000,
-  "repayment_terms_months": [24, 36, 48, 60, 72, 84],
-  "origination_fee": { "min": 0, "max": 0 },
+  "repayment_terms_months": [
+    24,
+    36,
+    48,
+    60,
+    72,
+    84
+  ],
+  "origination_fee": {
+    "min": 0,
+    "max": 7
+  },
   "prepayment_penalty": false,
   "late_fee": "None",
   "funding_speed": "Same day to 1 business day",
-  "credit_score_required": { "min": 680, "recommended": 720 },
+  "credit_score_required": {
+    "min": 680,
+    "recommended": 720
+  },
   "best_for": "Excellent credit, large loan amounts",
   "perks": [
     "No origination fees, late fees, or prepayment penalties",
@@ -27,5 +43,5 @@
   ],
   "application_url": "https://www.sofi.com/personal-loans/",
   "rating": 4.8,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-08-18"
 }

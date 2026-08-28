@@ -24,89 +24,89 @@ const cdRates: CdRow[] = [
   {
     bank: "Marcus by Goldman Sachs",
     tag: "Best Overall",
-    apy6m: 5.10,
-    apy1y: 5.30,
-    apy2y: 4.60,
-    apy5y: 4.10,
+    apy6m: 4.30,
+    apy1y: 4.15,
+    apy2y: 4.00,
+    apy5y: 3.90,
     min: "$500",
     reviewHref: "/reviews/marcus",
   },
   {
     bank: "Bread Savings",
-    apy6m: 5.05,
-    apy1y: 5.40,
-    apy2y: 4.65,
-    apy5y: 4.15,
+    apy6m: 4.25,
+    apy1y: 4.25,
+    apy2y: 4.05,
+    apy5y: 3.95,
     min: "$1,500",
   },
   {
     bank: "Synchrony Bank",
     tag: "No Min",
-    apy6m: 4.95,
-    apy1y: 5.25,
-    apy2y: 4.50,
-    apy5y: 4.05,
+    apy6m: 4.15,
+    apy1y: 4.10,
+    apy2y: 3.90,
+    apy5y: 3.85,
     min: "$0",
     reviewHref: "/reviews/synchrony",
   },
   {
     bank: "Ally Bank",
-    apy6m: 4.55,
-    apy1y: 5.00,
-    apy2y: 4.40,
-    apy5y: 4.00,
+    apy6m: 3.75,
+    apy1y: 3.85,
+    apy2y: 3.80,
+    apy5y: 3.80,
     min: "$0",
   },
   {
-    bank: "Discover Bank",
-    apy6m: 4.65,
-    apy1y: 5.20,
-    apy2y: 4.45,
-    apy5y: 4.05,
+    bank: "Discover Bank (closed to new customers)",
+    apy6m: 3.85,
+    apy1y: 4.05,
+    apy2y: 3.85,
+    apy5y: 3.85,
     min: "$2,500",
     reviewHref: "/reviews/discover-savings",
   },
   {
     bank: "CIT Bank",
-    apy6m: 5.00,
-    apy1y: 5.10,
-    apy2y: 4.30,
-    apy5y: 3.95,
+    apy6m: 4.20,
+    apy1y: 3.95,
+    apy2y: 3.70,
+    apy5y: 3.75,
     min: "$1,000",
     reviewHref: "/reviews/cit",
   },
   {
     bank: "Bask Bank",
     tag: "Highest 1Y",
-    apy6m: 4.90,
-    apy1y: 5.45,
-    apy2y: 4.55,
-    apy5y: 4.10,
+    apy6m: 4.10,
+    apy1y: 4.30,
+    apy2y: 3.95,
+    apy5y: 3.90,
     min: "$1,000",
   },
   {
     bank: "Sallie Mae Bank",
-    apy6m: 4.85,
-    apy1y: 5.15,
-    apy2y: 4.50,
-    apy5y: 4.05,
+    apy6m: 4.05,
+    apy1y: 4.00,
+    apy2y: 3.90,
+    apy5y: 3.85,
     min: "$2,500",
   },
   {
     bank: "Bank5 Connect",
-    apy6m: 4.80,
-    apy1y: 5.05,
-    apy2y: 4.35,
-    apy5y: 4.00,
+    apy6m: 4.00,
+    apy1y: 3.90,
+    apy2y: 3.75,
+    apy5y: 3.80,
     min: "$500",
   },
   {
     bank: "BMO Alto",
     tag: "No Min",
-    apy6m: 4.95,
-    apy1y: 5.35,
-    apy2y: 4.60,
-    apy5y: 4.10,
+    apy6m: 4.15,
+    apy1y: 4.20,
+    apy2y: 4.00,
+    apy5y: 3.90,
     min: "$0",
   },
 ];
@@ -134,7 +134,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "How are CD rates set right now and where are they headed?",
-    answer: "CD rates track the Federal Reserve's policy rate and short-term Treasury yields. With the Fed paused around 4.25 to 4.50%, banks are offering 1-year CDs in the 5.10 to 5.45% range. If the Fed begins cutting rates in late 2026, CD rates will follow downward, which is why locking longer-term yields now is a popular move. The FDIC's National Rate Cap data tracks the ceilings under deposit insurance rules.",
+    answer: "CD rates track the Federal Reserve's policy rate and short-term Treasury yields. As of August 2026, the top nationally available 1-year CDs are paying roughly 4.10 to 4.30% APY. If the Fed cuts rates further, CD rates will follow downward, which is why locking longer-term yields is a popular move. The FDIC's National Rate Cap data tracks the ceilings under deposit insurance rules.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function Page() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-bold text-2xl tracking-tight">CD rate snapshot</h2>
-            <span className="text-xs font-mono text-mute">Source: bank rate sheets, FDIC</span>
+            <span className="text-xs font-mono text-mute">Representative rates, August 2026. Confirm live APYs with each bank.</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="card p-5">
@@ -353,7 +353,7 @@ export default function Page() {
               <div>
                 <h3 className="font-display font-bold text-xl mb-2 tracking-tight">When a CD beats a high-yield savings account</h3>
                 <p className="text-mute">
-                  HYSAs pay variable rates. If the Fed cuts, your APY drops the same week. CDs lock in today's rate for the full term. If you have money you will not need for 12 months and the Fed is signaling cuts, locking a 5.30% 1-year CD today usually beats hoping the HYSA stays at 5%. The CFPB recommends comparing the term-adjusted yield against the projected average HYSA rate over the same period.
+                  HYSAs pay variable rates. If the Fed cuts, your APY drops the same week. CDs lock in today's rate for the full term. If you have money you will not need for 12 months and the Fed is signaling cuts, locking a 4.20% 1-year CD today usually beats hoping the HYSA stays near 4%. The CFPB recommends comparing the term-adjusted yield against the projected average HYSA rate over the same period.
                 </p>
               </div>
               <div>

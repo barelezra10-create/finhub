@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "U.S. Bank Mortgage Review (2026)",
   description:
-    "U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast branches. 2026 review.",
+    "U.S. Bank offers a 6.87% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast branches. 2026 review.",
   alternates: { canonical: "/reviews/usbank" },
 };
 
@@ -38,7 +38,7 @@ const faqs: FAQItem[] = [
   {
     question: "How does U.S. Bank rate vs. other large banks for conventional loans?",
     answer:
-      "For conventional loans without VA or DPA eligibility, U.S. Bank's 7.05% APR is the highest on our table. Digital lenders like Marcus (6.79%) and Better (6.85%) are significantly lower. U.S. Bank is not the right choice for a standard conventional purchase if you are purely optimizing for rate.",
+      "For conventional loans without VA or DPA eligibility, U.S. Bank's 6.87% APR is the highest on our table. Digital lenders like Marcus (6.61%) and Better (6.67%) are significantly lower. U.S. Bank is not the right choice for a standard conventional purchase if you are purely optimizing for rate.",
   },
   {
     question: "What states does U.S. Bank serve for mortgages?",
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="U.S. Bank Mortgage Review"
-        description="U.S. Bank offers a 7.05% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast presence. Full 2026 mortgage review."
+        description="U.S. Bank offers a 6.87% 30-year APR with a strong VA loan program, American Dream low-down program, and deep Midwest and West Coast presence. Full 2026 mortgage review."
         slug="/reviews/usbank"
         brandName="U.S. Bank"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 U.S. Bank Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="7.05%" />
+            <Stat label="30Y APR" value="6.87%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="7.5/10" />
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What to watch</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 7.05% is the highest on our comparison table</li>
+              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.87% is the highest on our comparison table</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Branch footprint is concentrated in the Midwest and West; limited East Coast presence</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Digital application is serviceable but behind fintech lenders in polish</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Processing timelines can stretch to 45 to 55 days in high-volume periods</li>
@@ -141,7 +141,7 @@ export default function Page() {
             The American Dream program is U.S. Bank&rsquo;s primary tool for first-time and low-income buyers. It offers 3% down on a conventional loan with down payment assistance in many markets, and borrowers who complete a homebuyer education course may qualify for additional assistance funds. The program targets buyers who meet income limits and are purchasing a primary residence in an eligible property type.
           </p>
           <p>
-            The 7.05% APR is the highest on our table, reflecting a traditional bank cost structure with strong branch infrastructure and relationship banking overhead. For most rate-sensitive borrowers, the gap vs. Marcus (6.79%) is 26 basis points, translating to roughly $73 more per month on a $400,000 loan and $26,300 over 30 years. The premium is only justified for VA borrowers or buyers in U.S. Bank&rsquo;s core geography who qualify for relationship pricing.
+            The 6.87% APR is the highest on our table, reflecting a traditional bank cost structure with strong branch infrastructure and relationship banking overhead. For most rate-sensitive borrowers, the gap vs. Marcus (6.61%) is 26 basis points, translating to roughly $73 more per month on a $400,000 loan and $26,300 over 30 years. The premium is only justified for VA borrowers or buyers in U.S. Bank&rsquo;s core geography who qualify for relationship pricing.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "7.05%", note: "Conventional conforming" },
-            { product: "American Dream 30Y", apr: "7.05%", note: "3% down, DPA available" },
-            { product: "15-Year Fixed", apr: "6.58%", note: "Faster payoff" },
-            { product: "VA 30Y Fixed", apr: "6.55%", note: "Strong VA program, 0% down" },
-            { product: "FHA 30Y Fixed", apr: "6.80%", note: "3.5% down minimum" },
-            { product: "USDA 30Y Fixed", apr: "6.88%", note: "Rural property, 0% down" },
+            { product: "30-Year Fixed", apr: "6.87%", note: "Conventional conforming" },
+            { product: "American Dream 30Y", apr: "6.87%", note: "3% down, DPA available" },
+            { product: "15-Year Fixed", apr: "6.40%", note: "Faster payoff" },
+            { product: "VA 30Y Fixed", apr: "6.37%", note: "Strong VA program, 0% down" },
+            { product: "FHA 30Y Fixed", apr: "6.62%", note: "3.5% down minimum" },
+            { product: "USDA 30Y Fixed", apr: "6.70%", note: "Rural property, 0% down" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. VA and USDA rates are particularly competitive. Actual rate depends on credit profile, LTV, and location.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. VA and USDA rates are particularly competitive. Actual rate depends on credit profile, LTV, and location.</p>
       </section>
 
       {/* FEES */}
@@ -262,7 +262,7 @@ export default function Page() {
           <div className="card p-7" style={{ borderTop: "3px solid var(--color-coral)" }}>
             <h2 className="font-display font-bold text-xl mb-4 tracking-tight">May not be the right fit if</h2>
             <ul className="space-y-2 text-[1.0rem] leading-relaxed text-ink-soft">
-              <li>You are comparing on rate alone: 7.05% is the highest in our table</li>
+              <li>You are comparing on rate alone: 6.87% is the highest in our table</li>
               <li>You are on the East Coast where U.S. Bank has minimal branch presence</li>
               <li>You are a conventional borrower without VA or DPA qualification: better rates exist elsewhere</li>
             </ul>
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">Rocket</div>
           </div>
           {[
-            { feature: "30Y APR", a: "7.05%", b: "7.02%", c: "6.89%" },
+            { feature: "30Y APR", a: "6.87%", b: "7.02%", c: "6.71%" },
             { feature: "VA specialist", a: "Yes", b: "Partial", c: "Yes" },
             { feature: "USDA loans", a: "Yes", b: "Limited", c: "Yes" },
             { feature: "DPA amount", a: "Up to $15K", b: "$5K (LMI)", c: "N/A" },
@@ -323,7 +323,7 @@ export default function Page() {
             },
             {
               q: "How does U.S. Bank rate vs. other large banks for conventional loans?",
-              a: "For conventional loans without VA or DPA eligibility, U.S. Bank&rsquo;s 7.05% APR is the highest on our table. Digital lenders like Marcus (6.79%) and Better (6.85%) are significantly lower. U.S. Bank is not the right choice for a standard conventional purchase if you are purely optimizing for rate.",
+              a: "For conventional loans without VA or DPA eligibility, U.S. Bank&rsquo;s 6.87% APR is the highest on our table. Digital lenders like Marcus (6.61%) and Better (6.67%) are significantly lower. U.S. Bank is not the right choice for a standard conventional purchase if you are purely optimizing for rate.",
             },
             {
               q: "What states does U.S. Bank serve for mortgages?",

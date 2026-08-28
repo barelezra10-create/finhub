@@ -13,9 +13,9 @@ import {
 const brand = getBrand("bask")!;
 
 export const metadata: Metadata = {
-  title: "Bask Bank Review: 4.85% APY, No Fees, No Minimum (2026)",
+  title: "Bask Bank Review: 3.75% APY (Up to 4.10%), No Fees (2026)",
   description:
-    "Bask Bank pays 4.85% APY with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one.",
+    "Bask Bank pays 3.75% APY, boostable to 4.10%, with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one.",
   alternates: { canonical: "/reviews/bask" },
 };
 
@@ -43,7 +43,7 @@ const faqs: FAQItem[] = [
   {
     question: "Does Bask offer CDs or checking accounts?",
     answer:
-      "No. Bask offers only the two savings account types. For CDs, consider Bread Savings, which offers a competitive CD lineup alongside its HYSA. For checking, Ally or SoFi are the best-integrated options.",
+      "Bask now offers CDs with terms from 3 months to 2 years and a $1,000 minimum. As of August 2026, the 3-month CD pays 3.95% APY, the 6-month pays 3.90%, and the 1-year pays about 4.10%. There is no checking account; for checking, Ally or SoFi are the best-integrated options.",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Bask Bank Review (2026)"
-        description="Bask Bank pays 4.85% APY with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one."
+        description="Bask Bank pays 3.75% APY, boostable to 4.10%, with no minimum deposit and no monthly fees. Read our full review covering rates, safety, pros, cons, and who should open one."
         slug="/reviews/bask"
         brandName="Bask Bank"
         category="Savings Account"
-        apr="4.85"
+        apr="3.75"
         ratingValue={9.1}
         reviewCount={1}
       />
@@ -82,11 +82,11 @@ export default function Page() {
             </div>
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
-            Bask Bank offers the highest HYSA rate in our tracked universe at{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.85% APY</span>, with zero minimum balance and zero monthly fees. Here is everything you need to decide if it belongs in your cash stack.
+            Bask Bank offers a competitive{" "}
+            <span className="font-mono tabular font-semibold text-ink">3.75% APY</span>, with limited-time boosts that can lift it as high as 4.10%, plus zero minimum balance and zero monthly fees. Here is everything you need to decide if it belongs in your cash stack.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
-            By the Fintiex Rate Desk · Updated April 28, 2026
+            By the Fintiex Rate Desk · Updated August 18, 2026
           </div>
           <div className="mt-6">
             <VisitBrandCta brand={brand} variant="lime" />
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.85%" />
+            <Stat label="APY" value="3.75%" />
             <Stat label="Min Deposit" value="$0" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="9.1 / 10" />
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> Highest tracked APY at 4.85%</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> Competitive 3.75% APY, boostable to 4.10% with limited-time promotions</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> No minimum balance required</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> No monthly maintenance fees</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> FDIC insured via Texas Capital Bank</li>
@@ -133,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.85% APY · No fees · FDIC-insured" />
+        <VisitBrandCard brand={brand} tagline="3.75% APY · No fees · FDIC-insured" />
       </section>
 
       {/* Overview */}
@@ -144,7 +144,7 @@ export default function Page() {
             Bask Bank is an online-only bank headquartered in Dallas, Texas, and is a division of Texas Capital Bank, a publicly traded regional bank with over $35 billion in assets. Texas Capital Bank has operated since 1998 and carries full FDIC deposit insurance up to $250,000 per depositor. That institutional backing gives Bask an unusual combination of a startup-style rate and established-bank safety.
           </p>
           <p>
-            The savings account itself is straightforward. You deposit money, you earn 4.85% APY, compounded daily and credited monthly. There is no minimum deposit to open, no minimum to maintain the rate, and no monthly service fee. Unlike most HYSAs, Bask also offers an alternative product called the Mileage Savings Account, which credits American Airlines AAdvantage miles instead of cash interest. That product is not covered here since we are reviewing the cash savings account, but frequent flyers should be aware it exists.
+            The savings account itself is straightforward. You deposit money, you earn 3.75% base APY (up to 4.10% with limited-time boosts), compounded daily and credited monthly. There is no minimum deposit to open, no minimum to maintain the rate, and no monthly service fee. Unlike most HYSAs, Bask also offers an alternative product called the Mileage Savings Account, which credits American Airlines AAdvantage miles instead of cash interest. That product is not covered here since we are reviewing the cash savings account, but frequent flyers should be aware it exists.
           </p>
           <p>
             The tradeoff is narrow but real: Bask is web-only. There is no iOS or Android app. If you need to check your balance at 11pm from your phone, you will be doing it through a mobile browser, not a native app experience. For savers who treat this account as a secondary emergency fund or a rate-maximizing parking spot, that limitation rarely matters in practice.
@@ -157,7 +157,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            Bask Bank has tracked the Federal Reserve tightening cycle closely since 2023. As the Fed raised the federal funds rate from near zero in 2022 to a peak of 5.25-5.50% in mid-2023, Bask consistently sat near the top of HYSA rankings. When the Fed began cutting rates in late 2024, Bask lowered its rate in tandem, but maintained a competitive premium above the national HYSA average, which currently sits near 0.50%. As long as the Fed holds rates steady at current levels, the 4.85% figure is likely to persist through mid-2026.
+            Bask Bank has tracked the Federal Reserve tightening cycle closely since 2023. As the Fed raised the federal funds rate from near zero in 2022 to a peak of 5.25-5.50% in mid-2023, Bask consistently sat near the top of HYSA rankings. When the Fed began cutting rates in late 2024, Bask lowered its rate in tandem, but maintained a competitive premium above the national HYSA average, which currently sits near 0.50%. Bask's rate continues to track the Fed; its base APY sits near 3.75% as of August 2026, with limited-time boosts available to new and qualifying depositors.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">App and Online Banking Experience</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            Bask has no dedicated mobile app on the App Store or Google Play as of April 2026. The web portal at baskbank.com is clean and functional on mobile browsers, but lacks the polish and convenience of native apps offered by Ally or SoFi. You can view your balance, initiate ACH transfers in and out, and update account details without trouble. For most rate-focused savers who check their balance once or twice a month, the web portal is entirely adequate. If you need a full-featured digital banking experience, look at Ally or SoFi instead.
+            Bask has no dedicated mobile app on the App Store or Google Play as of August 2026. The web portal at baskbank.com is clean and functional on mobile browsers, but lacks the polish and convenience of native apps offered by Ally or SoFi. You can view your balance, initiate ACH transfers in and out, and update account details without trouble. For most rate-focused savers who check their balance once or twice a month, the web portal is entirely adequate. If you need a full-featured digital banking experience, look at Ally or SoFi instead.
           </p>
         </div>
       </section>
@@ -261,9 +261,9 @@ export default function Page() {
             <div className="col-span-1 text-right">App</div>
           </div>
           {[
-            { name: "Bask Bank", apy: "4.85%", min: "$0", app: "No", highlight: true },
-            { name: "Bread Savings", apy: "4.75%", min: "$100", app: "Yes" },
-            { name: "Marcus", apy: "4.50%", min: "$0", app: "Yes" },
+            { name: "Bask Bank", apy: "3.75%", min: "$0", app: "No", highlight: true },
+            { name: "Bread Savings", apy: "3.95%", min: "$100", app: "Yes" },
+            { name: "Marcus", apy: "3.40%", min: "$0", app: "Yes" },
           ].map((row) => (
             <div
               key={row.name}
@@ -305,7 +305,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.85% APY · No fees · FDIC-insured"
+          tagline="3.75% base APY, up to 4.10% with boosts · No fees · FDIC-insured"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

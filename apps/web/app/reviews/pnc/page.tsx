@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "PNC Bank Mortgage Review (2026)",
   description:
-    "PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, and best fit.",
+    "PNC Bank offers a 6.81% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/pnc" },
 };
 
@@ -43,7 +43,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can PNC compete with digital lenders on rate?",
     answer:
-      "On the headline 30Y APR alone, PNC's 6.99% is above Marcus (6.79%) and Better (6.85%). However, for qualifying borrowers, the PMI waiver and LMI grant reduce the effective monthly cost significantly. Always compare total monthly payment including PMI, not just the interest rate.",
+      "On the headline 30Y APR alone, PNC's 6.81% is above Marcus (6.61%) and Better (6.67%). However, for qualifying borrowers, the PMI waiver and LMI grant reduce the effective monthly cost significantly. Always compare total monthly payment including PMI, not just the interest rate.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="PNC Bank Mortgage Review"
-        description="PNC Bank offers a 6.99% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, eligibility, and who it suits best."
+        description="PNC Bank offers a 6.81% 30-year APR with Home Insight and LMI programs for low-to-moderate income buyers. Full 2026 review of rates, fees, eligibility, and who it suits best."
         slug="/reviews/pnc"
         brandName="PNC Bank"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 PNC Bank Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.99%" />
+            <Stat label="30Y APR" value="6.81%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="7.6/10" />
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What to watch</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.99% is among the higher rates on our table</li>
+              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.81% is among the higher rates on our table</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Branch footprint is strong in PNC states but thin outside that region</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Digital application is functional but not as polished as Rocket or Better</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>LMI grant eligibility requirements are strict: income, census tract, and property limits apply</li>
@@ -141,7 +141,7 @@ export default function Page() {
             The Home Insight program is PNC&rsquo;s signature affordable homeownership product. It allows qualified buyers to put as little as 3% down on a conventional loan without paying private mortgage insurance, which can save $100 to $200 per month compared to standard PMI. The LMI program adds grant dollars for buyers at or below area median income thresholds, making PNC a meaningful option for mid-income households in markets where PNC has strong branch coverage.
           </p>
           <p>
-            The 6.99% APR reflects PNC&rsquo;s position as a traditional bank lender with infrastructure costs. For borrowers outside PNC&rsquo;s core geographic footprint who do not qualify for the specialty programs, the rate premium vs. Marcus or Better may not be justified. Inside PNC markets, the combination of branch access, LMI grants, and relationship banking creates a more competitive total package.
+            The 6.81% APR reflects PNC&rsquo;s position as a traditional bank lender with infrastructure costs. For borrowers outside PNC&rsquo;s core geographic footprint who do not qualify for the specialty programs, the rate premium vs. Marcus or Better may not be justified. Inside PNC markets, the combination of branch access, LMI grants, and relationship banking creates a more competitive total package.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.99%", note: "Conventional conforming" },
-            { product: "Home Insight 30Y", apr: "6.99%", note: "3% down, no PMI" },
-            { product: "15-Year Fixed", apr: "6.48%", note: "Lower total interest" },
-            { product: "FHA 30Y Fixed", apr: "6.72%", note: "3.5% down minimum" },
-            { product: "VA 30Y Fixed", apr: "6.62%", note: "0% down for eligible" },
-            { product: "Jumbo 30Y Fixed", apr: "7.08%", note: "Above conforming limits" },
+            { product: "30-Year Fixed", apr: "6.81%", note: "Conventional conforming" },
+            { product: "Home Insight 30Y", apr: "6.81%", note: "3% down, no PMI" },
+            { product: "15-Year Fixed", apr: "6.30%", note: "Lower total interest" },
+            { product: "FHA 30Y Fixed", apr: "6.54%", note: "3.5% down minimum" },
+            { product: "VA 30Y Fixed", apr: "6.44%", note: "0% down for eligible" },
+            { product: "Jumbo 30Y Fixed", apr: "6.90%", note: "Above conforming limits" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Actual rate depends on credit profile, LTV, program eligibility, and location.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Actual rate depends on credit profile, LTV, program eligibility, and location.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">Wells Fargo</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.99%", b: "6.95%", c: "7.02%" },
+            { feature: "30Y APR", a: "6.81%", b: "6.77%", c: "7.02%" },
             { feature: "Low-income grant", a: "Up to $5,000", b: "$2,500", c: "$5,000 (LMI)" },
             { feature: "PMI waiver", a: "Home Insight", b: "No", c: "No" },
             { feature: "Min down", a: "3%", b: "3%", c: "3%" },
@@ -327,7 +327,7 @@ export default function Page() {
             },
             {
               q: "Can PNC compete with digital lenders on rate?",
-              a: "On the headline 30Y APR alone, PNC&rsquo;s 6.99% is above Marcus (6.79%) and Better (6.85%). However, for qualifying borrowers, the PMI waiver and LMI grant reduce the effective monthly cost significantly. Always compare total monthly payment including PMI, not just the interest rate.",
+              a: "On the headline 30Y APR alone, PNC&rsquo;s 6.81% is above Marcus (6.61%) and Better (6.67%). However, for qualifying borrowers, the PMI waiver and LMI grant reduce the effective monthly cost significantly. Always compare total monthly payment including PMI, not just the interest rate.",
             },
           ].map((item) => (
             <div key={item.q} className="card p-6">

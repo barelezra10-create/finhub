@@ -48,26 +48,26 @@ interface MarketTile {
 }
 
 const featuredMarkets: MarketTile[] = [
-  { label: "30Y Fixed Mortgage", value: "6.85%", delta: 0.02, caption: "Avg of 14 lenders" },
-  { label: "Top HYSA", value: "4.85%", delta: -0.05, caption: "Bask Bank · FDIC" },
-  { label: "12-Month CD", value: "5.10%", delta: 0.0, caption: "LendingClub · $2.5K min" },
+  { label: "30Y Fixed Mortgage", value: "6.67%", delta: -0.02, caption: "Freddie Mac PMMS avg" },
+  { label: "Top HYSA", value: "3.95%", delta: -0.05, caption: "Bread Savings · FDIC" },
+  { label: "12-Month CD", value: "4.30%", delta: 0.0, caption: "Top online banks" },
   { label: "Personal Loan · Excellent", value: "8.20%", delta: 0.0, caption: "SoFi · 3-7yr" },
 ];
 
 const mortgageRates: RateRow[] = [
   { lender: "Marcus by Goldman Sachs", brandSlug: "marcus-mortgage", apr: 6.79, tag: "Lowest", detail: "30y · 5% down · 760+ FICO", href: "/reviews/marcus-mortgage", trend: "down" },
-  { lender: "Better.com", brandSlug: "better", apr: 6.85, detail: "30y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
+  { lender: "Better.com", brandSlug: "better", apr: 6.67, detail: "30y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
   { lender: "Rocket Mortgage", brandSlug: "rocket", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/reviews/rocket", trend: "up" },
   { lender: "loanDepot", brandSlug: "loandepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/reviews/loandepot", trend: "up" },
   { lender: "Chase Home Lending", brandSlug: "chase-mortgage", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/reviews/chase-mortgage", trend: "flat" },
 ];
 
 const hysaRates: RateRow[] = [
-  { lender: "Bask Bank", brandSlug: "bask", apr: 4.85, tag: "Top", detail: "No min · No fees · FDIC", href: "/reviews/bask" },
+  { lender: "Bread Savings", brandSlug: "bread", apr: 3.95, tag: "Top", detail: "$100 min · No fees · FDIC", href: "/reviews/bread" },
   { lender: "Bread Savings", brandSlug: "bread", apr: 4.75, detail: "$100 min · No fees", href: "/reviews/bread" },
   { lender: "Marcus", brandSlug: "marcus", apr: 4.50, detail: "No min · No fees", href: "/reviews/marcus" },
   { lender: "Ally Bank", brandSlug: "ally", apr: 4.45, detail: "No min · No fees", href: "/reviews/ally" },
-  { lender: "SoFi", brandSlug: "sofi", apr: 4.40, detail: "Direct deposit req", href: "/reviews/sofi" },
+  { lender: "SoFi", brandSlug: "sofi", apr: 3.10, detail: "Direct deposit req", href: "/reviews/sofi" },
 ];
 
 const cardCategories: Array<{
@@ -186,7 +186,7 @@ export default function Home() {
                   </div>
                   <div className="text-sm text-mute mb-1">Average 30-year fixed today</div>
                   <div className="font-display font-extrabold text-[5.5rem] leading-none tracking-tighter tabular text-ink">
-                    6.85<span className="text-[2.5rem] align-top text-mute">%</span>
+                    6.67<span className="text-[2.5rem] align-top text-mute">%</span>
                   </div>
                   <div className="mt-4 flex items-center gap-3">
                     {deltaPill(0.02)}
@@ -266,7 +266,7 @@ export default function Home() {
             tone="lime"
             label="Borrow"
             title="Mortgages, HELOCs, personal & auto loans."
-            kpi="6.85%"
+            kpi="6.67%"
             kpiCaption="30Y fixed avg"
             href="/mortgages"
           />
@@ -274,7 +274,7 @@ export default function Home() {
             tone="violet"
             label="Save"
             title="HYSA, CDs, money market, checking."
-            kpi="4.85%"
+            kpi="3.95%"
             kpiCaption="Top HYSA APY"
             href="/savings"
           />
@@ -304,7 +304,7 @@ export default function Home() {
             </div>
             <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                The 30-year fixed rate sits at <span className="font-mono tabular font-semibold">6.85%</span> today, up from <span className="font-mono tabular font-semibold">6.10%</span> a year ago. The Federal Reserve has signaled no rate cuts before September at the earliest, and the Fed funds rate doesn&rsquo;t directly set mortgage rates anyway. The benchmark that matters is the 10-year Treasury yield, which will determine where the back half of 2026 lands for buyers and refinancers alike.
+                The 30-year fixed rate sits at <span className="font-mono tabular font-semibold">6.67%</span> today, little changed from a year ago. The Federal Reserve has signaled no rate cuts before September at the earliest, and the Fed funds rate doesn&rsquo;t directly set mortgage rates anyway. The benchmark that matters is the 10-year Treasury yield, which will determine where the back half of 2026 lands for buyers and refinancers alike.
               </p>
               <p>
                 Here is the mechanics layer: mortgage rates track the 10-year Treasury plus the mortgage-backed securities (MBS) spread, which sits around <span className="font-mono tabular font-semibold">170 basis points</span> right now. That spread has compressed from its 2024 peak but remains meaningfully elevated compared to the 2010s norm of roughly <span className="font-mono tabular font-semibold">120 bps</span>. When lender risk appetite improves and MBS demand picks up, that spread narrows. Every 10 bps of compression translates directly to a lower quoted rate.
@@ -313,7 +313,7 @@ export default function Home() {
                 The base case forecast: if the 10-year Treasury holds in the <span className="font-mono tabular font-semibold">4.30&ndash;4.50%</span> range and the MBS spread stays near current levels, expect the 30-year fixed to trade in a <span className="font-mono tabular font-semibold">6.7&ndash;7.0%</span> band through Q3 2026. A meaningful refi wave requires a sustained drop of 50 basis points or more from today&rsquo;s rate. That scenario is possible in Q4 if the Fed cuts twice and Treasuries rally, but it is not the consensus view.
               </p>
               <p>
-                For buyers: trying to time the rate bottom is a losing game. You will miss the window while inventory shifts and sellers adjust prices. Instead, negotiate hard on discount points. At 6.85%, paying 1 point (1% of the loan) typically buys down the rate by 0.25 percentage points. On a $400K loan that is $4,000 upfront to save about $60/month. Break-even is under six years. Lock the moment you have a ratified contract.
+                For buyers: trying to time the rate bottom is a losing game. You will miss the window while inventory shifts and sellers adjust prices. Instead, negotiate hard on discount points. At 6.67%, paying 1 point (1% of the loan) typically buys down the rate by 0.25 percentage points. On a $400K loan that is $4,000 upfront to save about $60/month. Break-even is under six years. Lock the moment you have a ratified contract.
               </p>
               <p>
                 For refinancers: pull the break-even before dismissing it. If you closed in 2023 or 2024 at a rate of <span className="font-mono tabular font-semibold">7.5%</span> or above, the refi math may already pencil out. Closing costs on a no-cash-out refi typically run <span className="font-mono tabular font-semibold">$3,000&ndash;$6,000</span>. At a 75 bps savings on a $350K balance, you recover costs in roughly 40 to 80 months depending on your state and lender. Run the actual numbers before assuming rates need to fall further.
@@ -361,16 +361,16 @@ export default function Home() {
             </div>
             <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                With the top high-yield savings account at <span className="font-mono tabular font-semibold">4.85%</span>, money market accounts at <span className="font-mono tabular font-semibold">4.65%</span>, and 12-month CDs at <span className="font-mono tabular font-semibold">5.10%</span>, where you keep your cash matters more than at any point since 2007. The default checking account at <span className="font-mono tabular font-semibold">0.01%</span> is not a safe harbor. It is a slow leak. On a $20,000 balance you are leaving roughly $960 per year on the table compared to the top HYSA.
+                With the top high-yield savings account at <span className="font-mono tabular font-semibold">3.95%</span>, money market accounts at <span className="font-mono tabular font-semibold">3.85%</span>, and 12-month CDs at <span className="font-mono tabular font-semibold">4.30%</span>, where you keep your cash matters more than at any point since 2007. The default checking account at <span className="font-mono tabular font-semibold">0.01%</span> is not a safe harbor. It is a slow leak. On a $20,000 balance you are leaving roughly $790 per year on the table compared to the top HYSA.
               </p>
               <p>
                 The cleanest framework is three tiers. Tier 1 is your next three months of bills: keep this in checking, fully liquid, no rate chasing needed. Tier 2 is your three-to-six month emergency fund: this belongs in a high-yield savings account, earning a real rate while staying accessible within one to two business days. Tier 3 is cash you know you will not need for 12 months or more: this is the right home for a CD ladder, where you can capture the best available rates without sacrificing future flexibility.
               </p>
               <p>
-                On the HYSA side, three no-fee accounts lead the field right now. Bask Bank at <span className="font-mono tabular font-semibold">4.85%</span>, Bread Savings at <span className="font-mono tabular font-semibold">4.75%</span>, and Marcus by Goldman Sachs at <span className="font-mono tabular font-semibold">4.50%</span>. All three are FDIC-insured, carry no monthly fees, and have no minimum balance requirements. The 35 basis point gap between the top and the bottom of that no-fee list equals $35 per year per $10,000 sitting in the account. It takes about five minutes to open the better one. Worth it.
+                On the HYSA side, three no-fee accounts lead the field right now. Bread Savings at <span className="font-mono tabular font-semibold">3.95%</span>, Bask Bank at <span className="font-mono tabular font-semibold">3.75%</span>, and Marcus by Goldman Sachs at <span className="font-mono tabular font-semibold">3.40%</span>. All three are FDIC-insured, carry no monthly fees, and have no minimum balance requirements. The 35 basis point gap between the top and the bottom of that no-fee list equals $35 per year per $10,000 sitting in the account. It takes about five minutes to open the better one. Worth it.
               </p>
               <p>
-                A CD ladder on Tier 3 cash works like this: split $10,000 across five rungs at 3, 6, 12, 24, and 60 months. Blended average yield lands around <span className="font-mono tabular font-semibold">4.65%</span>. One rung matures every three months, giving you periodic access to the principal. Each time a rung matures you reinvest at the long end of the ladder, keeping the cycle going and capturing whatever rates are available at that point. Liquidity stays intact; you are never fully locked up.
+                A CD ladder on Tier 3 cash works like this: split $10,000 across five rungs at 3, 6, 12, 24, and 60 months. Blended average yield lands around <span className="font-mono tabular font-semibold">4.10%</span>. One rung matures every three months, giving you periodic access to the principal. Each time a rung matures you reinvest at the long end of the ladder, keeping the cycle going and capturing whatever rates are available at that point. Liquidity stays intact; you are never fully locked up.
               </p>
               <p>
                 Three places to avoid parking Tier 2 or Tier 3 cash. First: brokerage sweep accounts, which often yield less than 1% while holding uninvested cash. Second: 401(k) money market options, which carry expense ratios that erode the nominal yield. Third: traditional big-bank savings accounts, which average just <span className="font-mono tabular font-semibold">0.05%</span> nationally. The rate environment has made the gap between these defaults and the best available accounts larger than it has been in over a decade. The cost of inertia is measurable.

@@ -29,7 +29,7 @@ const faqs: FAQItem[] = [
   {
     question: "Where do these APY rates come from?",
     answer:
-      "The default rates in this calculator (5.10% at 6mo, 4.90% at 1yr, down to 4.20% at 5yr) reflect the no-fee, no-broker, FDIC-insured top-of-market rates as of early 2026. Specific banks like LendingClub, Bask Bank, Ally, and Marcus typically lead these tables. Confirm the current rate at your chosen bank before locking.",
+      "The default rates in this calculator (about 4.30% at 6mo, 4.20% at 1yr, down to 4.00% at 5yr) reflect the no-fee, no-broker, FDIC-insured top-of-market rates as of August 2026. Specific banks like LendingClub, Bask Bank, Ally, and Marcus typically lead these tables. Confirm the current rate at your chosen bank before locking.",
   },
   {
     question: "What is the early withdrawal penalty?",
@@ -101,7 +101,7 @@ export default function Page() {
                 <code>maturity_value = principal * (1 + APY)^years</code>
               </pre>
               <p>
-                Example: $25,000 split across 5 rungs (1, 2, 3, 4, 5 years). Each rung holds $5,000. The 1-year rung at 4.90% returns $5,245. The 5-year rung at 4.20% returns $6,141. Total maturity across all five rungs: roughly $28,300. Weighted-average APY lands at 4.48%, which beats most standalone HYSAs while preserving annual liquidity.
+                Example: $25,000 split across 5 rungs (1, 2, 3, 4, 5 years). Each rung holds $5,000. The 1-year rung at 4.20% returns $5,210. The 5-year rung at 4.00% returns $6,083. Total maturity across all five rungs: roughly $27,900. Weighted-average APY lands near 4.10%, which beats most standalone HYSAs while preserving annual liquidity.
               </p>
               <p>
                 The strategy advantage shows up at year 1. The 1-year rung matures and rolls into a new 5-year CD at whatever the prevailing rate is then. Repeat each year. After 5 years, every rung is a 5-year CD, and one rung matures every year. You have effectively the highest available CD rate with annual access to 20% of the principal.

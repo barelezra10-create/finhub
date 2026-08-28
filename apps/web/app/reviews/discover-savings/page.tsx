@@ -13,9 +13,9 @@ import {
 const brand = getBrand("discover-savings")!;
 
 export const metadata: Metadata = {
-  title: "Discover Online Savings Review: 4.30% APY, No Fees (2026)",
+  title: "Discover Online Savings Review (2026): Closed, Now Capital One",
   description:
-    "Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and fit.",
+    "Discover Online Savings is closed to new applicants and now part of Capital One. What existing customers should know and where new savers should go instead.",
   alternates: { canonical: "/reviews/discover-savings" },
 };
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Discover Online Savings Review (2026)"
-        description="Discover Online Savings pays 4.30% APY with no minimum and no fees. Top-rated customer service and strong app. Full 2026 review with pros, cons, and who it is best for."
+        description="Discover Online Savings is closed to new applicants and now part of Capital One. What existing customers should know and where new savers should go."
         slug="/reviews/discover-savings"
         brandName="Discover"
         category="Savings Account"
-        apr="4.30"
+        apr="3.00"
         ratingValue={8.0}
         reviewCount={1}
       />
@@ -81,12 +81,22 @@ export default function Page() {
               </h1>
             </div>
           </div>
+          <div className="card p-4 mb-5 border-l-4" style={{ borderLeftColor: "var(--color-rose, #e11d48)" }}>
+            <p className="text-sm text-ink leading-relaxed">
+              <strong>Update, August 2026:</strong> Discover is now part of Capital One and the
+              Discover Online Savings Account is closed to new applicants. New customers are routed
+              to Capital One 360 Performance Savings (3.00% APY). Existing Discover accounts are
+              migrating to Capital One through 2026 and 2027. This review is kept for existing
+              customers and for reference.
+            </p>
+          </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
-            Discover Online Savings pays{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.30% APY</span> with no minimum, no fees, and some of the highest-rated customer service in consumer banking. Here is our full 2026 review.
+            Discover Online Savings historically paid a competitive APY with no minimum, no fees,
+            and some of the highest-rated customer service in consumer banking. Here is our full
+            review, now with the Capital One transition in mind.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
-            By the Fintiex Rate Desk · Updated April 28, 2026
+            By the Fintiex Rate Desk · Updated August 18, 2026
           </div>
           <div className="mt-6">
             <VisitBrandCta brand={brand} variant="lime" />
@@ -99,10 +109,10 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.30%" />
-            <Stat label="Min Deposit" value="$0" />
-            <Stat label="Monthly Fee" value="$0" />
-            <Stat label="Fintiex Score" value="8.0 / 10" />
+            <Stat label="Status" value="Closed" />
+            <Stat label="Now part of" value="Capital One" />
+            <Stat label="New accounts" value="360 Savings" />
+            <Stat label="360 APY" value="3.00%" />
           </div>
         </div>
       </section>
@@ -113,7 +123,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.30% APY with no minimum and no fees</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> Historically paid a competitive APY with no minimum and no fees</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Top-rated U.S.-based customer service, 24/7</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Strong mobile app rated above 4.8 on the App Store</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Seamlessly integrated with Discover credit cards under one login</li>
@@ -133,7 +143,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.25% APY · No fees · 24/7 U.S.-based support" />
+        <VisitBrandCard brand={brand} tagline="Now part of Capital One · New savers routed to 360 Performance Savings" />
       </section>
 
       {/* Overview */}
@@ -144,7 +154,7 @@ export default function Page() {
             Discover Bank is a federally chartered bank headquartered in Greenwood, Delaware, and a subsidiary of Discover Financial Services, a company that has operated consumer credit and banking products since the 1980s. Discover Bank is regulated by the Federal Deposit Insurance Corporation (FDIC) and the Federal Reserve, with total assets of approximately $137 billion as of Q4 2025. Discover Financial Services is publicly traded on the NYSE under the ticker DFS.
           </p>
           <p>
-            The Online Savings Account pays 4.30% APY with no minimum deposit requirement and no monthly maintenance fee. Interest compounds daily and posts monthly. The account requires no direct deposit, no minimum balance, and no promotional period to access the stated rate. What you see is what you earn from day one, which is a meaningful simplicity advantage over accounts like SoFi that gate their top rate behind a direct deposit requirement.
+            Before its closure to new applicants, the Online Savings Account paid a competitive APY with no minimum deposit requirement and no monthly maintenance fee. Interest compounds daily and posts monthly. The account requires no direct deposit, no minimum balance, and no promotional period to access the stated rate. What you see is what you earn from day one, which is a meaningful simplicity advantage over accounts like SoFi that gate their top rate behind a direct deposit requirement.
           </p>
           <p>
             The strongest argument for Discover in this category is the existing Discover customer experience. If you already use a Discover credit card, your bank account and card are accessible from the same login, the same app, and the same customer service line. That integration eliminates account fragmentation for the tens of millions of existing Discover cardholders. Customer service is a genuine differentiator: Discover regularly earns J.D. Power recognition for satisfaction in direct banking, and the 24/7 phone line is staffed with U.S.-based agents.
@@ -157,7 +167,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            Discover's savings rate has tracked the Federal Reserve cycle since 2022, moving upward through 2023 and stabilizing in 2024 as rate cuts began. The account peaked near 4.65% APY in late 2023 and has since settled at 4.30% following two Fed cuts. Discover has historically positioned its savings rate slightly below the very top of the market, consistent with its emphasis on product breadth and service quality over absolute rate maximization. Savers who value simplicity and brand trust over chasing the last 50 basis points will find the current rate acceptable.
+            Discover's savings rate has tracked the Federal Reserve cycle since 2022, moving upward through 2023 and stabilizing in 2024 as rate cuts began. The account peaked near 4.65% APY in late 2023 and drifted down with Fed cuts through 2026 before Discover was absorbed by Capital One. Discover has historically positioned its savings rate slightly below the very top of the market, consistent with its emphasis on product breadth and service quality over absolute rate maximization. Savers who value simplicity and brand trust over chasing the last 50 basis points will find the current rate acceptable.
           </p>
         </div>
       </section>
@@ -242,7 +252,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-4">Look elsewhere if</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li>You want the highest available APY (Bask at 4.85% is 55 bps more)</li>
+              <li>You are a new saver (Discover no longer accepts new applicants)</li>
               <li>You need goal-based savings Buckets or Vaults features</li>
               <li>You want full online banking including checking in one place (Ally or SoFi)</li>
             </ul>
@@ -261,9 +271,9 @@ export default function Page() {
             <div className="col-span-1 text-right">Service Rating</div>
           </div>
           {[
-            { name: "SoFi", apy: "4.40%*", min: "$0", svc: "Top" },
-            { name: "Discover", apy: "4.30%", min: "$0", svc: "Top", highlight: true },
-            { name: "CIT Bank", apy: "4.25%", min: "$5,000", svc: "Average" },
+            { name: "SoFi", apy: "3.10%*", min: "$0", svc: "Top" },
+            { name: "Discover", apy: "Closed", min: "$0", svc: "Top", highlight: true },
+            { name: "CIT Bank", apy: "3.75%", min: "$5,000", svc: "Average" },
           ].map((row) => (
             <div
               key={row.name}
@@ -276,7 +286,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 max-w-2xl">* SoFi 4.40% requires direct deposit; otherwise 1.20%</p>
+        <p className="text-xs text-mute mt-3 max-w-2xl">* SoFi 3.10% requires direct deposit; otherwise 0.80%</p>
       </section>
 
       {/* FAQ */}
@@ -306,7 +316,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.25% APY · No fees · 24/7 U.S.-based support"
+          tagline="Now part of Capital One · New savers routed to 360 Performance Savings"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

@@ -15,18 +15,18 @@ interface HysaOption {
   apy: number;
   tag?: string;
   detail: string;
-  href: string;
+  href?: string;
 }
 
 const hysaOptions: HysaOption[] = [
-  { lender: "Bask Bank", apy: 4.85, tag: "Top APY", detail: "No minimum balance. No monthly fees. FDIC-insured up to $250K per depositor.", href: "/reviews/bask" },
-  { lender: "Bread Savings", apy: 4.75, detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
-  { lender: "Marcus by Goldman Sachs", apy: 4.50, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
-  { lender: "Ally Bank", apy: 4.45, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
-  { lender: "SoFi", apy: 4.40, detail: "Direct deposit required for top rate. No minimum balance.", href: "/reviews/sofi" },
-  { lender: "Discover Bank", apy: 4.30, detail: "No minimum balance. No fees. Same-day transfers available.", href: "/reviews/discover-savings" },
-  { lender: "CIT Bank", apy: 4.25, detail: "$100 minimum. No monthly service charge. FDIC-insured.", href: "/reviews/cit" },
-  { lender: "American Express", apy: 4.15, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
+  { lender: "Bread Savings", apy: 3.95, tag: "Top APY", detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
+  { lender: "Bask Bank", apy: 3.75, detail: "3.75% base APY, up to 4.10% with limited-time boosts. No minimum balance. No monthly fees.", href: "/reviews/bask" },
+  { lender: "CIT Bank", apy: 3.75, detail: "Platinum Savings pays this rate on $5,000+. Balances under $5,000 earn 0.25%.", href: "/reviews/cit" },
+  { lender: "Marcus by Goldman Sachs", apy: 3.40, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
+  { lender: "Synchrony Bank", apy: 3.30, detail: "No minimum balance. No monthly fees. ATM card with monthly fee rebates." },
+  { lender: "SoFi", apy: 3.10, detail: "Direct deposit required. New-member promo can boost the rate to 3.80% for six months.", href: "/reviews/sofi" },
+  { lender: "Ally Bank", apy: 3.00, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
+  { lender: "American Express", apy: 3.00, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
 ];
 
 function fmtPct(n: number) {
@@ -50,10 +50,10 @@ export default function HysaPage() {
             Best High-Yield Savings Accounts of 2026
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay around 4.10 to 4.50% APY. That is roughly ten times more than the national average savings rate of around 0.38%. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
+            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay around 3.75 to 4.20% APY. That is roughly ten times more than what a typical big-bank savings account pays. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/reviews/bask" className="pill pill-ink">
+            <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
               See top rate
               <span aria-hidden>→</span>
             </Link>
@@ -82,10 +82,10 @@ export default function HysaPage() {
           <div className="space-y-5">
             <h2 className="font-display font-bold text-2xl text-ink tracking-tight">How to pick the right HYSA in 2026</h2>
             <p>
-              Start with the APY. The difference between 4.10% and 4.50% on a $25,000 balance is about $100 per year in additional interest. Over several years, that compounds into a meaningful amount. The best rate is not always at the most recognizable brand name.
+              Start with the APY. The difference between 3.00% and 3.95% on a $25,000 balance is about $240 per year in additional interest. Over several years, that compounds into a meaningful amount. The best rate is not always at the most recognizable brand name.
             </p>
             <p>
-              Next, look at minimums and fees. A 4.50% account with no minimum is almost always better than a 4.75% account requiring $10,000 to open. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
+              Next, look at minimums and fees. A 3.75% account with no minimum is almost always better than a 3.95% account requiring $10,000 to open. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
             </p>
             <p>
               Transfer speed matters too. Most online HYSAs settle ACH transfers in one to two business days. Some offer same-day or next-day transfers. If you plan to use the account as a liquid emergency fund, check the transfer timeline before committing.
@@ -121,31 +121,39 @@ export default function HysaPage() {
             <div className="hidden md:block md:col-span-5">Details</div>
             <div className="col-span-6 md:col-span-2 text-right">APY</div>
           </div>
-          {hysaOptions.map((r, i) => (
-            <Link
-              key={r.lender}
-              href={r.href}
-              className={`grid grid-cols-12 px-6 py-4 items-center hover:bg-bg-soft/70 transition-colors ${
-                i === hysaOptions.length - 1 ? "" : "border-b border-line-soft"
-              }`}
-            >
-              <div className="col-span-8 md:col-span-5">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-display font-semibold text-base">{r.lender}</div>
-                  {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+          {hysaOptions.map((r, i) => {
+            const cls = `grid grid-cols-12 px-6 py-4 items-center ${
+              r.href ? "hover:bg-bg-soft/70 transition-colors" : ""
+            } ${i === hysaOptions.length - 1 ? "" : "border-b border-line-soft"}`;
+            const inner = (
+              <>
+                <div className="col-span-8 md:col-span-5">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="font-display font-semibold text-base">{r.lender}</div>
+                    {r.tag && <span className="chip chip-lime">{r.tag}</span>}
+                  </div>
+                  <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
                 </div>
-                <div className="md:hidden text-xs text-mute mt-1">{r.detail}</div>
+                <div className="hidden md:block md:col-span-5 text-mute text-sm">{r.detail}</div>
+                <div className="col-span-4 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
+                  {fmtPct(r.apy)}
+                </div>
+              </>
+            );
+            return r.href ? (
+              <Link key={r.lender} href={r.href} className={cls}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={r.lender} className={cls}>
+                {inner}
               </div>
-              <div className="hidden md:block md:col-span-5 text-mute text-sm">{r.detail}</div>
-              <div className="col-span-4 md:col-span-2 text-right font-mono font-semibold tabular text-lg">
-                {fmtPct(r.apy)}
-              </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Rates as of April 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
+          Rates as of August 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
         </p>
       </section>
 

@@ -28,7 +28,7 @@ const picks: LenderPick[] = [
     name: "Better.com",
     brand: "better",
     tag: "Lowest closing cost",
-    apr: "6.91%",
+    apr: "6.75%",
     closingCost: "$1,995 flat fee",
     bestFor: "Borrowers with strong credit who want a fast online close.",
     detail:
@@ -40,7 +40,7 @@ const picks: LenderPick[] = [
     name: "Rocket Mortgage",
     brand: "rocket",
     tag: "Best for self-employed",
-    apr: "6.95%",
+    apr: "6.79%",
     closingCost: "1.0% to 1.5% of loan",
     bestFor: "Self-employed borrowers who need bank statement underwriting.",
     detail:
@@ -52,7 +52,7 @@ const picks: LenderPick[] = [
     name: "loanDepot",
     brand: "loandepot",
     tag: "Best for cash-out",
-    apr: "6.98%",
+    apr: "6.83%",
     closingCost: "1.0% to 1.25% of loan",
     bestFor: "Owners refinancing to pull equity for renovation or debt payoff.",
     detail:
@@ -64,7 +64,7 @@ const picks: LenderPick[] = [
     name: "Chase Home Lending",
     brand: "chase-mortgage",
     tag: "Best for existing clients",
-    apr: "7.04%",
+    apr: "6.88%",
     closingCost: "0.75% to 1.0% of loan",
     bestFor: "Chase Private Client and Premier customers who get rate discounts.",
     detail:
@@ -76,7 +76,7 @@ const picks: LenderPick[] = [
     name: "PNC Bank",
     brand: "pnc",
     tag: "Best HELOC combo",
-    apr: "7.08%",
+    apr: "6.92%",
     closingCost: "0.75% to 1.25% of loan",
     bestFor: "Borrowers who want a refinance and a HELOC underwritten together.",
     detail:
@@ -165,8 +165,8 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "Refi 30Y avg APR", value: "6.93%", caption: "Includes typical closing costs" },
-              { label: "Refi 15Y avg APR", value: "6.18%", caption: "Includes typical closing costs" },
+              { label: "Refi 30Y avg APR", value: "6.82%", caption: "Includes typical closing costs" },
+              { label: "Refi 15Y avg APR", value: "6.10%", caption: "Includes typical closing costs" },
               { label: "Avg closing cost", value: "2.4%", caption: "Of loan amount, Freddie Mac" },
               { label: "Avg break-even", value: "31 mo", caption: "When rate drops 0.75pt" },
             ].map((tile) => (
@@ -179,6 +179,9 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-mute mt-6 leading-relaxed">
+            Rates as of August 2026. Representative estimates based on the current Freddie Mac PMMS average (30Y purchase 6.67%); actual quotes vary by borrower.
+          </p>
         </div>
       </section>
 
@@ -288,7 +291,7 @@ export default function Page() {
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
             <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              Ranked by APR plus closing costs on a $400K refinance scenario at 80% LTV with a 760 FICO.
+              Ranked by APR plus closing costs on a $400K refinance scenario at 80% LTV with a 760 FICO. APRs are representative estimates based on the current Freddie Mac average; actual quotes vary by borrower.
             </p>
           </div>
         </div>

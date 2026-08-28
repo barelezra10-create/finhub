@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
   {
     question: "What does Bank of America Advantage Savings pay?",
     answer:
-      "The standard rate is about 0.01% APY. Preferred Rewards members earn a boosted rate that has topped out around 0.04% APY at the Platinum Honors tier. For comparison, top online high-yield savings accounts paid around 4.10 to 4.50% APY in mid-2026, roughly one hundred times more.",
+      "The standard rate is about 0.01% APY. Preferred Rewards members earn a boosted rate that has topped out around 0.04% APY at the Platinum Honors tier. For comparison, top online high-yield savings accounts paid around 3.75 to 4.20% APY in August 2026, roughly one hundred times more.",
   },
   {
     question: "Does Advantage Savings have a monthly fee?",
@@ -33,7 +33,7 @@ const faqs: FAQItem[] = [
   {
     question: "How much am I losing by keeping savings at Bank of America?",
     answer:
-      "On a $10,000 balance, Advantage Savings at 0.01% APY earns about $1 per year. A high-yield savings account at 4.30% earns about $430. That $429 gap repeats every year, and it grows with your balance and with compounding.",
+      "On a $10,000 balance, Advantage Savings at 0.01% APY earns about $1 per year. A high-yield savings account at 3.95% earns about $395. That $394 gap repeats every year, and it grows with your balance and with compounding.",
   },
 ];
 
@@ -70,8 +70,8 @@ export default function BofaHysaPage() {
               roughly 0.04% with the highest Preferred Rewards status.
             </p>
             <p className="text-lg text-mute leading-relaxed">
-              Top online banks paid around 4.10 to 4.50% APY on FDIC-insured savings in
-              mid-2026. That is not a small gap. It is roughly one hundred times more
+              Top online banks paid around 3.75 to 4.20% APY on FDIC-insured savings in
+              August 2026. That is not a small gap. It is roughly one hundred times more
               interest on the same money with the same insurance.
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function BofaHysaPage() {
           ))}
         </div>
         <p className="text-xs text-mute mt-3 font-mono">
-          Approximate APYs as of mid-2026. There is also an $8 monthly fee unless waived by a
+          Approximate APYs as of August 2026. There is also an $8 monthly fee unless waived by a
           $500 minimum balance, Preferred Rewards status, or being under 25. Confirm current
           terms at bankofamerica.com.
         </p>
@@ -129,8 +129,8 @@ export default function BofaHysaPage() {
         <div className="max-w-3xl space-y-4">
           <p className="text-mute leading-relaxed">
             On $10,000, Advantage Savings at 0.01% APY earns about $1 per year. The same
-            $10,000 in a high-yield savings account at 4.30% earns about $430. Over five
-            years with compounding, the HYSA earns roughly $2,340 while BofA pays about $5.
+            $10,000 in a high-yield savings account at 3.95% earns about $395. Over five
+            years with compounding, the HYSA earns roughly $2,140 while BofA pays about $5.
             The FDIC insurance protecting both accounts is identical.
           </p>
           <p className="text-mute leading-relaxed">

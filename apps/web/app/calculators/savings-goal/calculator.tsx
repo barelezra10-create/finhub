@@ -14,7 +14,7 @@ export function Calculator() {
   const [goal, setGoal] = useState(30000);
   const [current, setCurrent] = useState(2000);
   const [contribution, setContribution] = useState(400);
-  const [apy, setApy] = useState(4.5);
+  const [apy, setApy] = useState(3.95);
 
   const result = useMemo(() => {
     const monthlyRate = apy / 100 / 12;

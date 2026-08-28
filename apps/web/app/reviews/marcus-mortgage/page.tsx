@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Marcus by Goldman Sachs Mortgage Review (2026)",
   description:
-    "Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review of rates, fees, and best fit.",
+    "Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.61% with no origination fee. Read our full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/marcus-mortgage" },
 };
 
@@ -28,7 +28,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can I use Marcus for an FHA loan?",
     answer:
-      "Marcus focuses on conventional conforming and jumbo loans. FHA and VA products are not available through Marcus as of April 2026. If you need FHA financing, Rocket Mortgage is a stronger option.",
+      "Marcus focuses on conventional conforming and jumbo loans. FHA and VA products are not available through Marcus as of August 2026. If you need FHA financing, Rocket Mortgage is a stronger option.",
   },
   {
     question: "How long does the Marcus mortgage process take?",
@@ -38,7 +38,7 @@ const faqs: FAQItem[] = [
   {
     question: "What credit score do I need for the best Marcus rate?",
     answer:
-      "The minimum is 620, but borrowers with scores above 740 will receive the most competitive pricing tiers. The 6.79% headline rate assumes a strong credit profile, 5% or more down, and a standard conforming loan amount.",
+      "The minimum is 620, but borrowers with scores above 740 will receive the most competitive pricing tiers. The 6.61% headline rate assumes a strong credit profile, 5% or more down, and a standard conforming loan amount.",
   },
   {
     question: "Is Marcus backed by FDIC?",
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Marcus by Goldman Sachs Mortgage Review"
-        description="Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.79% with no origination fee. Read our full 2026 review covering rates, fees, and who should apply."
+        description="Marcus by Goldman Sachs offers one of the lowest 30-year APRs at 6.61% with no origination fee. Read our full 2026 review covering rates, fees, and who should apply."
         slug="/reviews/marcus-mortgage"
         brandName="Marcus by Goldman Sachs"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 Marcus by Goldman Sachs Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.79%" />
+            <Stat label="30Y APR" value="6.61%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="8.6/10" />
@@ -103,7 +103,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What works</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Lowest 30-year APR on our table at 6.79%</li>
+              <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Lowest 30-year APR on our table at 6.61%</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>No origination fee, which saves $1,000 to $3,000 vs. most lenders</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Fully digital application with document upload and e-sign</li>
               <li className="flex gap-3"><span className="chip chip-lime shrink-0">+</span>Strong rate transparency: you see real pricing before submitting a full application</li>
@@ -138,7 +138,7 @@ export default function Page() {
             Marcus by Goldman Sachs is Goldman&rsquo;s consumer banking arm, launched in 2016. What started as a personal loan and savings product has expanded into mortgages, and it brings the same low-fee philosophy: skip the origination charges that most lenders treat as a revenue center and compete instead on rate and digital experience.
           </p>
           <p>
-            The 30-year fixed APR of 6.79% sits at the top of our comparison table, making Marcus the default starting point for any rate-sensitive borrower. That gap vs. the market average of 6.85% seems small but translates to real money: on a $400,000 loan, 6 basis points saves roughly $17 per month, or about $6,100 over the life of a 30-year term. Add in the no-origination-fee structure and the total cost advantage is meaningful.
+            The 30-year fixed APR of 6.61% sits at the top of our comparison table, making Marcus the default starting point for any rate-sensitive borrower. That gap vs. the market average of 6.67% seems small but translates to real money: on a $400,000 loan, 6 basis points saves roughly $17 per month, or about $6,100 over the life of a 30-year term. Add in the no-origination-fee structure and the total cost advantage is meaningful.
           </p>
           <p>
             Marcus is built for people who are comfortable managing a mortgage relationship entirely online. There are no branches to walk into, and the experience mirrors what you&rsquo;d expect from a modern fintech: clean interface, status notifications, and clear documentation checklists. Where it stumbles is on turnaround speed when third-party appraisal vendors get backed up. In fast-moving seller&rsquo;s markets, that can be a real constraint.
@@ -159,11 +159,11 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.79%", note: "No origination fee" },
-            { product: "15-Year Fixed", apr: "6.22%", note: "Faster equity build" },
-            { product: "7/1 ARM", apr: "6.45%", note: "Fixed 7 yrs then adjusts" },
-            { product: "5/1 ARM", apr: "6.31%", note: "Fixed 5 yrs then adjusts" },
-            { product: "Jumbo 30Y Fixed", apr: "6.91%", note: "Loans above $766,550" },
+            { product: "30-Year Fixed", apr: "6.61%", note: "No origination fee" },
+            { product: "15-Year Fixed", apr: "6.04%", note: "Faster equity build" },
+            { product: "7/1 ARM", apr: "6.27%", note: "Fixed 7 yrs then adjusts" },
+            { product: "5/1 ARM", apr: "6.13%", note: "Fixed 5 yrs then adjusts" },
+            { product: "Jumbo 30Y Fixed", apr: "6.73%", note: "Loans above $766,550" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -172,7 +172,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Actual rate depends on credit profile, LTV, and property type.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Actual rate depends on credit profile, LTV, and property type.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">Rocket</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.79%", b: "6.85%", c: "6.89%" },
+            { feature: "30Y APR", a: "6.61%", b: "6.67%", c: "6.71%" },
             { feature: "Origination fee", a: "$0", b: "$0", c: "Varies" },
             { feature: "Min FICO", a: "620", b: "620", c: "580 (FHA)" },
             { feature: "Min down", a: "3%", b: "3%", c: "3.5% FHA" },
@@ -315,7 +315,7 @@ export default function Page() {
             },
             {
               q: "Can I use Marcus for an FHA loan?",
-              a: "Marcus focuses on conventional conforming and jumbo loans. FHA and VA products are not available through Marcus as of April 2026. If you need FHA financing, Rocket Mortgage is a stronger option.",
+              a: "Marcus focuses on conventional conforming and jumbo loans. FHA and VA products are not available through Marcus as of August 2026. If you need FHA financing, Rocket Mortgage is a stronger option.",
             },
             {
               q: "How long does the Marcus mortgage process take?",
@@ -323,7 +323,7 @@ export default function Page() {
             },
             {
               q: "What credit score do I need for the best Marcus rate?",
-              a: "The minimum is 620, but borrowers with scores above 740 will receive the most competitive pricing tiers. The 6.79% headline rate assumes a strong credit profile, 5% or more down, and a standard conforming loan amount.",
+              a: "The minimum is 620, but borrowers with scores above 740 will receive the most competitive pricing tiers. The 6.61% headline rate assumes a strong credit profile, 5% or more down, and a standard conforming loan amount.",
             },
             {
               q: "Is Marcus backed by FDIC?",

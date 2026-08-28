@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What counts as a qualifying direct deposit for the 4.40% APY?",
+    question: "What counts as a qualifying direct deposit for the 3.10% APY?",
     answer:
       "SoFi accepts employer payroll, government benefit payments (Social Security, disability), freelance income via ACH, and select gig platform payouts. A personal transfer from another bank account does not qualify. Check SoFi's current terms for the full list.",
   },
@@ -43,7 +43,7 @@ const faqs: FAQItem[] = [
   {
     question: "What happens to my APY if I stop my direct deposit?",
     answer:
-      "If your direct deposit stops (for example, you change jobs and do not redirect payroll), SoFi will move your savings rate from 4.40% to 1.20%. The drop takes effect in the next monthly statement cycle after SoFi detects the absence of a qualifying deposit.",
+      "If your direct deposit stops (for example, you change jobs and do not redirect payroll), SoFi will move your savings rate from 3.10% to 0.80%. The drop takes effect in the next monthly statement cycle after SoFi detects the absence of a qualifying deposit.",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="SoFi Bank Review (2026)"
-        description="SoFi pays 4.40% APY on savings with direct deposit, or 1.20% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and who should open one."
+        description="SoFi pays 3.10% APY on savings with direct deposit, or 0.80% without. Full 2026 review: Vaults, ATM rebates, member benefits, pros, cons, and who should open one."
         slug="/reviews/sofi"
         brandName="SoFi"
         category="Savings Account"
-        apr="4.40"
+        apr="3.10"
         ratingValue={7.9}
         reviewCount={1}
       />
@@ -83,10 +83,10 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             SoFi pays{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.40% APY</span> on savings when you set up direct deposit, dropping to 1.20% without it. Here is everything you need to know before opening an account in 2026.
+            <span className="font-mono tabular font-semibold text-ink">3.10% APY</span> on savings when you set up direct deposit, dropping to 0.80% without it. New members can earn a boosted rate up to 3.80% for the first six months. Here is everything you need to know before opening an account in 2026.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
-            By the Fintiex Rate Desk · Updated April 28, 2026
+            By the Fintiex Rate Desk · Updated August 18, 2026
           </div>
           <div className="mt-6">
             <VisitBrandCta brand={brand} variant="lime" />
@@ -99,8 +99,8 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY (w/ DD)" value="4.40%" />
-            <Stat label="APY (no DD)" value="1.20%" />
+            <Stat label="APY (w/ DD)" value="3.10%" />
+            <Stat label="APY (no DD)" value="0.80%" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="7.9 / 10" />
           </div>
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.40% APY with direct deposit, competitive with top-tier HYSAs</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 3.10% APY with direct deposit, competitive with top-tier HYSAs</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Combined checking and savings under one login</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Vaults feature for goal-based savings within one account</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> ATM fee rebates at 55,000 Allpoint ATMs nationwide</li>
@@ -124,7 +124,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-5">Cons</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-rose font-bold">-</span> 4.40% APY is conditional on direct deposit setup; without it you earn only 1.20%</li>
+              <li className="flex gap-3"><span className="text-rose font-bold">-</span> 3.10% APY is conditional on direct deposit setup; without it you earn only 0.80%</li>
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> If your employer does not support direct deposit, you will not hit the top rate</li>
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> Some users report the app can feel cluttered with SoFi product promotions</li>
             </ul>
@@ -133,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.60% APY checking and savings · 1% direct-deposit bonus" />
+        <VisitBrandCard brand={brand} tagline="3.10% APY with direct deposit · New-member promo up to 3.80% for 6 months" />
       </section>
 
       {/* Overview */}
@@ -144,7 +144,7 @@ export default function Page() {
             SoFi, short for Social Finance, began as a student loan refinancing company in 2011 and has since built a full-service personal finance platform. SoFi Bank, N.A. received its national bank charter in 2022, which was a significant milestone: it allowed SoFi to offer FDIC-insured deposits directly rather than through a third-party bank partner. SoFi is publicly traded on Nasdaq under the ticker SOFI and had total assets of approximately $35 billion as of Q4 2025.
           </p>
           <p>
-            The savings and checking product, called SoFi Checking and Savings, is a combined account rather than a standalone HYSA. The savings portion earns 4.40% APY when you set up a qualifying direct deposit of any amount. If no direct deposit is present, the savings rate drops to 1.20%. The checking portion earns 0.50% APY, which is above average for an interest-bearing checking account. SoFi also offers Vaults, a goal-based savings feature similar to Ally's Buckets.
+            The savings and checking product, called SoFi Checking and Savings, is a combined account rather than a standalone HYSA. The savings portion earns 3.10% APY when you set up a qualifying direct deposit of any amount. If no direct deposit is present, the savings rate drops to 0.80%. The checking portion earns 0.50% APY, which is above average for an interest-bearing checking account. SoFi also offers Vaults, a goal-based savings feature similar to Ally's Buckets.
           </p>
           <p>
             SoFi's differentiation is the member benefits layer. All SoFi members get access to financial planning sessions with a certified financial planner, career coaching services, rate discounts on SoFi personal loans and student loan refinancing, and live event access. These benefits have real dollar value for the right user, particularly someone already in the SoFi ecosystem using a personal loan or investing through SoFi Invest.
@@ -157,7 +157,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            SoFi's savings rate has tracked the Federal Reserve tightening cycle since 2022. The direct deposit APY peaked above 4.50% in mid-2023 and has declined modestly to 4.40% as the Fed began cutting rates in late 2024. The rate structure with and without direct deposit has remained consistent since SoFi introduced the conditional pricing model in 2022. Savers who set up direct deposit once and leave it in place will continue earning the top rate regardless of whether they actively use SoFi checking for daily spending.
+            SoFi's savings rate has tracked the Federal Reserve tightening cycle since 2022. The direct deposit APY peaked above 4.50% in mid-2023 and has declined modestly to 3.10% as the Fed began cutting rates in late 2024. The rate structure with and without direct deposit has remained consistent since SoFi introduced the conditional pricing model in 2022. Savers who set up direct deposit once and leave it in place will continue earning the top rate regardless of whether they actively use SoFi checking for daily spending.
           </p>
         </div>
       </section>
@@ -177,11 +177,11 @@ export default function Page() {
             </li>
             <li className="flex justify-between border-b border-line pb-3">
               <span className="text-mute">APY with direct deposit</span>
-              <span className="font-mono tabular font-semibold">4.40%</span>
+              <span className="font-mono tabular font-semibold">3.10%</span>
             </li>
             <li className="flex justify-between border-b border-line pb-3">
               <span className="text-mute">APY without direct deposit</span>
-              <span className="font-mono tabular font-semibold">1.20%</span>
+              <span className="font-mono tabular font-semibold">0.80%</span>
             </li>
             <li className="flex justify-between">
               <span className="text-mute">ATM access</span>
@@ -196,14 +196,14 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">How to Open</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft mb-5">
           <p>
-            Opening a SoFi Checking and Savings account at sofi.com takes about five minutes. You need a Social Security number and a government-issued ID. The app is the primary interface. To earn the 4.40% APY, you must set up a qualifying direct deposit, which can be from an employer, government benefits, freelance income via ACH, or other payroll sources.
+            Opening a SoFi Checking and Savings account at sofi.com takes about five minutes. You need a Social Security number and a government-issued ID. The app is the primary interface. To earn the 3.10% APY, you must set up a qualifying direct deposit, which can be from an employer, government benefits, freelance income via ACH, or other payroll sources.
           </p>
         </div>
         <ul className="space-y-2 text-[0.9375rem] max-w-2xl ml-4">
           <li className="list-disc ml-4">Download the SoFi app or visit sofi.com and select Banking</li>
           <li className="list-disc ml-4">Complete identity verification with SSN and ID</li>
           <li className="list-disc ml-4">Open the combined Checking and Savings product</li>
-          <li className="list-disc ml-4">Set up direct deposit with your employer to activate the 4.40% APY</li>
+          <li className="list-disc ml-4">Set up direct deposit with your employer to activate the 3.10% APY</li>
           <li className="list-disc ml-4">Optionally create Vaults within savings for goal organization</li>
         </ul>
       </section>
@@ -242,7 +242,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-4">Look elsewhere if</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li>You cannot set up direct deposit and do not want 1.20% APY</li>
+              <li>You cannot set up direct deposit and do not want 0.80% APY</li>
               <li>You want the highest possible rate with no strings attached (Bask)</li>
               <li>You prefer a simpler account with fewer product promotions in the app</li>
             </ul>
@@ -261,9 +261,9 @@ export default function Page() {
             <div className="col-span-1 text-right">Conditions</div>
           </div>
           {[
-            { name: "Ally Bank", apy: "4.45%", min: "$0", cond: "None" },
-            { name: "SoFi", apy: "4.40%", min: "$0", cond: "Direct deposit", highlight: true },
-            { name: "Discover", apy: "4.30%", min: "$0", cond: "None" },
+            { name: "Ally Bank", apy: "3.00%", min: "$0", cond: "None" },
+            { name: "SoFi", apy: "3.10%", min: "$0", cond: "Direct deposit", highlight: true },
+            { name: "Discover", apy: "3.00%", min: "$0", cond: "None" },
           ].map((row) => (
             <div
               key={row.name}
@@ -282,7 +282,7 @@ export default function Page() {
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
         <h2 className="font-display font-bold text-3xl tracking-tight mb-8">Frequently Asked Questions</h2>
         <div className="space-y-6 max-w-3xl">
-          <Faq q="What counts as a qualifying direct deposit for the 4.40% APY?">
+          <Faq q="What counts as a qualifying direct deposit for the 3.10% APY?">
             SoFi accepts employer payroll, government benefit payments (Social Security, disability), freelance income via ACH, and select gig platform payouts. A personal transfer from another bank account does not qualify. Check SoFi's current terms for the full list.
           </Faq>
           <Faq q="What are SoFi Vaults?">
@@ -295,7 +295,7 @@ export default function Page() {
             Yes. SoFi Bank, N.A. is a nationally chartered bank, Member FDIC, insuring deposits up to $250,000 per depositor per ownership category.
           </Faq>
           <Faq q="What happens to my APY if I stop my direct deposit?">
-            If your direct deposit stops (for example, you change jobs and do not redirect payroll), SoFi will move your savings rate from 4.40% to 1.20%. The drop takes effect in the next monthly statement cycle after SoFi detects the absence of a qualifying deposit.
+            If your direct deposit stops (for example, you change jobs and do not redirect payroll), SoFi will move your savings rate from 3.10% to 0.80%. The drop takes effect in the next monthly statement cycle after SoFi detects the absence of a qualifying deposit.
           </Faq>
         </div>
       </section>

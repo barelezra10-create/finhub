@@ -5,7 +5,7 @@ import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/
 export const metadata: Metadata = {
   title: "HELOC Rates 2026: HELOC vs HELOAN, Draw Period, Math",
   description:
-    "HELOC rates today (avg 8.45%). HELOC vs HELOAN compared, draw and repayment mechanics, and when a home equity line beats a cash-out refinance.",
+    "HELOC rates today (avg 7.30%). HELOC vs HELOAN compared, draw and repayment mechanics, and when a home equity line beats a cash-out refinance.",
   alternates: { canonical: "/mortgages/heloc" },
 };
 
@@ -13,7 +13,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How is the HELOC rate calculated?",
     answer:
-      "Most HELOCs use prime rate plus a margin set by the lender. Prime is typically 3.0 percentage points above the federal funds rate. With prime at 7.50% in May 2026, a HELOC with a margin of +0.95% prices at 8.45%. The CFPB requires lenders to disclose the index, margin, and current rate on the early disclosure.",
+      "Most HELOCs use prime rate plus a margin set by the lender. Prime is typically 3.0 percentage points above the federal funds rate. As of August 2026 the national average HELOC rate is about 7.30%, which reflects prime plus or minus the lender's margin and any introductory discounts. The CFPB requires lenders to disclose the index, margin, and current rate on the early disclosure.",
   },
   {
     question: "How does the draw period work?",
@@ -89,10 +89,10 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "HELOC avg rate", value: "8.45%", caption: "Prime + 0.95 margin" },
-              { label: "HELOC range (740+)", value: "7.99% to 9.50%", caption: "Across 14 lenders" },
-              { label: "Prime rate", value: "7.50%", caption: "Wall Street Journal Prime" },
-              { label: "HELOAN avg rate", value: "8.10%", caption: "Fixed second-lien loan" },
+              { label: "HELOC avg rate", value: "7.30%", caption: "National average, Aug 2026" },
+              { label: "HELOC range (740+)", value: "7.05% to 7.80%", caption: "Representative across lenders" },
+              { label: "HELOC adjustable avg", value: "7.16%", caption: "Variable-rate lines, Aug 2026" },
+              { label: "HELOAN avg rate", value: "7.45%", caption: "Fixed second-lien loan" },
             ].map((tile) => (
               <div key={tile.label} className="card p-5">
                 <div className="text-xs text-mute mb-2">{tile.label}</div>
@@ -103,6 +103,9 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-mute mt-6 leading-relaxed">
+            Rates as of August 2026. Representative estimates based on national survey averages; actual quotes vary by borrower, credit score, and combined loan-to-value.
+          </p>
         </div>
       </section>
 
@@ -190,13 +193,13 @@ export default function Page() {
               <div>
                 <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Years 1 to 10: the draw period</h3>
                 <p className="text-mute">
-                  You can borrow up to your credit limit, repay, and re-borrow at will. Most lenders require an interest-only minimum payment during this phase. On a $50,000 balance at 8.45%, the interest-only minimum is about $352 per month. Some borrowers run a HELOC like a checking overdraft, which works as long as you keep balances low.
+                  You can borrow up to your credit limit, repay, and re-borrow at will. Most lenders require an interest-only minimum payment during this phase. On a $50,000 balance at 7.30%, the interest-only minimum is about $304 per month. Some borrowers run a HELOC like a checking overdraft, which works as long as you keep balances low.
                 </p>
               </div>
               <div>
                 <h3 className="font-display font-bold text-xl mb-2 tracking-tight">The conversion: payment shock</h3>
                 <p className="text-mute">
-                  After year 10, the HELOC closes for new draws and converts to a repayment period (typically 10 or 20 years). The balance must now amortize. On that same $50,000 balance with a 10-year repayment, the monthly payment jumps from $352 interest-only to about $620 principal+interest. The 76% jump catches many borrowers by surprise. The CFPB has flagged this risk in its consumer education materials.
+                  After year 10, the HELOC closes for new draws and converts to a repayment period (typically 10 or 20 years). The balance must now amortize. On that same $50,000 balance with a 10-year repayment, the monthly payment jumps from $304 interest-only to about $588 principal+interest. The jump of over 90% catches many borrowers by surprise. The CFPB has flagged this risk in its consumer education materials.
                 </p>
               </div>
               <div>

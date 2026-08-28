@@ -43,7 +43,7 @@ const faqs: FAQItem[] = [
   {
     question: "Is the APY rate guaranteed?",
     answer:
-      "No HYSA rate is permanently guaranteed. The 4.15% APY is the current variable rate and will adjust as the Federal Reserve changes the federal funds rate and as competitive dynamics shift. American Express typically provides advance notice of rate changes through account communication.",
+      "No HYSA rate is permanently guaranteed. The 3.00% APY is the current variable rate and will adjust as the Federal Reserve changes the federal funds rate and as competitive dynamics shift. American Express typically provides advance notice of rate changes through account communication.",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="American Express High Yield Savings Review (2026)"
-        description="American Express HYSA pays 4.15% APY with no minimum and no fees. Ideal for existing Amex cardholders. Full 2026 review: pros, cons, slow ACH, app limitations, and verdict."
+        description="American Express HYSA pays 3.00% APY with no minimum and no fees. Ideal for existing Amex cardholders. Full 2026 review: pros, cons, slow ACH, app limitations, and verdict."
         slug="/reviews/amex-savings"
         brandName="American Express"
         category="Savings Account"
-        apr="4.15"
+        apr="3.00"
         ratingValue={7.2}
         reviewCount={1}
       />
@@ -83,10 +83,10 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             The American Express High Yield Savings Account pays{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.15% APY</span> with no minimum deposit and no monthly fees. Here is our full 2026 review, including the ACH speed issue you need to know about before opening.
+            <span className="font-mono tabular font-semibold text-ink">3.00% APY</span> with no minimum deposit and no monthly fees. Here is our full 2026 review, including the ACH speed issue you need to know about before opening.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
-            By the Fintiex Rate Desk · Updated April 28, 2026
+            By the Fintiex Rate Desk · Updated August 18, 2026
           </div>
           <div className="mt-6">
             <VisitBrandCta brand={brand} variant="lime" />
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.15%" />
+            <Stat label="APY" value="3.00%" />
             <Stat label="Min Deposit" value="$0" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="7.2 / 10" />
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.15% APY with zero minimum and zero monthly fees</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 3.00% APY with zero minimum and zero monthly fees</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> American Express brand trust with over 170 years in financial services</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> FDIC insured via American Express National Bank</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Seamless integration with Amex card accounts on the same login</li>
@@ -126,14 +126,14 @@ export default function Page() {
             <ul className="space-y-3 text-[0.9375rem]">
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> Slowest ACH transfers in the category, often 3 to 5 business days</li>
               <li className="flex gap-3"><span className="text-rose font-bold">-</span> Savings app is separate from the main Amex card app, requiring two logins</li>
-              <li className="flex gap-3"><span className="text-rose font-bold">-</span> APY is 70 basis points below Bask's leading rate</li>
+              <li className="flex gap-3"><span className="text-rose font-bold">-</span> APY sits more than 100 basis points below the best nationally available rates, which top out around 4.15 to 4.20%</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.30% APY · No minimum · Backed by Amex" />
+        <VisitBrandCard brand={brand} tagline="3.00% APY · No minimum · Backed by Amex" />
       </section>
 
       {/* Overview */}
@@ -242,7 +242,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-mute mb-4">Look elsewhere if</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li>You want the highest APY available (Bask at 4.85% is 70 bps more)</li>
+              <li>You want the highest APY available (Bread near 3.95% leads the no-strings accounts)</li>
               <li>You need fast ACH transfers for emergency fund access</li>
               <li>You want your savings and credit card in one unified app (consider Discover)</li>
             </ul>
@@ -261,9 +261,9 @@ export default function Page() {
             <div className="col-span-1 text-right">ACH Speed</div>
           </div>
           {[
-            { name: "CIT Bank", apy: "4.25%*", min: "$5,000", ach: "1-3 days" },
-            { name: "Amex HYSA", apy: "4.15%", min: "$0", ach: "3-5 days", highlight: true },
-            { name: "Ally Bank", apy: "4.45%", min: "$0", ach: "1-3 days" },
+            { name: "CIT Bank", apy: "3.75%*", min: "$5,000", ach: "1-3 days" },
+            { name: "Amex HYSA", apy: "3.00%", min: "$0", ach: "3-5 days", highlight: true },
+            { name: "Ally Bank", apy: "3.00%", min: "$0", ach: "1-3 days" },
           ].map((row) => (
             <div
               key={row.name}
@@ -306,7 +306,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.30% APY · No minimum · Backed by Amex"
+          tagline="3.00% APY · No minimum · Backed by Amex"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

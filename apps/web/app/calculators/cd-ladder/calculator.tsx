@@ -16,12 +16,12 @@ interface RungSpec {
 
 // Realistic 2026 CD rate landscape, FDIC-insured no-fee category
 const RATE_TABLE: { months: number; apy: number; label: string }[] = [
-  { months: 6, apy: 5.10, label: "6 mo" },
-  { months: 12, apy: 4.90, label: "1 yr" },
-  { months: 24, apy: 4.65, label: "2 yr" },
-  { months: 36, apy: 4.40, label: "3 yr" },
-  { months: 48, apy: 4.25, label: "4 yr" },
-  { months: 60, apy: 4.20, label: "5 yr" },
+  { months: 6, apy: 4.30, label: "6 mo" },
+  { months: 12, apy: 4.20, label: "1 yr" },
+  { months: 24, apy: 4.05, label: "2 yr" },
+  { months: 36, apy: 4.00, label: "3 yr" },
+  { months: 48, apy: 3.95, label: "4 yr" },
+  { months: 60, apy: 4.00, label: "5 yr" },
 ];
 
 function buildRungs(numRungs: number, startMonths: number, endMonths: number): RungSpec[] {

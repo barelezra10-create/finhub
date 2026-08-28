@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: "Home Equity Loan vs HELOC: Which One Fits Your Project?",
   description:
-    "Home equity loan or HELOC? Fixed vs variable rates, draw periods, closing costs, mid-2026 rate ranges, and a simple decision framework based on how you will use the money.",
+    "Home equity loan or HELOC? Fixed vs variable rates, draw periods, closing costs, August 2026 rate ranges, and a simple decision framework based on how you will use the money.",
   alternates: { canonical: "/learn/home-equity-loan-vs-heloc" },
 };
 
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Which has lower rates in 2026, a HELOC or a home equity loan?",
     answer:
-      "They are unusually close. As of mid-2026, average HELOC rates run roughly 7.2 to 7.5% and average home equity loan rates roughly 7.4 to 8.1%, depending on the survey, your credit, and your loan-to-value ratio. HELOCs start slightly lower on average, but they are variable, so the rate moves with the prime rate. A home equity loan locks its rate for the full term. Your actual quotes matter more than national averages, so compare both from at least three lenders.",
+      "They are unusually close. As of August 2026, average HELOC rates run roughly 7.2 to 7.5% and average home equity loan rates roughly 7.4 to 8.1%, depending on the survey, your credit, and your loan-to-value ratio. HELOCs start slightly lower on average, but they are variable, so the rate moves with the prime rate. A home equity loan locks its rate for the full term. Your actual quotes matter more than national averages, so compare both from at least three lenders.",
   },
   {
     question: "How much equity do I need to qualify?",
@@ -51,7 +51,7 @@ export default function Page() {
     <article className="max-w-3xl mx-auto px-6 py-16">
       <ArticleSchema
         headline="Home equity loan vs HELOC: which one fits your project?"
-        description="Home equity loan or HELOC? Fixed vs variable rates, draw periods, closing costs, mid-2026 rate ranges, and a simple decision framework based on how you will use the money."
+        description="Home equity loan or HELOC? Fixed vs variable rates, draw periods, closing costs, August 2026 rate ranges, and a simple decision framework based on how you will use the money."
         slug="/learn/home-equity-loan-vs-heloc"
       />
       <BreadcrumbListSchema
@@ -87,7 +87,7 @@ export default function Page() {
           </li>
           <li>
             <a href="#rates-and-costs" className="u-link text-ink font-medium">
-              2. Rates and costs as of mid-2026
+              2. Rates and costs as of August 2026
             </a>
           </li>
           <li>
@@ -121,7 +121,7 @@ export default function Page() {
         home equity line of credit (HELOC), are often lumped together, but they behave very
         differently once you sign. One is a fixed installment loan; the other is a variable
         credit line with a two-act structure that surprises people a decade in. This guide
-        breaks down how each works, what they cost as of mid-2026, and a simple framework for
+        breaks down how each works, what they cost as of August 2026, and a simple framework for
         choosing based on the one question that matters most: do you know exactly how much you
         need, and when?
       </p>
@@ -167,10 +167,10 @@ export default function Page() {
       {/* SECTION 2 */}
       <section id="rates-and-costs" className="mb-14">
         <h2 className="font-display font-extrabold text-2xl tracking-tight mb-4">
-          Rates and costs as of mid-2026
+          Rates and costs as of August 2026
         </h2>
         <p className="text-mute leading-relaxed mb-4">
-          Rate surveys differ, but as of mid-2026 the picture looks roughly like this: average
+          Rate surveys differ, but as of August 2026 the picture looks roughly like this: average
           HELOC rates around 7.2 to 7.5% and average fixed home equity loan rates around 7.4
           to 8.1%, with the best pricing going to borrowers with credit scores above 740 and
           combined loan-to-value ratios under 70%. The two products are priced closer together
@@ -193,7 +193,7 @@ export default function Page() {
             },
             {
               title: "Both beat unsecured borrowing:",
-              body: "With average card APRs above 20% as of mid-2026, either product cuts the rate on carried debt by more than half. That is the honest appeal, and also the honest danger, covered in the risks section.",
+              body: "With average card APRs above 20% as of August 2026, either product cuts the rate on carried debt by more than half. That is the honest appeal, and also the honest danger, covered in the risks section.",
             },
           ].map((item, i) => (
             <li key={i} className="flex gap-3 text-sm leading-relaxed">
@@ -352,7 +352,7 @@ export default function Page() {
         <ul className="space-y-3">
           {[
             "A home equity loan is a fixed-rate lump sum with a fixed payment. A HELOC is a variable-rate credit line with a draw period, then a repayment period.",
-            "As of mid-2026 the products are priced unusually close: HELOCs roughly 7.2 to 7.5% on average, home equity loans roughly 7.4 to 8.1%, varying by credit and loan-to-value.",
+            "As of August 2026 the products are priced unusually close: HELOCs roughly 7.2 to 7.5% on average, home equity loans roughly 7.4 to 8.1%, varying by credit and loan-to-value.",
             "Most lenders cap total borrowing at 80 to 85% of home value and want a score of roughly 620+, with best pricing above 740.",
             "HELOC payment shock is real: interest-only draw payments can jump about 50% or more when amortization begins. Ask for the projected repayment-phase payment before signing.",
             "Known one-time cost: take the loan. Phased or uncertain costs: take the line. Debt consolidation: usually the loan, for its built-in discipline.",

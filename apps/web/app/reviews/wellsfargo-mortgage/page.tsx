@@ -80,7 +80,7 @@ export default function Page() {
                 Wells Fargo Home Lending Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function Page() {
             The Yourfirstmortgage program offers a notable feature: 3% down on a conventional loan with no income limit. Unlike DreaMaker at Chase or Home Insight at PNC, Yourfirstmortgage is not restricted to low-to-moderate income borrowers. Any first-time buyer who has not owned a home in the past three years can use it. The Dream. Plan. Home. grant of up to $5,000 adds cash assistance for LMI buyers on top of the down-payment flexibility.
           </p>
           <p>
-            The 7.02% APR puts Wells Fargo near the top of our cost table. For rate-sensitive borrowers, the gap vs. Marcus (6.79%) is 23 basis points, which on a $400,000 loan means roughly $63 more per month and $22,600 more over 30 years. The premium reflects the branch infrastructure and relationship banking model. Borrowers who value in-person service and already use Wells Fargo for banking can access relationship discounts that narrow the gap.
+            The 7.02% APR puts Wells Fargo near the top of our cost table. For rate-sensitive borrowers, the gap vs. Marcus (6.61%) is 23 basis points, which on a $400,000 loan means roughly $63 more per month and $22,600 more over 30 years. The premium reflects the branch infrastructure and relationship banking model. Borrowers who value in-person service and already use Wells Fargo for banking can access relationship discounts that narrow the gap.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "7.02%", note: "Conventional conforming" },
-            { product: "Yourfirstmortgage 30Y", apr: "7.02%", note: "3% down, no income limit" },
-            { product: "15-Year Fixed", apr: "6.55%", note: "Lower total interest" },
-            { product: "FHA 30Y Fixed", apr: "6.78%", note: "3.5% down minimum" },
-            { product: "VA 30Y Fixed", apr: "6.65%", note: "0% down for veterans" },
-            { product: "Jumbo 30Y Fixed", apr: "7.10%", note: "Competitive above $766K" },
+            { product: "30-Year Fixed", apr: "6.84%", note: "Conventional conforming" },
+            { product: "Yourfirstmortgage 30Y", apr: "6.84%", note: "3% down, no income limit" },
+            { product: "15-Year Fixed", apr: "6.37%", note: "Lower total interest" },
+            { product: "FHA 30Y Fixed", apr: "6.60%", note: "3.5% down minimum" },
+            { product: "VA 30Y Fixed", apr: "6.47%", note: "0% down for veterans" },
+            { product: "Jumbo 30Y Fixed", apr: "6.74%", note: "Competitive above $766K" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Wells Fargo Premier customers may receive rate discounts of 0.125 to 0.25 percentage points.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Wells Fargo Premier customers may receive rate discounts of 0.125 to 0.25 percentage points.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">U.S. Bank</div>
           </div>
           {[
-            { feature: "30Y APR", a: "7.02%", b: "6.95%", c: "7.05%" },
+            { feature: "30Y APR", a: "7.02%", b: "6.77%", c: "6.87%" },
             { feature: "First-time buyer program", a: "Yourfirstmortgage", b: "DreaMaker", c: "American Dream" },
             { feature: "No income cap", a: "Yes", b: "No (80% AMI)", c: "Varies" },
             { feature: "LMI grant", a: "$5,000", b: "$2,500", c: "Varies" },

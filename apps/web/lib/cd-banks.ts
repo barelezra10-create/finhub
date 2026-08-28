@@ -50,11 +50,11 @@ export const cdBanks: CdBank[] = [
       { term: "3 years", apy: "~3.75%" },
       { term: "5 years", apy: "~3.90%" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
-      "Brokered CD rates change daily with the bond market. The figures above are approximate ranges observed in mid-2026. Confirm live rates with your Edward Jones advisor or in your online account before buying.",
+      "Brokered CD rates change daily with the bond market. The figures above are approximate ranges observed in August 2026. Confirm live rates with your Edward Jones advisor or in your online account before buying.",
     compare: [
-      "The best nationally available 12-month CDs from online banks were paying around 4.10% APY in mid-2026, and the FDIC's national average for a 1-year CD was about 1.99%. Edward Jones lands in between: far better than a typical branch bank, noticeably behind the online leaders.",
+      "The best nationally available 12-month CDs from online banks were paying around 4.10% APY in August 2026, and the FDIC's national average for a 1-year CD was about 1.99%. Edward Jones lands in between: far better than a typical branch bank, noticeably behind the online leaders.",
       "Because these are brokered CDs, you can sell before maturity on the secondary market instead of paying an early withdrawal penalty. That flexibility can matter for larger ladders, but the sale price depends on rates at the time, so you can lose principal if rates have risen.",
     ],
     watchOut:
@@ -94,7 +94,7 @@ export const cdBanks: CdBank[] = [
     minDeposit: "$1,000 ($100 for fractional CDs)",
     intro: [
       "Fidelity runs one of the largest brokered CD marketplaces in the country. Instead of issuing its own CDs, it lists new-issue certificates from dozens of FDIC-insured banks, and you buy them inside your Fidelity brokerage account. Because many banks compete on the same shelf, Fidelity's top rates are usually close to the best in the market.",
-      "In mid-2026 the top new-issue rates at Fidelity ran from roughly 4.10% APY on a 1-year CD up to about 4.45% on a 5-year, with short 3-month paper around 4.30%. The standard minimum is $1,000, and Fidelity also offers fractional CDs with a $100 minimum.",
+      "In August 2026 the top new-issue rates at Fidelity ran from roughly 4.10% APY on a 1-year CD up to about 4.45% on a 5-year, with short 3-month paper around 4.30%. The standard minimum is $1,000, and Fidelity also offers fractional CDs with a $100 minimum.",
       "For savers who already keep a Fidelity account, this is one of the strongest CD options anywhere: competitive rates, wide term selection, and the ability to spread money across multiple issuing banks for extra FDIC coverage without opening new accounts.",
     ],
     rateRows: [
@@ -107,11 +107,11 @@ export const cdBanks: CdBank[] = [
       { term: "3 years", apy: "~4.25%" },
       { term: "5 years", apy: "~4.45%" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
-      "Brokered CD inventory and rates change daily. The figures above are the top new-issue rates observed in mid-2026; the exact banks and yields on the shelf will differ on any given day. Check the live marketplace at fidelity.com before buying.",
+      "Brokered CD inventory and rates change daily. The figures above are the top new-issue rates observed in August 2026; the exact banks and yields on the shelf will differ on any given day. Check the live marketplace at fidelity.com before buying.",
     compare: [
-      "Fidelity's top rates generally match or beat the best online bank CDs. The strongest nationally available 12-month bank CDs were paying around 4.10% APY in mid-2026, right where Fidelity's 1-year new issues sat, and Fidelity's longer terms often beat what online banks offer at 4 and 5 years.",
+      "Fidelity's top rates generally match or beat the best online bank CDs. The strongest nationally available 12-month bank CDs were paying around 4.10% APY in August 2026, right where Fidelity's 1-year new issues sat, and Fidelity's longer terms often beat what online banks offer at 4 and 5 years.",
       "Against the FDIC national average of roughly 1.99% for a 1-year CD, everything on Fidelity's shelf is a dramatic improvement. The real comparison is against other brokerages: Fidelity, Schwab, and Vanguard shelves usually carry similar inventory, so convenience should drive the choice.",
     ],
     watchOut:
@@ -151,7 +151,7 @@ export const cdBanks: CdBank[] = [
     minDeposit: "None",
     intro: [
       "Synchrony is an online-only bank best known for its high-yield savings account and store credit cards. Its CDs are traditional bank certificates: you open the account directly with Synchrony, interest compounds daily, and the CD auto-renews at maturity unless you act during the grace period.",
-      "In mid-2026 Synchrony's headline CD rates sat around 3.70% APY on a 12-month term, 3.60% on 3 years, and 3.75% on 5 years. There is no minimum deposit, which is rare for CDs and makes Synchrony practical for small ladders or first-time CD savers.",
+      "In August 2026 Synchrony's headline CD rates sat around 3.70% APY on a 12-month term, 3.60% on 3 years, and 3.75% on 5 years. There is no minimum deposit, which is rare for CDs and makes Synchrony practical for small ladders or first-time CD savers.",
       "Synchrony also offers a no-penalty CD and a bump-up CD. The no-penalty version pays slightly less in exchange for letting you withdraw the full balance after the first 6 days without any fee, a useful middle ground between a savings account and a locked CD.",
     ],
     rateRows: [
@@ -161,11 +161,11 @@ export const cdBanks: CdBank[] = [
       { term: "3 years", apy: "~3.60%" },
       { term: "5 years", apy: "~3.75%" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
-      "Rates are approximate mid-2026 figures and change with the market. Synchrony publishes live APYs for every term at synchrony.com; confirm there before opening.",
+      "Rates are approximate August 2026 figures and change with the market. Synchrony publishes live APYs for every term at synchrony.com; confirm there before opening.",
     compare: [
-      "Synchrony's CD rates are solid but not market-leading. The best nationally available 12-month CDs paid around 4.10% APY in mid-2026, roughly 40 basis points above Synchrony. On $25,000 over one year, that gap is about $100 of interest.",
+      "Synchrony's CD rates are solid but not market-leading. The best nationally available 12-month CDs paid around 4.10% APY in August 2026, roughly 40 basis points above Synchrony. On $25,000 over one year, that gap is about $100 of interest.",
       "Where Synchrony wins is flexibility: no minimum deposit, daily compounding, a genuine no-penalty option, and one login for CDs plus one of the better high-yield savings accounts. Against the FDIC 1-year national average of about 1.99%, it remains a strong mainstream choice.",
     ],
     watchOut:
@@ -212,11 +212,11 @@ export const cdBanks: CdBank[] = [
       { term: "7 days to 60 months (standard)", apy: "0.05%" },
       { term: "Promotional term (varies, ~12 months)", apy: "~3.50%" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
       "Truist promotional CD offers change often and can differ by state and branch. The standard 0.05% APY applies to non-promotional terms. Confirm the current promo terms at truist.com or a branch before opening.",
     compare: [
-      "The gap here is enormous. The best nationally available 12-month CDs paid around 4.10% APY in mid-2026. On a $25,000 deposit over one year, Truist's standard 0.05% earns about $13; a 4.10% online CD earns about $1,025.",
+      "The gap here is enormous. The best nationally available 12-month CDs paid around 4.10% APY in August 2026. On a $25,000 deposit over one year, Truist's standard 0.05% earns about $13; a 4.10% online CD earns about $1,025.",
       "Even Truist's best promotional rate has trailed the online leaders. Big branch banks price CDs this way because a large share of customers value the branch relationship and never comparison shop. There is no rule that your CD must live where your checking account does.",
     ],
     watchOut:
@@ -240,7 +240,7 @@ export const cdBanks: CdBank[] = [
       {
         question: "What should I do instead of a Truist CD?",
         answer:
-          "If you want a fixed rate, a 12-month CD from a top online bank paid around 4.10% APY in mid-2026 with FDIC insurance and a 10-minute online application. If you want liquidity, top high-yield savings accounts paid around 4.10 to 4.50%. Keep Truist for checking if you like it and let your savings earn elsewhere.",
+          "If you want a fixed rate, a 12-month CD from a top online bank paid around 4.10% APY in August 2026 with FDIC insurance and a 10-minute online application. If you want liquidity, top high-yield savings accounts paid around 4.10 to 4.50%. Keep Truist for checking if you like it and let your savings earn elsewhere.",
       },
     ],
   },
@@ -256,7 +256,7 @@ export const cdBanks: CdBank[] = [
     minDeposit: "$1,000",
     intro: [
       "USAA Federal Savings Bank serves military members, veterans, and their families. Its CDs come in terms from about 1 month to 7 years with a $1,000 minimum, and rates are tiered: featured terms carry competitive yields while off-peak terms pay much less.",
-      "In mid-2026, USAA's better CD rates ran roughly 3.75 to 4.25% APY on featured terms, while some short odd terms paid in the 2.50% range. That makes term selection matter more at USAA than at most banks; the difference between a featured term and the term next to it can be substantial.",
+      "In August 2026, USAA's better CD rates ran roughly 3.75 to 4.25% APY on featured terms, while some short odd terms paid in the 2.50% range. That makes term selection matter more at USAA than at most banks; the difference between a featured term and the term next to it can be substantial.",
       "For USAA members who value keeping banking, insurance, and investments under one roof, the featured terms are genuinely competitive. Just verify which terms carry the headline rate before you lock in.",
     ],
     rateRows: [
@@ -264,11 +264,11 @@ export const cdBanks: CdBank[] = [
       { term: "Odd terms (e.g. 7 months)", apy: "~2.50%" },
       { term: "Long terms (5-7 years)", apy: "varies, typically lower" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
       "USAA rates vary sharply by term and change with the market. The live table at usaa.com shows the current APY for every term; check which terms are featured before opening.",
     compare: [
-      "At the top of its featured range, USAA is competitive with the best online banks, which paid around 4.10% APY on 12-month CDs in mid-2026. Off the featured terms, USAA can pay half that, so the comparison depends entirely on picking the right term.",
+      "At the top of its featured range, USAA is competitive with the best online banks, which paid around 4.10% APY on 12-month CDs in August 2026. Off the featured terms, USAA can pay half that, so the comparison depends entirely on picking the right term.",
       "Against the FDIC 1-year national average of roughly 1.99%, USAA's featured terms are a clear win. Members should still compare against Navy Federal and PenFed, which frequently trade the top spot for military-affiliated savers.",
     ],
     watchOut:
@@ -308,7 +308,7 @@ export const cdBanks: CdBank[] = [
     minDeposit: "$1,000",
     intro: [
       "Charles Schwab sells brokered CDs through its CD OneSource marketplace: new-issue certificates from many FDIC-insured banks, purchased inside your Schwab brokerage account in $1,000 increments. Schwab itself does not set the rates; issuing banks compete on the shelf, which keeps yields near the top of the market.",
-      "In mid-2026, rates on Schwab's shelf ran roughly 4.00 to 4.50% APY depending on term, with the advertised new-issue terms concentrated between 3 months and 2 years. Inventory changes daily as banks add and pull offerings.",
+      "In August 2026, rates on Schwab's shelf ran roughly 4.00 to 4.50% APY depending on term, with the advertised new-issue terms concentrated between 3 months and 2 years. Inventory changes daily as banks add and pull offerings.",
       "Like all brokered CDs, these fit naturally if your money already lives at Schwab: one account, many issuing banks, easy laddering, and extra FDIC coverage by spreading across issuers.",
     ],
     rateRows: [
@@ -318,11 +318,11 @@ export const cdBanks: CdBank[] = [
       { term: "18 months", apy: "~4.05%" },
       { term: "2 years", apy: "~4.00-4.20%" },
     ],
-    ratesAsOf: "mid-2026",
+    ratesAsOf: "August 2026",
     ratesNote:
-      "Brokered CD rates and available terms change daily with the bond market. The figures above are approximate mid-2026 observations; check CD OneSource at schwab.com for live inventory before buying.",
+      "Brokered CD rates and available terms change daily with the bond market. The figures above are approximate August 2026 observations; check CD OneSource at schwab.com for live inventory before buying.",
     compare: [
-      "Schwab's shelf generally matches the best online bank CDs and beats them on short terms; 3-month paper around 4.40% APY was better than nearly any 3-month bank CD in mid-2026. Against the FDIC 1-year national average of about 1.99%, there is no contest.",
+      "Schwab's shelf generally matches the best online bank CDs and beats them on short terms; 3-month paper around 4.40% APY was better than nearly any 3-month bank CD in August 2026. Against the FDIC 1-year national average of about 1.99%, there is no contest.",
       "Schwab, Fidelity, and Vanguard marketplaces usually carry similar inventory at similar yields, so if you already have a brokerage account at one of them, that is the one to use. The convenience of your existing account outweighs a few basis points.",
     ],
     watchOut:

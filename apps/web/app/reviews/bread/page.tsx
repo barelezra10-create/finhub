@@ -13,9 +13,9 @@ import {
 const brand = getBrand("bread")!;
 
 export const metadata: Metadata = {
-  title: "Bread Savings Review: 4.75% APY, $100 Min, CDs Too (2026)",
+  title: "Bread Savings Review: 3.95% APY, $100 Min, CDs Too (2026)",
   description:
-    "Bread Savings pays 4.75% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one.",
+    "Bread Savings pays 3.95% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one.",
   alternates: { canonical: "/reviews/bread" },
 };
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Bread Savings Review (2026)"
-        description="Bread Savings pays 4.75% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one."
+        description="Bread Savings pays 3.95% APY on $100 minimum. Plus a strong CD lineup. Full review covering rates, fees, app quality, pros, cons, and who should open one."
         slug="/reviews/bread"
         brandName="Bread Savings"
         category="Savings Account"
-        apr="4.75"
+        apr="3.95"
         ratingValue={8.7}
         reviewCount={1}
       />
@@ -83,7 +83,7 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             Bread Savings offers{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.75% APY</span> on a $100 minimum deposit with no monthly fees, plus one of the strongest online CD lineups available today. Here is a full breakdown.
+            <span className="font-mono tabular font-semibold text-ink">3.95% APY</span> on a $100 minimum deposit with no monthly fees, plus one of the strongest online CD lineups available today. Here is a full breakdown.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
             By the Fintiex Rate Desk · Updated April 28, 2026
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY" value="4.75%" />
+            <Stat label="APY" value="3.95%" />
             <Stat label="Min Deposit" value="$100" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="8.7 / 10" />
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.75% APY, second highest in our tracked universe</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 3.95% APY, second highest in our tracked universe</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> No monthly fees</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Strong CD lineup spanning 3 months to 5 years</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Decent mobile app on iOS and Android</li>
@@ -133,7 +133,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="4.65% APY · No minimum · 100% online" />
+        <VisitBrandCard brand={brand} tagline="3.95% APY · $100 minimum · 100% online" />
       </section>
 
       {/* Overview */}
@@ -144,7 +144,7 @@ export default function Page() {
             Bread Savings is a division of Comenity Capital Bank, which itself is a subsidiary of Bread Financial Holdings (formerly known as Alliance Data Systems). The bank is based in Salt Lake City, Utah, and is chartered as a state-chartered industrial bank regulated by the Utah Department of Financial Institutions and the FDIC. While the Bread Financial name may not carry the same recognition as Goldman Sachs or Ally, the underlying FDIC membership and regulatory standing are equivalent.
           </p>
           <p>
-            The high-yield savings account pays 4.75% APY with a modest $100 minimum deposit and no monthly fees. Interest accrues daily and posts to your account monthly. In addition to the savings account, Bread offers CDs at competitive rates across multiple terms, making it one of the only online banks where you can build a complete savings ladder under one login. Terms range from 3 months to 60 months, and CD rates are frequently at or near the top of national surveys.
+            The high-yield savings account pays 3.95% APY with a modest $100 minimum deposit and no monthly fees. Interest accrues daily and posts to your account monthly. In addition to the savings account, Bread offers CDs at competitive rates across multiple terms, making it one of the only online banks where you can build a complete savings ladder under one login. Terms range from 3 months to 60 months, and CD rates are frequently at or near the top of national surveys.
           </p>
           <p>
             The mobile app is functional and better than Bask's web-only interface, though it lacks the refined UX of Ally or Marcus. You can initiate transfers, check balances, view transaction history, and manage CD renewals from the app. Customer support is available by phone and email, with reasonable response times reported by users.
@@ -157,7 +157,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            Bread Savings has tracked the Federal Reserve rate cycle since its rebranding in 2022. The bank consistently ranks in the top five HYSA providers by APY across most comparison sites. Rates moved steadily upward through 2022 and 2023 alongside Fed hikes, and have stabilized in the 4.50-4.75% range since Q1 2025. The current 4.75% reflects no significant deviation from the Fed funds effective rate trend, and is expected to remain competitive through 2026 unless the Fed accelerates easing.
+            Bread Savings has tracked the Federal Reserve rate cycle since its rebranding in 2022. The bank consistently ranks in the top five HYSA providers by APY across most comparison sites. Rates moved steadily upward through 2022 and 2023 alongside Fed hikes, and drifted down with Fed cuts through 2026. The current rate near 3.95% keeps Bread among the top-paying online savings accounts, and is expected to remain competitive unless the Fed accelerates easing.
           </p>
         </div>
       </section>
@@ -261,9 +261,9 @@ export default function Page() {
             <div className="col-span-1 text-right">CDs</div>
           </div>
           {[
-            { name: "Bask Bank", apy: "4.85%", min: "$0", cds: "No" },
-            { name: "Bread Savings", apy: "4.75%", min: "$100", cds: "Yes", highlight: true },
-            { name: "Marcus", apy: "4.50%", min: "$0", cds: "Yes" },
+            { name: "Bask Bank", apy: "3.75%", min: "$0", cds: "No" },
+            { name: "Bread Savings", apy: "3.95%", min: "$100", cds: "Yes", highlight: true },
+            { name: "Marcus", apy: "3.40%", min: "$0", cds: "Yes" },
           ].map((row) => (
             <div
               key={row.name}
@@ -305,7 +305,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="4.65% APY · No minimum · 100% online"
+          tagline="3.95% APY · $100 minimum · 100% online"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

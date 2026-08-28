@@ -28,7 +28,7 @@ const picks: LenderPick[] = [
     name: "Rocket Mortgage",
     brand: "rocket",
     tag: "Best online experience",
-    apr: "6.95%",
+    apr: "6.72%",
     minDown: "3% conventional, 3.5% FHA",
     bestFor: "First-time buyers who want a clean app, transparent pricing, and a fast close.",
     detail:
@@ -40,7 +40,7 @@ const picks: LenderPick[] = [
     name: "Better.com",
     brand: "better",
     tag: "Lowest closing cost",
-    apr: "6.85%",
+    apr: "6.62%",
     minDown: "3% conventional, 3.5% FHA",
     bestFor: "W-2 buyers who want a flat $1,995 lender fee and an online process.",
     detail:
@@ -52,7 +52,7 @@ const picks: LenderPick[] = [
     name: "Chase Home Lending",
     brand: "chase-mortgage",
     tag: "Best DPA program",
-    apr: "6.95%",
+    apr: "6.72%",
     minDown: "3% DreaMaker, 3.5% FHA",
     bestFor: "Income-eligible buyers who can stack Chase's $5,500 grant with state DPA.",
     detail:
@@ -64,7 +64,7 @@ const picks: LenderPick[] = [
     name: "loanDepot",
     brand: "loandepot",
     tag: "Best for FHA",
-    apr: "7.05%",
+    apr: "6.82%",
     minDown: "3.5% FHA",
     bestFor: "Buyers with credit scores in the 580 to 660 range who need FHA underwriting.",
     detail:
@@ -76,7 +76,7 @@ const picks: LenderPick[] = [
     name: "PNC Bank",
     brand: "pnc",
     tag: "Best community lending",
-    apr: "7.02%",
+    apr: "6.79%",
     minDown: "0% to 3%",
     bestFor: "Buyers in PNC's footprint who qualify for the bank's Community Loan or grant programs.",
     detail:
@@ -331,7 +331,7 @@ export default function Page() {
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
             <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              Ranked by approval rate, transparency on fees, and DPA program access for buyers under 100% area median income.
+              Ranked by approval rate, transparency on fees, and DPA program access for buyers under 100% area median income. APRs are representative estimates based on the current Freddie Mac average (August 2026); actual quotes vary by borrower.
             </p>
           </div>
         </div>

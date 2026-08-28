@@ -13,9 +13,9 @@ import {
 const brand = getBrand("cit")!;
 
 export const metadata: Metadata = {
-  title: "CIT Bank Platinum Savings Review: 4.25% APY ($5K Min) (2026)",
+  title: "CIT Bank Platinum Savings Review: 3.75% APY ($5K Min) (2026)",
   description:
-    "CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for, who to skip.",
+    "CIT Bank Platinum Savings pays 3.75% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for, who to skip.",
   alternates: { canonical: "/reviews/cit" },
 };
 
@@ -52,11 +52,11 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="CIT Bank Platinum Savings Review (2026)"
-        description="CIT Bank Platinum Savings pays 4.25% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for and who should look elsewhere."
+        description="CIT Bank Platinum Savings pays 3.75% APY but only on balances of $5,000 or more. Under that, you earn 0.25%. Full 2026 review: who it is for and who should look elsewhere."
         slug="/reviews/cit"
         brandName="CIT Bank"
         category="Savings Account"
-        apr="4.25"
+        apr="3.75"
         ratingValue={6.8}
         reviewCount={1}
       />
@@ -83,7 +83,7 @@ export default function Page() {
           </div>
           <p className="text-lg text-mute max-w-2xl leading-relaxed">
             CIT Bank Platinum Savings pays{" "}
-            <span className="font-mono tabular font-semibold text-ink">4.25% APY</span> on balances of $5,000 or more. Below that threshold, you earn 0.25%. Here is who this account makes sense for and who should look elsewhere.
+            <span className="font-mono tabular font-semibold text-ink">3.75% APY</span> on balances of $5,000 or more. Below that threshold, you earn 0.25%. Here is who this account makes sense for and who should look elsewhere.
           </p>
           <div className="mt-4 text-xs font-mono text-mute uppercase tracking-wider">
             By the Fintiex Rate Desk · Updated April 28, 2026
@@ -99,7 +99,7 @@ export default function Page() {
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
           <div className="chip chip-ink mb-6">TL;DR</div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat label="APY (≥$5K)" value="4.25%" />
+            <Stat label="APY (≥$5K)" value="3.75%" />
             <Stat label="APY (&lt;$5K)" value="0.25%" />
             <Stat label="Monthly Fee" value="$0" />
             <Stat label="Fintiex Score" value="6.8 / 10" />
@@ -113,7 +113,7 @@ export default function Page() {
           <div className="card p-7">
             <div className="chip chip-lime mb-5">Pros</div>
             <ul className="space-y-3 text-[0.9375rem]">
-              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 4.25% APY is competitive for balances above $5,000</li>
+              <li className="flex gap-3"><span className="text-mint font-bold">+</span> 3.75% APY is competitive for balances above $5,000</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> No monthly maintenance fees</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> FDIC insured via First Citizens BancShares</li>
               <li className="flex gap-3"><span className="text-mint font-bold">+</span> Solid CD lineup available alongside the savings account</li>
@@ -132,7 +132,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-(--max-w-page) mx-auto px-6 pb-12">
-        <VisitBrandCard brand={brand} tagline="Up to 4.85% APY · Buckets and savings goals built in" />
+        <VisitBrandCard brand={brand} tagline="3.75% APY on balances of $5,000 or more · No monthly fees" />
       </section>
 
       {/* Overview */}
@@ -143,10 +143,10 @@ export default function Page() {
             CIT Bank is a division of First Citizens BancShares, one of the largest family-controlled banks in the United States with total assets of approximately $217 billion as of Q4 2025. First Citizens BancShares acquired CIT Group in 2022, giving CIT Bank significantly larger institutional backing than it had as an independent entity. The bank is FDIC-insured and regulated by the Office of the Comptroller of the Currency as a national bank.
           </p>
           <p>
-            The Platinum Savings account has a critical structure that distinguishes it from most HYSA competitors: the 4.25% APY rate only applies to balances of $5,000 or more. For any amount below $5,000, the rate drops to 0.25%, which is roughly in line with a traditional brick-and-mortar savings account and well below what Bask, Bread, Marcus, Ally, SoFi, or Discover pay on any balance. This tiered rate structure makes the account fundamentally unsuitable for anyone who cannot maintain the $5,000 threshold.
+            The Platinum Savings account has a critical structure that distinguishes it from most HYSA competitors: the 3.75% APY rate only applies to balances of $5,000 or more. For any amount below $5,000, the rate drops to 0.25%, which is roughly in line with a traditional brick-and-mortar savings account and well below what Bask, Bread, Marcus, Ally, SoFi, or Discover pay on any balance. This tiered rate structure makes the account fundamentally unsuitable for anyone who cannot maintain the $5,000 threshold.
           </p>
           <p>
-            For savers with consistently large balances, the 4.25% APY is competitive, though not leading the market. CIT also offers a CD lineup with competitive rates, making it possible to pair the savings account with a CD ladder using the same institution. The mobile app, however, receives lower ratings than most HYSA competitors and has been described as functional but dated. Customer service is available by phone during business hours but does not match Discover's or Ally's 24/7 availability.
+            For savers with consistently large balances, the 3.75% APY is competitive, though not leading the market. CIT also offers a CD lineup with competitive rates, making it possible to pair the savings account with a CD ladder using the same institution. The mobile app, however, receives lower ratings than most HYSA competitors and has been described as functional but dated. Customer service is available by phone during business hours but does not match Discover's or Ally's 24/7 availability.
           </p>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function Page() {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">Rate History</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft">
           <p>
-            CIT Bank's Platinum Savings rate has tracked the Federal Reserve rate cycle since 2022, rising from near 0.50% to above 5.00% APY (on qualifying balances) during the peak of the Fed tightening cycle in late 2023. Rates have since declined to 4.25% following Fed cuts in 2024. The $5,000 minimum threshold for the top rate has remained in place throughout this period. CIT has maintained a competitive top-tier rate but has not led the HYSA market at any point during this rate cycle.
+            CIT Bank's Platinum Savings rate has tracked the Federal Reserve rate cycle since 2022, rising from near 0.50% to above 5.00% APY (on qualifying balances) during the peak of the Fed tightening cycle in late 2023. Rates have since declined to 3.75% following Fed cuts through 2026. The $5,000 minimum threshold for the top rate has remained in place throughout this period. CIT has maintained a competitive top-tier rate but has not led the HYSA market at any point during this rate cycle.
           </p>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function Page() {
             </li>
             <li className="flex justify-between border-b border-line pb-3">
               <span className="text-mute">APY on balances $5,000 and above</span>
-              <span className="font-mono tabular font-semibold">4.25%</span>
+              <span className="font-mono tabular font-semibold">3.75%</span>
             </li>
             <li className="flex justify-between border-b border-line pb-3">
               <span className="text-mute">Minimum opening deposit</span>
@@ -202,7 +202,7 @@ export default function Page() {
           <li className="list-disc ml-4">Visit cit.com and select Platinum Savings under the savings products section</li>
           <li className="list-disc ml-4">Complete identity verification with SSN and personal details</li>
           <li className="list-disc ml-4">Link an external bank account via routing and account number</li>
-          <li className="list-disc ml-4">Deposit at least $100 to open; deposit at least $5,000 to activate the 4.25% APY</li>
+          <li className="list-disc ml-4">Deposit at least $100 to open; deposit at least $5,000 to activate the 3.75% APY</li>
           <li className="list-disc ml-4">Download the CIT mobile app for account management</li>
         </ul>
       </section>
@@ -243,7 +243,7 @@ export default function Page() {
             <ul className="space-y-3 text-[0.9375rem]">
               <li>Your balance is below $5,000 (you will earn only 0.25%)</li>
               <li>You want a modern app experience with high ratings</li>
-              <li>You want a better rate on large balances (Bask pays 4.85% on any balance)</li>
+              <li>You want a top rate without a balance tier (Bread pays 3.95% on any balance)</li>
             </ul>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function Page() {
           </div>
           {[
             { name: "Discover", apy: "4.30%", min: "$0", app: "4.8" },
-            { name: "CIT Bank", apy: "4.25%", min: "$5,000", app: "4.0", highlight: true },
+            { name: "CIT Bank", apy: "3.75%", min: "$5,000", app: "4.0", highlight: true },
             { name: "Amex HYSA", apy: "4.15%", min: "$0", app: "4.2" },
           ].map((row) => (
             <div
@@ -304,7 +304,7 @@ export default function Page() {
         <VisitBrandCard
           brand={brand}
           headline={`Ready to open ${brand.name}?`}
-          tagline="Up to 4.85% APY · Buckets and savings goals built in"
+          tagline="3.75% APY on balances of $5,000 or more · No monthly fees"
           ctaLabel="Open account"
         />
         <div className="mt-6 flex flex-wrap gap-3">

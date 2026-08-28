@@ -28,7 +28,7 @@ const picks: LenderPick[] = [
     name: "loanDepot",
     brand: "loandepot",
     tag: "Highest LTV",
-    apr: "7.05%",
+    apr: "6.90%",
     maxLtv: "80% standard, 85% case-by-case",
     bestFor: "Owners pulling maximum equity for a down payment on a second property.",
     detail:
@@ -40,7 +40,7 @@ const picks: LenderPick[] = [
     name: "Better.com",
     brand: "better",
     tag: "Lowest closing cost",
-    apr: "7.08%",
+    apr: "6.93%",
     maxLtv: "80%",
     bestFor: "W-2 borrowers who want a fast online cash-out close at a flat fee.",
     detail:
@@ -52,7 +52,7 @@ const picks: LenderPick[] = [
     name: "Rocket Mortgage",
     brand: "rocket",
     tag: "Best for self-employed",
-    apr: "7.12%",
+    apr: "6.96%",
     maxLtv: "80%",
     bestFor: "Self-employed borrowers who need bank statement programs.",
     detail:
@@ -64,7 +64,7 @@ const picks: LenderPick[] = [
     name: "Chase Home Lending",
     brand: "chase-mortgage",
     tag: "Best relationship rate",
-    apr: "7.15%",
+    apr: "6.99%",
     maxLtv: "80%",
     bestFor: "Chase Private Client and Premier customers who get rate discounts.",
     detail:
@@ -76,7 +76,7 @@ const picks: LenderPick[] = [
     name: "PNC Bank",
     brand: "pnc",
     tag: "Best HELOC alternative",
-    apr: "7.20%",
+    apr: "7.03%",
     maxLtv: "80%",
     bestFor: "Borrowers comparing cash-out against a fixed-rate HELOC stack.",
     detail:
@@ -165,9 +165,9 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "Cash-out 30Y avg APR", value: "7.10%", caption: "Avg of 14 lenders" },
-              { label: "Standard refi 30Y", value: "6.93%", caption: "For comparison" },
-              { label: "Cash-out premium", value: "0.17pt", caption: "Above standard refi" },
+              { label: "Cash-out 30Y avg APR", value: "6.95%", caption: "Representative estimate" },
+              { label: "Standard refi 30Y", value: "6.82%", caption: "For comparison" },
+              { label: "Cash-out premium", value: "0.13pt", caption: "Above standard refi" },
               { label: "Max LTV (typical)", value: "80%", caption: "VA goes to 100%" },
             ].map((tile) => (
               <div key={tile.label} className="card p-5">
@@ -179,6 +179,9 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-mute mt-6 leading-relaxed">
+            Rates as of August 2026. Representative estimates based on the current Freddie Mac PMMS average (30Y purchase 6.67%); actual quotes vary by borrower.
+          </p>
         </div>
       </section>
 
@@ -198,13 +201,13 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Scenario 1: Pay off high-rate debt</h3>
               <p className="text-mute">
-                You owe $40,000 across credit cards at 22% APR. Monthly minimums are $1,200. A cash-out at 7.10% replaces that with about $270 in monthly interest on the additional $40,000 of mortgage. The savings: roughly $11,000 in year-one interest. The risk: if you refill the cards, you doubled your debt. The only people who should run this play are those who close the cards or freeze them.
+                You owe $40,000 across credit cards at 22% APR. Monthly minimums are $1,200. A cash-out at 6.95% replaces that with about $232 in monthly interest on the additional $40,000 of mortgage. The savings: roughly $6,000 in year-one interest. The risk: if you refill the cards, you doubled your debt. The only people who should run this play are those who close the cards or freeze them.
               </p>
             </div>
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Scenario 2: Renovation that adds value</h3>
               <p className="text-mute">
-                A $60,000 kitchen remodel that boosts home value by $80,000 funded at 7.10% mortgage rates beats funding at 9% personal loan rates or 22% credit cards. The bonus: per the 2017 Tax Cuts and Jobs Act, the interest is deductible if the cash funds substantial improvements to the home. Get a written appraisal estimate before the project, not after.
+                A $60,000 kitchen remodel that boosts home value by $80,000 funded at 6.95% mortgage rates beats funding at 9% personal loan rates or 22% credit cards. The bonus: per the 2017 Tax Cuts and Jobs Act, the interest is deductible if the cash funds substantial improvements to the home. Get a written appraisal estimate before the project, not after.
               </p>
             </div>
             <div>
@@ -216,7 +219,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">When cash-out loses</h3>
               <p className="text-mute">
-                If your existing first-lien rate is below 5.5%, you almost always lose money on a cash-out. Replacing a 4.0% first mortgage with a 7.10% cash-out adds tens of thousands in interest over the life of the loan, even after the savings on the cashed-out amount. A HELOC at 8.5% is usually cheaper because it leaves the cheap first mortgage untouched.
+                If your existing first-lien rate is below 5.5%, you almost always lose money on a cash-out. Replacing a 4.0% first mortgage with a 6.95% cash-out adds tens of thousands in interest over the life of the loan, even after the savings on the cashed-out amount. A HELOC at about 7.3% is usually cheaper because it leaves the cheap first mortgage untouched.
               </p>
             </div>
           </div>

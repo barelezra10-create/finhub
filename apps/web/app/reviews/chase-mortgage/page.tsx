@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Chase Home Lending Mortgage Review (2026)",
   description:
-    "Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates and fees.",
+    "Chase Home Lending offers a 6.77% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates and fees.",
   alternates: { canonical: "/reviews/chase-mortgage" },
 };
 
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Chase Home Lending Review"
-        description="Chase Home Lending offers a 6.95% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates, fees, and eligibility."
+        description="Chase Home Lending offers a 6.77% 30-year APR with the DreaMaker 3% down program and discounts for existing Chase customers. Full 2026 review of rates, fees, and eligibility."
         slug="/reviews/chase-mortgage"
         brandName="Chase Home Lending"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 Chase Home Lending Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.95%" />
+            <Stat label="30Y APR" value="6.77%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3% DreaMaker" />
             <Stat label="Fintiex score" value="7.9/10" />
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What to watch</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.95% is above digital-first competitors by 16 to 26 basis points</li>
+              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.77% is above digital-first competitors by 16 to 26 basis points</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Processing can be slower than digital lenders; 35 to 50 days to close is common</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Origination fees apply and can add to total cost</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Rate discounts require maintaining qualifying Chase account balances</li>
@@ -141,7 +141,7 @@ export default function Page() {
             The DreaMaker program is Chase&rsquo;s most notable product for buyers without large down payments. It allows 3% down on conventional loans with reduced private mortgage insurance premiums compared to standard PMI, and includes a $2,500 homebuyer grant for eligible borrowers in select census tracts. For qualifying low-to-moderate income buyers, the total cost of entry is meaningfully lower than a standard conventional purchase.
           </p>
           <p>
-            The 6.95% APR sits at the higher end of our table, reflecting the cost structure of a large bank with extensive branch infrastructure. Existing Chase Private Client customers can access rate discounts that close the gap with digital competitors, but those discounts require maintaining significant deposit balances. For rate-only comparison, Chase is not the cheapest option; for service reliability and multi-product relationship banking, it is hard to beat.
+            The 6.77% APR sits at the higher end of our table, reflecting the cost structure of a large bank with extensive branch infrastructure. Existing Chase Private Client customers can access rate discounts that close the gap with digital competitors, but those discounts require maintaining significant deposit balances. For rate-only comparison, Chase is not the cheapest option; for service reliability and multi-product relationship banking, it is hard to beat.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.95%", note: "Conventional conforming" },
-            { product: "DreaMaker 30Y", apr: "6.95%", note: "3% down, reduced PMI" },
-            { product: "15-Year Fixed", apr: "6.42%", note: "Faster equity build" },
-            { product: "FHA 30Y Fixed", apr: "6.70%", note: "3.5% down minimum" },
-            { product: "VA 30Y Fixed", apr: "6.58%", note: "0% down for veterans" },
-            { product: "Jumbo 30Y Fixed", apr: "7.00%", note: "Above $766,550" },
+            { product: "30-Year Fixed", apr: "6.77%", note: "Conventional conforming" },
+            { product: "DreaMaker 30Y", apr: "6.77%", note: "3% down, reduced PMI" },
+            { product: "15-Year Fixed", apr: "6.24%", note: "Faster equity build" },
+            { product: "FHA 30Y Fixed", apr: "6.52%", note: "3.5% down minimum" },
+            { product: "VA 30Y Fixed", apr: "6.40%", note: "0% down for veterans" },
+            { product: "Jumbo 30Y Fixed", apr: "6.82%", note: "Above $766,550" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Chase Private Client customers may qualify for rate discounts of 0.125 to 0.25 percentage points.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Chase Private Client customers may qualify for rate discounts of 0.125 to 0.25 percentage points.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">PNC</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.95%", b: "7.02%", c: "6.99%" },
+            { feature: "30Y APR", a: "6.77%", b: "7.02%", c: "6.81%" },
             { feature: "Low-down program", a: "DreaMaker 3%", b: "Yourfirstmortgage 3%", c: "Home Insight 3%" },
             { feature: "Buyer grant", a: "$2,500", b: "$5,000 (LMI)", c: "Varies" },
             { feature: "Branches", a: "5,000+", b: "4,500+", c: "2,600+" },

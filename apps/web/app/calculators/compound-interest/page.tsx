@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   {
     question: "What APY should I use?",
     answer:
-      "For a high-yield savings account or money market, plug in the current rate. As of early 2026 the top HYSAs pay 4.50% to 4.85% APY. For long-horizon investing in a diversified index fund portfolio, the historical real return of the S&P 500 is roughly 7% per year after inflation, or about 10% nominal. Pick what matches your actual account or strategy.",
+      "For a high-yield savings account or money market, plug in the current rate. As of August 2026 the top HYSAs pay about 3.40% to 3.95% APY. For long-horizon investing in a diversified index fund portfolio, the historical real return of the S&P 500 is roughly 7% per year after inflation, or about 10% nominal. Pick what matches your actual account or strategy.",
   },
   {
     question: "Is this the same as my brokerage growth?",
@@ -125,7 +125,7 @@ export default function Page() {
               Automate the monthly contribution. Set an automatic transfer to fire on payday. Hand-keying a deposit every month means you will skip months. Skipped months break the compounding curve. The Federal Reserve&rsquo;s Survey of Consumer Finances shows that automated savers reach long-term goals roughly 3x more often than manual savers.
             </p>
             <p>
-              Match the account to the time horizon. For 0 to 12 month money, use a high-yield savings account at 4.5% to 4.85% APY. For 1 to 5 year money, a CD ladder locks in current rates. For 5+ year money in a tax-advantaged account, equity index funds historically beat fixed-rate products by a wide margin, with volatility as the trade-off.
+              Match the account to the time horizon. For 0 to 12 month money, use a high-yield savings account at about 3.4% to 3.95% APY. For 1 to 5 year money, a CD ladder locks in current rates. For 5+ year money in a tax-advantaged account, equity index funds historically beat fixed-rate products by a wide margin, with volatility as the trade-off.
             </p>
             <p>
               Capture the employer 401(k) match first. If your employer matches 50% of contributions up to 6% of salary, that is an instant 50% return on every dollar you contribute up to that cap. No fixed-rate product or market return matches it. The match is usually the highest-return investment available to you, period.

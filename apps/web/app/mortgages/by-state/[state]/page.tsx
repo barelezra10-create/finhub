@@ -158,10 +158,10 @@ function fmtPct(n: number): string {
   return n.toFixed(2) + "%";
 }
 
-const BASE_30Y = 6.85;
-const BASE_15Y = 6.10;
-const BASE_FHA = 6.65;
-const BASE_JUMBO = 7.05;
+const BASE_30Y = 6.67;
+const BASE_15Y = 5.96;
+const BASE_FHA = 6.47;
+const BASE_JUMBO = 6.87;
 
 export default async function StateMortgagePage(
   { params }: { params: Promise<{ state: string }> }
@@ -277,7 +277,7 @@ export default async function StateMortgagePage(
           <div className="relative">
             <div className="flex items-center gap-3 mb-6">
               <span className="chip chip-lime">{state.abbr} Rates</span>
-              <span className="text-xs font-mono text-mute">Updated weekly. Source: Freddie Mac PMMS plus state adjustments.</span>
+              <span className="text-xs font-mono text-mute">Rates as of August 2026. Representative estimates from the Freddie Mac PMMS average plus state adjustments; actual quotes vary.</span>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div>

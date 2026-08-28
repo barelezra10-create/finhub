@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "loanDepot Mortgage Review (2026)",
   description:
-    "loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, and best fit.",
+    "loanDepot offers a 6.74% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, and best fit.",
   alternates: { canonical: "/reviews/loandepot" },
 };
 
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="loanDepot Mortgage Review"
-        description="loanDepot offers a 6.92% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, eligibility, and who should apply."
+        description="loanDepot offers a 6.74% 30-year APR with a hybrid digital and branch model. Strong cash-out refi program. Full 2026 review of rates, fees, eligibility, and who should apply."
         slug="/reviews/loandepot"
         brandName="loanDepot"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 loanDepot Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.92%" />
+            <Stat label="30Y APR" value="6.74%" />
             <Stat label="Min credit score" value="620" />
             <Stat label="Min down" value="3%" />
             <Stat label="Fintiex score" value="7.7/10" />
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What to watch</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR of 6.92% is above Marcus and Better; total cost can be higher</li>
+              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR of 6.74% is above Marcus and Better; total cost can be higher</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Customer reviews are mixed; some complaints about processing delays</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Company experienced financial restructuring in 2023 to 2024, which affected service</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Mello app is functional but not as polished as Rocket or Better</li>
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.92%", note: "Conventional conforming" },
-            { product: "15-Year Fixed", apr: "6.38%", note: "Lower total interest" },
-            { product: "FHA 30Y Fixed", apr: "6.65%", note: "3.5% down minimum" },
-            { product: "VA 30Y Fixed", apr: "6.52%", note: "0% down for eligible" },
-            { product: "Cash-Out Refi 30Y", apr: "7.05%", note: "Up to 80% LTV" },
-            { product: "Jumbo 30Y Fixed", apr: "7.10%", note: "Above conforming limits" },
+            { product: "30-Year Fixed", apr: "6.74%", note: "Conventional conforming" },
+            { product: "15-Year Fixed", apr: "6.20%", note: "Lower total interest" },
+            { product: "FHA 30Y Fixed", apr: "6.47%", note: "3.5% down minimum" },
+            { product: "VA 30Y Fixed", apr: "6.34%", note: "0% down for eligible" },
+            { product: "Cash-Out Refi 30Y", apr: "6.87%", note: "Up to 80% LTV" },
+            { product: "Jumbo 30Y Fixed", apr: "6.74%", note: "Above conforming limits" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Actual rate varies by credit profile, LTV, loan type, and market.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Actual rate varies by credit profile, LTV, loan type, and market.</p>
       </section>
 
       {/* FEES */}
@@ -263,7 +263,7 @@ export default function Page() {
             <h2 className="font-display font-bold text-xl mb-4 tracking-tight">May not be the right fit if</h2>
             <ul className="space-y-2 text-[1.0rem] leading-relaxed text-ink-soft">
               <li>You want the absolute lowest 30-year rate: Marcus and Better are ahead</li>
-              <li>You are rate-sensitive and the 6.92% APR exceeds your budget target</li>
+              <li>You are rate-sensitive and the 6.74% APR exceeds your budget target</li>
               <li>You want the most polished all-digital experience without branch complexity</li>
             </ul>
           </div>
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">Chase</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.92%", b: "6.89%", c: "6.95%" },
+            { feature: "30Y APR", a: "6.74%", b: "6.71%", c: "6.77%" },
             { feature: "Cash-out refi", a: "Strong", b: "Good", c: "Good" },
             { feature: "Min FICO", a: "620", b: "580 (FHA)", c: "620" },
             { feature: "Branches", a: "200+", b: "None", c: "5,000+" },

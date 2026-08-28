@@ -2,15 +2,27 @@
   "slug": "upstart-personal-loan",
   "lender": "Upstart",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 7.4, "max": 35.99 },
+  "apr_range": {
+    "min": 6.3,
+    "max": 35.99
+  },
   "loan_amount_min": 1000,
   "loan_amount_max": 50000,
-  "repayment_terms_months": [36, 60],
-  "origination_fee": { "min": 0, "max": 12 },
+  "repayment_terms_months": [
+    36,
+    60
+  ],
+  "origination_fee": {
+    "min": 0,
+    "max": 12
+  },
   "prepayment_penalty": false,
   "late_fee": "$15 or 5% of past due amount (whichever is greater)",
   "funding_speed": "1 business day",
-  "credit_score_required": { "min": 300, "recommended": 580 },
+  "credit_score_required": {
+    "min": 300,
+    "recommended": 580
+  },
   "best_for": "Thin credit file, recent graduates",
   "perks": [
     "Uses AI to evaluate non-FICO factors: education, job history",
@@ -26,5 +38,5 @@
   ],
   "application_url": "https://www.upstart.com/personal-loans",
   "rating": 4.2,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-08-18"
 }

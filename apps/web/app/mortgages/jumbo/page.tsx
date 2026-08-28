@@ -28,7 +28,7 @@ const picks: LenderPick[] = [
     name: "Chase Home Lending",
     brand: "chase-mortgage",
     tag: "Best private client",
-    apr: "7.06%",
+    apr: "6.80%",
     loanLimit: "Up to $30M",
     bestFor: "Chase Private Client members with $250K+ in deposits or investments.",
     detail:
@@ -40,7 +40,7 @@ const picks: LenderPick[] = [
     name: "Wells Fargo Home Lending",
     brand: "wellsfargo-mortgage",
     tag: "Best for asset-heavy",
-    apr: "7.12%",
+    apr: "6.88%",
     loanLimit: "Up to $20M",
     bestFor: "Borrowers with significant non-W-2 income or asset depletion qualification.",
     detail:
@@ -52,7 +52,7 @@ const picks: LenderPick[] = [
     name: "Rocket Mortgage",
     brand: "rocket",
     tag: "Best online jumbo",
-    apr: "7.18%",
+    apr: "6.89%",
     loanLimit: "Up to $3M",
     bestFor: "W-2 borrowers who want a fully online jumbo close.",
     detail:
@@ -64,7 +64,7 @@ const picks: LenderPick[] = [
     name: "U.S. Bank",
     brand: "usbank",
     tag: "Best for relationship pricing",
-    apr: "7.21%",
+    apr: "6.92%",
     loanLimit: "Up to $5M",
     bestFor: "Existing U.S. Bank customers with linked deposit accounts.",
     detail:
@@ -76,7 +76,7 @@ const picks: LenderPick[] = [
     name: "loanDepot",
     brand: "loandepot",
     tag: "Best for cash-out jumbo",
-    apr: "7.24%",
+    apr: "6.95%",
     loanLimit: "Up to $4M",
     bestFor: "Owners with significant equity who need to cash out above conforming limits.",
     detail:
@@ -165,9 +165,9 @@ export default function Page() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "Jumbo 30Y avg APR", value: "7.18%", caption: "Loan above $766,550" },
-              { label: "Conforming 30Y", value: "6.85%", caption: "For comparison" },
-              { label: "Jumbo spread", value: "0.33pt", caption: "Above conforming" },
+              { label: "Jumbo 30Y avg APR", value: "6.88%", caption: "Loan above conforming limit" },
+              { label: "Conforming 30Y", value: "6.67%", caption: "Freddie Mac PMMS, Aug 2026" },
+              { label: "Jumbo spread", value: "0.21pt", caption: "Above conforming" },
               { label: "Conforming limit", value: "$766,550", caption: "FHFA baseline 2026" },
             ].map((tile) => (
               <div key={tile.label} className="card p-5">
@@ -179,6 +179,9 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-mute mt-6 leading-relaxed">
+            Rates as of August 2026. Representative estimates based on the current Freddie Mac PMMS average plus a typical jumbo spread; actual quotes vary by borrower.
+          </p>
         </div>
       </section>
 
@@ -210,7 +213,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">The rate spread, then and now</h3>
               <p className="text-mute">
-                For most of the post-2008 era, jumbos carried a 0.25 to 0.50 point premium over conforming. In 2024 and 2025 the spread inverted at some lenders, with jumbos pricing below conforming for relationship clients. As of May 2026 the average spread is back to about 0.33 points but private bank pricing for high-net-worth clients can still beat conforming.
+                For most of the post-2008 era, jumbos carried a 0.25 to 0.50 point premium over conforming. In 2024 and 2025 the spread inverted at some lenders, with jumbos pricing below conforming for relationship clients. As of August 2026 the average spread is back to about 0.2 points but private bank pricing for high-net-worth clients can still beat conforming.
               </p>
             </div>
             <div>
@@ -237,7 +240,7 @@ export default function Page() {
             </div>
             <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
               <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-                Ranked by APR plus relationship pricing on a $1.2M jumbo at 80% LTV with a 760 FICO and 12 months reserves.
+                Ranked by APR plus relationship pricing on a $1.2M jumbo at 80% LTV with a 760 FICO and 12 months reserves. APRs are representative estimates based on the current Freddie Mac average; actual quotes vary by borrower.
               </p>
             </div>
           </div>

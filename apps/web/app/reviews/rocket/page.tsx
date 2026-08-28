@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Rocket Mortgage Review (2026)",
   description:
-    "Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong app, and great support for complex loans.",
+    "Rocket Mortgage is the largest US mortgage originator with a 6.71% 30-year APR, FHA access at 580 FICO, strong app, and great support for complex loans.",
   alternates: { canonical: "/reviews/rocket" },
 };
 
@@ -52,7 +52,7 @@ export default function Page() {
     <article className="bg-bg">
       <FinancialProductSchema
         name="Rocket Mortgage Review"
-        description="Rocket Mortgage is the largest US mortgage originator with a 6.89% 30-year APR, FHA access at 580 FICO, strong mobile app, and best-in-class support for complex loan situations."
+        description="Rocket Mortgage is the largest US mortgage originator with a 6.71% 30-year APR, FHA access at 580 FICO, strong mobile app, and best-in-class support for complex loan situations."
         slug="/reviews/rocket"
         brandName="Rocket Mortgage"
         category="Mortgage"
@@ -80,13 +80,13 @@ export default function Page() {
                 Rocket Mortgage Review
               </h1>
               <div className="text-sm text-mute font-mono uppercase tracking-wider mt-3">
-                Updated April 2026 · By the Fintiex Rate Desk
+                Updated August 2026 · By the Fintiex Rate Desk
               </div>
             </div>
           </div>
 
           <div className="card-flush p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat label="30Y APR" value="6.89%" />
+            <Stat label="30Y APR" value="6.71%" />
             <Stat label="Min credit score" value="580 (FHA)" />
             <Stat label="Min down" value="3.5% FHA" />
             <Stat label="Fintiex score" value="8.3/10" />
@@ -114,7 +114,7 @@ export default function Page() {
           <div className="card p-7">
             <h2 className="font-display font-bold text-xl mb-5 tracking-tight">What to watch</h2>
             <ul className="space-y-3 text-[1.0rem] leading-relaxed">
-              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.89% is higher than digital-only competitors like Marcus (6.79%) and Better (6.85%)</li>
+              <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>30Y APR at 6.71% is higher than digital-only competitors like Marcus (6.61%) and Better (6.67%)</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Origination fees vary by product and can add $1,000 to $3,000 to closing costs</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>No physical branch network for in-person consultations</li>
               <li className="flex gap-3"><span className="chip chip-mute shrink-0">-</span>Aggressive follow-up from sales team after initial inquiry</li>
@@ -138,7 +138,7 @@ export default function Page() {
             Rocket Mortgage (formerly Quicken Loans) is the largest residential mortgage originator in the United States by volume. Based in Detroit and part of Rocket Companies, it funded more than $125 billion in mortgages in 2023. That scale matters because it means Rocket has underwriting experience with virtually every loan scenario you can present, from straightforward W-2 purchase to complex self-employed jumbo.
           </p>
           <p>
-            The 30-year APR of 6.89% is competitive but not the lowest on our table. The gap vs. Marcus (6.79%) is 10 basis points, which on a $400,000 loan translates to about $27 per month and $9,800 over 30 years. That premium pays for something: dedicated loan advisor support, wider loan product availability, and a proven track record of closing on time. For borrowers with complex situations, the support infrastructure often justifies the cost.
+            The 30-year APR of 6.71% is competitive but not the lowest on our table. The gap vs. Marcus (6.61%) is 10 basis points, which on a $400,000 loan translates to about $27 per month and $9,800 over 30 years. That premium pays for something: dedicated loan advisor support, wider loan product availability, and a proven track record of closing on time. For borrowers with complex situations, the support infrastructure often justifies the cost.
           </p>
           <p>
             The mobile app is widely regarded as the best in the mortgage industry. Borrowers can manage the entire process on a phone: uploading documents, checking status, communicating with the loan team, and signing disclosures. The Verified Approval program offers a commitment letter backed by verified income and assets, which carries more weight with sellers than a standard pre-approval in competitive markets.
@@ -159,12 +159,12 @@ export default function Page() {
             <div className="text-right">Notes</div>
           </div>
           {[
-            { product: "30-Year Fixed", apr: "6.89%", note: "Conventional conforming" },
-            { product: "15-Year Fixed", apr: "6.35%", note: "Lower total interest" },
-            { product: "FHA 30Y Fixed", apr: "6.60%", note: "580 FICO min, 3.5% down" },
-            { product: "VA 30Y Fixed", apr: "6.45%", note: "0% down, no PMI" },
-            { product: "Jumbo 30Y Fixed", apr: "6.95%", note: "Strong jumbo product" },
-            { product: "7/1 ARM", apr: "6.55%", note: "Adjusts after 7 years" },
+            { product: "30-Year Fixed", apr: "6.71%", note: "Conventional conforming" },
+            { product: "15-Year Fixed", apr: "6.17%", note: "Lower total interest" },
+            { product: "FHA 30Y Fixed", apr: "6.42%", note: "580 FICO min, 3.5% down" },
+            { product: "VA 30Y Fixed", apr: "6.27%", note: "0% down, no PMI" },
+            { product: "Jumbo 30Y Fixed", apr: "6.77%", note: "Strong jumbo product" },
+            { product: "7/1 ARM", apr: "6.37%", note: "Adjusts after 7 years" },
           ].map((r, i, arr) => (
             <div key={r.product} className={`grid grid-cols-3 px-6 py-4 items-center text-sm ${i < arr.length - 1 ? "border-b border-line-soft" : ""}`}>
               <div className="font-medium">{r.product}</div>
@@ -173,7 +173,7 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="text-xs text-mute mt-3 font-mono">Rates as of April 2026. Rate depends on credit profile, LTV, loan type, and property location.</p>
+        <p className="text-xs text-mute mt-3 font-mono">Representative rates as of August 2026, estimated from the current Freddie Mac market average. Rate depends on credit profile, LTV, loan type, and property location.</p>
       </section>
 
       {/* FEES */}
@@ -284,7 +284,7 @@ export default function Page() {
             <div className="text-center">loanDepot</div>
           </div>
           {[
-            { feature: "30Y APR", a: "6.89%", b: "6.79%", c: "6.92%" },
+            { feature: "30Y APR", a: "6.71%", b: "6.61%", c: "6.74%" },
             { feature: "Origination fee", a: "Varies", b: "$0", c: "Varies" },
             { feature: "Min FICO (FHA)", a: "580", b: "N/A", c: "620" },
             { feature: "VA loans", a: "Yes", b: "No", c: "Yes" },

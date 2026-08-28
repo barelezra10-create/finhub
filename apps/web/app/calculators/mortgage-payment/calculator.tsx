@@ -19,7 +19,7 @@ function monthlyPayment(principal: number, annualRate: number, termYears: number
 export function Calculator() {
   const [homePrice, setHomePrice] = useState(400000);
   const [downPct, setDownPct] = useState(20);
-  const [rate, setRate] = useState(6.85);
+  const [rate, setRate] = useState(6.67);
   const [termYears, setTermYears] = useState(30);
 
   const result = useMemo(() => {
