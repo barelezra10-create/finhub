@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { adminAuthorized } from "@/lib/analytics/core";
+import { ADMIN_COOKIE, validSession } from "@/lib/analytics/auth";
 
 // Hosts that should 301 to fintiex.com with translated paths.
 // Used when thecreditcardpick.com (and www) are mounted as a custom
@@ -80,10 +80,10 @@ function translatePath(pathname: string): string {
   return "/";
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === "/admin" || request.nextUrl.pathname.startsWith("/admin/")) {
-    if (!adminAuthorized(request.headers.get("authorization"))) {
-      return new NextResponse("Admin authentication required", { status: 401, headers: { "WWW-Authenticate": 'Basic realm="Fintiex admin", charset="UTF-8"', "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } });
+    if (request.nextUrl.pathname !== "/admin/login" && !await validSession(request.cookies.get(ADMIN_COOKIE)?.value)) {
+      return NextResponse.redirect(new URL("/admin/login",process.env.ANALYTICS_ORIGIN || request.url), { status: 303, headers: { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } });
     }
     const response = NextResponse.next();
     response.headers.set("Cache-Control", "private, no-store");

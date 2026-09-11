@@ -21,7 +21,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/learn" className="hidden sm:inline-flex pill pill-ghost">
+          <Link href="/admin/login" className="inline-flex pill pill-ghost">
             Sign in
           </Link>
           <Link href="/calculators" className="pill pill-ink">

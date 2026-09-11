@@ -1,13 +1,6 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { createHmac } from "node:crypto";
 
 export const BOT = /bot|crawler|spider|headless|lighthouse|preview|facebookexternalhit|curl|wget|python|monitor|uptime/i;
-export function adminAuthorized(header: string | null) {
-  const password = process.env.ANALYTICS_ADMIN_PASSWORD;
-  if (!password || password.length < 20 || !header?.startsWith("Basic ")) return false;
-  const given = Buffer.from(header.slice(6), "base64");
-  const expected = Buffer.from(`admin:${password}`);
-  return given.length === expected.length && timingSafeEqual(given, expected);
-}
 export function cleanPath(value: unknown): string | null {
   if (typeof value !== "string" || value.length > 400 || !/^\/[a-zA-Z0-9/_-]*$/.test(value)) return null;
   if (/^\/(admin|api|_next)(\/|$)/.test(value)) return null;

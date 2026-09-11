@@ -11,3 +11,13 @@ CREATE TABLE IF NOT EXISTS fintiex_analytics (
 );
 CREATE INDEX IF NOT EXISTS fintiex_analytics_time ON fintiex_analytics(created_at);
 CREATE INDEX IF NOT EXISTS fintiex_analytics_visitor_time ON fintiex_analytics(visitor, created_at);
+CREATE TABLE IF NOT EXISTS fintiex_admin_sessions (
+  token_hash char(64) PRIMARY KEY,
+  credential_hash char(64) NOT NULL,
+  expires_at timestamptz NOT NULL
+);
+CREATE TABLE IF NOT EXISTS fintiex_admin_login_attempts (
+  key char(64) PRIMARY KEY,
+  attempts integer NOT NULL,
+  expires_at timestamptz NOT NULL
+);

@@ -1,5 +1,5 @@
 export async function startAnalytics() {
-  if (process.env.ANALYTICS_ENABLED !== "true" || !process.env.ANALYTICS_DATABASE_URL) return;
+  if (!process.env.ANALYTICS_DATABASE_URL) return;
   const { db } = await import("./db");
   const { readFile } = await import("node:fs/promises");
   const { join } = await import("node:path");
@@ -8,6 +8,8 @@ export async function startAnalytics() {
     try {
       await db().query(schema);
       await db().query("DELETE FROM fintiex_analytics WHERE created_at < now() - interval '90 days'");
+      await db().query("DELETE FROM fintiex_admin_sessions WHERE expires_at <= now()");
+      await db().query("DELETE FROM fintiex_admin_login_attempts WHERE expires_at <= now()");
     }
     catch { console.error("Analytics retention temporarily unavailable"); }
   };

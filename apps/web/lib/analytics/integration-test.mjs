@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {randomUUID} from 'node:crypto';
+import {randomUUID, createHash} from 'node:crypto';
 import {Pool} from 'pg';
 const url = process.env.ANALYTICS_DATABASE_URL;
 if (!url || !new URL(url).pathname.endsWith('/fintiex_analytics_test')) throw new Error('Tests require the isolated fintiex_analytics_test database');
@@ -7,17 +7,29 @@ const pool = new Pool({connectionString:url});
 const base = 'http://localhost:3047';
 const ids = [];
 const headers = {'content-type':'application/json',origin:base,'sec-fetch-site':'same-origin','x-real-ip':'192.0.2.10','user-agent':'Mozilla/5.0 TestBrowser'};
-const auth = {authorization:`Basic ${Buffer.from('admin:'+process.env.ANALYTICS_ADMIN_PASSWORD).toString('base64')}`};
+let auth = {}; let tokenHash;
+async function login(password=process.env.ANALYTICS_ADMIN_PASSWORD, origin=base, ip='192.0.2.11') {
+  return fetch(base+'/api/admin/login',{method:'POST',redirect:'manual',headers:{origin,'content-type':'application/x-www-form-urlencoded','x-real-ip':ip},body:new URLSearchParams({username:'admin',password})});
+}
 async function send(overrides={},custom={}) {
   const id = randomUUID(); ids.push(id);
   const body = {id,kind:'pageview',path:'/savings',referrer:'https://www.google.com/search?q=private',...overrides};
   return fetch(base+'/api/analytics',{method:'POST',headers:{...headers,...custom},body:JSON.stringify(body)});
 }
 try {
-  const unauthorized = await fetch(base+'/admin'); assert.equal(unauthorized.status,401);
+  const unauthorized = await fetch(base+'/admin',{redirect:'manual'}); assert.equal(unauthorized.status,303);
+  assert.match(unauthorized.headers.get('location'),/admin\/login/);
+  assert.equal(unauthorized.headers.get('www-authenticate'),null);
   assert.match(unauthorized.headers.get('cache-control'),/no-store/);
-  assert.equal((await fetch(base+'/admin/private.csv')).status,401);
-  assert.equal((await fetch(base+'/admin',{headers:{authorization:'Basic '+Buffer.from('admin:wrong').toString('base64')}})).status,401);
+  assert.equal((await fetch(base+'/admin/private.csv',{redirect:'manual'})).status,303);
+  const form = await fetch(base+'/admin/login'); assert.equal(form.status,200); assert.match(await form.text(),/current-password/);
+  assert.equal((await login(undefined,'https://evil.example')).status,403);
+  assert.match((await login('wrong')).headers.get('location'),/error=invalid/);
+  const signedIn = await login(); assert.equal(signedIn.status,303);
+  const cookie = signedIn.headers.get('set-cookie'); assert.match(cookie,/HttpOnly/i); assert.match(cookie,/SameSite=lax/i); assert.match(cookie,/Max-Age=28800/i);
+  auth = {cookie:cookie.split(';')[0]};
+  const token=auth.cookie.split('=')[1]; tokenHash=createHash('sha256').update(token).digest('hex');
+  assert.equal((await fetch(base+'/admin',{headers:{cookie:'fintiex_admin_session='+ '0'.repeat(64)},redirect:'manual'})).status,303);
   const id=randomUUID();ids.push(id);
   assert.equal((await send({id})).status,204);
   assert.equal((await send({id})).status,204);
@@ -41,8 +53,22 @@ try {
   const admin = await fetch(base+'/admin?days=7',{headers:auth});
   assert.equal(admin.status,200);assert.match(admin.headers.get('cache-control'),/no-store/);
   const html=await admin.text();assert.match(html,/google.com/);assert.match(html,/weekly_rates/);assert.match(html,/bank.example/);
-  console.log('PASS: authentication, no-store, ingestion, deduplication, daily visitor grouping, referral sanitization, campaigns, outbound clicks, bot/DNT/GPC filtering, origin checks, size/path validation and dashboard reporting');
+  const clickLog = await fetch(base+'/admin?days=7&kind=outbound&source=google.com',{headers:auth});
+  const logHtml = (await clickLog.text()).split('id="activity"')[1];
+  assert.ok(logHtml); assert.match(logHtml,/bank.example/); assert.match(logHtml,/google.com/); assert.match(logHtml,/1<!-- --> matching events/);
+  const emptyLog = await fetch(base+'/admin?source=not_a_source',{headers:auth}); assert.match(await emptyLog.text(),/No matching activity/);
+  assert.equal((await fetch(base+'/api/admin/logout',{method:'POST',headers:{...auth,origin:'https://evil.example'}})).status,403);
+  await pool.query("UPDATE fintiex_admin_sessions SET expires_at=now()-interval '1 second' WHERE token_hash=$1",[tokenHash]);
+  assert.equal((await fetch(base+'/admin',{headers:auth,redirect:'manual'})).status,303,'expired session rejected');
+  await pool.query("UPDATE fintiex_admin_sessions SET expires_at=now()+interval '1 hour' WHERE token_hash=$1",[tokenHash]);
+  const logout=await fetch(base+'/api/admin/logout',{method:'POST',redirect:'manual',headers:{...auth,origin:base}}); assert.equal(logout.status,303);
+  assert.equal((await fetch(base+'/admin',{headers:auth,redirect:'manual'})).status,303,'logged-out session revoked');
+  for(let i=0;i<10;i++) await login('wrong',base,'192.0.2.12');
+  assert.match((await login('wrong',base,'192.0.2.12')).headers.get('location'),/error=limited/);
+  console.log('PASS: form login, logout revocation, cookie protection, CSRF, throttling, click/source filters, authentication, no-store, ingestion, deduplication, daily visitor grouping, referral sanitization, campaigns, outbound clicks, bot/DNT/GPC filtering, origin checks, size/path validation and dashboard reporting');
 } finally {
   await pool.query('DELETE FROM fintiex_analytics WHERE event_id = ANY($1::uuid[])',[ids]);
+  if(tokenHash) await pool.query('DELETE FROM fintiex_admin_sessions WHERE token_hash=$1',[tokenHash]);
+  await pool.query('DELETE FROM fintiex_admin_login_attempts');
   await pool.end();
 }
