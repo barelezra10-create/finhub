@@ -70,6 +70,7 @@ const reviewRedirects = [
 ] as const;
 
 const config: NextConfig = {
+  serverExternalPackages: ["geoip-lite"],
   reactStrictMode: true,
   transpilePackages: ["@fintiex/ui", "@fintiex/calculators"],
   async redirects() {

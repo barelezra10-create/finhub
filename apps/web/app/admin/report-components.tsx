@@ -1,0 +1,18 @@
+import type {MetricRow} from '@/lib/analytics/dashboard';
+export const n=(value:number)=>Number(value || 0).toLocaleString('en-US');
+export function MetricTable({title,rows,note,labels,onlyClicks=false}:{title:string;rows:MetricRow[];note?:string;labels?:(s:string)=>string;onlyClicks?:boolean}) {
+ return <section className="analytics-panel"><h2>{title}</h2>{note&&<p className="analytics-muted small">{note}</p>}{rows.length?<div className="analytics-scroll"><table><thead><tr><th>{title==='Top pages'?'Page':'Name'}</th>{!onlyClicks&&<><th>Views</th><th>Daily visitors*</th></>}<th>Clicks</th></tr></thead><tbody>{rows.map(row=><tr key={row.label}><td>{labels?labels(row.label):row.label}</td>{!onlyClicks&&<><td>{n(row.views)}</td><td>{n(row.visitors)}</td></>}<td>{n(row.clicks)}</td></tr>)}</tbody></table></div>:<p className="analytics-empty">No matching activity recorded yet.</p>}</section>;
+}
+export function Distribution({title,rows,labels}:{title:string;rows:MetricRow[];labels?:(s:string)=>string}) {
+ const total=rows.reduce((v,r)=>v+r.views,0);
+ return <section className="analytics-panel"><h2>{title}</h2>{!total?<p className="analytics-empty">No page views recorded yet.</p>:<div className="analytics-distribution">{rows.slice(0,10).map((row,index)=><div key={row.label}><div className="distribution-label"><span><i style={{background:['#7eaa52','#7156a5','#d6a552','#57a29e'][index%4]}}/>{labels?labels(row.label):row.label}</span><strong>{n(row.views)} <small>{(row.views/total*100).toFixed(1)}%</small></strong></div><div className="distribution-track"><div style={{width:`${row.views/total*100}%`,background:['#7eaa52','#7156a5','#d6a552','#57a29e'][index%4]}}/></div></div>)}</div>}<p className="analytics-muted small">Share of listed page views.</p></section>;
+}
+export function Stat({label,value,previous,sub}:{label:string;value:number;previous?:number;sub?:string}) {
+ const delta=previous && previous>0 ? (value-previous)/previous*100 : null;
+ return <section className="analytics-panel"><p>{label}</p><strong>{n(value)}</strong><small className={delta!==null?(delta>=0?'stat-up':'stat-down'):''}>{delta!==null?`${delta>=0?'+':''}${delta.toFixed(1)}% vs prior period`:sub || 'No prior-period baseline'}</small></section>;
+}
+export function DailyChart({rows,days}:{rows:Array<{day:string;views:number;visitors:number;clicks:number}>;days:number}) {
+ const daily=Array.from({length:days},(_,i)=>{const date=new Date();date.setUTCDate(date.getUTCDate()-(days-i-1));const day=date.toISOString().slice(0,10);return rows.find(r=>r.day===day)||{day,views:0,visitors:0,clicks:0};});
+ const max=Math.max(1,...daily.map(r=>r.views));
+ return <section className="analytics-panel"><div className="panel-title"><div><h2>Traffic over time</h2><p className="analytics-muted small">Page views · UTC calendar days</p></div><span className="chart-legend">● Page views</span></div><div className="analytics-chart" role="img" aria-label={daily.map(r=>`${r.day}: ${r.views} page views`).join('; ')}>{daily.map(row=><div key={row.day} title={`${row.day}: ${n(row.views)} views · ${n(row.visitors)} daily visitors · ${n(row.clicks)} outbound clicks`} style={{height:`${Math.max(.5,row.views/max*100)}%`}}/>)}</div><div className="analytics-chart-labels"><span>{daily[0]!.day}</span><span>{daily[daily.length-1]!.day}</span></div><details><summary>Daily numbers</summary><div className="analytics-scroll"><table><thead><tr><th>Date</th><th>Views</th><th>Daily visitors*</th><th>Outbound clicks</th></tr></thead><tbody>{daily.map(r=><tr key={r.day}><td>{r.day}</td><td>{n(r.views)}</td><td>{n(r.visitors)}</td><td>{n(r.clicks)}</td></tr>)}</tbody></table></div></details></section>;
+}

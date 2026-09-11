@@ -60,7 +60,7 @@ export default function Page() {
 
           <h3 className="font-display font-bold text-lg mt-6 mb-2">Analytics data</h3>
           <p className="text-mute leading-relaxed mb-4">
-            Our first-party analytics count page views and clicks to external websites. We record page paths without query strings, referring website domains, campaign labels (utm_source, utm_medium, and utm_campaign), and external destination domains. A keyed identifier derived from your IP address and browser user agent rotates every UTC day to estimate daily visitors. We do not store raw IP addresses or user agents in the analytics database, and we do not connect identifiers across days. We honor browser Do Not Track and Global Privacy Control signals. We do not collect calculator inputs, names, email addresses, exact location, or full referral URLs. We do not run cross-site tracking pixels or advertising tags.
+            Our first-party analytics count page views and clicks to external websites. We record page paths without query strings, referring website domains, campaign labels (utm_source, utm_medium, and utm_campaign), external destination domains, approximate country/region/city, device category, browser, operating system, and browser language. Campaign keywords (utm_term) and keywords explicitly supplied by recognized search-engine referrers may be recorded; search engines usually withhold organic keywords. Search Console or Bing Webmaster query reports, when connected or imported, are stored as aggregate reports and are not linked to individual visitors. Geography is looked up locally on our server without sending IP addresses to a geolocation service. A keyed identifier derived from your IP address and browser user agent rotates every UTC day to estimate daily visitors. We do not store raw IP addresses or user agents in the analytics database, and we do not connect identifiers across days. We honor browser Do Not Track and Global Privacy Control signals. We do not collect calculator inputs, names, email addresses, exact location, or full referral URLs. We do not run cross-site tracking pixels or advertising tags.
           </p>
 
           <h3 className="font-display font-bold text-lg mt-6 mb-2">Server logs</h3>
@@ -72,7 +72,7 @@ export default function Page() {
             2. Cookies and similar technologies
           </h2>
           <p className="text-mute leading-relaxed mb-4">
-            Our traffic analytics do not use cookies, localStorage, or sessionStorage:
+            Our traffic analytics do not use cookies, localStorage, or sessionStorage. The admin area uses a necessary session cookie for sign-in, which expires after eight hours:
           </p>
           <ul className="space-y-3 mb-6 text-mute">
             <li className="flex gap-3">

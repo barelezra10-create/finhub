@@ -14,6 +14,8 @@
   "dependencies": {
     "@fintiex/calculators": "workspace:*",
     "@fintiex/ui": "workspace:*",
+    "bowser": "^2.14.1",
+    "geoip-lite": "^2.0.3",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.17.0",
     "next": "16.2.4",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@playwright/test": "1.48.2",
     "@tailwindcss/postcss": "4.2.4",
+    "@types/geoip-lite": "^1.4.4",
     "@types/pg": "^8.23.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

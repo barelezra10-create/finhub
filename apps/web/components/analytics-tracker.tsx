@@ -1,18 +1,27 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { searchEngine } from "@/lib/analytics/search-engine";
 
-let attribution: {source: string; medium: string; campaign: string; referrer: string} | undefined;
+let attribution: {source: string; medium: string; campaign: string; referrer: string; keyword: string; keywordType: string; ad: string} | undefined;
 export function AnalyticsTracker() {
   const path = usePathname();
   useEffect(() => {
     if (!path || /^\/(admin|api)(\/|$)/.test(path) || navigator.doNotTrack === "1" || (navigator as Navigator & {globalPrivacyControl?: boolean}).globalPrivacyControl || navigator.webdriver) return;
     if (!attribution) {
       const params = new URLSearchParams(location.search);
-      attribution = { source: params.get('utm_source') || '', medium: params.get('utm_medium') || '', campaign: params.get('utm_campaign') || '', referrer: document.referrer ? new URL(document.referrer).origin : '' };
+      let referrer = ''; let keyword = params.get('utm_term') || ''; let keywordType = keyword ? 'campaign' : '';
+      if (document.referrer) {
+        try {
+          const ref = new URL(document.referrer); referrer = ref.origin;
+          const engine = searchEngine(ref.hostname);
+          if (!keyword && engine) {keyword = ref.searchParams.get(engine === 'Yahoo' ? 'p' : engine === 'Baidu' ? 'wd' : 'q') || ''; keywordType = keyword ? 'referrer' : '';}
+        } catch { /* No usable referrer. */ }
+      }
+      attribution = {keyword,keywordType,ad:params.has('gclid') || params.has('gbraid') || params.has('wbraid') ? 'google' : params.has('msclkid') ? 'bing' : '', source: params.get('utm_source') || '', medium: params.get('utm_medium') || '', campaign: params.get('utm_campaign') || '', referrer };
     }
     const send = (kind: string, target = '') => {
-      void fetch('/api/analytics', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id:crypto.randomUUID(),kind,path,target,...attribution}), keepalive:true, credentials:'same-origin' }).catch(() => {});
+      void fetch('/api/analytics', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id:crypto.randomUUID(),kind,path,target,deviceHint:navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ? 'tablet' : '',...attribution}), keepalive:true, credentials:'same-origin' }).catch(() => {});
     };
     // Wait until visible; cleanup avoids React development-mode duplicate effects.
     let sent = false;
