@@ -60,7 +60,7 @@ export default function Page() {
 
           <h3 className="font-display font-bold text-lg mt-6 mb-2">Analytics data</h3>
           <p className="text-mute leading-relaxed mb-4">
-            We use privacy-respecting analytics to understand which pages get traffic, which calculators get used, and where errors occur. The analytics collect: page URLs, referrer URL, anonymized IP, country, browser and device type, and screen size. They do not collect your name, your email, your exact location, or anything you typed into a calculator. We do not run cross-site tracking pixels, ad pixels, or any third-party advertising tags.
+            Our first-party analytics count page views and clicks to external websites. We record page paths without query strings, referring website domains, campaign labels (utm_source, utm_medium, and utm_campaign), and external destination domains. A keyed identifier derived from your IP address and browser user agent rotates every UTC day to estimate daily visitors. We do not store raw IP addresses or user agents in the analytics database, and we do not connect identifiers across days. We honor browser Do Not Track and Global Privacy Control signals. We do not collect calculator inputs, names, email addresses, exact location, or full referral URLs. We do not run cross-site tracking pixels or advertising tags.
           </p>
 
           <h3 className="font-display font-bold text-lg mt-6 mb-2">Server logs</h3>
@@ -72,12 +72,12 @@ export default function Page() {
             2. Cookies and similar technologies
           </h2>
           <p className="text-mute leading-relaxed mb-4">
-            Fintiex uses cookies and equivalent storage mechanisms (localStorage, sessionStorage) for two purposes only:
+            Our traffic analytics do not use cookies, localStorage, or sessionStorage:
           </p>
           <ul className="space-y-3 mb-6 text-mute">
             <li className="flex gap-3">
               <span className="font-mono text-lime-deep font-bold mt-0.5">01</span>
-              <span><strong className="text-ink">Analytics:</strong> a single first-party analytics cookie or anonymous identifier that helps us count unique visits and detect bots. It does not track you across other sites.</span>
+              <span><strong className="text-ink">Analytics:</strong> the daily identifier is calculated on our server. No analytics identifier is stored in your browser, and it does not track you across other sites.</span>
             </li>
             <li className="flex gap-3">
               <span className="font-mono text-lime-deep font-bold mt-0.5">02</span>
@@ -102,7 +102,7 @@ export default function Page() {
               <strong className="text-ink">Vercel and Railway:</strong> hosting providers for parts of the application. They see server logs as described above.
             </li>
             <li>
-              <strong className="text-ink">Privacy-respecting analytics provider:</strong> the analytics platform we use does not build cross-site profiles and does not sell data.
+              <strong className="text-ink">First-party analytics:</strong> traffic records are stored in our database with our hosting provider. They are not sent to a separate advertising or analytics platform.
             </li>
             <li>
               <strong className="text-ink">Email provider:</strong> our inbox host (for example, Google Workspace) processes any email you send to a Fintiex address.

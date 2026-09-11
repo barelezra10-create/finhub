@@ -17,6 +17,7 @@ COPY packages/calculators/package.json packages/calculators/
 RUN pnpm install --frozen-lockfile
 
 FROM deps AS build
+ARG ANALYTICS_ENABLED=false
 COPY tsconfig.base.json ./
 COPY packages ./packages
 COPY apps/web ./apps/web

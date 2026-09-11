@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { adminAuthorized } from "@/lib/analytics/core";
 
 // Hosts that should 301 to fintiex.com with translated paths.
 // Used when thecreditcardpick.com (and www) are mounted as a custom
@@ -80,6 +81,15 @@ function translatePath(pathname: string): string {
 }
 
 export function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname === "/admin" || request.nextUrl.pathname.startsWith("/admin/")) {
+    if (!adminAuthorized(request.headers.get("authorization"))) {
+      return new NextResponse("Admin authentication required", { status: 401, headers: { "WWW-Authenticate": 'Basic realm="Fintiex admin", charset="UTF-8"', "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } });
+    }
+    const response = NextResponse.next();
+    response.headers.set("Cache-Control", "private, no-store");
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return response;
+  }
   const host = (request.headers.get("host") ?? "").toLowerCase();
   const { pathname, search } = request.nextUrl;
 
@@ -102,6 +112,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
+  runtime: "nodejs",
   // Run on everything except next-internal assets so static files keep serving.
-  matcher: ["/((?!_next/|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
+  matcher: ["/admin/:path*", "/((?!_next/|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
 };

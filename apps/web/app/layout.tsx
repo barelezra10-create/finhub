@@ -1,4 +1,5 @@
 import "./globals.css";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
 import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sora.variable} ${jakarta.variable} ${mono.variable}`}>
       <body>
+        {process.env.ANALYTICS_ENABLED === "true" && <AnalyticsTracker />}
         <OrganizationSchema />
         <WebSiteSchema />
         <RateTicker />
