@@ -1,3 +1,4 @@
+import { savingsOffers } from "@/lib/savings-rates";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
@@ -30,7 +31,7 @@ function brandHref(b: Brand): string {
 export const metadata: Metadata = {
   title: "All Brand Reviews: Mortgages, Savings, Loans, Credit Cards",
   description:
-    "Independent reviews of every major mortgage lender, high-yield savings bank, personal loan provider, and credit card we cover. No sponsored rankings. Updated weekly.",
+    "Browse financial product reviews and comparisons. Refreshed savings reviews include provider sources, check dates, fees and qualifying conditions.",
   alternates: { canonical: "/reviews" },
 };
 
@@ -113,17 +114,17 @@ const faqItems: FAQItem[] = [
   {
     question: "How does Fintiex make money on these reviews?",
     answer:
-      "Fintiex is supported by display advertising and editorial subscriptions. Reviews are not paid placements. Rankings on this site are determined by editorial scoring against published methodology, not by which brand pays us most. We disclose any affiliate relationship inside the relevant review when one exists.",
+      "Read our editorial policy for the scope and limitations of comparisons. A provider link does not establish a partnership or an independent testing result. Compensated placements should carry a clear disclosure.",
   },
   {
     question: "How often are reviews updated?",
     answer:
-      "Rate-driven reviews (savings, mortgages, personal loans) are reviewed weekly and updated whenever an issuer publishes a new APY, APR, or fee. Credit card reviews are reviewed weekly and updated when issuers change signup bonuses, rewards rates, or annual fees. The last reviewed date appears at the top of each review page.",
+      "Refreshed savings reviews show when provider information was checked. We do not operate a live rate feed or promise a weekly review of every page. Older pages may contain dated information; confirm terms with the provider.",
   },
   {
     question: "Why is my favorite brand not listed?",
     answer:
-      "We only publish reviews for brands that meet our minimum criteria: nationwide availability, FDIC insurance for deposit accounts, transparent fee disclosures, and a public APR or APY range. Smaller regional banks and credit unions are excellent options for many readers, but we cannot review every one. The Consumer Financial Protection Bureau publishes data on all U.S. financial institutions if you want to research a brand we have not yet covered.",
+      "Our listings are a selection of products, not the entire market. A missing provider is not a negative assessment. Compare its current disclosures and eligibility with the accounts or products you are considering.",
   },
 ];
 
@@ -144,13 +145,13 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Independent reviews · Updated weekly
+            <span className="pulse-dot" /> Product reviews and comparisons
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
             Every brand we cover, in one place.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            Fintiex publishes independent reviews of mortgage lenders, high-yield savings banks, personal loan providers, and credit cards. No sponsored rankings, no paid placements. Find the brand you want to research, or browse by category to see how the field stacks up.
+            Browse mortgage, savings, loan and card information. Refreshed savings reviews identify provider sources and check dates. Read our editorial policy for the scope of our research and the limitations of older pages.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/calculators" className="pill pill-ink">
@@ -198,7 +199,7 @@ export default function Page() {
                       </span>
                     </div>
                     <p className="text-sm text-mute leading-relaxed line-clamp-2">
-                      {summaries[b.slug] ?? "Independent review with rates, fees, approval odds, and what to know before you apply."}
+                      {(b.category === "savings" ? savingsOffers.find(o => o.key === b.slug)?.condition : summaries[b.slug]) ?? "Product overview: check provider terms before applying."}
                     </p>
                   </div>
                 </Link>
@@ -233,7 +234,7 @@ export default function Page() {
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight max-w-xl leading-tight">
               Run the math before you pick the brand.
             </h2>
-            <p className="text-ink/70 mt-2">Calculators and live rate data for every category we cover.</p>
+            <p className="text-ink/70 mt-2">Calculators and product comparisons for every category we cover.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/calculators" className="pill pill-ink">

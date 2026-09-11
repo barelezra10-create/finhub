@@ -26,7 +26,7 @@ const brandList: Brand[] = [
   { slug: "discover-savings", name: "Discover", domain: "discover.com", color: "#FF6000", category: "savings" },
   { slug: "cit", name: "CIT Bank", domain: "cit.com", color: "#005CA9", category: "savings" },
   { slug: "amex-savings", name: "American Express", domain: "americanexpress.com", color: "#006FCF", category: "savings" },
-  { slug: "lendingclub-savings", name: "LendingClub", domain: "lendingclub.com", color: "#1A6FB7", category: "savings" },
+  { slug: "lendingclub-savings", name: "Happen Bank", domain: "happen.com", color: "#1A6FB7", category: "savings" },
   { slug: "synchrony", name: "Synchrony Bank", domain: "synchronybank.com", color: "#FBB92E", category: "savings" },
 
   // Personal loans

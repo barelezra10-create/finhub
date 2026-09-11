@@ -90,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/reviews", priority: 0.75, changeFrequency: "weekly" as const },
     { url: "/glossary", priority: 0.6, changeFrequency: "monthly" as const },
     { url: "/best", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/editorial-policy", priority: 0.5, changeFrequency: "monthly" as const },
     { url: "/about", priority: 0.5, changeFrequency: "monthly" as const },
     { url: "/privacy", priority: 0.3, changeFrequency: "yearly" as const },
     { url: "/terms", priority: 0.3, changeFrequency: "yearly" as const },
@@ -193,7 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
-  const savingsAccountRoutes = listJsonSlugs("data/banking/savings-accounts").map((slug) => ({
+  const savingsAccountRoutes = listJsonSlugs("data/banking/savings-accounts").filter(slug => !["marcus-online-savings", "ally-online-savings", "american-express-personal-savings", "discover-online-savings"].includes(slug)).map((slug) => ({
     url: `/savings/accounts/${slug}`,
     priority: 0.7,
     changeFrequency: "weekly" as const,

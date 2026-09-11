@@ -10,7 +10,7 @@ interface CarrierBoxProps {
   specs: Array<{ label: string; value: string }>;
   bestFor: string;
   perks: string[];
-  rating: number;
+  rating?: number | null;
   ratingMax?: number;
   reviewHref: string;
   externalHref: string;
@@ -85,7 +85,7 @@ export function CarrierBox({
 
         {/* Rating + CTAs */}
         <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
-          <div>
+          {rating != null && <div>
             <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
               Fintiex score
             </div>
@@ -93,7 +93,7 @@ export function CarrierBox({
               {rating.toFixed(1)}
             </div>
             <div className="text-xs text-mute mt-1">out of {ratingMax}</div>
-          </div>
+          </div>}
           <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
             <a
               href={externalHref}

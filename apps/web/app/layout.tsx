@@ -91,12 +91,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sora.variable} ${jakarta.variable} ${mono.variable}`}>
       <body>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:block focus:p-4">Skip to main content</a>
         {process.env.ANALYTICS_ENABLED === "true" && <AnalyticsTracker />}
         <OrganizationSchema />
         <WebSiteSchema />
         <RateTicker />
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
+        <footer className="border-t border-line px-6 py-8 text-sm text-mute"><nav aria-label="Publication information" className="max-w-(--max-w-page) mx-auto flex flex-wrap gap-6"><a href="/about">About Fintiex</a><a href="/editorial-policy">Editorial policy & sources</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/admin">Admin</a></nav></footer>
       </body>
     </html>
   );

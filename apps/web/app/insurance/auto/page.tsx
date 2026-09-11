@@ -121,7 +121,7 @@ export default function Page() {
               ]}
               bestFor={c.best_for}
               perks={c.perks.slice(0, 3)}
-              rating={c.rating}
+              rating={c.slug === "liberty-mutual-auto" ? null : c.rating}
               reviewHref={`/insurance/auto/${c.slug}`}
               externalHref={c.quote_url}
             />

@@ -1,52 +1,12 @@
-import fs from "fs";
-import path from "path";
-
-const DIR = path.join(process.cwd(), "data/banking/savings-accounts");
-
-export interface SavingsAccount {
-  slug: string;
-  bank: string;
-  product_name: string;
-  apy: number;
-  apy_tier_min_balance: number | null;
-  monthly_fee: number;
-  monthly_fee_waivable: boolean;
-  min_opening_deposit: number;
-  min_balance: number;
-  withdrawal_limit_per_month: number | null;
-  fdic_insured: boolean;
-  ncua_insured: boolean;
-  mobile_app_rating: number;
-  best_for: string;
-  perks: string[];
-  drawbacks: string[];
-  application_url: string;
-  rating: number;
-  last_updated: string;
-}
-
+// Savings facts have one source; legacy JSON files retain route slugs only.
+import { savingsOffers, rateLabel } from './savings-rates';
+export type SavingsAccount = (typeof savingsOffers)[number];
 export function loadSavingsAccounts(): SavingsAccount[] {
-  if (!fs.existsSync(DIR)) return [];
-  return fs
-    .readdirSync(DIR)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as SavingsAccount)
-    .sort((a, b) => b.apy - a.apy);
+  return [...savingsOffers].sort((a,b) => (b.apy ?? -1) - (a.apy ?? -1));
 }
-
-export function loadSavingsAccount(slug: string): SavingsAccount | null {
-  return loadSavingsAccounts().find((a) => a.slug === slug) ?? null;
+export function loadSavingsAccount(key: string) {
+  return savingsOffers.find(o => o.key === key || o.review.endsWith('/'+key)) ?? null;
 }
-
-export function formatApy(apy: number): string {
-  return apy.toFixed(2) + "%";
-}
-
-export function formatMoney(n: number): string {
-  if (n === 0) return "$0";
-  return "$" + n.toLocaleString("en-US");
-}
-
-export function savingsAccountHref(slug: string): string {
-  return `/savings/accounts/${slug}`;
-}
+export const formatApy = rateLabel;
+export const formatMoney = (n:number) => '$'+n.toLocaleString('en-US');
+export const savingsAccountHref = (slug:string) => `/savings/accounts/${slug}`;

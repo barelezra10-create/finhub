@@ -1,3 +1,4 @@
+import {hysaOptions,SAVINGS_CHECKED} from "@/lib/savings-rates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,24 +22,6 @@ export async function generateMetadata(
   };
 }
 
-interface HysaOption {
-  lender: string;
-  apy: number;
-  tag?: string;
-  detail: string;
-  href?: string;
-}
-
-const hysaOptions: HysaOption[] = [
-  { lender: "Bread Savings", apy: 3.95, tag: "Top APY", detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
-  { lender: "Bask Bank", apy: 3.75, detail: "3.75% base APY, up to 4.10% with limited-time boosts. No minimum balance. No monthly fees.", href: "/reviews/bask" },
-  { lender: "CIT Bank", apy: 3.75, detail: "Platinum Savings pays this rate on $5,000+. Balances under $5,000 earn 0.25%.", href: "/reviews/cit" },
-  { lender: "Marcus by Goldman Sachs", apy: 3.40, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
-  { lender: "Synchrony Bank", apy: 3.30, detail: "No minimum balance. No monthly fees. ATM card with monthly fee rebates." },
-  { lender: "SoFi", apy: 3.10, detail: "Direct deposit required. New-member promo can boost the rate to 3.80% for six months.", href: "/reviews/sofi" },
-  { lender: "Ally Bank", apy: 3.00, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
-  { lender: "American Express", apy: 3.00, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
-];
 
 function fmtPct(n: number) {
   return n.toFixed(2) + "%";
@@ -61,11 +44,11 @@ export default async function StateHysaPage(
   const faqs: FAQItem[] = [
     {
       question: `Can I open an HYSA from another state if I live in ${state.name}?`,
-      answer: `Yes. Every account on this list is open to ${state.name} residents. Online banks are federally chartered or state-chartered institutions that operate nationwide. There is no requirement to use a bank headquartered in ${state.name}. You just need a U.S. address, a Social Security number, and a linked bank account to fund the deposit. The entire process takes about ten minutes online.`,
+      answer: `Yes. National online accounts may be available to ${state.name} residents, subject to each bank’s address and eligibility requirements. Online banks are federally chartered or state-chartered institutions that operate nationwide. There is no requirement to use a bank headquartered in ${state.name}. Required identity documents, approval, funding methods, and timing depend on the bank.`,
     },
     {
       question: `How is HYSA interest taxed in ${state.name}?`,
-      answer: `Interest income from a high-yield savings account is taxable at the federal level as ordinary income, the same as wages. At the state level: ${state.taxNote}. Your bank will send you a 1099-INT form each January covering any interest earned in the prior year. If you earned more than $10 in interest, you are required to report it on your federal return.`,
+      answer: `Interest income from a high-yield savings account is taxable at the federal level as ordinary income, the same as wages. At the state level: ${state.taxNote}. Banks generally issue Form 1099-INT when reportable interest meets the filing threshold. Taxable interest generally must be reported even if you do not receive a 1099-INT.`,
     },
     {
       question: `Are local ${state.name} banks better than online HYSAs?`,
@@ -77,7 +60,7 @@ export default async function StateHysaPage(
     },
     {
       question: `Is ${topBank} competitive with online HYSA rates?`,
-      answer: `${topBank} is one of the more established financial institutions serving ${state.name}, but like most traditional banks, its savings rates typically lag behind online-only competitors by two to four percentage points. The overhead of maintaining physical branches, staff, and ATM networks limits how much traditional banks can pay on deposits. Online banks pass those savings directly to depositors in the form of higher APYs. If you already bank with ${topBank}, you can still open an online HYSA as a secondary account and transfer savings there to earn more.`,
+      answer: `Compare ${topBank}’s current rate, fees, balance requirements, and access with the dated offers below. We have not verified a current local-bank rate for this page, so we do not claim a numerical rate advantage.`,
     },
   ];
 
@@ -90,6 +73,7 @@ export default async function StateHysaPage(
         { name: "High-Yield Savings", href: "/savings/hysa" },
         { name: state.name, href: `/savings/hysa/${slug}` },
       ]} />
+      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Provider observations checked {SAVINGS_CHECKED}. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>. Federal interest reporting: <a className="underline" href="https://www.irs.gov/taxtopics/tc403">IRS guidance</a>.</p>
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />
@@ -103,11 +87,11 @@ export default async function StateHysaPage(
             Best HYSA in {state.name}
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            {state.name} residents have access to the same top-rated national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, earning {hysaOptions[0]!.apy.toFixed(2)}% APY on idle cash adds up fast. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
+            {state.name} residents have access to the same listed national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, compare the APY you qualify for and the recurring-deposit conditions below. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
-              Open {hysaOptions[0]!.lender}
+              Review {hysaOptions[0]!.lender}
               <span aria-hidden>→</span>
             </Link>
             <Link href="/calculators/savings-goal" className="pill pill-ghost">
@@ -233,7 +217,7 @@ export default async function StateHysaPage(
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-mute leading-relaxed">
             <div className="space-y-5">
               <p>
-                {state.name}&apos;s median household income sits at {fmtIncome(state.medianIncome)}. At that income level, keeping even three months of expenses in a traditional savings account earning 0.5% instead of a top-tier HYSA near 3.95% can cost hundreds of dollars per year in foregone interest. The math is straightforward: a $20,000 emergency fund at 3.95% APY earns roughly $790 per year. The same balance at a typical brick-and-mortar rate earns about $100.
+                For illustration, a $20,000 balance earning an unchanged 3% APY earns $600 in one year before tax. At 0.5% it earns $100. These are calculation assumptions, not quotes from local banks. Use your actual offered rates and fees when comparing.
               </p>
               <p>
                 {state.name} has a number of well-regarded local financial institutions, including {state.topBanks.join(", ")}. These banks serve {state.name} communities well for everyday banking, mortgages, and local business relationships. However, their savings rates rarely match what national online banks offer. {topBank}, for instance, is one of the more recognized names in {state.name} banking, but its savings APY typically runs well below the 4%+ range offered by online-only competitors.
@@ -244,7 +228,7 @@ export default async function StateHysaPage(
                 On the tax side: {state.taxNote}. This applies to interest earned on any savings account, including HYSA accounts held at out-of-state online banks. The good news is that even after accounting for {hasNoStateTax ? "federal" : "federal and state"} taxes, the net yield from a top HYSA almost always beats what local {state.name} banks offer before taxes. You keep more money either way.
               </p>
               <p>
-                Online banks are available to all {state.name} residents regardless of which corner of the state you live in. You open the account online, link your existing {state.name} checking account, and transfers typically settle in one to two business days. There are no physical branch requirements and no state-specific restrictions that would prevent a {state.name} resident from opening any of the accounts listed on this page.
+                Online account eligibility, identity checks, transfer methods, and timing depend on the bank. Confirm that your address and funding method qualify before applying.
               </p>
             </div>
           </div>
@@ -259,26 +243,7 @@ export default async function StateHysaPage(
         </h2>
 
         <div className="space-y-6">
-          <FaqItem
-            q={`Can I open an HYSA from another state if I live in ${state.name}?`}
-            a={`Yes. Every account on this list is open to ${state.name} residents. Online banks are federally chartered or state-chartered institutions that operate nationwide. There is no requirement to use a bank headquartered in ${state.name}. You just need a U.S. address, a Social Security number, and a linked bank account to fund the deposit. The entire process takes about ten minutes online.`}
-          />
-          <FaqItem
-            q={`How is HYSA interest taxed in ${state.name}?`}
-            a={`Interest income from a high-yield savings account is taxable at the federal level as ordinary income, the same as wages. At the state level: ${state.taxNote}. Your bank will send you a 1099-INT form each January covering any interest earned in the prior year. If you earned more than $10 in interest, you are required to report it on your federal return.`}
-          />
-          <FaqItem
-            q={`Are local ${state.name} banks better than online HYSAs?`}
-            a={`It depends on what you value. Local ${state.name} banks like ${topBank} offer in-person service, local lending relationships, and community ties that online banks cannot replicate. For everyday savings, however, national online HYSAs almost always offer significantly higher APYs. Many ${state.name} residents keep their primary checking at a local bank and move excess savings to an online HYSA to earn more without giving up their local banking relationship.`}
-          />
-          <FaqItem
-            q="Are online HYSAs FDIC-insured the same way as local banks?"
-            a={`Yes. Every account listed on this page is insured by the Federal Deposit Insurance Corporation (FDIC) up to $250,000 per depositor, per institution, per ownership category. This is exactly the same coverage you get at any brick-and-mortar bank in ${state.name}. FDIC insurance has covered depositors in every bank failure since 1933. The physical location of the bank does not affect your coverage.`}
-          />
-          <FaqItem
-            q={`Is ${topBank} competitive with online HYSA rates?`}
-            a={`${topBank} is one of the more established financial institutions serving ${state.name}, but like most traditional banks, its savings rates typically lag behind online-only competitors by two to four percentage points. The overhead of maintaining physical branches, staff, and ATM networks limits how much traditional banks can pay on deposits. Online banks pass those savings directly to depositors in the form of higher APYs. If you already bank with ${topBank}, you can still open an online HYSA as a secondary account and transfer savings there to earn more.`}
-          />
+          {faqs.map(f => <FaqItem key={f.question} q={f.question} a={f.answer} />)}
         </div>
       </section>
 

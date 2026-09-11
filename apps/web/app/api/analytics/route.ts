@@ -9,9 +9,9 @@ const empty = () => new NextResponse(null, { status: 204, headers: { "Cache-Cont
 export async function POST(request: NextRequest) {
   if (process.env.ANALYTICS_ENABLED !== "true") return empty();
   const expected = process.env.ANALYTICS_ORIGIN || "https://www.fintiex.com";
-  if (request.headers.get("origin") !== expected || request.headers.get("sec-fetch-site") !== "same-origin") return new NextResponse(null, {status:403});
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOT.test(ua) || request.headers.get("dnt") === "1" || request.headers.get("sec-gpc") === "1") return empty();
+  if (request.headers.get("origin") !== expected || request.headers.get("sec-fetch-site") !== "same-origin") return new NextResponse(null, {status:403});
   if (!request.headers.get("content-type")?.startsWith("application/json")) return new NextResponse(null, {status:415});
   try {
     const reader = request.body?.getReader();

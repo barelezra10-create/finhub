@@ -14,6 +14,8 @@ export async function startAnalytics() {
     catch { console.error("Analytics retention temporarily unavailable"); }
   };
   await retain();
+  const { startSearchRefresh } = await import("./search-sync");
+  startSearchRefresh();
   const state = globalThis as typeof globalThis & { analyticsRetention?: ReturnType<typeof setInterval> };
   if (!state.analyticsRetention) state.analyticsRetention = setInterval(() => { void retain(); }, 60 * 60 * 1000);
   state.analyticsRetention.unref();

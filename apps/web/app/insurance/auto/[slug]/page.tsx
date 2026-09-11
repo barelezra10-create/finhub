@@ -1,3 +1,4 @@
+import { LibertyAutoReview } from "@/components/liberty-auto-review";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -23,6 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "liberty-mutual-auto") return { title: "Liberty Mutual Auto Insurance Review: Coverage & Discounts", description: "Compare Liberty Mutual car insurance coverage, discounts, RightTrack considerations, and quote trade-offs. Provider sources and review limitations included.", alternates: { canonical: "/insurance/auto/liberty-mutual-auto" } };
   const carrier = loadCarrier("auto", slug);
   if (!carrier) return { title: "Auto Insurance Review" };
   const desc = `${carrier.carrier} auto insurance review for 2026. Premium range, AM Best rating, JD Power score, pros and cons. ${carrier.best_for}.`;
@@ -75,6 +77,7 @@ function buildFaqs(carrier: ReturnType<typeof loadCarrier> & object): FAQItem[] 
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
+  if (slug === "liberty-mutual-auto") return <LibertyAutoReview />;
   const carrier = loadCarrier("auto", slug);
   if (!carrier) notFound();
 

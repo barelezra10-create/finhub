@@ -36,6 +36,7 @@ try {
   assert.equal((await send({kind:'outbound',target:'https://bank.example/apply?email=private'})).status,204);
   assert.equal((await send({source:'newsletter',medium:'email',campaign:'weekly_rates'})).status,204);
   assert.equal((await send({}, {'user-agent':'Googlebot'})).status,204);
+  assert.equal((await send({}, {'user-agent':'Chrome-Lighthouse',origin:'null','sec-fetch-site':'none'})).status,204,'audit bots are ignored without a console error');
   assert.equal((await send({}, {dnt:'1'})).status,204);
   assert.equal((await send({}, {'sec-gpc':'1'})).status,204);
   assert.equal((await send({}, {origin:'https://evil.example'})).status,403);

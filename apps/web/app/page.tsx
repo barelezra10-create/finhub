@@ -1,3 +1,4 @@
+import { savingsOffers, savingsOffer, SAVINGS_CHECKED, rateLabel } from "@/lib/savings-rates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
@@ -10,19 +11,19 @@ export const metadata: Metadata = {
 const homepageFaqs: FAQItem[] = [
   {
     question: "How does Fintiex make money?",
-    answer: "Fintiex does not accept paid placements or affiliate fees for rate table rankings. The site is ad-supported. Lender order in every table reflects current APR or APY only, not any commercial relationship.",
+    answer: "See our editorial policy for how comparisons are prepared and how commercial disclosures are handled. Do not infer independence or a financial relationship from a product appearing on the site.",
   },
   {
     question: "How often are rates updated?",
-    answer: "Rate tables are refreshed daily. The timestamp shown next to each table reflects the last pull from lender rate sheets or APIs. Mortgage rates can move intraday; we update at least once every 24 hours.",
+    answer: "Savings observations show the date the provider information was checked. They are not a live feed. Check the provider before applying; rates and eligibility can change.",
   },
   {
     question: "Is the data sourced directly from lenders?",
-    answer: "Yes. Rates are pulled from each lender's publicly published rate sheets or direct API feeds. We do not use aggregator data that may be delayed or normalized in ways that obscure real offers.",
+    answer: "The refreshed savings comparisons link to the provider pages used. When a current numeric APY cannot be confirmed, we show Check provider instead of estimating it. Other sections may contain older information.",
   },
   {
-    question: "Do you accept paid placements?",
-    answer: "No. Fintiex does not accept payment to move any lender, card, or account higher in a table. The lender at the top of the table is the one with the best rate that day, full stop.",
+    question: "How are savings offers ordered?",
+    answer: "Confirmed numeric APYs are ordered from highest to lowest, with qualification conditions displayed. This is a selection of products rather than a complete market ranking. Our editorial policy explains the limitations.",
   },
   {
     question: "Is signup required to use the calculators?",
@@ -43,32 +44,25 @@ interface RateRow {
 interface MarketTile {
   label: string;
   value: string;
-  delta: number;
+  delta?: number;
   caption: string;
 }
 
 const featuredMarkets: MarketTile[] = [
-  { label: "30Y Fixed Mortgage", value: "6.67%", delta: -0.02, caption: "Freddie Mac PMMS avg" },
-  { label: "Top HYSA", value: "3.95%", delta: -0.05, caption: "Bread Savings · FDIC" },
-  { label: "12-Month CD", value: "4.30%", delta: 0.0, caption: "Top online banks" },
-  { label: "Personal Loan · Excellent", value: "8.20%", delta: 0.0, caption: "SoFi · 3-7yr" },
+  { label: "30Y Fixed Mortgage", value: "6.67%", caption: "Older illustrative figure · not a quote" },
+  { label: "Bread Savings APY", value: rateLabel(savingsOffer("bread").apy), caption: `Checked ${SAVINGS_CHECKED} · $100 to open` },
+  { label: "12-Month CD", value: "4.30%", caption: "Older illustrative figure · confirm offers" },
+  { label: "Personal Loan · Excellent", value: "8.20%", caption: "Older illustrative figure · confirm eligibility" },
 ];
 
 const mortgageRates: RateRow[] = [
-  { lender: "Marcus by Goldman Sachs", brandSlug: "marcus-mortgage", apr: 6.79, tag: "Lowest", detail: "30y · 5% down · 760+ FICO", href: "/reviews/marcus-mortgage", trend: "down" },
-  { lender: "Better.com", brandSlug: "better", apr: 6.67, detail: "30y · 3% down · no origination", href: "/reviews/better", trend: "flat" },
-  { lender: "Rocket Mortgage", brandSlug: "rocket", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/reviews/rocket", trend: "up" },
-  { lender: "loanDepot", brandSlug: "loandepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/reviews/loandepot", trend: "up" },
-  { lender: "Chase Home Lending", brandSlug: "chase-mortgage", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/reviews/chase-mortgage", trend: "flat" },
+  { lender: "Better.com", brandSlug: "better", apr: 6.67, detail: "30y · 3% down · no origination", href: "/reviews/better" },
+  { lender: "Rocket Mortgage", brandSlug: "rocket", apr: 6.89, detail: "30y · 5% down · jumbo eligible", href: "/reviews/rocket" },
+  { lender: "loanDepot", brandSlug: "loandepot", apr: 6.92, detail: "30y · 5% down · cash-out OK", href: "/reviews/loandepot" },
+  { lender: "Chase Home Lending", brandSlug: "chase-mortgage", apr: 6.95, detail: "30y · 10% down · DreaMaker", href: "/reviews/chase-mortgage" },
 ];
 
-const hysaRates: RateRow[] = [
-  { lender: "Bread Savings", brandSlug: "bread", apr: 3.95, tag: "Top", detail: "$100 min · No fees · FDIC", href: "/reviews/bread" },
-  { lender: "Bread Savings", brandSlug: "bread", apr: 4.75, detail: "$100 min · No fees", href: "/reviews/bread" },
-  { lender: "Marcus", brandSlug: "marcus", apr: 4.50, detail: "No min · No fees", href: "/reviews/marcus" },
-  { lender: "Ally Bank", brandSlug: "ally", apr: 4.45, detail: "No min · No fees", href: "/reviews/ally" },
-  { lender: "SoFi", brandSlug: "sofi", apr: 3.10, detail: "Direct deposit req", href: "/reviews/sofi" },
-];
+const hysaRates: RateRow[] = savingsOffers.filter(o => o.apy !== null && !o.closed).sort((a,b) => b.apy! - a.apy!).slice(0,5).map(o => ({lender:o.name,brandSlug:o.key === "cit-savings-connect" ? "cit" : o.key,apr:o.apy!,detail:o.condition,href:o.review}));
 
 const cardCategories: Array<{
   category: string;
@@ -146,7 +140,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-mute leading-relaxed max-w-xl mb-8">
-                Live rates, sharp tools, plain-English guides. The whole money map in one place, built for the way you actually live.
+                Dated rates, sharp tools, plain-English guides. The whole money map in one place, built for the way you actually live.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/calculators" className="pill pill-ink">
@@ -160,7 +154,7 @@ export default function Home() {
 
               <div className="mt-10 flex items-center gap-6 text-sm text-mute">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono tabular text-ink font-semibold">14</span> live sources
+                  Provider sources linked
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="font-mono tabular text-ink font-semibold">8</span> calculators
@@ -182,20 +176,20 @@ export default function Home() {
                 <div className="relative">
                   <div className="flex items-center justify-between mb-3">
                     <span className="chip chip-ink">Mortgages</span>
-                    <span className="text-xs font-mono text-mute">4m ago</span>
+                    <span className="text-xs font-mono text-mute">Illustration</span>
                   </div>
-                  <div className="text-sm text-mute mb-1">Average 30-year fixed today</div>
+                  <div className="text-sm text-mute mb-1">Illustrative 30-year fixed rate</div>
                   <div className="font-display font-extrabold text-[5.5rem] leading-none tracking-tighter tabular text-ink">
                     6.67<span className="text-[2.5rem] align-top text-mute">%</span>
                   </div>
                   <div className="mt-4 flex items-center gap-3">
-                    {deltaPill(0.02)}
-                    <span className="text-sm text-mute">vs. yesterday</span>
+
+                    <span className="text-sm text-mute">Compare current quotes</span>
                   </div>
 
                   <div className="mt-6 pt-5 border-t border-line">
                     <div className="text-xs font-mono uppercase tracking-wider text-mute mb-3">
-                      Lowest among 14 lenders
+                      Illustrative rates · request a current quote
                     </div>
                     <div className="space-y-2.5">
                       {mortgageRates.slice(0, 3).map((r) => (
@@ -231,7 +225,7 @@ export default function Home() {
       <section className="border-y border-line bg-bg-soft/60">
         <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="font-display font-bold text-2xl tracking-tight">Today at a glance</h2>
+            <h2 className="font-display font-bold text-2xl tracking-tight">Comparison snapshots</h2>
             <Link href="/markets" className="text-sm text-mute hover:text-ink u-link">
               All markets →
             </Link>
@@ -244,7 +238,7 @@ export default function Home() {
                   {m.value}
                 </div>
                 <div className="flex items-center justify-between gap-2">
-                  {deltaPill(m.delta)}
+                  {m.delta !== undefined && deltaPill(m.delta)}
                 </div>
                 <div className="text-xs text-mute mt-3">{m.caption}</div>
               </div>
@@ -267,15 +261,15 @@ export default function Home() {
             label="Borrow"
             title="Mortgages, HELOCs, personal & auto loans."
             kpi="6.67%"
-            kpiCaption="30Y fixed avg"
+            kpiCaption="Illustrative 30Y rate"
             href="/mortgages"
           />
           <HubCard
             tone="violet"
             label="Save"
             title="HYSA, CDs, money market, checking."
-            kpi="3.95%"
-            kpiCaption="Top HYSA APY"
+            kpi={rateLabel(savingsOffer("bread").apy)}
+            kpiCaption="Bread Savings · dated APY"
             href="/savings"
           />
           <HubCard
@@ -294,30 +288,18 @@ export default function Home() {
         <div className="max-w-(--max-w-page) mx-auto px-6 py-20">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 lg:col-span-5">
-              <span className="chip chip-violet mb-4">Rate Forecast</span>
+              <span className="chip chip-violet mb-4">Mortgage planning</span>
               <h2 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.05] mb-4">
-                Where mortgage rates go from here.
+                How to compare mortgage quotes.
               </h2>
               <div className="text-sm text-mute font-mono uppercase tracking-wider">
-                By the Fintiex Rate Desk · April 30, 2026
+                Fintiex · Comparison guide
               </div>
             </div>
             <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
-              <p>
-                The 30-year fixed rate sits at <span className="font-mono tabular font-semibold">6.67%</span> today, little changed from a year ago. The Federal Reserve has signaled no rate cuts before September at the earliest, and the Fed funds rate doesn&rsquo;t directly set mortgage rates anyway. The benchmark that matters is the 10-year Treasury yield, which will determine where the back half of 2026 lands for buyers and refinancers alike.
-              </p>
-              <p>
-                Here is the mechanics layer: mortgage rates track the 10-year Treasury plus the mortgage-backed securities (MBS) spread, which sits around <span className="font-mono tabular font-semibold">170 basis points</span> right now. That spread has compressed from its 2024 peak but remains meaningfully elevated compared to the 2010s norm of roughly <span className="font-mono tabular font-semibold">120 bps</span>. When lender risk appetite improves and MBS demand picks up, that spread narrows. Every 10 bps of compression translates directly to a lower quoted rate.
-              </p>
-              <p>
-                The base case forecast: if the 10-year Treasury holds in the <span className="font-mono tabular font-semibold">4.30&ndash;4.50%</span> range and the MBS spread stays near current levels, expect the 30-year fixed to trade in a <span className="font-mono tabular font-semibold">6.7&ndash;7.0%</span> band through Q3 2026. A meaningful refi wave requires a sustained drop of 50 basis points or more from today&rsquo;s rate. That scenario is possible in Q4 if the Fed cuts twice and Treasuries rally, but it is not the consensus view.
-              </p>
-              <p>
-                For buyers: trying to time the rate bottom is a losing game. You will miss the window while inventory shifts and sellers adjust prices. Instead, negotiate hard on discount points. At 6.67%, paying 1 point (1% of the loan) typically buys down the rate by 0.25 percentage points. On a $400K loan that is $4,000 upfront to save about $60/month. Break-even is under six years. Lock the moment you have a ratified contract.
-              </p>
-              <p>
-                For refinancers: pull the break-even before dismissing it. If you closed in 2023 or 2024 at a rate of <span className="font-mono tabular font-semibold">7.5%</span> or above, the refi math may already pencil out. Closing costs on a no-cash-out refi typically run <span className="font-mono tabular font-semibold">$3,000&ndash;$6,000</span>. At a 75 bps savings on a $350K balance, you recover costs in roughly 40 to 80 months depending on your state and lender. Run the actual numbers before assuming rates need to fall further.
-              </p>
+              <p>Mortgage comparisons work best with personalized quotes for the same loan amount, term, down payment, and lock period. Headline interest rates alone do not capture points, lender fees, or closing costs.</p>
+              <p>Request Loan Estimates close together in time. Compare the interest rate, APR, cash needed to close, and monthly payment. Ask which charges can change and how long the quoted rate is locked.</p>
+              <p>For refinancing, estimate the time needed for monthly savings to recover upfront costs. Include changes to the loan term and the balance remaining when you expect to sell or refinance again. Our calculator lets you test different assumptions.</p>
               <div>
                 <Link href="/learn/refinance-break-even" className="pill pill-ghost">
                   Run the refi break-even math <span aria-hidden>→</span>
@@ -330,18 +312,18 @@ export default function Home() {
 
       {/* MORTGAGES TABLE */}
       <RatesPanel
-        eyebrow="Mortgages · Live"
-        title="Lowest 30-year fixed rates this morning"
-        subtitle="Pulled directly from each lender. No partner placements."
+        eyebrow="Mortgages · Overview"
+        title="Mortgage comparison starting points"
+        subtitle="Older illustrative figures, not current lender quotes. Compare a personalized Loan Estimate before deciding."
         rates={mortgageRates}
         seeAll={{ label: "All 50 mortgage lenders", href: "/mortgages" }}
       />
 
       {/* SAVINGS TABLE */}
       <RatesPanel
-        eyebrow="Savings · Live"
+        eyebrow="Savings · Compare"
         title="Highest-yielding savings accounts"
-        subtitle="FDIC-insured, no fees, no nonsense."
+        subtitle={`Provider observations checked ${SAVINGS_CHECKED}. Variable rates; deposit and balance conditions apply.`}
         rates={hysaRates}
         seeAll={{ label: "All HYSA + CDs", href: "/savings" }}
       />
@@ -356,18 +338,18 @@ export default function Home() {
                 Where to actually park your cash this year.
               </h2>
               <div className="text-sm text-mute font-mono uppercase tracking-wider">
-                By the Fintiex Rate Desk · April 30, 2026
+                Fintiex · Comparison guide
               </div>
             </div>
             <div className="col-span-12 lg:col-span-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                With the top high-yield savings account at <span className="font-mono tabular font-semibold">3.95%</span>, money market accounts at <span className="font-mono tabular font-semibold">3.85%</span>, and 12-month CDs at <span className="font-mono tabular font-semibold">4.30%</span>, where you keep your cash matters more than at any point since 2007. The default checking account at <span className="font-mono tabular font-semibold">0.01%</span> is not a safe harbor. It is a slow leak. On a $20,000 balance you are leaving roughly $790 per year on the table compared to the top HYSA.
+                Your savings return depends on the rate you qualify for, the time money stays deposited, and fees. Compare standard APYs separately from temporary boosts. Our savings comparison shows dated provider observations and deposit conditions.
               </p>
               <p>
                 The cleanest framework is three tiers. Tier 1 is your next three months of bills: keep this in checking, fully liquid, no rate chasing needed. Tier 2 is your three-to-six month emergency fund: this belongs in a high-yield savings account, earning a real rate while staying accessible within one to two business days. Tier 3 is cash you know you will not need for 12 months or more: this is the right home for a CD ladder, where you can capture the best available rates without sacrificing future flexibility.
               </p>
               <p>
-                On the HYSA side, three no-fee accounts lead the field right now. Bread Savings at <span className="font-mono tabular font-semibold">3.95%</span>, Bask Bank at <span className="font-mono tabular font-semibold">3.75%</span>, and Marcus by Goldman Sachs at <span className="font-mono tabular font-semibold">3.40%</span>. All three are FDIC-insured, carry no monthly fees, and have no minimum balance requirements. The 35 basis point gap between the top and the bottom of that no-fee list equals $35 per year per $10,000 sitting in the account. It takes about five minutes to open the better one. Worth it.
+                Compare Bread Savings, Bask, and Marcus alongside alternatives using our shared savings table. Bread requires an opening deposit; some competing offers require recurring deposits or larger balances. Check the linked provider terms before moving money.
               </p>
               <p>
                 A CD ladder on Tier 3 cash works like this: split $10,000 across five rungs at 3, 6, 12, 24, and 60 months. Blended average yield lands around <span className="font-mono tabular font-semibold">4.10%</span>. One rung matures every three months, giving you periodic access to the principal. Each time a rung matures you reinvest at the long end of the ladder, keeping the cycle going and capturing whatever rates are available at that point. Liquidity stays intact; you are never fully locked up.
@@ -427,7 +409,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="col-span-12 lg:col-span-6 flex items-end">
-              <p className="text-mute text-lg leading-relaxed">
+              <p className="text-white/80 text-lg leading-relaxed">
                 Every formula visible. Every assumption editable. No popups, no email walls. Built for back-of-the-envelope first, deep-dive second.
               </p>
             </div>
@@ -481,7 +463,7 @@ export default function Home() {
               <span className="font-display font-bold text-xl text-bg tracking-tight">Fintiex</span>
             </div>
             <p className="text-sm leading-relaxed max-w-sm">
-              Live rates, sharp tools, plain-English guides. The whole money map in one place. Sources cited, timestamps visible, no paid placements.
+              Dated rates, sharp tools, plain-English guides. The whole money map in one place. Check dates, compare conditions, and read our editorial policy.
             </p>
           </div>
           <FooterCol
@@ -547,7 +529,7 @@ function HubCard({
     tone === "lime"
       ? { bg: "bg-lime", text: "text-ink", chipCls: "chip chip-ink" }
       : tone === "violet"
-      ? { bg: "bg-[#6E5CFF]", text: "text-bg", chipCls: "chip chip-ink" }
+      ? { bg: "bg-[#5744CC]", text: "text-bg", chipCls: "chip chip-ink" }
       : { bg: "bg-ink", text: "text-bg", chipCls: "chip chip-lime" };
 
   return (
@@ -564,7 +546,7 @@ function HubCard({
           <div className="font-display font-extrabold text-4xl md:text-5xl tabular tracking-tighter leading-none">
             {kpi}
           </div>
-          <div className="text-xs opacity-70 mt-2 uppercase tracking-wider font-mono">
+          <div className="text-xs mt-2 uppercase tracking-wider font-mono">
             {kpiCaption}
           </div>
         </div>

@@ -143,25 +143,7 @@ export function FinancialProductSchema({
       "@type": "Organization",
       name: brandName ?? SITE_NAME,
     },
-    review: {
-      "@type": "Review",
-      author: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-      reviewBody: description,
-      ...(ratingValue
-        ? {
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue,
-              bestRating: 10,
-              worstRating: 1,
-            },
-          }
-        : {}),
-    },
+
   };
   if (apr) {
     data["interestRate"] = {
@@ -171,15 +153,7 @@ export function FinancialProductSchema({
     };
   }
   if (feesUrl) data["feesAndCommissionsSpecification"] = feesUrl;
-  if (ratingValue && reviewCount && reviewCount >= 5) {
-    data["aggregateRating"] = {
-      "@type": "AggregateRating",
-      ratingValue,
-      reviewCount,
-      bestRating: 10,
-      worstRating: 1,
-    };
-  }
+
   return <JsonLd data={data} />;
 }
 

@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const reviewRedirects = [
+  ["/savings/accounts/marcus-online-savings", "/reviews/marcus"],
+  ["/savings/accounts/ally-online-savings", "/reviews/ally"],
+  ["/savings/accounts/american-express-personal-savings", "/reviews/amex-savings"],
+  ["/savings/accounts/discover-online-savings", "/reviews/discover-savings"],
+
   // Legacy internal URLs retain a direct path to the matching published resource.
   ["/reviews/synchrony", "/savings/accounts/synchrony-high-yield-savings"],
   ["/reviews/lendingclub-savings", "/savings/accounts/lendingclub-high-yield-savings"],

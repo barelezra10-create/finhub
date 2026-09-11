@@ -1,3 +1,4 @@
+import {hysaOptions,SAVINGS_CHECKED} from "@/lib/savings-rates";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { states } from "@/lib/states";
@@ -10,24 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/savings/hysa" },
 };
 
-interface HysaOption {
-  lender: string;
-  apy: number;
-  tag?: string;
-  detail: string;
-  href?: string;
-}
-
-const hysaOptions: HysaOption[] = [
-  { lender: "Bread Savings", apy: 3.95, tag: "Top APY", detail: "$100 minimum opening deposit. No monthly fees. FDIC-insured.", href: "/reviews/bread" },
-  { lender: "Bask Bank", apy: 3.75, detail: "3.75% base APY, up to 4.10% with limited-time boosts. No minimum balance. No monthly fees.", href: "/reviews/bask" },
-  { lender: "CIT Bank", apy: 3.75, detail: "Platinum Savings pays this rate on $5,000+. Balances under $5,000 earn 0.25%.", href: "/reviews/cit" },
-  { lender: "Marcus by Goldman Sachs", apy: 3.40, detail: "No minimum balance. No fees. Backed by Goldman Sachs Bank USA.", href: "/reviews/marcus" },
-  { lender: "Synchrony Bank", apy: 3.30, detail: "No minimum balance. No monthly fees. ATM card with monthly fee rebates." },
-  { lender: "SoFi", apy: 3.10, detail: "Direct deposit required. New-member promo can boost the rate to 3.80% for six months.", href: "/reviews/sofi" },
-  { lender: "Ally Bank", apy: 3.00, detail: "No minimum balance. No monthly fees. 24/7 customer service.", href: "/reviews/ally" },
-  { lender: "American Express", apy: 3.00, detail: "No minimum balance. No fees. Easy online access.", href: "/reviews/amex-savings" },
-];
 
 function fmtPct(n: number) {
   return n.toFixed(2) + "%";
@@ -37,6 +20,7 @@ export default function HysaPage() {
   return (
     <>
       <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Savings", href: "/savings" }, { name: "High-Yield Savings", href: "/savings/hysa" }]} />
+      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Provider observations checked {SAVINGS_CHECKED}. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>.</p>
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />
@@ -50,7 +34,7 @@ export default function HysaPage() {
             Best High-Yield Savings Accounts of 2026
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. The top national online banks currently pay around 3.75 to 4.20% APY. That is roughly ten times more than what a typical big-bank savings account pays. Every account listed here is FDIC-insured up to $250,000 per depositor and charges no monthly fees.
+            A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. Compare the dated observations below, including recurring-deposit and balance requirements. This is a selection of accounts, not a claim to cover every bank or the highest rate in the market.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
@@ -76,7 +60,7 @@ export default function HysaPage() {
               The accounts on this page are all held at FDIC-member institutions. Your deposits are insured up to $250,000 per depositor, per institution, per ownership category. This is the same protection you get at any bank in the country, regardless of whether it has a branch near you.
             </p>
             <p>
-              Opening an HYSA takes about ten minutes. You link your existing checking account, transfer funds, and start earning interest the next business day. Most accounts have no minimum balance requirement and no monthly maintenance fees. A few require a small opening deposit in the $100 range.
+              Opening steps, approval, funding methods, and interest start dates vary by bank. Check the opening deposit and fee terms in the provider disclosures.
             </p>
           </div>
           <div className="space-y-5">
@@ -85,13 +69,13 @@ export default function HysaPage() {
               Start with the APY. The difference between 3.00% and 3.95% on a $25,000 balance is about $240 per year in additional interest. Over several years, that compounds into a meaningful amount. The best rate is not always at the most recognizable brand name.
             </p>
             <p>
-              Next, look at minimums and fees. A 3.75% account with no minimum is almost always better than a 3.95% account requiring $10,000 to open. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
+              Next, look at minimums and fees. A higher rate may be unsuitable if you cannot meet its opening or ongoing balance requirements. Monthly maintenance fees can erase a significant portion of your interest earnings if you fall below a threshold balance.
             </p>
             <p>
               Transfer speed matters too. Most online HYSAs settle ACH transfers in one to two business days. Some offer same-day or next-day transfers. If you plan to use the account as a liquid emergency fund, check the transfer timeline before committing.
             </p>
             <p>
-              Finally, check compounding frequency. All accounts below compound interest daily and credit it monthly, which gives you the full stated APY with no gaps in accrual.
+              APY includes the effect of compounding. Compare APYs on the same balance and qualifying conditions, and remember that a variable rate can change.
             </p>
           </div>
         </div>
@@ -110,7 +94,7 @@ export default function HysaPage() {
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
             <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              All accounts are nationally available. FDIC-insured. No paid placements or sponsored positions.
+              Compare the listed offers and their conditions. Confirm address eligibility and deposit insurance with the bank.
             </p>
           </div>
         </div>

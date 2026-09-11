@@ -280,7 +280,7 @@ export default function Page() {
                 <div className="text-sm text-mute mb-4 leading-relaxed">{c.best_for}</div>
                 <div className="flex items-center justify-between text-xs font-mono pt-4 border-t border-line">
                   <span className="text-mute">Fintiex rating</span>
-                  <span className="tabular font-semibold text-ink">{c.rating.toFixed(1)} / 5</span>
+                  <span className="tabular font-semibold text-ink">{c.rating != null ? c.rating.toFixed(1) + " / 5" : "Not scored"}</span>
                 </div>
               </Link>
             ) : null
