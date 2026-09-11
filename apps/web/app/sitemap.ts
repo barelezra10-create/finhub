@@ -26,7 +26,6 @@ function listMdxSlugs(dir: string): string[] {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
 
   const staticRoutes = [
     { url: "/", priority: 1.0, changeFrequency: "daily" as const },
@@ -53,6 +52,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/insurance/life", priority: 0.85, changeFrequency: "weekly" as const },
     { url: "/investing", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/investing/brokerages", priority: 0.85, changeFrequency: "weekly" as const },
+    { url: "/calculators/apr", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/auto-loan", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/balance-transfer", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/cd-ladder", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/compound-interest", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/debt-payoff", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/heloc", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/mortgage-payment", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/net-worth", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/personal-loan-payoff", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/refinance-break-even", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/rewards-optimizer", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/savings-goal", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/student-loan-payoff", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/calculators/which-card", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/balance-transfer", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/business", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/cash-back", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/compare", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/no-fee", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/secured", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/student", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/travel", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/credit-cards/zero-apr", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/15y-fixed", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/30y-fixed", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/cash-out", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/first-time-buyer", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/heloc", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/jumbo", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/mortgages/refinance", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/savings/accounts", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/calculators", priority: 0.8, changeFrequency: "weekly" as const },
     { url: "/learn", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/markets", priority: 0.8, changeFrequency: "daily" as const },
@@ -162,7 +193,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
+  const savingsAccountRoutes = listJsonSlugs("data/banking/savings-accounts").map((slug) => ({
+    url: `/savings/accounts/${slug}`,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
+  // Omit lastModified until content-specific revision dates are available.
   return [
+    ...savingsAccountRoutes,
     ...staticRoutes,
     ...guideRoutes,
     ...cdBankRoutes,
@@ -182,7 +221,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pillarArticleRoutes,
   ].map((entry) => ({
     url: `${SITE_URL}${entry.url}`,
-    lastModified: now,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

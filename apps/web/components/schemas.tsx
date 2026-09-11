@@ -79,7 +79,6 @@ export function ArticleSchema({
   authorName?: string;
   imageUrl?: string;
 }) {
-  const today = new Date().toISOString().split("T")[0];
   return (
     <JsonLd
       data={{
@@ -92,8 +91,8 @@ export function ArticleSchema({
         headline,
         description,
         image: imageUrl ? [imageUrl] : [`${SITE_URL}/opengraph-image`],
-        datePublished: datePublished ?? "2026-04-29",
-        dateModified: dateModified ?? today,
+        ...(datePublished ? { datePublished } : {}),
+        ...(dateModified ? { dateModified } : {}),
         author: {
           "@type": "Organization",
           name: authorName,

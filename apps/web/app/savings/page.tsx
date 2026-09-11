@@ -248,7 +248,11 @@ const faqs = [
 ];
 
 function SavingsBox({ lender, brand }: { lender: SavingsLender; brand: Brand }) {
-  const reviewHref = `/reviews/${brand.slug}`;
+  const reviewHref = brand.slug === "synchrony"
+    ? "/savings/accounts/synchrony-high-yield-savings"
+    : brand.slug === "lendingclub-savings"
+      ? "/savings/accounts/lendingclub-high-yield-savings"
+      : `/reviews/${brand.slug}`;
   const externalHref = `https://www.${brand.domain}`;
   return (
     <div className="card-flush p-6 md:p-8 group hover:border-ink transition-colors duration-200">

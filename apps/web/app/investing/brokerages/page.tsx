@@ -285,7 +285,7 @@ export default function Page() {
               Back to investing hub
               <span aria-hidden>{"→"}</span>
             </Link>
-            <Link href="/calculators/investment" className="pill pill-ghost">
+            <Link href="/calculators/compound-interest" className="pill pill-ghost">
               Investment calculator
             </Link>
           </div>

@@ -47,7 +47,7 @@ const cdRates: CdRow[] = [
     apy2y: 3.90,
     apy5y: 3.85,
     min: "$0",
-    reviewHref: "/reviews/synchrony",
+    reviewHref: "/savings/accounts/synchrony-high-yield-savings",
   },
   {
     bank: "Ally Bank",
@@ -292,7 +292,7 @@ export default function Page() {
           <Link href="/reviews/marcus" className="pill pill-ghost text-xs">
             Marcus review
           </Link>
-          <Link href="/reviews/synchrony" className="pill pill-ghost text-xs">
+          <Link href="/savings/accounts/synchrony-high-yield-savings" className="pill pill-ghost text-xs">
             Synchrony review
           </Link>
           <Link href="/reviews/cit" className="pill pill-ghost text-xs">

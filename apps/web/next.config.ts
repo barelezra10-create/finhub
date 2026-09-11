@@ -1,6 +1,23 @@
 import type { NextConfig } from "next";
 
 const reviewRedirects = [
+  // Legacy internal URLs retain a direct path to the matching published resource.
+  ["/reviews/synchrony", "/savings/accounts/synchrony-high-yield-savings"],
+  ["/reviews/lendingclub-savings", "/savings/accounts/lendingclub-high-yield-savings"],
+  ["/calculators/investment", "/calculators/compound-interest"],
+  ["/learn/savings/emergency-fund-playbook", "/learn/emergency-fund-playbook"],
+  ["/learn/savings/debt-avalanche-vs-snowball", "/learn/debt-avalanche-vs-snowball"],
+  ["/learn/mortgages/how-mortgages-work", "/learn/how-mortgages-work"],
+  ["/learn/savings/hysa-vs-cd", "/learn/hysa-vs-cd"],
+  ["/learn/savings/compound-interest-explained", "/learn/compound-interest-explained"],
+  ["/learn/loans/debt-avalanche-vs-snowball", "/learn/debt-avalanche-vs-snowball"],
+  ["/cards/discover-it-student-cash", "/credit-cards/discover-it-student-cash"],
+  ["/cards/discover-it-secured", "/credit-cards/discover-it-secured"],
+  ["/tools/which-card", "/calculators/which-card"],
+  ["/tools/apr", "/calculators/apr"],
+  ["/tools/payoff", "/calculators/debt-payoff"],
+  ["/tools/balance-transfer", "/calculators/balance-transfer"],
+
   // /reviews/{old} → /credit-cards/{new} (canonical dynamic card reviews live under /credit-cards)
   ["/reviews/amex-gold", "/credit-cards/amex-gold"],
   ["/reviews/chase-sapphire-preferred", "/credit-cards/chase-sapphire-preferred"],

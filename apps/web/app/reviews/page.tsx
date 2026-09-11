@@ -18,6 +18,8 @@ const BRAND_TO_CARD_SLUG: Record<string, string> = {
 };
 
 function brandHref(b: Brand): string {
+  if (b.slug === "synchrony") return "/savings/accounts/synchrony-high-yield-savings";
+  if (b.slug === "lendingclub-savings") return "/savings/accounts/lendingclub-high-yield-savings";
   if (b.category === "card") {
     const mapped = BRAND_TO_CARD_SLUG[b.slug] ?? b.slug;
     return `/credit-cards/${mapped}`;

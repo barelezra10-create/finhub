@@ -76,7 +76,7 @@ export default function Page() {
               Compare brokerages
               <span aria-hidden>{"→"}</span>
             </Link>
-            <Link href="/calculators/investment" className="pill pill-ghost">
+            <Link href="/calculators/compound-interest" className="pill pill-ghost">
               Investment calculator
             </Link>
           </div>
@@ -261,7 +261,7 @@ export default function Page() {
               Compare brokerages
               <span aria-hidden>{"→"}</span>
             </Link>
-            <Link href="/calculators/investment" className="pill pill-ghost">
+            <Link href="/calculators/compound-interest" className="pill pill-ghost">
               Investment calculator
             </Link>
           </div>
