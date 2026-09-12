@@ -12,7 +12,7 @@
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
   "signup_bonus": null,
@@ -22,13 +22,23 @@
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "Everyday purchase cash back ranges from 1% to 1.5%, subject to program requirements."
+  ],
   "drawbacks": [],
   "application_url": "https://www.petalcard.com/",
   "last_updated": "2026-09-12",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "annual_fee_note": "Terms may differ for members acquired before May 16, 2023.",
+  "source_url": "https://www.petalcard.com/",
+  "source_checked": "2026-09-12",
+  "verified_fields": [
+    "annual_fee_note",
+    "perks",
+    "annual_fee"
+  ]
 }

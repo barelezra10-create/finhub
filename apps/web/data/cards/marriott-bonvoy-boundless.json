@@ -8,28 +8,43 @@
     "hotel",
     "rewards"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.24,
+    "max": 27.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 95,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "Three free-night awards after $3,000 in eligible purchases within 3 months of account opening. Each award covers a night costing up to 50,000 points; resort fees may apply.",
+  "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "Earn 6 card points per dollar at participating Marriott hotels; membership and status can earn additional points.",
+    "Earn 3 points per dollar on the first $6,000 in combined grocery, gas and dining purchases annually; 2 on other purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
   "last_updated": "2026-09-12",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless",
+  "source_checked": "2026-09-12",
+  "verified_fields": [
+    "apr_purchase",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks",
+    "annual_fee"
+  ]
 }

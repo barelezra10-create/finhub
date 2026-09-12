@@ -7,28 +7,43 @@
     "travel",
     "hotel"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.24,
+    "max": 27.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 95,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "30,000 points after $3,000 in purchases in the first 3 months. Separately, earn 2 total points per dollar on normally 1-point purchases for the first 6 months, on up to $15,000 in spending.",
+  "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "The card earns 4 points per dollar on qualifying Hyatt purchases; Hyatt membership can earn additional base points.",
+    "One Category 1–4 free night after each cardmember anniversary; another after $15,000 in calendar-year spending."
+  ],
   "drawbacks": [],
-  "application_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt",
+  "application_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
   "last_updated": "2026-09-12",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+  "source_checked": "2026-09-12",
+  "verified_fields": [
+    "apr_purchase",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks",
+    "annual_fee"
+  ]
 }
