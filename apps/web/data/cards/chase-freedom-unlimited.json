@@ -7,51 +7,46 @@
     "cashback"
   ],
   "apr_purchase": {
-    "min": 20.49,
-    "max": 29.24
+    "min": 18.24,
+    "max": 27.74
   },
   "apr_intro": 0,
   "apr_intro_months": 15,
-  "apr_balance_transfer": {
-    "min": 20.49,
-    "max": 29.24
-  },
-  "apr_cash_advance": 29.99,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
   "annual_fee": 0,
-  "foreign_tx_fee": 0.03,
-  "balance_transfer_fee": 0.03,
-  "signup_bonus": "$200 bonus cash back",
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": "$200 after $500 in purchases in the first 3 months",
   "signup_bonus_spend": 500,
   "signup_bonus_value_usd": 200,
-  "rewards": {
-    "chase-travel-portal": 5,
-    "dining": 3,
-    "drugstores": 3,
-    "other": 1.5
-  },
+  "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 670,
-    "recommended": 720
-  },
+  "credit_score_required": null,
   "perks": [
-    "1.5% cash back on all purchases with no annual fee",
-    "5% on travel booked through Chase Travel, 3% dining and drugstores",
-    "$200 bonus after spending $500 in first 3 months",
-    "0% intro APR on purchases and balance transfers for 15 months",
-    "No annual fee",
-    "Trip cancellation and interruption insurance",
-    "Purchase protection and extended warranty coverage",
-    "Can be paired with Sapphire cards to convert to transferable points"
+    "At least 1.5% cash back on eligible purchases; higher rates apply to selected categories."
   ],
-  "drawbacks": [
-    "3% foreign transaction fee",
-    "Only 1.5% base rate outside bonus categories",
-    "Chase 5/24 rule applies",
-    "3% balance transfer fee during intro period (then up to 5%)"
-  ],
+  "drawbacks": [],
   "application_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
-  "last_updated": "2026-04-29",
-  "rating": 4.5
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "listed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "intro_terms": "0% APR on purchases and balance transfers for 15 months; then 18.24%\u201327.74% variable APR. Transfer fees apply.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+  "verified_fields": [
+    "annual_fee",
+    "apr_purchase",
+    "apr_intro",
+    "apr_intro_months",
+    "intro_terms",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "perks"
+  ]
 }

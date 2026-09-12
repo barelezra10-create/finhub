@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import type { CardData } from "@/lib/cards";
+import { formatAnnualFee, type CardData } from "@/lib/cards";
 
 type Goal = "cashback" | "travel" | "build" | "balance-transfer" | "business";
 
@@ -22,17 +22,6 @@ const QUESTIONS = [
       { value: "build", label: "Build or rebuild credit" },
       { value: "balance-transfer", label: "Pay down a balance" },
       { value: "business", label: "Get a business card" },
-    ],
-  },
-  {
-    key: "creditScore",
-    label: "What is your credit score?",
-    options: [
-      { value: 500, label: "Below 580" },
-      { value: 620, label: "580 to 669" },
-      { value: 700, label: "670 to 739" },
-      { value: 760, label: "740 to 799" },
-      { value: 820, label: "800 or above" },
     ],
   },
   {
@@ -56,9 +45,9 @@ function recommendCards(cards: CardData[], a: Answers): CardData[] {
   const wanted = goalToCategory[a.goal];
   return cards
     .filter((c) => (c.category ?? []).some((cat) => wanted.includes(cat)))
-    .filter((c) => c.credit_score_required.recommended <= a.creditScore + 30)
+    .filter((c) => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student")
     .filter((c) => a.annualFeeOk || c.annual_fee === 0)
-    .sort((x, y) => (y.signup_bonus_value_usd ?? 0) - (x.signup_bonus_value_usd ?? 0))
+    .sort((x, y) => x.name.localeCompare(y.name))
     .slice(0, 3);
 }
 
@@ -89,7 +78,6 @@ export function Calculator({ cards }: { cards: CardData[] }) {
           <div className="font-mono uppercase text-xs tracking-wider text-mute mb-2">Your answers</div>
           <div className="space-y-3 text-sm">
             <Row label="Goal" value={String(answers.goal)} />
-            <Row label="Credit score" value={`~${answers.creditScore}`} />
             <Row label="Annual fee ok" value={answers.annualFeeOk ? "Yes" : "No"} />
           </div>
           <button
@@ -103,11 +91,11 @@ export function Calculator({ cards }: { cards: CardData[] }) {
         {/* RESULTS */}
         <div className="card p-8 bg-ink text-bg">
           <div className="font-mono uppercase text-xs tracking-wider text-bg/60 mb-3">
-            Top picks for you
+            Cards matching your selected category — alphabetical, not approval predictions
           </div>
           {recs.length === 0 ? (
             <p className="text-bg/70 leading-relaxed">
-              No matches in our current 50-card dataset. Try widening your answers (raise the credit score band or accept an annual fee).
+              No matching cards with confirmed fees in this selection. Compare issuer terms directly.
             </p>
           ) : (
             <ol className="space-y-4">
@@ -119,7 +107,7 @@ export function Calculator({ cards }: { cards: CardData[] }) {
                   </div>
                   <div className="text-bg/70 text-sm mb-3">
                     {c.signup_bonus ?? "Solid all-around pick"}
-                    {c.annual_fee > 0 ? ` · $${c.annual_fee} annual fee` : " · $0 annual fee"}
+                    {` · Annual fee: ${formatAnnualFee(c.annual_fee)}`}
                   </div>
                   <Link
                     href={`/credit-cards/${c.slug}`}

@@ -20,19 +20,14 @@ export function Calculator({ cards }: { cards: CardData[] }) {
   const result = useMemo(() => {
     const spend: Record<string, number> = {
       groceries,
-      "us-supermarkets": groceries,
-      "online-groceries": groceries,
       dining,
-      "us-restaurants": dining,
       travel,
-      flights: travel,
-      hotels: travel,
       gas,
       other,
     };
-    const ranked = cards
+    const ranked = cards.filter(c => c.calculator_eligible && c.annual_fee != null)
       .map((c) => ({ card: c, value: yearlyRewardsValue(c, spend) }))
-      .sort((a, b) => b.value - a.value);
+      .sort((a, b) => (b.value - b.card.annual_fee!) - (a.value - a.card.annual_fee!));
     const totalSpend = (groceries + dining + travel + gas + other) * 12;
     return { ranked, top5: ranked.slice(0, 5), totalSpend };
   }, [cards, groceries, dining, travel, gas, other]);
@@ -54,18 +49,18 @@ export function Calculator({ cards }: { cards: CardData[] }) {
         {/* RESULT */}
         <div className="card p-8 bg-ink text-bg">
           <div className="font-mono uppercase text-xs tracking-wider text-bg/60 mb-3">
-            Top card earns
+            Highest net rewards option · gross earnings
           </div>
           <div className="font-display font-extrabold text-5xl md:text-6xl tabular leading-none mb-2">
             {usd.format(result.top5[0]?.value ?? 0)}
           </div>
           <div className="text-bg/60 text-sm mb-8">
-            Per year, based on {usd.format(result.totalSpend)} of total annual spend. Points cards valued at their typical redemption rate.
+            Per year, based on {usd.format(result.totalSpend)} of total annual spend. Limited to cards with confirmed uncapped cash-back base rates. Assumes eligible purchases and full payment; excludes bonuses, interest, credits and portal bonuses.
           </div>
           <div className="grid grid-cols-2 gap-5 pt-6 border-t border-white/15">
             <Metric label="Top card" value={result.top5[0]?.card.name ?? "--"} />
             <Metric label="Annual spend" value={usd.format(result.totalSpend)} />
-            <Metric label="Cards ranked" value={String(cards.length)} />
+            <Metric label="Cards ranked" value={String(result.ranked.length)} />
             <Metric
               label="Earn rate"
               value={
@@ -83,7 +78,7 @@ export function Calculator({ cards }: { cards: CardData[] }) {
         <div className="px-6 py-4 border-b border-line bg-bg-soft/60">
           <div className="font-display font-bold text-lg">Top 5 cards for your spending</div>
           <div className="text-mute text-sm">
-            Ranked by annual rewards value at your monthly spend profile.
+            Ranked after subtracting annual fees. Business and personal cards have different eligibility. Fee refunds are excluded.
           </div>
         </div>
         <div className="overflow-x-auto">
@@ -99,7 +94,7 @@ export function Calculator({ cards }: { cards: CardData[] }) {
             </thead>
             <tbody>
               {result.top5.map((row, i) => {
-                const net = row.value - row.card.annual_fee;
+                const net = row.value - row.card.annual_fee!;
                 return (
                   <tr
                     key={row.card.slug}
@@ -115,7 +110,7 @@ export function Calculator({ cards }: { cards: CardData[] }) {
                       </Link>
                     </td>
                     <td className="px-6 py-3 font-mono tabular text-right text-mute">
-                      {row.card.annual_fee === 0 ? "$0" : usd.format(row.card.annual_fee)}
+                      {row.card.annual_fee === 0 ? "$0" : usd.format(row.card.annual_fee!)}
                     </td>
                     <td className="px-6 py-3 font-mono tabular text-right">
                       {usd.format(row.value)}

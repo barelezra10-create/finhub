@@ -71,6 +71,20 @@ try {
   const logHtml = (await clickLog.text()).split('id="activity"')[1];
   assert.ok(logHtml); assert.match(logHtml,/bank.example/); assert.match(logHtml,/Google/); assert.match(logHtml,/1<!-- --> matching events/);
   const emptyLog = await fetch(base+'/admin?tab=activity&source=not_a_source',{headers:auth}); assert.match(await emptyLog.text(),/No matching activity/);
+  const conversionHeader='network,conversion_id,occurred_at,offer,status,revenue,currency\n';
+  const conversionDate=new Date().toISOString().slice(0,10);
+  const uploadConversion=async(csv,requestHeaders={...auth,origin:base})=>{const f=new FormData();f.set('file',new File([conversionHeader+csv],'partner.csv',{type:'text/csv'}));return fetch(base+'/api/admin/conversions/import',{method:'POST',headers:requestHeaders,body:f,redirect:'manual'});};
+  const conversionRow=(status,amount='12.50')=>`fintiex_test,conversion-1,${conversionDate},citi-double-cash,${status},${amount},USD\n`;
+  assert.equal((await uploadConversion(conversionRow('approved'),{origin:base})).status,401);
+  assert.equal((await uploadConversion(conversionRow('approved'),{...auth,origin:'https://evil.example'})).status,403);
+  assert.match((await uploadConversion(conversionRow('approved'))).headers.get('location'),/import=success/);
+  assert.match((await uploadConversion(conversionRow('paid'))).headers.get('location'),/import=success/);
+  let conversion=(await pool.query("SELECT status,revenue FROM fintiex_conversions WHERE network='fintiex_test'")).rows;
+  assert.equal(conversion.length,1);assert.equal(conversion[0].status,'paid');assert.equal(conversion[0].revenue,'12.50');
+  for(const bad of [conversionRow('paid')+conversionRow('paid'),conversionRow('rejected'),conversionRow('paid','NaN'),conversionRow('paid').replace(conversionDate,'2026-02-30')])assert.match((await uploadConversion(bad)).headers.get('location'),/import=error/);
+  conversion=(await pool.query("SELECT status,revenue FROM fintiex_conversions WHERE network='fintiex_test'")).rows;
+  assert.equal(conversion.length,1);assert.equal(conversion[0].status,'paid');
+  const revenuePage=await fetch(base+'/admin?tab=conversions',{headers:auth});const revenueHtml=await revenuePage.text();assert.match(revenueHtml,/fintiex_test/);assert.match(revenueHtml,/12.50/);assert.match(revenueHtml,/Automatic partner synchronization is not configured/);
   assert.equal((await fetch(base+'/api/admin/logout',{method:'POST',headers:{...auth,origin:'https://evil.example'}})).status,403);
   await pool.query("UPDATE fintiex_admin_sessions SET expires_at=now()-interval '1 second' WHERE token_hash=$1",[tokenHash]);
   assert.equal((await fetch(base+'/admin',{headers:auth,redirect:'manual'})).status,303,'expired session rejected');
@@ -79,11 +93,12 @@ try {
   assert.equal((await fetch(base+'/admin',{headers:auth,redirect:'manual'})).status,303,'logged-out session revoked');
   for(let i=0;i<10;i++) await login('wrong',base,'192.0.2.12');
   assert.match((await login('wrong',base,'192.0.2.12')).headers.get('location'),/error=limited/);
-  console.log('PASS: form login, logout revocation, cookie protection, CSRF, throttling, click/source filters, authentication, no-store, ingestion, deduplication, daily visitor grouping, referral sanitization, campaigns, outbound clicks, bot/DNT/GPC filtering, origin checks, size/path validation and dashboard reporting');
+  console.log('PASS: form login, logout revocation, cookie protection, CSRF, throttling, click/source filters, authentication, no-store, ingestion, deduplication, daily visitor grouping, referral sanitization, campaigns, outbound clicks, bot/DNT/GPC filtering, origin checks, size/path validation dashboard reporting, conversion import authentication, CSRF, idempotent updates, rejected amounts, invalid dates and atomic failure');
 } finally {
   await pool.query('DELETE FROM fintiex_analytics WHERE event_id = ANY($1::uuid[])',[ids]);
   if(tokenHash) await pool.query('DELETE FROM fintiex_admin_sessions WHERE token_hash=$1',[tokenHash]);
   await pool.query('DELETE FROM fintiex_admin_login_attempts');
   await pool.query("DELETE FROM fintiex_search_reports WHERE engine='bing' AND period_days=0");
+  await pool.query("DELETE FROM fintiex_conversions WHERE network='fintiex_test'");
   await pool.end();
 }

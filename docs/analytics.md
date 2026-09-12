@@ -54,3 +54,11 @@ Provider reports refresh when opening Search keywords if the cache is older than
 ## Offer clicks (September 12, 2026)
 
 The Offer clicks tab groups explicitly labeled outbound provider links by product and button placement. Card comparisons/reviews, brand CTAs, and savings comparisons/reviews send sanitized `offer` and `placement` tags. Primary clicks and middle clicks are captured without delaying navigation. Other external links remain ordinary outbound clicks; historical events have empty offer tags and are not backfilled. Page reports show offer clicks, estimated daily clickers, and clicks per 100 page views (not a completed-application conversion rate, and potentially above 100). Global audience filters apply. Activity CSV includes both tags. No destination paths, query strings, or form inputs are added to storage.
+
+## Partner conversion imports (September 12, 2026)
+
+`/admin?tab=conversions` accepts actual partner reports via authenticated, same-origin POST `/api/admin/conversions/import`. Header: `network,conversion_id,occurred_at,offer,status,revenue,currency`. Plain unquoted CSV, max 1 MB and 5,000 rows. Use opaque IDs, date YYYY-MM-DD, status submitted/approved/paid/rejected, nonnegative commission (two decimals), uppercase three-letter currency. Rejected rows must have zero commission. A duplicate ID within a file rejects the whole file; reimporting an existing network/ID updates it atomically. Raw files are not retained. Conversion records are retained for reporting independently of the 90-day anonymous traffic window. No customer PII is required.
+
+The report groups partner, offer and currency and uses the conversion date. Paid commission and approved-but-unpaid commission are separate. Traffic audience filters cannot attribute imported conversions; a real partner integration with shared click IDs is required. No automatic affiliate network connection is configured.
+
+Bing is verified for `https://fintiex.com/`. `FINTIEX_BING_API_KEY` and `FINTIEX_BING_SITE_URL` are configured on Railway; the existing refresh scheduler fetches reports after deployment. The initial query API returned an empty successful result. This indicates no data returned yet, not proof that there have been no Bing impressions.

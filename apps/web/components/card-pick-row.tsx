@@ -43,14 +43,14 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
-            <Spec label="Annual fee" value={formatAnnualFee(card.annual_fee ?? 0)} />
+            <Spec label="Annual fee" value={formatAnnualFee(card.annual_fee)} />
             <Spec label="Top reward" value={topRewardRate(card)} />
             <Spec
               label="Signup bonus"
               value={
                 card.signup_bonus_value_usd != null
                   ? `$${card.signup_bonus_value_usd.toLocaleString()}`
-                  : card.signup_bonus ?? "None"
+                  : card.signup_bonus ?? "Check issuer"
               }
             />
 
@@ -60,12 +60,11 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
             <p className="text-sm text-ink-soft mb-3 max-w-2xl">
               <span className="font-semibold text-ink">Bonus: </span>
               {card.signup_bonus}
-              {card.signup_bonus_spend
-                ? ` after $${card.signup_bonus_spend.toLocaleString()} in spend`
-                : ""}
+
             </p>
           )}
 
+          <p className="text-xs text-mute mb-3">{card.source_checked ? `Selected facts checked ${card.source_checked}` : "Current terms unconfirmed"} · <a className="underline" href={card.source_url || card.application_url} target="_blank" rel="noopener noreferrer">Official source</a></p>
           <ul className="space-y-1.5 text-[0.9375rem] text-ink-soft max-w-2xl">
             {card.perks.slice(0, 3).map((p) => (
               <li key={p} className="flex gap-2">
@@ -87,7 +86,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
               rel="nofollow noopener noreferrer"
               className="pill pill-ink"
             >
-              Apply at {card.issuer.split(" ")[0]} <span aria-hidden>↗</span>
+              Check issuer terms <span aria-hidden>↗</span>
             </a>
             <Link href={`/credit-cards/${card.slug}`} className="pill pill-ghost">
               Read review

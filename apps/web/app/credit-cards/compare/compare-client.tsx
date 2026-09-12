@@ -24,15 +24,15 @@ type Slot = string | null;
 
 const POPULAR_COMPARISONS: { label: string; slugs: string[] }[] = [
   {
-    label: "Best premium travel",
+    label: "Premium travel comparison",
     slugs: ["chase-sapphire-reserve", "amex-platinum", "capital-one-venture-x"],
   },
   {
-    label: "Best flat-rate cashback",
+    label: "Cash-back comparison",
     slugs: ["citi-double-cash", "wells-fargo-active-cash", "capital-one-quicksilver"],
   },
   {
-    label: "Best secured cards",
+    label: "Secured card comparison",
     slugs: ["discover-it-secured", "capital-one-platinum-secured", "opensky-secured"],
   },
   {
@@ -52,7 +52,7 @@ const USD = new Intl.NumberFormat("en-US", {
 });
 
 function formatUSD(n: number | null | undefined): string {
-  if (n == null) return "None";
+  if (n == null) return "Check issuer";
   return USD.format(n);
 }
 
@@ -269,12 +269,6 @@ function CardSlotView({
               {card.name}
             </div>
           </div>
-          <div className="inline-flex items-center gap-1 rounded-full bg-bg-soft border border-line px-2 py-0.5">
-            <span className="text-[11px] font-mono tabular font-semibold text-ink">
-              {(card.rating ?? 0).toFixed(1)}
-            </span>
-            <span className="text-[10px] text-mute">/5</span>
-          </div>
           <div className="mt-auto flex flex-wrap gap-2 justify-center pt-2">
             <button
               type="button"
@@ -379,7 +373,7 @@ function CardPickerModal({
           fullCardName(c).toLowerCase().includes(q)
         );
       })
-      .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [cards, search, filter]);
 
   return (
@@ -523,12 +517,6 @@ type InfoRow = {
 
 const COMPARABLE_ROWS: ComparableRow[] = [
   {
-    label: "Fintiex rating",
-    render: (c) => `${(c.rating ?? 0).toFixed(1)} / 5`,
-    extract: (c) => c.rating ?? 0,
-    direction: "highest",
-  },
-  {
     label: "Annual fee",
     render: (c) => formatAnnualFee(c.annual_fee),
     extract: (c) => c.annual_fee,
@@ -537,21 +525,21 @@ const COMPARABLE_ROWS: ComparableRow[] = [
   {
     label: "Signup bonus value",
     render: (c) =>
-      c.signup_bonus_value_usd ? formatUSD(c.signup_bonus_value_usd) : "None",
-    extract: (c) => c.signup_bonus_value_usd ?? 0,
+      c.signup_bonus_value_usd != null ? formatUSD(c.signup_bonus_value_usd) : "Check issuer",
+    extract: (c) => c.signup_bonus_value_usd ?? null,
     direction: "highest",
   },
   {
     label: "Bonus spend required",
     render: (c) =>
-      c.signup_bonus_spend ? `${formatUSD(c.signup_bonus_spend)} in 3 mo` : "None",
+      c.signup_bonus_spend ? `${formatUSD(c.signup_bonus_spend)} — see offer deadline` : "Check issuer",
     extract: (c) => c.signup_bonus_spend ?? Number.POSITIVE_INFINITY,
     direction: "lowest",
   },
   {
     label: "Purchase APR",
     render: (c) => formatAprRange(c.apr_purchase),
-    extract: (c) => c.apr_purchase?.min ?? 0,
+    extract: (c) => c.apr_purchase?.min ?? null,
     direction: "lowest",
   },
   {
@@ -559,43 +547,40 @@ const COMPARABLE_ROWS: ComparableRow[] = [
     render: (c) =>
       c.apr_intro === 0 && c.apr_intro_months > 0
         ? `0% for ${c.apr_intro_months} mo`
-        : "None",
+        : "Check issuer",
     extract: (c) => (c.apr_intro === 0 ? c.apr_intro_months ?? 0 : 0),
     direction: "highest",
   },
   {
     label: "Balance transfer APR",
     render: (c) => formatAprRange(c.apr_balance_transfer),
-    extract: (c) => c.apr_balance_transfer?.min ?? 0,
+    extract: (c) => c.apr_balance_transfer?.min ?? null,
     direction: "lowest",
   },
   {
     label: "Balance transfer fee",
     render: (c) => formatFeePct(c.balance_transfer_fee),
-    extract: (c) => c.balance_transfer_fee ?? 0,
+    extract: (c) => c.balance_transfer_fee ?? null,
     direction: "lowest",
   },
   {
     label: "Foreign transaction fee",
     render: (c) => formatFeePct(c.foreign_tx_fee),
-    extract: (c) => c.foreign_tx_fee ?? 0,
+    extract: (c) => c.foreign_tx_fee ?? null,
     direction: "lowest",
   },
   {
     label: "Cash advance APR",
     render: (c) => formatPct(c.apr_cash_advance),
-    extract: (c) => c.apr_cash_advance ?? 0,
-    direction: "lowest",
-  },
-  {
-    label: "Min credit score",
-    render: (c) => String(c.credit_score_required?.min ?? 0),
-    extract: (c) => c.credit_score_required?.min ?? 0,
+    extract: (c) => c.apr_cash_advance ?? null,
     direction: "lowest",
   },
 ];
 
 const INFO_ROWS: InfoRow[] = [
+  {label:"Welcome offer terms",render:c=>c.signup_bonus || "Check issuer"},
+  {label:"Intro offer conditions",render:c=>c.intro_terms || "Check issuer"},
+  {label:"Selected facts checked",render:c=>c.source_checked || "Unconfirmed"},
   {
     label: "Top reward",
     render: (c) => topRewardRate(c),
@@ -623,7 +608,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
       (v): v is { slug: string; value: number } =>
         v.value != null && Number.isFinite(v.value),
     );
-    if (valid.length === 0) return null;
+    if (valid.length !== filled.length) return null;
     const target =
       row.direction === "lowest"
         ? Math.min(...valid.map((v) => v.value))
@@ -770,7 +755,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
                         rel="nofollow noopener noreferrer"
                         className="pill pill-lime"
                       >
-                        Apply at {c.issuer}
+                        Check issuer terms
                         <span aria-hidden>↗</span>
                       </a>
                     ) : (
@@ -811,7 +796,7 @@ function RewardsList({ card }: { card: CardData }) {
     .slice(0, 4);
   const unit = card.rewards_type === "cashback" ? "%" : "x";
   if (entries.length === 0) {
-    return <span className="text-mute text-sm">No rewards program</span>;
+    return <span className="text-mute text-sm">Check issuer for current rewards</span>;
   }
   return (
     <ul className="space-y-1 text-sm">

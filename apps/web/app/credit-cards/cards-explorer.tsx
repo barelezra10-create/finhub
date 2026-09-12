@@ -26,24 +26,19 @@ const ANNUAL_FEE_OPTIONS: { value: AnnualFeeFilter; label: string }[] = [
   { value: "high", label: "$100 and up" },
 ];
 
-const CREDIT_OPTIONS: { value: CreditFilter; label: string }[] = [
-  { value: "any", label: "Any credit" },
-  { value: "excellent", label: "Excellent 740+" },
-  { value: "good", label: "Good 670+" },
-  { value: "fair", label: "Fair 580+" },
-  { value: "poor", label: "Building credit" },
-];
+const CREDIT_OPTIONS: { value: CreditFilter; label: string }[] = [{value:"any",label:"Issuer decides eligibility"}];
 
 const SORT_OPTIONS: { value: Sort; label: string }[] = [
-  { value: "rating", label: "Top rated" },
-  { value: "bonus-desc", label: "Best signup bonus" },
+
+
   { value: "fee-asc", label: "Lowest fee" },
   { value: "name", label: "A to Z" },
 ];
 
 function matchesAnnualFee(card: CardData, f: AnnualFeeFilter): boolean {
-  const fee = card.annual_fee ?? 0;
+  const fee = card.annual_fee;
   if (f === "any") return true;
+  if (fee == null) return false;
   if (f === "none") return fee === 0;
   if (f === "low") return fee > 0 && fee < 100;
   return fee >= 100;
@@ -73,7 +68,7 @@ function matchesIssuer(card: CardData, issuer: string): boolean {
 
 function compareCards(a: CardData, b: CardData, sort: Sort): number {
   if (sort === "rating") return (b.rating ?? 0) - (a.rating ?? 0);
-  if (sort === "fee-asc") return (a.annual_fee ?? 0) - (b.annual_fee ?? 0);
+  if (sort === "fee-asc") return (a.annual_fee ?? Infinity) - (b.annual_fee ?? Infinity);
   if (sort === "bonus-desc")
     return (b.signup_bonus_value_usd ?? 0) - (a.signup_bonus_value_usd ?? 0);
   return fullCardName(a).localeCompare(fullCardName(b));
@@ -88,7 +83,7 @@ export function CardsExplorer({ cards }: CardsExplorerProps) {
   const [fee, setFee] = useState<AnnualFeeFilter>("any");
   const [credit, setCredit] = useState<CreditFilter>("any");
   const [issuer, setIssuer] = useState<string>("");
-  const [sort, setSort] = useState<Sort>("rating");
+  const [sort, setSort] = useState<Sort>("name");
 
   const issuers = useMemo(() => {
     return Array.from(new Set(cards.map((c) => c.issuer))).sort();
@@ -111,7 +106,7 @@ export function CardsExplorer({ cards }: CardsExplorerProps) {
     setFee("any");
     setCredit("any");
     setIssuer("");
-    setSort("rating");
+    setSort("name");
   };
 
   const anyFilterActive =
@@ -159,12 +154,6 @@ export function CardsExplorer({ cards }: CardsExplorerProps) {
               value={fee}
               onChange={(v) => setFee(v as AnnualFeeFilter)}
               options={ANNUAL_FEE_OPTIONS}
-            />
-            <Select
-              label="Credit"
-              value={credit}
-              onChange={(v) => setCredit(v as CreditFilter)}
-              options={CREDIT_OPTIONS}
             />
             <Select
               label="Issuer"
@@ -232,7 +221,6 @@ export function CardsExplorer({ cards }: CardsExplorerProps) {
 
 function CardTile({ card }: { card: CardData }) {
   const cats = cardCategories(card).slice(0, 2);
-  const ratingNice = (card.rating ?? 0).toFixed(1);
   return (
     <Link
       href={cardHref(card.slug)}
@@ -250,16 +238,10 @@ function CardTile({ card }: { card: CardData }) {
             {card.name}
           </div>
         </div>
-        <div className="shrink-0 inline-flex items-center gap-1 rounded-full bg-bg-soft border border-line px-2 py-0.5">
-          <span className="text-[11px] font-mono tabular font-semibold text-ink">
-            {ratingNice}
-          </span>
-          <span className="text-[10px] text-mute">/5</span>
-        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 my-4 pt-4 border-t border-line">
-        <Stat label="Annual fee" value={formatAnnualFee(card.annual_fee ?? 0)} />
+        <Stat label="Annual fee" value={formatAnnualFee(card.annual_fee)} />
         <Stat label="Top reward" value={topRewardRate(card)} />
       </div>
 

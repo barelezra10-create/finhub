@@ -7,50 +7,31 @@
     "student",
     "cashback"
   ],
-  "apr_purchase": {
-    "min": 20.24,
-    "max": 30.24
-  },
-  "apr_intro": 0,
-  "apr_intro_months": 15,
-  "apr_balance_transfer": {
-    "min": 20.24,
-    "max": 30.24
-  },
-  "apr_cash_advance": 29.99,
-  "annual_fee": 0,
-  "foreign_tx_fee": 0.03,
-  "balance_transfer_fee": 0.03,
-  "signup_bonus": "$200 cash rewards bonus",
-  "signup_bonus_spend": 1000,
-  "signup_bonus_value_usd": 200,
-  "rewards": {
-    "other": 2
-  },
+  "apr_purchase": null,
+  "apr_intro": null,
+  "apr_intro_months": 0,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
+  "annual_fee": null,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 580,
-    "recommended": 630
-  },
-  "perks": [
-    "Unlimited 2% cash rewards on purchases",
-    "No annual fee",
-    "$200 cash rewards bonus after $1,000 in purchases in first 3 months",
-    "0% intro APR for 15 months on purchases and qualifying balance transfers",
-    "Cell phone protection (up to $600 per claim when you pay your phone bill with the card)",
-    "Designed for students with limited credit history",
-    "Access to Wells Fargo mobile app and online banking",
-    "Free FICO credit score access"
-  ],
-  "drawbacks": [
-    "3% foreign transaction fee (not ideal for studying abroad)",
-    "No travel rewards or points program",
-    "Student status required",
-    "2% flat rate (no bonus categories)",
-    "Wells Fargo's customer service reputation has been inconsistent"
-  ],
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
-  "last_updated": "2026-05-01",
-  "rating": 4.2
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "unconfirmed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "We could not substantiate a distinct Active Cash Student product from the linked issuer page. It is excluded from current comparisons; see Wells Fargo for its current card lineup.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
+  "verified_fields": []
 }

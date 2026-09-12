@@ -7,53 +7,28 @@
     "travel",
     "miles"
   ],
-  "apr_purchase": {
-    "min": 20.74,
-    "max": 29.74
-  },
+  "apr_purchase": null,
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 20.74,
-    "max": 29.74
-  },
-  "apr_cash_advance": 29.99,
-  "annual_fee": 99,
-  "foreign_tx_fee": 0,
-  "balance_transfer_fee": 0.05,
-  "signup_bonus": "60,000 bonus points",
-  "signup_bonus_spend": 1000,
-  "signup_bonus_value_usd": 840,
-  "rewards": {
-    "jetblue-purchases": 6,
-    "dining": 2,
-    "groceries": 2,
-    "other": 1
-  },
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
+  "annual_fee": null,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {},
   "rewards_type": "points",
-  "points_value_cents": 1.4,
-  "credit_score_required": {
-    "min": 670,
-    "recommended": 710
-  },
-  "perks": [
-    "6x points on JetBlue purchases",
-    "Free first checked bag for the primary cardmember and up to 3 companions",
-    "5,000 bonus points every account anniversary",
-    "50% savings on in-flight food and drink purchases",
-    "10% of points back every time you redeem",
-    "No foreign transaction fees",
-    "Mosaic status qualification accelerator",
-    "Points combinable with TrueBlue family pooling"
-  ],
-  "drawbacks": [
-    "$99 annual fee",
-    "Points only redeemable on JetBlue (limited partner airlines)",
-    "JetBlue flies primarily in North America and Caribbean",
-    "No priority boarding beyond standard check-in",
-    "Award pricing tied to cash fare variability"
-  ],
+  "points_value_cents": null,
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.jetblue.com/credit-card",
-  "last_updated": "2026-04-29",
-  "rating": 4.1
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "unconfirmed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
 }

@@ -6,51 +6,28 @@
   "category": [
     "rebuilding"
   ],
-  "apr_purchase": {
-    "min": 19.99,
-    "max": 33.99
-  },
+  "apr_purchase": null,
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 19.99,
-    "max": 33.99
-  },
-  "apr_cash_advance": 33.99,
-  "annual_fee": 59,
-  "foreign_tx_fee": 0.03,
-  "balance_transfer_fee": 0,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
+  "annual_fee": null,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {
-    "other": 0
-  },
+  "rewards": {},
   "rewards_type": "none",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 500,
-    "recommended": 580
-  },
-  "perks": [
-    "Annual fee ranges from $0 to $59 based on your offer, and many applicants qualify for $0, as of mid-2026",
-    "No monthly maintenance fees, no program fees, and no security deposit; the cleanest fee structure among unsecured subprime cards",
-    "Automatic credit line reviews, with many cardholders reporting an increase after about 7 months of on-time payments",
-    "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)",
-    "Prequalification uses a soft pull that does not hurt your score",
-    "Free credit score tracking in the app and plain-English terms",
-    "A Cash Back version with 1% to 1.5% back exists for stronger credit profiles"
-  ],
-  "drawbacks": [
-    "Variable APR of 19.99% to 33.99% means carrying a balance is still expensive; most subprime approvals land near the top of that range",
-    "Fee math if you get the $59 offer: that is 20% of a $300 starting limit gone in year one, so push for the $0 offer or compare secured cards first",
-    "No rewards on the standard card",
-    "Starting credit limits are often just $300",
-    "3% foreign transaction fee",
-    "A Discover it Secured still beats it on pure cost if you have $200 for a refundable deposit: $0 annual fee, 2% back at gas stations and restaurants, and a clear upgrade path",
-    "Verdict: the best of the unsecured subprime cards by a wide margin; a reasonable first choice if you cannot or will not fund a security deposit, especially on a $0-fee offer"
-  ],
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.missionlane.com/",
-  "last_updated": "2026-08-04",
-  "rating": 3.5
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "unconfirmed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
 }

@@ -8,56 +8,28 @@
     "business",
     "rewards"
   ],
-  "apr_purchase": {
-    "min": 21.24,
-    "max": 29.99
-  },
+  "apr_purchase": null,
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 21.24,
-    "max": 29.99
-  },
-  "apr_cash_advance": 29.99,
-  "annual_fee": 95,
-  "foreign_tx_fee": 0,
-  "balance_transfer_fee": 0.05,
-  "signup_bonus": "45,000 bonus points",
-  "signup_bonus_spend": 2000,
-  "signup_bonus_value_usd": 540,
-  "rewards": {
-    "wyndham-hotels": 8,
-    "gas": 8,
-    "marketing": 5,
-    "utilities": 5,
-    "other": 1
-  },
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
+  "annual_fee": null,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {},
   "rewards_type": "points",
-  "points_value_cents": 1.2,
-  "credit_score_required": {
-    "min": 670,
-    "recommended": 700
-  },
-  "perks": [
-    "8x points on Wyndham hotel purchases and gas",
-    "5x points on marketing and utility purchases",
-    "1x points on all other eligible purchases",
-    "Automatic Wyndham Rewards Diamond status (top tier)",
-    "Annual free night reward at eligible Wyndham properties",
-    "No foreign transaction fees",
-    "10% discount on Go Free award night bookings",
-    "Points pooling for employee cardholders",
-    "Travel protection and purchase protection"
-  ],
-  "drawbacks": [
-    "$95 annual fee",
-    "Points only redeemable at Wyndham-family properties (limited luxury options)",
-    "Wyndham Rewards program has lower aspirational value than Marriott or Hilton",
-    "Diamond status benefit strongest at budget/midscale brands",
-    "No airport lounge access",
-    "Business card requires business entity or sole proprietor status"
-  ],
+  "points_value_cents": null,
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.wyndhamhotels.com/wyndham-rewards/credit-card",
-  "last_updated": "2026-05-01",
-  "rating": 4.2
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "unconfirmed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
 }

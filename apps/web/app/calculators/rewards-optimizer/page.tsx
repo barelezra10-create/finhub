@@ -7,40 +7,14 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Credit Card Rewards Optimizer | Free Tool",
   description:
-    "Enter monthly spend on groceries, dining, travel, gas, and other. We rank every card in our 50-card dataset by annual rewards value. See which card pays you the most.",
+    "Enter monthly spend on groceries, dining, travel, gas, and other. Compare confirmed cash-back base rates and subtract annual fees.",
   alternates: { canonical: "/calculators/rewards-optimizer" },
 };
 
-const faqs: FAQItem[] = [
-  {
-    question: "How are points cards valued?",
-    answer:
-      "Each points card has a stored point value in cents (Chase Ultimate Rewards at 1.25 cents, Amex Membership Rewards at 2.0 cents, etc.). We multiply your rewards rate by that point value to get a dollar figure. For example, 5x Chase points on $1,000 of travel equals 5,000 points, which at 1.25 cents per point is worth $62.50.",
-  },
-  {
-    question: "Why do my top picks ignore the signup bonus?",
-    answer:
-      "Signup bonuses pay out once and disappear. The optimizer focuses on recurring annual rewards because that is what determines which card you should keep in your wallet long-term. To factor in the bonus, just add it to year one. For a $200 bonus, your year-one rewards on a $400 annual earner become $600.",
-  },
-  {
-    question: "Should I net the annual fee against the rewards?",
-    answer:
-      "Yes, and the table does. The Net Rewards column subtracts the annual fee from gross rewards. A card earning $500 in rewards with a $95 fee shows $405 net. A card earning $400 with $0 fee shows $400 net. They are nearly equal, but the no-fee card carries less risk if your spending pattern changes.",
-  },
-  {
-    question: "Are statement credits counted in the rewards math?",
-    answer:
-      "Not in this calculator. Statement credits (Amex Gold $120 dining credit, etc.) require usage to capture full value, and many people forget them. The tool focuses on pure rewards earn rates. If you reliably use a card&apos;s credits, add them to the gross rewards manually. The Federal Trade Commission has good guidance on tracking annual benefits to make sure you actually use what you paid for.",
-  },
-  {
-    question: "What if my spend categories do not match the inputs?",
-    answer:
-      "Group your spend into the five closest buckets: groceries (including online grocery delivery), dining (restaurants, takeout, food delivery), travel (flights, hotels, transit, ride share), gas, and everything else. The categories cover roughly 90% of typical card-eligible spend. Subscription bills, utilities, and bills paid by check or ACH usually fall into the everything-else bucket because most cards earn 1% on them anyway.",
-  },
-];
+const faqs: FAQItem[] = [{question:"Which cards are included?",answer:"Only cards with confirmed uncapped cash-back base rates and annual fees. This is a limited comparison, not a whole-market ranking. Business-card eligibility differs from personal-card eligibility."},{question:"What does the estimate exclude?",answer:"Bonuses, interest, merchant-specific or portal rewards, fee refunds and statement credits are excluded. We assume all entered spending is eligible and you pay in full. Unknown terms are not estimated."}];
 
 export default function Page() {
-  const cards = loadCards();
+  const cards = loadCards().filter(c => c.calculator_eligible && c.annual_fee != null);
   return (
     <>
       <FAQPageSchema items={faqs} />
@@ -64,7 +38,7 @@ export default function Page() {
             Find the card that pays you the most.
           </h1>
           <p className="text-lg md:text-xl text-mute max-w-2xl leading-relaxed mb-6">
-            Enter your monthly spend across groceries, dining, travel, gas, and everything else. We score every card in our {cards.length}-card dataset and show the five that earn you the highest annual rewards.
+            Enter your monthly spend across groceries, dining, travel, gas, and everything else. We compare {cards.length} cards with confirmed cash-back base rates and annual fees. Each dollar of spending is counted once.
           </p>
           <div className="flex items-center gap-6 text-sm text-mute">
             <div className="flex items-center gap-2">
@@ -97,7 +71,7 @@ export default function Page() {
             </div>
             <div className="col-span-12 md:col-span-8 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                For each card, we multiply your annual spend in a category by the card&apos;s earn rate for that category. For cash-back cards, the rate is a straight percentage. For points and miles cards, the rate is multiplied by the point&apos;s typical redemption value in cents.
+                For each card, we multiply your annual spend in a category by the card&apos;s earn rate for that category. For cash-back cards, the rate is a straight percentage. Points cards are excluded until a reliable redemption model is available.
               </p>
               <pre className="bg-ink text-bg p-5 rounded-xl font-mono text-sm overflow-x-auto">
                 <code>{`Annual reward = sum(monthly_spend[cat] * 12 * rate[cat])

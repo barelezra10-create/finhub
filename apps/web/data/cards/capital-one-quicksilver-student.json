@@ -7,49 +7,42 @@
     "student",
     "cashback"
   ],
-  "apr_purchase": {
-    "min": 19.99,
-    "max": 29.99
-  },
+  "apr_purchase": null,
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 19.99,
-    "max": 29.99
-  },
-  "apr_cash_advance": 29.99,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
   "annual_fee": 0,
-  "foreign_tx_fee": 0,
-  "balance_transfer_fee": 0.03,
-  "signup_bonus": "$50 cash bonus",
-  "signup_bonus_spend": 100,
-  "signup_bonus_value_usd": 50,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
   "rewards": {
     "other": 1.5
   },
   "rewards_type": "cashback",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 300,
-    "recommended": 580
-  },
+  "credit_score_required": null,
   "perks": [
-    "Unlimited 1.5% cash back on every purchase, no categories to track",
-    "$50 cash bonus after spending $100 in the first 3 months",
-    "No annual fee",
-    "No foreign transaction fees",
-    "Automatic consideration for a higher credit limit after 6 months of on-time payments",
-    "Free CreditWise credit monitoring",
-    "Lock your card if it's misplaced",
-    "No penalty APR for late payments"
+    "1.5% cash back on eligible purchases. Student eligibility requirements apply."
   ],
-  "drawbacks": [
-    "Only 1.5% flat rate with no elevated categories",
-    "Requires being a student at an accredited US college or university",
-    "Limited credit history required (not truly no-credit)",
-    "No intro APR offer"
-  ],
-  "application_url": "https://www.capitalone.com/credit-cards/quicksilver-for-students/",
-  "last_updated": "2026-04-29",
-  "rating": 4.1
+  "drawbacks": [],
+  "application_url": "https://www.capitalone.com/credit-cards/students/",
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": true,
+  "availability": "listed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://www.capitalone.com/credit-cards/students/",
+  "verified_fields": [
+    "annual_fee",
+    "rewards",
+    "rewards_type",
+    "calculator_eligible",
+    "application_url",
+    "perks"
+  ]
 }

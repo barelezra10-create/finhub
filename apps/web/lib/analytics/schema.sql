@@ -47,3 +47,16 @@ CREATE TABLE IF NOT EXISTS fintiex_search_reports (
 
 ALTER TABLE fintiex_analytics ADD COLUMN IF NOT EXISTS offer varchar(80) NOT NULL DEFAULT '';
 ALTER TABLE fintiex_analytics ADD COLUMN IF NOT EXISTS placement varchar(80) NOT NULL DEFAULT '';
+
+CREATE TABLE IF NOT EXISTS fintiex_conversions (
+ network varchar(100) NOT NULL,
+ conversion_id varchar(100) NOT NULL,
+ occurred_at date NOT NULL,
+ offer varchar(100) NOT NULL,
+ status varchar(20) NOT NULL CHECK(status IN ('submitted','approved','paid','rejected')),
+ revenue numeric(11,2) NOT NULL CHECK(revenue>=0),
+ currency char(3) NOT NULL,
+ imported_at timestamptz NOT NULL DEFAULT now(),
+ PRIMARY KEY(network,conversion_id)
+);
+CREATE INDEX IF NOT EXISTS fintiex_conversions_date ON fintiex_conversions(occurred_at);

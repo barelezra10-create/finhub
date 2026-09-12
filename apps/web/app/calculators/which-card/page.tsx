@@ -7,37 +7,11 @@ import { Calculator } from "./calculator";
 export const metadata: Metadata = {
   title: "Which Credit Card Should I Get? | Free Quiz",
   description:
-    "Answer three questions and get your top three credit card picks from a 50-card dataset. Free, no email, no signup. Filtered by goal, credit score, and annual fee preference.",
+    "Choose a purpose and annual-fee preference to find cards for comparison. No approval prediction or credit-score requirement is inferred.",
   alternates: { canonical: "/calculators/which-card" },
 };
 
-const faqs: FAQItem[] = [
-  {
-    question: "How does this quiz work?",
-    answer:
-      "Three questions. First, your main goal (cash back, travel, build credit, balance transfer, or business). Second, your approximate credit score (or band). Third, whether you are open to paying an annual fee. We match those answers against our 50-card dataset, filter by goal category and credit-score eligibility, and rank by signup-bonus value. The top three appear on the results card.",
-  },
-  {
-    question: "What if I do not match any card?",
-    answer:
-      "It usually means your credit score band is below what every card in the matching category requires, or you chose No on the annual-fee question and the only matches in your goal carry a fee. Pick a wider band, accept an annual fee for one round, or switch the goal to see other options.",
-  },
-  {
-    question: "Are the recommendations sponsored?",
-    answer:
-      "No. Fintiex does not take payment to alter card rankings. The quiz ranks by signup-bonus value (real-world cash value in USD) after the goal and credit filters apply. We earn a small commission when you click an apply button, but the placement and ranking are editorial.",
-  },
-  {
-    question: "Should I really apply based on a quiz?",
-    answer:
-      "Use the quiz as a starting list, not a final answer. Click through to the full review on each pick, confirm the current APR and fee schedule on the issuer site, and check that your specific situation (income, debt-to-income, recent inquiries) matches the typical approval profile. The Consumer Financial Protection Bureau also has a free credit-report walkthrough at consumerfinance.gov before any hard pull.",
-  },
-  {
-    question: "Why does my credit score band matter so much?",
-    answer:
-      "Card issuers rarely approve applications more than 30 to 50 points below their recommended FICO. Applying for a card aimed at 740+ when you sit at 650 wastes a hard inquiry (which drops your score by 5 to 10 points for several months) and produces almost certain denial. The quiz adds a 30-point cushion to the recommended score, which roughly matches typical real-world approval rates.",
-  },
-];
+const faqs: FAQItem[]=[{question:"How are matches selected?",answer:"We filter by your selected purpose and annual-fee preference, then show up to three cards alphabetically. These are comparison starting points, not a ranked recommendation or approval prediction."},{question:"Why might there be no results?",answer:"The directory may not have matching products with confirmed annual fees. Unknown fees are excluded when you request no annual fee. Check issuer disclosures directly."}];
 
 export default function Page() {
   const cards = loadCards();
@@ -64,11 +38,11 @@ export default function Page() {
             Which credit card should I get?
           </h1>
           <p className="text-lg md:text-xl text-mute max-w-2xl leading-relaxed mb-6">
-            Three questions. Your top three picks. We score every card in our 50-card dataset against your goal, your credit, and your appetite for an annual fee. Free, no signup.
+            Choose your purpose and annual-fee preference. See up to three alphabetical matches to investigate further. Free, no signup.
           </p>
           <div className="flex items-center gap-6 text-sm text-mute">
             <div className="flex items-center gap-2">
-              <span className="font-mono tabular text-ink font-semibold">{cards.length}</span> cards scored
+              <span className="font-mono tabular text-ink font-semibold">{cards.length}</span> cards listed
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono tabular text-ink font-semibold">3</span> questions
@@ -92,19 +66,18 @@ export default function Page() {
             <div className="col-span-12 md:col-span-4">
               <span className="chip chip-mute mb-4">How this works</span>
               <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-                Filter, then rank.
+                Filter, then compare.
               </h2>
             </div>
             <div className="col-span-12 md:col-span-8 space-y-5 text-[1.0625rem] leading-relaxed text-ink-soft">
               <p>
-                The quiz applies three filters in order. First, the goal filter matches your answer to the card category (cash back, travel, balance transfer, business, or secured for credit-building). Cards outside the matching category drop out.
+                The quiz applies two filters. First, the goal filter matches your answer to the card category (cash back, travel, balance transfer, business, or secured for credit-building). Cards outside the matching category drop out.
               </p>
               <p>
-                Second, the credit-score filter compares your band to each card&apos;s recommended FICO. We add a 30-point cushion to match real-world approval odds. A 700 score with a 30-point cushion qualifies for any card with a recommended FICO of 730 or below.
+                Second, filter by your annual-fee preference. Unknown fees are excluded when you request no annual fee. We do not estimate approval odds.
               </p>
               <p>
-                Third, if you said no to an annual fee, every card with a non-zero annual fee drops out. The remaining set is sorted by signup-bonus value in USD (the bonus converted to dollars at the card&apos;s point value), and the top three appear in your results.
-              </p>
+                Results are listed alphabetically. Check current terms and eligibility directly with the issuer.</p>
             </div>
           </div>
         </div>

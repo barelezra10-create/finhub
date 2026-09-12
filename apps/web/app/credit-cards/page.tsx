@@ -15,7 +15,7 @@ import { CardsExplorer } from "./cards-explorer";
 export const metadata: Metadata = {
   title: "Best Credit Cards 2026: Cash Back, Travel, 0% APR, Balance Transfer",
   description:
-    "Compare 50 credit cards across cash back, travel, 0% APR, balance transfer, business, student, and secured. Independent rankings updated weekly.",
+    "Browse credit card listings across cash back, travel, 0% APR, balance transfer, business, student, and secured. See official sources and verification status.",
   alternates: { canonical: "/credit-cards" },
 };
 
@@ -23,48 +23,17 @@ const subPages: { label: string; href: string; detail: string; category: Synthet
   { label: "Cash Back", href: "/credit-cards/cash-back", detail: "Flat-rate and rotating-category cash back cards.", category: "cashback" },
   { label: "Travel Rewards", href: "/credit-cards/travel", detail: "Points and miles for flights, hotels, and transfers.", category: "travel" },
   { label: "0% APR", href: "/credit-cards/zero-apr", detail: "Intro APR cards for large purchases over time.", category: "0-apr" },
-  { label: "Balance Transfer", href: "/credit-cards/balance-transfer", detail: "Move high-rate debt to 0% for up to 21 months.", category: "balance-transfer" },
+  { label: "Balance Transfer", href: "/credit-cards/balance-transfer", detail: "Compare promotional transfer terms and fees.", category: "balance-transfer" },
   { label: "No Annual Fee", href: "/credit-cards/no-fee", detail: "Strong rewards with zero annual cost.", category: "no-annual-fee" },
   { label: "Business Cards", href: "/credit-cards/business", detail: "Expense management and big bonuses for businesses.", category: "business" },
-  { label: "Student Cards", href: "/credit-cards/student", detail: "Build credit history with forgiving approval standards.", category: "student" },
+  { label: "Student Cards", href: "/credit-cards/student", detail: "Check student eligibility and account costs.", category: "student" },
   { label: "Secured Cards", href: "/credit-cards/secured", detail: "Rebuild credit with a refundable security deposit.", category: "secured" },
 ];
 
-const faqItems: FAQItem[] = [
-  {
-    question: "How is credit card APR calculated on a monthly bill?",
-    answer:
-      "Your daily periodic rate is your APR divided by 365. The issuer multiplies that rate by your average daily balance for the billing period to get your interest charge. If you pay your full statement balance by the due date each month, you pay zero interest regardless of your APR.",
-  },
-  {
-    question: "Will applying for a new card hurt my credit score?",
-    answer:
-      "A new card application triggers a hard inquiry, typically dropping your score 2 to 5 points for a few months. The card also lowers your average account age. That said, a new card increases your total available credit, which improves your utilization ratio. The net effect is usually neutral or slightly positive within 6 to 12 months.",
-  },
-  {
-    question: "How many credit cards is too many?",
-    answer:
-      "There is no universal limit. What matters is your ability to manage payments and keep utilization low across all cards. Most credit-savvy consumers hold 3 to 5 cards covering different categories: one flat-rate, one travel or dining, one 0% APR option. Adding more cards is fine as long as you do not carry balances.",
-  },
-  {
-    question: "Is an annual fee ever worth paying?",
-    answer:
-      "Yes, if the rewards and credits exceed the fee. The Chase Sapphire Preferred costs $95 but generates far more in travel value if you use the dining and travel multipliers. The Amex Gold costs $325 but offers up to $240 in statement credits, making the effective fee much lower if you use them. Model your actual spending before deciding.",
-  },
-  {
-    question: "Statement balance vs minimum vs full balance: what should I pay?",
-    answer:
-      "Pay the full statement balance every month to avoid interest. The minimum payment keeps you in good standing but accrues interest on the remainder at your full APR. Never pay less than the minimum or you risk late fees and a credit score penalty. The statement balance (not the current balance) is the number to pay to avoid interest.",
-  },
-  {
-    question: "Does adding someone as an authorized user help their credit?",
-    answer:
-      "Yes, if the primary account holder has a long, clean history on that card. The account typically appears on the authorized user's credit report, boosting their average account age and available credit. The primary holder remains fully responsible for all charges. This is a common strategy for parents helping young adults build credit.",
-  },
-];
+const faqItems: FAQItem[] = [{"question": "How should I compare credit cards?", "answer": "Start with your purpose, then compare the issuer\u2019s current fees, purchase and transfer APRs, reward restrictions and eligibility terms. A higher reward rate does not automatically offset a fee or interest."}, {"question": "Does a listing guarantee approval?", "answer": "No. Issuers assess each application. Fintiex does not publish an approval score or guarantee. Check any prequalification terms directly with the issuer."}, {"question": "What does Check issuer mean?", "answer": "We have not confirmed that field from an official source. It does not mean no fee or zero interest. Individual card pages identify the source and date for selected checked facts."}];
 
 export default function Page() {
-  const allCards = loadCards();
+  const allCards = loadCards().filter(c => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student");
 
   const topByCat: Record<SyntheticCategory, CardData | undefined> = Object.fromEntries(
     SYNTHETIC_CATEGORIES.map((c) => [c, cardsByCategory(c)[0]]),
@@ -83,13 +52,13 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> {allCards.length} cards reviewed
+            <span className="pulse-dot" /> {allCards.length} card listings
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,6vw,5rem)] leading-[1.02] tracking-[-0.03em] mb-6 max-w-3xl">
-            Cards picked on math, not marketing.
+            Compare cards with the details that matter.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            We model real spending patterns against published rewards rates and annual fees. The winner is the card that puts the most money back in your pocket, not the one with the largest advertising budget.
+            Compare fees, rewards and introductory offers. Each card page identifies checked facts and terms that still need issuer confirmation. List order does not predict suitability or approval.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/credit-cards/compare" className="pill pill-ink">

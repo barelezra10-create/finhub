@@ -15,7 +15,7 @@ export function loadCards(): CardData[] {
   const cards = files.map(
     (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), "utf8")) as CardData,
   );
-  cards.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+  cards.sort((a, b) => a.name.localeCompare(b.name));
   _cache = cards;
   return cards;
 }
@@ -25,7 +25,7 @@ export function loadCard(slug: string): CardData | null {
 }
 
 export function cardsByCategory(category: SyntheticCategory): CardData[] {
-  return loadCards().filter((c) => cardCategories(c).includes(category));
+  return loadCards().filter((c) => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student" && cardCategories(c).includes(category));
 }
 
 export function relatedCards(card: CardData, limit = 4): CardData[] {

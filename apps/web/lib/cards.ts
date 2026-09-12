@@ -15,31 +15,40 @@ export interface CreditScoreRequired {
 }
 
 export interface CardData {
+  availability: "listed" | "unconfirmed" | "retired";
+  audit_attempted: string;
+  audit_note: string;
+  source_checked?: string;
+  source_url?: string;
+  verified_fields?: string[];
+  annual_fee_note?: string;
+  intro_terms?: string;
+  calculator_eligible?: boolean;
   slug: string;
   issuer: string;
   name: string;
   network: string;
   category: string[];
-  apr_purchase: AprRange;
+  apr_purchase: AprRange | null;
   apr_intro: number | null;
   apr_intro_months: number;
-  apr_balance_transfer: AprRange;
-  apr_cash_advance: number;
-  annual_fee: number;
-  foreign_tx_fee: number;
-  balance_transfer_fee: number;
+  apr_balance_transfer: AprRange | null;
+  apr_cash_advance: number | null;
+  annual_fee: number | null;
+  foreign_tx_fee: number | null;
+  balance_transfer_fee: number | null;
   signup_bonus: string | null;
   signup_bonus_spend: number | null;
   signup_bonus_value_usd: number | null;
   rewards: Record<string, number>;
   rewards_type: string;
   points_value_cents: number | null;
-  credit_score_required: CreditScoreRequired;
+  credit_score_required: CreditScoreRequired | null;
   perks: string[];
   drawbacks: string[];
   application_url: string;
   last_updated: string;
-  rating: number;
+  rating: number | null;
 }
 
 /**
@@ -92,7 +101,7 @@ export function cardCategories(card: CardData): SyntheticCategory[] {
     if (c === "student") set.add("student");
     if (c === "secured" || c === "rebuilding" || c === "no-credit") set.add("secured");
   }
-  if ((card.annual_fee ?? 0) === 0) set.add("no-annual-fee");
+  if (card.annual_fee === 0) set.add("no-annual-fee");
   if (card.apr_intro === 0 && (card.apr_intro_months ?? 0) >= 12) set.add("0-apr");
   return Array.from(set);
 }
@@ -103,13 +112,14 @@ export function fullCardName(card: CardData): string {
   return `${card.issuer} ${name}`;
 }
 
-export function formatPct(v: number): string {
+export function formatPct(v: number | null): string {
+  if (v == null) return "Check issuer";
   // Stored as percent (e.g. 19.24). Strips trailing zeros after decimal.
   return `${v.toFixed(2).replace(/\.?0+$/, "")}%`;
 }
 
 export function formatFeePct(v: number | null | undefined): string {
-  if (v == null) return "None";
+  if (v == null) return "Check issuer";
   if (v === 0) return "None";
   // Stored as decimal e.g. 0.05 = 5%
   const pct = v * 100;
@@ -117,12 +127,13 @@ export function formatFeePct(v: number | null | undefined): string {
 }
 
 export function formatAprRange(range: AprRange | null | undefined): string {
-  if (!range) return "Varies";
+  if (!range) return "Check issuer";
   if (range.min === range.max) return formatPct(range.min);
   return `${formatPct(range.min)} to ${formatPct(range.max)}`;
 }
 
-export function formatAnnualFee(fee: number): string {
+export function formatAnnualFee(fee: number | null): string {
+  if (fee == null) return "Check issuer";
   if (fee === 0) return "$0";
   return `$${fee}`;
 }
@@ -140,8 +151,7 @@ export function topRewardRate(card: CardData): string {
     ([, v]) => typeof v === "number" && v > 0,
   );
   if (entries.length === 0) {
-    if (card.rewards_type === "none") return "No rewards";
-    return "Varies";
+    return "Check issuer";
   }
   entries.sort((a, b) => b[1] - a[1]);
   const top = entries[0];

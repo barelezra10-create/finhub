@@ -8,12 +8,12 @@ import { CompareClient } from "./compare-client";
 export const metadata: Metadata = {
   title: "Compare Credit Cards Side by Side",
   description:
-    "Stack 2 or 3 credit cards next to each other. We highlight the best annual fee, signup bonus, APR, and rewards rate in every row so the winner is obvious.",
+    "Stack 2 or 3 credit cards next to each other. We highlight the best annual fee, signup bonus, APR, and rewards rate in every row where all selected cards have confirmed values.",
   alternates: { canonical: "/credit-cards/compare" },
 };
 
 export default function Page() {
-  const cards = loadCards();
+  const cards = loadCards().filter(c => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student");
 
   return (
     <>
@@ -31,13 +31,13 @@ export default function Page() {
         <div className="hero-blob hero-blob-2" />
         <div className="relative max-w-(--max-w-page) mx-auto px-6 pt-20 pb-12">
           <span className="chip chip-violet mb-6">
-            <span className="pulse-dot" /> Compare {cards.length} reviewed cards
+            <span className="pulse-dot" /> Compare {cards.length} card listings
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.25rem,5vw,4.25rem)] leading-[1.04] tracking-[-0.03em] mb-6 max-w-3xl">
             Compare credit cards side by side.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl">
-            Pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus value, top reward rate, and approval credit score into one clean table. The best value in every row is tagged so you can pick the winner in seconds.
+            Pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Check issuer. A highlighted figure does not establish which card suits you.
           </p>
         </div>
       </section>

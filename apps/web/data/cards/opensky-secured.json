@@ -9,49 +9,43 @@
     "no-credit"
   ],
   "apr_purchase": {
-    "min": 25.64,
-    "max": 25.64
+    "min": 23.89,
+    "max": 23.89
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 25.64,
-    "max": 25.64
-  },
-  "apr_cash_advance": 27.64,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
   "annual_fee": 35,
-  "foreign_tx_fee": 0.03,
-  "balance_transfer_fee": 0,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {
-    "other": 0
-  },
+  "rewards": {},
   "rewards_type": "none",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 300,
-    "recommended": 300
-  },
+  "credit_score_required": null,
   "perks": [
-    "No credit check required to apply (no hard or soft pull on credit report)",
-    "Accept applicants with no credit history, thin credit, or poor credit",
-    "Deposit between $200 and $3,000 to set your credit limit",
-    "Reports to all three major credit bureaus monthly",
-    "Can increase credit limit by adding to deposit",
-    "Path to unsecured card after demonstrating positive payment history",
-    "Low cash advance fee compared to similar cards"
+    "The standard OpenSky Secured Visa requires a security deposit starting at $200."
   ],
   "drawbacks": [
-    "$35 annual fee",
-    "No rewards or cash back",
-    "3% foreign transaction fee",
-    "High APR for a secured card",
-    "No automatic upgrade to unsecured card",
-    "No mobile app with full-featured controls"
+    "$35 annual fee.",
+    "OpenSky Launch and OpenSky Plus are different products with different fees and deposits."
   ],
   "application_url": "https://www.openskycc.com/",
-  "last_updated": "2026-04-29",
-  "rating": 3.9
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "listed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://www.openskycc.com/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_purchase",
+    "perks",
+    "drawbacks"
+  ]
 }

@@ -8,50 +8,37 @@
     "rewards"
   ],
   "apr_purchase": {
-    "min": 19.99,
-    "max": 29.99
+    "min": 19.49,
+    "max": 28.49
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 19.99,
-    "max": 29.99
-  },
-  "apr_cash_advance": 29.99,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
   "annual_fee": 95,
   "foreign_tx_fee": 0,
-  "balance_transfer_fee": 0.04,
-  "signup_bonus": "75,000 miles",
-  "signup_bonus_spend": 4000,
-  "signup_bonus_value_usd": 750,
-  "rewards": {
-    "hotels-capital-one-travel": 5,
-    "rental-cars-capital-one-travel": 5,
-    "other": 2
-  },
+  "balance_transfer_fee": null,
+  "signup_bonus": null,
+  "signup_bonus_spend": null,
+  "signup_bonus_value_usd": null,
+  "rewards": {},
   "rewards_type": "miles",
-  "points_value_cents": 1,
-  "credit_score_required": {
-    "min": 690,
-    "recommended": 720
-  },
-  "perks": [
-    "2x miles on every purchase",
-    "5x miles on hotels and rental cars booked via Capital One Travel",
-    "75,000 mile bonus after spending $4,000 in first 3 months",
-    "No foreign transaction fees",
-    "Global Entry or TSA PreCheck application fee credit (up to $120 every 4 years)",
-    "Miles transfer to 15+ travel loyalty programs",
-    "Travel accident insurance and 24-hour travel assistance",
-    "Extended warranty and purchase protection"
-  ],
-  "drawbacks": [
-    "$95 annual fee",
-    "No intro APR offer",
-    "Capital One Travel portal locks in best 5x rate",
-    "Miles worth 1 cent each for statement credits (less than some competitors)"
-  ],
+  "points_value_cents": null,
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.capitalone.com/credit-cards/venture/",
-  "last_updated": "2026-04-29",
-  "rating": 4.5
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "listed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://www.capitalone.com/credit-cards/venture/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_purchase",
+    "foreign_tx_fee"
+  ]
 }

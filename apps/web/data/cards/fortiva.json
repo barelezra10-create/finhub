@@ -6,49 +6,28 @@
   "category": [
     "rebuilding"
   ],
-  "apr_purchase": {
-    "min": 29.99,
-    "max": 36
-  },
+  "apr_purchase": null,
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 29.99,
-    "max": 36
-  },
-  "apr_cash_advance": 36,
-  "annual_fee": 175,
-  "foreign_tx_fee": 0.03,
-  "balance_transfer_fee": 0,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
+  "annual_fee": null,
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {
-    "other": 0
-  },
+  "rewards": {},
   "rewards_type": "none",
   "points_value_cents": null,
-  "credit_score_required": {
-    "min": 300,
-    "recommended": 550
-  },
-  "perks": [
-    "Unsecured card with no security deposit required",
-    "Prequalification uses a soft pull that does not affect your score",
-    "Reports to all three major credit bureaus (Equifax, Experian, TransUnion)",
-    "Free VantageScore credit score access through the account portal",
-    "The separate Fortiva Cash Back Rewards version earns 3% on gas, groceries, and utilities and 1% elsewhere, if that is the offer you receive"
-  ],
-  "drawbacks": [
-    "Annual fee is $49 to $175 the first year, then $0 to $49 plus a $5 to $12.50 monthly fee starting in year two (up to about $199 per year), as of mid-2026; Fortiva assigns terms per applicant, so read your exact offer",
-    "Fee math: a $175 first-year fee on a $350 starting limit consumes 50% of your available credit before your first purchase",
-    "Purchase APR of 29.99% or 36% depending on the offer, among the highest available",
-    "The standard card earns no rewards at all",
-    "Serviced by Atlanticus for The Bank of Missouri, a program with a long record of fee and servicing complaints",
-    "A Capital One Platinum Secured needs as little as a $49 refundable deposit and charges $0 a year forever; over three years that is $0 versus up to roughly $573 in Fortiva fees",
-    "Verdict: skip the standard Fortiva card; if you somehow receive the rare low-fee Cash Back offer it becomes tolerable, but a secured card or Mission Lane is the better move for almost everyone"
-  ],
+  "credit_score_required": null,
+  "perks": [],
+  "drawbacks": [],
   "application_url": "https://www.fortiva.com/",
-  "last_updated": "2026-08-04",
-  "rating": 2.0
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "unconfirmed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
 }

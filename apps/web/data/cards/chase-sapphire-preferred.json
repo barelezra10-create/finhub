@@ -8,51 +8,46 @@
     "rewards"
   ],
   "apr_purchase": {
-    "min": 21.49,
-    "max": 28.49
+    "min": 19.24,
+    "max": 27.49
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": {
-    "min": 21.49,
-    "max": 28.49
-  },
-  "apr_cash_advance": 29.99,
+  "apr_balance_transfer": null,
+  "apr_cash_advance": null,
   "annual_fee": 95,
-  "foreign_tx_fee": 0,
-  "balance_transfer_fee": 0.05,
-  "signup_bonus": "60,000 bonus points",
-  "signup_bonus_spend": 4000,
-  "signup_bonus_value_usd": 750,
-  "rewards": {
-    "travel-chase-portal": 5,
-    "dining": 3,
-    "online-groceries": 3,
-    "streaming": 3,
-    "other": 1
-  },
+  "foreign_tx_fee": null,
+  "balance_transfer_fee": null,
+  "signup_bonus": "75,000 points after $5,000 in purchases in the first 3 months",
+  "signup_bonus_spend": 5000,
+  "signup_bonus_value_usd": null,
+  "rewards": {},
   "rewards_type": "points",
-  "points_value_cents": 1.25,
-  "credit_score_required": {
-    "min": 690,
-    "recommended": 720
-  },
+  "points_value_cents": null,
+  "credit_score_required": null,
   "perks": [
-    "5x points on Chase Travel portal purchases",
-    "3x on dining, online groceries, and streaming",
-    "No foreign transaction fees",
-    "$50 annual hotel credit via Chase Travel",
-    "Trip cancellation and interruption insurance",
-    "Primary auto rental collision damage waiver",
-    "Points transfer to 14 airline and hotel partners at 1:1"
+    "5 points per dollar through Chase Travel; 3 on dining and select other categories.",
+    "$100 annual Chase Travel hotel credit, subject to issuer terms."
   ],
   "drawbacks": [
-    "$95 annual fee",
-    "5% balance transfer fee",
-    "No airport lounge access (upgrade to Reserve for that)",
-    "Chase 5/24 rule applies - denied if 5+ cards opened in last 24 months"
+    "$95 annual fee.",
+    "Bonus categories and travel credits have eligibility restrictions."
   ],
   "application_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
-  "last_updated": "2026-04-28",
-  "rating": 4.9
+  "last_updated": "2026-09-12",
+  "rating": null,
+  "calculator_eligible": false,
+  "availability": "listed",
+  "audit_attempted": "2026-09-12",
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_checked": "2026-09-12",
+  "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+  "verified_fields": [
+    "annual_fee",
+    "apr_purchase",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks",
+    "drawbacks"
+  ]
 }
