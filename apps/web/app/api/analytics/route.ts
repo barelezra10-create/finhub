@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     if (count.rows[0].n >= 60) return new NextResponse(null,{status:429});
     const a = acquisition(data);
     const e = await enrich(ip,ua,request.headers.get('accept-language') || '',data.deviceHint);
-    await pool.query("INSERT INTO fintiex_analytics(event_id,kind,visitor,path,source,medium,campaign,target,country,region,city,device,browser,os,language,referrer,channel,search_engine,keyword,keyword_type) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20) ON CONFLICT DO NOTHING", [data.id,data.kind,visitor,path,a.source,a.medium,cleanTag(data.campaign),target,e.country,e.region,e.city,e.device,e.browser,e.os,e.language,a.referrer,a.channel,a.search_engine,a.keyword,a.keyword_type]);
+    await pool.query("INSERT INTO fintiex_analytics(event_id,kind,visitor,path,source,medium,campaign,target,country,region,city,device,browser,os,language,referrer,channel,search_engine,keyword,keyword_type,offer,placement) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22) ON CONFLICT DO NOTHING", [data.id,data.kind,visitor,path,a.source,a.medium,cleanTag(data.campaign),target,e.country,e.region,e.city,e.device,e.browser,e.os,e.language,a.referrer,a.channel,a.search_engine,a.keyword,a.keyword_type,data.kind==='outbound'?cleanTag(data.offer):'',data.kind==='outbound'?cleanTag(data.placement):'']);
     return empty();
   } catch (error) {
     if (error instanceof SyntaxError || error instanceof TypeError) return new NextResponse(null,{status:400});

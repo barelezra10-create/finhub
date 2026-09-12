@@ -1,3 +1,4 @@
+import {SavingsDecision} from '@/components/savings-decision';
 import {hysaOptions,SAVINGS_CHECKED} from "@/lib/savings-rates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -5,9 +6,9 @@ import { states } from "@/lib/states";
 import { BreadcrumbListSchema } from "@/components/schemas";
 
 export const metadata: Metadata = {
-  title: "Best High-Yield Savings Accounts (HYSA) of 2026",
+  title: "High-Yield Savings Accounts: Compare APYs, Fees & Access",
   description:
-    "Compare the top HYSA rates from national online banks. All accounts are FDIC-insured up to $250K per depositor.",
+    "Compare high-yield savings accounts using dated APYs, minimum deposits, conditions, and provider sources. Find an account that fits your savings needs.",
   alternates: { canonical: "/savings/hysa" },
 };
 
@@ -31,7 +32,7 @@ export default function HysaPage() {
             <span className="pulse-dot" /> FDIC-insured savings
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.04] tracking-[-0.03em] mb-6 max-w-3xl">
-            Best High-Yield Savings Accounts of 2026
+            Compare high-yield savings accounts
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
             A high-yield savings account (HYSA) is the simplest way to earn more on money you are not spending. Compare the dated observations below, including recurring-deposit and balance requirements. This is a selection of accounts, not a claim to cover every bank or the highest rate in the market.
@@ -81,6 +82,7 @@ export default function HysaPage() {
         </div>
       </section>
 
+      <SavingsDecision/>
       {/* RATE TABLE */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-10">
         <div className="grid grid-cols-12 gap-8 mb-8">
@@ -137,7 +139,7 @@ export default function HysaPage() {
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Rates as of August 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
+          Provider observations checked {SAVINGS_CHECKED}. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
         </p>
       </section>
 
@@ -164,7 +166,7 @@ export default function HysaPage() {
           Find HYSA rates by state
         </h2>
         <p className="text-mute leading-relaxed max-w-2xl mb-10">
-          Every HYSA listed above is available in all 50 states. But tax treatment, local bank competition, and median income vary by state. Each state page explains how HYSA interest is taxed locally, lists the top local banks in that state, and gives residents a clear picture of how much they stand to gain by switching.
+          Explore savings comparisons by state, including Arizona and Minnesota. Confirm address eligibility with each bank. National online offers may be available outside the bank’s home state; branch access and local alternatives can differ.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
           {states.map((s) => (

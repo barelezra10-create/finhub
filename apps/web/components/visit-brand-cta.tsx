@@ -23,6 +23,8 @@ export function VisitBrandCta({
   return (
     <a
       href={`https://www.${brand.domain}`}
+      data-offer={brand.domain}
+      data-placement="brand-pill"
       target="_blank"
       rel="nofollow noopener noreferrer"
       className={`${pillClass} ${className}`}
@@ -89,6 +91,8 @@ export function VisitBrandCard({
           <div className="shrink-0 md:text-right">
             <a
               href={url}
+              data-offer={brand.domain}
+              data-placement="brand-card"
               target="_blank"
               rel="nofollow noopener noreferrer"
               className="inline-flex items-center gap-2 bg-lime text-ink font-display font-bold text-base px-6 py-4 rounded-full hover:bg-white transition-colors duration-150 whitespace-nowrap"

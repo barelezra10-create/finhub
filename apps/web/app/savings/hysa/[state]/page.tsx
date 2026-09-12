@@ -1,3 +1,4 @@
+import {SavingsDecision} from '@/components/savings-decision';
 import {hysaOptions,SAVINGS_CHECKED} from "@/lib/savings-rates";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -17,7 +18,7 @@ export async function generateMetadata(
   if (!state) return { title: "State not found" };
   return {
     title: `Best High-Yield Savings Accounts in ${state.name} (2026)`,
-    description: `Compare the highest-APY HYSA accounts available to ${state.name} residents. ${state.taxNote}.`,
+    description: `Compare high-yield savings options for ${state.name}: dated APYs, deposit requirements, fees, access, and links to provider terms.`,
     alternates: { canonical: `/savings/hysa/${slug}` },
   };
 }
@@ -52,7 +53,7 @@ export default async function StateHysaPage(
     },
     {
       question: `Are local ${state.name} banks better than online HYSAs?`,
-      answer: `It depends on what you value. Local ${state.name} banks like ${topBank} offer in-person service, local lending relationships, and community ties that online banks cannot replicate. For everyday savings, however, national online HYSAs almost always offer significantly higher APYs. Many ${state.name} residents keep their primary checking at a local bank and move excess savings to an online HYSA to earn more without giving up their local banking relationship.`,
+      answer: `It depends on what you value. Local ${state.name} banks like ${topBank} offer in-person service, local lending relationships, and community ties that online banks cannot replicate. Compare current savings APYs directly; this page does not verify a local-bank rate advantage. Many ${state.name} residents keep their primary checking at a local bank and move excess savings to an online HYSA to earn more without giving up their local banking relationship.`,
     },
     {
       question: "Are online HYSAs FDIC-insured the same way as local banks?",
@@ -84,10 +85,10 @@ export default async function StateHysaPage(
             High-Yield Savings · {state.name}
           </span>
           <h1 className="font-display font-extrabold text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1.04] tracking-[-0.03em] mb-6">
-            Best HYSA in {state.name}
+            High-yield savings accounts in {state.name}
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            {state.name} residents have access to the same listed national high-yield savings accounts as anyone else in the country. With a median household income of {fmtIncome(state.medianIncome)} in {state.name}, compare the APY you qualify for and the recurring-deposit conditions below. {state.taxNote}. All accounts listed below are FDIC-insured up to $250,000 per depositor.
+            Compare national online savings options from {state.name}. Check address eligibility, the APY your balance qualifies for, recurring-deposit requirements, and access to your money. Local banks may be useful for in-person service; compare their current disclosures alongside the listed online accounts.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href={hysaOptions[0]!.href ?? "/savings/hysa"} className="pill pill-ink">
@@ -101,6 +102,7 @@ export default async function StateHysaPage(
         </div>
       </section>
 
+      <SavingsDecision state={state.name}/>
       {/* TOP HYSA CARD */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-10">
         <div
@@ -202,7 +204,7 @@ export default async function StateHysaPage(
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Rates as of August 2026. APY subject to change. All accounts FDIC-insured up to $250,000 per depositor per institution. Not a recommendation.
+          Provider observations checked {SAVINGS_CHECKED}. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
         </p>
       </section>
 
@@ -220,12 +222,12 @@ export default async function StateHysaPage(
                 For illustration, a $20,000 balance earning an unchanged 3% APY earns $600 in one year before tax. At 0.5% it earns $100. These are calculation assumptions, not quotes from local banks. Use your actual offered rates and fees when comparing.
               </p>
               <p>
-                {state.name} has a number of well-regarded local financial institutions, including {state.topBanks.join(", ")}. These banks serve {state.name} communities well for everyday banking, mortgages, and local business relationships. However, their savings rates rarely match what national online banks offer. {topBank}, for instance, is one of the more recognized names in {state.name} banking, but its savings APY typically runs well below the 4%+ range offered by online-only competitors.
+                If you prefer a local institution such as {state.topBanks.join(", ")}, compare its current savings disclosures with the online options. Check branch access, deposit requirements, transfer limits, and fees. We have not verified current rates for these local institutions and do not rank them below online banks.
               </p>
             </div>
             <div className="space-y-5">
               <p>
-                On the tax side: {state.taxNote}. This applies to interest earned on any savings account, including HYSA accounts held at out-of-state online banks. The good news is that even after accounting for {hasNoStateTax ? "federal" : "federal and state"} taxes, the net yield from a top HYSA almost always beats what local {state.name} banks offer before taxes. You keep more money either way.
+                Savings interest may have federal and state tax consequences. Review the applicable guidance for your filing situation; a bank’s headquarters alone does not determine your tax treatment. Compare the accounts before and after fees, and avoid treating an advertised APY as a guaranteed after-tax return.
               </p>
               <p>
                 Online account eligibility, identity checks, transfer methods, and timing depend on the bank. Confirm that your address and funding method qualify before applying.

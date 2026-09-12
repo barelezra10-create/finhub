@@ -50,3 +50,7 @@ For automatic read-only reports, set these server-only Railway variables and red
 - Bing: FINTIEX_BING_API_KEY; optional FINTIEX_BING_SITE_URL (default https://www.fintiex.com/), matching the verified property.
 
 Provider reports refresh when opening Search keywords if the cache is older than six hours. Google fetches up to 1,000 queries plus independent property totals. Bing returns weekly query statistics; totals cover reported queries. API date ranges end three days ago, and each card shows its own dates. The visitor audience filters do not apply to provider aggregates. Failed refreshes retain the cached report. Never imply hidden/anonymized queries are complete, or that a query identifies an individual visitor.
+
+## Offer clicks (September 12, 2026)
+
+The Offer clicks tab groups explicitly labeled outbound provider links by product and button placement. Card comparisons/reviews, brand CTAs, and savings comparisons/reviews send sanitized `offer` and `placement` tags. Primary clicks and middle clicks are captured without delaying navigation. Other external links remain ordinary outbound clicks; historical events have empty offer tags and are not backfilled. Page reports show offer clicks, estimated daily clickers, and clicks per 100 page views (not a completed-application conversion rate, and potentially above 100). Global audience filters apply. Activity CSV includes both tags. No destination paths, query strings, or form inputs are added to storage.

@@ -44,3 +44,6 @@ CREATE TABLE IF NOT EXISTS fintiex_search_reports (
   payload jsonb NOT NULL,
   PRIMARY KEY(engine, period_days)
 );
+
+ALTER TABLE fintiex_analytics ADD COLUMN IF NOT EXISTS offer varchar(80) NOT NULL DEFAULT '';
+ALTER TABLE fintiex_analytics ADD COLUMN IF NOT EXISTS placement varchar(80) NOT NULL DEFAULT '';

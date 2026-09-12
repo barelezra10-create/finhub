@@ -250,7 +250,7 @@ export default async function Page({ params }: PageProps) {
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href={card.application_url}
+              href={card.application_url} data-offer={card.slug} data-placement="card-review-hero"
               target="_blank"
               rel="nofollow noopener noreferrer"
               className="pill pill-lime"
@@ -434,7 +434,7 @@ export default async function Page({ params }: PageProps) {
               </div>
               <div className="shrink-0 md:text-right">
                 <a
-                  href={card.application_url}
+                  href={card.application_url} data-offer={card.slug} data-placement="card-review-body"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-lime text-ink font-display font-bold text-base px-6 py-4 rounded-full hover:bg-white transition-colors duration-150 whitespace-nowrap"
@@ -530,7 +530,7 @@ export default async function Page({ params }: PageProps) {
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href={card.application_url}
+              href={card.application_url} data-offer={card.slug} data-placement="card-review-footer"
               target="_blank"
               rel="nofollow noopener noreferrer"
               className="pill pill-ink"

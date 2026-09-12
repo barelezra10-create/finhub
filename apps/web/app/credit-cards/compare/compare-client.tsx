@@ -765,7 +765,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
                   <td key={i} className="border-l border-line px-4 py-4 align-top">
                     {c ? (
                       <a
-                        href={c.application_url}
+                        href={c.application_url} data-offer={c.slug} data-placement="card-compare-tool"
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         className="pill pill-lime"

@@ -53,14 +53,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
                   : card.signup_bonus ?? "None"
               }
             />
-            <Spec
-              label="Min credit"
-              value={
-                card.credit_score_required?.min
-                  ? String(card.credit_score_required.min)
-                  : "Varies"
-              }
-            />
+
           </div>
 
           {card.signup_bonus && (
@@ -85,18 +78,11 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
 
         {/* Rating + CTAs */}
         <div className="md:text-right md:min-w-[200px] shrink-0 flex flex-col md:items-end gap-4">
-          <div>
-            <div className="text-[10px] font-mono uppercase tracking-wider text-mute mb-1">
-              Fintiex score
-            </div>
-            <div className="font-display font-extrabold text-4xl md:text-5xl tabular leading-none text-ink">
-              {card.rating.toFixed(1)}
-            </div>
-            <div className="text-xs text-mute mt-1">out of 5</div>
-          </div>
           <div className="flex md:flex-col gap-2 md:gap-2 w-full md:w-auto">
             <a
               href={card.application_url}
+              data-offer={card.slug}
+              data-placement="card-comparison"
               target="_blank"
               rel="nofollow noopener noreferrer"
               className="pill pill-ink"

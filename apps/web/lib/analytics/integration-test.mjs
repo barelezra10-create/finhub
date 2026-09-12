@@ -33,7 +33,7 @@ try {
   const id=randomUUID();ids.push(id);
   assert.equal((await send({id})).status,204);
   assert.equal((await send({id})).status,204);
-  assert.equal((await send({kind:'outbound',target:'https://bank.example/apply?email=private'})).status,204);
+  assert.equal((await send({kind:'outbound',target:'https://bank.example/apply?email=private',offer:'test-card',placement:'card-comparison'})).status,204);
   assert.equal((await send({source:'newsletter',medium:'email',campaign:'weekly_rates'})).status,204);
   assert.equal((await send({}, {'user-agent':'Googlebot'})).status,204);
   assert.equal((await send({}, {'user-agent':'Chrome-Lighthouse',origin:'null','sec-fetch-site':'none'})).status,204,'audit bots are ignored without a console error');
@@ -50,6 +50,10 @@ try {
   assert.equal(rows[0].source,'Google');
   assert.equal(new Set(rows.map(r=>r.visitor)).size,1,'one daily visitor');
   assert.equal(rows.find(r=>r.kind==='outbound').target,'bank.example');
+  assert.equal(rows.find(r=>r.kind==='outbound').offer,'test-card');
+  assert.equal(rows.find(r=>r.kind==='outbound').placement,'card-comparison');
+  const offers = await fetch(base+'/admin?tab=offers&days=7',{headers:auth});
+  assert.equal(offers.status,200);assert.match(await offers.text(),/test-card/);
   assert.ok(!JSON.stringify(rows).includes('private'),'sensitive query strings stripped');
   const admin = await fetch(base+'/admin?tab=activity&days=7',{headers:auth});
   assert.equal(admin.status,200);assert.match(admin.headers.get('cache-control'),/no-store/);
@@ -60,7 +64,7 @@ try {
   assert.equal(geo.country,'US');assert.equal(geo.device,'Mobile');assert.equal(geo.source,'Bing');assert.equal(geo.channel,'Paid search');assert.equal(geo.keyword,'high yield savings');assert.equal(geo.language,'en-US');assert.equal(geo.browser,'Safari');
   const geoPage=await fetch(base+'/admin?tab=activity&country=US&device=Mobile&source=Bing',{headers:auth});const geoHtml=await geoPage.text();assert.match(geoHtml,/United States/);assert.match(geoHtml,/high yield savings/);assert.match(geoHtml,/Paid search/);
   const exportRes=await fetch(base+'/api/admin/export?country=US&device=Mobile&source=Bing',{headers:auth});assert.equal(exportRes.status,200);assert.match(await exportRes.text(),/high yield savings/);
-  const keywordCsv=new FormData();keywordCsv.set('engine','google');keywordCsv.set('start','2026-09-01');keywordCsv.set('end','2026-09-08');keywordCsv.set('file',new File(['Top queries,Clicks,Impressions,CTR,Position\n"savings, best rates",4,80,5%,12.5\n'], 'Queries.csv',{type:'text/csv'}));
+  const keywordCsv=new FormData();keywordCsv.set('engine','bing');keywordCsv.set('start','2026-09-01');keywordCsv.set('end','2026-09-08');keywordCsv.set('file',new File(['Top queries,Clicks,Impressions,CTR,Position\n"savings, best rates",4,80,5%,12.5\n'], 'Queries.csv',{type:'text/csv'}));
   const imported=await fetch(base+'/api/admin/search/import',{method:'POST',headers:{...auth,origin:base},body:keywordCsv,redirect:'manual'});assert.equal(imported.status,303);assert.match(imported.headers.get('location'),/import=success/);
   const searchPage=await fetch(base+'/admin?tab=search',{headers:auth});const searchHtml=await searchPage.text();assert.match(searchHtml,/savings, best rates/);assert.match(searchHtml,/Imported snapshot/);
   const clickLog = await fetch(base+'/admin?tab=activity&days=7&kind=outbound&source=Google',{headers:auth});
@@ -80,6 +84,6 @@ try {
   await pool.query('DELETE FROM fintiex_analytics WHERE event_id = ANY($1::uuid[])',[ids]);
   if(tokenHash) await pool.query('DELETE FROM fintiex_admin_sessions WHERE token_hash=$1',[tokenHash]);
   await pool.query('DELETE FROM fintiex_admin_login_attempts');
-  await pool.query("DELETE FROM fintiex_search_reports WHERE engine='google' AND period_days=0");
+  await pool.query("DELETE FROM fintiex_search_reports WHERE engine='bing' AND period_days=0");
   await pool.end();
 }
