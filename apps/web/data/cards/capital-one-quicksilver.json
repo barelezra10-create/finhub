@@ -11,23 +11,37 @@
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {},
+  "rewards": {
+    "other": 1.5
+  },
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
-  "drawbacks": [],
+  "perks": [
+    "Unlimited 1.5% cash back on eligible purchases."
+  ],
+  "drawbacks": [
+    "QuicksilverOne is a different product and has different fees."
+  ],
   "application_url": "https://www.capitalone.com/credit-cards/quicksilver/",
   "last_updated": "2026-09-12",
   "rating": null,
-  "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "calculator_eligible": true,
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_url": "https://www.capitalone.com/learn-grow/money-management/quicksilver-card-benefits/",
+  "source_checked": "2026-09-12",
+  "verified_fields": [
+    "annual_fee",
+    "rewards",
+    "perks",
+    "drawbacks"
+  ]
 }

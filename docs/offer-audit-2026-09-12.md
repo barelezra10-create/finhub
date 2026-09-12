@@ -71,3 +71,7 @@ Admin applications/revenue CSV import is implemented. Network + opaque conversio
 
 ## Authority
 Public card pages now identify official sources and selected-fact check dates; editorial policy documents the changes. Fintiex remains the publisher, without an invented individual reviewer. A real author/reviewer name, credentials and assignment must come from the owner. Backlink research and a draft are in authority-outreach-2026-09-12.md; no outreach was sent.
+
+## Follow-up source checks
+
+Confirmed selected facts for Capital One Quicksilver (no annual fee and uncapped 1.5% base cash back), Chase Ink Business Preferred (annual fee, purchase APR, welcome offer deadline and capped earning categories), and Amex Business Gold (basic annual fee). Official source URLs and checked fields are stored with each record. Quicksilver is now included in the limited cash-back calculator. This brings confirmed annual fees to 29 of 55 records; other fields remain withheld unless individually confirmed.

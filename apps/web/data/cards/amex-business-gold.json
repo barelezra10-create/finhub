@@ -12,7 +12,7 @@
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 375,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
   "signup_bonus": null,
@@ -22,13 +22,25 @@
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
-  "drawbacks": [],
+  "perks": [
+    "The basic Business Gold annual fee is $375."
+  ],
+  "drawbacks": [
+    "Employee card fees are additional; check the current schedule.",
+    "Welcome offers vary by applicant; no maximum offer is guaranteed."
+  ],
   "application_url": "https://www.americanexpress.com/us/credit-cards/card/business-gold-card/",
   "last_updated": "2026-09-12",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "source_url": "https://apply.americanexpress.com/en-us/business/credit-cards/campaign/home/compare/",
+  "source_checked": "2026-09-12",
+  "verified_fields": [
+    "annual_fee",
+    "perks",
+    "drawbacks"
+  ]
 }
