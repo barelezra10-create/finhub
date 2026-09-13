@@ -76,17 +76,6 @@ const tiers: Tier[] = [
     notes: "Soft-pull prequalify with 3 to 5 lenders to confirm your real rate before committing.",
     picks: [
       {
-        rank: 1,
-        lender: "Marcus by Goldman Sachs",
-        brand: "marcus-loan",
-        apr: "9.99% to 24.99%",
-        loanAmount: "$3,500 to $40,000",
-        term: "3 to 6 years",
-        highlight: "No fees of any kind, including no origination fee. On-time payment reward (defer one payment after 12 on-time).",
-        caveat: "No co-applicant option. Single-applicant only.",
-        href: "/loans/personal/marcus-personal-loan",
-      },
-      {
         rank: 2,
         lender: "Discover Personal Loans",
         brand: "discover-loan",
@@ -204,7 +193,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "What is an origination fee and how does it work?",
-    answer: "An origination fee is a one-time charge deducted from your loan proceeds at funding. A $10,000 loan with a 5% origination fee deposits $9,500 in your bank account, but you still owe $10,000. The fee is included in the APR calculation, which is why APR is the right comparison metric. SoFi, Marcus, Discover, and LightStream charge no origination fees.",
+    answer: "An origination fee is a one-time charge deducted from your loan proceeds at funding. A $10,000 loan with a 5% origination fee deposits $9,500 in your bank account, but you still owe $10,000. The fee is included in the APR calculation, which is why APR is the right comparison metric. Check origination fees in the actual offer; they can vary by product and applicant.",
   },
   {
     question: "Can I improve my FICO score before applying?",
@@ -320,11 +309,11 @@ export default function Page() {
                   <div className="grid grid-cols-12 gap-6 items-start">
                     <div className="col-span-12 md:col-span-1 flex items-center gap-3">
                       <BrandLogo brand={p.brand} size={48} />
-                      <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
+
                     </div>
                     <div className="col-span-12 md:col-span-7">
                       <div className="flex items-center gap-2 flex-wrap mb-2">
-                        <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
+
                         <h3 className="font-display font-bold text-xl tracking-tight">{p.lender}</h3>
                       </div>
                       <p className="text-mute leading-relaxed mb-2">
@@ -380,7 +369,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">APR caps and origination fee disclosure</h3>
               <p className="text-mute">
-                Personal loan APRs are legally capped at 35.99% in most states. We exclude lenders whose APRs cluster near that ceiling for typical applicants. We also weight origination fees, which are deducted from loan proceeds and effectively raise your APR. Marcus, Discover, SoFi, and LightStream charge no origination fees, which is why they top the higher tiers.
+                Compare the APR, fees, net proceeds and total scheduled payments in each offer. Do not treat a listed APR as a legal maximum or a rate you are guaranteed to qualify for. Check applicable lender disclosures before applying.
               </p>
             </div>
             <div>

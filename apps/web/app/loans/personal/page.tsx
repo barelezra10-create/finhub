@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best Personal Loans 2026: General-Purpose APRs by Credit Tier",
   description:
-    "Compare personal loans from SoFi, LightStream, Marcus, Discover, Upstart, and more. Real APR ranges by credit tier, no fees, soft-pull prequalify first.",
+    "Compare personal loan amounts, repayment terms and fees. Check lender disclosures and personalized offers before choosing a loan.",
   alternates: { canonical: "/loans/personal" },
 };
 
@@ -46,17 +46,6 @@ const picks: Pick[] = [
     bestFor: "Excellent credit, longest terms, lowest possible rate.",
   },
   {
-    rank: 3,
-    lender: "Marcus by Goldman Sachs",
-    brand: "marcus-loan",
-    apr: "9.99% to 24.99%",
-    loanAmount: "$3,500 to $40,000",
-    term: "3 to 6 years",
-    highlight: "No fees, no origination, no prepayment penalty. On-time payment reward lets you defer one payment after 12 consecutive on-time months.",
-    caveat: "No co-applicant option. Loan max is $40,000, lower than SoFi or LightStream.",
-    bestFor: "Good credit borrowers who want a simple, no-fee experience.",
-  },
-  {
     rank: 4,
     lender: "Discover Personal Loans",
     brand: "discover-loan",
@@ -92,8 +81,8 @@ const picks: Pick[] = [
 ];
 
 const tierRanges = [
-  { label: "Excellent · 740+", value: "7.99% to 12%", caption: "SoFi, LightStream, Marcus" },
-  { label: "Good · 670 to 739", value: "10% to 20%", caption: "Marcus, Discover, Upstart" },
+  { label: "Excellent · 740+", value: "7.99% to 12%", caption: "SoFi, LightStream" },
+  { label: "Good · 670 to 739", value: "10% to 20%", caption: "Discover, Upstart" },
   { label: "Fair · 580 to 669", value: "15% to 30%", caption: "Best Egg, LendingClub, Upstart" },
   { label: "Poor · below 580", value: "20% to 35.99%", caption: "Upstart, Prosper, secured loans" },
 ];
@@ -136,7 +125,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "How much can I borrow with a personal loan?",
-    answer: "Most lenders cap personal loans between $40,000 and $100,000. SoFi and LightStream go up to $100,000; Marcus and Discover cap at $40,000. The amount you actually qualify for depends on your income, debt-to-income ratio, and credit score. Lenders typically lend up to 40% of annual gross income for unsecured loans.",
+    answer: "Loan limits vary by lender and product. The amount offered to you depends on the lender’s assessment of your finances and credit history. Confirm the available amount in your personalized offer.",
   },
   {
     question: "How fast can I get the money?",
@@ -176,7 +165,7 @@ export default function Page() {
             The best personal loans for almost any purpose.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            A personal loan gives you a fixed rate, a fixed monthly payment, and a definite payoff date. We compare the six lenders that consistently beat the market on APR, fees, and approval speed. Soft-pull prequalify with each before you formally apply; the CFPB confirms rate-shopping inside a 14- to 45-day window does not hurt your credit.
+            A personal loan gives you a fixed rate, a fixed monthly payment, and a definite payoff date. Compare fees, repayment terms and the amount you will actually receive. Confirm whether a preliminary rate check uses a soft inquiry, and do not assume multiple personal loan applications will count as one inquiry.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/calculators/personal-loan-payoff" className="pill pill-ink">
@@ -216,10 +205,10 @@ export default function Page() {
         <div className="grid grid-cols-12 gap-8 mb-10">
           <div className="col-span-12 md:col-span-7">
             <span className="chip chip-mute mb-4">
-              <span className="pulse-dot" /> Top 6 picks
+              <span className="pulse-dot" /> Lender comparison
             </span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-              Six lenders worth your prequalification.
+              Compare the listed lenders.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
@@ -235,11 +224,11 @@ export default function Page() {
               <div className="grid grid-cols-12 gap-6 items-start">
                 <div className="col-span-12 md:col-span-1 flex items-center gap-3">
                   <BrandLogo brand={p.brand} size={48} />
-                  <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
+
                 </div>
                 <div className="col-span-12 md:col-span-7">
                   <div className="flex items-center gap-2 flex-wrap mb-2">
-                    <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
+
                     <h3 className="font-display font-bold text-xl tracking-tight">{p.lender}</h3>
                     <span className="chip chip-mute">{p.bestFor}</span>
                   </div>
@@ -306,9 +295,9 @@ export default function Page() {
           </div>
           <div className="col-span-12 lg:col-span-8 space-y-8 text-base leading-relaxed">
             <div>
-              <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Credit score (35% to 50% of the decision)</h3>
+              <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Credit history and affordability</h3>
               <p className="text-mute">
-                Most prime lenders set a minimum FICO of 660 to 680. SoFi, LightStream, and Marcus typically require 680 or higher for the best rates. Upstart, LendingClub, and Best Egg approve scores in the 580 to 660 band but at higher APRs. The Federal Reserve consumer credit data shows a clear cliff at 700 FICO; rates above that band drop sharply.
+                Credit history is one part of underwriting. Lenders also evaluate income, existing obligations and other application information. A score alone does not establish approval or the APR you will receive.
               </p>
             </div>
             <div>
@@ -332,7 +321,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">Soft-pull prequalification</h3>
               <p className="text-mute">
-                Five of our six picks (SoFi, Marcus, Discover, Upstart, LendingClub) offer soft-pull prequalification. Use it. Prequalifying with three to five lenders takes 15 minutes and gives you real APR quotes without affecting your credit.
+                Check whether a lender offers prequalification and which type of credit inquiry it uses. A preliminary quote is not final approval; a formal application may involve a hard inquiry.
               </p>
             </div>
           </div>
@@ -443,6 +432,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </>
+    <aside className="max-w-(--max-w-page) mx-auto px-6 py-8 text-sm text-mute">Looking for an older loan? Read <Link className="u-link" href="/loans/personal/marcus-personal-loan">Marcus loan status and servicing information</Link>. Marcus is not included as a current application option.</aside></>
   );
 }

@@ -2,15 +2,29 @@
   "slug": "marcus-personal-loan",
   "lender": "Marcus by Goldman Sachs",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 6.99, "max": 24.99 },
+  "apr_range": {
+    "min": 6.99,
+    "max": 24.99
+  },
   "loan_amount_min": 3500,
   "loan_amount_max": 40000,
-  "repayment_terms_months": [36, 48, 60, 72],
-  "origination_fee": { "min": 0, "max": 0 },
+  "repayment_terms_months": [
+    36,
+    48,
+    60,
+    72
+  ],
+  "origination_fee": {
+    "min": 0,
+    "max": 0
+  },
   "prepayment_penalty": false,
   "late_fee": "None",
   "funding_speed": "1-4 business days",
-  "credit_score_required": { "min": 660, "recommended": 700 },
+  "credit_score_required": {
+    "min": 660,
+    "recommended": 700
+  },
   "best_for": "No fees, on-time payment reward",
   "perks": [
     "No fees of any kind: no origination, late, or prepayment fees",
@@ -26,5 +40,9 @@
   ],
   "application_url": "https://www.marcus.com/us/en/loans/personal-loans",
   "rating": 4.6,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-05-02",
+  "availability": "unavailable",
+  "source_checked": "2026-09-13",
+  "source_url": "https://www.marcus.com/us/en/faqs",
+  "audit_note": "Not included as a current application option. Official FAQ describes transfer of personal loan servicing to SST effective December 11, 2023. Legacy offer fields are historical and must not render as current terms."
 }

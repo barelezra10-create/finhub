@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Home Improvement Loans 2026: Personal Loan vs HELOC vs Cash-Out",
   description:
-    "Compare home improvement financing: personal loan, HELOC, cash-out refi, or 0% APR card. Top picks: SoFi, LightStream, Marcus. Pick the right tool fast.",
+    "Compare home improvement financing: personal loans, HELOCs, cash-out refinancing and promotional credit cards. Check costs and repayment requirements.",
   alternates: { canonical: "/loans/home-improvement" },
 };
 
@@ -44,17 +44,6 @@ const picks: Pick[] = [
     highlight: "No fees of any kind. Unemployment protection. Same-day or next-day funding for approved applicants.",
     caveat: "Direct deposit setup required to unlock the lowest rate tier.",
     bestFor: "Excellent credit, no-fee preference, large loan amounts.",
-  },
-  {
-    rank: 3,
-    lender: "Marcus by Goldman Sachs",
-    brand: "marcus-loan",
-    apr: "9.99% to 24.99%",
-    loanAmount: "$3,500 to $40,000",
-    term: "3 to 6 years",
-    highlight: "No fees, no origination, no prepayment penalty. On-time payment reward (defer one payment after 12 consecutive on-time).",
-    caveat: "Loan max is $40,000, which may not cover larger renovations.",
-    bestFor: "Good credit, mid-size projects ($10K to $40K), simple terms.",
   },
 ];
 
@@ -113,7 +102,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "How much can I borrow with a personal loan for home improvement?",
-    answer: "SoFi and LightStream go up to $100,000. Marcus and Discover cap at $40,000. The amount you actually qualify for depends on your income, debt-to-income ratio, and credit score. Lenders typically lend up to 40% of annual gross income for unsecured loans. For projects over $100K, you will need a HELOC or cash-out refinance.",
+    answer: "Available amounts depend on the lender and your application. Compare net proceeds with the project budget, and evaluate the costs and collateral requirements of alternatives before borrowing.",
   },
   {
     question: "Should I take a contractor's in-house financing?",
@@ -235,7 +224,7 @@ export default function Page() {
             <div className="col-span-12 md:col-span-7">
               <span className="chip chip-mute mb-4">Top picks for personal loans</span>
               <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-                Three personal loan lenders for home projects.
+                Personal loan options for home projects.
               </h2>
             </div>
             <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
@@ -251,11 +240,11 @@ export default function Page() {
                 <div className="grid grid-cols-12 gap-6 items-start">
                   <div className="col-span-12 md:col-span-1 flex items-center gap-3">
                     <BrandLogo brand={p.brand} size={48} />
-                    <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
+
                   </div>
                   <div className="col-span-12 md:col-span-7">
                     <div className="flex items-center gap-2 flex-wrap mb-2">
-                      <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
+
                       <h3 className="font-display font-bold text-xl tracking-tight">{p.lender}</h3>
                       <span className="chip chip-mute">{p.bestFor}</span>
                     </div>

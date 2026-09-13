@@ -1,3 +1,4 @@
+import { UnavailablePersonalLoan } from "@/components/unavailable-personal-loan";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -29,6 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const loan = loadPersonalLoan(slug);
   if (!loan) return { title: "Personal Loan Review" };
+  if (loan.availability === "unavailable") return {
+    title: "Marcus Personal Loans: Status and Servicing",
+    description: "Looking for a Marcus personal loan? Read the servicing-transfer information for existing borrowers and compare other borrowing options.",
+    alternates: { canonical: `/loans/personal/${loan.slug}` },
+  };
   const title = `${loan.lender} Personal Loan Review`;
   const desc = `${loan.lender} personal loans: ${formatAprRange(loan.apr_range)} APR, ${formatCurrency(loan.loan_amount_min)} to ${formatCurrency(loan.loan_amount_max)}. Best for ${loan.best_for.toLowerCase()}.`;
   return {
@@ -92,6 +98,8 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const loan = loadPersonalLoan(slug);
   if (!loan) notFound();
+
+  if (loan.availability === "unavailable") return <UnavailablePersonalLoan loan={loan} />;
 
   const faqs = buildFaqs(loan);
   const apr = formatAprRange(loan.apr_range);

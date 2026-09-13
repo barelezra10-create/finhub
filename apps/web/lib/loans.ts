@@ -19,6 +19,10 @@ export interface OriginationFeeRange {
 }
 
 export interface PersonalLoan {
+  availability?: "unavailable";
+  source_checked?: string;
+  source_url?: string;
+  audit_note?: string;
   slug: string;
   lender: string;
   product_name: string;

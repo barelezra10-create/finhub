@@ -6,7 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 export const metadata: Metadata = {
   title: "Best Debt Consolidation Loans 2026: Roll Cards Into One Payment",
   description:
-    "Use a personal loan to consolidate credit card debt at a lower APR. Real math: $15K at 24% vs 11%. Top picks: SoFi, LightStream, Marcus, Best Egg, Discover.",
+    "Compare debt consolidation loan costs, repayment terms and creditor-payment options. Estimate whether a new loan could reduce your total borrowing cost.",
   alternates: { canonical: "/loans/debt-consolidation" },
 };
 
@@ -44,17 +44,6 @@ const picks: Pick[] = [
     highlight: "Lowest advertised APR. Funds go to your bank account, not creditors directly, so you control the payoff sequence.",
     caveat: "No prequalification (rate quote requires a hard pull). Excellent credit and stable income required for the floor rate.",
     bestFor: "Excellent credit, longest terms, lowest possible rate.",
-  },
-  {
-    rank: 3,
-    lender: "Marcus by Goldman Sachs",
-    brand: "marcus-loan",
-    apr: "9.99% to 24.99%",
-    loanAmount: "$3,500 to $40,000",
-    term: "3 to 6 years",
-    highlight: "No origination, no prepayment penalty, no late fees. Direct payment to up to 10 creditors at funding (Marcus pays them; you pay Marcus).",
-    caveat: "Loan max is $40,000. Single applicant only.",
-    bestFor: "Good credit, want hands-off payoff to multiple creditors.",
   },
   {
     rank: 4,
@@ -128,7 +117,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Does the lender pay my creditors directly?",
-    answer: "Some do, some do not. Marcus, Discover, and Best Egg can pay up to 10 creditors directly at funding. SoFi and LightStream deposit funds in your account and you pay creditors yourself. Direct payoff is convenient but adds 1 to 3 days to funding. Either way, get screenshots of card balances showing $0 within 7 days to confirm payoff.",
+    answer: "Direct creditor payment depends on the product and the accounts being paid. Confirm eligible creditors and processing times with the lender, and continue required payments until each creditor confirms receipt.",
   },
 ];
 
@@ -210,14 +199,14 @@ export default function Page() {
       <section className="max-w-(--max-w-page) mx-auto px-6 py-20">
         <div className="grid grid-cols-12 gap-8 mb-10">
           <div className="col-span-12 md:col-span-7">
-            <span className="chip chip-mute mb-4">Top 5 picks</span>
+            <span className="chip chip-mute mb-4">Lender comparison</span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-tight">
-              Five lenders built for consolidation.
+              Compare consolidation options.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 flex md:items-end md:justify-end">
             <p className="text-mute leading-relaxed md:text-right md:max-w-sm">
-              Three of these (Marcus, Discover, Best Egg) pay creditors directly at funding so the cards close out the day money lands.
+              Check whether direct creditor payment is available and whether your accounts qualify. A payoff does not automatically close a credit card account.
             </p>
           </div>
         </div>
@@ -228,11 +217,11 @@ export default function Page() {
               <div className="grid grid-cols-12 gap-6 items-start">
                 <div className="col-span-12 md:col-span-1 flex items-center gap-3">
                   <BrandLogo brand={p.brand} size={48} />
-                  <div className="md:hidden font-mono text-xs text-mute">#{p.rank}</div>
+
                 </div>
                 <div className="col-span-12 md:col-span-7">
                   <div className="flex items-center gap-2 flex-wrap mb-2">
-                    <span className="hidden md:inline font-mono text-xs text-mute">#{p.rank}</span>
+
                     <h3 className="font-display font-bold text-xl tracking-tight">{p.lender}</h3>
                     <span className="chip chip-mute">{p.bestFor}</span>
                   </div>
@@ -315,7 +304,7 @@ export default function Page() {
             <div>
               <h3 className="font-display font-bold text-xl mb-2 tracking-tight">2. Soft-pull prequalify with 3 to 5 lenders</h3>
               <p className="text-mute">
-                Open prequalification with SoFi, Marcus, Discover, Best Egg, and Upstart. Each takes 5 minutes and uses a soft pull (no credit impact). You will see real APR offers based on your actual profile, not headline rates.
+                Compare preliminary offers where available, after confirming the type of credit inquiry. Check the final APR, fees and creditor-payment restrictions before accepting a loan.
               </p>
             </div>
             <div>

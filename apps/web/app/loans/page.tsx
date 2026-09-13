@@ -63,23 +63,6 @@ const loanLenders: LoanLender[] = [
     trend: "flat",
   },
   {
-    brandSlug: "marcus-loan",
-    loanSlug: "marcus-personal-loan",
-    startingApr: 8.50,
-    tagline: "Goldman Sachs personal loans. Fixed rates, no fees, and the freedom to skip a payment after 12 on-time months.",
-    creditTier: "Good to Excellent",
-    loanRange: "$3.5K to $40K",
-    termMonths: "36 to 72",
-    fundingTime: "1 to 4 business days",
-    bestFor: "Goldman-backed simplicity, no fees, no gimmicks",
-    perks: [
-      "No fees of any kind, ever",
-      "On-time payment reward: defer one payment after 12 months",
-      "Fixed rate that never changes",
-    ],
-    trend: "flat",
-  },
-  {
     brandSlug: "discover-loan",
     loanSlug: "discover-personal-loan",
     startingApr: 8.99,
@@ -197,7 +180,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "Can I prepay a personal loan without a penalty?",
-    answer: "Most of the lenders in our table (LightStream, SoFi, Marcus, Discover) have no prepayment penalties. Always confirm before signing. Lenders that charge a prepayment fee typically structure it as a percentage of the remaining balance or a fixed number of months of interest.",
+    answer: "Check the loan agreement for any prepayment penalty before signing. Lenders that charge a prepayment fee typically structure it as a percentage of the remaining balance or a fixed number of months of interest.",
   },
   {
     question: "What is an origination fee and how does it affect my rate?",
@@ -224,7 +207,7 @@ const faqs = [
   },
   {
     q: "Can I prepay a personal loan without a penalty?",
-    a: "Most of the lenders in our table (LightStream, SoFi, Marcus, Discover) have no prepayment penalties. Always confirm before signing. Lenders that charge a prepayment fee typically structure it as a percentage of the remaining balance or a fixed number of months of interest.",
+    a: "Check the loan agreement for any prepayment penalty before signing. Lenders that charge a prepayment fee typically structure it as a percentage of the remaining balance or a fixed number of months of interest.",
   },
   {
     q: "What is an origination fee and how does it affect my rate?",
