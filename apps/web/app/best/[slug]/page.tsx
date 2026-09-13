@@ -6,10 +6,10 @@ import {
   ArticleSchema,
   BreadcrumbListSchema,
 } from "@/components/schemas";
-import { VisitBrandCta } from "@/components/visit-brand-cta";
+import { EditorialNote } from "@/components/editorial-note";
 import { fintiexMdxComponents } from "@/components/mdx-components";
 import { loadListicles, loadListicle } from "@/lib/listicles";
-import { getBrand } from "@/lib/brands";
+
 
 export async function generateStaticParams() {
   return loadListicles().map((l) => ({ slug: l.slug }));
@@ -40,35 +40,6 @@ export async function generateMetadata({
   };
 }
 
-// Brand slugs the brand library knows about that might be referenced in MDX bodies.
-// We surface a CTA only if the MDX explicitly mentions the brand name.
-const CARD_BRAND_SLUGS = [
-  "citi-double-cash",
-  "chase-sapphire-preferred",
-  "wells-active-cash",
-  "wells-reflect",
-  "citi-diamond-preferred",
-  "ink-business-preferred",
-  "discover-it-cash-back",
-  "amex-gold",
-];
-
-function findReferencedBrands(body: string) {
-  const lower = body.toLowerCase();
-  const seen = new Set<string>();
-  const matches: ReturnType<typeof getBrand>[] = [];
-  for (const slug of CARD_BRAND_SLUGS) {
-    const brand = getBrand(slug);
-    if (!brand) continue;
-    const name = brand.name.toLowerCase();
-    if (lower.includes(name) && !seen.has(slug)) {
-      seen.add(slug);
-      matches.push(brand);
-    }
-  }
-  return matches.filter((b): b is NonNullable<typeof b> => Boolean(b));
-}
-
 export default async function BestEntryPage({
   params,
 }: {
@@ -83,7 +54,6 @@ export default async function BestEntryPage({
   const prev = idx > 0 ? all[idx - 1] : null;
   const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
 
-  const referencedBrands = findReferencedBrands(listicle.body);
 
   return (
     <>
@@ -91,6 +61,7 @@ export default async function BestEntryPage({
         headline={listicle.title}
         description={listicle.description ?? listicle.title}
         slug={`/best/${slug}`}
+        dateModified={listicle.lastUpdated}
       />
       <BreadcrumbListSchema
         items={[
@@ -116,7 +87,7 @@ export default async function BestEntryPage({
 
         {/* HERO */}
         <header className="mb-10">
-          <span className="chip chip-lime mb-4">Editorial picks</span>
+          <span className="chip chip-lime mb-4">Card decision guide</span>
           <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.03em] mt-4 mb-4">
             {listicle.title}
           </h1>
@@ -127,34 +98,26 @@ export default async function BestEntryPage({
           ) : null}
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-mute text-sm">
-              Fintiex Editorial &middot; Updated 2026
+              Published by <Link href="/about" className="u-link">Fintiex</Link>
+              {listicle.lastUpdated && <> &middot; Guide updated <time dateTime={listicle.lastUpdated}>{listicle.lastUpdated}</time></>}
             </span>
-            <span className="chip chip-mute">Ranked</span>
+            <span className="chip chip-mute">Worked examples</span>
           </div>
         </header>
+
+        <EditorialNote />
+        {listicle.comparisonHref && (
+          <aside className="card p-6 mb-8">
+            <h2 className="font-display font-bold text-xl mb-2">Compare card terms</h2>
+            <p className="text-sm text-mute mb-4">Use this guide to decide what matters, then check source-linked card details. Each profile identifies which facts were checked and when; unconfirmed figures are withheld.</p>
+            <Link href={listicle.comparisonHref} className="pill pill-ink">Compare this category &rarr;</Link>
+          </aside>
+        )}
 
         {/* BODY */}
         <div className="text-[1.0625rem] leading-relaxed text-ink-soft">
           <MDXRemote source={listicle.body} components={fintiexMdxComponents} />
         </div>
-
-        {/* INLINE BRAND CTAS */}
-        {referencedBrands.length > 0 ? (
-          <section className="border-t border-line pt-10 mt-12 mb-10">
-            <div className="font-mono text-xs uppercase tracking-wider text-mute mb-4">
-              Cards mentioned in this list
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {referencedBrands.map((brand) => (
-                <VisitBrandCta
-                  key={brand.slug}
-                  brand={brand}
-                  variant="ink"
-                />
-              ))}
-            </div>
-          </section>
-        ) : null}
 
         {/* PREV / NEXT NAV */}
         <nav className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-line pt-8 mt-10">
@@ -202,16 +165,16 @@ export default async function BestEntryPage({
               Different use case? Different best card.
             </h3>
             <p className="text-ink-soft text-base leading-relaxed">
-              We rank cards by job, not by overall score. Browse the full set
-              of category winners.
+              Explore fees, repayment plans and rewards trade-offs for
+              the way you intend to use a card.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/best" className="pill pill-ink">
               All categories &rarr;
             </Link>
-            <Link href="/reviews" className="pill pill-ghost">
-              Read reviews
+            <Link href="/credit-cards/compare" className="pill pill-ghost">
+              Compare cards
             </Link>
           </div>
         </div>

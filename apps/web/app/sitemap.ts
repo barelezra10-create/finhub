@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/site";
 import { states } from "@/lib/states";
 import { allReviewSlugs, guideSlugs } from "@/lib/review-slugs";
 import { loadAllPillarArticles, PILLAR_SLUGS, PILLAR_META } from "@/lib/pillars";
+import { loadListicles } from "@/lib/listicles";
 import { cdBankSlugs } from "@/lib/cd-banks";
 
 function listJsonSlugs(dir: string): string[] {
@@ -156,8 +157,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
-  const bestRoutes = listMdxSlugs("content/best").map((slug) => ({
-    url: `/best/${slug}`,
+  const bestRoutes = loadListicles().map((guide) => ({
+    url: `/best/${guide.slug}`,
+    lastModified: guide.lastUpdated,
     priority: 0.7,
     changeFrequency: "weekly" as const,
   }));
@@ -200,7 +202,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
-  // Omit lastModified until content-specific revision dates are available.
+  // Include lastModified only where a content-specific revision date is available.
   return [
     ...savingsAccountRoutes,
     ...staticRoutes,
@@ -222,6 +224,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pillarArticleRoutes,
   ].map((entry) => ({
     url: `${SITE_URL}${entry.url}`,
+    ...("lastModified" in entry && typeof entry.lastModified === "string" ? { lastModified: entry.lastModified } : {}),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));
