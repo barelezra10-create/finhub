@@ -98,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RateTicker />
         <SiteHeader />
         <main id="main-content">{children}</main>
-        <footer className="border-t border-line px-6 py-8 text-sm text-mute"><nav aria-label="Publication information" className="max-w-(--max-w-page) mx-auto flex flex-wrap gap-6"><a href="/about">About Fintiex</a><a href="/editorial-policy">Editorial policy & sources</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/admin">Admin</a></nav></footer>
+        <footer className="border-t border-line px-6 py-8 text-sm text-mute"><nav aria-label="Publication information" className="max-w-(--max-w-page) mx-auto flex flex-wrap gap-6"><a href="/about">About Fintiex</a><a href="/editorial-policy">Editorial policy & sources</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/admin">Admin</a></nav><div className="max-w-(--max-w-page) mx-auto"><nav aria-label="Related resources" style={{ display: "block", margin: "24px 0 0", fontSize: "14px", lineHeight: 1.8 }}><strong>Related resources</strong><p style={{ margin: "8px 0 0" }}><a href="https://mca-clarity.com/" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}>MCA Clarity</a> · <a href="https://www.coastaldebtreviews.com/" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}>Coastal Debt Reviews</a> · <a href="https://www.mcasettlementreviews.com/" style={{ textDecoration: "underline", textUnderlineOffset: "3px" }}>MCA Settlement Reviews</a></p></nav></div></footer>
       </body>
     </html>
   );
