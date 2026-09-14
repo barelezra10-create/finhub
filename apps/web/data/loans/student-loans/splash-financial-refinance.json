@@ -3,33 +3,45 @@
   "lender": "Splash Financial",
   "product_name": "Student Loan Refinance",
   "type": "refinance",
-  "apr_range": { "min": 4.49, "max": 9.99 },
-  "apr_type": "both",
-  "loan_amount_min": 5000,
-  "loan_amount_max": null,
-  "repayment_terms_years": [5, 7, 10, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": null,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "Varies by lender partner",
-  "forbearance_available": true,
-  "in_school_payment_options": [],
-  "credit_score_required": { "min": 640, "recommended": 700 },
-  "perks": [
-    "Marketplace model: one application, multiple lender offers",
-    "No origination fees through Splash platform",
-    "Among the lowest refinance rates available",
-    "Soft credit pull for rate check",
-    "Spousal refinancing available",
-    "Can refinance both federal and private loans"
-  ],
-  "drawbacks": [
-    "Rate and terms vary by partner lender",
-    "Refinancing federal loans removes federal protections",
-    "No cosigner release as a marketplace"
-  ],
   "application_url": "https://www.splashfinancial.com/",
-  "rating": 4.4,
-  "last_updated": "2026-05-02"
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "checked_profile": {
+    "role": "Student refinance marketplace",
+    "summary": "A marketplace that routes student refinance applications to its lender network.",
+    "scope": "This check covers Splash’s marketplace and application disclosures. Loan amounts, rates, fees, repayment terms and cosigner policies depend on the selected lender and are not universal marketplace benefits.",
+    "facts": [
+      {
+        "label": "Lender network",
+        "text": "Splash says it does not work with every lender. An offer through its network is subject to the selected lender’s review and underwriting criteria.",
+        "source": "marketplace"
+      },
+      {
+        "label": "Credit inquiries",
+        "text": "Checking rates uses a soft credit inquiry. Continuing with a full application involves a hard inquiry that may affect your credit score.",
+        "source": "marketplace"
+      },
+      {
+        "label": "Approval and terms",
+        "text": "Splash does not guarantee an offer or approval. Eligibility and the final agreement depend on the lending partner; a marketplace comparison does not establish a universal minimum credit score.",
+        "source": "marketplace"
+      }
+    ],
+    "questions": [
+      "Which lending partner is evaluating my application and servicing the loan?",
+      "When will a hard credit inquiry occur?",
+      "Does the actual lender allow cosigner release, and what fees and hardship options apply?"
+    ],
+    "sources": [
+      {
+        "id": "marketplace",
+        "label": "Splash Financial marketplace disclosures",
+        "url": "https://www.splashfinancial.com/"
+      }
+    ]
+  }
 }

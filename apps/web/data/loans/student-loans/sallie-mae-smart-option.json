@@ -3,33 +3,50 @@
   "lender": "Sallie Mae",
   "product_name": "Smart Option Student Loan",
   "type": "private",
-  "apr_range": { "min": 5.37, "max": 15.70 },
-  "apr_type": "both",
-  "loan_amount_min": 1000,
-  "loan_amount_max": null,
-  "repayment_terms_years": [10, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": 12,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "5% of amount due or $25, whichever is less",
-  "forbearance_available": true,
-  "in_school_payment_options": ["deferred", "fixed $25/month", "interest-only", "full principal and interest"],
-  "credit_score_required": { "min": 620, "recommended": 670 },
-  "perks": [
-    "No origination fees or prepayment penalties",
-    "4 in-school repayment options including deferred",
-    "Cosigner release available after 12 on-time payments",
-    "Multi-year advantage: single application for multiple school years",
-    "Covers up to 100% of school-certified costs",
-    "Autopay discount of 0.25%"
+  "application_url": "https://www.salliemae.com/student-loans/undergraduate-student-loans/",
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
   ],
-  "drawbacks": [
-    "Variable rates can rise significantly over loan term",
-    "No income-driven repayment options",
-    "Limited forbearance compared to federal loans"
-  ],
-  "application_url": "https://www.salliemae.com/student-loans/smart-option-student-loan/",
-  "rating": 4.3,
-  "last_updated": "2026-05-02"
+  "checked_profile": {
+    "role": "Private student loan lender",
+    "summary": "Sallie Mae Bank’s undergraduate loan, with borrowing and cosigner-release conditions worth checking closely.",
+    "scope": "These facts apply to the undergraduate Smart Option Student Loan and its release requirements. They do not establish an individual rate, approval, complete fee schedule or eligibility for other Sallie Mae products.",
+    "facts": [
+      {
+        "label": "Lender and amount",
+        "text": "Sallie Mae Bank makes the loan. Direct applications may cover up to the school-certified cost of attendance minus other aid; applications through partner websites can have a lower maximum.",
+        "source": "product"
+      },
+      {
+        "label": "Interest during school",
+        "text": "Interest starts accruing when funds are disbursed. With fixed or deferred payments, unpaid interest is added to principal after the grace period, increasing the balance on which interest is calculated.",
+        "source": "product"
+      },
+      {
+        "label": "Cosigner release",
+        "text": "After graduation or program completion, borrowers may apply following 12 qualifying principal-and-interest payments, or the equivalent prepaid amount. In-school and grace-period payments do not count. Income, credit and account-history requirements also apply, including no hardship forbearance or modified repayment plan in the preceding 12 months.",
+        "source": "release"
+      }
+    ],
+    "questions": [
+      "What amount will my school certify, and does my application channel affect the maximum?",
+      "How much unpaid interest will be added to my balance before full repayment?",
+      "Which payments count toward release, and what income and credit documents will be required?"
+    ],
+    "sources": [
+      {
+        "id": "product",
+        "label": "Sallie Mae undergraduate loan disclosures",
+        "url": "https://www.salliemae.com/student-loans/undergraduate-student-loans/"
+      },
+      {
+        "id": "release",
+        "label": "Sallie Mae cosigner-release requirements",
+        "url": "https://www.salliemae.com/student-loans/manage-your-private-student-loan/apply-to-release-cosigner/"
+      }
+    ]
+  }
 }

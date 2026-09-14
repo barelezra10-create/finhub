@@ -3,33 +3,45 @@
   "lender": "Ascent",
   "product_name": "Non-Cosigned Outcomes-Based Loan",
   "type": "private",
-  "apr_range": { "min": 6.63, "max": 14.95 },
-  "apr_type": "both",
-  "loan_amount_min": 2000,
-  "loan_amount_max": 200000,
-  "repayment_terms_years": [5, 7, 10, 12, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": 24,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "5% of the minimum monthly payment amount",
-  "forbearance_available": true,
-  "in_school_payment_options": ["deferred", "fixed $25/month", "interest-only", "full principal and interest"],
-  "credit_score_required": { "min": 540, "recommended": 620 },
-  "perks": [
-    "Specifically designed for students who cannot qualify with a cosigner",
-    "Considers GPA, school, major, and future income potential",
-    "1% cash back reward at graduation",
-    "No origination or prepayment fees",
-    "Generous forbearance up to 24 months lifetime",
-    "Wide range of repayment terms up to 20 years"
+  "application_url": "https://www.ascentfunding.com/college-loans/no-cosigner/",
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
   ],
-  "drawbacks": [
-    "Rates are higher than cosigned loan options",
-    "Non-cosigned product requires junior or senior standing",
-    "Not available in all states"
-  ],
-  "application_url": "https://www.ascentfunding.com/",
-  "rating": 4.2,
-  "last_updated": "2026-05-02"
+  "checked_profile": {
+    "role": "Private student loan provider",
+    "summary": "An outcomes-based option for eligible students approaching graduation without a cosigner.",
+    "scope": "These facts apply to Ascent’s non-cosigned outcomes-based loan. Its credit-based loans have different limits and repayment choices. Rates and approval depend on the actual application.",
+    "facts": [
+      {
+        "label": "Academic eligibility",
+        "text": "The outcomes-based program requires a 3.0 or higher GPA and satisfactory academic progress. Applicants must be juniors or seniors enrolled full-time at an eligible institution, or at least half-time when within nine months of graduation. Other eligibility rules apply.",
+        "source": "product"
+      },
+      {
+        "label": "Borrowing limit",
+        "text": "The outcomes-based maximum is $20,000, with a $200,000 aggregate limit. The minimum is $2,001, or $6,001 for applicants with a permanent Massachusetts address. These are different from the credit-based product limits.",
+        "source": "product"
+      },
+      {
+        "label": "Repayment",
+        "text": "The outcomes-based loan offers 10- or 15-year terms with deferred repayment. Payments start up to nine months after graduation or leaving school.",
+        "source": "product"
+      }
+    ],
+    "questions": [
+      "Is my school, degree program and expected graduation date eligible?",
+      "How much can I borrow for this academic year after other aid?",
+      "What interest accrues during deferment, and what will my full monthly payment be?"
+    ],
+    "sources": [
+      {
+        "id": "product",
+        "label": "Ascent non-cosigned loan comparison",
+        "url": "https://www.ascentfunding.com/college-loans/no-cosigner/"
+      }
+    ]
+  }
 }

@@ -46,33 +46,25 @@ export interface PersonalLoan {
 }
 
 export type StudentLoanType = "private" | "refinance";
-export type StudentAprType = "fixed" | "variable" | "both";
+export interface CheckedStudentProfile {
+  role: string;
+  summary: string;
+  scope: string;
+  facts: { label: string; text: string; source: string }[];
+  questions: string[];
+  sources: { id: string; label: string; url: string; document_date?: string }[];
+}
 
 export interface StudentLoan {
   availability?: "unavailable";
   source_checked?: string;
   status_page?: ProductStatusInfo;
+  checked_profile?: CheckedStudentProfile;
   slug: string;
   lender: string;
   product_name: string;
   type: StudentLoanType;
-  apr_range: APRRange;
-  apr_type: StudentAprType;
-  loan_amount_min: number;
-  loan_amount_max: number | null;
-  repayment_terms_years: number[];
-  cosigner_required: boolean;
-  cosigner_release_after_months: number | null;
-  origination_fee: number;
-  prepayment_penalty: boolean;
-  late_fee: string;
-  forbearance_available: boolean;
-  in_school_payment_options: string[];
-  credit_score_required: CreditScoreRange;
-  perks: string[];
-  drawbacks: string[];
   application_url: string;
-  rating: number;
   last_updated: string;
 }
 
@@ -97,7 +89,7 @@ export function loadPersonalLoan(slug: string): PersonalLoan | null {
 
 export function loadStudentLoans(): StudentLoan[] {
   return readJsonDir<StudentLoan>("student-loans").sort(
-    (a, b) => (b.rating ?? 0) - (a.rating ?? 0)
+    (a, b) => a.lender.localeCompare(b.lender) || a.product_name.localeCompare(b.product_name)
   );
 }
 

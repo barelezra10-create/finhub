@@ -3,33 +3,46 @@
   "lender": "Credible",
   "product_name": "Student Loan Refinance Marketplace",
   "type": "refinance",
-  "apr_range": { "min": 4.49, "max": 11.99 },
-  "apr_type": "both",
-  "loan_amount_min": 5000,
-  "loan_amount_max": null,
-  "repayment_terms_years": [5, 7, 10, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": null,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "Varies by lender",
-  "forbearance_available": true,
-  "in_school_payment_options": [],
-  "credit_score_required": { "min": 620, "recommended": 670 },
-  "perks": [
-    "Compare multiple real prequalified rates in 2 minutes",
-    "Soft credit pull only to see rates from all lenders",
-    "Best Price Guarantee: $200 if you find a lower rate",
-    "Wide lender network including large banks and credit unions",
-    "Free to use, no marketplace fee",
-    "Cosigned refinancing options available through partner lenders"
-  ],
-  "drawbacks": [
-    "Not a direct lender; terms depend on chosen partner",
-    "Wide rate range since it aggregates multiple lenders",
-    "You apply separately with your chosen lender after comparing"
-  ],
   "application_url": "https://www.credible.com/refinance-student-loans",
-  "rating": 4.4,
-  "last_updated": "2026-05-02"
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "checked_profile": {
+    "role": "Student refinance marketplace",
+    "summary": "A comparison marketplace connecting borrowers with participating refinance lenders.",
+    "scope": "This check covers the marketplace’s role, coverage and compensation disclosure. Individual lenders set loan terms; marketplace-wide rates, fees, approval scores and cosigner rules are not established here.",
+    "facts": [
+      {
+        "label": "Market coverage",
+        "text": "Credible compares participating lenders and says it does not include every provider or all of their products. A comparison is not a complete survey of the market.",
+        "source": "marketplace"
+      },
+      {
+        "label": "Compensation",
+        "text": "Credible says it is paid by lending partners and does not charge consumers for its comparison service. Review the chosen lender’s disclosures separately for loan fees.",
+        "source": "marketplace"
+      },
+      {
+        "label": "Prequalification",
+        "text": "Credible describes checking prequalified refinance rates without affecting your credit score. A prequalified result is not a final loan approval; confirm the lender’s application and credit-check requirements.",
+        "source": "marketplace"
+      }
+    ],
+    "questions": [
+      "Which lenders were included for my application, and which were excluded?",
+      "Who makes and services the loan I am considering?",
+      "What final APR, fees, cosigner terms and repayment options does that lender offer?"
+    ],
+    "sources": [
+      {
+        "id": "marketplace",
+        "label": "Credible student refinance marketplace and disclosures",
+        "url": "https://www.credible.com/refinance-student-loans",
+        "document_date": "2026-09-01"
+      }
+    ]
+  }
 }

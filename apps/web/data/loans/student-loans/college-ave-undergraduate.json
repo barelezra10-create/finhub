@@ -3,33 +3,51 @@
   "lender": "College Ave",
   "product_name": "Undergraduate Student Loan",
   "type": "private",
-  "apr_range": { "min": 5.59, "max": 16.85 },
-  "apr_type": "both",
-  "loan_amount_min": 1000,
-  "loan_amount_max": 150000,
-  "repayment_terms_years": [5, 8, 10, 15],
-  "cosigner_required": false,
-  "cosigner_release_after_months": 24,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "5% of the late payment amount",
-  "forbearance_available": true,
-  "in_school_payment_options": ["deferred", "interest-only", "flat $25/month", "full principal and interest"],
-  "credit_score_required": { "min": 600, "recommended": 660 },
-  "perks": [
-    "No fees of any kind (origination, application, prepayment)",
-    "Flexible repayment terms from 5 to 15 years",
-    "Pre-qualification with soft credit pull",
-    "Approval decision in as little as 3 minutes",
-    "0.25% autopay rate discount",
-    "Dedicated student loan advisors available"
-  ],
-  "drawbacks": [
-    "Cosigner release only after 24 payments (longer than some competitors)",
-    "Does not offer multi-year approval option",
-    "No graduate-specific products"
-  ],
   "application_url": "https://www.collegeave.com/student-loans/undergraduate/",
-  "rating": 4.5,
-  "last_updated": "2026-05-02"
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "checked_profile": {
+    "role": "Private student loan provider",
+    "summary": "Undergraduate borrowing with several in-school payment choices and conditional cosigner release.",
+    "scope": "This check covers undergraduate repayment choices and the published cosigner-release criteria. It does not establish your APR, approval, total borrowing eligibility or a complete fee schedule.",
+    "facts": [
+      {
+        "label": "In-school choices",
+        "text": "College Ave lists immediate principal-and-interest, interest-only, fixed $25 monthly and deferred payment options for undergraduate loans. Compare the total cost of the options in your own offer.",
+        "source": "product"
+      },
+      {
+        "label": "Release timing",
+        "text": "Cosigner release is not automatic after 24 payments. College Ave requires at least half the original repayment term to have elapsed; its example places a 10-year loan at the fifth year of principal-and-interest repayment.",
+        "source": "release"
+      },
+      {
+        "label": "Release qualifications",
+        "text": "The primary borrower must request release, be a U.S. citizen or permanent resident, document annual income at least twice the outstanding balance and pass a credit review. The criteria also address recent delinquencies, bankruptcy, foreclosure and repossession.",
+        "source": "release"
+      }
+    ],
+    "questions": [
+      "What will each payment option cost over the full loan term?",
+      "On what date could I first request cosigner release under my contract?",
+      "Which lender issues my loan, and what fees and annual borrowing limits apply?"
+    ],
+    "sources": [
+      {
+        "id": "product",
+        "label": "College Ave undergraduate loans",
+        "url": "https://www.collegeave.com/student-loans/undergraduate/"
+      },
+      {
+        "id": "release",
+        "label": "College Ave cosigner-release requirements",
+        "url": "https://help.collegeave.com/hc/en-us/articles/5560603133079-Can-a-cosigner-be-released-from-a-loan",
+        "document_date": "2025-08-05"
+      }
+    ]
+  }
 }

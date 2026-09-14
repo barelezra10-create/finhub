@@ -3,33 +3,45 @@
   "lender": "SoFi",
   "product_name": "Student Loan Refinancing",
   "type": "refinance",
-  "apr_range": { "min": 4.74, "max": 9.99 },
-  "apr_type": "both",
-  "loan_amount_min": 5000,
-  "loan_amount_max": null,
-  "repayment_terms_years": [5, 7, 10, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": null,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "None",
-  "forbearance_available": true,
-  "in_school_payment_options": [],
-  "credit_score_required": { "min": 650, "recommended": 700 },
-  "perks": [
-    "Career coaching and job placement assistance included",
-    "Unemployment protection: pause payments if you lose your job",
-    "No origination fees, no late fees, no prepayment penalties",
-    "0.25% autopay rate discount",
-    "Parent PLUS loan refinancing available",
-    "Access to SoFi member benefits including financial planning"
-  ],
-  "drawbacks": [
-    "Refinancing federal loans eliminates federal protections",
-    "Stricter income and employment requirements",
-    "Requires a degree to refinance in most cases"
-  ],
   "application_url": "https://www.sofi.com/refinance-student-loan/",
-  "rating": 4.5,
-  "last_updated": "2026-05-02"
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "checked_profile": {
+    "role": "Student refinance provider",
+    "summary": "Student refinancing with separate options for standard borrowing, Parent PLUS and certain professional borrowers.",
+    "scope": "This check covers the refinance process and loan categories described in SoFi’s help center. It does not verify a universal fee policy, advertised APR, employment benefit or individual approval.",
+    "facts": [
+      {
+        "label": "Checking a rate",
+        "text": "SoFi describes prequalification as a soft credit check. A full application includes document review and a hard credit inquiry that may affect your credit score. Prequalification is not final approval.",
+        "source": "basics"
+      },
+      {
+        "label": "Program differences",
+        "text": "The help center distinguishes standard, Parent PLUS, medical/dental residency and SmartStart options. The payment structure available to you depends on the program and eligibility.",
+        "source": "basics"
+      },
+      {
+        "label": "Partial refinancing",
+        "text": "SoFi says applicants can refinance only part of their eligible student debt. Identify the specific loans and amounts in the application rather than assuming every existing loan must move.",
+        "source": "basics"
+      }
+    ],
+    "questions": [
+      "Which program applies to me, and when do full principal-and-interest payments begin?",
+      "Does my offer include an origination fee or conditions for rate discounts?",
+      "Which existing loans should remain outside the refinance after comparing their benefits and costs?"
+    ],
+    "sources": [
+      {
+        "id": "basics",
+        "label": "SoFi student refinance basics",
+        "url": "https://support.sofi.com/hc/en-us/articles/the-basics-of-sofi-s-student-loan-refinancing?from=search%3Atax+documents"
+      }
+    ]
+  }
 }

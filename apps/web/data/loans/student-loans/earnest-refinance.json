@@ -3,33 +3,50 @@
   "lender": "Earnest",
   "product_name": "Student Loan Refinancing",
   "type": "refinance",
-  "apr_range": { "min": 4.99, "max": 9.74 },
-  "apr_type": "both",
-  "loan_amount_min": 5000,
-  "loan_amount_max": 500000,
-  "repayment_terms_years": [5, 7, 10, 15, 20],
-  "cosigner_required": false,
-  "cosigner_release_after_months": null,
-  "origination_fee": 0,
-  "prepayment_penalty": false,
-  "late_fee": "None",
-  "forbearance_available": true,
-  "in_school_payment_options": [],
-  "credit_score_required": { "min": 650, "recommended": 700 },
-  "perks": [
-    "Precision pricing: pick exact monthly payment or payoff date",
-    "Skip one payment per year with no penalty",
-    "No origination fees, no late fees",
-    "Forbearance available during financial hardship",
-    "0.25% autopay discount",
-    "Refinance both federal and private student loans"
-  ],
-  "drawbacks": [
-    "Not available in Kentucky or Nevada",
-    "Losing federal loan protections by refinancing",
-    "Higher minimum credit score than some competitors"
-  ],
   "application_url": "https://www.earnest.com/student-loan-refinancing",
-  "rating": 4.6,
-  "last_updated": "2026-05-02"
+  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-14",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "checked_profile": {
+    "role": "Student refinance provider",
+    "summary": "Refinancing with education requirements that distinguish a borrower’s own loans from a child’s education debt.",
+    "scope": "These selected help-center facts cover education eligibility and servicing. They are not a complete underwriting checklist or confirmation of rates, fees, state availability or cosigner-release terms.",
+    "facts": [
+      {
+        "label": "Your education loans",
+        "text": "Earnest’s guidance generally requires a completed associate degree or higher, and considers applicants graduating in the current semester. It also describes circumstances where students still in school may refinance undergraduate loans; confirm which debts qualify.",
+        "source": "education"
+      },
+      {
+        "label": "A child’s education loans",
+        "text": "A parent applicant does not need their own degree. Earnest asks that the child has completed their education or is in the last semester before graduation.",
+        "source": "education"
+      },
+      {
+        "label": "Lending and servicing",
+        "text": "Earnest’s help center identifies Earnest Operations LLC or FinWise Bank as the loan maker and Earnest Operations LLC, supported by MOHELA, as the servicer. Confirm the legal lender in your documents.",
+        "source": "release"
+      }
+    ],
+    "questions": [
+      "Which of my existing loans and degree programs qualify?",
+      "What is the full cost of the refinance compared with keeping my current loans?",
+      "Who will be legally responsible, and can any cosigner be released under this specific agreement?"
+    ],
+    "sources": [
+      {
+        "id": "education",
+        "label": "Earnest degree and enrollment requirements",
+        "url": "https://help.earnest.com/hc/en-us/articles/6832385740951-Do-I-need-a-degree-or-diploma-to-apply-Applying-For-Loans"
+      },
+      {
+        "id": "release",
+        "label": "Earnest cosigner-release guidance",
+        "url": "https://help.earnest.com/hc/en-us/articles/360019957793-Do-You-Offer-Cosigner-Release-General-Questions"
+      }
+    ]
+  }
 }

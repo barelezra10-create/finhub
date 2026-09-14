@@ -206,6 +206,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const revisedPages = new Set([
     '/insurance', '/insurance/life', '/loans/student', '/loans/student/discover-student-loans',
+    ...listJsonSlugs('data/loans/student-loans').map(slug => `/loans/student/${slug}`),
     ...listJsonSlugs('data/insurance/life-insurance').map(slug => `/insurance/life/${slug}`),
     '/learn/insurance/how-to-choose-a-life-insurance-policy',
     '/learn/insurance/how-much-life-insurance-do-you-need',
