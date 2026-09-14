@@ -38,7 +38,7 @@ assert not any(x in text for x in ['Top pick','providers ranked','35 percent','F
 for p in (root/'insurance/life').glob('*.html'):
  t=' '.join(Page(p).text)
  assert not any(x in t for x in ['out of 5 in our','Fintiex rating',' / 5','Fully digital carriers like Haven']),p
- if p.stem!='haven-life':assert 'awaiting verification' in t,p
+ if p.stem!='haven-life':assert 'What this check covers' in t and 'Provider sources' in t,p
 sitemap=ET.fromstring((root/'sitemap.xml.body').read_text());ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 for route in ['insurance/life','insurance/life/haven-life','loans/student/discover-student-loans']:
  nodes=[n for n in sitemap.findall('s:url',ns) if n.find('s:loc',ns).text==f'https://www.fintiex.com/{route}']

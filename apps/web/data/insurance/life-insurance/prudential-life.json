@@ -1,36 +1,51 @@
 {
   "slug": "prudential-life",
   "carrier": "Prudential",
-  "policy_types": ["term", "whole", "universal", "variable"],
-  "term_lengths_years": [10, 15, 20, 30],
-  "coverage_amount_min": 100000,
-  "coverage_amount_max": 65000000,
-  "age_range": { "min": 18, "max": 80 },
-  "no_medical_exam_available": true,
-  "am_best_rating": "A+",
-  "best_for": "Broad coverage options, no-exam for impaired risks",
-  "underwriting_speed": "Same day to 4 weeks (FlexTerm no-exam available)",
-  "riders_available": [
-    "Accelerated death benefit",
-    "Waiver of premium",
-    "Child term rider",
-    "Living needs benefit",
-    "Enhanced disability benefit"
-  ],
-  "perks": [
-    "FlexTerm policy available with no medical exam for qualifying applicants",
-    "Very high coverage amounts available for businesses and high-net-worth",
-    "Broad policy options from term to variable universal life",
-    "Strong financial strength with A+ AM Best",
-    "Accelerated death benefit included at no additional cost",
-    "Competitive pricing for term life for most age groups"
-  ],
-  "drawbacks": [
-    "No-exam option limited to specific health profiles and amounts",
-    "Variable life products carry investment risk",
-    "Application process can be slower for complex policies"
-  ],
   "quote_url": "https://www.prudential.com/personal/life-insurance",
-  "rating": 4.3,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-14",
+  "source_checked": "2026-09-14",
+  "source_url": "https://prudential.scene7.com/is/content/prudential/1079275_EssentialTermPlus_ConsumerBrochure",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "EssentialTerm Plus terms from an explicitly dated Prudential consumer brochure.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Insurance brand; issuer varies by product",
+    "summary": "EssentialTerm Plus terms from an explicitly dated Prudential consumer brochure.",
+    "scope": "EssentialTerm Plus brochure, edition September 2024, retrieved September 14, 2026. The main consumer page did not expose readable product details in this check. This document check does not confirm current sales availability or unchanged terms.",
+    "facts": [
+      {
+        "label": "Product and issuer",
+        "text": "The September 2024 brochure identifies EssentialTerm Plus as term life issued by Pruco Life Insurance Company, subject to state availability. It lists 10-, 15-, 20- and 30-year terms with premiums level for the selected term.",
+        "source": "brochure"
+      },
+      {
+        "label": "Conversion and renewal",
+        "text": "The brochure describes conversion to a permanent product during the term or until age 70, whichever comes first. Continuing term coverage after the initial period can reduce the death benefit and increase premiums. Confirm the current contract rules.",
+        "source": "brochure"
+      },
+      {
+        "label": "Medical underwriting",
+        "text": "PruFast Track may bypass exams and labs for eligible applicants. The brochure lists ages 18–60 and $100,000–$3 million for that pathway; these are not overall policy limits or guaranteed approval.",
+        "source": "brochure"
+      }
+    ],
+    "questions": [
+      "Is EssentialTerm Plus currently available in my state, and which brochure edition applies?",
+      "What are the current conversion rights and renewal benefits?",
+      "Do I qualify for accelerated underwriting or need an exam?",
+      "Which insurer, riders and fees appear in the actual offer?"
+    ],
+    "sources": [
+      {
+        "id": "brochure",
+        "label": "EssentialTerm Plus consumer brochure, edition 09/2024 (PDF)",
+        "url": "https://prudential.scene7.com/is/content/prudential/1079275_EssentialTermPlus_ConsumerBrochure",
+        "document_date": "2024-09"
+      }
+    ]
+  }
 }

@@ -38,7 +38,7 @@ function buildFaqs(carrier: ReturnType<typeof loadCarrier> & object): FAQItem[] 
   return [
     {
       question: `Is ${name} home insurance worth it?`,
-      answer: `${name} earned ${carrier.rating.toFixed(1)} out of 5 in our 2026 review. It carries an AM Best rating of ${carrier.am_best_rating ?? "N/R"}${
+      answer: `${name} earned ${(carrier.rating?.toFixed(1) ?? "Not scored")} out of 5 in our 2026 review. It carries an AM Best rating of ${carrier.am_best_rating ?? "N/R"}${
         carrier.jd_power_satisfaction ? ` and a JD Power home insurance satisfaction score of ${carrier.jd_power_satisfaction} out of 1,000` : ""
       }. Best for: ${carrier.best_for.toLowerCase()}.`,
     },
@@ -114,7 +114,7 @@ export default async function Page({ params }: PageProps) {
           <p className="text-lg text-mute max-w-2xl leading-relaxed mb-6">
             {carrier.carrier} earned{" "}
             <span className="font-mono tabular font-semibold text-ink">
-              {carrier.rating.toFixed(1)} / 5
+              {(carrier.rating?.toFixed(1) ?? "Not scored")} / 5
             </span>{" "}
             in our 2026 review. Best for: {carrier.best_for.toLowerCase()}. Here is the full breakdown.
           </p>
@@ -159,7 +159,7 @@ export default async function Page({ params }: PageProps) {
             <KV label="States available" value={formatStatesAvailable(carrier.states_available)} />
             <KV label="Flood coverage" value={carrier.flood_coverage_separate ? "Separate policy" : "Included"} />
             <KV label="Digital experience" value={titleCase(carrier.digital_experience ?? "Varies")} />
-            <KV label="Fintiex rating" value={`${carrier.rating.toFixed(1)} / 5`} />
+            <KV label="Fintiex rating" value={`${(carrier.rating?.toFixed(1) ?? "Not scored")} / 5`} />
           </div>
         </div>
       </section>

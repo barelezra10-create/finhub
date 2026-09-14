@@ -28,13 +28,23 @@ export interface AgeRange {
   max: number;
 }
 
+export interface CheckedLifeProfile {
+  role: string;
+  summary: string;
+  scope: string;
+  facts: { label: string; text: string; source: string }[];
+  questions: string[];
+  sources: { id: string; label: string; url: string; document_date?: string }[];
+}
+
 export interface InsuranceCarrier {
+  checked_profile?: CheckedLifeProfile;
   availability?: "unavailable";
   source_checked?: string;
   status_page?: ProductStatusInfo;
   slug: string;
   carrier: string;
-  rating: number;
+  rating?: number;
   best_for: string;
   perks: string[];
   drawbacks: string[];

@@ -2,7 +2,7 @@
 
 Scope: all 52 loan, insurance and brokerage JSON records. Checks identify missing provenance in the records; they do not establish that every claim is wrong or inspect every hardcoded page. Do not interpret a passed software build as factual verification.
 
-The Discover loan record has selected-fact evidence. Marcus personal loans, Discover student loans and Haven Life render status/servicing pages instead of current offers. Other records require provider review before their rates, scores or terms can be described as verified. Shared personal-loan pages no longer render unsupported editorial ratings or minimum approval scores. Life insurance profiles no longer display numerical editorial scores and identify legacy terms as pending verification. Auto/home insurance, student-loan and investing templates still need further correction passes.
+The Discover loan record has selected-fact evidence. Marcus personal loans, Discover student loans and Haven Life render status/servicing pages instead of current offers. Other records require provider review before their rates, scores or terms can be described as verified. Shared personal-loan pages no longer render unsupported editorial ratings or minimum approval scores. The six life insurance profiles now contain scoped, source-linked facts with legacy claims removed. Prudential uses a September 2024 brochure and does not confirm current sales availability. Auto/home insurance, student-loan and investing templates still need further correction passes.
 
 | Record | Provider | Source check | Findings |
 |---|---|---|---|
@@ -45,12 +45,12 @@ The Discover loan record has selected-fact evidence. Marcus personal loans, Disc
 | `apps/web/data/insurance/home-insurance/state-farm-home.json` | State Farm | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Premium estimate needs sample/method/date; Study score needs edition/category citation |
 | `apps/web/data/insurance/home-insurance/usaa-home.json` | USAA | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Premium estimate needs sample/method/date; Study score needs edition/category citation |
 | `apps/web/data/insurance/life-insurance/haven-life.json` | Haven Life | 2026-09-14 | Unavailable product; status/servicing page replaces historical offer fields |
-| `apps/web/data/insurance/life-insurance/ladder-life.json` | Ladder Life | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
-| `apps/web/data/insurance/life-insurance/mutual-of-omaha-life.json` | Mutual of Omaha | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
-| `apps/web/data/insurance/life-insurance/northwestern-mutual-life.json` | Northwestern Mutual | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
-| `apps/web/data/insurance/life-insurance/policygenius.json` | Policygenius | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
-| `apps/web/data/insurance/life-insurance/prudential-life.json` | Prudential | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
-| `apps/web/data/insurance/life-insurance/state-farm-life.json` | State Farm | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
+| `apps/web/data/insurance/life-insurance/ladder-life.json` | Ladder Life | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
+| `apps/web/data/insurance/life-insurance/mutual-of-omaha-life.json` | Mutual of Omaha | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
+| `apps/web/data/insurance/life-insurance/northwestern-mutual-life.json` | Northwestern Mutual | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
+| `apps/web/data/insurance/life-insurance/policygenius.json` | Policygenius | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
+| `apps/web/data/insurance/life-insurance/prudential-life.json` | Prudential | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
+| `apps/web/data/insurance/life-insurance/state-farm-life.json` | State Farm | 2026-09-14 | Selected source-linked profile facts checked; see scope and document dates; legacy claims removed |
 | `apps/web/data/investing/brokerages/charles-schwab.json` | Charles Schwab | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; App rating needs store/date/count |
 | `apps/web/data/investing/brokerages/e-trade.json` | E*TRADE (Morgan Stanley) | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; App rating needs store/date/count |
 | `apps/web/data/investing/brokerages/fidelity.json` | Fidelity Investments | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; App rating needs store/date/count |

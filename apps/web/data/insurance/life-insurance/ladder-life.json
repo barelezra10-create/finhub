@@ -1,33 +1,56 @@
 {
   "slug": "ladder-life",
   "carrier": "Ladder Life",
-  "policy_types": ["term"],
-  "term_lengths_years": [10, 15, 20, 25, 30],
-  "coverage_amount_min": 100000,
-  "coverage_amount_max": 8000000,
-  "age_range": { "min": 20, "max": 60 },
-  "no_medical_exam_available": true,
-  "am_best_rating": "A",
-  "best_for": "Flexible adjustable coverage, digital-first term",
-  "underwriting_speed": "Instant to same day",
-  "riders_available": [
-    "Accelerated death benefit"
-  ],
-  "perks": [
-    "Unique laddering feature lets you reduce coverage as needs change without penalty",
-    "Instant decision for most applicants, no exam up to $3M",
-    "Fully online process from application to policy delivery",
-    "Competitive term rates for healthy applicants under 50",
-    "No hidden fees or surrender charges for reducing coverage",
-    "Easy to apply in under 15 minutes"
-  ],
-  "drawbacks": [
-    "Term only, no permanent life insurance options",
-    "Max issue age of 60 excludes older applicants",
-    "Limited rider options compared to traditional carriers",
-    "Cannot increase coverage after approval, only decrease"
-  ],
   "quote_url": "https://www.ladderlife.com",
-  "rating": 4.3,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-14",
+  "source_checked": "2026-09-14",
+  "source_url": "https://www.ladderlife.com/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Term life through an online agency, with product-dependent options to adjust coverage.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Digital insurance agency",
+    "summary": "Term life through an online agency, with product-dependent options to adjust coverage.",
+    "scope": "Agency role, advertised no-exam threshold and coverage-adjustment rules. This check does not establish your eligibility, price or all available policy limits.",
+    "facts": [
+      {
+        "label": "Who issues the policy?",
+        "text": "Ladder Insurance Services is an agency. Its current disclosure names Amica Life, Fidelity Security Life and S.USA Life as issuing insurers, with different state availability. The issuing insurer is responsible for its policy.",
+        "source": "main"
+      },
+      {
+        "label": "Medical requirements",
+        "text": "Ladder advertises no medical exams for applications of $3 million or less, with health questions still required. Above that amount, a health check may be requested. This is not guaranteed acceptance.",
+        "source": "main"
+      },
+      {
+        "label": "Changing coverage",
+        "text": "You can reduce coverage and premiums on eligible products. To increase coverage, you apply for an additional policy; underwriting and approval still apply. Laddering availability varies by product.",
+        "source": "adjust"
+      }
+    ],
+    "questions": [
+      "Which insurer and policy form would issue my coverage in my state?",
+      "What is the approved premium after underwriting?",
+      "What minimum coverage must remain after a reduction?",
+      "Would an additional policy have different pricing or conditions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Ladder homepage and insurer disclosures",
+        "url": "https://www.ladderlife.com/"
+      },
+      {
+        "id": "adjust",
+        "label": "Ladder help: increasing or decreasing coverage",
+        "url": "https://support.ladderlife.com/hc/en-us/articles/360001837207-How-do-I-increase-or-decrease-my-current-coverage",
+        "document_date": "2025-11-20"
+      }
+    ]
+  }
 }
