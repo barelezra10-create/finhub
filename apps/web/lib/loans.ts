@@ -23,6 +23,7 @@ export interface PersonalLoan {
   source_checked?: string;
   source_url?: string;
   audit_note?: string;
+  verified_fields?: string[];
   slug: string;
   lender: string;
   product_name: string;
@@ -34,12 +35,12 @@ export interface PersonalLoan {
   prepayment_penalty: boolean;
   late_fee: string;
   funding_speed: string;
-  credit_score_required: CreditScoreRange;
+  credit_score_required: CreditScoreRange | null;
   best_for: string;
   perks: string[];
   drawbacks: string[];
   application_url: string;
-  rating: number;
+  rating: number | null;
   last_updated: string;
 }
 

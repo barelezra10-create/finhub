@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
+import { SAVINGS_CHECKED } from "@/lib/savings-rates";
 import { SITE_URL } from "@/lib/site";
 import { states } from "@/lib/states";
 import { allReviewSlugs, guideSlugs } from "@/lib/review-slugs";
@@ -32,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/", priority: 1.0, changeFrequency: "daily" as const },
     { url: "/mortgages", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/mortgages/by-state", priority: 0.85, changeFrequency: "weekly" as const },
+    { url: "/savings/rate-tracker", lastModified: SAVINGS_CHECKED, priority: 0.85, changeFrequency: "weekly" as const },
     { url: "/savings", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/savings/hysa", priority: 0.9, changeFrequency: "daily" as const },
     { url: "/savings/cds", priority: 0.85, changeFrequency: "weekly" as const },

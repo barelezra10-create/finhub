@@ -50,7 +50,7 @@ interface MarketTile {
 
 const featuredMarkets: MarketTile[] = [
   { label: "30Y Fixed Mortgage", value: "6.67%", caption: "Older illustrative figure · not a quote" },
-  { label: "Bread Savings APY", value: rateLabel(savingsOffer("bread").apy), caption: `Checked ${SAVINGS_CHECKED} · $100 to open` },
+  { label: "Bask Savings APY", value: rateLabel(savingsOffer("bask").apy), caption: `Checked ${SAVINGS_CHECKED} · Verify provider terms` },
   { label: "12-Month CD", value: "4.30%", caption: "Older illustrative figure · confirm offers" },
   { label: "Personal Loan · Excellent", value: "8.20%", caption: "Older illustrative figure · confirm eligibility" },
 ];
@@ -268,8 +268,8 @@ export default function Home() {
             tone="violet"
             label="Save"
             title="HYSA, CDs, money market, checking."
-            kpi={rateLabel(savingsOffer("bread").apy)}
-            kpiCaption="Bread Savings · dated APY"
+            kpi={rateLabel(savingsOffer("bask").apy)}
+            kpiCaption="Bask Savings · dated APY"
             href="/savings"
           />
           <HubCard
@@ -349,7 +349,7 @@ export default function Home() {
                 The cleanest framework is three tiers. Tier 1 is your next three months of bills: keep this in checking, fully liquid, no rate chasing needed. Tier 2 is your three-to-six month emergency fund: this belongs in a high-yield savings account, earning a real rate while staying accessible within one to two business days. Tier 3 is cash you know you will not need for 12 months or more: this is the right home for a CD ladder, where you can capture the best available rates without sacrificing future flexibility.
               </p>
               <p>
-                Compare Bread Savings, Bask, and Marcus alongside alternatives using our shared savings table. Bread requires an opening deposit; some competing offers require recurring deposits or larger balances. Check the linked provider terms before moving money.
+                Compare Bask and Marcus alongside alternatives using our shared savings table. Compare opening deposits, recurring-deposit requirements and balance tiers. Check the linked provider terms before moving money.
               </p>
               <p>
                 A CD ladder on Tier 3 cash works like this: split $10,000 across five rungs at 3, 6, 12, 24, and 60 months. Blended average yield lands around <span className="font-mono tabular font-semibold">4.10%</span>. One rung matures every three months, giving you periodic access to the principal. Each time a rung matures you reinvest at the long end of the ladder, keeping the cycle going and capturing whatever rates are available at that point. Liquidity stays intact; you are never fully locked up.

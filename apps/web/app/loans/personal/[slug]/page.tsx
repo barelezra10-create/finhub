@@ -1,3 +1,4 @@
+import { EditorialNote } from "@/components/editorial-note";
 import { UnavailablePersonalLoan } from "@/components/unavailable-personal-loan";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -45,53 +46,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 function buildFaqs(loan: PersonalLoan): FAQItem[] {
-  const name = loan.lender;
-  const apr = formatAprRange(loan.apr_range);
-  const amount = `${formatCurrency(loan.loan_amount_min)} to ${formatCurrency(loan.loan_amount_max)}`;
-  const term = formatTermMonths(loan.repayment_terms_months);
-  const orig = formatOriginationFee(loan.origination_fee);
   return [
-    {
-      question: `Is ${name} a good personal loan lender?`,
-      answer: `${name} earned ${loan.rating.toFixed(1)} out of 5 in our 2026 review. The loan covers ${amount} with APRs of ${apr} on terms from ${term}. Best for: ${loan.best_for.toLowerCase()}.`,
-    },
-    {
-      question: `What credit score do I need for a ${name} personal loan?`,
-      answer: `${name} accepts applicants with a minimum FICO of ${loan.credit_score_required.min}. To qualify for the lowest advertised APR, lenders typically want a score of ${loan.credit_score_required.recommended} or higher plus steady income and a debt-to-income ratio under 40 percent. The CFPB recommends checking your free annual credit report at annualcreditreport.com before you apply.`,
-    },
-    {
-      question: `How fast does ${name} fund a personal loan?`,
-      answer: `${name} typically funds approved loans in ${loan.funding_speed.toLowerCase()}. Funding speed depends on how quickly you submit income verification documents and on your bank's deposit processing time. Same-day funding is fastest when you have direct deposit set up with a major bank.`,
-    },
-    {
-      question: `Does ${name} charge an origination fee?`,
-      answer: orig === "None"
-        ? `No. ${name} does not charge an origination fee, which means the full loan amount is deposited in your account. Pair this with the lack of a prepayment penalty (${loan.prepayment_penalty ? "not offered" : "confirmed"}), and ${name} is one of the lower all-in cost lenders in our 2026 review.`
-        : `Yes. ${name} charges an origination fee of ${orig}, which is deducted from your loan proceeds at funding. The Federal Reserve recommends comparing APR (not just the interest rate), because APR rolls origination into the cost calculation.`,
-    },
-    {
-      question: `What is the maximum I can borrow from ${name}?`,
-      answer: `${name} personal loans range from ${formatCurrency(loan.loan_amount_min)} up to ${formatCurrency(loan.loan_amount_max)}. The amount you actually qualify for depends on income, debt-to-income ratio, and credit score. Most lenders cap unsecured personal loans at roughly 40 percent of annual gross income.`,
-    },
-    {
-      question: `Does ${name} let me prepay my loan early?`,
-      answer: loan.prepayment_penalty
-        ? `${name} may charge a prepayment penalty. Read your loan agreement carefully before signing if you plan to pay off early.`
-        : `Yes. ${name} has no prepayment penalty, so you can pay extra each month or pay off the loan in full at any time without a fee. Prepaying lowers the total interest you pay across the life of the loan.`,
-    },
+    { question: `What should I compare in a ${loan.lender} offer?`, answer: "Compare APR, fees, net funds received, payment amount and total scheduled payments. A listed range is not a personalized offer or an approval promise." },
+    { question: `What credit score does ${loan.lender} require?`, answer: "We have not verified a minimum approval score for this product. Check eligibility directly with the lender; credit history is only part of underwriting." },
+    { question: "Will checking rates affect my credit?", answer: "Confirm whether the lender uses a soft inquiry for preliminary quotes and a hard inquiry for a formal application. Do not assume multiple personal loan applications are grouped into one inquiry." },
   ];
 }
 
 function whoItsFor(loan: PersonalLoan): string {
-  const min = loan.credit_score_required.min;
-  const rec = loan.credit_score_required.recommended;
-  let tier = "fair";
-  if (rec >= 720) tier = "excellent";
-  else if (rec >= 680) tier = "good";
-  else if (rec >= 600) tier = "fair";
-  else tier = "poor";
-
-  return `${loan.lender} fits borrowers with ${tier} credit (FICO ${min}+, ideally ${rec} or higher). The product is best suited for ${loan.best_for.toLowerCase()}. Loan sizes from ${formatCurrency(loan.loan_amount_min)} to ${formatCurrency(loan.loan_amount_max)} cover most common needs: debt consolidation, home improvement, medical bills, and major life events. If your FICO is below ${min}, you will likely need a cosigner, a secured loan, or a different lender entirely.`;
+  return `Compare ${loan.lender} with alternatives using the offer available to you. Check permitted loan uses, whether a joint application is available, and the payment you can sustain. A credit score alone does not establish suitability or approval.`;
 }
 
 export default async function Page({ params }: PageProps) {
@@ -125,7 +88,6 @@ export default async function Page({ params }: PageProps) {
         brandName={loan.lender}
         category="Personal Loan"
         apr={`${loan.apr_range.min}-${loan.apr_range.max}`}
-        ratingValue={Math.round(loan.rating * 2)}
       />
 
       {/* HERO */}
@@ -143,14 +105,10 @@ export default async function Page({ params }: PageProps) {
             {loan.lender} Personal Loan Review (2026)
           </h1>
           <p className="text-lg text-mute max-w-2xl leading-relaxed mb-6">
-            {loan.lender} earned{" "}
-            <span className="font-mono tabular font-semibold text-ink">
-              {loan.rating.toFixed(1)} / 5
-            </span>{" "}
-            in our 2026 review. Best for: {loan.best_for.toLowerCase()}. APRs run {apr} on {amount} loans, with funding in {loan.funding_speed.toLowerCase()}.
+            Compare {loan.lender} borrowing costs, repayment terms and application conditions. Figures below are dated records; confirm the offer available to you with the lender.
           </p>
           <div className="text-xs font-mono text-mute uppercase tracking-wider mb-6">
-            By the Fintiex Loan Desk · Updated {loan.last_updated}
+            Published by Fintiex · Record date {loan.last_updated}
           </div>
           <div className="flex flex-wrap gap-3">
             <a
@@ -168,6 +126,10 @@ export default async function Page({ params }: PageProps) {
         </div>
       </section>
 
+      <div className="max-w-(--max-w-page) mx-auto px-6">
+        <EditorialNote checked={loan.source_checked} />
+        <p className="text-sm text-mute mb-6">{loan.source_checked ? loan.audit_note : `Legacy product figures recorded ${loan.last_updated} have not been reverified in this audit. Check the lender’s current disclosures before relying on them.`}{" "}<a className="u-link" href={loan.source_url ?? loan.application_url}>Official lender source</a></p>
+      </div>
       {/* KEY STATS CARD */}
       <section className="max-w-(--max-w-page) mx-auto px-6 py-10">
         <div className="card-flush p-8" style={{ boxShadow: "var(--shadow-pop)" }}>
@@ -180,7 +142,7 @@ export default async function Page({ params }: PageProps) {
           </div>
           <div className="mt-6 pt-6 border-t border-line grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
             <KV label="Funding speed" value={loan.funding_speed} />
-            <KV label="Min credit score" value={String(loan.credit_score_required.min)} />
+            <KV label="Approval score" value="Not verified" />
             <KV label="Late fee" value={loan.late_fee} />
             <KV label="Prepayment penalty" value={loan.prepayment_penalty ? "Yes" : "None"} />
           </div>
@@ -226,10 +188,10 @@ export default async function Page({ params }: PageProps) {
           <FeeRow label="Loan amount range" value={amount} />
           <FeeRow label="Repayment terms" value={term} />
           <FeeRow label="Funding speed" value={loan.funding_speed} />
-          <FeeRow label="Minimum FICO" value={String(loan.credit_score_required.min)} last />
+          <FeeRow label="Minimum FICO" value="Not verified" last />
         </div>
         <p className="text-sm text-mute mt-4 max-w-3xl leading-relaxed">
-          Always compare APR rather than the headline interest rate. The CFPB requires every lender to disclose APR, which folds origination fees into the cost calculation.
+          Compare APR, fees and total scheduled payments in the lender’s disclosures. Confirm whether fees reduce the funds you receive.
         </p>
       </section>
 
@@ -246,15 +208,15 @@ export default async function Page({ params }: PageProps) {
         <h2 className="font-display font-bold text-3xl tracking-tight mb-6">How to apply for a {loan.lender} loan</h2>
         <div className="max-w-3xl text-[1.0625rem] leading-relaxed text-ink-soft mb-5">
           <p>
-            Applying takes about 10 to 15 minutes online. You will need your Social Security number, government ID, last two pay stubs or two years of tax returns, and your bank account details for the deposit. The Federal Reserve recommends checking your free credit report at annualcreditreport.com before you apply so you know what to expect.
+            Read the lender’s application instructions for required information, permitted loan uses and credit-check consent. Request a quote where available and compare the full repayment cost before accepting an offer.
           </p>
         </div>
         <ol className="space-y-3 text-[0.9375rem] max-w-2xl text-ink-soft">
-          <Step n={1}>Soft-pull prequalify on the {loan.lender} site to see your estimated APR with no impact to your credit score.</Step>
-          <Step n={2}>Compare the prequalified APR against two or three other lenders. The CFPB allows a 14- to 45-day rate-shopping window with no extra credit damage.</Step>
-          <Step n={3}>Select your loan amount and term. Pick the shortest term you can afford; total interest paid is much lower on shorter terms.</Step>
-          <Step n={4}>Submit the formal application with income verification. This triggers a hard inquiry that drops your FICO 2 to 5 points temporarily.</Step>
-          <Step n={5}>Review the loan agreement, sign electronically, and wait for funding. {loan.lender} typically deposits in {loan.funding_speed.toLowerCase()}.</Step>
+          <Step n={1}>Check eligibility and whether a preliminary rate check uses a soft or hard inquiry.</Step>
+          <Step n={2}>Compare APR, fees and net proceeds across the offers available to you.</Step>
+          <Step n={3}>Choose a repayment amount and term that fit your budget.</Step>
+          <Step n={4}>Read the formal application’s credit-check consent and submit accurate information.</Step>
+          <Step n={5}>Review the agreement and confirm funding arrangements before accepting.</Step>
         </ol>
         <div className="mt-6">
           <a
@@ -303,7 +265,7 @@ export default async function Page({ params }: PageProps) {
               Ready to check your {loan.lender} rate?
             </h2>
             <p className="text-bg/70 mt-2">
-              Soft-pull prequalification takes about 5 minutes. No credit impact to look.
+              Read the lender’s eligibility and credit-check terms before beginning.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
