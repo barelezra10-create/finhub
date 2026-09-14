@@ -204,6 +204,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
+  const revisedPages = new Set([
+    '/insurance', '/insurance/life', '/loans/student', '/loans/student/discover-student-loans',
+    ...listJsonSlugs('data/insurance/life-insurance').map(slug => `/insurance/life/${slug}`),
+    '/learn/insurance/how-to-choose-a-life-insurance-policy',
+    '/learn/insurance/how-much-life-insurance-do-you-need',
+  ]);
   // Include lastModified only where a content-specific revision date is available.
   return [
     ...savingsAccountRoutes,
@@ -227,6 +233,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((entry) => ({
     url: `${SITE_URL}${entry.url}`,
     ...("lastModified" in entry && typeof entry.lastModified === "string" ? { lastModified: entry.lastModified } : {}),
+    ...(revisedPages.has(entry.url) ? { lastModified: "2026-09-14" } : {}),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

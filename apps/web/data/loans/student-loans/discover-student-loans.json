@@ -3,19 +3,32 @@
   "lender": "Discover",
   "product_name": "Student Loans",
   "type": "private",
-  "apr_range": { "min": 5.99, "max": 14.99 },
+  "apr_range": {
+    "min": 5.99,
+    "max": 14.99
+  },
   "apr_type": "both",
   "loan_amount_min": 1000,
   "loan_amount_max": 150000,
-  "repayment_terms_years": [10, 15, 20],
+  "repayment_terms_years": [
+    10,
+    15,
+    20
+  ],
   "cosigner_required": false,
   "cosigner_release_after_months": null,
   "origination_fee": 0,
   "prepayment_penalty": false,
   "late_fee": "No late fees",
   "forbearance_available": true,
-  "in_school_payment_options": ["deferred", "interest-only"],
-  "credit_score_required": { "min": 620, "recommended": 680 },
+  "in_school_payment_options": [
+    "deferred",
+    "interest-only"
+  ],
+  "credit_score_required": {
+    "min": 620,
+    "recommended": 680
+  },
   "perks": [
     "No late fees ever",
     "No origination fees or prepayment penalties",
@@ -31,5 +44,41 @@
   ],
   "application_url": "https://www.discover.com/student-loans/",
   "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-14",
+  "availability": "unavailable",
+  "source_checked": "2026-09-14",
+  "source_url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001393612/1ee12e70-c626-4e16-8d7c-c7405d47f01f.pdf",
+  "verified_fields": [
+    "availability",
+    "status_page"
+  ],
+  "status_page": {
+    "title": "Discover Student Loans: Status and Servicing",
+    "description": "Discover stopped accepting new private student loan applications on February 1, 2024. This page provides source links and help for existing borrowers.",
+    "checked": "2026-09-14",
+    "sections": [
+      {
+        "title": "Why the application offer was removed",
+        "text": "Discover\u2019s July 17, 2024 Form 8-K confirms the application closure and the agreement to sell its student loan portfolio, with Firstmark servicing transferred loans. The former product URL now redirects to Discover\u2019s homepage. Historical APRs, approval scores and application instructions are no longer presented here as current offers."
+      },
+      {
+        "title": "Already have a Discover student loan?",
+        "text": "Use your latest statement or transfer notice to identify your servicer. Firstmark provides an official account login and customer-service resources for loans it services. If your records name a different servicer, follow those records; this page does not establish the status of an individual account."
+      },
+      {
+        "title": "Comparing new borrowing options",
+        "text": "Request current disclosures for the specific product you are considering. Compare the APR, repayment schedule, fees and total payments, and keep a copy of the actual offer. An old Discover product description is not an available alternative."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Discover Form 8-K, July 17, 2024 \u2014 application closure and servicing agreement (PDF)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001393612/1ee12e70-c626-4e16-8d7c-c7405d47f01f.pdf"
+      },
+      {
+        "label": "Firstmark Services \u2014 official account access and help",
+        "url": "https://firstmarkservices.com/"
+      }
+    ]
+  }
 }

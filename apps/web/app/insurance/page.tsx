@@ -79,8 +79,8 @@ const verticals: {
     chip: "Life",
     title: "Life insurance",
     detail:
-      "Term, whole, and no-exam life from 7 top providers. From digital-first (Haven, Ladder) to traditional (Northwestern Mutual, Prudential).",
-    stats: ["7 providers", "Term + whole", "Updated 2026"],
+      "Life insurance comparison questions, provider profiles, and current status information for former Haven Life customers.",
+    stats: ["Policy comparison", "Term + whole", "Provider status"],
     accent: "coral",
     icon: "life",
   },
@@ -127,7 +127,7 @@ function VerticalIcon({ kind }: { kind: "auto" | "home" | "life" }) {
 export default function Page() {
   const auto = loadCarriers("auto");
   const home = loadCarriers("home");
-  const life = loadCarriers("life");
+  const life = loadCarriers("life").filter(c => c.availability !== "unavailable");
   const total = auto.length + home.length + life.length;
 
   return (
@@ -160,7 +160,7 @@ export default function Page() {
               <span aria-hidden>→</span>
             </Link>
             <Link href="/insurance/life" className="pill pill-ghost">
-              See life insurance picks
+              Explore life insurance
             </Link>
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function Page() {
           {[
             { v: "auto" as const, c: auto[0], label: "Top auto pick" },
             { v: "home" as const, c: home[0], label: "Top home pick" },
-            { v: "life" as const, c: life[0], label: "Top life pick" },
+
           ].map(({ v, c, label }) =>
             c ? (
               <Link key={v} href={`/insurance/${v}/${c.slug}`} className="card p-6 block group">

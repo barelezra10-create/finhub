@@ -1,11 +1,22 @@
 {
   "slug": "haven-life",
   "carrier": "Haven Life",
-  "policy_types": ["term"],
-  "term_lengths_years": [10, 15, 20, 25, 30],
+  "policy_types": [
+    "term"
+  ],
+  "term_lengths_years": [
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
   "coverage_amount_min": 100000,
   "coverage_amount_max": 3000000,
-  "age_range": { "min": 18, "max": 64 },
+  "age_range": {
+    "min": 18,
+    "max": 64
+  },
   "no_medical_exam_available": true,
   "am_best_rating": "A++",
   "best_for": "Affordable term life, instant decision online",
@@ -31,5 +42,45 @@
   ],
   "quote_url": "https://havenlife.com",
   "rating": 4.7,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-14",
+  "availability": "unavailable",
+  "source_checked": "2026-09-14",
+  "source_url": "https://www.massmutual.com/login-list",
+  "verified_fields": [
+    "availability",
+    "status_page"
+  ],
+  "status_page": {
+    "title": "Haven Life: Status and Policyholder Help",
+    "description": "Haven Life is no longer listed here as a new-policy application option. Find the MassMutual account-access route for existing Haven policyholders.",
+    "checked": "2026-09-14",
+    "sections": [
+      {
+        "title": "What changed at Haven Life?",
+        "text": "MassMutual announced plans to wind down Haven Life in November 2023, according to its statement reported by InsuranceNewsNet. In our September 14, 2026 check, the Haven website redirected to MassMutual. We removed the old instant-approval, coverage-limit and quote claims instead of treating them as a current offer."
+      },
+      {
+        "title": "Access an existing Haven policy",
+        "text": "MassMutual\u2019s official customer login portal still lists a Haven Life dashboard for application and policy access. Start with that portal or the contact details on your policy documents for billing, beneficiary changes or claims questions. The end of a new-sales channel does not by itself describe your individual policy\u2019s status."
+      },
+      {
+        "title": "Considering new coverage?",
+        "text": "Compare the issuing insurer, policy terms, premiums and exclusions in the actual documents. The former Haven listing is retained for account-help information and does not provide a new Haven quote."
+      }
+    ],
+    "sources": [
+      {
+        "label": "MassMutual customer login portal \u2014 Haven Life dashboard",
+        "url": "https://www.massmutual.com/login-list"
+      },
+      {
+        "label": "Haven website \u2014 redirects to MassMutual",
+        "url": "https://www.havenlife.com/"
+      },
+      {
+        "label": "InsuranceNewsNet, November 14, 2023 \u2014 MassMutual wind-down statement",
+        "url": "https://insurancenewsnet.com/innarticle/massmutual-to-wind-down-haven-life-amid-poor-results-high-costs"
+      }
+    ]
+  }
 }

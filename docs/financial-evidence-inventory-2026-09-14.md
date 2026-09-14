@@ -2,7 +2,7 @@
 
 Scope: all 52 loan, insurance and brokerage JSON records. Checks identify missing provenance in the records; they do not establish that every claim is wrong or inspect every hardcoded page. Do not interpret a passed software build as factual verification.
 
-The Discover loan record has selected-fact evidence. The Marcus loan record is unavailable and renders a servicing page. Other records require provider review before their rates, scores or terms can be described as verified. Shared personal-loan pages no longer render unsupported editorial ratings or minimum approval scores. Insurance and investing templates still need a separate correction pass.
+The Discover loan record has selected-fact evidence. Marcus personal loans, Discover student loans and Haven Life render status/servicing pages instead of current offers. Other records require provider review before their rates, scores or terms can be described as verified. Shared personal-loan pages no longer render unsupported editorial ratings or minimum approval scores. Life insurance profiles no longer display numerical editorial scores and identify legacy terms as pending verification. Auto/home insurance, student-loan and investing templates still need further correction passes.
 
 | Record | Provider | Source check | Findings |
 |---|---|---|---|
@@ -10,7 +10,7 @@ The Discover loan record has selected-fact evidence. The Marcus loan record is u
 | `apps/web/data/loans/personal-loans/discover-personal-loan.json` | Discover | 2026-09-14 | Selected facts checked; other fields require review |
 | `apps/web/data/loans/personal-loans/lendingclub-personal-loan.json` | LendingClub | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/personal-loans/lightstream-personal-loan.json` | LightStream | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
-| `apps/web/data/loans/personal-loans/marcus-personal-loan.json` | Marcus by Goldman Sachs | 2026-09-13 | No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
+| `apps/web/data/loans/personal-loans/marcus-personal-loan.json` | Marcus by Goldman Sachs | 2026-09-13 | Unavailable product; status/servicing page replaces historical offer fields |
 | `apps/web/data/loans/personal-loans/onemain-personal-loan.json` | OneMain Financial | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/personal-loans/oportun-personal-loan.json` | Oportun | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/personal-loans/pnc-personal-loan.json` | PNC Bank | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
@@ -21,7 +21,7 @@ The Discover loan record has selected-fact evidence. The Marcus loan record is u
 | `apps/web/data/loans/student-loans/ascent-non-cosigned.json` | Ascent | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/student-loans/college-ave-undergraduate.json` | College Ave | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/student-loans/credible-marketplace.json` | Credible | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
-| `apps/web/data/loans/student-loans/discover-student-loans.json` | Discover | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
+| `apps/web/data/loans/student-loans/discover-student-loans.json` | Discover | 2026-09-14 | Unavailable product; status/servicing page replaces historical offer fields |
 | `apps/web/data/loans/student-loans/earnest-private.json` | Earnest | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/student-loans/earnest-refinance.json` | Earnest | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
 | `apps/web/data/loans/student-loans/laurel-road-refinance.json` | Laurel Road | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Approval-score claim needs source |
@@ -44,7 +44,7 @@ The Discover loan record has selected-fact evidence. The Marcus loan record is u
 | `apps/web/data/insurance/home-insurance/progressive-home.json` | Progressive | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Premium estimate needs sample/method/date; Study score needs edition/category citation |
 | `apps/web/data/insurance/home-insurance/state-farm-home.json` | State Farm | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Premium estimate needs sample/method/date; Study score needs edition/category citation |
 | `apps/web/data/insurance/home-insurance/usaa-home.json` | USAA | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method; Premium estimate needs sample/method/date; Study score needs edition/category citation |
-| `apps/web/data/insurance/life-insurance/haven-life.json` | Haven Life | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
+| `apps/web/data/insurance/life-insurance/haven-life.json` | Haven Life | 2026-09-14 | Unavailable product; status/servicing page replaces historical offer fields |
 | `apps/web/data/insurance/life-insurance/ladder-life.json` | Ladder Life | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
 | `apps/web/data/insurance/life-insurance/mutual-of-omaha-life.json` | Mutual of Omaha | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |
 | `apps/web/data/insurance/life-insurance/northwestern-mutual-life.json` | Northwestern Mutual | Not recorded | No source-check date; No field-level evidence list; Numerical editorial rating lacks recorded method |

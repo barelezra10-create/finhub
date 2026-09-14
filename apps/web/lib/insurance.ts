@@ -1,3 +1,4 @@
+import type { ProductStatusInfo } from '@/components/product-status';
 import fs from "fs";
 import path from "path";
 
@@ -28,6 +29,9 @@ export interface AgeRange {
 }
 
 export interface InsuranceCarrier {
+  availability?: "unavailable";
+  source_checked?: string;
+  status_page?: ProductStatusInfo;
   slug: string;
   carrier: string;
   rating: number;

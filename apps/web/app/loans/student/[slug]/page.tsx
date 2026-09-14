@@ -1,3 +1,4 @@
+import { ProductStatus } from '@/components/product-status';
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const loan = loadStudentLoan(slug);
   if (!loan) return { title: "Student Loan Review" };
+  if (loan.availability === "unavailable" && loan.status_page) return { title: loan.status_page.title, description: loan.status_page.description, alternates: { canonical: `/loans/student/${loan.slug}` } };
   const title = `${loan.lender} ${loan.type === "refinance" ? "Student Loan Refinancing" : "Private Student Loan"} Review`;
   const desc = `${loan.lender} ${loan.product_name}: ${formatAprRange(loan.apr_range)} APR on ${formatTermYears(loan.repayment_terms_years)} terms. Cosigner, fees, and verdict.`;
   return {
@@ -93,6 +95,7 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const loan = loadStudentLoan(slug);
   if (!loan) notFound();
+  if (loan.availability === "unavailable" && loan.status_page) return <ProductStatus info={loan.status_page} href={`/loans/student/${loan.slug}`} parentHref="/loans/student" parentLabel="Student loans" />;
 
   const faqs = buildFaqs(loan);
   const apr = formatAprRange(loan.apr_range);

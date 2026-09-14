@@ -1,3 +1,4 @@
+import type { ProductStatusInfo } from '@/components/product-status';
 import fs from "fs";
 import path from "path";
 
@@ -48,6 +49,9 @@ export type StudentLoanType = "private" | "refinance";
 export type StudentAprType = "fixed" | "variable" | "both";
 
 export interface StudentLoan {
+  availability?: "unavailable";
+  source_checked?: string;
+  status_page?: ProductStatusInfo;
   slug: string;
   lender: string;
   product_name: string;

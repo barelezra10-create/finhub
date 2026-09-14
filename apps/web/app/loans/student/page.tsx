@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Best Student Loans 2026: Private & Refinance Rates",
   description:
-    "Compare 10 student loan lenders: private loans for undergrads and refinance for grads. Real APRs, cosigner rules, and federal vs private trade-offs.",
+    "Explore private and refinance student loan products: private loans for undergrads and refinance for grads. Real APRs, cosigner rules, and federal vs private trade-offs.",
   alternates: { canonical: "/loans/student" },
 };
 
@@ -53,7 +53,7 @@ const faqItems: FAQItem[] = [
 ];
 
 export default function Page() {
-  const loans = loadStudentLoans();
+  const loans = loadStudentLoans().filter(l => l.availability !== "unavailable");
   const privateLoans = loans.filter((l) => l.type === "private");
   const refiLoans = loans.filter((l) => l.type === "refinance");
 
@@ -68,6 +68,7 @@ export default function Page() {
         ]}
       />
 
+      <aside className="max-w-(--max-w-page) mx-auto px-6 pt-8 text-sm text-mute">Discover is no longer a new student loan option. <Link className="u-link" href="/loans/student/discover-student-loans">See its status and servicing information</Link>.</aside>
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />
@@ -80,7 +81,7 @@ export default function Page() {
             Student loans for school, refinance, and everything between.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl mb-8">
-            We compare 10 private and refinance lenders side by side. The Department of Education recommends federal aid first; use these private options to fill the gap or to refinance high-rate debt after you graduate. Always weigh rate savings against the federal protections you give up.
+            We list private and refinance products side by side; multiple products may come from the same lender. The Department of Education recommends federal aid first; use these private options to fill the gap or to refinance high-rate debt after you graduate. Always weigh rate savings against the federal protections you give up.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/loans/by-credit-tier" className="pill pill-ink">
@@ -93,7 +94,7 @@ export default function Page() {
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-mute">
             <div className="flex items-center gap-2">
-              <span className="font-mono tabular text-ink font-semibold">{loans.length}</span> lenders compared
+              <span className="font-mono tabular text-ink font-semibold">{loans.length}</span> products listed
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono tabular text-ink font-semibold">{privateLoans.length}</span> private
