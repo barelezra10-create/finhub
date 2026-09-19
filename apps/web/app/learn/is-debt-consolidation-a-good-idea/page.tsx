@@ -1,3 +1,4 @@
+import { ArticleArt } from "@/components/article-art";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -65,6 +66,7 @@ export default function Page() {
         ]}
       />
       <FAQPageSchema items={faqs} />
+      <ArticleArt topic="is-debt-consolidation-a-good-idea" className="standalone-article-art" />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-ink mb-4">Debt</span>

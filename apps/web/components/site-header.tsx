@@ -1,56 +1,6 @@
 import Link from "next/link";
-
+import { ArrowUpRight, Menu } from "lucide-react";
+const links = [["Banking", "/savings"], ["Credit cards", "/credit-cards"], ["Mortgages", "/mortgages"], ["Loans", "/loans"], ["Insurance", "/insurance"], ["Investing", "/investing"], ["Calculators", "/calculators"], ["Guides", "/learn"]] as const;
 export function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-30 backdrop-blur-md bg-bg/85 border-b border-line">
-      <div className="max-w-(--max-w-page) mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <Logomark />
-          <span className="font-display font-bold text-xl tracking-tight">Fintiex</span>
-        </Link>
-
-        <nav className="hidden lg:flex items-center gap-0.5 text-[14px] font-medium">
-          <NavItem href="/mortgages" label="Mortgages" />
-          <NavItem href="/savings" label="Savings" />
-          <NavItem href="/loans" label="Loans" />
-          <NavItem href="/credit-cards" label="Cards" />
-          <NavItem href="/insurance" label="Insurance" />
-          <NavItem href="/investing" label="Investing" />
-          <NavItem href="/calculators" label="Tools" />
-          <NavItem href="/learn" label="Guides" />
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <Link href="/admin/login" className="inline-flex pill pill-ghost">
-            Sign in
-          </Link>
-          <Link href="/calculators" className="pill pill-ink">
-            Get started
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function NavItem({ href, label }: { href: string; label: string }) {
-  return (
-    <Link
-      href={href}
-      className="px-3 py-2 rounded-full text-ink-soft hover:bg-bg-soft hover:text-ink transition-colors duration-150"
-    >
-      {label}
-    </Link>
-  );
-}
-
-function Logomark() {
-  return (
-    <span
-      aria-hidden
-      className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-ink text-lime font-mono font-bold text-sm tracking-tighter"
-    >
-      Fx
-    </span>
-  );
+  return <header className="finance-header"><div className="hub-wrap header-top"><Link href="/" aria-label="Fintiex home" className="finance-wordmark"><span aria-hidden="true">f.</span>fintiex</Link><span className="header-caption">Perspective for every money move.</span><Link className="header-tools" href="/calculators">Explore our tools <ArrowUpRight size={17}/></Link><details className="mobile-menu"><summary aria-label="Open navigation"><Menu size={24}/></summary><nav aria-label="Mobile navigation">{links.map(([label,href]) => <Link key={href} href={href}>{label}</Link>)}</nav></details></div><nav className="hub-wrap desktop-nav" aria-label="Main navigation">{links.map(([label,href]) => <Link key={href} href={href}>{label}</Link>)}<Link href="/editorial-policy" className="editorial-nav">Our approach <ArrowUpRight size={14}/></Link></nav></header>;
 }

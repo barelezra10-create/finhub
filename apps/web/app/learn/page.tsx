@@ -1,3 +1,4 @@
+import { ArticleArt } from "@/components/article-art";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbListSchema } from "@/components/schemas";
@@ -133,9 +134,9 @@ export default function LearnPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg border-b border-line">
         <div className="max-w-(--max-w-page) mx-auto px-6 pt-20 pb-16">
-          <span className="chip chip-lime mb-6">Guides</span>
+          <span className="chip chip-lime mb-6">Your money, explained</span>
           <h1 className="font-display font-extrabold text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.03] tracking-[-0.03em] mb-6 max-w-3xl">
-            Plain-English money guides.
+            Money stuff. Made simple.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl">
             Mortgages, savings accounts, credit cards, and debt payoff strategies explained without
@@ -219,6 +220,7 @@ export default function LearnPage() {
               href={`/learn/${guide.slug}`}
               className="card p-6 block group flex flex-col"
             >
+              <ArticleArt topic={guide.slug} className="directory-art" />
               <div className="flex items-center justify-between mb-4">
                 <span className={`chip chip-${guide.chipVariant}`}>{guide.category}</span>
                 <span className="font-mono text-xs text-mute tabular">{guide.readMin} min read</span>

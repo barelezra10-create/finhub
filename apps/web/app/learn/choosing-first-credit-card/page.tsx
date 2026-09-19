@@ -1,3 +1,4 @@
+import { ArticleArt } from "@/components/article-art";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -27,6 +28,7 @@ export default function Page() {
           { name: "Choosing Your First Credit Card", href: "/learn/choosing-first-credit-card" },
         ]}
       />
+      <ArticleArt topic="choosing-first-credit-card" className="standalone-article-art" />
       {/* HERO */}
       <div className="mb-10">
         <span className="chip chip-violet mb-4">Credit</span>

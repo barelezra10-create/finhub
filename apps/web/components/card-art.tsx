@@ -1,8 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import type { CardData } from "@/lib/cards";
 
-// slug → filename in /public/images/cards/. Real card art scraped from
-// issuer press kits. Missing slugs fall through to the SVG fallback below.
+// Local issuer artwork. Source provenance for additions is recorded in
+// docs/card-art-sources-2026-09-19.json. Unknown or failed images use a text fallback.
 const CARD_IMAGES: Record<string, string> = {
+  "alaska-airlines-visa": "alaska-airlines-visa.png",
+  "apple-card": "apple-card.jpg",
+  "aspire": "aspire.png",
+  "bilt-mastercard": "bilt-mastercard.png",
+  "destiny": "destiny.png",
+  "discover-it-student-cash": "discover-it-student-cash.png",
+  "fortiva": "fortiva.png",
+  "hawaiian-airlines-world-elite": "hawaiian-airlines-world-elite.jpg",
+  "indigo": "indigo.png",
+  "mission-lane": "mission-lane.jpg",
+  "wyndham-rewards-earner-business": "wyndham-rewards-earner-business.png",
+
   "amex-business-gold": "amex-business-gold.png",
   "amex-gold": "amex-gold.png",
   "amex-platinum": "amex-platinum.png",
@@ -89,42 +104,42 @@ interface CardArtProps {
 }
 
 /**
- * Real card art if we have it (50 SKUs in public/images/cards/), else a
- * styled gradient fallback with the issuer name and card name.
+ * Issuer card artwork with a resilient fallback for unavailable image files.
  */
 export function CardArt({ card, width = 280, className = "" }: CardArtProps) {
-  const height = Math.round(width * 0.63);
+  const [failedFile, setFailedFile] = useState<string | null>(null);
   const file = CARD_IMAGES[card.slug];
 
-  if (file) {
+  if (file && failedFile !== file) {
     return (
       <div
-        className={`relative overflow-hidden rounded-2xl shadow-lg ${className}`}
-        style={{ width, aspectRatio: "1.586 / 1" }}
+        className={`relative overflow-hidden rounded-xl ${className}`}
+        style={{ width, maxWidth: "100%", aspectRatio: "1.586 / 1" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`/images/cards/${file}`}
           alt={`${card.issuer} ${card.name} credit card`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full ${card.slug === "apple-card" ? "object-cover object-top" : "object-contain"}`}
+          onError={() => setFailedFile(file)}
+          width={width}
+          height={Math.round(width / 1.586)}
           loading="lazy"
         />
       </div>
     );
   }
 
-  return <CardFallback card={card} width={width} height={height} className={className} />;
+  return <CardFallback card={card} width={width} className={className} />;
 }
 
 function CardFallback({
   card,
   width,
-  height,
   className,
 }: {
   card: CardData;
   width: number;
-  height: number;
   className: string;
 }) {
   const [c1, c2] =
@@ -137,7 +152,8 @@ function CardFallback({
       className={`relative overflow-hidden rounded-2xl shadow-lg ${className}`}
       style={{
         width,
-        height,
+        maxWidth: "100%",
+        aspectRatio: "1.586 / 1",
         background: `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`,
       }}
       aria-label={`${card.issuer} ${card.name} card`}
