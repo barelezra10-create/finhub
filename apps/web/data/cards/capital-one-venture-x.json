@@ -15,17 +15,19 @@
   "annual_fee": 395,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "75,000 miles after $4,000 in purchases within 3 months.",
+  "signup_bonus_spend": 4000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "miles",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "10x on hotels and rental cars through Capital One Travel; 5x on flights, vacation rentals and activities through Capital One Travel; 2x on other purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://www.capitalone.com/credit-cards/venture-x/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -34,6 +36,26 @@
   "source_checked": "2026-09-12",
   "source_url": "https://www.capitalone.com/credit-cards/venture-x/",
   "verified_fields": [
-    "annual_fee"
+    "annual_fee",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks"
+  ],
+  "rewards_summary": "10x hotels and rental cars via Capital One Travel; 2x on other purchases",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.capitalone.com/learn-grow/money-management/capital-one-credit-cards/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "perks"
+      ]
+    }
   ]
 }

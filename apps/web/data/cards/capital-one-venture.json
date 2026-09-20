@@ -18,17 +18,19 @@
   "annual_fee": 95,
   "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "75,000 miles after $4,000 in purchases within 3 months, plus $300 for hotel and vacation rental bookings through Capital One Travel in the first cardholder year. Limited-time offer.",
+  "signup_bonus_spend": 4000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "miles",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "2 miles per dollar on eligible purchases; 5 miles on hotels, vacation rentals and rental cars booked through Capital One Travel."
+  ],
   "drawbacks": [],
   "application_url": "https://www.capitalone.com/credit-cards/venture/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -39,6 +41,26 @@
   "verified_fields": [
     "annual_fee",
     "apr_purchase",
-    "foreign_tx_fee"
+    "foreign_tx_fee",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks"
+  ],
+  "rewards_summary": "5x hotels, vacation rentals and rental cars via Capital One Travel; 2x elsewhere",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.capitalone.com/credit-cards/venture/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "perks"
+      ]
+    }
   ]
 }

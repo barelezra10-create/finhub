@@ -22,13 +22,17 @@
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "5% on Costco gas and 4% on other eligible gas and EV charging, on the first $7,000 combined annually; 1% thereafter.",
+    "3% restaurants and eligible travel; 2% other Costco purchases; 1% elsewhere.",
+    "Paid Costco membership required; rewards issued as an annual certificate."
+  ],
   "drawbacks": [
     "A current paid Costco membership is required.",
     "Rewards are issued as an annual certificate after the February statement closes."
   ],
   "application_url": "https://www.citi.com/credit-cards/costco-anywhere-visa-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -41,6 +45,22 @@
     "annual_fee",
     "foreign_tx_fee",
     "annual_fee_note",
-    "drawbacks"
+    "drawbacks",
+    "rewards_summary",
+    "rewards_status",
+    "perks"
+  ],
+  "rewards_summary": "5% Costco gas / 4% other eligible gas and EV charging; $7,000 combined/year cap",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-card",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "perks"
+      ]
+    }
   ]
 }

@@ -27,7 +27,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -37,6 +37,20 @@
   "source_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
   "verified_fields": [
     "annual_fee",
-    "perks"
+    "perks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "5x eligible flights on first $500,000/calendar year",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.americanexpress.com/en-us/travel/faq/travel-benefits/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

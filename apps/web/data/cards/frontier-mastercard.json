@@ -27,7 +27,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://faq.flyfrontier.com/help/frontier-airlines-world-mastercard",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -36,6 +36,20 @@
   "source_url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
   "source_checked": "2026-09-12",
   "verified_fields": [
-    "perks"
+    "perks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "5x FlyFrontier.com; 3x restaurants; 1x elsewhere",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

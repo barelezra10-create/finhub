@@ -34,7 +34,7 @@
     "Annual Companion Fare requires $6,000 in purchases in the prior anniversary year; taxes and fees apply."
   ],
   "application_url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -49,6 +49,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "perks",
-    "drawbacks"
+    "drawbacks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "3x eligible Alaska and Hawaiian purchases",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/alaska-airlines-credit-card/",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

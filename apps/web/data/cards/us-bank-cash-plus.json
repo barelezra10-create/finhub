@@ -14,29 +14,56 @@
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
-  "signup_bonus_value_usd": null,
+  "signup_bonus": "$200 after $1,000 in eligible purchases within 90 days. Limited-time offer.",
+  "signup_bonus_spend": 1000,
+  "signup_bonus_value_usd": 200,
   "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "Activate two 5% categories each quarter; $2,000 combined quarterly cap, then 1%.",
+    "2% in one selected everyday category; 1% on other eligible purchases.",
+    "5% on prepaid air, hotel and car reservations through the Travel Center."
+  ],
   "drawbacks": [],
   "application_url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
   "audit_attempted": "2026-09-12",
   "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% APR on purchases and balance transfers for 15 billing cycles. Check the issuer for the subsequent variable APR and transfer fees.",
+  "intro_terms": "0% introductory APR on purchases and balance transfers for 15 billing cycles; then a variable APR applies. See issuer pricing for the current rate.",
   "source_checked": "2026-09-12",
   "source_url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
   "verified_fields": [
     "annual_fee",
     "apr_intro",
     "apr_intro_months",
-    "intro_terms"
+    "intro_terms",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "perks"
+  ],
+  "rewards_summary": "5% in two chosen categories on first $2,000 combined/quarter; activation required",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "intro_terms",
+        "perks"
+      ]
+    }
   ]
 }

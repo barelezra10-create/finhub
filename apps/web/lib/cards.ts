@@ -24,6 +24,10 @@ export interface CardData {
   annual_fee_note?: string;
   intro_terms?: string;
   calculator_eligible?: boolean;
+  rewards_summary?: string;
+  rewards_status?: "available" | "none";
+  welcome_offer_status?: "available" | "none";
+  term_sources?: Array<{ url: string; checked: string; fields: string[] }>;
   slug: string;
   issuer: string;
   name: string;
@@ -113,13 +117,13 @@ export function fullCardName(card: CardData): string {
 }
 
 export function formatPct(v: number | null): string {
-  if (v == null) return "Check issuer";
+  if (v == null) return "Not verified";
   // Stored as percent (e.g. 19.24). Strips trailing zeros after decimal.
   return `${v.toFixed(2).replace(/\.?0+$/, "")}%`;
 }
 
 export function formatFeePct(v: number | null | undefined): string {
-  if (v == null) return "Check issuer";
+  if (v == null) return "Not verified";
   if (v === 0) return "None";
   // Stored as decimal e.g. 0.05 = 5%
   const pct = v * 100;
@@ -127,13 +131,13 @@ export function formatFeePct(v: number | null | undefined): string {
 }
 
 export function formatAprRange(range: AprRange | null | undefined): string {
-  if (!range) return "Check issuer";
+  if (!range) return "Not verified";
   if (range.min === range.max) return formatPct(range.min);
   return `${formatPct(range.min)} to ${formatPct(range.max)}`;
 }
 
 export function formatAnnualFee(fee: number | null): string {
-  if (fee == null) return "Check issuer";
+  if (fee == null) return "Not verified";
   if (fee === 0) return "$0";
   return `$${fee}`;
 }
@@ -147,11 +151,13 @@ export function formatCurrency(n: number): string {
  * "4x on dining", "2% cash back". Picks the highest-multiplier category.
  */
 export function topRewardRate(card: CardData): string {
+  if (card.rewards_summary) return card.rewards_summary;
+  if (card.rewards_status === "none") return "No rewards";
   const entries = Object.entries(card.rewards ?? {}).filter(
     ([, v]) => typeof v === "number" && v > 0,
   );
   if (entries.length === 0) {
-    return "Check issuer";
+    return "Rewards not verified";
   }
   entries.sort((a, b) => b[1] - a[1]);
   const top = entries[0];
@@ -163,6 +169,12 @@ export function topRewardRate(card: CardData): string {
     return `${topValue}${unit} on everything`;
   }
   return `${topValue}${unit} on ${label}`;
+}
+
+export function welcomeOffer(card: CardData): string {
+  if (card.signup_bonus) return card.signup_bonus;
+  if (card.welcome_offer_status === "none") return "No welcome bonus";
+  return "Offer not verified";
 }
 
 export function rewardKeyLabel(key: string): string {

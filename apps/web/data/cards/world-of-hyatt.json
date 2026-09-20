@@ -31,7 +31,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -44,6 +44,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "perks",
-    "annual_fee"
+    "annual_fee",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "4x on qualifying Hyatt purchases",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt-credit-card",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

@@ -28,7 +28,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.jetblue.com/credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -39,6 +39,20 @@
   "verified_fields": [
     "foreign_tx_fee",
     "perks",
-    "annual_fee"
+    "annual_fee",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "6x eligible JetBlue, JetBlue Vacations and TrueBlue Travel purchases",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.jetblue.com/trueblue/credit-cards/jetblue-card-comparison",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

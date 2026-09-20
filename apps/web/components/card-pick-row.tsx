@@ -3,6 +3,7 @@ import { CardArt } from "@/components/card-art";
 import {
   formatAnnualFee,
   topRewardRate,
+  welcomeOffer,
   type CardData,
 } from "@/lib/cards";
 
@@ -42,7 +43,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
             {card.issuer} · {card.network}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 max-w-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4 max-w-2xl">
             <Spec label="Annual fee" value={formatAnnualFee(card.annual_fee)} />
             <Spec label="Top reward" value={topRewardRate(card)} />
             <Spec
@@ -50,7 +51,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
               value={
                 card.signup_bonus_value_usd != null
                   ? `$${card.signup_bonus_value_usd.toLocaleString()}`
-                  : card.signup_bonus ?? "Check issuer"
+                  : welcomeOffer(card)
               }
             />
 
@@ -86,7 +87,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
               rel="nofollow noopener noreferrer"
               className="pill pill-ink"
             >
-              Check issuer terms <span aria-hidden>↗</span>
+              View card offer <span aria-hidden>↗</span>
             </a>
             <Link href={`/credit-cards/${card.slug}`} className="pill pill-ghost">
               Read review

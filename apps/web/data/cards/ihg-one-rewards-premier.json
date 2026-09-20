@@ -7,28 +7,66 @@
     "travel",
     "hotel"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.24,
+    "max": 27.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
+  "annual_fee": 99,
+  "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "140,000 points after $3,000 in purchases in the first 3 months. Bonus eligibility restrictions apply.",
+  "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "10 card points per dollar at IHG hotels; membership and status can earn additional points.",
+    "5 points per dollar on travel, dining and gas; 3 on other purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/ihg/premier",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "listed",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Selected fees, rewards and welcome offer confirmed at the linked issuer page. Other terms remain unverified; offers can change.",
+  "rewards_summary": "10x card points at IHG; 5x travel, dining and gas; 3x elsewhere",
+  "rewards_status": "available",
+  "verified_fields": [
+    "rewards_summary",
+    "rewards_status",
+    "annual_fee",
+    "apr_purchase",
+    "foreign_tx_fee",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "perks",
+    "availability",
+    "audit_note"
+  ],
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "annual_fee",
+        "apr_purchase",
+        "foreign_tx_fee",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "perks",
+        "availability",
+        "audit_note"
+      ]
+    }
+  ]
 }

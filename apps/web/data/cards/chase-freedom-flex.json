@@ -17,23 +17,32 @@
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": "$200 after $500 in purchases in the first 3 months",
+  "signup_bonus": "$200 after $500 in purchases in the first 3 months. Eligibility restrictions apply.",
   "signup_bonus_spend": 500,
   "signup_bonus_value_usd": 200,
-  "rewards": {},
+  "rewards": {
+    "rotating": 5,
+    "travel-chase-portal": 5,
+    "dining": 3,
+    "drugstores": 3,
+    "other": 1
+  },
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "5% on activated quarterly categories up to $1,500 combined spending per quarter, then 1%.",
+    "5% through Chase Travel; 3% dining and drugstores; 1% on other eligible purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
   "audit_attempted": "2026-09-12",
   "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% APR on purchases and balance transfers for 15 months; then 18.24%\u201327.74% variable APR. Transfer fees apply.",
+  "intro_terms": "0% introductory APR on purchases and balance transfers for 15 months; then 18.24%–27.74% variable. Balance transfer fee applies.",
   "source_checked": "2026-09-12",
   "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
   "verified_fields": [
@@ -44,6 +53,31 @@
     "intro_terms",
     "signup_bonus",
     "signup_bonus_spend",
-    "signup_bonus_value_usd"
+    "signup_bonus_value_usd",
+    "rewards_summary",
+    "rewards_status",
+    "rewards",
+    "perks"
+  ],
+  "rewards_summary": "5% rotating categories on first $1,500/quarter with activation; 5% Chase Travel",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "rewards",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "apr_purchase",
+        "apr_intro",
+        "apr_intro_months",
+        "intro_terms",
+        "perks"
+      ]
+    }
   ]
 }

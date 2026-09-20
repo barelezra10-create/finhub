@@ -29,7 +29,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": true,
   "availability": "listed",
@@ -41,6 +41,20 @@
     "annual_fee",
     "rewards",
     "rewards_type",
-    "perks"
+    "perks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "2% total cash back: 1% when buying + 1% as you pay",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

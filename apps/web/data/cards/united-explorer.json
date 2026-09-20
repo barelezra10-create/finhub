@@ -28,7 +28,7 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -40,6 +40,20 @@
   "verified_fields": [
     "annual_fee",
     "annual_fee_note",
-    "apr_purchase"
+    "apr_purchase",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "3x eligible United purchases; 2x dining and direct hotel bookings",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

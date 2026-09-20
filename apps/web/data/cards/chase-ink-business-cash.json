@@ -17,23 +17,26 @@
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": "$1,000 after $8,000 in purchases in the first 4 months",
-  "signup_bonus_spend": 8000,
-  "signup_bonus_value_usd": 1000,
+  "signup_bonus": "$750 after $6,000 in purchases in the first 3 months. Eligibility restrictions apply.",
+  "signup_bonus_spend": 6000,
+  "signup_bonus_value_usd": 750,
   "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "5% office supply stores and internet, cable and phone services on first $25,000 combined per account anniversary year; 1% thereafter.",
+    "2% gas and restaurants on first $25,000 combined per account anniversary year; 1% thereafter. 1% on other eligible purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
   "audit_attempted": "2026-09-12",
   "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% purchase APR for 12 months, then 16.74%\u201324.74% variable APR. This does not establish a balance-transfer promotion.",
+  "intro_terms": "0% introductory purchase APR for 12 months; then 16.74%–24.74% variable.",
   "source_checked": "2026-09-12",
   "source_url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
   "verified_fields": [
@@ -44,6 +47,29 @@
     "intro_terms",
     "signup_bonus",
     "signup_bonus_spend",
-    "signup_bonus_value_usd"
+    "signup_bonus_value_usd",
+    "rewards_summary",
+    "rewards_status",
+    "perks"
+  ],
+  "rewards_summary": "5% office supply stores and internet/cable/phone on first $25,000 combined/year",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/cash",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "apr_purchase",
+        "apr_intro",
+        "apr_intro_months",
+        "intro_terms",
+        "perks"
+      ]
+    }
   ]
 }

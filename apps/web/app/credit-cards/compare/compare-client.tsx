@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Plus, Search, X } from "lucide-react";
 import { CardArt } from "@/components/card-art";
@@ -16,6 +16,7 @@ import {
   formatPct,
   SYNTHETIC_CATEGORIES,
   topRewardRate,
+  welcomeOffer,
   type CardData,
   type SyntheticCategory,
 } from "@/lib/cards";
@@ -52,7 +53,7 @@ const USD = new Intl.NumberFormat("en-US", {
 });
 
 function formatUSD(n: number | null | undefined): string {
-  if (n == null) return "Check issuer";
+  if (n == null) return "Not verified";
   return USD.format(n);
 }
 
@@ -61,16 +62,19 @@ interface CompareClientProps {
 }
 
 export function CompareClient({ cards }: CompareClientProps) {
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   // Hydrate slots from URL on mount only. Subsequent URL changes are driven
-  // by us via router.replace, so we do not re-sync from searchParams.
+  // by us via history.replaceState, so we do not re-sync from searchParams.
   const initial: Slot[] = useMemo(() => {
-    const fromUrl = searchParams.getAll("c").slice(0, 3);
+    const fromUrl = [...new Set(searchParams.getAll("c"))]
+      .filter(slug => cards.some(card => card.slug === slug))
+      .slice(0, 3);
     if (fromUrl.length >= 2) return fromUrl;
     if (fromUrl.length === 1) return [fromUrl[0]!, null];
-    return [null, null];
+    return POPULAR_COMPARISONS[1]!.slugs
+      .filter(slug => cards.some(card => card.slug === slug))
+      .slice(0, 2);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -89,11 +93,9 @@ export function CompareClient({ cards }: CompareClientProps) {
         if (slug) params.append("c", slug);
       }
       const qs = params.toString();
-      router.replace(qs ? `/credit-cards/compare?${qs}` : "/credit-cards/compare", {
-        scroll: false,
-      });
+      window.history.replaceState(null, "", qs ? `/credit-cards/compare?${qs}` : "/credit-cards/compare");
     },
-    [router],
+    [],
   );
 
   const setSlot = useCallback(
@@ -129,41 +131,30 @@ export function CompareClient({ cards }: CompareClientProps) {
     [updateUrl],
   );
 
-  const loadPreset = useCallback(
-    (slugs: string[]) => {
-      const next = slugs.slice(0, 3) as Slot[];
-      while (next.length < 2) next.push(null);
-      setSlots(next);
-      updateUrl(next);
-    },
-    [updateUrl],
-  );
-
   const slotCards = useMemo(
     () => slots.map((s) => (s ? cardBySlug.get(s) ?? null : null)),
     [slots, cardBySlug],
   );
   const filledCount = slotCards.filter(Boolean).length;
-  const allEmpty = filledCount === 0;
+
 
   return (
     <div className="max-w-(--max-w-page) mx-auto px-6 py-8">
-      {/* Popular comparisons strip (only when nothing picked) */}
-      {allEmpty && (
+      {/* Keep presets available when cards are selected. */}
+      {(
         <div className="card-flush p-6 mb-8">
           <div className="font-mono text-xs uppercase tracking-wider text-mute mb-3">
             Popular comparisons
           </div>
           <div className="flex flex-wrap gap-2">
             {POPULAR_COMPARISONS.map((preset) => (
-              <button
+              <a
                 key={preset.label}
-                type="button"
-                onClick={() => loadPreset(preset.slugs)}
+                href={`/credit-cards/compare?${preset.slugs.map(slug => `c=${encodeURIComponent(slug)}`).join("&")}`}
                 className="pill pill-ghost"
               >
                 {preset.label}
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -523,17 +514,10 @@ const COMPARABLE_ROWS: ComparableRow[] = [
     direction: "lowest",
   },
   {
-    label: "Signup bonus value",
-    render: (c) =>
-      c.signup_bonus_value_usd != null ? formatUSD(c.signup_bonus_value_usd) : "Check issuer",
-    extract: (c) => c.signup_bonus_value_usd ?? null,
-    direction: "highest",
-  },
-  {
     label: "Bonus spend required",
     render: (c) =>
-      c.signup_bonus_spend ? `${formatUSD(c.signup_bonus_spend)} — see offer deadline` : "Check issuer",
-    extract: (c) => c.signup_bonus_spend ?? Number.POSITIVE_INFINITY,
+      c.signup_bonus_spend != null ? `${formatUSD(c.signup_bonus_spend)} — see offer deadline` : c.welcome_offer_status === "none" ? "Not applicable" : "Not verified",
+    extract: (c) => c.signup_bonus_spend ?? null,
     direction: "lowest",
   },
   {
@@ -547,8 +531,8 @@ const COMPARABLE_ROWS: ComparableRow[] = [
     render: (c) =>
       c.apr_intro === 0 && c.apr_intro_months > 0
         ? `0% for ${c.apr_intro_months} mo`
-        : "Check issuer",
-    extract: (c) => (c.apr_intro === 0 ? c.apr_intro_months ?? 0 : 0),
+        : "Not verified",
+    extract: (c) => (c.apr_intro === 0 && c.apr_intro_months > 0 ? c.apr_intro_months : null),
     direction: "highest",
   },
   {
@@ -578,8 +562,8 @@ const COMPARABLE_ROWS: ComparableRow[] = [
 ];
 
 const INFO_ROWS: InfoRow[] = [
-  {label:"Welcome offer terms",render:c=>c.signup_bonus || "Check issuer"},
-  {label:"Intro offer conditions",render:c=>c.intro_terms || "Check issuer"},
+
+  {label:"Intro offer conditions",render:c=>c.intro_terms || "Not verified"},
   {label:"Selected facts checked",render:c=>c.source_checked || "Unconfirmed"},
   {
     label: "Top reward",
@@ -627,7 +611,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
           The comparison.
         </h2>
         <p className="text-mute mt-2 text-sm">
-          Best value in each row is tagged in lime. Rows with no clear winner stay neutral.
+          Choose your own cards above or use a popular comparison. Lime highlights compare confirmed numbers only. “Not verified” means we have not confirmed that term; it does not mean the card has no offer or fee.
         </p>
       </div>
 
@@ -673,6 +657,10 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
               </tr>
             </thead>
             <tbody>
+              <tr className="border-b border-line-soft">
+                <th scope="row" className="text-left bg-bg-soft/50 px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-mute align-top">Welcome offer</th>
+                {cards.map((c, i) => <td key={i} className="border-l border-line px-4 py-3 align-top">{c ? welcomeOffer(c) : "—"}</td>)}
+              </tr>
               {COMPARABLE_ROWS.map((row) => {
                 const winner = winnerSlug(row);
                 return (
@@ -735,6 +723,20 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
                 </tr>
               ))}
 
+              {(["perks", "drawbacks"] as const).map(field => (
+                <tr key={field} className="border-b border-line-soft">
+                  <th scope="row" className="text-left bg-bg-soft/50 px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-mute align-top">{field === "perks" ? "Rewards & benefits" : "Restrictions & tradeoffs"}</th>
+                  {cards.map((c, i) => (
+                    <td key={i} className="border-l border-line px-4 py-3 align-top">
+                      {c?.[field]?.length ? <ul className="list-disc pl-4 space-y-2">{c[field].map(detail => <li key={detail}>{detail}</li>)}</ul> : <span className="text-mute">{c ? "Details not yet confirmed; check issuer terms." : "—"}</span>}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+              <tr className="border-b border-line-soft">
+                <th scope="row" className="text-left bg-bg-soft/50 px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-mute align-top">Sources & coverage</th>
+                {cards.map((c, i) => <td key={i} className="border-l border-line px-4 py-3 align-top">{c && <><p className="text-mute mb-2">{c.audit_note}</p><a href={c.source_url || c.application_url} target="_blank" rel="noopener noreferrer" className="underline">View issuer source ↗</a>{c.source_checked && <p className="text-xs text-mute mt-2">Selected facts checked {c.source_checked}</p>}</>}</td>)}
+              </tr>
               {/* Rewards detail block */}
               <RewardsRow cards={cards} />
 
@@ -755,7 +757,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
                         rel="nofollow noopener noreferrer"
                         className="pill pill-lime"
                       >
-                        Check issuer terms
+                        View card offer
                         <span aria-hidden>↗</span>
                       </a>
                     ) : (
@@ -795,8 +797,8 @@ function RewardsList({ card }: { card: CardData }) {
     .filter((e) => e.value > 0)
     .slice(0, 4);
   const unit = card.rewards_type === "cashback" ? "%" : "x";
-  if (entries.length === 0) {
-    return <span className="text-mute text-sm">Check issuer for current rewards</span>;
+  if (card.rewards_summary || card.rewards_status === "none" || entries.length === 0) {
+    return <span className="text-mute text-sm">{topRewardRate(card)}</span>;
   }
   return (
     <ul className="space-y-1 text-sm">

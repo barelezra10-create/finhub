@@ -6,25 +6,30 @@
   "category": [
     "cashback"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
+  "apr_purchase": {
+    "min": 17.49,
+    "max": 26.49
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 15,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
+  "signup_bonus": "Cashback Match: Discover matches cash back earned at the end of the first year. New-cardmember terms apply.",
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "5% in rotating quarterly categories after activation, up to the quarterly maximum; 1% on other purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://www.discover.com/credit-cards/cash-back/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -34,6 +39,33 @@
   "source_checked": "2026-09-12",
   "verified_fields": [
     "annual_fee",
-    "source_url"
+    "source_url",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "apr_purchase",
+    "apr_intro",
+    "apr_intro_months",
+    "intro_terms",
+    "perks"
+  ],
+  "rewards_summary": "5% rotating categories with activation and quarterly cap; 1% elsewhere",
+  "rewards_status": "available",
+  "intro_terms": "0% introductory APR on purchases and balance transfers for 15 months; then 17.49%–26.49% variable. Balance transfer fee applies.",
+  "term_sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "apr_purchase",
+        "apr_intro",
+        "apr_intro_months",
+        "intro_terms",
+        "perks"
+      ]
+    }
   ]
 }

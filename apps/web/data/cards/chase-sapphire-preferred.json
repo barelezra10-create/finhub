@@ -34,7 +34,7 @@
     "Bonus categories and travel credits have eligibility restrictions."
   ],
   "application_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -48,6 +48,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "perks",
-    "drawbacks"
+    "drawbacks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "5x through Chase Travel; 3x dining",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

@@ -7,13 +7,16 @@
     "secured",
     "rebuilding"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 28.99,
+    "max": 28.99
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
@@ -25,7 +28,7 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.capitalone.com/credit-cards/platinum-secured/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -34,6 +37,31 @@
   "source_checked": "2026-09-12",
   "source_url": "https://www.capitalone.com/credit-cards/platinum-secured/",
   "verified_fields": [
-    "annual_fee"
+    "annual_fee",
+    "rewards_status",
+    "welcome_offer_status",
+    "apr_purchase",
+    "foreign_tx_fee"
+  ],
+  "rewards_status": "none",
+  "welcome_offer_status": "none",
+  "term_sources": [
+    {
+      "url": "https://www.capitalone.com/learn-grow/money-management/secured-vs-unsecured-credit-card/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_status",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/platinum-secured/",
+      "checked": "2026-09-20",
+      "fields": [
+        "apr_purchase",
+        "annual_fee",
+        "foreign_tx_fee"
+      ]
+    }
   ]
 }

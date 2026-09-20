@@ -27,7 +27,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.petalcard.com/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -39,6 +39,20 @@
   "verified_fields": [
     "annual_fee_note",
     "perks",
-    "annual_fee"
+    "annual_fee",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "1%–1.5% cash back, subject to program requirements",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.petalcard.com/",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

@@ -37,7 +37,7 @@ export default function Page() {
             Compare credit cards side by side.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl">
-            Pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Check issuer. A highlighted figure does not establish which card suits you.
+            Start with our cash-back example, or pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Check issuer. A highlighted figure does not establish which card suits you.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function Page() {
             <HowCard
               step="2"
               title="Scan the highlights"
-              detail="Lime tags mark the winner in every comparable row: lowest fee, longest 0% APR, biggest signup bonus, and more."
+              detail="Lime tags mark the winner in every comparable row: lowest fee, longest 0% APR, and other confirmed numeric terms."
             />
             <HowCard
               step="3"

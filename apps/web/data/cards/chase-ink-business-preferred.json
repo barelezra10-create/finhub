@@ -34,7 +34,7 @@
     "Bonus category spending shares a combined annual cap."
   ],
   "application_url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -48,6 +48,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "perks",
-    "drawbacks"
+    "drawbacks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "3x eligible business categories on first $150,000 combined/year; 1x thereafter",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/business-credit-cards/ink/business-preferred",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

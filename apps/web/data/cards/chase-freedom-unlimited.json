@@ -29,13 +29,13 @@
   ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
   "audit_attempted": "2026-09-12",
   "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% APR on purchases and balance transfers for 15 months; then 18.24%\u201327.74% variable APR. Transfer fees apply.",
+  "intro_terms": "0% APR on purchases and balance transfers for 15 months; then 18.24%–27.74% variable APR. Transfer fees apply.",
   "source_checked": "2026-09-12",
   "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
   "verified_fields": [
@@ -47,6 +47,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "signup_bonus_value_usd",
-    "perks"
+    "perks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "At least 1.5% cash back; higher rates in select categories",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

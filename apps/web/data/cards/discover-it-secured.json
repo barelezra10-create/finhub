@@ -15,17 +15,19 @@
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
+  "signup_bonus": "Cashback Match: Discover matches cash back earned at the end of the first year. New-cardmember terms apply.",
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "5% in rotating quarterly categories after activation, up to the quarterly maximum; 1% on other purchases."
+  ],
   "drawbacks": [],
   "application_url": "https://www.discover.com/credit-cards/secured-credit-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -36,6 +38,24 @@
   "verified_fields": [
     "annual_fee",
     "source_url",
-    "application_url"
+    "application_url",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "perks"
+  ],
+  "rewards_summary": "5% rotating categories with activation and quarterly cap; 1% elsewhere",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/secured-credit-card/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "perks"
+      ]
+    }
   ]
 }

@@ -31,7 +31,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/southwest/priority",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -44,6 +44,20 @@
     "signup_bonus",
     "signup_bonus_spend",
     "perks",
-    "annual_fee"
+    "annual_fee",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "4x Southwest; 2x gas stations and restaurants",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/southwest",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

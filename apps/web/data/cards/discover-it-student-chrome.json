@@ -27,7 +27,7 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.discover.com/credit-cards/student-credit-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -38,6 +38,20 @@
   "verified_fields": [
     "annual_fee",
     "application_url",
-    "perks"
+    "perks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "2% gas and dining on first $1,000 combined/quarter; 1% thereafter",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.discover.com/credit-cards/student-credit-card/",
+      "checked": "2026-09-12",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }

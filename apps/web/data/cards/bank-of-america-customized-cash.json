@@ -17,23 +17,26 @@
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
-  "signup_bonus_value_usd": null,
+  "signup_bonus": "$200 online cash bonus after $1,000 in purchases within 90 days.",
+  "signup_bonus_spend": 1000,
+  "signup_bonus_value_usd": 200,
   "rewards": {},
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
-  "perks": [],
+  "perks": [
+    "6% in your chosen category in the first year, then 3%; 2% grocery stores and wholesale clubs.",
+    "The higher rates share a $2,500 combined quarterly spending cap, then earn 1%. Other purchases earn 1%."
+  ],
   "drawbacks": [],
   "application_url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
   "audit_attempted": "2026-09-12",
   "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% APR for 15 billing cycles on purchases and transfers made within 60 days. Then 17.49%\u201327.49% variable APR. Transfer fee: 3% in the first 60 days; 5% afterward.",
+  "intro_terms": "0% APR for 15 billing cycles on purchases and transfers made within 60 days. Then 17.49%–27.49% variable APR. Transfer fee: 3% in the first 60 days; 5% afterward.",
   "source_checked": "2026-09-12",
   "source_url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
   "verified_fields": [
@@ -41,6 +44,28 @@
     "apr_purchase",
     "apr_intro",
     "apr_intro_months",
-    "intro_terms"
+    "intro_terms",
+    "rewards_summary",
+    "rewards_status",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "perks"
+  ],
+  "rewards_summary": "6% chosen category in year one, then 3%; quarterly combined spending cap applies",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "perks"
+      ]
+    }
   ]
 }

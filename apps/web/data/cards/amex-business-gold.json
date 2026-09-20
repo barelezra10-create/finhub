@@ -30,7 +30,7 @@
     "Welcome offers vary by applicant; no maximum offer is guaranteed."
   ],
   "application_url": "https://www.americanexpress.com/us/credit-cards/card/business-gold-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-20",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
@@ -41,6 +41,20 @@
   "verified_fields": [
     "annual_fee",
     "perks",
-    "drawbacks"
+    "drawbacks",
+    "rewards_summary",
+    "rewards_status"
+  ],
+  "rewards_summary": "4x in your top two eligible categories on first $150,000 combined/calendar year",
+  "rewards_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "checked": "2026-09-20",
+      "fields": [
+        "rewards_summary",
+        "rewards_status"
+      ]
+    }
   ]
 }
