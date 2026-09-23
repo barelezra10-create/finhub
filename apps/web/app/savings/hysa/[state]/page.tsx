@@ -74,7 +74,7 @@ export default async function StateHysaPage(
         { name: "High-Yield Savings", href: "/savings/hysa" },
         { name: state.name, href: `/savings/hysa/${slug}` },
       ]} />
-      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Provider observations checked {SAVINGS_CHECKED}. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>. Federal interest reporting: <a className="underline" href="https://www.irs.gov/taxtopics/tc403">IRS guidance</a>.</p>
+      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Latest provider check {SAVINGS_CHECKED}; individual account dates vary. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>. Federal interest reporting: <a className="underline" href="https://www.irs.gov/taxtopics/tc403">IRS guidance</a>.</p>
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />
@@ -204,7 +204,7 @@ export default async function StateHysaPage(
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Provider observations checked {SAVINGS_CHECKED}. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
+          Latest provider check {SAVINGS_CHECKED}; individual account dates vary. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
         </p>
       </section>
 

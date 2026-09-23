@@ -1,3 +1,4 @@
+import {CardComparisonLinks} from "@/components/card-comparison-links";
 import { Suspense } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -37,14 +38,15 @@ export default function Page() {
             Compare credit cards side by side.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl">
-            Start with our cash-back example, or pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Check issuer. A highlighted figure does not establish which card suits you.
+            Start with our cash-back example, or pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Not verified. A highlighted figure does not establish which card suits you.
           </p>
         </div>
       </section>
 
       {/* TOOL */}
       <section className="bg-bg pb-6">
-        <Suspense fallback={<ComparePlaceholder />}>
+        <CardComparisonLinks />
+      <Suspense fallback={<ComparePlaceholder />}>
           <CompareClient cards={cards} />
         </Suspense>
       </section>

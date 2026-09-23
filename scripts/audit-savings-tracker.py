@@ -24,7 +24,11 @@ for row in records:
 
 latest=max(row['checked'] for row in records)
 current=[row for row in records if row['checked']==latest]
-assert len(current)==len({row['key'] for row in records}), 'Latest batch must check every tracked account, including unsuccessful checks'
+latest_by_key={row['key']:row for row in sorted(records,key=lambda row:row['checked'])}
+assert len(latest_by_key)==len({row['key'] for row in records})
+# Partial refreshes must preserve other accounts and never advance their dates.
+for key,row in latest_by_key.items():
+    assert row['checked']==max(r['checked'] for r in records if r['key']==key)
 root=Path('apps/web/.next/server/app')
 csv_data=list(csv.DictReader(io.StringIO((root/'savings/rate-tracker/data.csv.body').read_text())))
 json_data=json.loads((root/'savings/rate-tracker/data.json.body').read_text())
@@ -33,7 +37,10 @@ assert len(csv_data)==len(records)
 for row, exported in zip(records,csv_data):
     for field,value in exported.items():
         expected=row.get(field)
-        assert value==('' if expected is None else str(expected)), (row['key'],field)
+        if isinstance(expected,(int,float)) and not isinstance(expected,bool):
+            assert value and float(value)==expected, (row['key'],field)
+        else:
+            assert value==('' if expected is None else str(expected)), (row['key'],field)
 for suffix in ['csv','json']:
     meta=json.loads((root/f'savings/rate-tracker/data.{suffix}.meta').read_text())
     headers={key.lower():value for key,value in meta['headers'].items()}
@@ -57,6 +64,9 @@ class Page(HTMLParser):
 
 page=Page((root/'savings/rate-tracker.html').read_text());visible=' '.join(page.text)
 for row in current:assert row['name'] in visible and row['condition'] in visible
+comparison=Page((root/'savings/accounts.html').read_text()); comparison_text=' '.join(comparison.text)
+for row in latest_by_key.values():
+    assert row['name'] in comparison_text and row['checked'] in comparison_text
 schema=next(s for s in page.schemas if s.get('@type')=='Dataset')
 assert schema['dateModified']==latest
 assert len(schema['distribution'])==2

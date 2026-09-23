@@ -1,6 +1,6 @@
 {
   "slug": "chime-credit-builder",
-  "issuer": "Stride Bank",
+  "issuer": "The Bancorp Bank, N.A. or Stride Bank, N.A.",
   "name": "Chime Credit Builder Secured Visa Credit Card",
   "network": "Visa",
   "category": [
@@ -13,7 +13,7 @@
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
   "signup_bonus": null,
@@ -25,11 +25,20 @@
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
-  "application_url": "https://www.chime.com/credit-builder-credit-card/",
-  "last_updated": "2026-09-12",
+  "application_url": "https://www.chime.com/credit/credit-builder/",
+  "last_updated": "2026-09-23",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
+  "availability": "retired",
   "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "audit_note": "Credit Builder is closed to new members. Existing members may continue using it. This page describes the legacy product, not the newer Chime Card.",
+  "rewards_status": "none",
+  "source_url": "https://help.chime.com/what-is-credit-builder-603a5ae8",
+  "source_checked": "2026-09-23",
+  "verified_fields": [
+    "availability",
+    "annual_fee",
+    "rewards_status",
+    "issuer"
+  ]
 }

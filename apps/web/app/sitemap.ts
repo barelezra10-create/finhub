@@ -1,3 +1,5 @@
+import {cardComparisons, CARD_COMPARISON_DATE} from "@/lib/card-comparisons";
+import {loadCards} from "@/lib/cards-server";
 import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
@@ -147,8 +149,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
   }));
 
-  const cardRoutes = listJsonSlugs("data/cards").map((slug) => ({
-    url: `/credit-cards/${slug}`,
+  const cardRoutes = loadCards().map((card) => ({
+    url: `/credit-cards/${card.slug}`,
+    lastModified: card.last_updated,
     priority: 0.7,
     changeFrequency: "weekly" as const,
   }));
@@ -227,6 +230,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...lifeInsuranceRoutes,
     ...brokerageRoutes,
     ...cardRoutes,
+    ...cardComparisons.map(c=>({url:`/credit-cards/compare/${c.slug}`,lastModified:CARD_COMPARISON_DATE,priority:0.8,changeFrequency:"monthly" as const})),
     ...glossaryRoutes,
     ...bestRoutes,
     ...pillarHubRoutes,
@@ -235,6 +239,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${entry.url}`,
     ...("lastModified" in entry && typeof entry.lastModified === "string" ? { lastModified: entry.lastModified } : {}),
     ...(revisedPages.has(entry.url) ? { lastModified: "2026-09-14" } : {}),
+    ...(["/", "/reviews/marcus", "/reviews/ally", "/credit-cards/travel", "/credit-cards/cash-back", "/credit-cards/compare"].includes(entry.url) ? {lastModified: "2026-09-23"} : {}),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

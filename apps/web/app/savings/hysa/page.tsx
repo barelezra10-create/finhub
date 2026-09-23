@@ -21,7 +21,7 @@ export default function HysaPage() {
   return (
     <>
       <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Savings", href: "/savings" }, { name: "High-Yield Savings", href: "/savings/hysa" }]} />
-      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Provider observations checked {SAVINGS_CHECKED}. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>.</p>
+      <p className="max-w-(--max-w-page) mx-auto px-6 pt-6 text-sm text-mute">Latest provider check {SAVINGS_CHECKED}; individual account dates vary. Variable APYs, not a live feed. Qualification conditions apply. <Link href="/savings/accounts" className="underline">View provider sources and unconfirmed rates</Link>.</p>
       {/* HERO */}
       <section className="relative overflow-hidden bg-bg">
         <div className="hero-blob hero-blob-1" />
@@ -139,7 +139,7 @@ export default function HysaPage() {
         </div>
 
         <p className="text-xs text-mute mt-4">
-          Provider observations checked {SAVINGS_CHECKED}. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
+          Latest provider check {SAVINGS_CHECKED}; individual account dates vary. Variable APYs may change. FDIC coverage limits apply per depositor, per insured bank, per ownership category.
         </p>
       </section>
 

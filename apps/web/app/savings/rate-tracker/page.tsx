@@ -37,7 +37,7 @@ export default function Page() {
         <p className="text-sm text-mute mt-5">Latest check: <time dateTime={SAVINGS_CHECKED}>{SAVINGS_CHECKED}</time> · Observations begin {firstDate} · Published by <Link href="/about" className="u-link">Fintiex</Link></p>
         <div className="flex flex-wrap gap-3 mt-7"><a href="#observations" className="pill pill-ink">Explore the observations ↓</a><a href="/savings/rate-tracker/data.csv" className="pill pill-ghost" download>Download full CSV</a><a href="#methodology" className="pill pill-ghost">Read the methodology</a></div>
         <dl className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          {[[savingsOffers.length, 'Accounts tracked'], [confirmed, 'APYs confirmed at latest check'], [missing, 'APYs awaiting confirmation'], [savingsCheckDates.length, 'Recorded check dates']].map(([value, label]) => <div key={label} className="card p-5"><dt className="text-sm text-mute">{label}</dt><dd className="font-display font-bold text-3xl mt-2 tabular">{value}</dd></div>)}
+          {[[savingsOffers.length, 'Accounts tracked'], [confirmed, 'Latest available APYs confirmed'], [missing, 'Latest available APYs unconfirmed'], [savingsCheckDates.length, 'Recorded check dates']].map(([value, label]) => <div key={label} className="card p-5"><dt className="text-sm text-mute">{label}</dt><dd className="font-display font-bold text-3xl mt-2 tabular">{value}</dd></div>)}
         </dl>
       </div>
     </header>
@@ -47,7 +47,7 @@ export default function Page() {
         <div><h2 className="font-display font-bold text-3xl mb-5">How we record the rates</h2><div className="space-y-4 text-ink-soft leading-relaxed">
           <p>We check the linked provider page for the named account and record a numeric APY only when we can identify it. The check date is when Fintiex reviewed the source. A provider disclosure date, when shown, is separate and may be earlier.</p>
           <p>These are selected accounts already covered by Fintiex, not the whole market or a representative sample. CIT Platinum Savings and Savings Connect are separate products. Conditional rates retain their balance or deposit requirements. Temporary bonuses and paid membership tiers are excluded from the tracked rate.</p>
-          <p>September 11 observations were preserved from our existing source-check snapshot. Later checks are appended. We do not infer what happened between checks, backfill earlier history, or treat a missing APY as zero. Identical observations do not prove a rate stayed unchanged between those dates.</p>
+          <p>September 11 observations were preserved from our existing source-check snapshot. Later checks are appended and may cover only selected accounts. The directory uses each account’s most recent observation; date filters show only accounts actually checked on that date. We do not infer what happened between checks, backfill earlier history, or treat a missing APY as zero. Identical observations do not prove a rate stayed unchanged between those dates.</p>
           <p>Checks are currently manual, with AI assistance. This page is not a live bank feed and has no guaranteed refresh interval. No named independent reviewer is assigned. Read our <Link href="/editorial-policy" className="u-link">editorial policy</Link>.</p>
         </div></div>
         <div><h2 className="font-display font-bold text-3xl mb-5">Use and cite the data</h2><div className="space-y-4 text-ink-soft leading-relaxed">

@@ -22,7 +22,10 @@ export function savingsSnapshot(date: string): SavingsOffer[] {
   // Return actual observations for the chosen check date, never interpolated rates.
   return savingsObservations.filter(o => o.checked === date);
 }
-export const savingsOffers = savingsSnapshot(SAVINGS_CHECKED);
+// A partial check updates only those accounts; each retains its real check date.
+export const savingsOffers = [...new Map(
+  [...savingsObservations].sort((a,b) => a.checked.localeCompare(b.checked)).map(o => [o.key, o]),
+).values()];
 export function savingsOffer(key: string) {
   const offer = savingsOffers.find(o => o.key === key);
   if (!offer) throw new Error('Unknown savings offer');
@@ -36,4 +39,4 @@ export function rateLabel(rate: number | null) {
 }
 export const hysaOptions = savingsOffers.filter(o => o.apy !== null && !o.closed)
   .sort((a, b) => b.apy! - a.apy!)
-  .map(o => ({ lender: o.name, apy: o.apy!, detail: o.condition, href: o.review, tag: undefined as string | undefined }));
+  .map(o => ({ lender: o.name, apy: o.apy!, detail: `${o.condition} Checked ${o.checked}.`, href: o.review, tag: undefined as string | undefined }));

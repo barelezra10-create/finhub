@@ -7,11 +7,11 @@ export function RateTicker() {
       Savings rates · {SAVINGS_CHECKED} · History & sources →
     </Link>
     <div className="hidden md:flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-1">
-      <span className="font-semibold">Savings snapshot · {SAVINGS_CHECKED}</span>
+      <span className="font-semibold">Dated savings observations</span>
       {['bask', 'marcus', 'ally'].map(key => {
         const offer = savingsOffer(key);
         return <Link className="inline-flex items-center min-h-6 underline underline-offset-4" key={key} href={offer.review}>
-          {offer.name} · {rateLabel(offer.apy)} APY
+          {offer.name} · {rateLabel(offer.apy)} APY · {offer.checked}
         </Link>;
       })}
       <Link className="inline-flex items-center min-h-6 underline" href="/savings/rate-tracker">History & sources →</Link>
