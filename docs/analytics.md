@@ -62,3 +62,21 @@ The Offer clicks tab groups explicitly labeled outbound provider links by produc
 The report groups partner, offer and currency and uses the conversion date. Paid commission and approved-but-unpaid commission are separate. Traffic audience filters cannot attribute imported conversions; a real partner integration with shared click IDs is required. No automatic affiliate network connection is configured.
 
 Bing is verified for `https://fintiex.com/`. `FINTIEX_BING_API_KEY` and `FINTIEX_BING_SITE_URL` are configured on Railway; the existing refresh scheduler fetches reports after deployment. The initial query API returned an empty successful result. This indicates no data returned yet, not proof that there have been no Bing impressions.
+
+
+## Product review queue and profile clicks (September 25, 2026)
+
+`/admin?tab=audit` now covers 119 records across credit cards, auto/home/life insurance, brokerages, personal/student loans, and the savings rate tracker. Mortgage profiles and savings records outside the rate tracker are excluded. The queue calculates review dates on each authenticated request using UTC source-check dates. It never uses a generic content revision date as evidence of a source check.
+
+Editorial review intervals: savings 7 days; cards, brokerages and loans 30 days; insurance 90 days. These intervals are maintenance policy, not provider guarantees. Missing, invalid or future check dates require a dated check; valid checks become due on the interval boundary and overdue the next UTC day. Closed/retired records remain eligible for status/servicing review. Availability remains separate from freshness. Filters use `auditCategory` and `auditStatus`; summaries cover the whole queue. No source dates or product terms are modified automatically, and no notifications are sent.
+
+The panel does not query traffic reports or use traffic audience filters. It can render if traffic report queries fail, but existing database-backed admin authentication remains required. The feature adds no new public route or authorization bypass.
+
+The 34 checked auto/home insurance, brokerage and current personal-loan profiles label their provider CTA with `data-offer` derived from the full route (slashes replaced with hyphens) and `data-placement="product-profile-hero"`. Example: `loans-personal-lendingclub-personal-loan`. IDs remain stable across provider renaming. Source citations remain unlabeled outbound events. Existing analytics ingestion, privacy controls and historical events are unchanged; new labels are not backfilled and do not measure completed applications.
+
+Validation:
+
+- From `apps/web`: `node lib/product-freshness-test.mjs` checks UTC boundaries, leap/year transitions, bad/future dates, inventory/source coverage, closed-product inclusion, sorting, filters, server rendering, no date mutations and analytics-tag validation.
+- Production build and TypeScript passed; SEO audit passed across 455 pages.
+- Local browser checks cover product labels, the admin login boundary, intercepted primary/middle-click payloads, untagged source citations, and desktop/mobile rendering of the real server component. All event transport is intercepted locally without writing test analytics events.
+- To test event transport, build/start locally with `ANALYTICS_ENABLED=true`, then run `TEST_ANALYTICS_TRANSPORT=true PLAYWRIGHT_BASE_URL=http://localhost:3051 pnpm exec playwright test e2e/product-monitoring.spec.ts`. Without the explicit flag, transport is skipped. Live tests always skip transport and the local rendering fixture.

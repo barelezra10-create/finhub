@@ -22,7 +22,7 @@ export function CheckedProductReview({name,title,href,parentHref,parentLabel,pro
       <span className="chip chip-lime mb-5">{profile.role}</span>
       <h1 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-6 max-w-3xl">{title}</h1>
       <p className="text-lg text-mute leading-relaxed mb-6 max-w-2xl">{profile.summary}</p>
-      <div className="flex flex-wrap gap-3"><Link href="#facts" className="pill pill-ink">Explore product details ↓</Link><a href={providerUrl} className="pill pill-ghost" rel="nofollow noopener noreferrer" target="_blank">Provider website ↗</a></div>
+      <div className="flex flex-wrap gap-3"><Link href="#facts" className="pill pill-ink">Explore product details ↓</Link><a href={providerUrl} data-offer={href.split("/").filter(Boolean).join("-")} data-placement="product-profile-hero" className="pill pill-ghost" rel="nofollow noopener noreferrer" target="_blank">Provider website ↗</a></div>
     </div></section>
     <div className="max-w-(--max-w-page) mx-auto px-6 py-10">
       <aside className="card p-6 mb-8 max-w-3xl"><h2 className="font-display font-bold text-xl mb-3">What this review covers</h2><p className="text-mute leading-relaxed">{profile.scope}</p><p className="text-sm text-mute mt-4">Sources checked <time dateTime={checked}>{checked}</time>. Document dates, when supplied, are shown separately below.</p></aside>
