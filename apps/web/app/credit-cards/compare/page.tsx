@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const cards = loadCards().filter(c => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student");
+  const cards = loadCards().filter(c => c.availability === "listed");
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function Page() {
             Compare credit cards side by side.
           </h1>
           <p className="text-lg md:text-xl text-mute leading-relaxed max-w-2xl">
-            Start with our cash-back example, or pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. Unknown terms are labeled Not verified. A highlighted figure does not establish which card suits you.
+            Start with our cash-back example, or pick any 2 or 3 cards. We pull the annual fee, APR ranges, signup bonus and available reward details into one clean table. We include issuer offer conditions and clearly identify details that still need confirmation.
           </p>
         </div>
       </section>

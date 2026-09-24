@@ -6,7 +6,7 @@ import { CardArt } from "@/components/card-art";
 import {
   cardCategories,
   fullCardName,
-  formatAnnualFee,
+  annualFeeLabel,
   topRewardRate,
   cardHref,
   CATEGORY_LABEL,
@@ -241,7 +241,7 @@ function CardTile({ card }: { card: CardData }) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 my-4 pt-4 border-t border-line">
-        <Stat label="Annual fee" value={formatAnnualFee(card.annual_fee)} />
+        <Stat label="Annual fee" value={annualFeeLabel(card)} />
         <Stat label="Top reward" value={topRewardRate(card)} />
       </div>
 

@@ -12,7 +12,7 @@
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
-  "annual_fee": null,
+  "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
   "signup_bonus": null,
@@ -25,10 +25,73 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.brex.com/product/credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.brex.com/product/credit-card",
+  "verified_fields": [
+    "annual_fee",
+    "calculator_eligible",
+    "rewards_status",
+    "rewards_summary"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.brex.com/spend-trends/corporate-credit-cards/how-to-apply-for-business-credit-card",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_purchase",
+        "calculator_eligible"
+      ]
+    },
+    {
+      "url": "https://www.brex.com/product/rewards",
+      "checked": "2026-09-24",
+      "fields": [
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.brex.com/legal/partners/emigrant-terms",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_cash_advance"
+      ]
+    },
+    {
+      "url": "https://www.brex.com/product/credit-card",
+      "checked": "2026-09-24",
+      "fields": [
+        "signup_bonus"
+      ]
+    }
+  ],
+  "term_details": {
+    "apr_purchase": {
+      "status": "not_offered",
+      "text": "Pay-in-full corporate card; no revolving purchase APR",
+      "source_url": "https://www.brex.com/spend-trends/corporate-credit-cards/how-to-apply-for-business-credit-card",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "not_offered",
+      "text": "Cash advances are not supported",
+      "source_url": "https://www.brex.com/legal/partners/emigrant-terms",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.brex.com/product/credit-card",
+      "checked": "2026-09-24"
+    }
+  },
+  "rewards_summary": "Up to 7x on rideshare, 4x Brex travel, 3x restaurants and 2x software; eligibility and spending caps apply",
+  "rewards_status": "available"
 }

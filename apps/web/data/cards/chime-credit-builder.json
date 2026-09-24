@@ -30,7 +30,7 @@
   "rating": null,
   "calculator_eligible": false,
   "availability": "retired",
-  "audit_attempted": "2026-09-12",
+  "audit_attempted": "2026-09-24",
   "audit_note": "Credit Builder is closed to new members. Existing members may continue using it. This page describes the legacy product, not the newer Chime Card.",
   "rewards_status": "none",
   "source_url": "https://help.chime.com/what-is-credit-builder-603a5ae8",
@@ -40,5 +40,6 @@
     "annual_fee",
     "rewards_status",
     "issuer"
-  ]
+  ],
+  "term_sources": []
 }

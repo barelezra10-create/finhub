@@ -12,11 +12,14 @@
   },
   "apr_intro": 0,
   "apr_intro_months": 15,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 17.49,
+    "max": 27.49
+  },
+  "apr_cash_advance": 29.24,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0.05,
   "signup_bonus": "$200 online cash bonus after $1,000 in purchases within 90 days.",
   "signup_bonus_spend": 1000,
   "signup_bonus_value_usd": 200,
@@ -30,42 +33,98 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% APR for 15 billing cycles on purchases and transfers made within 60 days. Then 17.49%–27.49% variable APR. Transfer fee: 3% in the first 60 days; 5% afterward.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "intro_terms": "0% for the first 15 billing cycles on purchases and transfers made within 60 days of account opening; then the regular variable APR applies.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
   "verified_fields": [
     "annual_fee",
-    "apr_purchase",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_intro",
     "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "calculator_eligible",
+    "foreign_tx_fee",
     "intro_terms",
-    "rewards_summary",
+    "perks",
     "rewards_status",
+    "rewards_summary",
     "signup_bonus",
     "signup_bonus_spend",
-    "signup_bonus_value_usd",
-    "perks"
+    "signup_bonus_value_usd"
   ],
-  "rewards_summary": "6% chosen category in year one, then 3%; quarterly combined spending cap applies",
+  "rewards_summary": "6% in your choice category during year one, then 3%; 2% at grocery stores/wholesale clubs. $2,500 combined quarterly cap; 1% afterward and elsewhere.",
   "rewards_status": "available",
   "term_sources": [
     {
       "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
+        "perks",
         "rewards_status",
+        "rewards_summary",
         "signup_bonus",
         "signup_bonus_spend",
-        "signup_bonus_value_usd",
-        "perks"
+        "signup_bonus_value_usd"
+      ]
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079537&productoffercode=8H&locale=en_US",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms"
+      ]
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "calculator_eligible",
+        "rewards_summary"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_cash_advance": {
+      "status": "confirmed",
+      "text": "29.24% variable for bank cash advances; 20.49%–28.49% variable for direct-deposit and check advances",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079537&productoffercode=8H&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each cash advance",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079537&productoffercode=8H&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% for transfers within 60 days of opening; then 5%",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079537&productoffercode=8H&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% for the first 15 billing cycles on purchases and transfers made within 60 days of account opening; then the regular variable APR applies.",
+      "source_url": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+      "checked": "2026-09-24"
+    }
+  }
 }

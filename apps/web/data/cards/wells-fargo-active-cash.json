@@ -6,28 +6,118 @@
   "category": [
     "cashback"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
-  "signup_bonus_value_usd": null,
-  "rewards": {},
+  "apr_purchase": {
+    "min": 18.74,
+    "max": 28.74
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 12,
+  "apr_balance_transfer": {
+    "min": 18.74,
+    "max": 28.74
+  },
+  "apr_cash_advance": 29.74,
+  "annual_fee": 0,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0.05,
+  "signup_bonus": "$100 after $500 in net purchases that post within 3 months of account opening. This is the offer in the cited issuer disclosure; other channels may differ.",
+  "signup_bonus_spend": 500,
+  "signup_bonus_value_usd": 100,
+  "rewards": {
+    "other": 2
+  },
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
-  "application_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
-  "last_updated": "2026-09-12",
+  "application_url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
+  "verified_fields": [
+    "annual_fee",
+    "application_url",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "intro_terms",
+    "rewards",
+    "rewards_status",
+    "rewards_summary",
+    "rewards_type",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "source_url",
+    "welcome_offer_status"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "application_url",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "rewards",
+        "rewards_status",
+        "rewards_summary",
+        "rewards_type",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "source_url",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.wellsfargo.com/credit-cards/active-cash/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro"
+      ]
+    }
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% ($5 minimum) during the first 120 days; then up to 5% ($5 minimum)",
+      "source_url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on purchases and qualifying transfers for 12 months from account opening. Request transfers within 120 days; regular variable APR afterward.",
+      "source_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
+      "checked": "2026-09-24"
+    }
+  },
+  "rewards_summary": "Unlimited 2% cash rewards on net purchases",
+  "rewards_status": "available",
+  "intro_terms": "0% on purchases and qualifying transfers for 12 months from account opening. Request transfers within 120 days; regular variable APR afterward.",
+  "welcome_offer_status": "available"
 }

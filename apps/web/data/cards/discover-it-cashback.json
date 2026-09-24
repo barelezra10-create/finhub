@@ -12,12 +12,15 @@
   },
   "apr_intro": 0,
   "apr_intro_months": 15,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 17.49,
+    "max": 26.49
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": "Cashback Match: Discover matches cash back earned at the end of the first year. New-cardmember terms apply.",
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0,
+  "signup_bonus": "Discover matches the cash back earned during your first year, with no maximum. New cardmembers only; match is paid after the first year.",
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
   "rewards": {},
@@ -29,43 +32,106 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.discover.com/credit-cards/cash-back/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_url": "https://www.discover.com/credit-cards/",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+  "source_checked": "2026-09-24",
   "verified_fields": [
     "annual_fee",
-    "source_url",
-    "rewards_summary",
-    "rewards_status",
-    "signup_bonus",
-    "apr_purchase",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_intro",
     "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
     "intro_terms",
-    "perks"
+    "perks",
+    "rewards_status",
+    "rewards_summary",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "source_url",
+    "welcome_offer_status"
   ],
-  "rewards_summary": "5% rotating categories with activation and quarterly cap; 1% elsewhere",
+  "rewards_summary": "5% in rotating categories on up to $1,500 per quarter with activation; 1% on other purchases",
   "rewards_status": "available",
-  "intro_terms": "0% introductory APR on purchases and balance transfers for 15 months; then 17.49%–26.49% variable. Balance transfer fee applies.",
+  "intro_terms": "0% on purchases and transfers for 15 months from account opening; then the regular variable APR applies.",
   "term_sources": [
     {
       "url": "https://www.discover.com/credit-cards/cash-back/it-card/",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
-        "rewards_status",
-        "signup_bonus",
-        "apr_purchase",
         "apr_intro",
         "apr_intro_months",
+        "apr_purchase",
         "intro_terms",
-        "perks"
+        "perks",
+        "rewards_status",
+        "rewards_summary",
+        "signup_bonus"
+      ]
+    },
+    {
+      "url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "rewards_summary",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.discover.com/credit-cards/card-smarts/discover-cards-acceptance/",
+      "checked": "2026-09-24",
+      "fields": [
+        "foreign_tx_fee"
+      ]
+    },
+    {
+      "url": "https://www.discover.com/credit-cards/cash-back/cashback-calendar.html?vcmpgn=discover_five",
+      "checked": "2026-09-24",
+      "fields": [
+        "rewards_summary"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% during the first 15 months; afterward 5% on promotional-rate transfers, no fee at the standard purchase APR",
+      "source_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on purchases and transfers for 15 months from account opening; then the regular variable APR applies.",
+      "source_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available"
 }

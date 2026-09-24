@@ -15,9 +15,9 @@
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_cash_advance": 23.89,
   "annual_fee": 35,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0.03,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
@@ -34,18 +34,69 @@
     "OpenSky Launch and OpenSky Plus are different products with different fees and deposits."
   ],
   "application_url": "https://www.openskycc.com/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.openskycc.com/",
   "verified_fields": [
     "annual_fee",
+    "apr_cash_advance",
     "apr_purchase",
-    "perks",
-    "drawbacks"
-  ]
+    "drawbacks",
+    "foreign_tx_fee",
+    "perks"
+  ],
+  "term_sources": [
+    {
+      "url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "signup_bonus"
+      ]
+    }
+  ],
+  "term_details": {
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $6 minimum",
+      "source_url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the current pricing disclosure",
+      "source_url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the current pricing disclosure",
+      "source_url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed in the reviewed offer",
+      "source_url": "https://app.openskycc.com/files/tc-sky1-073.pdf",
+      "checked": "2026-09-24"
+    }
+  }
 }

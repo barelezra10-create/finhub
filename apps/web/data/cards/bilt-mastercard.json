@@ -29,9 +29,10 @@
   "rating": null,
   "calculator_eligible": false,
   "availability": "retired",
-  "audit_attempted": "2026-09-12",
+  "audit_attempted": "2026-09-24",
   "audit_note": "The former Wells Fargo Bilt Mastercard was deactivated on February 7, 2026. Bilt now offers a different card lineup. This page is retained for readers looking up the former product.",
   "source_url": "https://support.biltrewards.com/hc/en-us/articles/42897766682381-Bilt-Card-2-0-Program-Overview",
   "source_checked": "2026-09-12",
-  "verified_fields": []
+  "verified_fields": [],
+  "term_sources": []
 }

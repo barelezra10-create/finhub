@@ -10,10 +10,11 @@ test("comparisons show verified rewards and preserve conditions", async ({ page 
   await expect(table).not.toContainText("Check issuer");
 });
 
-test("missing fees stay unknown rather than becoming free", async ({ page }) => {
+test("offer-specific fees include ongoing maintenance rather than appearing free", async ({ page }) => {
   await page.goto("/credit-cards/compare?c=aspire&c=capital-one-platinum-secured");
   const fee = page.getByRole("row").filter({ has: page.getByRole("rowheader", { name: "Annual fee", exact: true }) });
-  await expect(fee).toContainText("Not verified");
+  await expect(fee).toContainText("$49–$175 first year");
+  await expect(fee).toContainText("$5–$15 monthly maintenance");
   await expect(fee).toContainText("$0");
 });
 

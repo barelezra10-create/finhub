@@ -6,15 +6,21 @@
   "category": [
     "cashback"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 17.99,
+    "max": 28.24
+  },
   "apr_intro": 0,
   "apr_intro_months": 15,
-  "apr_balance_transfer": null,
+  "apr_balance_transfer": {
+    "min": 17.99,
+    "max": 28.24
+  },
   "apr_cash_advance": null,
   "annual_fee": 0,
   "foreign_tx_fee": null,
   "balance_transfer_fee": null,
-  "signup_bonus": "$200 after $1,000 in eligible purchases within 90 days. Limited-time offer.",
+  "signup_bonus": "$200 after $1,000 in eligible purchases within 90 days of account opening.",
   "signup_bonus_spend": 1000,
   "signup_bonus_value_usd": 200,
   "rewards": {},
@@ -28,26 +34,29 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "intro_terms": "0% introductory APR on purchases and balance transfers for 15 billing cycles; then a variable APR applies. See issuer pricing for the current rate.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "intro_terms": "0% on purchases and transfers for the first 15 billing cycles; regular variable APR afterward. Confirm transfer timing and transaction fees in the application disclosure.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
   "verified_fields": [
     "annual_fee",
+    "apr_balance_transfer",
     "apr_intro",
     "apr_intro_months",
+    "apr_purchase",
     "intro_terms",
-    "rewards_summary",
+    "perks",
     "rewards_status",
+    "rewards_summary",
     "signup_bonus",
     "signup_bonus_spend",
     "signup_bonus_value_usd",
-    "perks"
+    "welcome_offer_status"
   ],
   "rewards_summary": "5% in two chosen categories on first $2,000 combined/quarter; activation required",
   "rewards_status": "available",
@@ -56,14 +65,38 @@
       "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
+        "intro_terms",
+        "perks",
         "rewards_status",
+        "rewards_summary",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd"
+      ]
+    },
+    {
+      "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_balance_transfer",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "intro_terms",
         "signup_bonus",
         "signup_bonus_spend",
         "signup_bonus_value_usd",
-        "intro_terms",
-        "perks"
+        "welcome_offer_status"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on purchases and transfers for the first 15 billing cycles; regular variable APR afterward. Confirm transfer timing and transaction fees in the application disclosure.",
+      "source_url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available"
 }

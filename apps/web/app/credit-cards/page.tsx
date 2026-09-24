@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { FAQPageSchema, BreadcrumbListSchema, type FAQItem } from "@/components/schemas";
 import {
   fullCardName,
-  formatAnnualFee,
+  annualFeeLabel,
   topRewardRate,
   SYNTHETIC_CATEGORIES,
   type CardData,
@@ -30,10 +30,10 @@ const subPages: { label: string; href: string; detail: string; category: Synthet
   { label: "Secured Cards", href: "/credit-cards/secured", detail: "Rebuild credit with a refundable security deposit.", category: "secured" },
 ];
 
-const faqItems: FAQItem[] = [{"question": "How should I compare credit cards?", "answer": "Start with your purpose, then compare the issuer\u2019s current fees, purchase and transfer APRs, reward restrictions and eligibility terms. A higher reward rate does not automatically offset a fee or interest."}, {"question": "Does a listing guarantee approval?", "answer": "No. Issuers assess each application. Fintiex does not publish an approval score or guarantee. Check any prequalification terms directly with the issuer."}, {"question": "What does Check issuer mean?", "answer": "We have not confirmed that field from an official source. It does not mean no fee or zero interest. Individual card pages identify the source and date for selected checked facts."}];
+const faqItems: FAQItem[] = [{"question": "How should I compare credit cards?", "answer": "Start with your purpose, then compare the issuer\u2019s current fees, purchase and transfer APRs, reward restrictions and eligibility terms. A higher reward rate does not automatically offset a fee or interest."}, {"question": "Does a listing guarantee approval?", "answer": "No. Issuers assess each application. Fintiex does not publish an approval score or guarantee. Check any prequalification terms directly with the issuer."}, {"question": "Why are some card details still to confirm?", "answer": "Some terms depend on a personalized offer or are not clearly published by the issuer. Missing details do not mean no fee or zero interest. Card pages list sourced terms, checked dates, and any details still to confirm."}];
 
 export default function Page() {
-  const allCards = loadCards().filter(c => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student");
+  const allCards = loadCards().filter(c => c.availability === "listed");
 
   const topByCat: Record<SyntheticCategory, CardData | undefined> = Object.fromEntries(
     SYNTHETIC_CATEGORIES.map((c) => [c, cardsByCategory(c)[0]]),
@@ -272,7 +272,7 @@ function SnapshotTile({
         {metric}
       </div>
       <div className="text-xs text-mute mt-2 line-clamp-2">
-        {card ? `${fullCardName(card)} · ${formatAnnualFee(card.annual_fee)} annual fee` : "No card available"}
+        {card ? `${fullCardName(card)} · ${annualFeeLabel(card)} annual fee` : "No card available"}
       </div>
     </div>
   );

@@ -6,7 +6,10 @@
   "category": [
     "cashback"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 17.49,
+    "max": 27.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
@@ -28,20 +31,21 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.apple.com/apple-card/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.apple.com/apple-card/",
   "verified_fields": [
     "annual_fee",
+    "apr_purchase",
     "foreign_tx_fee",
     "perks",
-    "rewards_summary",
-    "rewards_status"
+    "rewards_status",
+    "rewards_summary"
   ],
   "rewards_summary": "3% at Apple; 2% with Apple Pay",
   "rewards_status": "available",
@@ -50,10 +54,40 @@
       "url": "https://www.apple.com/apple-card/",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
+        "perks",
         "rewards_status",
-        "perks"
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://support.apple.com/en-us/121380",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_purchase",
+        "foreign_tx_fee"
+      ]
+    },
+    {
+      "url": "https://www.apple.com/apple-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "signup_bonus"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% Apple Card Monthly Installments on eligible Apple purchases; not a general introductory APR",
+      "source_url": "https://www.apple.com/apple-card/",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.apple.com/apple-card/",
+      "checked": "2026-09-24"
+    }
+  }
 }

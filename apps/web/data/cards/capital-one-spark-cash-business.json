@@ -7,17 +7,20 @@
     "business",
     "cashback"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 25.74,
+    "max": 25.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
   "annual_fee": 150,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
-  "signup_bonus_value_usd": null,
+  "signup_bonus": "$2,000 after $30,000 in purchases within 3 months; additional $2,000 bonuses for each $500,000 spent during year one. Eligibility restrictions apply.",
+  "signup_bonus_spend": 30000,
+  "signup_bonus_value_usd": 2000,
   "rewards": {
     "other": 2,
     "capital-one-business-travel-hotels-vacation-rentals-cars": 5
@@ -30,23 +33,65 @@
     "The $150 annual fee is refunded when annual spending reaches $150,000."
   ],
   "drawbacks": [
-    "Designed to be paid in full; no preset spending limit does not mean unlimited spending."
+    "The carryover option applies only to an eligible portion of the balance; review the required monthly payment."
   ],
   "application_url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": true,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
   "verified_fields": [
     "annual_fee",
+    "apr_purchase",
+    "drawbacks",
+    "foreign_tx_fee",
+    "name",
+    "perks",
     "rewards",
     "rewards_type",
-    "perks",
-    "drawbacks",
-    "name"
-  ]
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
+  ],
+  "welcome_offer_status": "available",
+  "term_sources": [
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/spark-cash-plus/",
+      "checked": "2026-09-24",
+      "fields": [
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.capitalone.com/small-business/credit-cards/cash-back/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "apr_purchase",
+        "foreign_tx_fee"
+      ]
+    }
+  ],
+  "term_details": {
+    "apr_purchase": {
+      "status": "confirmed",
+      "text": "25.74% variable on the portion eligible to carry over; designed to be paid in full",
+      "source_url": "https://www.capitalone.com/small-business/credit-cards/cash-back/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.capitalone.com/small-business/credit-cards/cash-back/",
+      "checked": "2026-09-24"
+    }
+  }
 }

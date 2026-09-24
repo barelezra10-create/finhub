@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CardArt } from "@/components/card-art";
 import {
-  formatAnnualFee,
+  annualFeeLabel,
   topRewardRate,
   welcomeOffer,
   type CardData,
@@ -44,7 +44,7 @@ export function CardPickRow({ card, rank, tag }: CardPickRowProps) {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4 max-w-2xl">
-            <Spec label="Annual fee" value={formatAnnualFee(card.annual_fee)} />
+            <Spec label="Annual fee" value={annualFeeLabel(card)} />
             <Spec label="Top reward" value={topRewardRate(card)} />
             <Spec
               label="Signup bonus"

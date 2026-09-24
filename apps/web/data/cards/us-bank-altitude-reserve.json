@@ -29,9 +29,10 @@
   "rating": null,
   "calculator_eligible": false,
   "availability": "retired",
-  "audit_attempted": "2026-09-12",
+  "audit_attempted": "2026-09-24",
   "audit_note": "U.S. Bank lists Altitude Reserve among personal cards no longer accepting new applications.",
   "source_url": "https://www.usbank.com/credit-cards/benefits.html",
   "source_checked": "2026-09-12",
-  "verified_fields": []
+  "verified_fields": [],
+  "term_sources": []
 }

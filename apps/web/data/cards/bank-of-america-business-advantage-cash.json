@@ -7,28 +7,118 @@
     "business",
     "cashback"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
+  "apr_purchase": {
+    "min": 16.74,
+    "max": 26.74
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 7,
+  "apr_balance_transfer": {
+    "min": 16.74,
+    "max": 26.74
+  },
+  "apr_cash_advance": 27.74,
+  "annual_fee": 0,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0.05,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {},
+  "rewards": {
+    "other": 1
+  },
   "rewards_type": "cashback",
   "points_value_cents": null,
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
-  "application_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/business-advantage-cash-rewards-credit-card/",
-  "last_updated": "2026-09-12",
+  "application_url": "https://business.bankofamerica.com/en/credit-cards/business-advantage-customized-cash-rewards",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/business-advantage-cash-rewards-credit-card/",
+  "verified_fields": [
+    "annual_fee",
+    "application_url",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "calculator_eligible",
+    "foreign_tx_fee",
+    "intro_terms",
+    "rewards",
+    "rewards_status",
+    "rewards_summary",
+    "rewards_type",
+    "source_url"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions/?campaignid=4078728&locale=en_US&productoffercode=BS",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "application_url",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "calculator_eligible",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "rewards",
+        "rewards_status",
+        "rewards_summary",
+        "rewards_type",
+        "source_url"
+      ]
+    },
+    {
+      "url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/business-advantage-cash-rewards-credit-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "signup_bonus"
+      ]
+    }
+  ],
+  "rewards_summary": "3% in your chosen category and 2% dining, on $50,000 combined annual spending; 1% afterward and elsewhere",
+  "rewards_status": "available",
+  "intro_terms": "0% on purchases for the first 7 billing cycles; regular variable purchase APR afterward. Transfers have the standard variable APR.",
+  "term_details": {
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each transaction",
+      "source_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions/?campaignid=4078728&locale=en_US&productoffercode=BS",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "5% of each transaction",
+      "source_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/terms-and-conditions/?campaignid=4078728&locale=en_US&productoffercode=BS",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "offer_specific",
+      "text": "$500 online cash rewards bonus advertised; qualifying spending and deadline must be confirmed in the offer",
+      "source_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/business-advantage-cash-rewards-credit-card/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on purchases for the first 7 billing cycles; regular variable purchase APR afterward. Transfers have the standard variable APR.",
+      "source_url": "https://www.bankofamerica.com/smallbusiness/credit-cards/products/business-advantage-cash-rewards-credit-card/",
+      "checked": "2026-09-24"
+    }
+  }
 }

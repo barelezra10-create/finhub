@@ -6,14 +6,20 @@
   "category": [
     "rebuilding"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 29.99,
+    "max": 36
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
+  "apr_balance_transfer": {
+    "min": 32.99,
+    "max": 36
+  },
   "apr_cash_advance": null,
   "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0.03,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
@@ -23,11 +29,99 @@
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
-  "application_url": "https://www.fortiva.com/",
-  "last_updated": "2026-09-12",
+  "application_url": "https://www.myfortiva.com/",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_url": "https://www.myfortiva.com/",
+  "source_checked": "2026-09-24",
+  "verified_fields": [
+    "annual_fee",
+    "application_url",
+    "apr_balance_transfer",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "calculator_eligible",
+    "foreign_tx_fee",
+    "source_url"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "application_url",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "calculator_eligible",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "source_url"
+      ]
+    },
+    {
+      "url": "https://www.myfortiva.com/",
+      "checked": "2026-09-24",
+      "fields": [
+        "rewards",
+        "signup_bonus"
+      ]
+    }
+  ],
+  "term_details": {
+    "annual_fee": {
+      "status": "offer_specific",
+      "text": "$49–$175 first year; $0–$49 annually afterward, plus $5–$15 monthly maintenance after year one",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "apr_purchase": {
+      "status": "offer_specific",
+      "text": "29.99% or 36%, depending on the offer. Fixed or variable terms may apply.",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "offer_specific",
+      "text": "32.99% or 36%, depending on the offer",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "offer_specific",
+      "text": "32.99% or 36%, depending on the offer",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "offer_specific",
+      "text": "3% of each transfer after the first year; introductory terms depend on the offer",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.myfortiva.com/legal/",
+      "checked": "2026-09-24"
+    },
+    "rewards": {
+      "status": "offer_specific",
+      "text": "Rewards depend on your offer. Review the rewards addendum attached to your offer.",
+      "source_url": "https://www.myfortiva.com/",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.myfortiva.com/",
+      "checked": "2026-09-24"
+    }
+  }
 }

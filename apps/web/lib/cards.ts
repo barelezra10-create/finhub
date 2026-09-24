@@ -15,6 +15,12 @@ export interface CreditScoreRequired {
 }
 
 export interface CardData {
+  term_details?: Partial<Record<CardTermField, {
+    status: "confirmed" | "offer_specific" | "not_offered" | "not_listed";
+    text: string;
+    source_url: string;
+    checked: string;
+  }>>;
   availability: "listed" | "unconfirmed" | "retired";
   audit_attempted: string;
   audit_note: string;
@@ -53,6 +59,46 @@ export interface CardData {
   application_url: string;
   last_updated: string;
   rating: number | null;
+}
+
+export const CARD_RATE_FIELDS = {
+  annual_fee: "Annual fee",
+  apr_purchase: "Purchase APR",
+  apr_intro: "Introductory APR",
+  apr_balance_transfer: "Balance transfer APR",
+  balance_transfer_fee: "Balance transfer fee",
+  apr_cash_advance: "Cash advance APR",
+  cash_advance_fee: "Cash advance fee",
+  foreign_tx_fee: "Foreign transaction fee",
+} as const;
+export type CardTermField = keyof typeof CARD_RATE_FIELDS | "rewards" | "signup_bonus";
+
+/** Missing data stays missing. Explicit issuer disclosures supply qualitative terms. */
+export function cardTerm(card: CardData, field: CardTermField): string | null {
+  const detail = card.term_details?.[field];
+  if (detail) return detail.text;
+  switch (field) {
+    case "annual_fee": return card.annual_fee == null ? null : card.annual_fee_note || formatAnnualFee(card.annual_fee);
+    case "apr_purchase":
+    case "apr_balance_transfer": return card[field] ? `${formatAprRange(card[field])} variable` : null;
+    case "apr_cash_advance": return card.apr_cash_advance == null ? null : `${formatPct(card.apr_cash_advance)} variable`;
+    case "foreign_tx_fee":
+    case "balance_transfer_fee": return card[field] == null ? null : formatFeePct(card[field]);
+    case "apr_intro": return card.intro_terms || null;
+    case "cash_advance_fee": return null;
+    case "rewards": return card.rewards_summary || (card.rewards_status === "none" ? "No rewards" : Object.keys(card.rewards).length ? topRewardRate(card) : null);
+    case "signup_bonus": return card.signup_bonus || (card.welcome_offer_status === "none" ? "No welcome bonus" : null);
+  }
+}
+
+export function annualFeeLabel(card: CardData): string {
+  return cardTerm(card, "annual_fee") || "Fee details unavailable";
+}
+
+export function missingCardTerms(card: CardData): string[] {
+  return (Object.keys(CARD_RATE_FIELDS) as Array<keyof typeof CARD_RATE_FIELDS>)
+    .filter(field => cardTerm(card, field) == null)
+    .map(field => CARD_RATE_FIELDS[field]);
 }
 
 /**
@@ -117,13 +163,13 @@ export function fullCardName(card: CardData): string {
 }
 
 export function formatPct(v: number | null): string {
-  if (v == null) return "Not verified";
+  if (v == null) return "—";
   // Stored as percent (e.g. 19.24). Strips trailing zeros after decimal.
   return `${v.toFixed(2).replace(/\.?0+$/, "")}%`;
 }
 
 export function formatFeePct(v: number | null | undefined): string {
-  if (v == null) return "Not verified";
+  if (v == null) return "—";
   if (v === 0) return "None";
   // Stored as decimal e.g. 0.05 = 5%
   const pct = v * 100;
@@ -131,13 +177,13 @@ export function formatFeePct(v: number | null | undefined): string {
 }
 
 export function formatAprRange(range: AprRange | null | undefined): string {
-  if (!range) return "Not verified";
+  if (!range) return "—";
   if (range.min === range.max) return formatPct(range.min);
   return `${formatPct(range.min)} to ${formatPct(range.max)}`;
 }
 
 export function formatAnnualFee(fee: number | null): string {
-  if (fee == null) return "Not verified";
+  if (fee == null) return "—";
   if (fee === 0) return "$0";
   return `$${fee}`;
 }
@@ -151,13 +197,14 @@ export function formatCurrency(n: number): string {
  * "4x on dining", "2% cash back". Picks the highest-multiplier category.
  */
 export function topRewardRate(card: CardData): string {
+  if (card.term_details?.rewards) return card.term_details.rewards.text;
   if (card.rewards_summary) return card.rewards_summary;
   if (card.rewards_status === "none") return "No rewards";
   const entries = Object.entries(card.rewards ?? {}).filter(
     ([, v]) => typeof v === "number" && v > 0,
   );
   if (entries.length === 0) {
-    return "Rewards not verified";
+    return "Reward details unavailable";
   }
   entries.sort((a, b) => b[1] - a[1]);
   const top = entries[0];
@@ -174,7 +221,7 @@ export function topRewardRate(card: CardData): string {
 export function welcomeOffer(card: CardData): string {
   if (card.signup_bonus) return card.signup_bonus;
   if (card.welcome_offer_status === "none") return "No welcome bonus";
-  return "Offer not verified";
+  return card.term_details?.signup_bonus?.text || "Public offer details unavailable";
 }
 
 export function rewardKeyLabel(key: string): string {

@@ -8,28 +8,118 @@
     "travel",
     "rewards"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
+  "apr_purchase": {
+    "min": 17.49,
+    "max": 27.49
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 15,
+  "apr_balance_transfer": {
+    "min": 17.49,
+    "max": 27.49
+  },
+  "apr_cash_advance": 29.24,
+  "annual_fee": 0,
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0.05,
   "signup_bonus": null,
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
-  "rewards": {},
+  "rewards": {
+    "other": 1.5
+  },
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.bankofamerica.com/student-banking/student-credit-card/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.bankofamerica.com/credit-cards/products/student-rewards-credit-card/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "intro_terms",
+    "rewards",
+    "rewards_status",
+    "rewards_summary",
+    "rewards_type"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079335&productoffercode=A4&locale=en_US",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms"
+      ]
+    },
+    {
+      "url": "https://www.bankofamerica.com/credit-cards/products/student-rewards-credit-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "rewards",
+        "rewards_status",
+        "rewards_summary",
+        "rewards_type",
+        "signup_bonus"
+      ]
+    }
+  ],
+  "term_details": {
+    "apr_cash_advance": {
+      "status": "confirmed",
+      "text": "29.24% variable for bank cash advances; 20.49%–28.49% variable for direct-deposit and check advances",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079335&productoffercode=A4&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each cash advance",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079335&productoffercode=A4&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% for transfers within 60 days of opening; then 5%",
+      "source_url": "https://www.bankofamerica.com/credit-cards/terms-and-conditions/?campaignid=4079335&productoffercode=A4&locale=en_US",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% for the first 15 billing cycles on purchases and transfers made within 60 days of account opening; then the regular variable APR applies.",
+      "source_url": "https://www.bankofamerica.com/credit-cards/products/student-rewards-credit-card/",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.bankofamerica.com/credit-cards/products/student-rewards-credit-card/",
+      "checked": "2026-09-24"
+    }
+  },
+  "intro_terms": "0% for the first 15 billing cycles on purchases and transfers made within 60 days of account opening; then the regular variable APR applies.",
+  "rewards_summary": "Unlimited 1.5 points per $1 on purchases",
+  "rewards_status": "available"
 }

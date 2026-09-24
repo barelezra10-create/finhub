@@ -7,16 +7,22 @@
     "travel",
     "miles"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "apr_purchase": {
+    "min": 19.49,
+    "max": 29.49
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 15,
+  "apr_balance_transfer": {
+    "min": 19.49,
+    "max": 29.49
+  },
+  "apr_cash_advance": 29.74,
+  "annual_fee": 99,
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0.05,
+  "signup_bonus": "50,000 miles after $500 in purchases and paying the annual fee in full within 90 days; another 10,000 miles after a new authorized user makes a purchase within 90 days.",
+  "signup_bonus_spend": 500,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "miles",
@@ -26,19 +32,34 @@
     "5 miles per dollar on FlyFrontier.com purchases; 3 on restaurant purchases; 1 on other purchases."
   ],
   "drawbacks": [],
-  "application_url": "https://faq.flyfrontier.com/help/frontier-airlines-world-mastercard",
-  "last_updated": "2026-09-20",
+  "application_url": "https://www.frontiermastercard.com/",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
   "source_url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
-  "source_checked": "2026-09-12",
+  "source_checked": "2026-09-24",
   "verified_fields": [
+    "annual_fee",
+    "application_url",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "intro_terms",
     "perks",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "source_url",
+    "welcome_offer_status"
   ],
   "rewards_summary": "5x FlyFrontier.com; 3x restaurants; 1x elsewhere",
   "rewards_status": "available",
@@ -47,9 +68,67 @@
       "url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
       "checked": "2026-09-12",
       "fields": [
-        "rewards_summary",
-        "rewards_status"
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48877",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "application_url",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "source_url",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "signup_bonus"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48877",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "5% of each transfer, $5 minimum",
+      "source_url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48877",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% for 15 billing cycles after each transfer that posts within 45 days of account opening; regular variable APR afterward. No introductory purchase APR.",
+      "source_url": "https://faq.flyfrontier.com/help/how-are-frontier-miles-and-points-earned",
+      "checked": "2026-09-24"
+    }
+  },
+  "intro_terms": "0% for 15 billing cycles after each transfer that posts within 45 days of account opening; regular variable APR afterward. No introductory purchase APR.",
+  "welcome_offer_status": "available"
 }

@@ -7,7 +7,10 @@
     "travel",
     "rewards"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.74,
+    "max": 28.74
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
@@ -15,8 +18,8 @@
   "annual_fee": 325,
   "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "Personalized offer as high as 100,000 Membership Rewards points after $8,000 in purchases within 6 months. Your offer may be lower, or you may not qualify.",
+  "signup_bonus_spend": 8000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "points",
@@ -32,21 +35,26 @@
     "Statement credits have merchant, timing, and enrollment requirements."
   ],
   "application_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
   "verified_fields": [
     "annual_fee",
+    "apr_purchase",
+    "drawbacks",
     "foreign_tx_fee",
     "perks",
-    "drawbacks",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
   ],
   "rewards_summary": "5x on prepaid hotels via Amex Travel; 4x dining and U.S. supermarkets with annual caps",
   "rewards_status": "available",
@@ -55,9 +63,71 @@
       "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
       "checked": "2026-09-12",
       "fields": [
-        "rewards_summary",
-        "rewards_status"
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro",
+        "apr_purchase",
+        "foreign_tx_fee",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/american-express-gold-card-06-30-2026.pdf",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "balance_transfer_fee",
+        "cash_advance_fee"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_purchase": {
+      "status": "confirmed",
+      "text": "19.74%–28.74% variable for eligible Pay Over Time charges; other charges are due in full",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/american-express-gold-card-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/american-express-gold-card-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "confirmed",
+      "text": "Variable: Prime Rate + 21.99%, up to 29.99%, under the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/american-express-gold-card-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/cps-charge/american-express-gold-card-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available"
 }

@@ -7,16 +7,19 @@
     "business",
     "rewards"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 17.74,
+    "max": 28.49
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
   "annual_fee": 375,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "signup_bonus": "Personalized offer as high as 200,000 Membership Rewards points after $15,000 in purchases within 3 months. Your offer may be lower, or you may not qualify.",
+  "signup_bonus_spend": 15000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "points",
@@ -30,20 +33,26 @@
     "Welcome offers vary by applicant; no maximum offer is guaranteed."
   ],
   "application_url": "https://www.americanexpress.com/us/credit-cards/card/business-gold-card/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_url": "https://apply.americanexpress.com/en-us/business/credit-cards/campaign/home/compare/",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+  "source_checked": "2026-09-24",
   "verified_fields": [
     "annual_fee",
-    "perks",
+    "apr_purchase",
     "drawbacks",
+    "foreign_tx_fee",
+    "perks",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
   ],
   "rewards_summary": "4x in your top two eligible categories on first $150,000 combined/calendar year",
   "rewards_status": "available",
@@ -52,9 +61,71 @@
       "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
-        "rewards_status"
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_purchase",
+        "foreign_tx_fee",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "balance_transfer_fee",
+        "cash_advance_fee"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_purchase": {
+      "status": "confirmed",
+      "text": "17.74%–28.49% variable for eligible Pay Over Time charges; other charges are due in full",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/american-express-business-gold-card-amex/",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "not_listed",
+      "text": "No cash-advance terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "not_listed",
+      "text": "No cash-advance terms listed in the standard card agreement",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.americanexpress.com/content/dam/amex/en-us/company/legal/cardmember-agreements/public-site-2026-q2-pdf-cmas/sbs-small-business/business-gold-06-30-2026.pdf",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available"
 }

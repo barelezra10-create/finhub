@@ -16,7 +16,7 @@
   "apr_balance_transfer": null,
   "apr_cash_advance": 22.49,
   "annual_fee": 49,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0.03,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
@@ -30,18 +30,79 @@
     "Cash advances cost $10 or 3%, whichever is greater, in addition to interest."
   ],
   "application_url": "https://www.firstprogress.com/?page=more_cards",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
   "source_url": "https://www.firstprogress.com/?page=more_cards",
-  "source_checked": "2026-09-12",
+  "source_checked": "2026-09-24",
   "verified_fields": [
-    "apr_purchase",
+    "annual_fee",
     "apr_cash_advance",
+    "apr_purchase",
+    "calculator_eligible",
     "drawbacks",
-    "annual_fee"
-  ]
+    "foreign_tx_fee",
+    "rewards_summary"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "signup_bonus"
+      ]
+    },
+    {
+      "url": "https://firstprogress.com/?page=benefits",
+      "checked": "2026-09-24",
+      "fields": [
+        "calculator_eligible",
+        "rewards_summary"
+      ]
+    }
+  ],
+  "term_details": {
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "3% of each advance, $10 minimum",
+      "source_url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the reviewed standard agreement",
+      "source_url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the reviewed standard agreement",
+      "source_url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed in the reviewed offer",
+      "source_url": "https://www.firstprogress.com/documents/terms/RFCL_202602FPP_2.pdf",
+      "checked": "2026-09-24"
+    }
+  },
+  "rewards_summary": "1% cash back on qualifying payments to your card account"
 }

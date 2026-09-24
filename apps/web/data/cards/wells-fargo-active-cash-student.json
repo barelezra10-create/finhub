@@ -24,14 +24,15 @@
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
-  "application_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
-  "last_updated": "2026-09-12",
+  "application_url": "https://www.wellsfargo.com/credit-cards/documents/active-cash-terms/",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "We could not substantiate a distinct Active Cash Student product from the linked issuer page. It is excluded from current comparisons; see Wells Fargo for its current card lineup.",
+  "availability": "retired",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "We could not substantiate a separate Active Cash Student card. This duplicate listing is excluded from current-card comparisons. The standard Wells Fargo Active Cash card has its own verified listing.",
   "source_checked": "2026-09-12",
   "source_url": "https://www.wellsfargo.com/credit-cards/active-cash/",
-  "verified_fields": []
+  "verified_fields": [],
+  "term_sources": []
 }

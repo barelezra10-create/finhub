@@ -13,11 +13,14 @@
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 19.49,
+    "max": 28.49
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 95,
   "foreign_tx_fee": 0,
-  "balance_transfer_fee": null,
+  "balance_transfer_fee": 0,
   "signup_bonus": "75,000 miles after $4,000 in purchases within 3 months, plus $300 for hotel and vacation rental bookings through Capital One Travel in the first cardholder year. Limited-time offer.",
   "signup_bonus_spend": 4000,
   "signup_bonus_value_usd": null,
@@ -30,23 +33,26 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.capitalone.com/credit-cards/venture/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.capitalone.com/credit-cards/venture/",
   "verified_fields": [
     "annual_fee",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_purchase",
+    "balance_transfer_fee",
     "foreign_tx_fee",
-    "rewards_summary",
+    "perks",
     "rewards_status",
+    "rewards_summary",
     "signup_bonus",
-    "signup_bonus_spend",
-    "perks"
+    "signup_bonus_spend"
   ],
   "rewards_summary": "5x hotels, vacation rentals and rental cars via Capital One Travel; 2x elsewhere",
   "rewards_status": "available",
@@ -55,12 +61,46 @@
       "url": "https://www.capitalone.com/credit-cards/venture/",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
+        "perks",
         "rewards_status",
+        "rewards_summary",
         "signup_bonus",
-        "signup_bonus_spend",
-        "perks"
+        "signup_bonus_spend"
+      ]
+    },
+    {
+      "url": "https://www.capitalone.com/credit-cards/venture/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "No fee at the standard transfer APR; 4% on promotional-rate transfers",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $5 minimum",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "checked": "2026-09-24"
+    }
+  }
 }

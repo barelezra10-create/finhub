@@ -7,13 +7,16 @@
     "no-credit",
     "cashback"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 28.24,
+    "max": 30.24
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
   "apr_cash_advance": null,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
@@ -27,32 +30,97 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.petalcard.com/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "annual_fee_note": "Terms may differ for members acquired before May 16, 2023.",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "annual_fee_note": "These are current new-account terms. Accounts acquired before May 16, 2023 may have different fees.",
   "source_url": "https://www.petalcard.com/",
-  "source_checked": "2026-09-12",
+  "source_checked": "2026-09-24",
   "verified_fields": [
-    "annual_fee_note",
-    "perks",
     "annual_fee",
-    "rewards_summary",
-    "rewards_status"
+    "annual_fee_note",
+    "apr_purchase",
+    "calculator_eligible",
+    "foreign_tx_fee",
+    "perks",
+    "rewards_status",
+    "rewards_summary"
   ],
-  "rewards_summary": "1%–1.5% cash back, subject to program requirements",
+  "rewards_summary": "1% cash back on eligible purchases, rising to 1.5% with qualifying on-time payments; select merchant offers available",
   "rewards_status": "available",
   "term_sources": [
     {
       "url": "https://www.petalcard.com/",
       "checked": "2026-09-12",
       "fields": [
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.petalcard.com/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "annual_fee_note",
+        "apr_intro",
+        "apr_purchase",
+        "calculator_eligible",
+        "foreign_tx_fee",
         "rewards_summary",
-        "rewards_status"
+        "signup_bonus"
+      ]
+    },
+    {
+      "url": "https://cdn.tilt.com/legal/Petal%202%20Visa%20L%20Credit%20Card.pdf",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "balance_transfer_fee",
+        "cash_advance_fee"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "apr_balance_transfer": {
+      "status": "not_offered",
+      "text": "Balance transfers are not supported",
+      "source_url": "https://cdn.tilt.com/legal/Petal%202%20Visa%20L%20Credit%20Card.pdf",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_offered",
+      "text": "Balance transfers are not supported",
+      "source_url": "https://cdn.tilt.com/legal/Petal%202%20Visa%20L%20Credit%20Card.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "not_offered",
+      "text": "Cash advances are not supported",
+      "source_url": "https://cdn.tilt.com/legal/Petal%202%20Visa%20L%20Credit%20Card.pdf",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "not_offered",
+      "text": "Cash advances are not supported",
+      "source_url": "https://cdn.tilt.com/legal/Petal%202%20Visa%20L%20Credit%20Card.pdf",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.petalcard.com/",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.petalcard.com/",
+      "checked": "2026-09-24"
+    }
+  }
 }

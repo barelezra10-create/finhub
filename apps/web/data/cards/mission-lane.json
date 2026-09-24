@@ -6,7 +6,10 @@
   "category": [
     "rebuilding"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.99,
+    "max": 33.99
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
@@ -24,10 +27,96 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.missionlane.com/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.missionlane.com/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_purchase"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "signup_bonus"
+      ]
+    },
+    {
+      "url": "https://www.missionlane.com/",
+      "checked": "2026-09-24",
+      "fields": [
+        "rewards"
+      ]
+    }
+  ],
+  "term_details": {
+    "annual_fee": {
+      "status": "offer_specific",
+      "text": "$0–$59, depending on your offer",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "offer_specific",
+      "text": "19.99%–33.99% variable, depending on your offer",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "foreign_tx_fee": {
+      "status": "offer_specific",
+      "text": "0%–3%, depending on your offer",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "8% of each advance, $5 minimum",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "rewards": {
+      "status": "offer_specific",
+      "text": "Rewards depend on the Mission Lane product offered; Green Line, Silver Line and Gold Line have different benefits.",
+      "source_url": "https://www.missionlane.com/",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the reviewed standard agreement",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the reviewed standard agreement",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed in the reviewed offer",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.missionlane.com/legal/the-mission-lane-visa-credit-card-issued-by-webbank",
+      "checked": "2026-09-24"
+    }
+  }
 }

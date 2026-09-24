@@ -25,7 +25,7 @@ export function loadCard(slug: string): CardData | null {
 }
 
 export function cardsByCategory(category: SyntheticCategory): CardData[] {
-  return loadCards().filter((c) => c.availability !== "retired" && c.slug !== "wells-fargo-active-cash-student" && cardCategories(c).includes(category));
+  return loadCards().filter((c) => c.availability === "listed" && cardCategories(c).includes(category));
 }
 
 export function relatedCards(card: CardData, limit = 4): CardData[] {

@@ -13,13 +13,16 @@
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 19.74,
+    "max": 28.24
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 150,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0.05,
+  "signup_bonus": "50,000 miles after $3,000 in purchases within 3 months; another 10,000 miles for adding an authorized user within 3 months. Eligibility restrictions apply.",
+  "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
   "rewards": {},
   "rewards_type": "miles",
@@ -28,21 +31,29 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "annual_fee_note": "$0 introductory annual fee for the first year, then $150.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "annual_fee_note": "$0 introductory annual fee for the first year; $150 thereafter.",
+  "source_checked": "2026-09-24",
   "source_url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
   "verified_fields": [
     "annual_fee",
     "annual_fee_note",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
   ],
   "rewards_summary": "3x eligible United purchases; 2x dining and direct hotel bookings",
   "rewards_status": "available",
@@ -51,9 +62,55 @@
       "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
-        "rewards_status"
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC62176.html",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "annual_fee_note",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee"
+      ]
+    },
+    {
+      "url": "https://creditcards.chase.com/travel-credit-cards/united/united-explorer",
+      "checked": "2026-09-24",
+      "fields": [
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "5% of each transfer, $5 minimum. Transfers subject to eligibility.",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC62176.html",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC62176.html",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC62176.html",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available"
 }

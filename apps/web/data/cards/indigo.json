@@ -6,13 +6,16 @@
   "category": [
     "rebuilding"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 35.9,
+    "max": 35.9
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_cash_advance": 35.9,
   "annual_fee": null,
-  "foreign_tx_fee": null,
+  "foreign_tx_fee": 0.01,
   "balance_transfer_fee": null,
   "signup_bonus": null,
   "signup_bonus_spend": null,
@@ -24,10 +27,94 @@
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.indigocard.com/",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.indigocard.com/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_cash_advance",
+    "apr_purchase",
+    "calculator_eligible",
+    "foreign_tx_fee"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "calculator_eligible",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "rewards",
+        "signup_bonus"
+      ]
+    }
+  ],
+  "term_details": {
+    "annual_fee": {
+      "status": "offer_specific",
+      "text": "Example public $300-limit offer: $35 first year, then $99 annually; no monthly fee. Other offers may differ.",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "apr_purchase": {
+      "status": "offer_specific",
+      "text": "35.9% fixed in the cited example offer; your offer may differ",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "offer_specific",
+      "text": "35.9% fixed in the cited example offer; your offer may differ",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "offer_specific",
+      "text": "5%, $5 minimum and $100 maximum, in the cited example offer",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the cited example offer",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_listed",
+      "text": "No balance-transfer terms listed in the cited example offer",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No welcome bonus listed in the cited example offer",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    },
+    "rewards": {
+      "status": "offer_specific",
+      "text": "Rewards vary by offer; the cited basic offer does not list a rewards program.",
+      "source_url": "https://www.indigocard.com/apply-form?CID=359300669&mmcid=IAAG00724062001&subid=51505585157",
+      "checked": "2026-09-24"
+    }
+  }
 }

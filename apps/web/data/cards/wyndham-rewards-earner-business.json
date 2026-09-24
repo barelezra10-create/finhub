@@ -8,28 +8,112 @@
     "business",
     "rewards"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 19.49,
+    "max": 29.49
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
-  "annual_fee": null,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
+  "apr_balance_transfer": {
+    "min": 19.49,
+    "max": 29.49
+  },
+  "apr_cash_advance": 29.74,
+  "annual_fee": 149,
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0.03,
+  "signup_bonus": "45,000 points after $3,000 in purchases and payment of the annual fee within 90 days; another 55,000 after $500 in eligible Wyndham hotel purchases within 180 days. Separate requirements apply.",
+  "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
-  "rewards": {},
+  "rewards": {
+    "other": 1
+  },
   "rewards_type": "points",
   "points_value_cents": null,
   "credit_score_required": null,
   "perks": [],
   "drawbacks": [],
   "application_url": "https://www.wyndhamhotels.com/wyndham-rewards/credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
-  "availability": "unconfirmed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Current terms could not be fully confirmed. Missing fields mean unverified, not zero or no fee. Check the issuer\u2019s disclosures before applying."
+  "availability": "listed",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.wyndhamrewardscreditcard.com/earner-business-card/",
+  "verified_fields": [
+    "annual_fee",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "calculator_eligible",
+    "foreign_tx_fee",
+    "intro_terms",
+    "rewards",
+    "rewards_status",
+    "rewards_summary",
+    "rewards_type",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48371",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "calculator_eligible",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "rewards",
+        "rewards_status",
+        "rewards_summary",
+        "rewards_type",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.wyndhamrewardscreditcard.com/earner-business-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_intro"
+      ]
+    }
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% of each transfer, $5 minimum; subject to eligibility",
+      "source_url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48371",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "3% of each advance, $10 minimum",
+      "source_url": "https://www.barclaycardus.com/applycontent/TnCs.jsp?tc48371",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% for 6 billing cycles on qualifying Wyndham timeshare down payments only; regular variable APR afterward. Other purchases do not qualify.",
+      "source_url": "https://www.wyndhamrewardscreditcard.com/earner-business-card/",
+      "checked": "2026-09-24"
+    }
+  },
+  "rewards_summary": "8x eligible Wyndham hotel purchases; 5x gas/EV charging and eligible business categories; 1x other purchases",
+  "rewards_status": "available",
+  "intro_terms": "0% for 6 billing cycles on qualifying Wyndham timeshare down payments only; regular variable APR afterward. Other purchases do not qualify.",
+  "welcome_offer_status": "available"
 }

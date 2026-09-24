@@ -13,11 +13,14 @@
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 19.49,
+    "max": 27.99
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 795,
   "foreign_tx_fee": 0,
-  "balance_transfer_fee": null,
+  "balance_transfer_fee": 0.05,
   "signup_bonus": "100,000 points after $6,000 in purchases in the first 3 months",
   "signup_bonus_spend": 6000,
   "signup_bonus_value_usd": null,
@@ -41,24 +44,28 @@
     "Welcome offer eligibility restrictions apply."
   ],
   "application_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
   "verified_fields": [
     "annual_fee",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_purchase",
+    "balance_transfer_fee",
+    "drawbacks",
     "foreign_tx_fee",
-    "signup_bonus",
-    "signup_bonus_spend",
-    "rewards",
-    "points_value_cents",
     "perks",
-    "drawbacks"
+    "points_value_cents",
+    "rewards",
+    "rewards_summary",
+    "signup_bonus",
+    "signup_bonus_spend"
   ],
   "term_sources": [
     {
@@ -70,6 +77,48 @@
         "signup_bonus",
         "signup_bonus_spend"
       ]
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC64842.html",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee"
+      ]
+    },
+    {
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "checked": "2026-09-24",
+      "fields": [
+        "rewards_summary"
+      ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "5% of each transfer, $5 minimum. Transfers subject to eligibility.",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC64842.html",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC64842.html",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC64842.html",
+      "checked": "2026-09-24"
+    }
+  },
+  "rewards_summary": "8x Chase Travel; 4x flights and hotels booked directly; 3x dining; 1x other purchases"
 }

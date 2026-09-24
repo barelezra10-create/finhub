@@ -7,17 +7,23 @@
     "cashback",
     "balance-transfer"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_purchase": {
+    "min": 18.49,
+    "max": 28.74
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 18,
+  "apr_balance_transfer": {
+    "min": 18.49,
+    "max": 28.74
+  },
+  "apr_cash_advance": 29.99,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
-  "signup_bonus_spend": null,
-  "signup_bonus_value_usd": null,
+  "foreign_tx_fee": 0.03,
+  "balance_transfer_fee": 0.05,
+  "signup_bonus": "$200 after $1,500 in purchases within the first 6 months of account opening. New-account bonus eligibility restrictions apply.",
+  "signup_bonus_spend": 1500,
+  "signup_bonus_value_usd": 200,
   "rewards": {
     "other": 2
   },
@@ -29,21 +35,33 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": true,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
   "verified_fields": [
     "annual_fee",
-    "rewards",
-    "rewards_type",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "intro_terms",
     "perks",
+    "rewards",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "rewards_type",
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
   ],
   "rewards_summary": "2% total cash back: 1% when buying + 1% as you pay",
   "rewards_status": "available",
@@ -52,8 +70,8 @@
       "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
       "checked": "2026-09-12",
       "fields": [
-        "rewards_summary",
-        "rewards_status"
+        "rewards_status",
+        "rewards_summary"
       ]
     },
     {
@@ -63,6 +81,48 @@
         "rewards",
         "rewards_summary"
       ]
+    },
+    {
+      "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "3% ($5 minimum) for transfers completed within 4 months; then 5% ($5 minimum)",
+      "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on balance transfers for 18 months from account opening, for transfers completed within 4 months. Regular variable APR afterward. No purchase intro APR.",
+      "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "checked": "2026-09-24"
+    }
+  },
+  "intro_terms": "0% on balance transfers for 18 months from account opening, for transfers completed within 4 months. Regular variable APR afterward. No purchase intro APR.",
+  "welcome_offer_status": "available"
 }

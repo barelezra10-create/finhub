@@ -7,13 +7,12 @@ import { Plus, Search, X } from "lucide-react";
 import { CardArt } from "@/components/card-art";
 import {
   bestRewardEntries,
+  cardTerm,
+  missingCardTerms,
   cardCategories,
   CATEGORY_LABEL,
   fullCardName,
-  formatAnnualFee,
-  formatAprRange,
-  formatFeePct,
-  formatPct,
+  annualFeeLabel,
   SYNTHETIC_CATEGORIES,
   topRewardRate,
   welcomeOffer,
@@ -53,7 +52,7 @@ const USD = new Intl.NumberFormat("en-US", {
 });
 
 function formatUSD(n: number | null | undefined): string {
-  if (n == null) return "Not verified";
+  if (n == null) return "—";
   return USD.format(n);
 }
 
@@ -472,7 +471,7 @@ function CardPickerModal({
                       </div>
                       <div className="shrink-0 text-right">
                         <div className="font-mono tabular text-xs font-semibold text-ink">
-                          {formatAnnualFee(c.annual_fee)}
+                          {annualFeeLabel(c)}
                         </div>
                         <div className="text-[10px] font-mono uppercase tracking-wider text-mute">
                           {disabled ? "Already picked" : "annual fee"}
@@ -509,53 +508,50 @@ type InfoRow = {
 const COMPARABLE_ROWS: ComparableRow[] = [
   {
     label: "Annual fee",
-    render: (c) => formatAnnualFee(c.annual_fee),
+    render: (c) => annualFeeLabel(c),
     extract: (c) => c.annual_fee,
     direction: "lowest",
   },
   {
     label: "Bonus spend required",
     render: (c) =>
-      c.signup_bonus_spend != null ? `${formatUSD(c.signup_bonus_spend)} — see offer deadline` : c.welcome_offer_status === "none" ? "Not applicable" : "Not verified",
+      c.signup_bonus_spend != null ? `${formatUSD(c.signup_bonus_spend)} — see offer deadline` : c.welcome_offer_status === "none" ? "Not applicable" : "See welcome offer",
     extract: (c) => c.signup_bonus_spend ?? null,
     direction: "lowest",
   },
   {
     label: "Purchase APR",
-    render: (c) => formatAprRange(c.apr_purchase),
+    render: (c) => cardTerm(c, "apr_purchase") || "—",
     extract: (c) => c.apr_purchase?.min ?? null,
     direction: "lowest",
   },
   {
     label: "Intro APR",
-    render: (c) =>
-      c.apr_intro === 0 && c.apr_intro_months > 0
-        ? `0% for ${c.apr_intro_months} mo`
-        : "Not verified",
+    render: (c) => cardTerm(c, "apr_intro") || "—",
     extract: (c) => (c.apr_intro === 0 && c.apr_intro_months > 0 ? c.apr_intro_months : null),
     direction: "highest",
   },
   {
     label: "Balance transfer APR",
-    render: (c) => formatAprRange(c.apr_balance_transfer),
+    render: (c) => cardTerm(c, "apr_balance_transfer") || "—",
     extract: (c) => c.apr_balance_transfer?.min ?? null,
     direction: "lowest",
   },
   {
     label: "Balance transfer fee",
-    render: (c) => formatFeePct(c.balance_transfer_fee),
+    render: (c) => cardTerm(c, "balance_transfer_fee") || "—",
     extract: (c) => c.balance_transfer_fee ?? null,
     direction: "lowest",
   },
   {
     label: "Foreign transaction fee",
-    render: (c) => formatFeePct(c.foreign_tx_fee),
+    render: (c) => cardTerm(c, "foreign_tx_fee") || "—",
     extract: (c) => c.foreign_tx_fee ?? null,
     direction: "lowest",
   },
   {
     label: "Cash advance APR",
-    render: (c) => formatPct(c.apr_cash_advance),
+    render: (c) => cardTerm(c, "apr_cash_advance") || "—",
     extract: (c) => c.apr_cash_advance ?? null,
     direction: "lowest",
   },
@@ -563,7 +559,8 @@ const COMPARABLE_ROWS: ComparableRow[] = [
 
 const INFO_ROWS: InfoRow[] = [
 
-  {label:"Intro offer conditions",render:c=>c.intro_terms || "Not verified"},
+  {label:"Cash advance fee",render:c=>cardTerm(c, "cash_advance_fee") || "—"},
+  {label:"Details still to confirm",render:c=>missingCardTerms(c).join(", ") || "All rate and fee rows have issuer details"},
   {label:"Selected facts checked",render:c=>c.source_checked || "Unconfirmed"},
   {
     label: "Top reward",
@@ -583,24 +580,6 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
   const filled = cards.filter((c): c is CardData => Boolean(c));
   if (filled.length < 2) return null;
 
-  function winnerSlug(row: ComparableRow): string | null {
-    const values = filled.map((c) => ({ slug: c.slug, value: row.extract(c) }));
-    const allSame = values.every((v) => v.value === values[0]!.value);
-    if (allSame) return null;
-    // Filter out null values
-    const valid = values.filter(
-      (v): v is { slug: string; value: number } =>
-        v.value != null && Number.isFinite(v.value),
-    );
-    if (valid.length !== filled.length) return null;
-    const target =
-      row.direction === "lowest"
-        ? Math.min(...valid.map((v) => v.value))
-        : Math.max(...valid.map((v) => v.value));
-    // For "highest" rows, do not crown a zero (e.g. no signup bonus) as winner
-    if (row.direction === "highest" && target <= 0) return null;
-    return valid.find((v) => v.value === target)?.slug ?? null;
-  }
 
   return (
     <div>
@@ -611,7 +590,7 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
           The comparison.
         </h2>
         <p className="text-mute mt-2 text-sm">
-          Choose your own cards above or use a popular comparison. Lime highlights compare confirmed numbers only. “Not verified” means we have not confirmed that term; it does not mean the card has no offer or fee.
+          Choose your own cards above or use a popular comparison. A dash means we could not establish that term from the public sources reviewed; it does not mean zero. Offer-specific conditions and deadlines are included below.
         </p>
       </div>
 
@@ -661,8 +640,8 @@ function ComparisonTable({ cards }: { cards: (CardData | null)[] }) {
                 <th scope="row" className="text-left bg-bg-soft/50 px-4 py-3 font-mono text-[10px] uppercase tracking-wider text-mute align-top">Welcome offer</th>
                 {cards.map((c, i) => <td key={i} className="border-l border-line px-4 py-3 align-top">{c ? welcomeOffer(c) : "—"}</td>)}
               </tr>
-              {COMPARABLE_ROWS.map((row) => {
-                const winner = winnerSlug(row);
+              {COMPARABLE_ROWS.filter(row => filled.some(c => row.render(c) !== "—")).map((row) => {
+                const winner: string | null = null;
                 return (
                   <tr key={row.label} className="border-b border-line-soft last:border-0">
                     <th

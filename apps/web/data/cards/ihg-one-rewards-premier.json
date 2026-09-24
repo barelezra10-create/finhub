@@ -13,11 +13,14 @@
   },
   "apr_intro": null,
   "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_balance_transfer": {
+    "min": 19.24,
+    "max": 27.74
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 99,
   "foreign_tx_fee": 0,
-  "balance_transfer_fee": null,
+  "balance_transfer_fee": 0.05,
   "signup_bonus": "140,000 points after $3,000 in purchases in the first 3 months. Bonus eligibility restrictions apply.",
   "signup_bonus_spend": 3000,
   "signup_bonus_value_usd": null,
@@ -31,42 +34,81 @@
   ],
   "drawbacks": [],
   "application_url": "https://creditcards.chase.com/travel-credit-cards/ihg/premier",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Selected fees, rewards and welcome offer confirmed at the linked issuer page. Other terms remain unverified; offers can change.",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
   "rewards_summary": "10x card points at IHG; 5x travel, dining and gas; 3x elsewhere",
   "rewards_status": "available",
   "verified_fields": [
-    "rewards_summary",
-    "rewards_status",
     "annual_fee",
+    "apr_balance_transfer",
+    "apr_cash_advance",
     "apr_purchase",
-    "foreign_tx_fee",
-    "signup_bonus",
-    "signup_bonus_spend",
-    "perks",
+    "audit_note",
     "availability",
-    "audit_note"
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "perks",
+    "rewards_status",
+    "rewards_summary",
+    "signup_bonus",
+    "signup_bonus_spend"
   ],
   "term_sources": [
     {
       "url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
       "checked": "2026-09-20",
       "fields": [
-        "rewards_summary",
-        "rewards_status",
         "annual_fee",
         "apr_purchase",
-        "foreign_tx_fee",
-        "signup_bonus",
-        "signup_bonus_spend",
-        "perks",
+        "audit_note",
         "availability",
-        "audit_note"
+        "foreign_tx_fee",
+        "perks",
+        "rewards_status",
+        "rewards_summary",
+        "signup_bonus",
+        "signup_bonus_spend"
+      ]
+    },
+    {
+      "url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC60778.html",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee"
       ]
     }
-  ]
+  ],
+  "source_checked": "2026-09-24",
+  "source_url": "https://creditcards.chase.com/travel-credit-cards/ihg-rewards-club/premier",
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "5% of each transfer, $5 minimum. Transfers subject to eligibility.",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC60778.html",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC60778.html",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://sites.chase.com/services/creatives/pricingandterms.html/content/dam/pricingandterms/LGC60778.html",
+      "checked": "2026-09-24"
+    }
+  }
 }

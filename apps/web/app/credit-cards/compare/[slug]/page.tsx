@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cardComparisons, CARD_COMPARISON_DATE } from "@/lib/card-comparisons";
 import { loadCard } from "@/lib/cards-server";
-import { formatAnnualFee, formatAprRange, fullCardName, topRewardRate, welcomeOffer } from "@/lib/cards";
+import { annualFeeLabel, cardTerm, fullCardName, topRewardRate, welcomeOffer } from "@/lib/cards";
 import { CardArt } from "@/components/card-art";
 import { BreadcrumbListSchema, FAQPageSchema } from "@/components/schemas";
 
@@ -21,10 +21,10 @@ export default async function Page({ params }: Props) {
   const cards = c.cards.map(s => loadCard(s)!);
   const path = `/credit-cards/compare/${c.slug}`;
   const rows = [
-    { label: "Annual fee", values: cards.map(card => formatAnnualFee(card.annual_fee)) },
+    { label: "Annual fee", values: cards.map(card => annualFeeLabel(card)) },
     { label: "Rewards", values: cards.map(topRewardRate) },
     { label: "Welcome offer", values: cards.map(welcomeOffer) },
-    { label: "Purchase APR", values: cards.map(card => formatAprRange(card.apr_purchase)) },
+    { label: "Purchase APR", values: cards.map(card => cardTerm(card, "apr_purchase") || "—") },
   ];
   return <article className="max-w-(--max-w-page) mx-auto px-6 py-12">
     <BreadcrumbListSchema items={[{ name: "Home", href: "/" }, { name: "Credit cards", href: "/credit-cards" }, { name: "Compare", href: "/credit-cards/compare" }, { name: c.title, href: path }]} />

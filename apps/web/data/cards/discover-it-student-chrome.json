@@ -7,15 +7,21 @@
     "student",
     "cashback"
   ],
-  "apr_purchase": null,
-  "apr_intro": null,
-  "apr_intro_months": 0,
-  "apr_balance_transfer": null,
-  "apr_cash_advance": null,
+  "apr_purchase": {
+    "min": 16.49,
+    "max": 25.49
+  },
+  "apr_intro": 0,
+  "apr_intro_months": 6,
+  "apr_balance_transfer": {
+    "min": 16.49,
+    "max": 25.49
+  },
+  "apr_cash_advance": 28.49,
   "annual_fee": 0,
-  "foreign_tx_fee": null,
-  "balance_transfer_fee": null,
-  "signup_bonus": null,
+  "foreign_tx_fee": 0,
+  "balance_transfer_fee": 0,
+  "signup_bonus": "Discover matches the cash back earned during your first year, with no maximum. New cardmembers only; match is paid after the first year.",
   "signup_bonus_spend": null,
   "signup_bonus_value_usd": null,
   "rewards": {},
@@ -27,31 +33,93 @@
   ],
   "drawbacks": [],
   "application_url": "https://www.discover.com/credit-cards/student-credit-card/",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "source_checked": "2026-09-12",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.discover.com/credit-cards/student-credit-card/",
   "verified_fields": [
     "annual_fee",
     "application_url",
+    "apr_balance_transfer",
+    "apr_cash_advance",
+    "apr_intro",
+    "apr_intro_months",
+    "apr_purchase",
+    "balance_transfer_fee",
+    "foreign_tx_fee",
+    "intro_terms",
     "perks",
+    "rewards_status",
     "rewards_summary",
-    "rewards_status"
+    "signup_bonus",
+    "signup_bonus_spend",
+    "signup_bonus_value_usd",
+    "welcome_offer_status"
   ],
-  "rewards_summary": "2% gas and dining on first $1,000 combined/quarter; 1% thereafter",
+  "rewards_summary": "2% at gas stations and restaurants on up to $1,000 combined each quarter; 1% on other purchases",
   "rewards_status": "available",
   "term_sources": [
     {
       "url": "https://www.discover.com/credit-cards/student-credit-card/",
       "checked": "2026-09-12",
       "fields": [
+        "rewards_status",
+        "rewards_summary"
+      ]
+    },
+    {
+      "url": "https://www.discover.com/credit-cards/student-credit-card/",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "apr_intro_months",
+        "apr_purchase",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee",
+        "intro_terms",
         "rewards_summary",
-        "rewards_status"
+        "signup_bonus",
+        "signup_bonus_spend",
+        "signup_bonus_value_usd",
+        "welcome_offer_status"
+      ]
+    },
+    {
+      "url": "https://www.discover.com/credit-cards/card-smarts/discover-cards-acceptance/",
+      "checked": "2026-09-24",
+      "fields": [
+        "foreign_tx_fee"
       ]
     }
-  ]
+  ],
+  "term_details": {
+    "balance_transfer_fee": {
+      "status": "confirmed",
+      "text": "No fee at the standard transfer APR; 5% on promotional-rate transfers",
+      "source_url": "https://www.discover.com/credit-cards/student-credit-card/",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "confirmed",
+      "text": "5% of each advance, $10 minimum",
+      "source_url": "https://www.discover.com/credit-cards/student-credit-card/",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "confirmed",
+      "text": "0% on purchases for 6 months; then the regular variable APR applies. Transfers have the standard variable APR.",
+      "source_url": "https://www.discover.com/credit-cards/student-credit-card/",
+      "checked": "2026-09-24"
+    }
+  },
+  "welcome_offer_status": "available",
+  "intro_terms": "0% on purchases for 6 months; then the regular variable APR applies. Transfers have the standard variable APR."
 }

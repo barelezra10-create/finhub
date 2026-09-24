@@ -7,7 +7,10 @@
     "secured",
     "rebuilding"
   ],
-  "apr_purchase": null,
+  "apr_purchase": {
+    "min": 27.49,
+    "max": 27.49
+  },
   "apr_intro": null,
   "apr_intro_months": 0,
   "apr_balance_transfer": null,
@@ -27,18 +30,87 @@
     "Requires a security deposit of at least $100. Approval is subject to eligibility requirements."
   ],
   "application_url": "https://www.self.inc/visa-secured-credit-card",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-24",
   "rating": null,
   "calculator_eligible": false,
   "availability": "listed",
-  "audit_attempted": "2026-09-12",
-  "audit_note": "Only the facts shown below were confirmed at the linked official source. Other terms remain unverified; offers may change or vary by applicant.",
-  "annual_fee_note": "New customers pay no annual fee in the first year; the standard annual fee applies thereafter.",
+  "audit_attempted": "2026-09-24",
+  "audit_note": "Issuer product information and available pricing disclosures reviewed. Terms below apply to the cited public offer; personalized offers and existing accounts can differ.",
+  "annual_fee_note": "$0 introductory annual fee for new customers in year one; $25 thereafter. Refundable security deposit of at least $100.",
   "source_url": "https://www.self.inc/visa-secured-credit-card",
-  "source_checked": "2026-09-12",
+  "source_checked": "2026-09-24",
   "verified_fields": [
+    "annual_fee",
     "annual_fee_note",
-    "drawbacks",
-    "annual_fee"
-  ]
+    "apr_purchase",
+    "drawbacks"
+  ],
+  "term_sources": [
+    {
+      "url": "https://www.self.inc/visa-secured-credit-card",
+      "checked": "2026-09-24",
+      "fields": [
+        "annual_fee",
+        "annual_fee_note",
+        "apr_purchase",
+        "signup_bonus"
+      ]
+    },
+    {
+      "url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24",
+      "fields": [
+        "apr_balance_transfer",
+        "apr_cash_advance",
+        "apr_intro",
+        "balance_transfer_fee",
+        "cash_advance_fee",
+        "foreign_tx_fee"
+      ]
+    }
+  ],
+  "term_details": {
+    "signup_bonus": {
+      "status": "not_listed",
+      "text": "No public welcome bonus listed on the reviewed product page",
+      "source_url": "https://www.self.inc/visa-secured-credit-card",
+      "checked": "2026-09-24"
+    },
+    "apr_balance_transfer": {
+      "status": "not_offered",
+      "text": "Balance transfers are not supported",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    },
+    "balance_transfer_fee": {
+      "status": "not_offered",
+      "text": "Balance transfers are not supported",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    },
+    "apr_cash_advance": {
+      "status": "not_offered",
+      "text": "Cash advances are not supported",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    },
+    "cash_advance_fee": {
+      "status": "not_offered",
+      "text": "Cash advances are not supported",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    },
+    "foreign_tx_fee": {
+      "status": "not_offered",
+      "text": "Purchases are restricted to the United States and U.S. territories",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    },
+    "apr_intro": {
+      "status": "not_listed",
+      "text": "No introductory APR listed in this offer",
+      "source_url": "https://www.self.inc/card-agreement?productUuid=7c8eaebe-907b-4b64-9bb4-7357f2f0f5f0",
+      "checked": "2026-09-24"
+    }
+  }
 }
