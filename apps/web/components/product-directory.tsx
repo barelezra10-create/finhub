@@ -1,0 +1,18 @@
+import Link from 'next/link';
+import { BreadcrumbListSchema } from '@/components/schemas';
+import type { CheckedProductProfile } from '@/components/checked-product-profile';
+export interface DirectoryEntry { name:string; href:string; checked?:string; profile:CheckedProductProfile }
+export function ProductDirectory({title,intro,href,label,entries,questions,links,children}:{
+ title:string; intro:string; href:string; label:string; entries:DirectoryEntry[];
+ questions:{title:string;text:string}[]; links:{href:string;label:string}[]; children?:React.ReactNode;
+}){return <article>
+ <BreadcrumbListSchema items={[{name:'Home',href:'/'},{name:label,href}]} />
+ <section className="relative overflow-hidden border-b border-line bg-bg"><div className="hero-blob hero-blob-1"/><div className="relative max-w-(--max-w-page) mx-auto px-6 py-16 md:py-20">
+ <span className="chip chip-lime mb-6">{label} · Provider sources</span><h1 className="font-display font-extrabold text-4xl md:text-6xl tracking-tight max-w-4xl mb-6">{title}</h1><p className="text-lg md:text-xl text-mute max-w-3xl leading-relaxed mb-8">{intro}</p><div className="flex flex-wrap gap-3"><Link href="#profiles" className="pill pill-ink">Explore {entries.length} profiles ↓</Link>{links.slice(0,1).map(l=><Link className="pill pill-ghost" href={l.href} key={l.href}>{l.label} →</Link>)}</div></div></section>
+ <div className="max-w-(--max-w-page) mx-auto px-6 py-12">
+ <section className="mb-12"><h2 className="font-display font-bold text-3xl mb-6">What to compare</h2><div className="grid md:grid-cols-3 gap-5">{questions.map((q,i)=><div className="card p-6" key={q.title}><span className="chip chip-violet mb-4">0{i+1}</span><h3 className="text-xl font-display font-bold mb-3">{q.title}</h3><p className="text-mute leading-relaxed">{q.text}</p></div>)}</div></section>
+ {children}
+ <section id="profiles"><div className="flex flex-wrap items-end justify-between gap-3 mb-7"><h2 className="font-display font-bold text-3xl">Explore provider profiles</h2><p className="text-sm text-mute">Alphabetical order · Source dates on each profile</p></div><div className="grid lg:grid-cols-2 gap-6">{entries.map(e=><div className="card p-6 md:p-8 flex flex-col" key={e.href}><div className="flex items-start justify-between gap-3"><h3 className="font-display font-bold text-2xl mb-4"><Link className="hover:underline" href={e.href}>{e.name}</Link></h3><span aria-hidden className="text-violet text-2xl">↗</span></div><p className="text-mute leading-relaxed mb-5">{e.profile.summary}</p><dl className="space-y-4 mb-6">{e.profile.facts.slice(0,2).map(f=><div key={f.label}><dt className="font-semibold mb-1">{f.label}</dt><dd className="text-sm text-mute leading-relaxed">{f.text}</dd></div>)}</dl><div className="border-t border-line pt-5 mt-auto flex flex-wrap items-center justify-between gap-3"><span className="text-xs text-mute">Sources checked {e.checked}</span><Link href={e.href} className="u-link font-semibold">Details and sources →</Link></div></div>)}</div></section>
+ <aside className="my-10 p-6 bg-bg border border-line rounded-2xl"><h2 className="font-display font-bold text-xl mb-3">How to use these comparisons</h2><p className="text-mute leading-relaxed max-w-3xl">Each profile links selected details to official provider disclosures. Published ranges, discounts and features have eligibility conditions; the offer or policy available to you may differ. Compare the full terms for your circumstances. <Link className="u-link" href="/editorial-policy">Read our editorial policy</Link>.</p></aside>
+ <nav aria-label="Related tools and guides" className="flex flex-wrap gap-3">{links.map(l=><Link key={l.href} href={l.href} className="pill pill-ghost">{l.label} →</Link>)}</nav>
+ </div></article>}

@@ -2,29 +2,55 @@
   "slug": "prosper-personal-loan",
   "lender": "Prosper",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 8.99, "max": 35.99 },
-  "loan_amount_min": 2000,
-  "loan_amount_max": 50000,
-  "repayment_terms_months": [24, 36, 48, 60],
-  "origination_fee": { "min": 1, "max": 9.99 },
-  "prepayment_penalty": false,
-  "late_fee": "$15 or 5% of unpaid installment (whichever is greater)",
-  "funding_speed": "1-3 business days",
-  "credit_score_required": { "min": 560, "recommended": 640 },
-  "best_for": "Peer-to-peer lending, fair credit",
-  "perks": [
-    "One of the original peer-to-peer lenders, established since 2005",
-    "Accepts credit scores from 560",
-    "Joint loan applications accepted",
-    "Soft credit pull for pre-qualification",
-    "No prepayment penalty"
-  ],
-  "drawbacks": [
-    "Origination fee of 1-9.99%",
-    "Funding can take up to 3 business days",
-    "Rates on the higher end for fair credit borrowers"
-  ],
   "application_url": "https://www.prosper.com/personal-loans",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.prosper.com/personal-loans",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Personal loans made by WebBank through Prosper, with fee and funding conditions.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Personal loans made by WebBank through Prosper, with fee and funding conditions.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Who lends?",
+        "text": "WebBank makes the personal loans offered through Prosper. The page describes these loans as unsecured.",
+        "source": "main"
+      },
+      {
+        "label": "APR and terms",
+        "text": "Advertised APRs are 8.99%\u201335.99% with terms of two to six years. The lowest rates are reserved for the most creditworthy applicants.",
+        "source": "main"
+      },
+      {
+        "label": "Origination fee",
+        "text": "The published fee is 1%\u20139.99%. The fee reduces proceeds, so compare the amount received with the amount borrowed.",
+        "source": "main"
+      },
+      {
+        "label": "Loan limit and approval",
+        "text": "Loans up to $50,000 depend on financial history, income, expenses and other factors. Approval is not guaranteed and funding requires sufficient investor commitments.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://www.prosper.com/personal-loans"
+      }
+    ]
+  }
 }

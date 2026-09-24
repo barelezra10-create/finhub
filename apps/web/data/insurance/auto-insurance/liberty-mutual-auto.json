@@ -1,24 +1,50 @@
 {
   "slug": "liberty-mutual-auto",
   "carrier": "Liberty Mutual",
-  "states_available": "all",
-  "best_for": "Comparing optional coverage and eligible discounts",
-  "coverage_types_offered": [
-    "liability-only",
-    "full-coverage",
-    "minimum-state",
-    "high-value"
-  ],
-  "perks": [
-    "Optional vehicle protection products",
-    "Multi-policy and multi-car discounts, subject to eligibility",
-    "RightTrack driving program; state terms apply"
-  ],
-  "drawbacks": [
-    "Quote required to compare actual cost",
-    "Coverage and discount availability vary",
-    "No independently verified review score assigned"
-  ],
   "quote_url": "https://www.libertymutual.com/auto-insurance",
-  "last_updated": "2026-09-11"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.libertymutual.com/vehicle/auto-insurance",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto insurance with optional driving-based discounts and state-specific terms.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto insurance with optional driving-based discounts and state-specific terms.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Discount categories",
+        "text": "Liberty Mutual advertises violation-free and multi-car discounts. Eligibility and availability vary.",
+        "source": "main"
+      },
+      {
+        "label": "RightTrack",
+        "text": "RightTrack is its driving-based program. Request the state-specific participation and renewal rules before enrolling.",
+        "source": "main"
+      },
+      {
+        "label": "Personalized quote",
+        "text": "The auto page provides an online quote flow. Confirm the coverages, limits, deductibles and full premium in the offer for your vehicle.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.libertymutual.com/vehicle/auto-insurance"
+      }
+    ]
+  }
 }

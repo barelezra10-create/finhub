@@ -6,21 +6,11 @@ const DIR = path.join(process.cwd(), "data/investing/brokerages");
 export interface Brokerage {
   slug: string;
   broker: string;
-  rating: number;
-  best_for: string;
-  perks: string[];
-  drawbacks: string[];
   application_url: string;
-  account_types: string[];
-  asset_classes: string[];
-  commission_stocks: number;
-  commission_options_per_contract: number;
-  commission_mutual_funds: number;
-  fractional_shares_available: boolean;
-  account_minimum: number;
-  research_quality: string;
-  mobile_app_rating: number;
+  best_for: string;
   last_updated: string;
+  source_checked: string;
+  checked_profile: import('@/components/checked-product-profile').CheckedProductProfile;
 }
 
 export function loadBrokerages(): Brokerage[] {
@@ -28,7 +18,8 @@ export function loadBrokerages(): Brokerage[] {
   return fs
     .readdirSync(DIR)
     .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as Brokerage);
+    .map((f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as Brokerage)
+    .sort((a,b) => a.broker.localeCompare(b.broker));
 }
 
 export function loadBrokerage(slug: string): Brokerage | null {

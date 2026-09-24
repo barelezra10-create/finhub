@@ -20,6 +20,11 @@ function listJsonSlugs(dir: string): string[] {
     .map((f) => f.replace(/\.json$/, ""));
 }
 
+function productModified(dir: string, slug: string): string | undefined {
+  const product = JSON.parse(fs.readFileSync(path.join(process.cwd(), dir, `${slug}.json`), "utf8"));
+  return product.last_updated;
+}
+
 function listMdxSlugs(dir: string): string[] {
   const abs = path.join(process.cwd(), dir);
   if (!fs.existsSync(abs)) return [];
@@ -127,12 +132,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const autoInsuranceRoutes = listJsonSlugs("data/insurance/auto-insurance").map((slug) => ({
     url: `/insurance/auto/${slug}`,
+    lastModified: productModified("data/insurance/auto-insurance", slug),
     priority: 0.65,
     changeFrequency: "weekly" as const,
   }));
 
   const homeInsuranceRoutes = listJsonSlugs("data/insurance/home-insurance").map((slug) => ({
     url: `/insurance/home/${slug}`,
+    lastModified: productModified("data/insurance/home-insurance", slug),
     priority: 0.65,
     changeFrequency: "weekly" as const,
   }));
@@ -145,6 +152,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const brokerageRoutes = listJsonSlugs("data/investing/brokerages").map((slug) => ({
     url: `/investing/brokerages/${slug}`,
+    lastModified: productModified("data/investing/brokerages", slug),
     priority: 0.65,
     changeFrequency: "weekly" as const,
   }));
@@ -179,6 +187,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Pillar articles (how-to guides + cornerstones)
   const pillarArticleRoutes = loadAllPillarArticles().map((a) => ({
     url: `/learn/${a.pillar}/${a.slug}`,
+    ...(a.updatedAt ? {lastModified: a.updatedAt} : {}),
     priority: 0.65,
     changeFrequency: "monthly" as const,
   }));
@@ -191,6 +200,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const personalLoanRoutes = listJsonSlugs("data/loans/personal-loans").map((slug) => ({
     url: `/loans/personal/${slug}`,
+    lastModified: productModified("data/loans/personal-loans", slug),
     priority: 0.7,
     changeFrequency: "weekly" as const,
   }));
@@ -240,6 +250,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...("lastModified" in entry && typeof entry.lastModified === "string" ? { lastModified: entry.lastModified } : {}),
     ...(revisedPages.has(entry.url) ? { lastModified: "2026-09-14" } : {}),
     ...(["/", "/reviews/marcus", "/reviews/ally", "/credit-cards/travel", "/credit-cards/cash-back", "/credit-cards/compare"].includes(entry.url) ? {lastModified: "2026-09-23"} : {}),
+    ...(["/calculators/personal-loan-payoff", "/insurance", "/investing", "/loans", "/loans/by-credit-tier", "/loans/debt-consolidation", "/loans/home-improvement", "/loans/medical", "/loans/wedding", "/insurance/auto", "/insurance/home", "/investing/brokerages", "/loans/personal"].includes(entry.url) ? {lastModified: "2026-09-24"} : {}),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }));

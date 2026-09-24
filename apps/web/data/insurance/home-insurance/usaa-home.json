@@ -1,31 +1,60 @@
 {
   "slug": "usaa-home",
   "carrier": "USAA",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1200, "max": 1600 },
-  "bundling_discount_pct": 10,
-  "am_best_rating": "A++",
-  "jd_power_satisfaction": 884,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Military families, top-rated coverage and service",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments", "Military uniform coverage"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Highest JD Power customer satisfaction score in the industry",
-    "Military uniform covered at no extra cost during deployment",
-    "Identity theft protection included at no charge",
-    "Replacement cost coverage for personal property standard",
-    "No deductible for military equipment losses in combat zones",
-    "Extremely competitive premiums for eligible members"
-  ],
-  "drawbacks": [
-    "Eligibility limited to military members, veterans, and their families",
-    "No local agent network for in-person service",
-    "Flood coverage requires separate NFIP or private policy"
-  ],
   "quote_url": "https://www.usaa.com/inet/wc/insurance-home",
-  "rating": 4.7,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.usaa.com/insurance/property/homeowners/coverage/?akredirect=true",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Home coverage with replacement-cost features and membership restrictions.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Home coverage with replacement-cost features and membership restrictions.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Personal property",
+        "text": "USAA describes repairing or replacing belongings after a covered event, up to policy limits. Review replacement requirements and deductibles in the contract.",
+        "source": "main"
+      },
+      {
+        "label": "Liability",
+        "text": "Homeowners liability coverage may help with covered injury or property-damage liability and associated legal costs.",
+        "source": "main"
+      },
+      {
+        "label": "Flood",
+        "text": "The coverage guide says most standard homeowners policies exclude floods. Review separate flood protection for the property.",
+        "source": "main"
+      },
+      {
+        "label": "Eligibility",
+        "text": "USAA property insurance is restricted to eligible property-and-casualty members. Confirm eligibility separately from general membership.",
+        "source": "eligibility"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.usaa.com/insurance/property/homeowners/coverage/?akredirect=true"
+      },
+      {
+        "id": "eligibility",
+        "label": "USAA membership and property-insurance disclosures",
+        "url": "https://www.usaa.com/insurance/vehicles/auto/states/illinois/?akredirect=true"
+      }
+    ]
+  }
 }

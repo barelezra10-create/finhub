@@ -1,30 +1,54 @@
 {
   "slug": "e-trade",
   "broker": "E*TRADE (Morgan Stanley)",
-  "account_types": ["taxable", "ira", "roth-ira", "401k-rollover", "joint", "custodial", "trust"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0.65,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": false,
-  "account_minimum": 0,
-  "research_quality": "excellent",
-  "mobile_app_rating": 4.6,
-  "best_for": "Options traders and Morgan Stanley clients",
-  "asset_classes": ["stocks", "etfs", "options", "mutual-funds", "bonds"],
-  "perks": [
-    "Power E*TRADE platform built for active options trading",
-    "Morgan Stanley research available to all customers",
-    "Paper trading to practice without real money",
-    "Prebuilt and customizable stock screeners",
-    "Strong options analytics and strategy tools"
-  ],
-  "drawbacks": [
-    "No fractional shares",
-    "$0.65/contract options (drops to $0.50 for 30+ trades/quarter)",
-    "Less emphasis on passive/index investing tools",
-    "Some futures require separate application"
-  ],
   "application_url": "https://us.etrade.com/what-we-offer/our-accounts",
-  "rating": 4.3,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://us.etrade.com/what-we-offer/pricing-and-rates",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Online trading with options pricing that changes with quarterly activity.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Online trading with options pricing that changes with quarterly activity.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Online stock and ETF trades",
+        "text": "$0 commissions on eligible online U.S.-listed stock and ETF trades. OTC securities, foreign transactions and broker-assisted orders have separate charges.",
+        "source": "main"
+      },
+      {
+        "label": "Options contracts",
+        "text": "$0.65 per contract, or $0.50 for customers who execute at least 30 qualifying stock, ETF or options trades per quarter. Regulatory and exchange fees can apply.",
+        "source": "main"
+      },
+      {
+        "label": "Mutual funds",
+        "text": "No-load, no-transaction-fee funds have $0 transaction fees. Fund expenses and any sales loads remain.",
+        "source": "main"
+      },
+      {
+        "label": "Other costs",
+        "text": "Broker-assisted trades generally add $25. The standard online OTC stock commission is $6.95, reduced to $4.95 at the qualifying activity threshold.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://us.etrade.com/what-we-offer/pricing-and-rates"
+      }
+    ]
+  }
 }

@@ -23,26 +23,12 @@ export interface PersonalLoan {
   availability?: "unavailable";
   source_checked?: string;
   source_url?: string;
-  audit_note?: string;
-  verified_fields?: string[];
   slug: string;
   lender: string;
   product_name: string;
-  apr_range: APRRange;
-  loan_amount_min: number;
-  loan_amount_max: number;
-  repayment_terms_months: number[];
-  origination_fee: OriginationFeeRange;
-  prepayment_penalty: boolean;
-  late_fee: string;
-  funding_speed: string;
-  credit_score_required: CreditScoreRange | null;
-  best_for: string;
-  perks: string[];
-  drawbacks: string[];
   application_url: string;
-  rating: number | null;
   last_updated: string;
+  checked_profile?: import('@/components/checked-product-profile').CheckedProductProfile;
 }
 
 export type StudentLoanType = "private" | "refinance";
@@ -79,7 +65,7 @@ function readJsonDir<T>(rel: string): T[] {
 
 export function loadPersonalLoans(): PersonalLoan[] {
   return readJsonDir<PersonalLoan>("personal-loans").sort(
-    (a, b) => (b.rating ?? 0) - (a.rating ?? 0)
+    (a, b) => a.lender.localeCompare(b.lender)
   );
 }
 

@@ -2,30 +2,55 @@
   "slug": "upgrade-personal-loan",
   "lender": "Upgrade",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 9.99, "max": 35.99 },
-  "loan_amount_min": 1000,
-  "loan_amount_max": 50000,
-  "repayment_terms_months": [24, 36, 48, 60, 72, 84],
-  "origination_fee": { "min": 1.85, "max": 9.99 },
-  "prepayment_penalty": false,
-  "late_fee": "$10",
-  "funding_speed": "1-4 business days",
-  "credit_score_required": { "min": 580, "recommended": 640 },
-  "best_for": "Fair credit, flexible terms",
-  "perks": [
-    "Accepts borrowers with credit scores from 580",
-    "Longer terms up to 7 years available",
-    "Soft credit check for rate pre-qualification",
-    "Mobile app for loan management",
-    "No prepayment penalty",
-    "Credit health tools included"
-  ],
-  "drawbacks": [
-    "Origination fee of 1.85-9.99% charged at closing",
-    "APR range starts high for fair credit applicants",
-    "Funding can take up to 4 business days"
-  ],
   "application_url": "https://www.upgrade.com/personal-loans/",
-  "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.upgrade.com/personal-loans/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Personal loans with fee deductions and discount conditions to compare.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Personal loans with fee deductions and discount conditions to compare.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Repayment and APR",
+        "text": "Published repayment terms are 24\u201384 months, with APRs of 7.74%\u201335.99%. Approval and available offers depend on the applicant.",
+        "source": "main"
+      },
+      {
+        "label": "Origination fee",
+        "text": "The published 1.85%\u20139.99% origination fee is deducted from loan proceeds, reducing the amount received.",
+        "source": "main"
+      },
+      {
+        "label": "Lowest-rate conditions",
+        "text": "The lowest advertised rates require AutoPay and paying some existing debt directly. Certain discounts may require collateral; offers vary by state and applicant.",
+        "source": "main"
+      },
+      {
+        "label": "Joint applications and payoff",
+        "text": "Joint applications are accepted, and both applicants are responsible for repayment. The page states there is no early-payoff fee.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://www.upgrade.com/personal-loans/"
+      }
+    ]
+  }
 }

@@ -1,32 +1,54 @@
 {
   "slug": "webull",
   "broker": "Webull",
-  "account_types": ["taxable", "ira", "roth-ira"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": false,
-  "account_minimum": 0,
-  "research_quality": "good",
-  "mobile_app_rating": 4.6,
-  "best_for": "Active traders wanting advanced charting free",
-  "asset_classes": ["stocks", "etfs", "options", "crypto"],
-  "perks": [
-    "Advanced charting tools available free (TradingView-level)",
-    "Commission-free options trading",
-    "Paper trading for practice",
-    "Level 2 quotes included at no cost",
-    "Extended hours trading (4 AM to 8 PM ET)",
-    "Crypto trading available 24/7"
-  ],
-  "drawbacks": [
-    "No fractional shares",
-    "No mutual funds or bonds",
-    "No joint or custodial accounts",
-    "Less established brand versus Fidelity or Schwab",
-    "Limited retirement account options"
-  ],
   "application_url": "https://www.webull.com/activity",
-  "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.webull.com/trading-investing/options",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Stock and ETF trading with distinct index-option and oversized-order fees.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Stock and ETF trading with distinct index-option and oversized-order fees.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Stock and ETF options",
+        "text": "Standard stock and ETF option orders have $0 commissions and $0 contract fees. Regulatory and exchange fees may apply.",
+        "source": "main"
+      },
+      {
+        "label": "Index and oversized orders",
+        "text": "Index options cost $0.50 per contract plus applicable exchange and regulatory fees. Non-index option orders above 500 contracts carry a $0.10 per-contract fee.",
+        "source": "main"
+      },
+      {
+        "label": "Stocks and ETFs",
+        "text": "Webull advertises $0 commissions on eligible U.S.-listed stock and ETF trading in self-directed accounts. Other services, securities and trading costs have separate schedules.",
+        "source": "pricing"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://www.webull.com/trading-investing/options"
+      },
+      {
+        "id": "pricing",
+        "label": "Webull fee schedule",
+        "url": "https://www.webull.com/pricing"
+      }
+    ]
+  }
 }

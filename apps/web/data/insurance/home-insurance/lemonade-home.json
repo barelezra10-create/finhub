@@ -1,33 +1,50 @@
 {
   "slug": "lemonade-home",
   "carrier": "Lemonade",
-  "states_available": ["AL", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI"],
-  "avg_annual_premium": { "min": 750, "max": 1200 },
-  "bundling_discount_pct": null,
-  "am_best_rating": "A",
-  "jd_power_satisfaction": null,
-  "digital_experience": "excellent",
-  "claims_process": "app",
-  "best_for": "Digital-first renters and first-time homeowners",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "AI-powered claims: most claims paid in minutes via the app",
-    "Giveback program donates unused premiums to a charity you choose",
-    "Lowest average premiums among major carriers",
-    "Easy online policy management with no agent required",
-    "Transparent flat fee model reduces conflicts of interest",
-    "Quick quote available in under 2 minutes online"
-  ],
-  "drawbacks": [
-    "Not available in all states",
-    "Limited coverage options compared to traditional carriers",
-    "No local agent for in-person support",
-    "Not ideal for complex high-value homes or specialty coverage needs",
-    "No JD Power rating yet due to size"
-  ],
   "quote_url": "https://www.lemonade.com/homeowners",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.lemonade.com/homeowners",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Homeowners insurance managed digitally, with location and coverage restrictions.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Homeowners insurance managed digitally, with location and coverage restrictions.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Digital service",
+        "text": "Lemonade describes app-based quoting, policy management and claims filing. This does not establish a guaranteed payment or claim completion time.",
+        "source": "main"
+      },
+      {
+        "label": "Coverage gaps",
+        "text": "Its overview excludes floods, earthquakes, sinkholes, neglected maintenance, mold, wear and pest infestations from standard homeowners coverage. Separate policies or endorsements may be needed.",
+        "source": "main"
+      },
+      {
+        "label": "Availability",
+        "text": "Homeowners coverage is offered in selected U.S. states. Use the provider\u2019s availability check for the property address rather than assuming nationwide availability.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.lemonade.com/homeowners"
+      }
+    ]
+  }
 }

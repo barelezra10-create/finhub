@@ -1,30 +1,62 @@
 {
   "slug": "lendingclub-personal-loan",
-  "lender": "LendingClub",
+  "lender": "Happen Bank (formerly LendingClub)",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 8.98, "max": 35.99 },
-  "loan_amount_min": 1000,
-  "loan_amount_max": 40000,
-  "repayment_terms_months": [24, 36, 48, 60],
-  "origination_fee": { "min": 3, "max": 8 },
-  "prepayment_penalty": false,
-  "late_fee": "$15 or 5% of payment (whichever is greater)",
-  "funding_speed": "2-4 business days",
-  "credit_score_required": { "min": 600, "recommended": 660 },
-  "best_for": "Fair credit, debt consolidation",
-  "perks": [
-    "Accepts fair credit borrowers with score as low as 600",
-    "No prepayment penalty",
-    "Joint loan applications accepted",
-    "Soft credit pull for pre-qualification",
-    "Direct creditor payoff available for debt consolidation"
+  "application_url": "https://www.happen.com/personal-loan",
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.happen.com/personal-loan",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
   ],
-  "drawbacks": [
-    "Origination fee of 3-8% charged upfront",
-    "Rates can be high for borrowers with fair credit",
-    "Funding takes up to 4 business days"
-  ],
-  "application_url": "https://www.lendingclub.com/loans/personal-loans",
-  "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "best_for": "LendingClub is now Happen Bank; compare its current personal-loan disclosures.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "LendingClub is now Happen Bank; compare its current personal-loan disclosures.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Name change",
+        "text": "The company identifies Happen Bank as formerly LendingClub and dates the rebrand to June 2026. This existing URL is retained to help readers recognize the same provider.",
+        "source": "brand"
+      },
+      {
+        "label": "Amounts and terms",
+        "text": "The current product disclosure lists $1,000–$75,000 and 24–84 months. State, product and application-channel restrictions can apply.",
+        "source": "main"
+      },
+      {
+        "label": "APR and origination",
+        "text": "The disclosure dated July 6, 2026 lists 5.96%–35.96% APR and a 0%–8% origination or processing fee. Your offered terms are determined at application; the lowest rate is not guaranteed.",
+        "source": "main"
+      },
+      {
+        "label": "Credit check",
+        "text": "Checking rates uses a soft inquiry. The provider says a hard inquiry appears if and when a loan is issued.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan — official product terms",
+        "url": "https://www.happen.com/personal-loan",
+        "document_date": "July 6, 2026 (published loan terms)"
+      },
+      {
+        "id": "brand",
+        "label": "Happen Bank company history",
+        "url": "https://www.happen.com/company/media-center"
+      }
+    ]
+  }
 }

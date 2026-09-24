@@ -1,31 +1,50 @@
 {
   "slug": "allstate-home",
   "carrier": "Allstate",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1500, "max": 2000 },
-  "bundling_discount_pct": 25,
-  "am_best_rating": "A+",
-  "jd_power_satisfaction": 819,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Digital experience, strong bundling discounts",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Claim RateGuard prevents rate increase after first claim",
-    "Digital Locker app to catalogue home inventory",
-    "Green improvement reimbursement for eco-friendly repairs",
-    "Strong multi-policy discount up to 25%",
-    "Excellent online quote and policy management tools",
-    "Welcome and loyalty discount for new customers"
-  ],
-  "drawbacks": [
-    "Premiums can be higher than competitors in some regions",
-    "Customer satisfaction scores below USAA and State Farm",
-    "Some coverage options cost extra that competitors include standard"
-  ],
   "quote_url": "https://www.allstate.com/homeowners-insurance",
-  "rating": 4.3,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.allstate.com/home-insurance",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Dwelling, belongings and liability coverage with exclusions and optional protection to review.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Dwelling, belongings and liability coverage with exclusions and optional protection to review.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Core coverage",
+        "text": "Allstate describes dwelling, personal property, liability and additional living expenses after a covered loss makes the home uninhabitable.",
+        "source": "main"
+      },
+      {
+        "label": "Important exclusions",
+        "text": "Its overview lists flood, earth movement, water backup and wear or maintenance problems among general exclusions. Check endorsements and the actual policy for exceptions and limits.",
+        "source": "main"
+      },
+      {
+        "label": "Pricing and bundling",
+        "text": "Premiums depend on home age and location, belongings, claims and deductibles. Home and auto bundling is available in many states; request the actual combined price.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.allstate.com/home-insurance"
+      }
+    ]
+  }
 }

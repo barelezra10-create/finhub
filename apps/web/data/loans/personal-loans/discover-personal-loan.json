@@ -2,53 +2,56 @@
   "slug": "discover-personal-loan",
   "lender": "Discover",
   "product_name": "Personal Loan",
-  "apr_range": {
-    "min": 6.99,
-    "max": 24.99
-  },
-  "loan_amount_min": 2500,
-  "loan_amount_max": 40000,
-  "repayment_terms_months": [
-    36,
-    48,
-    60,
-    72,
-    84
-  ],
-  "origination_fee": {
-    "min": 0,
-    "max": 0
-  },
-  "prepayment_penalty": false,
-  "late_fee": "None for the advertised new-loan offer",
-  "funding_speed": "As soon as the next business day after acceptance, subject to verification and disbursement conditions",
-  "credit_score_required": null,
-  "best_for": "Comparing an unsecured loan offer without origination fees",
-  "perks": [
-    "No origination or prepayment fees advertised",
-    "Loan amounts from $2,500 to $40,000",
-    "Repayment terms from 36 to 84 months"
-  ],
-  "drawbacks": [
-    "Direct creditor payment excludes Capital One accounts, including Discover cards, secured loans and post-secondary education loans or expenses",
-    "Approval and funding timing depend on the application and verification"
-  ],
   "application_url": "https://www.discover.com/personal-loans/",
-  "rating": null,
-  "last_updated": "2026-09-14",
-  "source_checked": "2026-09-14",
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
   "source_url": "https://www.discover.com/personal-loans/",
-  "audit_note": "Selected facts checked on the official product page. The displayed APR range comes from its comparison table, dated July 8, 2026; request a personalized quote for current pricing. No minimum FICO was established from this source.",
   "verified_fields": [
-    "apr_range",
-    "loan_amount_min",
-    "loan_amount_max",
-    "repayment_terms_months",
-    "origination_fee",
-    "prepayment_penalty",
-    "late_fee",
-    "funding_speed",
-    "perks",
-    "drawbacks"
-  ]
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Personal loans with flexible terms and restrictions on direct creditor payments.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Personal loans with flexible terms and restrictions on direct creditor payments.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Amounts and terms",
+        "text": "Discover advertises $2,500–$40,000 with repayment terms of 36, 48, 60, 72 or 84 months.",
+        "source": "main"
+      },
+      {
+        "label": "Published APR",
+        "text": "The provider comparison table displays 6.99%–24.99% APR and says its comparison information runs through July 8, 2026. A personalized offer determines the rate available to you; verify current pricing before applying.",
+        "source": "main"
+      },
+      {
+        "label": "Fees",
+        "text": "The advertised new-loan offer states no fees for any customer. Existing loan agreements may have different terms.",
+        "source": "main"
+      },
+      {
+        "label": "Debt payments",
+        "text": "Direct creditor payment excludes Capital One accounts, including Discover cards, secured loans and post-secondary education loans or expenses.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan — official product terms",
+        "url": "https://www.discover.com/personal-loans/",
+        "document_date": "July 8, 2026 (comparison chart information cutoff)"
+      }
+    ]
+  }
 }

@@ -1,31 +1,50 @@
 {
   "slug": "liberty-mutual-home",
   "carrier": "Liberty Mutual",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1300, "max": 1700 },
-  "bundling_discount_pct": 20,
-  "am_best_rating": "A",
-  "jd_power_satisfaction": 797,
-  "digital_experience": "good",
-  "claims_process": "all",
-  "best_for": "Discount stacking, inflation protection",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Inflation protection automatically adjusts dwelling coverage",
-    "Numerous discounts including claims-free, new home, and paperless",
-    "Blanket jewelry and valuables coverage option",
-    "Home protector plus endorsement for extended reconstruction costs",
-    "Strong online quotes available in minutes",
-    "New home discount for homes less than 10 years old"
-  ],
-  "drawbacks": [
-    "JD Power customer satisfaction below industry average",
-    "Some policy exclusions reported as broader than competitors",
-    "Premium increases at renewal can be significant in high-risk states"
-  ],
   "quote_url": "https://www.libertymutual.com/homeowners-insurance",
-  "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.libertymutual.com/property/homeowners-insurance",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Home coverage with optional replacement-cost and water-backup protection.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Home coverage with optional replacement-cost and water-backup protection.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Core coverage",
+        "text": "The product overview describes dwelling, personal property, liability and additional living expenses after a covered loss.",
+        "source": "main"
+      },
+      {
+        "label": "Optional coverage",
+        "text": "Personal property replacement-cost coverage and water backup or overflow protection are listed as add-ons, not benefits to assume are included.",
+        "source": "main"
+      },
+      {
+        "label": "Quote factors",
+        "text": "Liberty Mutual identifies location, home age, rebuild cost, claims history, deductible and coverage limits as pricing factors. Bundling and other discounts depend on eligibility.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.libertymutual.com/property/homeowners-insurance"
+      }
+    ]
+  }
 }

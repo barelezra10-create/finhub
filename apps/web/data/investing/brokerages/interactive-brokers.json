@@ -1,31 +1,54 @@
 {
   "slug": "interactive-brokers",
   "broker": "Interactive Brokers",
-  "account_types": ["taxable", "ira", "roth-ira", "401k-rollover", "joint", "custodial", "trust"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0.65,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": true,
-  "account_minimum": 0,
-  "research_quality": "excellent",
-  "mobile_app_rating": 4.4,
-  "best_for": "Professional traders and global investors",
-  "asset_classes": ["stocks", "etfs", "options", "mutual-funds", "bonds", "crypto", "futures", "forex"],
-  "perks": [
-    "Access to 150+ global markets in 33 countries",
-    "Industry-lowest margin rates (5.83% as of 2026)",
-    "Broadest asset class coverage including forex and futures",
-    "IBKR Pro for active traders, IBKR Lite for beginners",
-    "Advanced Trader Workstation (TWS) platform",
-    "Fractional shares available"
-  ],
-  "drawbacks": [
-    "Complex platform with steep learning curve",
-    "IBKR Pro has tiered commissions (not flat $0)",
-    "Overwhelming for casual investors",
-    "Mobile app less polished than consumer-focused brokers"
-  ],
   "application_url": "https://www.interactivebrokers.com/en/trading/open-account.php",
-  "rating": 4.5,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.interactivebrokers.com/en/pricing/commissions-home.php",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Separate Lite and Pro pricing plans with market-specific charges.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Separate Lite and Pro pricing plans with market-specific charges.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "IBKR Lite",
+        "text": "$0 commissions for eligible U.S. exchange-listed stocks and ETFs for eligible U.S. residents. Nonqualifying securities and certain orders use different pricing.",
+        "source": "main"
+      },
+      {
+        "label": "IBKR Pro",
+        "text": "U.S. stock fixed pricing is $0.005 per share with a $1 order minimum. Tiered pricing ranges from $0.0005 to $0.0035 per share, with separate exchange, clearing and regulatory charges and order minimums.",
+        "source": "main"
+      },
+      {
+        "label": "Options",
+        "text": "Published U.S. options pricing is $0.65 per contract for fixed pricing or $0.15–$0.65 under tiered pricing. Product-specific minimums and additional charges apply.",
+        "source": "main"
+      },
+      {
+        "label": "Account minimum",
+        "text": "The comparison lists $0 minimum balance and $0 maintenance fee for Lite and Pro. Market data and other services may cost extra.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://www.interactivebrokers.com/en/pricing/commissions-home.php"
+      }
+    ]
+  }
 }

@@ -12,30 +12,25 @@ export const metadata: Metadata = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What rate can I qualify for?",
-    answer:
-      "Personal loan rates depend heavily on credit score. Borrowers with FICO 740+ typically see APRs from 8% to 12%. Mid-prime borrowers (660 to 739) usually see 12% to 18%. Subprime borrowers see 18% to 36%. As of early 2026 the average personal loan APR is roughly 12.5% per the Federal Reserve&rsquo;s G.19 report. Most lenders offer a soft-pull pre-qualification that returns your real rate without affecting your credit score.",
+    "question": "What rate can I qualify for?",
+    "answer": "Use an actual lender quote when modeling repayments. Eligibility and pricing depend on the product and your application; a credit-score band does not establish a guaranteed APR. Check whether preliminary quotes use a soft inquiry."
   },
   {
-    question: "How does a personal loan compare to a credit card?",
-    answer:
-      "Personal loans are fixed-rate and have a defined payoff date. Credit cards are revolving and variable-rate. For consolidating high-APR card debt, a personal loan at 11.5% replaces a 22.99% APR card and gives you a clear timeline. The discipline benefit is real: a fixed payment for 60 months retires the debt by month 60. Cards can drag for decades at minimum payments.",
+    "question": "How should I compare a loan with existing debt?",
+    "answer": "Compare the same balance using each option\u2019s repayment schedule, fees and total cost. A smaller monthly payment can come from a longer term. Review the full cost before choosing."
   },
   {
-    question: "Are there origination fees?",
-    answer:
-      "Some lenders charge an origination fee of 1% to 8% of the loan, deducted from the disbursement. SoFi, LightStream, and Discover Personal Loans currently charge zero origination fees. Upstart, LendingClub, and Best Egg typically charge fees. The APR shown in your loan offer should already include the fee in the calculation, but confirm by asking for the loan&rsquo;s disclosure form.",
+    "question": "Are there origination fees?",
+    "answer": "Fee conditions differ by offer. Some fees are deducted from the loan proceeds, reducing the amount deposited. SoFi describes both fee and no-fee options. Use the linked personal loan profiles to check provider terms, and review your own disclosure for the exact APR and net proceeds."
   },
   {
-    question: "Can I pay it off early?",
-    answer:
-      "Most major U.S. personal loan lenders charge no prepayment penalty. SoFi, LightStream, Marcus, Discover, and Wells Fargo all allow early payoff with no fee. Always confirm in the loan disclosure before signing. If you make extra principal payments, you reduce the total interest paid; the calculator shows total cost assuming you pay the standard schedule.",
+    "question": "Can I pay it off early?",
+    "answer": "Read the prepayment provision in the actual agreement. Ask how additional payments are applied and request a payoff quote when you are ready to repay the balance."
   },
   {
-    question: "What can I use a personal loan for?",
-    answer:
-      "Most lenders allow any legal personal use: debt consolidation, home improvement, medical bills, moving, weddings, or unexpected expenses. The Consumer Financial Protection Bureau notes that some lenders prohibit using personal loan funds for post-secondary education, business expenses, or investments. Read the use-of-proceeds clause in your loan agreement. The most common purpose nationally is credit card consolidation.",
-  },
+    "question": "What can I use a personal loan for?",
+    "answer": "Permitted uses vary by product. Check the use-of-proceeds restrictions before applying, especially for education, business, property or investment expenses."
+  }
 ];
 
 export default function Page() {

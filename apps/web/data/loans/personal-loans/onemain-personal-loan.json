@@ -2,30 +2,60 @@
   "slug": "onemain-personal-loan",
   "lender": "OneMain Financial",
   "product_name": "Personal Loan",
-  "apr_range": { "min": 18.0, "max": 35.99 },
-  "loan_amount_min": 1500,
-  "loan_amount_max": 20000,
-  "repayment_terms_months": [24, 36, 48, 60],
-  "origination_fee": { "min": 1, "max": 10 },
-  "prepayment_penalty": false,
-  "late_fee": "$5-$30 or 1.5-15% of payment (varies by state)",
-  "funding_speed": "1-2 business days",
-  "credit_score_required": { "min": 300, "recommended": 550 },
-  "best_for": "Bad credit, secured loan option available",
-  "perks": [
-    "No minimum credit score requirement, bad credit accepted",
-    "Secured loan option to improve approval odds or lower APR",
-    "In-person branch network for those preferring face-to-face service",
-    "Quick funding within 1-2 business days",
-    "No prepayment penalty"
-  ],
-  "drawbacks": [
-    "APR floor of 18% means expensive even for better credit",
-    "Origination fee required on all loans",
-    "Lower maximum loan amount of $20,000",
-    "Not available in all states"
-  ],
   "application_url": "https://www.onemainfinancial.com/personal-loans",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.onemainfinancial.com/personal-loans",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Secured and unsecured offers with state-specific fees and collateral conditions.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Secured and unsecured offers with state-specific fees and collateral conditions.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Amounts, terms and APR",
+        "text": "OneMain advertises $1,500\u2013$30,000, 24\u201360 months, and fixed APRs of 11.99%\u201335.99%. State limits and individual qualification can change the available amounts and terms.",
+        "source": "main"
+      },
+      {
+        "label": "Collateral",
+        "text": "Larger amounts generally require a first lien on an eligible insured vehicle no more than ten years old. Secured and unsecured offers differ; covered military borrowers cannot pledge a vehicle.",
+        "source": "main"
+      },
+      {
+        "label": "Origination and other fees",
+        "text": "Depending on the state, origination charges are $25\u2013$500 or 1%\u201310%, subject to state limits. Late, returned-payment and title-related charges may also apply.",
+        "source": "fees"
+      },
+      {
+        "label": "Funding conditions",
+        "text": "One-hour funding requires SpeedFunds disbursement to a bank-issued debit card after closing. Check or ACH availability may take about 1\u20132 business days and depends on the receiving bank.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://www.onemainfinancial.com/personal-loans"
+      },
+      {
+        "id": "fees",
+        "label": "OneMain loan amounts and fees",
+        "url": "https://www.onemainfinancial.com/legal/loan-fees"
+      }
+    ]
+  }
 }

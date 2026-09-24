@@ -1,31 +1,50 @@
 {
   "slug": "progressive-home",
   "carrier": "Progressive",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1250, "max": 1650 },
-  "bundling_discount_pct": 7,
-  "am_best_rating": "A+",
-  "jd_power_satisfaction": 801,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Auto and home bundling, competitive online quotes",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Seamless auto and home bundling through one policy dashboard",
-    "Name Your Price tool shows coverage options within your budget",
-    "Strong digital experience with instant online quotes",
-    "HomeQuote Explorer allows comparison of multiple home insurers",
-    "Discount for buying your policy at least three days before it starts",
-    "New home discount for recently built properties"
-  ],
-  "drawbacks": [
-    "Progressive brokers many home policies through third-party insurers",
-    "Bundling discount lower than some competitors",
-    "Coverage may be underwritten by a partner insurer, not Progressive directly"
-  ],
   "quote_url": "https://www.progressive.com/homeowners/",
-  "rating": 4.1,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.progressive.com/homeowners/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Home policies placed through an agency with multiple possible underwriting insurers.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Home policies placed through an agency with multiple possible underwriting insurers.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Who issues the policy?",
+        "text": "Progressive Home policies are placed through Progressive Advantage Agency with affiliated and unaffiliated insurers. Each insurer is responsible for its own claims.",
+        "source": "main"
+      },
+      {
+        "label": "Shopping channel matters",
+        "text": "The available insurers can depend on whether you buy directly or through an independent agent or broker. Prices, coverage and privacy policies differ by insurer.",
+        "source": "main"
+      },
+      {
+        "label": "Discount limits",
+        "text": "Coverage and discounts are not available in every state or situation. Identify the issuing insurer and review its policy terms before comparing a home and auto bundle.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.progressive.com/homeowners/"
+      }
+    ]
+  }
 }

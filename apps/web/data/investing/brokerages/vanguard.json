@@ -1,31 +1,55 @@
 {
   "slug": "vanguard",
   "broker": "Vanguard",
-  "account_types": ["taxable", "ira", "roth-ira", "401k-rollover", "joint", "trust"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 1.00,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": false,
-  "account_minimum": 0,
-  "research_quality": "good",
-  "mobile_app_rating": 4.2,
-  "best_for": "Low-cost passive investing and retirement",
-  "asset_classes": ["stocks", "etfs", "mutual-funds", "bonds"],
-  "perks": [
-    "Industry's lowest-cost mutual funds and ETFs",
-    "Client-owned structure aligns incentives with investors",
-    "Target-date retirement funds best in class",
-    "No commissions on Vanguard funds",
-    "Strong track record for long-term wealth building"
-  ],
-  "drawbacks": [
-    "No fractional shares",
-    "Mobile app and website behind competitors in usability",
-    "High options commission at $1.00/contract",
-    "Not built for active traders",
-    "Limited research for individual stocks"
-  ],
   "application_url": "https://investor.vanguard.com/accounts-plans/",
-  "rating": 4.2,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://investor.vanguard.com/client-benefits/investment-fees",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Online stock and fund investing with account-service and transfer fees to check.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Online stock and fund investing with account-service and transfer fees to check.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Stocks and ETFs",
+        "text": "$0 online commissions. For clients with less than $1 million in qualifying assets, broker-assisted trades generally add $25.",
+        "source": "main"
+      },
+      {
+        "label": "Options",
+        "text": "The standard fee below $1 million in qualifying assets is $1 per contract. Higher asset tiers have limited annual fee waivers; eligibility conditions apply.",
+        "source": "main"
+      },
+      {
+        "label": "Mutual funds",
+        "text": "Online Vanguard and eligible no-transaction-fee funds have $0 transaction commissions. Below $1 million in qualifying assets, other transaction-fee funds cost $20 per trade. Fund expenses and redemption fees can apply.",
+        "source": "main"
+      },
+      {
+        "label": "Account and transfer fees",
+        "text": "A $25 annual service fee may apply; qualifying electronic delivery is one waiver route. A full transfer or account closure may cost $100, with stated exceptions. The source schedule is effective July 10, 2026.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://investor.vanguard.com/client-benefits/investment-fees",
+        "document_date": "July 10, 2026 (fee schedule effective date)"
+      }
+    ]
+  }
 }

@@ -2,32 +2,56 @@
   "slug": "pnc-personal-loan",
   "lender": "PNC Bank",
   "product_name": "PNC Personal Loan",
-  "apr_range": { "min": 6.99, "max": 26.94 },
-  "loan_amount_min": 1000,
-  "loan_amount_max": 35000,
-  "repayment_terms_months": [6, 12, 24, 36, 48, 60],
-  "origination_fee": { "min": 0, "max": 0 },
-  "prepayment_penalty": false,
-  "late_fee": "Varies by state",
-  "funding_speed": "Typically 1 to 5 business days; existing customers can be faster",
-  "credit_score_required": { "min": 660, "recommended": 700 },
-  "best_for": "Existing PNC customers, good credit, no-fee bank loan",
-  "perks": [
-    "No origination fee and no application fee; the APR is the whole cost",
-    "APR starting near 6.99% as of mid-2026 is competitive with the best online lenders for strong credit",
-    "0.25 percentage point rate discount for autopay from a PNC checking account",
-    "Loan amounts start at $1,000, lower than many banks, with terms from 6 to 60 months",
-    "No prepayment penalty",
-    "Branch support available if you prefer handling a loan in person"
-  ],
-  "drawbacks": [
-    "Only available in roughly half the states (about 26 plus DC as of mid-2026), with extra restrictions in a few others; check availability by ZIP before applying",
-    "PNC does not publish a minimum credit score, but pricing clearly targets good-to-excellent credit; fair-credit applicants will likely be declined or priced high",
-    "Rates vary by ZIP code, which makes prequalification results less predictable than online lenders",
-    "$35,000 maximum is below the $50,000 to $100,000 ceilings at SoFi or LightStream",
-    "Funding is slower than the same-day online lenders"
-  ],
   "application_url": "https://www.pnc.com/en/personal-banking/borrowing/personal-loans.html",
-  "rating": 4.0,
-  "last_updated": "2026-08-10"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.pnc.com/en/personal-banking/borrowing/personal-loans/unsecured-personal-loan.html",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Unsecured borrowing for eligible PNC checking customers.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Unsecured borrowing for eligible PNC checking customers.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Application requirement",
+        "text": "PNC states that applicants must have an eligible PNC personal checking account and be enrolled in PNC Online Banking.",
+        "source": "main"
+      },
+      {
+        "label": "Amounts and terms",
+        "text": "Published loan amounts are $5,000–$35,000. The table offers terms from 12 to 60 months, with rates depending on the amount and term.",
+        "source": "main"
+      },
+      {
+        "label": "Published APR table",
+        "text": "The August 27, 2026 table spans 6.99%–25.29% APR across different amount and term combinations and includes a 0.25% automatic-payment discount. This is not the range for every loan size or term.",
+        "source": "main"
+      },
+      {
+        "label": "Fees and collateral",
+        "text": "PNC lists no application fee, origination fee or prepayment penalty, and no collateral requirement.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan — official product terms",
+        "url": "https://www.pnc.com/en/personal-banking/borrowing/personal-loans/unsecured-personal-loan.html",
+        "document_date": "August 27, 2026 (APR table)"
+      }
+    ]
+  }
 }

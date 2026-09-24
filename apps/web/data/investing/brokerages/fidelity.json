@@ -1,30 +1,54 @@
 {
   "slug": "fidelity",
   "broker": "Fidelity Investments",
-  "account_types": ["taxable", "ira", "roth-ira", "401k-rollover", "joint", "custodial", "trust"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0.65,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": true,
-  "account_minimum": 0,
-  "research_quality": "excellent",
-  "mobile_app_rating": 4.8,
-  "best_for": "Best overall full-service brokerage",
-  "asset_classes": ["stocks", "etfs", "options", "mutual-funds", "bonds"],
-  "perks": [
-    "Industry-leading research tools and reports",
-    "Fractional shares starting at $1",
-    "Zero-fee index funds (FZROX, FZILX)",
-    "Top-rated mobile and desktop platforms",
-    "Excellent 24/7 customer service",
-    "No account minimums or inactivity fees"
-  ],
-  "drawbacks": [
-    "$0.65/contract options commission (no free options)",
-    "No cryptocurrency trading",
-    "Active Trader Pro desktop requires $25K+ in trades"
-  ],
   "application_url": "https://www.fidelity.com/open-account/overview",
-  "rating": 4.7,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.fidelity.com/trading/commissions-margin-rates",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Online U.S. stock trading with fund-specific transaction charges.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Online U.S. stock trading with fund-specific transaction charges.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Online stock and ETF trades",
+        "text": "$0 commissions on online U.S. equity and ETF trades. Representative-assisted and other transaction charges can apply.",
+        "source": "main"
+      },
+      {
+        "label": "Opening minimum",
+        "text": "The pricing page lists no minimum to open an account; individual investments can have their own minimums.",
+        "source": "main"
+      },
+      {
+        "label": "Mutual funds",
+        "text": "Fidelity funds have $0 transaction fees. Non-Fidelity transaction-fee funds generally cost $49.95 per purchase, with certain funds up to $100. Eligible no-transaction-fee funds are $0 to buy but may carry a $49.95 short-term redemption fee when held under 60 days.",
+        "source": "main"
+      },
+      {
+        "label": "Options",
+        "text": "$0 base commission does not mean free options trading: contract fees apply. Review the full commission schedule for the order you intend to place.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://www.fidelity.com/trading/commissions-margin-rates"
+      }
+    ]
+  }
 }

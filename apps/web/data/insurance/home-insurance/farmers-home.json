@@ -1,31 +1,50 @@
 {
   "slug": "farmers-home",
   "carrier": "Farmers Insurance",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1550, "max": 2100 },
-  "bundling_discount_pct": 20,
-  "am_best_rating": "A",
-  "jd_power_satisfaction": 801,
-  "digital_experience": "good",
-  "claims_process": "all",
-  "best_for": "Comprehensive coverage tiers, agent-based guidance",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Three coverage tiers (Standard, Enhanced, Premier) for flexible protection",
-    "Claim-free discount for no claims in past three years",
-    "Declining deductible reduces your deductible $50 each claim-free year",
-    "Home systems protection covers mechanical breakdowns",
-    "Claim forgiveness available after three years with Farmers",
-    "Wide agent network for personalized coverage advice"
-  ],
-  "drawbacks": [
-    "Premiums among the highest of major carriers",
-    "Not available in all zip codes within certain states",
-    "Some coverage options require going through an agent, not self-service online"
-  ],
   "quote_url": "https://www.farmers.com/home/homeowners-insurance/",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.farmers.com/home/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Property coverage with separate flood, earthquake and specialty-home options.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Property coverage with separate flood, earthquake and specialty-home options.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Home protection",
+        "text": "Farmers describes coverage for repairing or rebuilding a home and replacing belongings after covered events, along with liability protection.",
+        "source": "main"
+      },
+      {
+        "label": "Flood and earthquake",
+        "text": "The property overview says flood insurance is not included in home policies and earthquake coverage is typically separate.",
+        "source": "main"
+      },
+      {
+        "label": "Different property types",
+        "text": "Farmers lists separate condo, landlord, mobile-home and specialty-home products. A standard homeowners policy should not be assumed to fit a rental, vacant or seasonal property.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.farmers.com/home/"
+      }
+    ]
+  }
 }

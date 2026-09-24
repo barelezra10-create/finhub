@@ -1,31 +1,50 @@
 {
   "slug": "nationwide-home",
   "carrier": "Nationwide",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1400, "max": 1900 },
-  "bundling_discount_pct": 20,
-  "am_best_rating": "A+",
-  "jd_power_satisfaction": 812,
-  "digital_experience": "good",
-  "claims_process": "all",
-  "best_for": "Brand New Belongings replacement cost coverage",
-  "coverage_includes": ["Dwelling", "Other structures", "Personal property", "Loss of use", "Liability", "Medical payments"],
-  "flood_coverage_separate": true,
-  "earthquake_coverage_separate": true,
-  "perks": [
-    "Brand New Belongings pays to replace items at today's prices, not depreciated value",
-    "Better Roof Replacement upgrades your roof materials when you file a claim",
-    "Vanishing deductible rewards claims-free years",
-    "Home renovation credit for upgrading plumbing, electrical, or HVAC",
-    "Multi-policy discount for bundling with auto",
-    "Identity theft protection available as add-on"
-  ],
-  "drawbacks": [
-    "Not available in Alaska, Hawaii, Louisiana, or some coastal areas",
-    "Some specialized coverage only available through agents",
-    "Premiums above average for high-value homes"
-  ],
   "quote_url": "https://www.nationwide.com/homeowners-insurance.jsp",
-  "rating": 4.2,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.nationwide.com/personal/insurance/homeowners/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Home coverage with optional Brand New Belongings protection.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Home insurance",
+    "summary": "Home coverage with optional Brand New Belongings protection.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Covered events",
+        "text": "Nationwide describes protection against covered theft, fire, liability lawsuits and weather losses. The policy determines what is covered.",
+        "source": "main"
+      },
+      {
+        "label": "Brand New Belongings",
+        "text": "This optional feature can repair or replace covered possessions. It has exclusions and limits, varies by state and policy, and is subject to underwriting approval.",
+        "source": "main"
+      },
+      {
+        "label": "Price comparison",
+        "text": "The product page offers home and bundling quotes. Obtain comparable limits, deductibles and optional features before comparing premiums.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Home insurance \u2014 official product terms",
+        "url": "https://www.nationwide.com/personal/insurance/homeowners/"
+      }
+    ]
+  }
 }

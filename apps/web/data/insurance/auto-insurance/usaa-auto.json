@@ -1,30 +1,55 @@
 {
   "slug": "usaa-auto",
   "carrier": "USAA",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1000, "max": 1700 },
-  "bundling_discount_pct": 10,
-  "good_driver_discount_pct": 10,
-  "am_best_rating": "A++",
-  "jd_power_satisfaction": 900,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Military families, lowest premiums for eligible members",
-  "coverage_types_offered": ["liability-only", "full-coverage", "minimum-state", "high-value"],
-  "perks": [
-    "Consistently lowest premiums for military members and families",
-    "Top JD Power satisfaction scores year after year",
-    "A++ AM Best rating, one of the most financially stable insurers",
-    "Excellent digital experience and mobile app",
-    "Flexible payment options and strong member benefits",
-    "SafePilot telematics program with up to 30% discount"
-  ],
-  "drawbacks": [
-    "Eligibility restricted to military members, veterans, and their families",
-    "No local agent offices in most areas",
-    "Limited to USAA ecosystem for maximum benefits"
-  ],
   "quote_url": "https://www.usaa.com/inet/wc/auto-insurance",
-  "rating": 4.8,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.usaa.com/insurance/vehicles/auto/states/illinois/?akredirect=true",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto insurance for eligible members, with military-family eligibility rules.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto insurance for eligible members, with military-family eligibility rules.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Membership and insurance eligibility",
+        "text": "USAA lists military members, qualifying veterans, and eligible family members among membership categories. Property and casualty insurance has additional eligibility restrictions; membership alone is not a coverage guarantee.",
+        "source": "main"
+      },
+      {
+        "label": "Issuing company",
+        "text": "USAA lists several underwriting companies and says each is financially responsible for its own products. Confirm the company shown on your quote.",
+        "source": "main"
+      },
+      {
+        "label": "Coverage options",
+        "text": "USAA provides an auto coverage guide; confirm the specific protections and limits required by your lender and state.",
+        "source": "coverage"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.usaa.com/insurance/vehicles/auto/states/illinois/?akredirect=true"
+      },
+      {
+        "id": "coverage",
+        "label": "USAA auto coverage guide",
+        "url": "https://www.usaa.com/insurance/vehicles/auto/coverage/?akredirect=true"
+      }
+    ]
+  }
 }

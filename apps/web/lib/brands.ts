@@ -35,7 +35,7 @@ const brandList: Brand[] = [
   { slug: "marcus-loan", name: "Marcus", domain: "marcus.com", color: "#1F4E79", category: "loan" },
   { slug: "discover-loan", name: "Discover Personal Loans", domain: "discover.com", color: "#FF6000", category: "loan" },
   { slug: "upstart", name: "Upstart", domain: "upstart.com", color: "#3FBFB1", category: "loan" },
-  { slug: "lendingclub", name: "LendingClub", domain: "lendingclub.com", color: "#1A6FB7", category: "loan" },
+  { slug: "lendingclub", name: "Happen Bank", domain: "happen.com", color: "#1A6FB7", category: "loan" },
   { slug: "bestegg", name: "Best Egg", domain: "bestegg.com", color: "#F2B701", category: "loan" },
   { slug: "prosper", name: "Prosper", domain: "prosper.com", color: "#0E9E47", category: "loan" },
 

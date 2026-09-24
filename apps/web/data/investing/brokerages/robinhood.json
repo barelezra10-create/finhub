@@ -1,32 +1,54 @@
 {
   "slug": "robinhood",
   "broker": "Robinhood",
-  "account_types": ["taxable", "ira", "roth-ira"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": true,
-  "account_minimum": 0,
-  "research_quality": "fair",
-  "mobile_app_rating": 4.5,
-  "best_for": "Mobile-first beginners and crypto investors",
-  "asset_classes": ["stocks", "etfs", "options", "crypto"],
-  "perks": [
-    "Truly commission-free options trading",
-    "Crypto trading alongside stocks in one app",
-    "Fractional shares starting at $1",
-    "Robinhood Gold: 5% APY on uninvested cash",
-    "Clean, intuitive mobile interface",
-    "24-hour market access (5 AM to 8 PM ET extended)"
-  ],
-  "drawbacks": [
-    "Limited research and educational content",
-    "No mutual funds or bonds",
-    "No joint or custodial accounts",
-    "History of outages during high-volatility markets",
-    "Controversial payment for order flow model"
-  ],
   "application_url": "https://robinhood.com/us/en/invest/",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://robinhood.com/us/en/support/articles/trading-fees-on-robinhood/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Commission-free stock and ETF trading with separate options and regulatory fee rules.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Commission-free stock and ETF trading with separate options and regulatory fee rules.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Stocks and ETFs",
+        "text": "Eligible Robinhood investing-account stock and ETF trades have no trading commission. This does not remove regulatory or other account charges.",
+        "source": "main"
+      },
+      {
+        "label": "Stock and ETF options",
+        "text": "No commission or contract fee for stock and ETF options. Applicable regulatory and clearing charges still need to be considered.",
+        "source": "options"
+      },
+      {
+        "label": "Index options",
+        "text": "Index options have a different fee structure, including contract and exchange charges. Review the current fee schedule for the exact symbol and account plan.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://robinhood.com/us/en/support/articles/trading-fees-on-robinhood/"
+      },
+      {
+        "id": "options",
+        "label": "Robinhood stock and ETF options",
+        "url": "https://robinhood.com/us/en/about/options/"
+      }
+    ]
+  }
 }

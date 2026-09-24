@@ -1,30 +1,50 @@
 {
   "slug": "state-farm-auto",
   "carrier": "State Farm",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1500, "max": 2200 },
-  "bundling_discount_pct": 17,
-  "good_driver_discount_pct": 15,
-  "am_best_rating": "A++",
-  "jd_power_satisfaction": 891,
-  "digital_experience": "good",
-  "claims_process": "all",
-  "best_for": "Agent-based service, top JD Power scores",
-  "coverage_types_offered": ["liability-only", "full-coverage", "minimum-state", "high-value"],
-  "perks": [
-    "Largest auto insurer in the US with extensive agent network",
-    "Top JD Power customer satisfaction rankings",
-    "Drive Safe and Save telematics discount program",
-    "Steer Clear program for young drivers to earn discounts",
-    "Strong bundling discounts with home and renters insurance",
-    "A++ AM Best financial strength rating"
-  ],
-  "drawbacks": [
-    "Not always the cheapest option for younger or high-risk drivers",
-    "Digital experience lags behind GEICO and Progressive",
-    "Rates vary widely by state and agent"
-  ],
   "quote_url": "https://www.statefarm.com/insurance/auto",
-  "rating": 4.6,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.statefarm.com/insurance/auto",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto coverage with local agents and driving-based discount programs.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto coverage with local agents and driving-based discount programs.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Coverage choices",
+        "text": "State Farm lists liability, comprehensive, collision, and uninsured or underinsured motorist coverages.",
+        "source": "main"
+      },
+      {
+        "label": "Driving programs",
+        "text": "Drive Safe & Save and Steer Clear are advertised discount programs. Steer Clear targets eligible drivers under 25; eligibility and state rules apply.",
+        "source": "main"
+      },
+      {
+        "label": "Claims channels",
+        "text": "Claims can be reported online, through the mobile app, or by phone. The product page also provides local-agent access.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.statefarm.com/insurance/auto"
+      }
+    ]
+  }
 }

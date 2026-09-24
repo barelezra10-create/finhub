@@ -2,51 +2,55 @@
   "slug": "lightstream-personal-loan",
   "lender": "LightStream",
   "product_name": "Personal Loan",
-  "apr_range": {
-    "min": 7.24,
-    "max": 24.89
-  },
-  "loan_amount_min": 5000,
-  "loan_amount_max": 100000,
-  "repayment_terms_months": [
-    24,
-    36,
-    48,
-    60,
-    72,
-    84,
-    96,
-    108,
-    120,
-    132,
-    144
-  ],
-  "origination_fee": {
-    "min": 0,
-    "max": 0
-  },
-  "prepayment_penalty": false,
-  "late_fee": "None",
-  "funding_speed": "Same day",
-  "credit_score_required": {
-    "min": 700,
-    "recommended": 740
-  },
-  "best_for": "Excellent credit, long repayment terms",
-  "perks": [
-    "No fees whatsoever: no origination, late, or prepayment penalties",
-    "Same-day funding available",
-    "Longest terms in the industry up to 12 years for some purposes",
-    "Rate Beat Program: beat a competitor rate by 0.10%",
-    "$100 Loan Experience Guarantee",
-    "Low APR rates for excellent credit borrowers"
-  ],
-  "drawbacks": [
-    "Requires excellent credit to qualify",
-    "No soft-pull pre-qualification available",
-    "High minimum loan of $5,000"
-  ],
   "application_url": "https://www.lightstream.com/personal-loan",
-  "rating": 4.7,
-  "last_updated": "2026-08-18"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.lightstream.com/consumer-loans",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Loans with purpose-dependent pricing and an AutoPay condition on advertised rates.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Loans with purpose-dependent pricing and an AutoPay condition on advertised rates.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Amounts and fees",
+        "text": "LightStream advertises fixed-rate loans of $5,000\u2013$100,000, with no lender fees or prepayment penalties. State taxes may still apply.",
+        "source": "main"
+      },
+      {
+        "label": "Rate conditions",
+        "text": "APR depends on purpose, amount, repayment term and credit profile. The lowest rate requires excellent credit; this profile does not treat one purpose-specific range as the rate for every loan.",
+        "source": "main"
+      },
+      {
+        "label": "AutoPay",
+        "text": "Quoted rates include AutoPay. Without it, rates are 0.50 percentage points higher. The discount must be arranged before funding.",
+        "source": "main-home"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://www.lightstream.com/consumer-loans"
+      },
+      {
+        "id": "main-home",
+        "label": "LightStream rate and AutoPay disclosures",
+        "url": "https://www.lightstream.com/"
+      }
+    ]
+  }
 }

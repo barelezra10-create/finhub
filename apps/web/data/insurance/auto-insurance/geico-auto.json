@@ -1,30 +1,55 @@
 {
   "slug": "geico-auto",
   "carrier": "GEICO",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1200, "max": 1900 },
-  "bundling_discount_pct": 10,
-  "good_driver_discount_pct": 22,
-  "am_best_rating": "A++",
-  "jd_power_satisfaction": 874,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Low premiums, digital experience",
-  "coverage_types_offered": ["liability-only", "full-coverage", "minimum-state", "high-value"],
-  "perks": [
-    "Consistently among the lowest premiums nationwide",
-    "Award-winning mobile app and online portal",
-    "Over 85 years in business with A++ AM Best rating",
-    "Wide range of discounts including military, federal employee, and good student",
-    "Mechanical breakdown insurance available",
-    "Fast claims processing via app"
-  ],
-  "drawbacks": [
-    "Limited local agent support compared to State Farm",
-    "Coverage options can be less customizable than some competitors",
-    "No gap insurance offered directly"
-  ],
   "quote_url": "https://www.geico.com/auto-insurance/",
-  "rating": 4.7,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.geico.com/save/discounts/car-insurance-discounts/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto discounts and optional mechanical-breakdown coverage with eligibility limits.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto discounts and optional mechanical-breakdown coverage with eligibility limits.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Discount eligibility",
+        "text": "GEICO lists discounts including multi-policy and qualifying memberships or affiliations. Discounts and coverage vary by state and GEICO company; a single percentage is not a universal savings estimate.",
+        "source": "main"
+      },
+      {
+        "label": "Home bundling",
+        "text": "Home and other listed non-auto products are arranged through GEICO Insurance Agency with non-affiliated insurers. Confirm which company issues each bundled policy.",
+        "source": "main"
+      },
+      {
+        "label": "Mechanical breakdown",
+        "text": "Optional mechanical-breakdown insurance has vehicle-age, mileage and ownership requirements. GEICO generally requires a new vehicle under 15 months and 15,000 miles with the first titleholder; some states use different limits. Availability varies.",
+        "source": "mbi"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.geico.com/save/discounts/car-insurance-discounts/"
+      },
+      {
+        "id": "mbi",
+        "label": "GEICO mechanical-breakdown eligibility",
+        "url": "https://www.geico.com/landingpage/mechanical-breakdown-insurance-new/"
+      }
+    ]
+  }
 }

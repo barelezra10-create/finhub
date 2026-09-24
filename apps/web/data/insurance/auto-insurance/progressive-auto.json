@@ -1,30 +1,55 @@
 {
   "slug": "progressive-auto",
   "carrier": "Progressive",
-  "states_available": "all",
-  "avg_annual_premium": { "min": 1400, "max": 2100 },
-  "bundling_discount_pct": 12,
-  "good_driver_discount_pct": 31,
-  "am_best_rating": "A+",
-  "jd_power_satisfaction": 861,
-  "digital_experience": "excellent",
-  "claims_process": "all",
-  "best_for": "Safe drivers, Snapshot telematics program",
-  "coverage_types_offered": ["liability-only", "full-coverage", "minimum-state", "high-value"],
-  "perks": [
-    "Snapshot program rewards safe drivers with significant discounts",
-    "Name Your Price tool helps find coverage within your budget",
-    "Rideshare insurance available for Uber and Lyft drivers",
-    "Pet injury coverage included in collision",
-    "Excellent digital tools and app",
-    "Broad range of coverage add-ons"
-  ],
-  "drawbacks": [
-    "Rates can be high for drivers with accidents or violations",
-    "Snapshot program may increase rates for some driving patterns",
-    "Customer service ratings vary by region"
-  ],
   "quote_url": "https://www.progressive.com/auto/",
-  "rating": 4.5,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.progressive.com/auto/insurance-coverages/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto coverage with optional rideshare protection and a driving-based pricing program.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto coverage with optional rideshare protection and a driving-based pricing program.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Coverage and deductibles",
+        "text": "Progressive provides multiple auto coverages; available limits and deductibles vary. Compare the coverage selections in the quote rather than treating full coverage as one standard contract.",
+        "source": "main"
+      },
+      {
+        "label": "Rideshare use",
+        "text": "Progressive says rideshare coverage must be added to protect eligible use while logged into a rideshare or delivery platform and waiting for a request.",
+        "source": "main"
+      },
+      {
+        "label": "Snapshot can raise rates",
+        "text": "Snapshot uses driving data to personalize renewal pricing. High-risk driving can increase rates; the program and participation discount are not available in all states or situations.",
+        "source": "snapshot"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.progressive.com/auto/insurance-coverages/"
+      },
+      {
+        "id": "snapshot",
+        "label": "Progressive Snapshot terms and limitations",
+        "url": "https://www.progressive.com/auto/discounts/snapshot/"
+      }
+    ]
+  }
 }

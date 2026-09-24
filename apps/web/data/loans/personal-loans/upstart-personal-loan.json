@@ -2,41 +2,56 @@
   "slug": "upstart-personal-loan",
   "lender": "Upstart",
   "product_name": "Personal Loan",
-  "apr_range": {
-    "min": 6.3,
-    "max": 35.99
-  },
-  "loan_amount_min": 1000,
-  "loan_amount_max": 50000,
-  "repayment_terms_months": [
-    36,
-    60
-  ],
-  "origination_fee": {
-    "min": 0,
-    "max": 12
-  },
-  "prepayment_penalty": false,
-  "late_fee": "$15 or 5% of past due amount (whichever is greater)",
-  "funding_speed": "1 business day",
-  "credit_score_required": {
-    "min": 300,
-    "recommended": 580
-  },
-  "best_for": "Thin credit file, recent graduates",
-  "perks": [
-    "Uses AI to evaluate non-FICO factors: education, job history",
-    "Accepts borrowers with no credit history",
-    "Next business day funding",
-    "Soft credit check for pre-qualification",
-    "Low minimum loan amount of $1,000"
-  ],
-  "drawbacks": [
-    "Origination fee can be as high as 12%",
-    "Only two term options: 36 or 60 months",
-    "APR can be very high for risky borrowers"
-  ],
   "application_url": "https://www.upstart.com/personal-loans",
-  "rating": 4.2,
-  "last_updated": "2026-08-18"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.upstart.com/personal-loans",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "A lending marketplace with bank-specific offers and state-dependent terms.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "A lending marketplace with bank-specific offers and state-dependent terms.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Provider role",
+        "text": "Upstart Network is not a lender. Regulated financial institutions make loans on its marketplace.",
+        "source": "main"
+      },
+      {
+        "label": "Amounts and terms",
+        "text": "The page advertises $1,000–$75,000 with 3- or 5-year terms. State minimums and maximums vary; not everyone qualifies for the full amount.",
+        "source": "main"
+      },
+      {
+        "label": "APR and fees",
+        "text": "Advertised APRs are 6.30%–35.99%, based on five-year rates offered in June 2026. Origination, late-payment and returned-payment fees may apply. The product disclosure states no prepayment penalty.",
+        "source": "main"
+      },
+      {
+        "label": "Credit inquiries and collateral",
+        "text": "Checking rates uses a soft inquiry; proceeding with the application triggers a hard inquiry. Although many loans are unsecured, certain offers can involve a vehicle lien or liens on accounts with the lender; read the promissory note.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan — official product terms",
+        "url": "https://www.upstart.com/personal-loans",
+        "document_date": "June 2026 (five-year loan offer data)"
+      }
+    ]
+  }
 }

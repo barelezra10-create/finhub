@@ -2,32 +2,55 @@
   "slug": "oportun-personal-loan",
   "lender": "Oportun",
   "product_name": "Oportun Personal Loan",
-  "apr_range": { "min": 19.9, "max": 36.0 },
-  "loan_amount_min": 300,
-  "loan_amount_max": 10000,
-  "repayment_terms_months": [12, 24, 36, 48],
-  "origination_fee": { "min": 3.0, "max": 10.0 },
-  "prepayment_penalty": false,
-  "late_fee": "Varies by state, typically $15 or less",
-  "funding_speed": "Often same day to 1 business day after approval",
-  "credit_score_required": { "min": 0, "recommended": 580 },
-  "best_for": "No credit history, small-dollar loans, building credit",
-  "perks": [
-    "No minimum credit score: Oportun approves applicants with thin or no credit history using income and cash flow data instead",
-    "Small loan amounts from $300, useful when you need far less than the $1,000 to $5,000 minimums at mainstream lenders",
-    "Reports payments to credit bureaus, so on-time payments build a credit file",
-    "No prepayment penalty; paying off early cuts the total interest substantially",
-    "Fixed payments on a fixed schedule, unlike payday or tribal lenders this replaces",
-    "APR is capped at 36%, the widely cited ceiling for affordable small-dollar credit"
-  ],
-  "drawbacks": [
-    "APR range of roughly 19.9 to 36% as of mid-2026 is expensive compared with prime lenders; borrowers with good credit will beat it almost anywhere else",
-    "Origination fee of about 3 to 10% comes out of the loan proceeds, so a $1,000 loan may fund closer to $900",
-    "Maximum loan of $10,000 is low for debt consolidation",
-    "Not available in every state, and terms differ meaningfully by state",
-    "The 36% top rate on a 48-month term makes long terms costly; keep the term as short as the payment allows"
-  ],
   "application_url": "https://oportun.com",
-  "rating": 3.9,
-  "last_updated": "2026-08-10"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://oportun.com/personal-loans/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Small installment loans with lender, state and vehicle-collateral differences.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Small installment loans with lender, state and vehicle-collateral differences.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Who lends?",
+        "text": "Oportun originates loans in New Mexico and Wisconsin. In other listed operating states, Pathward or Column originates loans arranged through Oportun.",
+        "source": "main"
+      },
+      {
+        "label": "Unsecured amounts",
+        "text": "Column lists $500\u2013$6,000; Pathward lists $300\u2013$10,000, with amounts above $6,000 unavailable to first-time borrowers. State minimums apply.",
+        "source": "main"
+      },
+      {
+        "label": "Secured borrowing",
+        "text": "Pathward vehicle-secured loans of $2,525\u2013$18,500 are limited to listed states and qualifying vehicles. The collateral must satisfy ownership, value and insurance rules.",
+        "source": "main"
+      },
+      {
+        "label": "Fees and credit review",
+        "text": "An administrative fee of up to 10% can reduce proceeds. A prior credit history is not required, but credit reports are requested and considered. Prequalification differs from the final application. A nationwide APR range was not established from this page.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://oportun.com/personal-loans/"
+      }
+    ]
+  }
 }

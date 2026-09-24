@@ -2,46 +2,55 @@
   "slug": "sofi-personal-loan",
   "lender": "SoFi",
   "product_name": "Personal Loan",
-  "apr_range": {
-    "min": 6.99,
-    "max": 35.49
-  },
-  "loan_amount_min": 5000,
-  "loan_amount_max": 100000,
-  "repayment_terms_months": [
-    24,
-    36,
-    48,
-    60,
-    72,
-    84
-  ],
-  "origination_fee": {
-    "min": 0,
-    "max": 7
-  },
-  "prepayment_penalty": false,
-  "late_fee": "None",
-  "funding_speed": "Same day to 1 business day",
-  "credit_score_required": {
-    "min": 680,
-    "recommended": 720
-  },
-  "best_for": "Excellent credit, large loan amounts",
-  "perks": [
-    "No origination fees, late fees, or prepayment penalties",
-    "Unemployment protection: pause payments if you lose your job",
-    "0.25% autopay rate discount",
-    "Access to SoFi member benefits including financial planning",
-    "Joint loan applications accepted",
-    "Same-day funding available in many cases"
-  ],
-  "drawbacks": [
-    "High minimum loan amount of $5,000",
-    "Requires good to excellent credit",
-    "No secured loan option"
-  ],
   "application_url": "https://www.sofi.com/personal-loans/",
-  "rating": 4.8,
-  "last_updated": "2026-08-18"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://support.sofi.com/hc/en-us/articles/the-basics-of-a-sofi-personal-loan",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Unsecured installment loans with multiple terms and offer-dependent origination fees.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Personal loan",
+    "summary": "Unsecured installment loans with multiple terms and offer-dependent origination fees.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Loan amounts",
+        "text": "Eligible borrowers in most states can borrow $5,000\u2013$100,000. Approval and the amount offered depend on the application.",
+        "source": "main"
+      },
+      {
+        "label": "Repayment terms",
+        "text": "SoFi lists fixed repayment terms of 2, 3, 4, 5, 6, 7 or 10 years.",
+        "source": "main"
+      },
+      {
+        "label": "Fee choices",
+        "text": "Some borrowers may see a no-origination-fee option; others can choose an origination fee in exchange for a lower interest rate. Compare APR, net proceeds and total payments across the actual offers.",
+        "source": "main"
+      },
+      {
+        "label": "Permitted uses",
+        "text": "The loan is unsecured. SoFi excludes business expenses, post-secondary education, bridge loans, and real-estate or securities investments. This check did not establish a reliable current public APR range.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "What APR, origination fee and net deposit are in my actual offer?",
+      "What are the monthly payment and total scheduled payments for each available term?",
+      "Is collateral required, and what happens if I cannot repay?",
+      "When does a credit check become a hard inquiry, and are there state or loan-use restrictions?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Personal loan \u2014 official product terms",
+        "url": "https://support.sofi.com/hc/en-us/articles/the-basics-of-a-sofi-personal-loan"
+      }
+    ]
+  }
 }

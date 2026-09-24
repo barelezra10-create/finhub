@@ -80,7 +80,7 @@ export function loadCarriers(v: Vertical): InsuranceCarrier[] {
     .readdirSync(dir)
     .filter((f) => f.endsWith(".json"))
     .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")) as InsuranceCarrier)
-    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+    .sort((a, b) => a.carrier.localeCompare(b.carrier));
 }
 
 export function loadCarrier(v: Vertical, slug: string): InsuranceCarrier | null {

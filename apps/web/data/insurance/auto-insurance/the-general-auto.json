@@ -1,31 +1,50 @@
 {
   "slug": "the-general-auto",
   "carrier": "The General",
-  "states_available": ["AL", "AR", "AZ", "CA", "CO", "FL", "GA", "IL", "IN", "KY", "LA", "MD", "MI", "MS", "MO", "NM", "NV", "OH", "OK", "OR", "SC", "TN", "TX", "UT", "VA", "WA"],
-  "avg_annual_premium": { "min": 1800, "max": 3200 },
-  "bundling_discount_pct": null,
-  "good_driver_discount_pct": null,
-  "am_best_rating": "A-",
-  "jd_power_satisfaction": null,
-  "digital_experience": "fair",
-  "claims_process": "phone",
-  "best_for": "High-risk drivers, SR-22 filings",
-  "coverage_types_offered": ["liability-only", "minimum-state"],
-  "perks": [
-    "Accepts high-risk drivers including those with DUIs and multiple violations",
-    "SR-22 filing assistance available",
-    "No credit check required in most states",
-    "Quick online quote process",
-    "Flexible payment plans including monthly payments"
-  ],
-  "drawbacks": [
-    "Premiums significantly higher than standard market",
-    "Limited coverage options: primarily liability and minimum state",
-    "Claims process is phone-only in most cases",
-    "Digital experience is dated",
-    "Not available in all states"
-  ],
   "quote_url": "https://www.thegeneral.com/auto-insurance/",
-  "rating": 4.0,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.thegeneral.com/car-insurance/",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Auto quotes that consider driving history, coverage needs and SR-22 status.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Auto insurance",
+    "summary": "Auto quotes that consider driving history, coverage needs and SR-22 status.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Quote process",
+        "text": "The General asks about personal information, driving history, SR-22 status and the vehicle when preparing a quote. A quote can be saved for comparison.",
+        "source": "main"
+      },
+      {
+        "label": "Proof of insurance",
+        "text": "The described online process provides printable proof after the down payment and electronic application signature. Confirm the actual policy effective date.",
+        "source": "main"
+      },
+      {
+        "label": "Household drivers",
+        "text": "The General says household residents age 14 and older in most states, and other regular drivers, must be listed or excluded. Review the rules for your state before buying.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Is this policy available for my address, vehicle or property?",
+      "Which legal insurer issues my policy and handles claims?",
+      "What limits, deductibles, exclusions and optional coverages appear in my written quote?",
+      "What is the total premium with and without each discount?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Auto insurance \u2014 official product terms",
+        "url": "https://www.thegeneral.com/car-insurance/"
+      }
+    ]
+  }
 }

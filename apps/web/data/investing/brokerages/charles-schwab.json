@@ -1,30 +1,54 @@
 {
   "slug": "charles-schwab",
   "broker": "Charles Schwab",
-  "account_types": ["taxable", "ira", "roth-ira", "401k-rollover", "joint", "custodial", "trust"],
-  "commission_stocks": 0,
-  "commission_options_per_contract": 0.65,
-  "commission_mutual_funds": 0,
-  "fractional_shares_available": true,
-  "account_minimum": 0,
-  "research_quality": "excellent",
-  "mobile_app_rating": 4.7,
-  "best_for": "Deep research and branch access",
-  "asset_classes": ["stocks", "etfs", "options", "mutual-funds", "bonds", "futures"],
-  "perks": [
-    "300+ physical branch locations nationwide",
-    "thinkorswim platform (acquired from TD Ameritrade)",
-    "Extensive third-party research (Morningstar, Credit Suisse)",
-    "Schwab Intelligent Portfolios robo-advisor included",
-    "Fractional shares via Schwab Stock Slices",
-    "24/7 customer support"
-  ],
-  "drawbacks": [
-    "$0.65/contract options fee",
-    "Some mutual funds carry transaction fees",
-    "Mobile app slightly less intuitive than Fidelity"
-  ],
   "application_url": "https://www.schwab.com/open-an-account",
-  "rating": 4.6,
-  "last_updated": "2026-05-02"
+  "last_updated": "2026-09-24",
+  "source_checked": "2026-09-24",
+  "source_url": "https://www.schwab.com/pricing",
+  "verified_fields": [
+    "checked_profile.role",
+    "checked_profile.facts"
+  ],
+  "best_for": "Listed-stock trading, options, and mutual funds with different fee schedules.",
+  "perks": [],
+  "drawbacks": [],
+  "checked_profile": {
+    "role": "Brokerage",
+    "summary": "Listed-stock trading, options, and mutual funds with different fee schedules.",
+    "scope": "Selected product features and conditions from the provider sources below. This is not a personalized offer, approval decision, or complete fee or policy schedule.",
+    "facts": [
+      {
+        "label": "Online stocks and ETFs",
+        "text": "$0 online commission for listed stocks and ETFs. U.S. OTC equities cost $6.95; broker-assisted trades generally add $25.",
+        "source": "main"
+      },
+      {
+        "label": "Options",
+        "text": "$0 base online commission plus $0.65 per contract; other applicable fees remain.",
+        "source": "main"
+      },
+      {
+        "label": "Mutual funds",
+        "text": "Schwab Mutual Fund OneSource funds have $0 online transaction fees. Other mutual-fund purchases can cost up to $74.95.",
+        "source": "main"
+      },
+      {
+        "label": "Account minimums",
+        "text": "Individual and joint brokerage accounts and traditional, Roth, and rollover IRAs list $0 opening and maintenance fees and $0 account minimums. Investment-specific requirements may differ.",
+        "source": "main"
+      }
+    ],
+    "questions": [
+      "Which pricing plan and fee schedule apply to my account and intended trades?",
+      "What regulatory, exchange, fund or service fees are additional to the advertised commission?",
+      "What will I pay to transfer investments or close the account?"
+    ],
+    "sources": [
+      {
+        "id": "main",
+        "label": "Brokerage — official product terms",
+        "url": "https://www.schwab.com/pricing"
+      }
+    ]
+  }
 }
