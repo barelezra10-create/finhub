@@ -80,3 +80,5 @@ Validation:
 - Production build and TypeScript passed; SEO audit passed across 455 pages.
 - Local browser checks cover product labels, the admin login boundary, intercepted primary/middle-click payloads, untagged source citations, and desktop/mobile rendering of the real server component. All event transport is intercepted locally without writing test analytics events.
 - To test event transport, build/start locally with `ANALYTICS_ENABLED=true`, then run `TEST_ANALYTICS_TRANSPORT=true PLAYWRIGHT_BASE_URL=http://localhost:3051 pnpm exec playwright test e2e/product-monitoring.spec.ts`. Without the explicit flag, transport is skipped. Live tests always skip transport and the local rendering fixture.
+
+Deployment note: Railway’s Turbopack build failed resolving the generated JetBrains Mono font imports (`next/font/google queries have exactly one entry`). Production builds now explicitly use the supported `next build --webpack` option; the font families and application behavior are unchanged.
